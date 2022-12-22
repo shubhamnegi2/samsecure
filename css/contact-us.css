@@ -1,0 +1,60 @@
+
+.contactUs {
+    padding-top: 8rem;
+}
+.contactUs h1::after {
+position: absolute;
+left: 0px;
+top: 100%;
+width: 100%;
+height: 2px;
+content: "";
+background-color: #f69335;
+}
+.contactUs h1 {
+font-size: 3rem;
+font-weight: bold;
+text-transform: capitalize;
+display: inline-block;
+position: relative;
+padding-bottom: 0.5rem;
+color: #2f3034;
+}
+.contactUs p {
+margin-top: 10px;
+}
+.contactUs ul li {
+margin: 0.5rem 0rem;
+}
+form textarea{
+width: 100%;
+height: 10rem;
+resize: none;
+padding-left: 1.5rem;
+padding-top: .5rem;
+font-size: 1.6rem;
+border: 2px solid #eee;
+}
+form input{
+margin-bottom: 2.5rem;
+width: 100%;
+border: 2px solid #eee;
+border-radius: .3rem;
+padding: .4rem 0rem;
+padding-left: 1.5rem;
+font-size: 1.6rem;
+}
+.error{
+color: red;
+display: none;
+}
+.submitbtn button{
+background-color: #f69335;
+color: #fff;
+width: 100%;
+/* padding: .5rem 3rem; */
+border: 0;
+text-transform: uppercase;
+font-size: 1.6rem;
+border-radius: .3rem;
+}

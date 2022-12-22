@@ -1,111 +1,10 @@
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
-/>
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-
-<style>
-  html {
-    font-size: 62.5%;
-  }
-  body {
-    font-size: 1.4rem;
-  }
-  .headerwrapper {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    z-index: 999;
-  }
-  .headerContainer {
-    position: relative;
-    background-color: transparent;
-  }
-  .headerBGColor nav ul li a {
-    color: #2f3034;
-    font-size: 1.6rem;
-  }
-  .headerBGColor {
-    background-color: #fff;
-    box-shadow:rgb(0 0 0 / 50%) 0px 0px 10px 1px;
-  }
-  nav {
-    width: 100%;
-  }
-  a {
-    text-decoration: none;
-  }
-  .logo {
-    font-size: 2.2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    position: relative;
-    line-height: 2rem;
-  }
-  .logo::before {
-    position: absolute;
-    left: -8px;
-    top: 0px;
-    width: 3px;
-    height: 100%;
-    background-color: #f69335;
-    content: "";
-  }
-  .logo .logoInnerColor {
-    color: #fff;
-  }
-  
-  .headerBGColor .logoInnerColor{
-    color: #f69335;
-  }
-  nav ul li a {
-    color: #fff;
-    padding: 5px 0px;
-    text-transform: capitalize;
-  }
-  .hamburgermenu {
-    display: none;
-  }
-  .hamburgermenu i {
-    font-size: 2.5rem;
-  }
-  @media screen and (max-width: 767px) {
-    .hamburgermenu {
-      display: block;
-      position: absolute;
-      right: 1.5rem;
-      top: 1rem;
-      width: 4rem;
-      cursor: pointer;
-    }
-    .nav {
-      display: none;
-    }
-    nav ul {
-      flex-direction: column;
-    }
-    nav ul li {
-      padding: 5px 0px;
-    }
-  }
-  @media screen and (max-width: 576px) {
-    .logowrapper {
-      margin-left: 1.5rem;
-    }
-  }
-</style>
-  <div class="headerwrapper">
+<div class="headerwrapper">
     <div class="headerContainer">
       <div class="container">
         <div class="row py-4 justify-content-between align-items-center">
           <div class="col-lg-3 col-md-4">
             <div class="logowrapper">
-              <p class="logo mb-0">Sam <span class="logoInnerColor">secure</span></p>
+              <a href="#" class="logo mb-0">Sam <span class="logoInnerColor">secure</span></a>
             </div>
           </div>
           <div class="hamburgermenu"><i class="fa-solid fa-bars"></i></div>
@@ -114,10 +13,10 @@
               <ul
                 class="list-unstyled d-flex justify-content-between align-items-center mb-0"
               >
-                <li><a href="">Home</a></li>
-                <li><a href="">about</a></li>
-                <li><a href="">services</a></li>
-                <li><a href="">contact</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="about-us.html">about us</a></li>
+                <li><a href="#">services</a></li>
+                <li><a href="contact-us.html">contact us</a></li>
               </ul>
             </nav>
           </div>
