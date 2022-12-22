@@ -1,0 +1,126 @@
+
+.topImg img {
+  width: 100%;
+  height: 40rem;
+  object-fit: cover;
+}
+.topImg {
+  position: relative;
+}
+.topImg::after {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.topImg .title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  z-index: 9;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  color: #fff;
+}
+.aboutUs {
+  padding: 8rem 0px;
+}
+.aboutUs h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0.5rem;
+  color: #2f3034;
+}
+.aboutUs p {
+  margin-top: 10px;
+}
+.aboutUs h2::after {
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  width: 100%;
+  height: 2px;
+  content: "";
+  background-color: #f69335;
+}
+.aboutUs .imgwrapper img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+.ourMVG .myCard {
+  padding: 1rem;
+  box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.ourMVG .myCard:hover {
+  transition: all 0.3s ease;
+  margin-top: -1rem;
+}
+.ourMVG .myCard .iconWrapper {
+  margin: 0rem 1rem;
+}
+.ourMVG .myCard .iconWrapper i {
+  font-size: 5rem;
+  padding: 0.5rem;
+  color: #f69335;
+}
+.ourMVG .myCard .content p {
+  font-size: 12px;
+}
+.ourMVG .myCard .content h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.bottomsec{
+  margin: 8rem 0rem;
+  background-image: url(./images/about-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.bottomsec .contentPadding {
+  padding: 5rem 0rem;
+}
+.bottomsec .contentPadding .content {
+  text-align: center;
+}
+
+.bottomsec .contentPadding .content h2 {
+  font-size: 3rem;
+  text-transform: capitalize;
+  color: #fff;
+  position: relative;
+  padding-bottom: 1rem;
+}
+.bottomsec .contentPadding .content h2::after {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 100%;
+  width: 10rem;
+  height: 2px;
+  content: "";
+  background-color: #f69335;
+}
+.bottomsec .contentPadding .content p {
+  font-size: 1.6rem;
+  color: #fff;
+  padding: 2rem 0rem;
+}
+.bottomsec .contentPadding .content a {
+  /* font-size: 1.6rem; */
+  padding: 1rem 3rem;
+  background-color: #f69335;
+  color: #fff;
+  text-transform: uppercase;
+}

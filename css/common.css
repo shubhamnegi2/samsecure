@@ -1,0 +1,156 @@
+
+  .topFooter {
+    margin-top: 8rem;
+    color: #fff;
+    background-color: #2f3034;
+    padding: 5rem 0rem 3rem 0rem;
+  }
+  .bottomFooter {
+    background-color: #f69335;
+  }
+  .topFooter h2 span {
+    color: #f69335;
+  }
+  .topFooter h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .topFooter ul li i {
+    font-size: 2rem;
+    padding: 1rem;
+    color: #fff;
+  }
+  .topFooter ul li {
+    width: 4.5rem;
+    height: 4.5rem;
+    border: 1px solid #f69335;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+  .topFooter ul li:hover {
+    transition: all 0.3s ease;
+    border: 1px solid #fff;
+  }
+  .topFooter ul li:hover i {
+    transition: all 0.3s ease;
+    color: #f69335;
+  }
+  .bottomFooter ul li {
+    margin: 0rem 1rem;
+  }
+  .bottomFooter ul li a{
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: #2f3034;
+    text-transform: capitalize;
+  }
+  .bottomFooter ul li:last-child{
+    margin-right: 0px;
+  }
+  .bottomFooter ul,
+  .bottomFooter p {
+    margin-bottom: 0rem;
+}
+.bottomFooter p{
+    font-size: 1.6rem;
+    color: #2f3034;
+    text-transform: capitalize;
+  }
+  .bottomFooter p span{
+    font-weight: bold;
+  }
+
+  <style>
+  html {
+    font-size: 62.5%;
+  }
+  body {
+    font-size: 1.4rem;
+  }
+  .headerwrapper {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 999;
+  }
+  .headerContainer {
+    position: relative;
+    background-color: transparent;
+  }
+  .headerBGColor nav ul li a {
+    color: #2f3034;
+    font-size: 1.6rem;
+  }
+  .headerBGColor {
+    background-color: #fff;
+    box-shadow:rgb(0 0 0 / 50%) 0px 0px 10px 1px;
+  }
+  nav {
+    width: 100%;
+  }
+  a {
+    text-decoration: none;
+  }
+  .logo {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    line-height: 2rem;
+  }
+  .logo::before {
+    position: absolute;
+    left: -8px;
+    top: 0px;
+    width: 3px;
+    height: 100%;
+    background-color: #f69335;
+    content: "";
+  }
+  .logo .logoInnerColor {
+    color: #fff;
+  }
+  
+  .headerBGColor .logoInnerColor{
+    color: #f69335;
+  }
+  nav ul li a {
+    color: #fff;
+    padding: 5px 0px;
+    text-transform: capitalize;
+  }
+  .hamburgermenu {
+    display: none;
+  }
+  .hamburgermenu i {
+    font-size: 2.5rem;
+  }
+  @media screen and (max-width: 767px) {
+    .hamburgermenu {
+      display: block;
+      position: absolute;
+      right: 1.5rem;
+      top: 1rem;
+      width: 4rem;
+      cursor: pointer;
+    }
+    .nav {
+      display: none;
+    }
+    nav ul {
+      flex-direction: column;
+    }
+    nav ul li {
+      padding: 5px 0px;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .logowrapper {
+      margin-left: 1.5rem;
+    }
+  }
