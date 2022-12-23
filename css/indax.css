@@ -11,7 +11,7 @@ html{
 }
 h1{
     font-size: 3rem;
-    color: black;
+    color: #444649;
     font-weight: 800;
     font-weight: bold;
 
@@ -35,26 +35,54 @@ p{
     font-size: 1.4rem;
 }
 .img1 img{
-    height: 90vh;
+    height: 40rem;
     width: 100%;
 }
 .img2{
     background: url("https://wallpaperaccess.com/full/4391661.jpg");
-    height: 75vh;
+    height: 40rem;
     width: 100%;
+}
+.img2::after{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.4);
 }
 .img3{
     background: url("https://wallpaperaccess.com/full/1385386.jpg");
-    height: 75vh;
+    height:40rem;
     width: 100%;
+}
+.img3::after{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.4);
 }
 .img4{
     background:url("https://wallpaperaccess.com/full/4391665.jpg") ;
-    height: 75vh;
+    height: 40rem;
     width: 100%;
 }
-.sam-icon img{
-    border: 2px solid tomato;
+.img4::after{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.sam-icon i{
+background-color: #fff;
+color: #f69337;
     height: 90px;
     width: 90px;
     border-radius: 50%;
@@ -66,11 +94,29 @@ p{
 }
 
 .slider-content{
-   margin-top: 14rem;
-   padding: 2rem;
+   /* margin-top: 14rem;
+   padding: 2rem; */
+   position: absolute;
+    left: 70%;
+    top: 50%;
+    width: 100%;
+    z-index: 9;
+    text-align: left;
+    transform: translate(-50%, -50%);
+    
+    color: #fff;
+
   
 }
+ .sam-h1 h1{
+    font-size: 4rem;
+    font-weight: bold;
+    font-weight: 600;
+    text-align: center;
+    color: #444649;
+}
 .slider-content h1{
+    font-size: 5rem;
     color: #fff;
     font-weight: bold;
     font-weight: 800;
@@ -83,8 +129,8 @@ a{
 }
 .read{
     display: flex;
-    align-items: center;
-    justify-content: center;
+   
+    justify-content: left;
     flex-direction: column;
 }
 .read-more {
@@ -148,35 +194,39 @@ color: aliceblue;
     width: 100%;
 }
 .img {
-    background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c29mdHdhcmUlMjBkZXZlbG9wbWVudCUyMGNvbXBhbnl8ZW58MHx8MHx8&auto=format&fit=crop&w=300&q=60");
+    background: url("https://images.livemint.com/rf/Image-621x414/LiveMint/Period2/2017/11/14/Photos/Processed/itguys-kGfB--621x414@LiveMint.jpg");
     height: 367px;
     width: 100%;
+    /* background-repeat: no-repeat; */
+    
 }
 .section1{
     background-color: #f4f7f9;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    padding:5rem;
+    padding:8rem;
 }
-.saction3-icon img{
-    border: 2px solid tomato;
+.saction3-icon i{
+    background-color: #fff;
     padding: 10px;
-    height: 70px;
-    width: 70px;
+    color: #f69337;
+    height: 80px;
+    width: 80px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
 
    
 
 }
 .section4{
-    padding: 5rem;
+    padding: 8rem;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 .section3{
-    padding: 5rem;
+    padding: 8rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
 }
@@ -184,7 +234,7 @@ color: aliceblue;
     margin-top: 2rem;
 }
 .text-center h4{
-    color: black;
+    color: #444649;
     font-weight: 500;
 }
 .section3{
@@ -193,7 +243,7 @@ color: aliceblue;
 .btn button{
     padding: 8px 40px;
     background-color: transparent;
-    color: black;
+    color: #444649;
 
 border-radius: 5px;
 
@@ -202,7 +252,7 @@ font-size: 2rem;
 }
 .section1-icon{
     background-color: #f69337;
-    height: 22px;
+    height: 29px;
     width: 4px;
    
     margin-right: 5px;
@@ -216,13 +266,13 @@ font-size: 2rem;
      display: flex;
      align-items: center;
 }
-.sam-left-h5 img{
-    border: 2px solid tomato;
-    padding: 10px;
+.sam-left-h5 i{
+   padding: 10px;
+   background-color: #f4f7f9;
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    color: #fff;
+    color: #f69337;
     margin-right: 10px;
     display: flex;
     align-items: center;
@@ -250,7 +300,7 @@ font-size: 2rem;
 padding: 8px 40px;
 background-color: transparent;
 border-radius: 5px;
-color: #f69337;
+color: #fff;
 margin-top: 40px;
 font-size: 2rem;
 border: 1px solid #fff;
