@@ -1,0 +1,21 @@
+POS-
+-> table View 
+            -   Table reservation
+            -   contactless
+
+    -floor wise tables (multiple views)
+        - ground floor
+        - basement
+        - etc
+(order for any particular table)
+
+-> POS views
+    (for adding items into order)
+    ->all food catagories.
+        - food items in particular catagories.
+        (click to add for order)
+            -we can increase and decrease quantity
+        - find food items
+            - by catagories
+            - by name
+            - by short code (we can create our short cods)

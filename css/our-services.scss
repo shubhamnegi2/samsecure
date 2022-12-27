@@ -1,3 +1,5 @@
+$primeryColor: #f69335;
+$secondaryColor:#2f3034;
 .our-services-steps {
     padding: 8rem 0rem; 
     h2 {
@@ -7,7 +9,7 @@
         display: inline-block;
         position: relative;
         padding-bottom: 1rem;
-        color: #2f3034;
+        color: $secondaryColor;
         &::after {
             position: absolute;
             left: 50%;
@@ -16,7 +18,7 @@
             width: 10rem;
             height: 2px;
             content: "";
-            background-color: #f69335;
+            background-color: $primeryColor;
         }
     }
     .stepswrapper{        
@@ -33,12 +35,12 @@
             height: 10vw;
             i{
                 font-size: 4rem;
-                color: #f69335;
+                color: $primeryColor;
             }
             h3{
                 margin-top: 1rem;
                 font-size: 1.4rem;
-                color: #2f3034;
+                color: $secondaryColor;
             }
         }
         .line{
@@ -57,7 +59,7 @@
         display: inline-block;
         position: relative;
         padding-bottom: 1rem;
-        color: #2f3034;
+        color: $secondaryColor;
         &::after {
             position: absolute;
             left: 50%;
@@ -66,7 +68,7 @@
             width: 10rem;
             height: 2px;
             content: "";
-            background-color: #f69335;
+            background-color: $primeryColor;
         }
     }
     .mt-40{
@@ -78,7 +80,7 @@
             font-weight: bold;
             text-transform: capitalize;
             padding-bottom: 1rem;
-            color: #2f3034;
+            color: $secondaryColor;
         }
         ul{
             padding-left: 0rem;
@@ -86,7 +88,7 @@
 
                 i{
                     font-size: 3rem;
-                    color: #f69335;
+                    color: $primeryColor;
                     margin-right: 1.5rem;
                 }
             }
