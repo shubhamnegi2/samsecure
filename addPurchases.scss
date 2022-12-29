@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+
+.breadcrumb {
+    margin-bottom: 0rem !important;
+    position: relative;
+    .addVender{
+        position: absolute;
+        right: 2%;
+        top: 50%;
+        transform: translate(-0%, -50%);
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0px;
+        background-color: #3abb69;
+        color: #fff;
+        padding: 2px 30px;
+        font-weight:bold;
+    }
+    
+    ul {
+        margin-bottom: 0rem;
+        li {
+            color: #3abb69;
+            font-weight: bold;
+            margin: 10px 1px;
+            a {
+                color: inherit;
+                padding: 10px;
+                text-decoration: none;
+            }
+            i {
+                font-size: 12px;
+            }
+            .ActiveBreadcrumb {
+                color: #7a7797;
+            }
+        }
+    }
+}
+main {
+    background-color: #eee;
+    // min-height: 100vh;
+}
+.allBtnsWrapper {
+    .allBtns {
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        text-align: center;
+        border-radius: 5px;
+        button {
+            min-width: 150px;
+            margin: 10px;
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0;
+            background-color: #7a7797;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 3px 0px;
+            font-family: "Montserrat", sans-serif;
+        }
+        .activeBtn {
+            background-color: #3abb69;
+        }
+    }
+}
+.ProductDetailsWrapper {
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    border-radius: 5px;
+    padding: 10px;
+    .details {
+        .title {
+            padding: 10px 0px;
+            text-align: center;
+            h3 {
+                display: inline-block;
+                border-bottom: 2px solid #3abb69;
+                color: #7a7797;
+                font-weight: bold;
+                padding-bottom: 5px;
+                font-size: 20px;
+            }
+        }
+    }
+    table {
+        max-width: 100%;
+        width: 100%;
+        border-radius: 4px;
+        overflow: hidden;
+        border-radius: 5px;
+        tr:nth-child(even) {
+            background-color: #3abb6957;
+            input,
+            select,
+            td {
+                color: #000;
+                &::placeholder {
+                    color: #000;
+                }
+            }
+            select option {
+                background-color: #3abb6957;
+            }
+        }
+        tr {
+            height: 40px;
+            &:last-child {
+                border-bottom: 2px solid #ddcece;
+            }
+        }
+    }
+    table,
+    th,
+    td {
+        border: 1px solid #ddcece;
+        border-collapse: collapse;
+        font-size: 14px;
+        text-align: center;
+    }
+    thead {
+        background-color: #7a7797;
+        color: #fff;
+        tr,
+        th {
+            border: 1px solid #000;
+        }
+    }
+    tbody {
+        tr {
+            td:first-child {
+                font-weight: 500;
+                text-transform: capitalize;
+            }
+
+            input,
+            select {
+                width: 100%;
+                height: 37px;
+                border: 0;
+                // border: 1px solid #ddcece;
+                text-align: center;
+                background-color: transparent;
+                color: #7a7797;
+            }
+        }
+    }
+}
+#addVenderWrapper{
+    display: none;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    border-radius: 5px;
+    padding: 30px 0px;
+    .addVenderTitle{
+        text-align: center; 
+        padding-bottom: 20px;
+        h2{
+            display: inline-block;
+            border-bottom: 2px solid #3abb69;
+            color: #7a7797;
+            font-weight: bold;
+            padding-bottom: 5px;
+            font-size: 20px;
+        }
+    }
+    .addVenderForm{
+        .formGroup{
+            margin-bottom: 20px;
+            label{
+                color: #7a7797;
+                font-size: 14px;
+                font-weight: 500;
+                padding-left: 5px;
+            }
+            input{
+                border: 2px solid #eee;
+                width: 100%;
+                border-radius: 4px;
+                padding-left: 15px;
+            }
+        }
+        .addVenderSubmitBtn{
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0px;
+            background-color: #3abb69;
+            color: #fff;
+            padding: 2px 30px;
+            font-weight: bold;
+        }
+    }
+}

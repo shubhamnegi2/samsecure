@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./addPurchases.css" />
+  </head>
+
+  <div class="breadcrumb">
+    <ul class="list-unstyled d-flex align-items-center">
+      <li><a href="">Purchases</a></li>
+      <li><i class="fa-solid fa-angles-right"></i></li>
+      <li><a href="" class="ActiveBreadcrumb">Add Purchases</a></li>
+    </ul>
+    <button class="addVender">Add Vender</button>
+  </div>
+  <main>
+    <div class="allBtnsWrapper pt-3 pb-3">
+      <div class="container-fluid">
+        <div class="allBtns pt-3 pb-3">
+          <button class="activeBtn">Dairy Products</button>
+          <button>Drinkable</button>
+          <button>Fast Food</button>
+          <button>My Fav</button>
+          <button>Mostly Used</button>
+          <button>Top</button>
+          <button>Commonly Used</button>
+          <button>Less Used</button>
+          <button>Chinese</button>
+          <button>Italian</button>
+          <button>Thai</button>
+          <button>Continental</button>
+          <button>Indian</button>
+          <button>South Indian</button>
+          <button>North Indian</button>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="ProductDetailsWrapper">
+        <div class="details">
+          <div class="title">
+            <h3>Dairy Products</h3>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Item name</th>
+                <th>Price/Qty</th>
+                <th>N. Of Days</th>
+                <th>Quantity</th>
+                <th>Select Vender</th>
+                <th>Cash</th>
+                <th>Credit</th>
+                <!-- <th>Save</th> -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="name">Milk Powder</td>
+                <td>
+                  <input
+                    type="text"
+                    class="price"
+                    placeholder="Price/Qty"
+                    name="price"
+                  />
+                </td>
+                <td>
+                  <select name="days" id="days">
+                    <option selected disabled>Used In</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </td>
+                <td>
+                  <select name="quantity" id="quantity">
+                    <option selected disabled>Select Quantity</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </td>
+                <td>
+                  <select name="Vender" id="Vender">
+                    <option selected disabled>Select Vender</option>
+                    <option value="Amit">Amit</option>
+                    <option value="Ankit">Ankit</option>
+                    <option value="Rohit">Rohit</option>
+                  </select>
+                </td>
+                <td>
+                  <input type="cash" name="cash" id="cash" placeholder="Cash" />
+                </td>
+                <td>
+                  <input
+                    type="credit"
+                    name="credit"
+                    id="credit"
+                    placeholder="Credit"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="name">Curd</td>
+                <td>
+                  <input
+                    type="text"
+                    class="price"
+                    placeholder="Price/Qty"
+                    name="price"
+                  />
+                </td>
+                <td>
+                  <select name="days" id="days">
+                    <option selected disabled>Used In</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </td>
+                <td>
+                  <select name="quantity" id="quantity">
+                    <option selected disabled>Select Quantity</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </td>
+                <td>
+                  <select name="Vender" id="Vender">
+                    <option selected disabled>Select Vender</option>
+                    <option value="Amit">Amit</option>
+                    <option value="Ankit">Ankit</option>
+                    <option value="Rohit">Rohit</option>
+                  </select>
+                </td>
+                <td>
+                  <input type="cash" name="cash" id="cash" placeholder="Cash" />
+                </td>
+                <td>
+                  <input
+                    type="credit"
+                    name="credit"
+                    id="credit"
+                    placeholder="Credit"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="name">paneer</td>
+                <td>
+                  <input
+                    type="text"
+                    class="price"
+                    placeholder="Price/Qty"
+                    name="price"
+                  />
+                </td>
+                <td>
+                  <select name="days" id="days">
+                    <option selected disabled>Used In</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </td>
+                <td>
+                  <select name="quantity" id="quantity">
+                    <option selected disabled>Select Quantity</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </td>
+                <td>
+                  <select name="Vender" id="Vender">
+                    <option selected disabled>Select Vender</option>
+                    <option value="Amit">Amit</option>
+                    <option value="Ankit">Ankit</option>
+                    <option value="Rohit">Rohit</option>
+                  </select>
+                </td>
+                <td>
+                  <input type="cash" name="cash" id="cash" placeholder="Cash" />
+                </td>
+                <td>
+                  <input
+                    type="credit"
+                    name="credit"
+                    id="credit"
+                    placeholder="Credit"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="name">Milk Powder</td>
+                <td>
+                  <input
+                    type="text"
+                    class="price"
+                    placeholder="Price/Qty"
+                    name="price"
+                  />
+                </td>
+                <td>
+                  <select name="days" id="days">
+                    <option selected disabled>Used In</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </td>
+                <td>
+                  <select name="quantity" id="quantity">
+                    <option selected disabled>Select Quantity</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </td>
+                <td>
+                  <select name="Vender" id="Vender">
+                    <option selected disabled>Select Vender</option>
+                    <option value="Amit">Amit</option>
+                    <option value="Ankit">Ankit</option>
+                    <option value="Rohit">Rohit</option>
+                  </select>
+                </td>
+                <td>
+                  <input type="cash" name="cash" id="cash" placeholder="Cash" />
+                </td>
+                <td>
+                  <input
+                    type="credit"
+                    name="credit"
+                    id="credit"
+                    placeholder="Credit"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="name">Curd</td>
+                <td>
+                  <input
+                    type="text"
+                    class="price"
+                    placeholder="Price/Qty"
+                    name="price"
+                  />
+                </td>
+                <td>
+                  <select name="days" id="days">
+                    <option selected disabled>Used In</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </td>
+                <td>
+                  <select name="quantity" id="quantity">
+                    <option selected disabled>Select Quantity</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </td>
+                <td>
+                  <select name="Vender" id="Vender">
+                    <option selected disabled>Select Vender</option>
+                    <option value="Amit">Amit</option>
+                    <option value="Ankit">Ankit</option>
+                    <option value="Rohit">Rohit</option>
+                  </select>
+                </td>
+                <td>
+                  <input type="cash" name="cash" id="cash" placeholder="Cash" />
+                </td>
+                <td>
+                  <input
+                    type="credit"
+                    name="credit"
+                    id="credit"
+                    placeholder="Credit"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="name">paneer</td>
+                <td>
+                  <input
+                    type="text"
+                    class="price"
+                    placeholder="Price/Qty"
+                    name="price"
+                  />
+                </td>
+                <td>
+                  <select name="days" id="days">
+                    <option selected disabled>Used In</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </td>
+                <td>
+                  <select name="quantity" id="quantity">
+                    <option selected disabled>Select Quantity</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </td>
+                <td>
+                  <select name="Vender" id="Vender">
+                    <option selected disabled>Select Vender</option>
+                    <option value="Amit">Amit</option>
+                    <option value="Ankit">Ankit</option>
+                    <option value="Rohit">Rohit</option>
+                  </select>
+                </td>
+                <td>
+                  <input type="cash" name="cash" id="cash" placeholder="Cash" />
+                </td>
+                <td>
+                  <input
+                    type="credit"
+                    name="credit"
+                    id="credit"
+                    placeholder="Credit"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div id="addVenderWrapper" class="mt-4">
+        <div class="addVenderTitle">
+          <h2>Add New Vender</h2>
+        </div>
+        <div class="addVenderForm container">
+          <form>
+            <div class="row justify-content-center">
+              <div class="col-12">
+                <div
+                  class="row justify-content-center align-items-center"
+                  style="background-color: #eee; padding: 20px"
+                >
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="venderName">Vender Name</label>
+                      <br />
+                      <input type="text" />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="Phone">Phone N.</label>
+                      <br />
+                      <input type="text" />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="Address">Address</label>
+                      <br />
+                      <input type="text" />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="upiN">UPI N.</label>
+                      <br />
+                      <input type="text" />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="bankName">Bank Name</label>
+                      <br />
+                      <input type="text" />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="AccN">Account N.</label>
+                      <br />
+                      <input type="text" />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="formGroup">
+                      <label for="ifsc">IFSC Code</label>
+                      <br />
+                      <input type="text" />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="formGroup">
+                      <label for="ACHName">Account Holder Name</label>
+                      <br />
+                      <input type="text" />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="formGroup">
+                      <label for="state">State</label>
+                      <br />
+                      <input type="text" />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="formGroup">
+                      <label for="city">City</label>
+                      <br />
+                      <input type="text" />
+                    </div>
+                  </div>
+                  <div class="col-12 text-center mt-2">
+                    <button type="submit" class="addVenderSubmitBtn">
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $("head").append(
+        '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
+      );
+      $("head").append(
+        ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
+/>'
+      );
+      $("head").append(
+        '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
+      );
+    </script>
+    <script>
+      $(".addVender").click(function () {
+        $("#addVenderWrapper").show();  
+        let top = $("#addVenderWrapper").position().top;
+        $("html, body").animate({ scrollTop: top });
+      });
+
+      $('.allBtns button').click(function(){
+        $('.allBtns button').removeClass('activeBtn');
+        $(this).addClass('activeBtn');
+       
+        $('.ProductDetailsWrapper .details .title h3').text( $(this).text());
+      })
+    </script>
+  </body>
+</html>
