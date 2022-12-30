@@ -98,7 +98,10 @@ color: #f69337;
    padding: 2rem; */
    position: absolute;
     left: 70%;
-    top: 50%;
+    top: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
     width: 100%;
     z-index: 9;
     text-align: left;
@@ -268,11 +271,11 @@ font-size: 2rem;
 }
 .sam-left-h5 i{
    padding: 10px;
-   background-color: #f4f7f9;
+  border: 2px solid #fff;
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    color: #f69337;
+  color: #fff;
     margin-right: 10px;
     display: flex;
     align-items: center;
