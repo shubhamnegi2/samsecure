@@ -68,6 +68,12 @@ main {
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
   border-radius: 5px;
   padding: 10px;
+  overflow: hidden;
+}
+.ProductDetailsWrapper .details {
+  transition: all 0.5s ease;
+  position: relative;
+  top: 0px;
 }
 .ProductDetailsWrapper .details .title {
   padding: 10px 0px;
@@ -145,6 +151,12 @@ main {
   background-color: transparent;
   color: #7a7797;
 }
+.ProductDetailsWrapper .venderDetailsTable {
+  position: relative;
+  left: 200%;
+  top: 0px;
+  display: none;
+}
 
 #addVenderWrapper {
   display: none;
@@ -187,5 +199,24 @@ main {
   background-color: #3abb69;
   color: #fff;
   padding: 2px 30px;
+  font-weight: bold;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.table1Btns button, .table2Btns button {
+  text-transform: capitalize;
+  border-radius: 3px;
+  border: 0px;
+  background-color: #3abb69;
+  color: #fff;
+  padding: 3px 50px;
+  font-size: 16px;
   font-weight: bold;
 }/*# sourceMappingURL=addPurchases.css.map */
