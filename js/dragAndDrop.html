@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        table,tr,td{
+            border: 1px solid #000;
+            border-collapse: collapse;
+        }
+        .table{
+            width: 100%;
+        }
+        table {
+	 max-width: 100%;
+	 width: 100%;
+	 border-radius: 4px;
+	 overflow: hidden;
+	 border-radius: 5px;
+}
+ table tr:nth-child(even) {
+	 background-color: #3abb69 57;
+}
+ table tr:nth-child(even) input, table tr:nth-child(even) select, table tr:nth-child(even) td {
+	 color: #000;
+}
+ table tr:nth-child(even) input::placeholder, table tr:nth-child(even) select::placeholder, table tr:nth-child(even) td::placeholder {
+	 color: #000;
+}
+ table tr:nth-child(even) select option {
+	 background-color: #3abb69 57;
+}
+ table tr {
+	 height: 40px;
+}
+ table tr:last-child {
+	 border-bottom: 2px solid #ddcece;
+}
+ table, th, td {
+	 border: 1px solid #ddcece;
+	 border-collapse: collapse;
+	 font-size: 14px;
+	 text-align: center;
+}
+ thead {
+	 background-color: #7a7797;
+	 color: #fff;
+}
+ thead tr, thead th {
+	 border: 1px solid #000;
+}
+ tbody tr td:first-child {
+	 font-weight: 500;
+	 text-transform: capitalize;
+}
+ tbody tr input, tbody tr select {
+	 width: 100%;
+	 height: 37px;
+	 border: 0;
+	 text-align: center;
+	 background-color: transparent;
+	 color: #7a7797;
+}
+ 
+    </style>
+  </head>
+  <body>
+    <table id="myTable">
+        <thead>
+            <tr>
+                <td>data</td>
+                <td>value</td>
+                <td>data</td>
+                <td>value</td>
+                <td>data</td>
+                <td>value</td>
+                <td>data</td>
+                <td>value</td>
+            </tr>
+        </thead>
+        <tbody>
+
+      <tr draggable="true">
+        <td>Row 1</td>
+        <td>Value 1</td>
+        <td>Row 1</td>
+        <td>Value 1</td>
+        <td>Row 1</td>
+        <td>Value 1</td>
+        <td>Row 1</td>
+        <td>Value 1</td>
+      </tr>
+      <tr draggable="true">
+        <td>Row 2</td>
+        <td>Value 2</td>
+        <td>Row 2</td>
+        <td>Value 2</td>
+        <td>Row 2</td>
+        <td>Value 2</td>
+        <td>Row 2</td>
+        <td>Value 2</td>
+      </tr>
+      <tr draggable="true">
+        <td>Row 3</td>
+        <td>Value 3</td>
+        <td>Row 3</td>
+        <td>Value 3</td>
+        <td>Row 3</td>
+        <td>Value 3</td>
+        <td>Row 3</td>
+        <td>Value 3</td>
+      </tr>
+    </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        $("#myTable tr").draggable();
+        $("#myTable tr").draggable();
+        $("#myTable tr").droppable({
+          drop: function (event, ui) {
+            // This function is called when a row is dropped onto the current row
+            // You can access the dragged row using the `ui.draggable` object
+            var draggedRow = ui.draggable;
+            // You can then use the `.text()` function to get the text of the cells in the dragged row
+            var draggedRowText = draggedRow.text();
+            // And use the `.text()` function to set the text of the cells in the current row
+            $(this).text(draggedRowText);
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
