@@ -127,6 +127,11 @@ main {
 .ProductDetailsWrapper table tr {
   height: 40px;
 }
+.ProductDetailsWrapper table td .payBtn {
+  padding: 1px 20px;
+  font-size: 14px;
+  background-color: #7a7797;
+}
 .ProductDetailsWrapper table tr:last-child {
   border-bottom: 2px solid #ddcece;
 }
@@ -244,6 +249,24 @@ main {
       padding-left: 15px;
       color: #7a7797;
   }
+  .paymentPopupWrapper{
+        position: fixed;
+        top: 0px;  
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0,0,0,0.5);   
+        /* display: none;    */
+    }
+    .paymentPopup{
+      width: 50%;
+      min-height: 100px;
+      background-color: #fff;
+    }
     </style>
   </head>
   <body>
@@ -314,7 +337,7 @@ main {
                     <td>9897898989</td>
                     <td>01/01/2023</td>
                     <td>15000</td>
-                    <td><button class="btn btn-primary btn-sm ">Action</button></td>
+                    <td><button class="btn btn-primary btn-sm payBtn">Pay</button></td>
                 </tr>                              
                 <tr>
                     <td>2</td>
@@ -323,7 +346,7 @@ main {
                     <td>9897898989</td>
                     <td>01/01/2023</td>
                     <td>15000</td>
-                    <td><button class="btn btn-primary btn-sm ">Action</button></td>
+                    <td><button class="btn btn-primary btn-sm payBtn">Pay</button></td>
                 </tr>                              
                 <tr>
                     <td>3</td>
@@ -332,7 +355,7 @@ main {
                     <td>9897898989</td>
                     <td>01/01/2023</td>
                     <td>15000</td>
-                    <td><button class="btn btn-primary btn-sm ">Action</button></td>
+                    <td><button class="btn btn-primary btn-sm payBtn">Pay</button></td>
                 </tr>                              
                 <tr>
                     <td>4</td>
@@ -341,7 +364,7 @@ main {
                     <td>9897898989</td>
                     <td>01/01/2023</td>
                     <td>15000</td>
-                    <td><button class="btn btn-primary btn-sm ">Action</button></td>
+                    <td><button class="btn btn-primary btn-sm payBtn">Pay</button></td>
                 </tr>                              
                 <tr>
                     <td>5</td>
@@ -350,7 +373,7 @@ main {
                     <td>9897898989</td>
                     <td>01/01/2023</td>
                     <td>15000</td>
-                    <td><button class="btn btn-primary btn-sm ">Action</button></td>
+                    <td><button class="btn btn-primary btn-sm payBtn">Pay</button></td>
                 </tr>                              
                 <tr>
                     <td>6</td>
@@ -359,7 +382,7 @@ main {
                     <td>9897898989</td>
                     <td>01/01/2023</td>
                     <td>15000</td>
-                    <td><button class="btn btn-primary btn-sm ">Action</button></td>
+                    <td><button class="btn btn-primary btn-sm payBtn">Pay</button></td>
                 </tr>                              
                 <tr>
                     <td>7</td>
@@ -368,7 +391,7 @@ main {
                     <td>9897898989</td>
                     <td>01/01/2023</td>
                     <td>15000</td>
-                    <td><button class="btn btn-primary btn-sm ">Action</button></td>
+                    <td><button class="btn btn-primary btn-sm payBtn">Pay</button></td>
                 </tr>                              
                 <tr>
                     <td>8</td>
@@ -377,7 +400,7 @@ main {
                     <td>9897898989</td>
                     <td>01/01/2023</td>
                     <td>15000</td>
-                    <td><button class="btn btn-primary btn-sm ">Action</button></td>
+                    <td><button class="btn btn-primary btn-sm payBtn">Pay</button></td>
                 </tr>                              
                 <tr>
                     <td>9</td>
@@ -386,7 +409,7 @@ main {
                     <td>9897898989</td>
                     <td>01/01/2023</td>
                     <td>15000</td>
-                    <td><button class="btn btn-primary btn-sm ">Action</button></td>
+                    <td><button class="btn btn-primary btn-sm payBtn">Pay</button></td>
                 </tr>                              
                 <tr>
                     <td>10</td>
@@ -395,7 +418,7 @@ main {
                     <td>9897898989</td>
                     <td>01/01/2023</td>
                     <td>15000</td>
-                    <td><button class="btn btn-primary btn-sm ">Action</button></td>
+                    <td><button class="btn btn-primary btn-sm payBtn">Pay</button></td>
                 </tr>                              
             </tbody>
           </table>         
@@ -497,6 +520,54 @@ main {
         </div>
       </div>
     </div>  
+    <div class="paymentPopupWrapper">
+      <div class="paymentPopup">
+        <div class="paymentPopupContent">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="formGroup">
+                <label for="name">Vender Name</label>
+                <input type="text" name="name" id="name" value="Shubham Negi" disabled>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="formGroup">
+                <label for="amount">Total Amount</label>
+                <input type="text" name="amount" id="amount" value="1500" disabled>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="formGroup">
+                <label for="pay">Pay Amount</label>
+                <input type="text" name="pay" id="pay" value="" >
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="Remaining">
+                <label for="remaining">Remaining</label>
+                <input type="text" name="remaining" id="remaining" value="0" disabled>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="formGroup">
+                <label for="method">Method</label>
+                <select name="method" id="method">
+                  <option value="cash">Cash</option>
+                  <option value="UPI">UPI</option>
+                  <option value="card">Card</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="Remaining">
+                <label for="description">Description</label>
+                <textarea name="description" id="description" placeholder="description"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -544,9 +615,12 @@ main {
       $(".allBtns button").click(function () {
         $(".allBtns button").removeClass("activeBtn");
         $(this).addClass("activeBtn");
-
         $(".ProductDetailsWrapper .details .title h3").text($(this).text());
       });
+
+      $('.payBtn').click(function(){
+
+      })
     </script>
   </body>
 </html>
