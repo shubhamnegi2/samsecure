@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vender Detail</title>
+
+    <style type="text/css">
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+      .breadcrumb {
+        margin-bottom: 0rem !important;
+        position: relative;
+      }
+      .breadcrumb .addVender {
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0px;
+        background-color: #7a7797;
+        color: #fff;
+        padding: 2px 30px;
+        margin: 0px 10px;
+        font-weight: bold;
+      }
+      .butn-addvender {
+        position: absolute;
+        right: 2%;
+        top: 50%;
+        transform: translate(0%, -50%);
+        text-transform: capitalize;
+      }
+      .breadcrumb ul {
+        margin-bottom: 0rem;
+      }
+      .breadcrumb ul li {
+        color: #3abb69;
+        font-weight: bold;
+        margin: 10px 1px;
+      }
+      .breadcrumb ul li a {
+        color: inherit;
+        padding: 10px;
+        text-decoration: none;
+      }
+      .breadcrumb ul li i {
+        font-size: 12px;
+      }
+      .breadcrumb ul li .ActiveBreadcrumb {
+        color: #7a7797;
+      }
+
+      main {
+        background-color: #eee;
+        min-height: 100vh;
+      }
+      main .filters label {
+        margin-right: 15px;
+        font-weight: bold;
+        color: #3abb69;
+      }
+      main .filters input::placeholder {
+        font-size: 14px;
+        color: #7a7797;
+      }
+      main .filters input {
+        font-size: 14px;
+        border: 0;
+        border-radius: 5px;
+        padding-left: 15px;
+        color: #7a7797;
+      }
+
+      .allBtnsWrapper .allBtns {
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        text-align: center;
+        border-radius: 5px;
+        /* border: 1px solid #000; */
+      }
+      .allBtnsWrapper .allBtns h2 {
+        display: inline-block;
+        border-bottom: 2px solid #3abb69;
+        color: #7a7797;
+        font-weight: bold;
+        padding-bottom: 5px;
+        font-size: 20px;
+      }
+      .allBtnsWrapper .allBtns .topBtnWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .allBtnsWrapper .allBtns .topBtnWrapper .topBtns {
+        padding: 5px 0px;
+        min-width: 100px;
+        margin: 0px 10px;
+        background-color: #7a7797;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .allBtnsWrapper .allBtns .topBtnWrapper .topBtns span {
+        font-weight: bold;
+      }
+      .allBtnsWrapper .allBtns .topBtnWrapper .activeTopBarTitleBtn {
+        background-color: #3abb69;
+      }
+      .allBtnsWrapper .allBtns .topBtnWrapper .topBtns:hover {
+        transition: all 0.3s ease;
+        background-color: #3abb69;
+      }
+      /*
+        .allBtnsWrapper .allBtns button {
+          min-width: 150px;
+          margin: 10px;
+          text-transform: capitalize;
+          border-radius: 3px;
+          border: 0;
+          background-color: #7a7797;
+          color: #fff;
+          font-size: 13px;
+          font-weight: 500;
+          padding: 3px 0px;
+          font-family: "Montserrat", sans-serif;
+        }
+        .allBtnsWrapper .allBtns .activeBtn {
+          background-color: #3abb69;
+        } */
+
+      .ProductDetailsWrapper {
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        border-radius: 5px;
+        padding: 10px;
+      }
+
+      .ProductDetailsWrapper .details .title {
+        padding: 10px 0px;
+        text-align: center;
+      }
+      .ProductDetailsWrapper .details .title h3 {
+        display: inline-block;
+        border-bottom: 2px solid #3abb69;
+        color: #7a7797;
+        font-weight: bold;
+        padding-bottom: 5px;
+        font-size: 20px;
+      }
+      .ProductDetailsWrapper table {
+        max-width: 100%;
+        width: 100%;
+        border-radius: 4px;
+        overflow: hidden;
+        border-radius: 5px;
+      }
+      .ProductDetailsWrapper table tr:nth-child(even) {
+        background-color: rgba(58, 187, 105, 0.3411764706);
+      }
+      .ProductDetailsWrapper table tr:nth-child(even) input,
+      .ProductDetailsWrapper table tr:nth-child(even) select,
+      .ProductDetailsWrapper table tr:nth-child(even) td {
+        color: #000;
+      }
+      .ProductDetailsWrapper table tr:nth-child(even) input::-moz-placeholder,
+      .ProductDetailsWrapper table tr:nth-child(even) select::-moz-placeholder,
+      .ProductDetailsWrapper table tr:nth-child(even) td::-moz-placeholder {
+        color: #000;
+      }
+      .ProductDetailsWrapper
+        table
+        tr:nth-child(even)
+        input:-ms-input-placeholder,
+      .ProductDetailsWrapper
+        table
+        tr:nth-child(even)
+        select:-ms-input-placeholder,
+      .ProductDetailsWrapper table tr:nth-child(even) td:-ms-input-placeholder {
+        color: #000;
+      }
+      .ProductDetailsWrapper table tr:nth-child(even) input::placeholder,
+      .ProductDetailsWrapper table tr:nth-child(even) select::placeholder,
+      .ProductDetailsWrapper table tr:nth-child(even) td::placeholder {
+        color: #000;
+      }
+      .ProductDetailsWrapper table tr:nth-child(even) select option {
+        background-color: rgba(58, 187, 105, 0.3411764706);
+      }
+      .ProductDetailsWrapper table tr {
+        height: 40px;
+      }
+      .ProductDetailsWrapper table tr:last-child {
+        border-bottom: 2px solid #ddcece;
+      }
+      .ProductDetailsWrapper table,
+      .ProductDetailsWrapper th {
+        border: 1px solid #ddcece;
+        border-collapse: collapse;
+        font-size: 14px;
+        text-align: center;
+      }
+      .ProductDetailsWrapper table tbody tr button {
+        cursor: pointer;
+        background-color: #7a7797;
+        padding: 1px 20px;
+      }
+      .ProductDetailsWrapper thead {
+        background-color: #7a7797;
+        color: #fff;
+      }
+      .ProductDetailsWrapper thead tr,
+      .ProductDetailsWrapper thead th {
+        border: 1px solid #000;
+      }
+      .ProductDetailsWrapper tbody tr td:first-child {
+        font-weight: 500;
+        text-transform: capitalize;
+      }
+      .ProductDetailsWrapper tbody td i {
+        cursor: pointer;
+        padding: 0px 8px;
+        font-size: 16px;
+      }
+      .ProductDetailsWrapper tbody tr input,
+      .ProductDetailsWrapper tbody tr select {
+        width: 100%;
+        height: 37px;
+        border: 0;
+        text-align: center;
+        background-color: transparent;
+        color: #7a7797;
+      }
+
+      .addVenderWrapper {
+        background-color: #fff;
+      }
+      .addVenderWrapper .addVenderTitle {
+        text-align: center;
+        padding: 10px 0px;
+      }
+      .addVenderWrapper .addVenderTitle h2 {
+        display: inline-block;
+        border-bottom: 2px solid #3abb69;
+        color: #7a7797;
+        font-weight: bold;
+        padding-bottom: 5px;
+        font-size: 20px;
+      }
+      .addVenderWrapper .addVenderForm .formGroup {
+        margin-bottom: 20px;
+      }
+      .addVenderWrapper .addVenderForm .formGroup input {
+        border: 2px solid #eee;
+        width: 100%;
+        border-radius: 3px;
+      }
+      .activeTopBarBtn {
+        background-color: #3abb69 !important;
+        color: #fff !important;
+      }
+      .ProductDetailsWrapper tbody tr input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        border: 1px solid #7a7797;
+      }
+      .ProductDetailsWrapper .unpaid {
+        display: none;
+      }
+      /*# sourceMappingURL=test.css.map */
+    </style>
+  </head>
+  <body>
+    <div class="breadcrumb">
+      <ul class="list-unstyled d-flex align-items-center">
+        <li><a href="#">Vender</a></li>
+        <li><i class="fa-solid fa-angles-right"></i></li>
+        <li><a href="#" class="ActiveBreadcrumb">Vender Details</a></li>
+      </ul>
+      <div class="butn-addvender">
+        <button class="addVender activeTopBarBtn paidBtn">Paid</button>
+        <button class="addVender unpaidBtn">Unpaid</button>
+      </div>
+    </div>
+    <main>
+      <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="filters py-3 d-flex align-items-center">
+            <label for="dateWise" class="title">View By</label>
+            <input type="text" id="dateWise" placeholder="03/12/2012" />
+          </div>
+          <div class="totalPAmount">
+            <span>Total Pending Amount <b> ₹</b></span>
+            <span class="ttpav"><b>12043</b></span>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="ProductDetailsWrapper">
+          <div class="details unpaid">
+            <div class="title">
+              <h3>Vender Details</h3>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <td>S. No.</td>
+                  <td>Purchased Item</td>
+                  <td>Date</td>
+                  <td>Quantity</td>
+                  <td>Amount</td>
+                  <td>paid</td>
+                  <td>Remaining</td>
+                  <td>Actions</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Onion</td>
+                  <td>03/01/2023</td>
+                  <td>100</td>
+                  <td>1200</td>
+                  <td>
+                    1000
+                    <!-- <div class="form-check d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        </div> -->
+                  </td>
+                  <td>200</td>
+                  <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Onion</td>
+                  <td>03/01/2023</td>
+                  <td>100</td>
+                  <td>1200</td>
+                  <td>
+                    1000
+                    <!-- <div class="form-check d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        </div> -->
+                  </td>
+                  <td>200</td>
+                  <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Onion</td>
+                  <td>03/01/2023</td>
+                  <td>100</td>
+                  <td>1200</td>
+                  <td>
+                    1000
+                    <!-- <div class="form-check d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        </div> -->
+                  </td>
+                  <td>200</td>
+                  <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Onion</td>
+                  <td>03/01/2023</td>
+                  <td>100</td>
+                  <td>1200</td>
+                  <td>
+                    1000
+                    <!-- <div class="form-check d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        </div> -->
+                  </td>
+                  <td>200</td>
+                  <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="details paid">
+            <div class="title">
+              <h3>Vender Details</h3>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <td>S. No.</td>
+                  <td>Purchased Item</td>
+                  <td>Purchase Date</td>
+                  <td>Paid Date</td>
+                  <td>Quantity</td>
+                  <td>Amount</td>
+                  <td>paid</td>
+                  <td>Payment Type</td>
+                  <td>Actions</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Onion</td>
+                  <td>03/01/2023</td>
+                  <td>03/01/2023</td>
+                  <td>100</td>
+                  <td>1200</td>
+                  <td>
+                    1000
+                    <!-- <div class="form-check d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        </div> -->
+                  </td>
+                  <td>Cash
+                  </td>
+                  <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Garlic</td>
+                  <td>03/01/2023</td>
+                  <td>03/01/2023</td>
+                  <td>100</td>
+                  <td>1200</td>
+                  <td>
+                    1000
+                    <!-- <div class="form-check d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        </div> -->
+                  </td>
+                  <td>UPI
+                  </td>
+                  <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Curd</td>
+                  <td>03/01/2023</td>
+                  <td>03/01/2023</td>
+                  <td>100</td>
+                  <td>1200</td>
+                  <td>
+                    1000
+                    <!-- <div class="form-check d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        </div> -->
+                  </td>
+                  <td>Card
+                  </td>
+                  <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Onion</td>
+                  <td>03/01/2023</td>
+                  <td>03/01/2023</td>
+                  <td>100</td>
+                  <td>1200</td>
+                  <td>
+                    1000
+                    <!-- <div class="form-check d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        </div> -->
+                  </td>
+                  <td>UPI
+                  </td>
+                  <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Onion</td>
+                  <td>03/01/2023</td>
+                  <td>03/01/2023</td>
+                  <td>100</td>
+                  <td>1200</td>
+                  <td>
+                    1000
+                    <!-- <div class="form-check d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        </div> -->
+                  </td>
+                  <td>Cash</td>
+                  <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $("head").append(
+        '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
+      );
+      $("head").append(
+        ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
+/>'
+      );
+      $("head").append(
+        '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
+      );
+    </script>
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+      $(function () {
+        $("#dateWise").datepicker();
+        let formattedDate = new Date();
+        let d = formattedDate.getDate();
+        let m = formattedDate.getMonth();
+        m += 1; // JavaScript months are 0-11
+        if (d < 10) {
+          d = "0" + d;
+        }
+        if (m < 10) {
+          m = "0" + m;
+        }
+        let y = formattedDate.getFullYear();
+        $("#dateWise").attr("placeholder", d + "/" + m + "/" + y);
+
+        $(".breadcrumb .addVender").click(function () {
+          $(".breadcrumb .addVender").removeClass("activeTopBarBtn");
+          $(this).addClass("activeTopBarBtn");
+        });
+
+        $('.paidBtn').click(function(){
+            $('.paid').show();
+            $('.unpaid').hide();
+        })
+        $('.unpaidBtn').click(function(){
+            $('.unpaid').show();
+            $('.paid').hide();
+        })
+
+      });
+    </script>
+  </body>
+</html>
