@@ -83,6 +83,13 @@
         overflow: hidden;
         min-height: 100vh;
       }
+      .ProductDetailsWrapper .eventDateTime {
+        color: #3abb69;
+      }
+      .ProductDetailsWrapper .eventDateTime span{
+        font-weight: bold;
+        color: #7a7797;
+      }
       .ProductDetailsWrapper .title {
         display: inline-block;
         border-bottom: 2px solid #3abb69;
@@ -100,6 +107,7 @@
         border-radius: 8px;
         border: 2px solid rgba(122, 119, 151, 0.5);
         transition: all 0.3s ease;
+        cursor: pointer;
       }
       .bookingCard table {
         width: 100%;
@@ -125,19 +133,20 @@
         padding-bottom: 5px;
         font-size: 16px;
       }
-      .bookingCard .payNowBtn {
+      .bookingCard button {
         text-transform: capitalize;
         border-radius: 3px;
         border: 0px;
         background-color: #7a7797;
         color: #fff;
         padding: 2px 30px;
-        font-size: 14px;
+        font-size: 13px;
         font-weight: bold;
       }
       .bookingCard:hover {
         transition: all 0.3s ease;
         background-color: #7a7797;
+        margin-top: -10px;
       }
       .bookingCard:hover * {
         color: #fff;
@@ -160,9 +169,9 @@
       <div class="allBtnsWrapper pt-3 pb-3">
         <div class="container-fluid">
           <div class="allBtns pt-3 pb-3">
-            <button class="activeBtn">This Month Bookings</button>
-            <button>All Bookings</button>
-            <button>Previous Parties</button>
+            <button class="activeBtn thisMonthEventBtn">This Month Events</button>
+            <button class="allEventBtn">All Events</button>
+            <button class="prevEventBtn">Previous Events</button>
           </div>
         </div>
       </div>
@@ -170,7 +179,13 @@
         <div class="ProductDetailsWrapper">
           <div class="row">
             <div class="col-12 text-center">
-              <h2 class="title">This Month Bookings</h2>
+                <h2 class="title">This Month Bookings</h2>
+            </div>
+            <div class="col-12">
+                <div class="d-flex justify-content-between eventDateTime">                    
+                    <div class="monthName">Month : <span>January</span></div>
+                    <div class="totalBookings">Total Events : <span>9</span></div>
+                </div>
             </div>
             <div class="col-md-3 mt-3">
               <div class="bookingCard">
@@ -214,7 +229,56 @@
                     </tr>
                   </tbody>
                 </table>
-                <div class="text-center mt-1">
+                <div class="text-center mt-2">
+                    <button class="btn btn-primary btn-sm viewDetails">
+                      View Details
+                    </button>                
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mt-3">
+              <div class="bookingCard">
+                <h2>Booking Details</h2>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>Date</td>
+                      <td>:</td>
+                      <td>01/02/2023</td>
+                    </tr>
+                    <tr>
+                      <td>Time</td>
+                      <td>:</td>
+                      <td>02:00:00</td>
+                    </tr>
+                    <tr>
+                      <td>Host Name</td>
+                      <td>:</td>
+                      <td>Shubham Negi</td>
+                    </tr>
+                    <tr>
+                      <td>Mobile</td>
+                      <td>:</td>
+                      <td>9897909090</td>
+                    </tr>
+                    <tr>
+                      <td>Total Guests</td>
+                      <td>:</td>
+                      <td>13</td>
+                    </tr>
+                    <tr>
+                      <td>Advance Payment</td>
+                      <td>:</td>
+                      <td>1000</td>
+                    </tr>
+                    <tr>
+                      <td>Pending Payment</td>
+                      <td>:</td>
+                      <td>4000</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="text-center mt-2">
                   <button class="btn btn-primary btn-sm payNowBtn">
                     Pay Now
                   </button>
@@ -263,7 +327,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <div class="text-center mt-1">
+                <div class="text-center mt-2">
                   <button class="btn btn-primary btn-sm payNowBtn">
                     Pay Now
                   </button>
@@ -312,7 +376,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <div class="text-center mt-1">
+                <div class="text-center mt-2">
                   <button class="btn btn-primary btn-sm payNowBtn">
                     Pay Now
                   </button>
@@ -361,7 +425,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <div class="text-center mt-1">
+                <div class="text-center mt-2">
                   <button class="btn btn-primary btn-sm payNowBtn">
                     Pay Now
                   </button>
@@ -410,7 +474,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <div class="text-center mt-1">
+                <div class="text-center mt-2">
                   <button class="btn btn-primary btn-sm payNowBtn">
                     Pay Now
                   </button>
@@ -459,7 +523,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <div class="text-center mt-1">
+                <div class="text-center mt-2">
                   <button class="btn btn-primary btn-sm payNowBtn">
                     Pay Now
                   </button>
@@ -508,7 +572,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <div class="text-center mt-1">
+                <div class="text-center mt-2">
                   <button class="btn btn-primary btn-sm payNowBtn">
                     Pay Now
                   </button>
@@ -557,56 +621,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <div class="text-center mt-1">
-                  <button class="btn btn-primary btn-sm payNowBtn">
-                    Pay Now
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 mt-3">
-              <div class="bookingCard">
-                <h2>Booking Details</h2>
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>Date</td>
-                      <td>:</td>
-                      <td>01/02/2023</td>
-                    </tr>
-                    <tr>
-                      <td>Time</td>
-                      <td>:</td>
-                      <td>02:00:00</td>
-                    </tr>
-                    <tr>
-                      <td>Host Name</td>
-                      <td>:</td>
-                      <td>Shubham Negi</td>
-                    </tr>
-                    <tr>
-                      <td>Mobile</td>
-                      <td>:</td>
-                      <td>9897909090</td>
-                    </tr>
-                    <tr>
-                      <td>Total Guests</td>
-                      <td>:</td>
-                      <td>13</td>
-                    </tr>
-                    <tr>
-                      <td>Advance Payment</td>
-                      <td>:</td>
-                      <td>1000</td>
-                    </tr>
-                    <tr>
-                      <td>Pending Payment</td>
-                      <td>:</td>
-                      <td>4000</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div class="text-center mt-1">
+                <div class="text-center mt-2">
                   <button class="btn btn-primary btn-sm payNowBtn">
                     Pay Now
                   </button>
@@ -632,10 +647,19 @@
       );
     </script>
     <script>
+        $('.allBtnsWrapper .allBtns .prevEventBtn').click(function(){ 
+            $('.eventDateTime .monthName').text('Previous Events');
+        } )
+        $('.allBtnsWrapper .allBtns .allEventBtn').click(function(){
+            $('.eventDateTime .monthName').text('All Events');            
+        })   
+        $('.allBtnsWrapper .allBtns .thisMonthEventBtn').click(function(){
+            $('.eventDateTime .monthName').html(' <div class="monthName">Month : <span>January</span></div>');           
+        })   
         $('.allBtnsWrapper .allBtns button').click(function(){    
             $('.allBtnsWrapper .allBtns button').removeClass('activeBtn')
             $(this).addClass('activeBtn');
-            $('.ProductDetailsWrapper .title').text( $(this).text())
+            $('.ProductDetailsWrapper .title').text( $(this).text())           
         })
     </script>
   </body>
