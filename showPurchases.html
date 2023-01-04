@@ -5,14 +5,10 @@
     position: relative;
   }
   .breadcrumb .addVender {
-    position: absolute;
-    right: 2%;
-    top: 50%;
-    transform: translate(0%, -50%);
     text-transform: capitalize;
     border-radius: 3px;
     border: 0px;
-    background-color: #3abb69;
+    background-color: #7a7797;
     color: #fff;
     padding: 2px 30px;
     font-weight: bold;
@@ -51,7 +47,7 @@
   .allBtnsWrapper .allBtns button {
     /*  min-width: 150px;*/
     width: 198px;
-    height: 35px;
+    /* height: 35px; */
     margin: 10px;
     text-transform: capitalize;
     border-radius: 4px;
@@ -126,7 +122,7 @@
     border-bottom: 2px solid #ddcece;
   }
   .ProductDetailsWrapper table,
-  .ProductDetailsWrapper th{
+  .ProductDetailsWrapper th {
     border: 1px solid #ddcece;
     border-collapse: collapse;
     font-size: 14px;
@@ -176,7 +172,20 @@
     border: 2px solid #eee;
     width: 100%;
     border-radius: 3px;
-  } /*# sourceMappingURL=test.css.map */
+  }
+  .butn-addvender {
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    transform: translate(0%, -50%);
+    text-transform: capitalize;
+  } 
+  .activeTopBarBtn {
+        background-color: #3abb69 !important;
+        color: #fff !important;
+      }
+  
+  /*# sourceMappingURL=test.css.map */
 </style>
 <!DOCTYPE html>
 <html lang="en">
@@ -193,17 +202,40 @@
       <li><a href="" class="">Dashboard</a></li>
       <li><i class="fa-solid fa-angles-right"></i></li>
       <li><a href="" class="ActiveBreadcrumb">Show Purchases</a></li>
-      <!-- <li><i class="fa-solid fa-angles-right"></i></li>
-        <li><a href="" class="ActiveBreadcrumb">Add Purchases</a></li> -->
     </ul>
-    <!-- <button class="addVender">Add Vender</button> -->
+    <div class="butn-addvender">
+      <button class="addVender activeTopBarBtn">Row Material</button>
+      <button class="addVender">Fix Stock</button>
+      <!-- <button class="addVender">Monthly</button> -->
+    </div>
   </div>
   <main>
-    <div class="allBtnsWrapper pt-3 pb-3">
+    <!-- <div class="allBtnsWrapper pt-3 pb-3">
       <div class="container-fluid">
         <div class="allBtns pt-3 pb-3">
           <button class="activeBtn">Row Material</button>
           <button>Fix Stock</button>
+        </div>
+      </div>
+    </div> -->
+    <div class="allBtnsWrapper pt-3 pb-3">
+      <div class="container-fluid">
+        <div class="allBtns pt-3 pb-3">
+          <button class="activeBtn">Dairy Products</button>
+          <button>Drinkable</button>
+          <button>Fast Food</button>
+          <button>My Fav</button>
+          <button>Mostly Used</button>
+          <button>Top</button>
+          <button>Commonly Used</button>
+          <button>Less Used</button>
+          <button>Chinese</button>
+          <button>Italian</button>
+          <button>Thai</button>
+          <button>Continental</button>
+          <button>Indian</button>
+          <button>South Indian</button>
+          <button>North Indian</button>
         </div>
       </div>
     </div>
@@ -280,10 +312,13 @@
       );
     </script>
     <script>
+      $(".addVender").click(function () {
+        $(".addVender").removeClass('activeTopBarBtn')
+        $(this).addClass('activeTopBarBtn')
+      })
       $(".allBtns button").click(function () {
         $(".allBtns button").removeClass("activeBtn");
         $(this).addClass("activeBtn");
-
         $(".ProductDetailsWrapper .details .title h3").text($(this).text());
       });
     </script>

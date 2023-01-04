@@ -86,7 +86,7 @@
       .ProductDetailsWrapper .eventDateTime {
         color: #3abb69;
       }
-      .ProductDetailsWrapper .eventDateTime span{
+      .ProductDetailsWrapper .eventDateTime span {
         font-weight: bold;
         color: #7a7797;
       }
@@ -154,6 +154,9 @@
       .bookingCard:hover button {
         background-color: #3abb69;
       }
+      .addNewEvents {
+        background-color: #fff;
+      }
     </style>
   </head>
   <body>
@@ -166,10 +169,23 @@
       <button class="addVender">Add Events</button>
     </div>
     <main>
+      <div class="container-fluid">
+        <div class="addNewEvents">
+          <form action="">
+            <div class="form form1">
+              <div class="row">
+                <div class="col-md-12"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
       <div class="allBtnsWrapper pt-3 pb-3">
         <div class="container-fluid">
           <div class="allBtns pt-3 pb-3">
-            <button class="activeBtn thisMonthEventBtn">This Month Events</button>
+            <button class="activeBtn thisMonthEventBtn">
+              This Month Events
+            </button>
             <button class="allEventBtn">All Events</button>
             <button class="prevEventBtn">Previous Events</button>
           </div>
@@ -179,13 +195,13 @@
         <div class="ProductDetailsWrapper">
           <div class="row">
             <div class="col-12 text-center">
-                <h2 class="title">This Month Bookings</h2>
+              <h2 class="title">This Month Bookings</h2>
             </div>
             <div class="col-12">
-                <div class="d-flex justify-content-between eventDateTime">                    
-                    <div class="monthName">Month : <span>January</span></div>
-                    <div class="totalBookings">Total Events : <span>9</span></div>
-                </div>
+              <div class="d-flex justify-content-between eventDateTime">
+                <div class="monthName">Month : <span>January</span></div>
+                <div class="totalBookings">Total Events : <span>9</span></div>
+              </div>
             </div>
             <div class="col-md-3 mt-3">
               <div class="bookingCard">
@@ -230,9 +246,9 @@
                   </tbody>
                 </table>
                 <div class="text-center mt-2">
-                    <button class="btn btn-primary btn-sm viewDetails">
-                      View Details
-                    </button>                
+                  <button class="btn btn-primary btn-sm viewDetails">
+                    View Details
+                  </button>
                 </div>
               </div>
             </div>
@@ -647,20 +663,22 @@
       );
     </script>
     <script>
-        $('.allBtnsWrapper .allBtns .prevEventBtn').click(function(){ 
-            $('.eventDateTime .monthName').text('Previous Events');
-        } )
-        $('.allBtnsWrapper .allBtns .allEventBtn').click(function(){
-            $('.eventDateTime .monthName').text('All Events');            
-        })   
-        $('.allBtnsWrapper .allBtns .thisMonthEventBtn').click(function(){
-            $('.eventDateTime .monthName').html(' <div class="monthName">Month : <span>January</span></div>');           
-        })   
-        $('.allBtnsWrapper .allBtns button').click(function(){    
-            $('.allBtnsWrapper .allBtns button').removeClass('activeBtn')
-            $(this).addClass('activeBtn');
-            $('.ProductDetailsWrapper .title').text( $(this).text())           
-        })
+      $(".allBtnsWrapper .allBtns .prevEventBtn").click(function () {
+        $(".eventDateTime .monthName").text("Previous Events");
+      });
+      $(".allBtnsWrapper .allBtns .allEventBtn").click(function () {
+        $(".eventDateTime .monthName").text("All Events");
+      });
+      $(".allBtnsWrapper .allBtns .thisMonthEventBtn").click(function () {
+        $(".eventDateTime .monthName").html(
+          ' <div class="monthName">Month : <span>January</span></div>'
+        );
+      });
+      $(".allBtnsWrapper .allBtns button").click(function () {
+        $(".allBtnsWrapper .allBtns button").removeClass("activeBtn");
+        $(this).addClass("activeBtn");
+        $(".ProductDetailsWrapper .title").text($(this).text());
+      });
     </script>
   </body>
 </html>
