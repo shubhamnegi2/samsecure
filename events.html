@@ -631,5 +631,12 @@
         '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
       );
     </script>
+    <script>
+        $('.allBtnsWrapper .allBtns button').click(function(){    
+            $('.allBtnsWrapper .allBtns button').removeClass('activeBtn')
+            $(this).addClass('activeBtn');
+            $('.ProductDetailsWrapper .title').text( $(this).text())
+        })
+    </script>
   </body>
 </html>
