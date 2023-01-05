@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+
+        .employee-button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+
+        }
+
+        .employee-button button {
+            border: none;
+            color: #3abb69;
+            padding: 5px 15px;
+            font-size: 13px;
+            border-radius: 5px;
+        }
+
+        .Cate {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+
+        }
+
+        .Cate button {
+            border: none;
+            color: #3abb69;
+            padding: 5px 15px;
+            font-size: 13px;
+            border-radius: 5px;
+        }
+
+        .add-embtn {
+            border: none;
+            color: #3abb69;
+            padding: 5px 15px;
+            font-size: 13px;
+            border-radius: 5px;
+        }
+
+     
+        .breadcrumb {
+        margin-bottom: 0rem !important;
+        position: relative;
+      }
+      .breadcrumb .addVender {
+        position: absolute;
+        right: 2%;
+        top: 50%;
+        transform: translate(0%, -50%);
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0px;
+        background-color: #3abb69;
+        color: #fff;
+        /* padding: 2px 30px; */
+        font-weight: bold;
+        padding: 5px 15px;
+            font-size: 13px;
+      }
+      .addvender1{
+        position: absolute;
+        right: 14%;
+        top: 50%;
+        transform: translate(0%, -50%);
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0px;
+        background-color: #3abb69;
+        color: #fff;
+        padding: 2px 30px;
+        font-weight: bold;
+         padding: 5px 15px;
+            font-size: 13px;
+
+      }
+      .breadcrumb ul {
+        margin-bottom: 0rem;
+      }
+      .breadcrumb ul li {
+        color: #3abb69;
+        font-weight: bold;
+        margin: 10px 1px;
+      }
+      .breadcrumb ul li a {
+        color: inherit;
+        padding: 10px;
+        text-decoration: none;
+      }
+      .breadcrumb ul li i {
+        font-size: 12px;
+      }
+      .breadcrumb ul li .ActiveBreadcrumb {
+        color: #7a7797;
+      }
+
+        main {
+            background-color: #eee;
+        }
+        .employee-button{
+            background-color: #fff;
+            box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+            text-align: center;
+            border-radius: 5px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .allBtnsWrapper .allBtns {
+            background-color: #fff;
+            box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+            text-align: center;
+            border-radius: 5px;
+            display: flex;
+            gap: 20px;
+        }
+        .allBtnsWrapper .allBtns1 {
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        text-align: center;
+        border-radius: 5px;
+      }
+
+        .allBtnsWrapper .allBtns button {
+            /* min-width: 150px; */
+            margin: 10px;
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0;
+            background-color: #7a7797;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 3px 0px;
+            font-family: "Montserrat", sans-serif;
+        }
+        .allBtns1 button{
+            margin: 10px;
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0;
+            background-color: #3abb69;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 3px 0px;
+            font-family: "Montserrat", sans-serif;
+            padding: 5px 15px;
+        }
+
+        .allBtnsWrapper .allBtns .activeBtn {
+            background-color: #3abb69;
+        }
+
+        .ProductDetailsWrapper {
+            background-color: #fff;
+            box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+            border-radius: 5px;
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        .ProductDetailsWrapper .details {
+            transition: all 0.5s ease;
+            position: relative;
+            top: 0px;
+        }
+
+        .ProductDetailsWrapper .details .title {
+            padding: 10px 0px;
+            text-align: center;
+        }
+
+        .ProductDetailsWrapper .details .title h3 {
+            display: inline-block;
+            border-bottom: 2px solid #3abb69;
+            color: #7a7797;
+            font-weight: bold;
+            padding-bottom: 5px;
+            font-size: 20px;
+        }
+
+        .ProductDetailsWrapper table {
+            max-width: 100%;
+            width: 100%;
+            border-radius: 4px;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .ProductDetailsWrapper table tr:nth-child(even) {
+            background-color: rgba(58, 187, 105, 0.3411764706);
+        }
+
+     
+
+        .ProductDetailsWrapper table tr:nth-child(even) select option {
+            background-color: rgba(58, 187, 105, 0.3411764706);
+        }
+
+        .ProductDetailsWrapper table tr {
+            height: 40px;
+        }
+
+        .ProductDetailsWrapper table tr:last-child {
+            border-bottom: 2px solid #ddcece;
+        }
+
+        .ProductDetailsWrapper table,
+        .ProductDetailsWrapper th,
+        .ProductDetailsWrapper td {
+            border: 1px solid #ddcece;
+            border-collapse: collapse;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .ProductDetailsWrapper thead {
+            background-color: #7a7797;
+            color: #fff;
+        }
+
+        .ProductDetailsWrapper thead tr,
+        .ProductDetailsWrapper thead th {
+            border: 1px solid #000;
+        }
+
+        .ProductDetailsWrapper tbody tr td:first-child {
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+
+        .ProductDetailsWrapper tbody tr input,
+        .ProductDetailsWrapper tbody tr select {
+            width: 100%;
+            height: 37px;
+            border: 0;
+            text-align: center;
+            background-color: transparent;
+            color: #7a7797;
+        }
+
+        .ProductDetailsWrapper .venderDetailsTable {
+            position: relative;
+            left: 200%;
+            top: 0px;
+            display: none;
+        }
+
+
+
+        .text-right {
+            text-align: right;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .table1Btns button,
+        .table2Btns button {
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0px;
+            background-color: #3abb69;
+            color: #fff;
+            padding: 3px 50px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+      
+
+        .checf {
+            display: flex;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            background-color: #7a7797;
+            border-radius: 5px;
+
+        }
+
+        .checf button {
+            background-color: #7a7797;
+        }
+
+        .chefbuuu {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+          
+            align-items: center;
+            padding: 0px 18px;
+        }
+
+        .number {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .activebtnee {
+            background-color: #3abb69;
+        }
+
+    
+
+        .divchangbackground {
+            background-color: #3abb69;
+        }
+
+   
+    </style>
+</head>
+
+<body>
+
+
+    <div class="breadcrumb" style="padding: 8px;
+    font-size: 13px;">
+       
+
+            <ul class="list-unstyled d-flex align-items-center">
+                <li><a href="">Dashboard</a></li>
+                <li><i class="fa-solid fa-angles-right"></i></li>
+                <li><a href="" class="ActiveBreadcrumb">Contact List</a></li>
+              </ul>
+           
+            <!-- <h4>Total Employee-20</h4> -->
+            <!-- <button class="addVender">Create Category</button>
+            <button class="addvender1 add-embtn">Add Employee </button> -->
+      
+   
+    
+    </div> 
+
+
+ 
+
+
+    <main>
+        <div class="allBtnsWrapper pt-3 pb-3">
+            <div class="container-fluid">
+                <div class="allBtns pt-3 pb-3" style="display: flex;
+                align-items: center; justify-content: center;">
+                    <div class="checf divchangbackground">
+                        <div class="chefbuuu">
+                          <div style="    border-bottom: 1px solid #fff;
+                          width: 135%;"> <button class="activeBtn">Contact list</button></div> 
+                            <div> <p style="color: #fff; font-size: 13px;">2900</p></div>
+                           
+                        </div>
+                       
+                    </div>
+                    <div class="checf ">
+                        <div class="chefbuuu" >
+                            <div style="    border-bottom: 1px solid #fff;
+                            width: 135%;"><button>Guest list</button></div>
+                            
+                            <div> <p style="color: #fff; font-size: 13px;">4600</p></div>
+                      
+                        </div>
+                    </div>
+                    <div class="checf">
+                        <div class="chefbuuu">
+                            <div style="    border-bottom: 1px solid #fff;
+                            width: 135%;"><button>Membership list</button></div>
+                            <div> <p style="color: #fff; font-size: 13px;">5500</p></div>
+                       
+                    </div>
+                   
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="ProductDetailsWrapper">
+                <div class="details">
+                    <div class="title">
+                        <h3 style="padding-bottom: 10px;">Contact list</h3>
+
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>S.No</th>
+                                <th>Name</th>
+                                <th>Phone No</th>
+                                <th>Address</th>
+                                <th>Email</th>
+                                <th>Gender</th>
+                                <th>City</th>
+                                <th>State</th>
+                                <th>Country</th>
+                              
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td class="abcbtn">Abc </td>
+                                <td>999999998</td>
+                               <td>Nanoli</td>
+                                <td>abc@842gamil.com</td>
+                                <td>Male</td>
+                                <td>Saharanpur</td>
+                                <td>Up</td>
+                                <td>India</td>
+
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="abcbtn">Abc </td>
+                                <td>999999998</td>
+                               <td>Nanoli</td>
+                                <td>abc@842gamil.com</td>
+                                <td>Male</td>
+                                <td>Saharanpur</td>
+                                <td>Up</td>
+                                <td>India</td>
+
+                            </tr>
+
+                             <tr>
+                                <td>3</td>
+                                <td class="abcbtn">Abc </td>
+                                <td>999999998</td>
+                               <td>Nanoli</td>
+                                <td>abc@842gamil.com</td>
+                                <td>Male</td>
+                                <td>Saharanpur</td>
+                                <td>Up</td>
+                                <td>India</td>
+
+                            </tr>
+
+
+                           
+                        </tbody>
+                    </table>
+               
+                </div>
+           
+  
+
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script>
+            $("head").append(
+                '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
+            );
+            $("head").append(
+                ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
+/>'
+            );
+            $("head").append(
+                '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
+            );
+        </script>
+        <script>
+            function togglePopup() {
+                $(".content").toggle();
+            }
+            $(".checf").click(function () {
+                $(".checf ").removeClass("divchangbackground");
+                $(this).addClass("divchangbackground")
+            })
+
+
+            $(".allBtns button").click(function () {
+
+                $(".allBtns button").removeClass("activeBtn");
+                $(this).addClass("activeBtn");
+                console.log(this)
+
+                $(".ProductDetailsWrapper .details .title h3").text($(this).text());
+            });
+
+        //     $(".checf .allBtns button").click(function () {
+        //   $(".checf .allBtns button").removeClass(
+        //     "divchangbackground" ,"activeBtn"
+        //   );
+        //   $(this).addClass("activeBtn");
+        // });
+      
+
+
+          
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+    </body>
+
+</html>
+</body>
+
+</html>
