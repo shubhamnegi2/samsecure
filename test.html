@@ -1,35 +1,88 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jQuery UI Datepicker - Default functionality</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-</head>
-<body>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-    <label class="form-check-label" for="inlineRadio1">1</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-    <label class="form-check-label" for="inlineRadio2">2</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
-    <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
-  </div>
-    <p>Date: <input type="text" id="datepicker"></p>
-    
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jQuery UI Datepicker - Default functionality</title>
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+  </head>
+  <body>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="inlineRadioOptions"
+        id="inlineRadio1"
+        value="option1"
+      />
+      <label class="form-check-label" for="inlineRadio1">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="inlineRadioOptions"
+        id="inlineRadio2"
+        value="option2"
+      />
+      <label class="form-check-label" for="inlineRadio2">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="inlineRadioOptions"
+        id="inlineRadio3"
+        value="option3"
+        disabled
+      />
+      <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+    </div>
+    <p>Date: <input type="text" id="datepicker" /></p>
+
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-  <script>
-      $( function() {
-          $( "#datepicker" ).datepicker();
-        } );
-        </script>
- 
-</body>
+    <script>
+      // timeConversion('12:40:22AM');
+      // function timeConversion(s) {
+      //   // '07:05:45PM'Rank: 1482523 1382465
+      //   let time = s;
+      //   let splittedTime = time.split(":");
+      //   let h = splittedTime[0];
+      //   let min = splittedTime[1];
+      //   let sec = splittedTime[2];
+      //   sec = sec.split("");
+      //   let dayNight = sec[sec.length - 2] + sec[sec.length - 1];
+      //   sec = sec[0] + sec[1];
+      //   sec = sec.toString();
+      //   if (dayNight === "PM" && +h < 12) {
+      //     h = +h + 12;
+      //   } else if (dayNight === "AM" && h == "12") {
+      //     h = "00";
+      //   }
+      //   let newTime = `${h}:${min}:${sec}`;
+      //   return newTime;
+      //   // console.log(newTime)
+      // }
+      gradingStudents([31,32,33,34,35,36,37,38,39,40, 87,45,46,47,48,49,50, 51,52,53,54,55,123,435,546,76,87,8,978,89809,]);
+      function gradingStudents(grades) {
+        let allGrades = grades;
+        // console.log(allGrades)
+        for(let i=0;i<allGrades.length;i++){
+          let multipleOfFive = allGrades[i]%5
+          if(multipleOfFive >= 3 && +allGrades[i]>0 && +allGrades[i]<=100){
+            if(+allGrades[i]>=38)
+            allGrades[i] = +allGrades[i]+(5-multipleOfFive)
+          }
+        }
+        // console.log(allGrades)
+        return allGrades;
+      }
+    </script>
+  </body>
 </html>
 
 <!-- 
@@ -44,5 +97,17 @@ sales page - https://shubhamnegi2.github.io/samsecure/sales.html
 events  - https://shubhamnegi2.github.io/samsecure/events.html
 
 
+https://magmapos.com/
+https://ezobooks.in/
+https://www.petpooja.com/
+https://foaps.co/
+http://www.tejalskitchen.com/
+https://www.dotpe.in/
 
+https://www.restodx.com/
+https://menew.in/
+https://www.fooddive.com/
+https://www.supplynote.in/
+https://www.urbanpiper.com/
+https://www.imenucard.in/
  -->
