@@ -46,6 +46,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
+      /* ========================================================*/
       // timeConversion('12:40:22AM');
       // function timeConversion(s) {
       //   // '07:05:45PM'Rank: 1482523 1382465
@@ -67,20 +68,75 @@
       //   return newTime;
       //   // console.log(newTime)
       // }
-      gradingStudents([31,32,33,34,35,36,37,38,39,40, 87,45,46,47,48,49,50, 51,52,53,54,55,123,435,546,76,87,8,978,89809,]);
-      function gradingStudents(grades) {
-        let allGrades = grades;
-        // console.log(allGrades)
-        for(let i=0;i<allGrades.length;i++){
-          let multipleOfFive = allGrades[i]%5
-          if(multipleOfFive >= 3 && +allGrades[i]>0 && +allGrades[i]<=100){
-            if(+allGrades[i]>=38)
-            allGrades[i] = +allGrades[i]+(5-multipleOfFive)
+      /* ========================================================*/
+      // gradingStudents([31,32,33,34,35,36,37,38,39,40, 87,45,46,47,48,49,50, 51,52,53,54,55,123,435,546,76,87,8,978,89809,]);
+      // function gradingStudents(grades) {
+      //   let allGrades = grades;
+      //   // console.log(allGrades)
+      //   for(let i=0;i<allGrades.length;i++){
+      //     let multipleOfFive = allGrades[i]%5
+      //     if(multipleOfFive >= 3 && +allGrades[i]>0 && +allGrades[i]<=100){
+      //       if(+allGrades[i]>=38)
+      //       allGrades[i] = +allGrades[i]+(5-multipleOfFive)
+      //     }
+      //   }
+      //   // console.log(allGrades)
+      //   return allGrades;
+      // }
+      /* ========================================================*/
+      // let square = [[5, 3, 4],[1, 5, 8],[6, 4, 2]];
+      let square = [
+        [5,3,4],
+        [1,5,8],
+        [6,4,2]];
+      formingMagicSquare(square);
+      function formingMagicSquare(s) {
+        // whole function will run is square row and colum will be same
+        let simpleSquare = s;
+        let suOfAllElement = [];
+        result = 0;
+        let a = 0;
+        let b = 0;
+        // finding the max value
+        let leftRightElmNo = simpleSquare.length/2;
+        
+        let k=0;
+        for (let i = 0; i < simpleSquare.length; i++) {
+          let sum = 0;
+          a += simpleSquare[i][k];
+          b += simpleSquare[i][simpleSquare.length-(1+k)];        
+          k++;
+          for (let j = 0; j < simpleSquare[i].length; j++) {
+            sum+=simpleSquare[i][j];
           }
+          suOfAllElement.push(sum);
         }
-        // console.log(allGrades)
-        return allGrades;
+                suOfAllElement.push(a);
+        suOfAllElement.push(b);
+        console.log(suOfAllElement)
+      
+        suOfAllElement = suOfAllElement.sort()
+        let maxValue = suOfAllElement[suOfAllElement.length-1];        
+        // checking the element
+        let i=0;
+        let j=0;
+        let firstValue = simpleSquare[i][j];
+        if((simpleSquare[i][j+1]+simpleSquare[i][j+2] )== (simpleSquare[i+1][j]+simpleSquare[i+2][j] )){
+          let increase = (maxValue - ((simpleSquare[i][j+1]+simpleSquare[i][j+2]) + firstValue))
+          simpleSquare[i][j] +=increase;
+
+          result+=(increase)
+        }
+        
+
       }
+      /* ========================================================*/
+      /* ========================================================*/
+      /* ========================================================*/
+      /* ========================================================*/
+      /* ========================================================*/
+      /* ========================================================*/
+      /* ========================================================*/
     </script>
   </body>
 </html>

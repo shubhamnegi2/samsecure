@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
+* {
+  font-family: "Lora", serif;
+  font-size: 16px;
+}
+
+.dummySec img {
+  width: 100%;
+}
+
+.FeaturesWraper {
+  padding: 40px 0px;
+}
+.FeaturesWraper .categoriesLists ul {
+  padding-left: 0px;
+  margin-bottom: 0px;
+}
+.FeaturesWraper .categoriesLists ul li {
+  font-size: 14px;
+  border-radius: 20px;
+  font-weight: 500;
+  margin: 5px 0px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.FeaturesWraper .categoriesLists ul .activeFeatureBtn {
+  background-color: #38ba67;
+  color: #fff;
+}
+.FeaturesWraper .contentSecWrapper {
+  margin-top: 50px;
+}
+.FeaturesWraper .contentSecWrapper .commonSecStyle .title {
+  display: inline-block;
+  font-size: 28px;
+  font-weight: bold;
+  border-bottom: 2px solid #38ba67;
+  text-transform: capitalize;
+}
+.FeaturesWraper .contentSecWrapper .commonSecStyle .topBarContent {
+  font-size: 16px;
+  font-weight: bold;
+}
+.FeaturesWraper .contentSecWrapper .commonSecStyle .detailsSecWrapper .ineerLeft h2 {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #38ba67;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.FeaturesWraper .contentSecWrapper .commonSecStyle .detailsSecWrapper .ineerLeft img {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.FeaturesWraper .contentSecWrapper .commonSecStyle .detailsSecWrapper .ineerLeft .bottomLeft {
+  margin-top: 5px;
+}
+.FeaturesWraper .contentSecWrapper .commonSecStyle .detailsSecWrapper .ineerLeft .bottomLeft .content {
+  max-width: 50%;
+  width: 100%;
+  padding-right: 10px 10px 0px 0px;
+}
+.FeaturesWraper .contentSecWrapper .commonSecStyle .detailsSecWrapper .ineerLeft .bottomLeft img {
+  width: 50%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.FeaturesWraper .contentSecWrapper .commonSecStyle .detailsSecWrapper .detailsSec {
+  border: 1px solid #000;
+}
+.FeaturesWraper .contentSecWrapper .commonSecStyle .detailsSecWrapper .innerRight .imgCard {
+  text-align: center;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.FeaturesWraper .contentSecWrapper .commonSecStyle .detailsSecWrapper .innerRight .imgCard img {
+  width: 100%;
+  height: 150px;
+}
+.FeaturesWraper .contentSecWrapper .commonSecStyle .detailsSecWrapper .innerRight .imgCard h4 {
+  background-color: #38ba67;
+  color: #fff;
+  text-transform: capitalize;
+  margin-bottom: 0px;
+  padding: 3px 0px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.FeaturesWraper .contentSecWrapper .commonSecStyle .detailsSecWrapper .innerRight ul {
+  list-style: none;
+}
+.FeaturesWraper .contentSecWrapper .commonSecStyle .detailsSecWrapper .innerRight ul li {
+  position: relative;
+  font-weight: 500;
+  padding: 8px 0px 8px 15px;
+  border-bottom: 1px solid #eee;
+}
+.FeaturesWraper .contentSecWrapper .commonSecStyle .detailsSecWrapper .innerRight ul li i {
+  color: #38ba67;
+  position: absolute;
+  left: -10px;
+  top: 16px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.FeaturesWraper .contentSecWrapper .commonSecStyle .commonFeatureBox {
+  display: none;
+}
+.FeaturesWraper .contentSecWrapper .commonSecStyle .expenses {
+  display: block;
+}
+
+.gap {
+  width: 4% !important;
+}
+
+.outletType {
+  background-color: #f4f9ff;
+  padding: 40px 0px;
+}
+.outletType .title {
+  display: inline-block;
+  text-transform: capitalize;
+  font-size: 28px;
+  font-weight: bold;
+  border-bottom: 2px solid #38ba67;
+}
+.outletType .topBarContent {
+  font-size: 16px;
+  font-weight: bold;
+}
+.outletType .outletTypeCard {
+  transition: all 0.3s ease;
+}
+.outletType .outletTypeCard img {
+  width: 100%;
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.outletType .outletTypeCard h4 {
+  background-color: #38ba67;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 18px;
+  padding: 4px 0px;
+  font-weight: 500;
+  margin-bottom: 0px;
+}
+
+.MobileApplication {
+  padding: 40px 0px;
+}
+.MobileApplication .imagesWrapper .imgCard {
+  border-radius: 4px;
+  overflow: hidden;
+  text-align: center;
+}
+.MobileApplication .imagesWrapper .imgCard img {
+  width: 100%;
+  height: 150px;
+}
+.MobileApplication .imagesWrapper .imgCard h4 {
+  background-color: #38ba67;
+  color: #fff;
+  margin-bottom: 0px;
+  padding: 3px 0px;
+  font-size: 18px;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.MobileApplication .content h2 {
+  display: inline-block;
+  font-size: 28px;
+  font-weight: bold;
+  border-bottom: 2px solid #38ba67;
+}
+.MobileApplication .content p {
+  font-size: 16px;
+  font-weight: 500;
+}
+.MobileApplication .content ul {
+  list-style: none;
+}
+.MobileApplication .content ul li {
+  position: relative;
+  font-weight: 500;
+  padding: 8px 0px 8px 15px;
+}
+.MobileApplication .content ul li i {
+  color: #38ba67;
+  position: absolute;
+  left: -10px;
+  top: 16px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.MobileApplication .content button {
+  padding: 5px 35px;
+  background: linear-gradient(to right, #3abb69 0%, #009536 50%, #3abb69 100%);
+  border: 0;
+}/*# sourceMappingURL=newTemplate.css.map */
