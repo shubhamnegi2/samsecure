@@ -333,16 +333,16 @@
           border-radius: 5px;
         }
         .form2 .rightBar .foodMenuCard img {
-          width: 100px;
+          width: 65px;
           height: 100%;
           object-fit: cover;
           border-radius: 5px;
         }
-        .form2 .rightBar .foodMenuCard h3 {
+        .itemDetails1 p {
           color: #7a7797;
-          font-size: 14px;
+         
           font-weight: bold;
-          font-size: 18px;
+          
         }
         .form2 .rightBar .foodMenuCard .quantityBtns{
           gap: 12px;
@@ -389,6 +389,42 @@
         .foodItemQuantity{
           text-align: center;
           border: none;
+        }
+    
+        .liststayle li{
+          text-transform: capitalize;
+    border-radius: 3px;
+    border: 0;
+    /* background-color: #7a7797;
+    color: #fff; */
+    font-size: 16px;
+    font-weight: 600;
+    padding: 4px 30px;
+    cursor: pointer;
+        }
+        .mainheading{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .activemenuli{
+          background-color: #7a7797;
+          color: #fff;
+        }
+        .checkbox{
+          width: 100%;
+        }
+        .checkbox input{
+          width: 100%;
+          height: 100%;
+        }
+        .foodmanucard{
+          display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #eeee;
+    height: 41px;
+    border-radius: 5px;
         }
          
       </style>
@@ -567,31 +603,38 @@
                   </div>
                  
                   <div class="form form2 container">
-                    <div class="row">
-                      <div class="col-lg-3">
+                    <div class="row" style="border: 1px solid ;">
+                      <div class="col-lg-2" style="background-color: #eee; padding: 0px;">
                         <aside class="leftBar">
-                          <ul class="d-flex flex-column list-unstyled">
-                            <li class="activeMenu">Starter</li>
+                          <ul class="d-flex flex-column list-unstyled liststayle mt-4" style="gap: 8px; text-align: center;">
+                            <li class="activeMenu activemenuli">Starter</li>
                             <li class="activeMenu">Veg</li>
                             <li class="activeMenu">Non Veg</li>
                             <li class="activeMenu">Drinks</li>
                           </ul>
                         </aside>
                       </div>
-                      <div class="col-lg-9">
+                      <div class="col-lg-10">
+                       <div class="mainheading"><h2>Starter</h2></div> 
                         <div class="rightBar">
                           <div class="row">
-                            <div class="col-lg-6 mt-4" >
-                              <div class="foodMenuCard d-flex" style="gap: 15px;">
-                                <figure>
+                            <div class="col-lg-2 " >
+                              <div class="foodmanucard">
+                                <div><input type="checkbox"></div>
+                                <div class="itemDetails1"><p>Chicken Tikka </p></div>
+
+                              </div>
+                              <!-- <div class="foodMenuCard d-flex" style="gap: 15px;">
+                                <div class="checkbox"><input type="checkbox"></div> -->
+                                <!-- <figure>
                                   <img
                                     src="https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141353.jpg?w=2000"
                                     alt="item img"
                                   />
-                                </figure>
-                                <div class="itemDetails">
-                                  <h3 class="name">Chicken Tikka Chicken Tikka </h3>
-                                  <div
+                                </figure> -->
+                                <!-- <div class="itemDetails">
+                                  <p class="name">Chicken Tikka  </p> -->
+                                  <!-- <div
                                     class="quantityBtns d-flex justify-content-left align-content-center"
                                   >
                                     <button class="btn btn-primary btn-sm" style="background-color: green; color: #fff;">
@@ -603,8 +646,8 @@
                                     <button class="btn btn-primary btn-sm" style="background-color: tomato; color: #fff;">
                                       Full
                                     </button>
-                                  </div>
-                                  <div class="itemprice"><h3>$12</h3></div>
+                                  </div> -->
+                                  <!-- <div class="itemprice"><h3>$12</h3></div>
                                   <div class="actionsWrapper d-flex justify-content-left" style="gap: 45px;">
                                     <div class="d-flex align-content-center ">
                                       <button style="background-color: black; color: #fff;font-size: 12px; ">-</button>
@@ -615,16 +658,22 @@
                                       />
                                       <button style="background-color: black;color: #fff;font-size: 12px;">+</button>
                                     </div>
-                                    <button class="btn btn-primary btn-sm " style="background-color: #f11818; color: #fff;">
+                                    <button class="btn btn-primary btn-sm " style="background-color: #f11818; color: #fff;     padding: 0px 20px;
+                                    font-size: 10px;">
                                       Add
                                     </button>
-                                  </div>
+                                  </div> -->
                                 </div>
                               </div>
                             </div>
 
-                            <div class="col-lg-6 mt-4" >
+                            
+                            
+                            
+                            
+                            <div class="col-lg-6" >
                               <div class="foodMenuCard d-flex" style="gap: 15px;">
+
                                 <figure>
                                   <img
                                     src="https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141353.jpg?w=2000"
@@ -657,7 +706,182 @@
                                       />
                                       <button style="background-color: black;color: #fff;font-size: 12px;">+</button>
                                     </div>
-                                    <button class="btn btn-primary btn-sm " style="background-color: #f11818; color: #fff;">
+                                    <button class="btn btn-primary btn-sm " style="background-color: #f11818; color: #fff;     padding: 0px 20px;
+                                    font-size: 10px;">
+                                      Add
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            
+                            
+                            <div class="col-lg-6 mt-4" >
+                              <div class="foodMenuCard d-flex" style="gap: 15px;">
+                                
+                                <figure>
+                                  <img
+                                    src="https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141353.jpg?w=2000"
+                                    alt="item img"
+                                  />
+                                </figure>
+                                <div class="itemDetails">
+                                  <h3 class="name">Chicken Tikka Chicken Tikka Chicken Tikka </h3>
+                                  <div
+                                    class="quantityBtns d-flex justify-content-left align-content-center"
+                                  >
+                                    <button class="btn btn-primary btn-sm" style="background-color: green; color: #fff;">
+                                      Quarter
+                                    </button>
+                                    <button class="btn btn-primary btn-sm" style="background-color: blue; color: #fff;">
+                                      Half
+                                    </button>
+                                    <button class="btn btn-primary btn-sm" style="background-color: tomato; color: #fff;">
+                                      Full
+                                    </button>
+                                  </div>
+                                  <div class="itemprice"><h3>$12</h3></div>
+                                  <div class="actionsWrapper d-flex justify-content-left" style="gap: 45px;">
+                                    <div class="d-flex align-content-center ">
+                                      <button style="background-color: black; color: #fff;font-size: 12px; ">-</button>
+                                      <input
+                                        type="text"
+                                        class="foodItemQuantity"
+                                        placeholder="1"
+                                      />
+                                      <button style="background-color: black;color: #fff;font-size: 12px;">+</button>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm " style="background-color: #f11818; color: #fff;     padding: 0px 20px;
+                                    font-size: 10px;">
+                                      Add
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>   <div class="col-lg-6 mt-4" >
+                              <div class="foodMenuCard d-flex" style="gap: 15px;">
+                                
+                                <figure>
+                                  <img
+                                    src="https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141353.jpg?w=2000"
+                                    alt="item img"
+                                  />
+                                </figure>
+                                <div class="itemDetails">
+                                  <h3 class="name">Chicken Tikka Chicken Tikka Chicken Tikka </h3>
+                                  <div
+                                    class="quantityBtns d-flex justify-content-left align-content-center"
+                                  >
+                                    <button class="btn btn-primary btn-sm" style="background-color: green; color: #fff;">
+                                      Quarter
+                                    </button>
+                                    <button class="btn btn-primary btn-sm" style="background-color: blue; color: #fff;">
+                                      Half
+                                    </button>
+                                    <button class="btn btn-primary btn-sm" style="background-color: tomato; color: #fff;">
+                                      Full
+                                    </button>
+                                  </div>
+                                  <div class="itemprice"><h3>$12</h3></div>
+                                  <div class="actionsWrapper d-flex justify-content-left" style="gap: 45px;">
+                                    <div class="d-flex align-content-center ">
+                                      <button style="background-color: black; color: #fff;font-size: 12px; ">-</button>
+                                      <input
+                                        type="text"
+                                        class="foodItemQuantity"
+                                        placeholder="1"
+                                      />
+                                      <button style="background-color: black;color: #fff;font-size: 12px;">+</button>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm " style="background-color: #f11818; color: #fff;     padding: 0px 20px;
+                                    font-size: 10px;">
+                                      Add
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 mt-4" >
+                              <div class="foodMenuCard d-flex" style="gap: 15px;">
+                                
+                                <figure>
+                                  <img
+                                    src="https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141353.jpg?w=2000"
+                                    alt="item img"
+                                  />
+                                </figure>
+                                <div class="itemDetails">
+                                  <h3 class="name">Chicken Tikka Chicken Tikka Chicken Tikka </h3>
+                                  <div
+                                    class="quantityBtns d-flex justify-content-left align-content-center"
+                                  >
+                                    <button class="btn btn-primary btn-sm" style="background-color: green; color: #fff;">
+                                      Quarter
+                                    </button>
+                                    <button class="btn btn-primary btn-sm" style="background-color: blue; color: #fff;">
+                                      Half
+                                    </button>
+                                    <button class="btn btn-primary btn-sm" style="background-color: tomato; color: #fff;">
+                                      Full
+                                    </button>
+                                  </div>
+                                  <div class="itemprice"><h3>$12</h3></div>
+                                  <div class="actionsWrapper d-flex justify-content-left" style="gap: 45px;">
+                                    <div class="d-flex align-content-center ">
+                                      <button style="background-color: black; color: #fff;font-size: 12px; ">-</button>
+                                      <input
+                                        type="text"
+                                        class="foodItemQuantity"
+                                        placeholder="1"
+                                      />
+                                      <button style="background-color: black;color: #fff;font-size: 12px;">+</button>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm " style="background-color: #f11818; color: #fff;     padding: 0px 20px;
+                                    font-size: 10px;">
+                                      Add
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 mt-4" >
+                              <div class="foodMenuCard d-flex" style="gap: 15px;">
+                                
+                                <figure>
+                                  <img
+                                    src="https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141353.jpg?w=2000"
+                                    alt="item img"
+                                  />
+                                </figure>
+                                <div class="itemDetails">
+                                  <h3 class="name">Chicken Tikka Chicken Tikka Chicken Tikka </h3>
+                                  <div
+                                    class="quantityBtns d-flex justify-content-left align-content-center"
+                                  >
+                                    <button class="btn btn-primary btn-sm" style="background-color: green; color: #fff;">
+                                      Quarter
+                                    </button>
+                                    <button class="btn btn-primary btn-sm" style="background-color: blue; color: #fff;">
+                                      Half
+                                    </button>
+                                    <button class="btn btn-primary btn-sm" style="background-color: tomato; color: #fff;">
+                                      Full
+                                    </button>
+                                  </div>
+                                  <div class="itemprice"><h3>$12</h3></div>
+                                  <div class="actionsWrapper d-flex justify-content-left" style="gap: 45px;">
+                                    <div class="d-flex align-content-center ">
+                                      <button style="background-color: black; color: #fff;font-size: 12px; ">-</button>
+                                      <input
+                                        type="text"
+                                        class="foodItemQuantity"
+                                        placeholder="1"
+                                      />
+                                      <button style="background-color: black;color: #fff;font-size: 12px;">+</button>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm " style="background-color: #f11818; color: #fff;     padding: 0px 20px;
+                                    font-size: 10px;">
                                       Add
                                     </button>
                                   </div>
@@ -696,6 +920,14 @@
       $(function () {
         $("#datePicker").datepicker();
       });
+      $(".leftBar .liststayle li").click(function () {
+
+$(".leftBar .liststayle li").removeClass("activemenuli");
+$(this).addClass("activemenuli");
+
+
+$(".mainheading  h2").text($(this).text());
+});
     </script>
   </body>
 </html>
