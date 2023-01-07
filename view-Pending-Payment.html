@@ -301,7 +301,7 @@
                     <td>Total Amount</td>
                     <td>Pending Amount</td>
                     <td>Complimentary</td>
-                    <td>Pay Now</td>
+                    <td >Pay Now</td>
                 </tr>
             </thead>
             <tbody>
@@ -315,7 +315,7 @@
                     <td>1200</td>
                     <td>1100</td>
                     <td><button class="btn btn-primary btn-sm complimentaryBtn">Complimentary</button></td>
-                    <td><button class="btn btn-primary btn-sm payNowBtn">Pay Now</button></td>
+                    <td><button class="btn btn-primary btn-sm payNowBtn viewdetailpopopen">Pay Now</button></td>
                 </tr>
                 <tr>
                     <td>2</td>
@@ -502,7 +502,137 @@
           </table>         
         </div>       
       </div>
-    </div>    
+    </div> 
+    <style>
+      .viewpendingpop{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+      }
+      .viewpendingpopalldetail{
+        display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #66ce54;
+      }
+      .viewpendetail{
+      
+            height: auto;
+            padding: 10px;
+            width: 40%;
+            background-color: #fff;
+            margin-top: 6%;
+    border-radius: 10px;
+      }
+      .viewtotalpay{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* margin-top: 15px; */
+        padding: 0px 20px;
+      }
+      .mainheading{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 3px solid #eee;
+      
+      }
+      .paymentmethod{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 20px;
+      }
+      .paidamount{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 20px;
+      }
+      .givenamont{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 20px;
+      }
+      .btns{
+        margin-top: 15px;
+        display: flex;
+        gap: 60px;
+        padding: 0px 20px;
+      }
+      .btns button{
+        border: none;
+        background-color: #eee;
+        border-radius: 5px;
+        padding: 6px 30px;
+        color: #66ce54;
+      }
+      .givenamont input::placeholder{
+        color: #66ce54;
+      }
+    </style>
+    <div class="viewpendingpop">
+      <div class="viewpendingpopalldetail">
+        <div class="viewpendetail">
+<div class="viewmain">
+  <div class="mainheading"><h3>Payments</h3></div>
+  <div class="viewtotalpay">
+    <p>Total Payable</p>
+    <p>200.00</p>
+  </div>
+  <div class="paymentmethod">
+    <p>Payment Method</p>
+    <select style="padding: 2px 32px;
+    border: 3px solid #eee;
+    border-radius: 5px; color:#66ce54;">
+      <option>Cash</option>
+      <option>Upi</option>
+      <option>Online</option>
+    </select>
+  </div>
+  <div class="paidamount">
+    <div><p>Paid Amount</p><p style="border: 3px solid #eee;
+      
+      padding: 2px 49px;
+      border-radius: 5px;
+      text-align: left;
+      margin-top: -12px;">200.00</p></div>
+    <div><p style="    text-align: right;">Due Amount</p><p style="border: 3px solid #eee;
+      
+      padding: 2px 49px;
+      border-radius: 5px;
+      text-align: left;
+      margin-top: -12px;">0.00</p></div>
+  </div>
+  <div class="givenamont">
+    <div ><p>Given Amount</p><input type="text" placeholder="0.00" style="border: 3px solid #eee;
+      
+      padding: 2px 0px;
+      border-radius: 5px;
+      text-align: left;
+      margin-top: -15px;"></div>
+    <div ><p style="text-align: right;">Change Amount</p><input type="text" placeholder="100" style="border: 3px solid #eee;
+      
+      padding: 2px 0px;
+      border-radius: 5px;
+      text-align: left;
+      margin-top: -15px;"></div>
+  </div>
+  <div class="btns">
+    <button>Submit</button>
+    <button class="viewcancle">Cancel</button>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>   
   </main>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>   
     <script>
@@ -537,6 +667,13 @@
         $('#dateWise').attr('placeholder', (d + "/" + m + "/" + y));
 
      } );
+     $(".viewdetailpopopen").click( function(){
+      $(".viewpendingpop").show()
+     })
+     $(".viewcancle").click( function(){
+      $(".viewpendingpop").hide()
+     })
+
      </script>
    
   </body>
