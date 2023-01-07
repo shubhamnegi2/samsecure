@@ -333,16 +333,23 @@
           border-radius: 5px;
         }
         .form2 .rightBar .foodMenuCard img {
-          width: 100px;
+          width: 65px;
           height: 100%;
           object-fit: cover;
           border-radius: 5px;
         }
-        .form2 .rightBar .foodMenuCard h3 {
+        .itemDetails1 p {
           color: #7a7797;
-          font-size: 14px;
+          margin-bottom: 0px;
           font-weight: bold;
-          font-size: 18px;
+          overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 12px;
+          
+        }
+        .form2 .rightBar .foodMenuCard .quantityBtns{
+          gap: 12px;
         }
         .form2 .rightBar .foodMenuCard .quantityBtns button{
             background-color: #fff;
@@ -362,14 +369,63 @@
             padding: 1px 10px;
             border: 0;
         }
+        .form2 .rightBar .foodMenuCard .itemDetails .name{
+          overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+        }
         .form2 .rightBar .foodMenuCard .itemDetails{
             padding-left: 15px;
             width: 70%;
+            padding: 7px;
+            padding-right: 15px;
+
         }
         .form2 .rightBar .foodMenuCard figure{
             width: 30%;
+            margin-bottom: 0;
         }
         /* .form2 .rightBar .foodMenuCard  */
+        .itemprice{
+          margin-top: 7px;
+        }
+        .foodItemQuantity{
+          text-align: center;
+          border: none;
+        }
+    
+        .liststayle li{
+          text-transform: capitalize;
+    border-radius: 3px;
+    border: 0;
+    /* background-color: #7a7797;
+    color: #fff; */
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px 30px;
+    cursor: pointer;
+        }
+        .mainheading{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 15px;
+        }
+        .activemenuli{
+          background-color: #7a7797;
+          color: #fff;
+        }
+   
+        .foodcard{
+          display: flex;
+    gap: 5px;
+    box-shadow: 0 0 2px;
+ align-items: center;
+ justify-content: center;
+    padding-left: 4px;
+    border-radius: 2px;
+        }
          
       </style>
     </head>
@@ -547,59 +603,141 @@
                   </div>
                  
                   <div class="form form2 container">
-                    <div class="row">
-                      <div class="col-lg-3">
+                    <div class="row" style="box-shadow: 0 0 2px ; border-radius: 5px;">
+                      <div class="col-lg-2" style="background-color: #eee; padding: 0px; border-top-left-radius: 5px; border-bottom-left-radius: 5px;">
                         <aside class="leftBar">
-                          <ul class="d-flex flex-column list-unstyled">
-                            <li class="activeMenu">Starter</li>
+                          <ul class="d-flex flex-column list-unstyled liststayle mt-4" style="gap: 8px; text-align: center; ">
+                            <li class="activeMenu activemenuli">Starter</li>
                             <li class="activeMenu">Veg</li>
                             <li class="activeMenu">Non Veg</li>
                             <li class="activeMenu">Drinks</li>
                           </ul>
                         </aside>
                       </div>
-                      <div class="col-lg-9">
+                      <div class="col-lg-10 ">
+                       <div class="mainheading mt-2"><h2>Starter</h2></div> 
                         <div class="rightBar">
-                          <div class="row">
-                            <div class="col-lg-6">
-                              <div class="foodMenuCard d-flex">
-                                <figure>
-                                  <img
-                                    src="https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141353.jpg?w=2000"
-                                    alt="item img"
-                                  />
-                                </figure>
-                                <div class="itemDetails">
-                                  <h3 class="name">Chicken Tikka</h3>
-                                  <div
-                                    class="quantityBtns d-flex justify-content-evenly align-content-center"
-                                  >
-                                    <button class="btn btn-primary btn-sm">
-                                      Quarter
-                                    </button>
-                                    <button class="btn btn-primary btn-sm">
-                                      Half
-                                    </button>
-                                    <button class="btn btn-primary btn-sm">
-                                      Full
-                                    </button>
-                                  </div>
-                                  <div class="actionsWrapper d-flex justify-content-evenly">
-                                    <div class="d-flex align-content-center ">
-                                      <button>-</button>
-                                      <input
-                                        type="text"
-                                        class="foodItemQuantity"
-                                      />
-                                      <button>+</button>
-                                    </div>
-                                    <button class="btn btn-primary btn-sm">
-                                      Add
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
+                          <div class="row mb-3">
+                            <div class="col-lg-2 " >
+                             <div class="foodcard">
+                              <div><input type="checkbox"></div>
+                              <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                             </div>
                             </div>
+                            <div class="col-lg-2 " >
+                              <div class="foodcard">
+                               <div><input type="checkbox"></div>
+                               <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                              </div>
+                             </div>
+                             <div class="col-lg-2 " >
+                              <div class="foodcard">
+                               <div><input type="checkbox"></div>
+                               <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                              </div>
+                             </div>
+                             <div class="col-lg-2 " >
+                              <div class="foodcard">
+                               <div><input type="checkbox"></div>
+                               <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                              </div>
+                             </div>
+                             <div class="col-lg-2 " >
+                              <div class="foodcard">
+                               <div><input type="checkbox"></div>
+                               <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                              </div>
+                             </div>
+                             <div class="col-lg-2 " >
+                              <div class="foodcard">
+                               <div><input type="checkbox"></div>
+                               <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                              </div>
+                             </div>
+                             <div class="col-lg-2 mt-3" >
+                              <div class="foodcard">
+                               <div><input type="checkbox"></div>
+                               <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                              </div>
+                             </div>
+                             <div class="col-lg-2 mt-3" >
+                              <div class="foodcard">
+                               <div><input type="checkbox"></div>
+                               <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                              </div>
+                             </div>
+                             <div class="col-lg-2 mt-3" >
+                              <div class="foodcard">
+                               <div><input type="checkbox"></div>
+                               <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                              </div>
+                             </div>
+
+                               <div class="col-lg-2 mt-3" >
+                              <div class="foodcard">
+                               <div><input type="checkbox"></div>
+                               <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                              </div>
+                             </div>
+                               <div class="col-lg-2 mt-3" >
+                              <div class="foodcard">
+                               <div><input type="checkbox"></div>
+                               <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                              </div>
+                             </div>
+                               <div class="col-lg-2 mt-3" >
+                              <div class="foodcard">
+                               <div><input type="checkbox"></div>
+                               <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                              </div>
+                             </div>
+                               <div class="col-lg-2 mt-3" >
+                              <div class="foodcard">
+                               <div><input type="checkbox"></div>
+                               <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                              </div>
+                             </div>
+                               <div class="col-lg-2 mt-3" >
+                              <div class="foodcard">
+                               <div><input type="checkbox"></div>
+                               <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                              </div>
+                             </div>  <div class="col-lg-2 mt-3" >
+                              <div class="foodcard">
+                               <div><input type="checkbox"></div>
+                               <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                              </div>
+                             </div>
+                             <div class="col-lg-2 mt-3" >
+                              <div class="foodcard">
+                               <div><input type="checkbox"></div>
+                               <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                              </div>
+                             </div>
+                             <div class="col-lg-2 mt-3" >
+                              <div class="foodcard">
+                               <div><input type="checkbox"></div>
+                               <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                              </div>
+                             </div>
+                             <div class="col-lg-2 mt-3" >
+                              <div class="foodcard">
+                               <div><input type="checkbox"></div>
+                               <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                              </div>
+                             </div>
+                             
+
+
+                             
+
+                            
+                            
+                            
+                            
+                          
+                           
+                          
                           </div>
                         </div>
                       </div>
@@ -632,6 +770,14 @@
       $(function () {
         $("#datePicker").datepicker();
       });
+      $(".leftBar .liststayle li").click(function () {
+
+$(".leftBar .liststayle li").removeClass("activemenuli");
+$(this).addClass("activemenuli");
+
+
+$(".mainheading  h2").text($(this).text());
+});
     </script>
   </body>
 </html>
