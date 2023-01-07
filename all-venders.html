@@ -259,6 +259,15 @@ main {
       font-size: 14px;
       color: #7a7797;
   }
+  main .filters select {
+        font-size: 14px;
+        border: 0;
+        border-radius: 5px;
+        padding-left: 15px;
+        color: #7a7797;
+        width: 120px;
+        margin-left: 20px;
+      }
   main .filters input{
       font-size: 14px;
       border: 0;
@@ -352,6 +361,25 @@ main {
         <div class="filters py-3 d-flex align-items-center">            
           <label for="dateWise" class="title">View By</label>
           <input type="text" id="dateWise" placeholder="03/12/2012">
+          <select name="" id="">
+            <option disabled selected>Monthly</option>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="march">march</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+          </select>
+          <select name="" id="">
+            <option disabled selected>Yearly</option>
+            <option value="2023">2023</option>
+          </select>
         </div>
         <div class="totalPAmount">
           <span>Total Pending Amount <b> ₹</b></span> <span class="ttpav"><b>12043</b></span>
