@@ -426,6 +426,60 @@
     padding-left: 4px;
     border-radius: 2px;
         }
+        .form3 input{
+                border: 2px solid rgb(201, 190, 190);
+    height: 35px;
+    padding-left: 15px;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #7a7797;
+              }
+              .form3{
+                background-color: #fff;
+    padding: 30px;
+    /* padding-top: 0; */
+    border-radius: 4px;
+    position: relative;
+    margin-top: 20px;
+    box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+    border: 2px solid #eee;
+              }
+              .form3 label{
+                color: #7a7797;
+    font-weight: bold;
+              }
+              .foodmanubtn button{
+                text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #0d6efd;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 4px 30px;
+              }
+              .form2{
+                background-color: #fff;
+    padding: 30px;
+    /* padding-top: 0; */
+    border-radius: 4px;
+    position: relative;
+    margin-top: 20px;
+    box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+    border: 2px solid #eee;
+              }
+              .foodmanuvalu ul{
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                flex-wrap: wrap;
+              }
+              .foodmanuvalu ul li{
+                text-decoration: none;
+                list-style-type: none;
+                color: #3abb69;
+              }
          
       </style>
     </head>
@@ -603,7 +657,32 @@
                   </div>
                  
                   <div class="form form2 container">
-                    <div class="row" style="box-shadow: 0 0 2px ; border-radius: 5px;">
+                    <div class="row">
+                      <div class="col-12 text-center">
+                        <h2 class="title">Food Menu</h2>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="foodmanubtn">
+                        <button>All</button>
+                        <button>Starter</button>
+
+                         <button>Thali</button>
+                          <button>Extra</button>
+                          <button>Soup</button>
+                           <button>Tandoor</button>
+                            <button>Chinese</button>
+
+                            <button>Rolls</button> 
+                            <button>Main Course</button>
+                            <button style="margin-top: 13px;
+                            margin-bottom: 15px;">Breads</button>
+                            <!-- <button>Beverages</button>
+                            <button>Dessert</button> -->
+
+                      </div>
+                    </div>
+                    <div class="row" style="padding: 10px;">
                       <div class="col-lg-2" style="background-color: #eee; padding: 0px; border-top-left-radius: 5px; border-bottom-left-radius: 5px;">
                         <aside class="leftBar">
                           <ul class="d-flex flex-column list-unstyled liststayle mt-4" style="gap: 8px; text-align: center; ">
@@ -627,25 +706,25 @@
                             <div class="col-lg-2 " >
                               <div class="foodcard">
                                <div><input type="checkbox"></div>
-                               <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                               <div class="itemDetails1"><p>Chicken Tikka1 </p></div>
                               </div>
                              </div>
                              <div class="col-lg-2 " >
                               <div class="foodcard">
                                <div><input type="checkbox"></div>
-                               <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                               <div class="itemDetails1"><p>Chicken Tikka2 </p></div>
                               </div>
                              </div>
                              <div class="col-lg-2 " >
                               <div class="foodcard">
                                <div><input type="checkbox"></div>
-                               <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                               <div class="itemDetails1"><p>Chicken Tikka3 </p></div>
                               </div>
                              </div>
                              <div class="col-lg-2 " >
                               <div class="foodcard">
                                <div><input type="checkbox"></div>
-                               <div class="itemDetails1"><p>Chicken Tikka </p></div>
+                               <div class="itemDetails1"><p>Chicken Tikka4 </p></div>
                               </div>
                              </div>
                              <div class="col-lg-2 " >
@@ -722,23 +801,11 @@
                              </div>
                              <div class="col-lg-2 mt-3" >
                               <div class="foodcard">
-                               <div><input type="checkbox"></div>
+                               <div><input type="checkbox" class="inpu1"></div>
                                <div class="itemDetails1"><p>Chicken Tikka </p></div>
                               </div>
                              </div>
-                             
-
-
-                             
-
-                            
-                            
-                            
-                            
-                          
-                           
-                          
-                          </div>
+        </div>
                         </div>
                       </div>
                     </div>
@@ -746,6 +813,62 @@
                 </form>
               </div>
             </div>
+            
+    <div class="form form3 container mt-4">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2 class="title">Booking Form</h2>
+        </div>
+      
+      </div>
+      <div class="row">
+        <div class="col-lg-12"><div class="foodmanuvalu"><ul></ul></div>
+        </div>
+       
+      </div>
+      <div class="row">
+        <div class="col-md-6 mt-3">
+          <div class="formGroup">
+            <label for="">Total Plate</label><br>
+            <input type="text" />
+          </div>
+        </div>
+        <div class="col-md-6 mt-3">
+          <div class="formGroup">
+            <label for="">Amount Total Plate</label><br>
+            <input type="text" />
+          </div>
+        </div>
+        <div class="col-md-6 mt-3">
+          <div class="formGroup">
+            <label for="">Waive off</label><br>
+            <input type="text" />
+          </div>
+        </div>
+        <div class="col-md-6 mt-3">
+          <div class="formGroup">
+            <label for="">Book Plate</label><br>
+            <input type="text" />
+          </div>
+        </div>
+        <div class="col-md-6 mt-3">
+          <div class="formGroup">
+            <label for="">Address</label><br>
+            <input type="text" />
+          </div>
+        </div>
+       
+
+        <div class="col-12 mt-4 mb-2 text-center">
+          <button class="btn btn-primary btn-sm nextBtn1">
+            Submit
+          </button>
+        </div>
+
+      </div>
+    </div>        
+
+
           </div>
         </div>
       </div>
@@ -778,6 +901,14 @@ $(this).addClass("activemenuli");
 
 $(".mainheading  h2").text($(this).text());
 });
+
+
+$(".foodcard").click(function(){
+   let foodarr=$(this).children('.itemDetails1').children('p').text();
+ 
+    $(".foodmanuvalu ul").append("<li>"+foodarr+"</li>");
+  });
+
     </script>
   </body>
 </html>

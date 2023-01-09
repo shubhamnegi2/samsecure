@@ -145,22 +145,10 @@
             color: #fff;
             font-size: 13px;
             font-weight: 500;
-            padding: 3px 0px;
-            font-family: "Montserrat", sans-serif;
-        }
-        .allBtns1 button{
-            margin: 10px;
-            text-transform: capitalize;
-            border-radius: 3px;
-            border: 0;
-            background-color: #3abb69;
-            color: #fff;
-            font-size: 13px;
-            font-weight: 500;
-            padding: 3px 0px;
-            font-family: "Montserrat", sans-serif;
             padding: 5px 15px;
+            font-family: "Montserrat", sans-serif;
         }
+      
 
         .allBtnsWrapper .allBtns .activeBtn {
             background-color: #3abb69;
@@ -284,45 +272,29 @@
         }
 
       
-
-        .checf {
-            display: flex;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            background-color: #7a7797;
-            border-radius: 5px;
-
-        }
-
-        .checf button {
-            background-color: #7a7797;
-        }
-
-        .chefbuuu {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-          
-            align-items: center;
-            padding: 0px 18px;
-        }
-
-        .number {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .activebtnee {
+        .addvender1 {
+            position: absolute;
+            right: 14%;
+            top: 50%;
+            transform: translate(0%, -50%);
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0px;
             background-color: #3abb69;
+            color: #fff;
+            padding: 2px 30px;
+            font-weight: bold;
+            padding: 5px 15px;
+            font-size: 13px;
+
         }
+      
 
     
 
-        .divchangbackground {
-            background-color: #3abb69;
-        }
+    
+
+     
 
    
     </style>
@@ -338,11 +310,11 @@
             <ul class="list-unstyled d-flex align-items-center">
                 <li><a href="">Dashboard</a></li>
                 <li><i class="fa-solid fa-angles-right"></i></li>
-                <li><a href="" class="ActiveBreadcrumb">Contact List</a></li>
+                <li><a href="" class="ActiveBreadcrumb">Employee Detail</a></li>
               </ul>
            
           
-      
+              <button class="addVender extrabtn">Extra Pay</button>
    
     
     </div> 
@@ -354,50 +326,95 @@
     <main>
         <div class="allBtnsWrapper pt-3 pb-3">
             <div class="container-fluid">
-                <div class="allBtns pt-3 pb-3" style="display: flex;
+                <div class="allBtns pt-3 pb-3 allBtns1" style="display: flex;
                 align-items: center; justify-content: center;">
-                    <div class="checf divchangbackground">
-                        <div class="chefbuuu">
-                          <div style="    border-bottom: 1px solid #fff;
-                          width: 135%;"> <button class="activeBtn">Contact list</button></div> 
-                            <div> <p style="color: #fff; font-size: 13px;">2900</p></div>
-                           
-                        </div>
-                       
-                    </div>
-                    <div class="checf ">
-                        <div class="chefbuuu" >
-                            <div style="    border-bottom: 1px solid #fff;
-                            width: 135%;"><button>Guest list</button></div>
-                            
-                            <div> <p style="color: #fff; font-size: 13px;">4600</p></div>
-                      
-                        </div>
-                    </div>
-                    <div class="checf">
-                        <div class="chefbuuu">
-                            <div style="    border-bottom: 1px solid #fff;
-                            width: 135%;"><button>Membership list</button></div>
-                            <div> <p style="color: #fff; font-size: 13px;">5500</p></div>
-                       
-                    </div>
-                    
-                   
-
-
-
-
-
-
-                </div>
-                <div class="checf ">
-                    <div class="chefbuuu" >
-                        <div style="    border-bottom: 1px solid #fff;
-                        width: 135%;"><button>Employee list</button></div>
-                        
-                        <div> <p style="color: #fff; font-size: 13px;">4600</p></div>
+                <button class="activeBtn">Total Paid Salary</button>
+                <button>Total Extra pay</button>
                   
-                    </div>
+                           
+                           
+                  
+                  
+               
+            </div>
+        </div>
+        <style>
+            .extra-paymodel{
+                display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            }
+            .totalpay{
+                display: flex;
+            align-items: center;
+            justify-content: center;
+         
+            }
+            .allpay{
+                 border-radius: 10px;
+            height: 290px;
+            
+            width: 30%;
+            background-color: #fff;
+            }
+     
+            .extrasalll{
+                display: flex;
+    align-items: center;
+    justify-content: center;
+            }
+            .form-group input ,textarea{
+                padding: 5px;
+                border-radius: 5px;
+                border: 2px solid green;
+            }
+            
+        </style>
+        <div class="extra-paymodel">
+            <div class="totalpay">
+                <div class="allpay" style="color: green; font-size: 13px; margin-top: 5%;">
+
+<div style="display: flex; align-items: center; justify-content: right;  "><button style="height: 22px;
+    border-radius: 10px; color: black;  font-size: 14px; width: 22px;
+    margin-top: 1px;
+   border: none;
+display: flex;
+align-items: center;
+justify-content: center;
+padding-bottom: 5px;" class="closeform" >&times;</button></div>
+
+<div class="container" >
+    <div class="extrasalll"><h2>Extra Salary </h2></div>
+    <div class="row justify-content-between text-left ">
+        <div class="form-group col-sm-9 flex-column d-flex forminput"> <label
+                class="form-control-label px-3">Amount<span class="text-danger">
+                    *</span></label> <input type="text" id="fname" name="fname"
+                    
+                placeholder="Amount" onblur="validate(1)"> </div>
+             
+                        
+    </div>
+    <div class="row justify-content-between text-left ">
+        <div class="form-group col-sm-9 flex-column d-flex forminput"> <label
+                class="form-control-label px-3">Reason<span class="text-danger">
+                    *</span></label>   <textarea id="w3review" name="w3review" rows="4" cols="50" style="    height: 65px;"></textarea> </div>
+             
+                        
+    </div>
+    <div class="form-group text-center >          
+        <div class=" col-sm-offset-2 col-sm-12">
+<button type="submit" class="btn btn-default"
+style="background-color: green; color: #fff;">Submit</button>
+</div>
+  
+</div>
+    
+</div>
                 </div>
             </div>
         </div>
@@ -405,60 +422,50 @@
             <div class="ProductDetailsWrapper">
                 <div class="details">
                     <div class="title">
-                        <h3 style="padding-bottom: 10px;">Contact list</h3>
+                        <h3 style="padding-bottom: 10px;">Employee Salary</h3>
 
                     </div>
                     <table>
                         <thead>
                             <tr>
                                 <th>S.No</th>
-                                <th>Name</th>
-                                <th>Phone No</th>
-                                <th>Address</th>
-                                <th>Email</th>
-                                <th>Gender</th>
-                                <th>City</th>
-                                <th>State</th>
-                                <th>Country</th>
+                                <th>Date</th>
+                               <th>Remaining Salary</th>
+                                <th>Paid Salary</th>
+                                <th>Total Salary</th>
+                                <th>Attendance
+                                </th>
+                              
                               
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td class="abcbtn">Abc </td>
-                                <td>999999998</td>
-                               <td>Nanoli</td>
-                                <td>abc@842gamil.com</td>
-                                <td>Male</td>
-                                <td>Saharanpur</td>
-                                <td>Up</td>
-                                <td>India</td>
+                               <td>20/02/2020</td>
+                               <td>2000</td>
+                               <td>18000</td>
+                               <td>20000</td>
+                               <td>A</td>
 
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td class="abcbtn">Abc </td>
-                                <td>999999998</td>
-                               <td>Nanoli</td>
-                                <td>abc@842gamil.com</td>
-                                <td>Male</td>
-                                <td>Saharanpur</td>
-                                <td>Up</td>
-                                <td>India</td>
+                                <td>20/02/2020</td>
+                                <td>2000</td>
+                                <td>18000</td>
+                                <td>20000</td>
+                                <td>A</td>
 
                             </tr>
 
                              <tr>
                                 <td>3</td>
-                                <td class="abcbtn">Abc </td>
-                                <td>999999998</td>
-                               <td>Nanoli</td>
-                                <td>abc@842gamil.com</td>
-                                <td>Male</td>
-                                <td>Saharanpur</td>
-                                <td>Up</td>
-                                <td>India</td>
+                                <td>20/02/2020</td>
+                                <td>2000</td>
+                                <td>18000</td>
+                                <td>20000</td>
+                                <td>A</td>
 
                             </tr>
 
@@ -486,30 +493,7 @@
             );
         </script>
         <script>
-            function togglePopup() {
-                $(".content").toggle();
-            }
-            $(".checf").click(function () {
-                $(".checf ").removeClass("divchangbackground");
-                $(this).addClass("divchangbackground")
-            })
-
-
-            $(".allBtns button").click(function () {
-
-                $(".allBtns button").removeClass("activeBtn");
-                $(this).addClass("activeBtn");
-                console.log(this)
-
-                $(".ProductDetailsWrapper .details .title h3").text($(this).text());
-            });
-
-        //     $(".checf .allBtns button").click(function () {
-        //   $(".checf .allBtns button").removeClass(
-        //     "divchangbackground" ,"activeBtn"
-        //   );
-        //   $(this).addClass("activeBtn");
-        // });
+       
       
 
 
@@ -519,7 +503,22 @@
 
 
 
+       $(".allBtns button").click(function () {
 
+$(".allBtns button").removeClass("activeBtn");
+$(this).addClass("activeBtn");
+console.log(this)
+
+$(".ProductDetailsWrapper .details .title h3").text($(this).text());
+});
+$(".extrabtn").click(function () {
+                $(".extra-paymodel").show()
+
+            })
+            $(".closeform").click(function () {
+                $(".extra-paymodel").hide()
+
+            })
 
 
 
