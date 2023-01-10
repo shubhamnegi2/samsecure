@@ -40,9 +40,13 @@
 #addVenderWrapper .addVenderForm .formGroup input {
   border: 2px solid #eee;
   width: 100%;
+  font-size: 14px;
   border-radius: 4px;
   padding-left: 15px;
   height: 35px;
+}
+#addVenderWrapper .addVenderForm .formGroup select {
+  font-size: 14px;
 }
 #addVenderWrapper .addVenderForm .addVenderSubmitBtn {
   text-transform: capitalize;
@@ -149,11 +153,11 @@
                       <div class="formGroup">
                         <label for="AccN">Member</label>
                         <br />
-                        <select style="    padding: 8px;
+                        <select style="padding: 8px;
                         width: 100%;
                         border-radius: 4px;
                         border: 2px solid #eeee;">
-                        
+                            <option  selected disabled>Select Member</option>
                             <option>abc</option>
                             <option>abc</option>
                         </select>
@@ -177,13 +181,15 @@
                             background-color: #fff;
                             padding: 2px;
                             border-radius: 4px;">
-                                <input  type="radio" 
-                                    checked="checked" />
-                                <label for="male">1 year</label>
-                                <input type="radio" />
-                                <label for="female">2 year</label>
-                                <input type="radio" />
-                                <label for="female">3 year</label>
+                                
+                                <input type="radio" id="1" name="validTime" value="1year"  checked="checked" >
+                                <label for="1" >1year</label>
+                           
+                                <input type="radio" id="2" name="validTime" value="2year">
+                                <label for="2">2year</label>
+
+                                <input type="radio" id="3" name="validTime" value="3year">
+                                <label for="3">3year</label>
                             </div>
                         </div>
                         <div class=" col-sm-4 form-radio" style="color: #7a7797;
@@ -195,17 +201,29 @@
                             background-color: #fff;
                             padding: 2px;
                             border-radius: 4px;">
-                                <input  type="radio" 
-                                    checked="checked" />
-                                <label for="male">10%</label>
+                               
+
+                                    <input type="radio" id="10" name="percentage" value="10%"  checked="checked" >
+                                    <label for="10%" >10%</label>
+                               
+                                    <input type="radio" id="20" name="percentage" value="20%">
+                                    <label for="20%">20%</label>
+
+                                    <input type="radio" id="30" name="percentage" value="30%">
+                                    <label for="30%">30%</label>
+
+                                    <input type="radio" id="40" name="percentage" value="40%">
+                                    <label for="40%">40%</label>
+                                    <input type="radio" id="50" name="percentage" value="50%">
+                                    <label for="50%">50%</label>
+<!--                                     
+                                <label >20%</label>
                                 <input type="radio" />
-                                <label for="female">20%</label>
+                                <label>30%</label>
                                 <input type="radio" />
-                                <label for="female">30%</label>
+                                <label>40%</label>
                                 <input type="radio" />
-                                <label for="female">40%</label>
-                                <input type="radio" />
-                                <label for="female">50%</label>
+                                <label>50%</label> -->
                             </div>
                         </div>
                        
