@@ -108,15 +108,15 @@
 
         .allBtnsWrapper .allBtns button {
             /* min-width: 150px; */
-            margin: 10px;
+            margin: 0px;
             text-transform: capitalize;
             border-radius: 3px;
             border: 0;
             background-color: transparent;
             color: #fff;
             font-size: 14px;
-            font-weight: 500;
-            padding: 3px 0px;
+            font-weight: bold;
+            padding: 0px;
             font-family: "Montserrat", sans-serif;
         }
 
@@ -278,25 +278,34 @@
             flex-direction: column;
             background-color: #7a7797;
             border-radius: 5px;
+            padding: 8px 18px;
             font-weight: bold;
+            cursor: pointer;
 
+        }
+
+        .checf p {
+            padding: 0px;
+            margin: 0px;
         }
 
         .checf button {
             background-color: transparent;
             font-weight: bold;
         }
-           .chefbuuu button{
-           font-weight: bold;
-           padding: 0px;
-           font-size: 16px;
-      }
+
+        .chefbuuu button {
+            font-weight: bold;
+            padding: 0px;
+            font-size: 16px;
+        }
+
         .chefbuuu {
             display: flex;
             gap: 17px;
             align-items: center;
             padding: 0px 18px;
-           
+
             font-weight: bold;
         }
 
@@ -398,8 +407,8 @@
 
         .allp5 {
             padding: 0 5px;
-         
-           
+
+
             color: #fff;
             border-radius: 10px;
             font-size: 12px
@@ -407,7 +416,7 @@
 
         .allp6 {
             padding: 0 5px;
-           font-weight: bold;
+            font-weight: bold;
             font-size: 12px;
             color: #fff;
             border-radius: 10px;
@@ -416,7 +425,7 @@
 
         .foodp1 {
             padding: 0 5px;
-          font-weight: bold;
+            font-weight: bold;
             padding: 2px 7px;
             color: #fff;
             border-radius: 10px;
@@ -425,7 +434,7 @@
 
         .barp1 {
             padding: 0 5px;
-         font-weight: bold;
+            font-weight: bold;
             padding: 2px 7px;
             color: #fff;
             border-radius: 10px;
@@ -456,19 +465,29 @@
 
     </div>
     <style>
+        .closeform {
+            display: flex;
+            align-items: center;
+            justify-content: right;
+        }
 
+        .cloesbtn1 {
+            height: 22px;
+            border-radius: 10px;
+            color: black;
+            font-size: 14px;
+            width: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 5px;
+        }
     </style>
 
     <div class="createcaegory">
         <div class="createcategorypop">
             <div class="catgoreypop">
-                <div class="closeform" style="display: flex; align-items: center; justify-content: right;  "><button
-                        style="height: 22px;
-                    border-radius: 10px; color: black;  font-size: 14px; width: 22px;
-display: flex;
-align-items: center;
-justify-content: center;
-padding-bottom: 5px;">&times;</button></div>
+                <div class="closeform" style=""><button class="cloesbtn1">&times;</button></div>
                 <div class="container">
                     <div class="row justify-content-center text-center">
                         <h1>Create Category</h1>
@@ -644,9 +663,7 @@ padding-bottom: 5px;">&times;</button></div>
 
                     <div class="form-group text-center mt-3 >          
                         <div class=" col-sm-offset-2 col-sm-12">
-                        <button type="submit" class="btn btn-default  submitbtn" style=" text-transform: capitalize;
-                         border-radius: 3px;font-size: 13px;border: 0px;background-color: #3abb69;color: #fff;padding: 6px 30px;
-                         font-weight: bold;">Submit</button>
+                        <button type="submit" class="  submitbtn">Submit</button>
                     </div>
 
                 </div>
@@ -862,22 +879,15 @@ padding-bottom: 5px;">&times;</button></div>
             $(".checf ").click(function () {
                 $(".checf ").removeClass("divchangbackground ");
                 $(this).addClass("divchangbackground ")
-           
+
                 $(".ProductDetailsWrapper .details .title h3").text($(this).children(".chefbuuu").children("button").text());
-                
-               
+
+
             })
 
-            
-            
-            // $(".allBtns button").click(function () {
 
-            //     $(".allBtns button").removeClass("activeBtn ");
-            //     $(this).addClass("activeBtn ");
-            //     console.log(this)
 
-            //     $(".ProductDetailsWrapper .details .title h3").text($(this).text());
-            // });
+
             $(".addvenderpop").click(function () {
                 $(".createcaegory").show()
 
