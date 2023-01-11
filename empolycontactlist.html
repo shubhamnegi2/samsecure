@@ -146,15 +146,15 @@
 
         .allBtnsWrapper .allBtns button {
             /* min-width: 150px; */
-            margin: 0px;
+            margin: 10px;
             text-transform: capitalize;
             border-radius: 3px;
             border: 0;
             background-color: transparent;
             color: #fff;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
-          
+            padding: 3px 0px;
             font-family: "Montserrat", sans-serif;
         }
 
@@ -302,12 +302,7 @@
             flex-direction: column;
             background-color: #7a7797;
             border-radius: 5px;
-            padding: 7px;
 
-        }
-        .checf p{
-            margin: 0px;
-            padding: 0px;
         }
 
         .checf button {
@@ -320,21 +315,14 @@
             width: 100%;
             font-weight: bold;
             align-items: center;
-            margin: 0px;
-            padding: 0px;
+            padding: 0px 18px;
         }
 
         .number {
             display: flex;
             align-items: center;
-           
+            gap: 50px;
         }
-        .number p{
-            padding: 0px;
-            margin: 0px;
-            font-size: 16px;
-        }
-
 
         .activebtnee {
             background-color: #3abb69;
@@ -380,7 +368,7 @@
                         <div class="chefbuuu">
                             <div> <button>Contact list</button></div>
                             <div>
-                                <p style="color: #fff; font-size: 14px;">2900</p>
+                                <p style="color: #fff; font-size: 11px;">2900</p>
                             </div>
 
                         </div>
@@ -391,7 +379,7 @@
                             <div><button>Guest list</button></div>
 
                             <div>
-                                <p style="color: #fff; font-size: 14px;">4600</p>
+                                <p style="color: #fff; font-size: 11px;">4600</p>
                             </div>
 
                         </div>
@@ -400,7 +388,7 @@
                         <div class="chefbuuu">
                             <div><button>Membership list</button></div>
                             <div>
-                                <p style="color: #fff; font-size: 14px;">5500</p>
+                                <p style="color: #fff; font-size: 11px;">5500</p>
                             </div>
 
                         </div>
@@ -418,7 +406,7 @@
                             <div><button>Employee list</button></div>
 
                             <div>
-                                <p style="color: #fff; font-size: 14px;">4600</p>
+                                <p style="color: #fff; font-size: 11px;">4600</p>
                             </div>
 
                         </div>
@@ -485,30 +473,6 @@
                                     <td>India</td>
 
                                 </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td class="abcbtn">Abc </td>
-                                    <td>999999998</td>
-                                    <td>Nanoli</td>
-                                    <td>abc@842gamil.com</td>
-                                    <td>Male</td>
-                                    <td>Saharanpur</td>
-                                    <td>Up</td>
-                                    <td>India</td>
-
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td class="abcbtn">Abc </td>
-                                    <td>999999998</td>
-                                    <td>Nanoli</td>
-                                    <td>abc@842gamil.com</td>
-                                    <td>Male</td>
-                                    <td>Saharanpur</td>
-                                    <td>Up</td>
-                                    <td>India</td>
-
-                                </tr>
 
 
 
@@ -520,7 +484,7 @@
 
 
                     <body>
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
                         <script>
                             $("head").append(
                                 '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
@@ -538,7 +502,6 @@
                                 $(".content").toggle();
                             }
                             $(".checf ").click(function () {
-                             
                                 $(".checf ").removeClass("divchangbackground ");
                                 $(this).addClass("divchangbackground ")
                                 let arr = text($(this).children(".chefbuuu").children("button").text())
