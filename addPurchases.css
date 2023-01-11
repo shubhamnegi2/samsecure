@@ -48,7 +48,7 @@ main {
 }
 
 .allBtnsWrapper .allBtns {
-  background-color: #fff2e7;
+  background-color: #fff;
   border: 1px solid #fc8019;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
   text-align: center;
@@ -60,7 +60,7 @@ main {
   text-transform: capitalize;
   border-radius: 3px;
   border: 0;
-  background-color: #fc8019;
+  background-color: #0d6efd;
   color: #fff;
   font-size: 13px;
   font-weight: 500;
@@ -68,7 +68,7 @@ main {
   font-family: "Montserrat", sans-serif;
 }
 .allBtnsWrapper .allBtns .activeBtn {
-  background-color: #df6703;
+  background-color: #fc8019;
 }
 
 .ProductDetailsWrapper {
@@ -90,8 +90,8 @@ main {
 }
 .ProductDetailsWrapper .details .title h3 {
   display: inline-block;
-  border-bottom: 2px solid #fc8019;
-  color: #000;
+  border-bottom: 2px solid #fc8e32;
+  color: #0d6efd;
   font-weight: bold;
   padding-bottom: 5px;
   font-size: 20px;
