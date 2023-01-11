@@ -145,16 +145,17 @@
         }
 
         .allBtnsWrapper .allBtns button {
-            /* min-width: 150px; */
+
             margin: 10px;
             text-transform: capitalize;
             border-radius: 3px;
             border: 0;
-            background-color: #7a7797;
+            background-color: transparent;
             color: #fff;
-            font-size: 13px;
-            font-weight: 500;
-            padding: 3px 0px;
+            font-size: 14px;
+            color: #fff;
+            font-weight: bold;
+
             font-family: "Montserrat", sans-serif;
         }
 
@@ -374,15 +375,15 @@
 
         .chefbuuu {
             display: flex;
-            gap: 17px;
+            /* gap: 17px; */
             align-items: center;
-            padding: 0px 18px;
+            padding: 0px 15px;
         }
 
         .number {
             display: flex;
             align-items: center;
-            gap: 50px;
+            /* gap: 50px; */
         }
 
         .activebtnee {
@@ -497,6 +498,50 @@
             font-size: 12px;
 
         }
+
+        .number p {
+            font-size: 14px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .closeform {
+            display: flex;
+            align-items: center;
+            justify-content: right;
+        }
+
+        .closeform button {
+            height: 22px;
+            border-radius: 10px;
+            color: black;
+            font-size: 14px;
+            width: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 5px;
+        }
+
+        .employemformh2 {
+            display: inline-block;
+            border-bottom: 2px solid #3abb69;
+            color: #7a7797;
+            font-weight: bold;
+            padding-bottom: 5px;
+            font-size: 20px;
+        }
+
+        .monthName,
+        .totalBookings {
+            color: #3abb69;
+            font-size: 18px;
+        }
+
+        .monthName span,
+        .totalBookings span {
+            color: #7a7797
+        }
     </style>
 </head>
 
@@ -543,102 +588,55 @@
             <div class="container-fluid">
                 <div class="allBtns pt-3 pb-3" style="display: flex;
                 align-items: center; justify-content: center;">
+
                     <div class="checf divchangbackground">
-                        <div class="chefbuuu">
-                            <button class="activeBtn">All</button>
-                            <p style=" background: #fff;     border-radius: 50%;
-                            height: 20px;
-                            text-align: center;
-                            width: 20px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                        
-                            font-size: 10px">10</p>
-                        </div>
-                        <div class="number">
-                            <p style="padding: 0 5px; background: green; padding: 2px 7px;
-                            color: #fff;
-                            border-radius: 10px;
-                            font-size: 10px">8</p>
-                            <p style="padding: 0 5px; background: #f01010; padding: 2px 7px;
-                            color: #fff;
-                            border-radius: 10px;
-                            font-size: 10px">2</p>
-                        </div>
-                    </div>
-                    <div class="checf ">
                         <div class="chefbuuu ">
                             <button>chef</button>
-                            <p style="padding: 0 5px; background: #fff; padding: 2px 7px;
-                       border-radius: 10px;
-                            font-size: 10px">2</p>
+
                         </div>
                         <div class="number">
-                            <p style="padding: 0 5px; background: green; padding: 2px 7px;
-                            color: #fff;
-                            border-radius: 10px;
-                            font-size: 10px">2</p>
-                            <p style="    padding: 0 5px; background: #f01010; padding: 2px 7px;
-                            color: #fff;
-                            border-radius: 10px;
-                            font-size: 10px">0</p>
+                            <p>2</p>
                         </div>
                     </div>
                     <div class="checf">
                         <div class="chefbuuu">
                             <button>Manager</button>
-                            <p style="padding: 0 5px; background: #fff; padding: 2px 7px;
-                         border-radius: 10px;
-                            font-size: 10px">1</p>
+
                         </div>
                         <div class="number">
-                            <p style="padding: 0 5px; background: green; padding: 2px 7px;
-                            color: #fff;
-                            border-radius: 10px;
-                            font-size: 10px">1</p>
-                            <p style="    padding: 0 5px; background: #f01010; padding: 2px 7px;
-                            color: #fff;
-                            border-radius: 10px;
-                            font-size: 10px">0</p>
+                            <p>1</p>
                         </div>
                     </div>
                     <div class="checf">
                         <div class="chefbuuu">
                             <button>Waiter</button>
-                            <p style="padding: 0 5px; background: #fff; border-radius: 10px;">5</p>
+
                         </div>
                         <div class="number">
-                            <p style="padding: 0 5px; background: green; padding: 2px 7px;
-                            color: #fff;
-                            border-radius: 10px;
-                            font-size: 10px">4</p>
-                            <p style="    padding: 0 5px; background: #f01010; padding: 2px 7px;
-                            color: #fff;
-                            border-radius: 10px;
-                            font-size: 10px">1</p>
+                            <p>5</p>
                         </div>
                     </div>
 
                     <div class="checf">
                         <div class="chefbuuu">
                             <button>Waiter</button>
-                            <p style="padding: 0 5px; background: #fff; border-radius: 10px;">2</p>
+
                         </div>
                         <div class="number">
-                            <p style="padding: 0 5px; background: green; padding: 2px 7px;
-                            color: #fff;
-                            border-radius: 10px;
-                            font-size: 10px">1</p>
-                            <p style=" padding: 0 5px; background: #f01010; padding: 2px 7px;
-                            color: #fff;
-                            border-radius: 10px;
-                            font-size: 10px">1</p>
+                            <p>2</p>
                         </div>
                     </div>
 
 
+                    <div class="checf ">
+                        <div class="chefbuuu">
+                            <button>All</button>
 
+                        </div>
+                        <div class="number">
+                            <p>10</p>
+                        </div>
+                    </div>
 
 
 
@@ -646,11 +644,19 @@
             </div>
         </div>
         <div class="container-fluid">
+
             <div class="ProductDetailsWrapper">
                 <div class="details">
                     <div class="title">
                         <h3 style="padding-bottom: 10px;">Employee Detail</h3>
 
+                    </div>
+
+                    <div class="col-12 mb-3">
+                        <div class="d-flex justify-content-between eventDateTime">
+                            <div class="monthName">Total : <span>8</span></div>
+                            <div class="totalBookings">Present : <span>2</span></div>
+                        </div>
                     </div>
                     <table>
                         <thead>
@@ -767,29 +773,20 @@
         </div> -->
                 </div>
             </div>
+
             <div class="formpop">
                 <div class="form-wraper">
                     <div class="form-container">
-                        <div class="closeform" style="display: flex; align-items: center; justify-content: right;  "><button style="height: 22px;
-                            border-radius: 10px; color: black;  font-size: 14px; width: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 5px;">&times;</button></div>
+                        <div class="closeform"><button>&times;</button></div>
                         <div class="container ">
                             <div class="row justify-content-between text-left">
                                 <div class="col-sm-5 text-center" style="padding-bottom: 10px; 
                                 font-size: 21px;">
-                                    <h2 style="    display: inline-block;
-                                    border-bottom: 2px solid #3abb69;
-                                    color: #7a7797;
-                                    font-weight: bold;
-                                    padding-bottom: 5px;
-                                    font-size: 20px;">Employee Form</h2>
+                                    <h2 class="employemformh2">Employee Form</h2>
                                 </div>
                             </div>
 
-                            <form class="form-horizontal" >
+                            <form class="form-horizontal">
 
                                 <div class="row justify-content-between text-left ">
                                     <div class="form-group col-sm-5 flex-column d-flex forminput"> <label
@@ -851,22 +848,22 @@
                                             class="form-control-label px-3">Upload Id<span class="text-danger">
                                                 *</span></label> <input style="border: none;" type="file" id="lname"
                                             name="lname" placeholder="Enter your Upload Id" onblur="validate(2)"> </div>
-                                            <div class=" col-sm-3 form-radio" style="font-size: 12px;">
-                                                <label for="gender">Gender</label>
-                                                <div class="form-flex">
-                                                    <input type="radio" name="gender" value="male" id="male"
-                                                        checked="checked" />
-                                                    <label for="male">Male</label>
-                                                    <input type="radio" name="gender" value="female" id="female" />
-                                                    <label for="female">Female</label>
-                                                </div>
-                                            </div>
+                                    <div class=" col-sm-3 form-radio" style="font-size: 12px;">
+                                        <label for="gender">Gender</label>
+                                        <div class="form-flex">
+                                            <input type="radio" name="gender" value="male" id="male"
+                                                checked="checked" />
+                                            <label for="male">Male</label>
+                                            <input type="radio" name="gender" value="female" id="female" />
+                                            <label for="female">Female</label>
+                                        </div>
+                                    </div>
                                 </div>
 
 
 
                                 <div class="row justify-content-center ">
-                                 
+
 
                                 </div>
 
@@ -890,7 +887,8 @@
         <div class="openpop">
             <div class="popmain">
                 <div class="popopen">
-                    <div class="close" style="display: flex; align-items: center; justify-content: right; "><button style=" height: 22px; width: 22px;
+                    <div class="close" style="display: flex; align-items: center; justify-content: right; "><button
+                            style=" height: 22px; width: 22px;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -907,29 +905,52 @@
                             </div>
                         </div>
                         <div class="empolet-detail">
-                            <div><h2 style="color: #3abb69;">ABC CBA</h2></div>
-                            <div class="empoey-salarey">
-                             <div style="display: flex; gap: 4px;"><p style="color: #bfc2cb;">Salary:</p><p style="color: #9ca0ac;"> 2000</p></div>
-                            
-                             <div style="display: flex; gap: 4px;"><p style="color: #bfc2cb;">Leave:</p><p style="color: #9ca0ac;">Sunday</p></div>   
-                            
-                            
+                            <div>
+                                <h2 style="color: #3abb69;">ABC CBA</h2>
                             </div>
                             <div class="empoey-salarey">
-                                <div style="display: flex; gap: 4px;"><p style="color: #bfc2cb;">Phone No:</p><p style="color: #9ca0ac;">9999776666</p></div>   
-                                <div style="display: flex; gap: 4px;"><p style="color: #bfc2cb;">Shift Timing:</p><p style="color: #9ca0ac;">12 Hours</p></div>   
+                                <div style="display: flex; gap: 4px;">
+                                    <p style="color: #bfc2cb;">Salary:</p>
+                                    <p style="color: #9ca0ac;"> 2000</p>
+                                </div>
 
-                               
-                               
-                               
+                                <div style="display: flex; gap: 4px;">
+                                    <p style="color: #bfc2cb;">Leave:</p>
+                                    <p style="color: #9ca0ac;">Sunday</p>
+                                </div>
+
+
                             </div>
                             <div class="empoey-salarey">
-                                <div style="display: flex; gap: 4px;"><p style="color: #bfc2cb;">Address:</p><p style="color: #9ca0ac;">Saharanpur</p></div>   
-                                <div style="display: flex; gap: 4px;"><p style="color: #bfc2cb;">Gender:</p><p style="color: #9ca0ac;">Female</p></div>   
+                                <div style="display: flex; gap: 4px;">
+                                    <p style="color: #bfc2cb;">Phone No:</p>
+                                    <p style="color: #9ca0ac;">9999776666</p>
+                                </div>
+                                <div style="display: flex; gap: 4px;">
+                                    <p style="color: #bfc2cb;">Shift Timing:</p>
+                                    <p style="color: #9ca0ac;">12 Hours</p>
+                                </div>
+
+
+
+
                             </div>
                             <div class="empoey-salarey">
-                               
-                                <div style="display: flex; gap: 4px;"><p style="color: #bfc2cb;">Date of Joining:</p><p style="color: #9ca0ac;">12/04/2022</p></div>   
+                                <div style="display: flex; gap: 4px;">
+                                    <p style="color: #bfc2cb;">Address:</p>
+                                    <p style="color: #9ca0ac;">Saharanpur</p>
+                                </div>
+                                <div style="display: flex; gap: 4px;">
+                                    <p style="color: #bfc2cb;">Gender:</p>
+                                    <p style="color: #9ca0ac;">Female</p>
+                                </div>
+                            </div>
+                            <div class="empoey-salarey">
+
+                                <div style="display: flex; gap: 4px;">
+                                    <p style="color: #bfc2cb;">Date of Joining:</p>
+                                    <p style="color: #9ca0ac;">12/04/2022</p>
+                                </div>
 
                             </div>
                         </div>
@@ -963,21 +984,16 @@
             function togglePopup() {
                 $(".content").toggle();
             }
-            $(".checf").click(function () {
-                $(".checf ").removeClass("divchangbackground");
-                $(this).addClass("divchangbackground")
+
+
+            $(".checf ").click(function () {
+                $(".checf ").removeClass("divchangbackground ");
+                $(this).addClass("divchangbackground ")
+
+                $(".ProductDetailsWrapper .details .title h3").text($(this).children(".chefbuuu").children("button").text());
+
+
             })
-
-
-            $(".allBtns button").click(function () {
-
-                $(".allBtns button").removeClass("activeBtn");
-                $(this).addClass("activeBtn");
-                console.log(this)
-
-                $(".ProductDetailsWrapper .details .title h3").text($(this).text());
-            });
-
 
             $(".abcbtn").click(function () {
                 $(".openpop").show()

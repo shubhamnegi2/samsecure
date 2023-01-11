@@ -112,9 +112,9 @@
             text-transform: capitalize;
             border-radius: 3px;
             border: 0;
-            background-color: #7a7797;
+            background-color: transparent;
             color: #fff;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 500;
             padding: 3px 0px;
             font-family: "Montserrat", sans-serif;
@@ -128,7 +128,7 @@
             background-color: #3abb69;
             color: #fff;
             font-size: 13px;
-            font-weight: 500;
+            font-weight: bold;
             padding: 3px 0px;
             font-family: "Montserrat", sans-serif;
             padding: 5px 15px;
@@ -278,19 +278,26 @@
             flex-direction: column;
             background-color: #7a7797;
             border-radius: 5px;
+            font-weight: bold;
 
         }
 
         .checf button {
-            background-color: #7a7797;
+            background-color: transparent;
+            font-weight: bold;
         }
-
+           .chefbuuu button{
+           font-weight: bold;
+           padding: 0px;
+           font-size: 16px;
+      }
         .chefbuuu {
             display: flex;
             gap: 17px;
             align-items: center;
             padding: 0px 18px;
-            border-bottom: 1px solid #fff;
+           
+            font-weight: bold;
         }
 
         .number {
@@ -391,38 +398,38 @@
 
         .allp5 {
             padding: 0 5px;
-            background: #948ecd;
-            padding: 2px 7px;
+         
+           
             color: #fff;
             border-radius: 10px;
-            font-size: 10px
+            font-size: 12px
         }
 
         .allp6 {
             padding: 0 5px;
-            background: #948ecd;
-            padding: 2px 7px;
+           font-weight: bold;
+            font-size: 12px;
             color: #fff;
             border-radius: 10px;
-            font-size: 10px
+            font-size: 12px
         }
 
         .foodp1 {
             padding: 0 5px;
-            background: #948ecd;
+          font-weight: bold;
             padding: 2px 7px;
             color: #fff;
             border-radius: 10px;
-            font-size: 10px
+            font-size: 12px
         }
 
         .barp1 {
             padding: 0 5px;
-            background: #948ecd;
+         font-weight: bold;
             padding: 2px 7px;
             color: #fff;
             border-radius: 10px;
-            font-size: 10px
+            font-size: 12px
         }
     </style>
 </head>
@@ -654,10 +661,10 @@ padding-bottom: 5px;">&times;</button></div>
         <div class="allBtnsWrapper pt-3 pb-3">
             <div class="container-fluid">
                 <div class="allBtns pt-3 pb-3" style="display: flex;
-                align-items: center; justify-content: center;">
+                align-items: center; justify-content: center; ">
                     <div class="checf divchangbackground">
                         <div class="chefbuuu">
-                            <button class="activeBtn">All</button>
+                            <button>All</button>
 
                         </div>
                         <div class="number">
@@ -852,20 +859,25 @@ padding-bottom: 5px;">&times;</button></div>
             function togglePopup() {
                 $(".content").toggle();
             }
-            $(".checf").click(function () {
-                $(".checf ").removeClass("divchangbackground");
-                $(this).addClass("divchangbackground")
+            $(".checf ").click(function () {
+                $(".checf ").removeClass("divchangbackground ");
+                $(this).addClass("divchangbackground ")
+           
+                $(".ProductDetailsWrapper .details .title h3").text($(this).children(".chefbuuu").children("button").text());
+                
+               
             })
 
+            
+            
+            // $(".allBtns button").click(function () {
 
-            $(".allBtns button").click(function () {
+            //     $(".allBtns button").removeClass("activeBtn ");
+            //     $(this).addClass("activeBtn ");
+            //     console.log(this)
 
-                $(".allBtns button").removeClass("activeBtn");
-                $(this).addClass("activeBtn");
-                console.log(this)
-
-                $(".ProductDetailsWrapper .details .title h3").text($(this).text());
-            });
+            //     $(".ProductDetailsWrapper .details .title h3").text($(this).text());
+            // });
             $(".addvenderpop").click(function () {
                 $(".createcaegory").show()
 
