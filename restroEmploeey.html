@@ -142,11 +142,10 @@
             box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
             text-align: center;
             border-radius: 5px;
-           
         }
 
         .allBtnsWrapper .allBtns button {
-padding: 0px;
+
             margin: 0px;
             text-transform: capitalize;
             border-radius: 3px;
@@ -156,7 +155,7 @@ padding: 0px;
             font-size: 14px;
             color: #fff;
             font-weight: bold;
-
+            padding: 0px;
             font-family: "Montserrat", sans-serif;
         }
 
@@ -168,8 +167,8 @@ padding: 0px;
             background-color: #3abb69;
             color: #fff;
             font-size: 13px;
-            font-weight: 500;
-            padding: 3px 0px;
+            font-weight: bold;
+
             font-family: "Montserrat", sans-serif;
             padding: 5px 15px;
         }
@@ -367,8 +366,14 @@ padding: 0px;
             flex-direction: column;
             background-color: #7a7797;
             border-radius: 5px;
-            padding: 5px;
+            padding: 7px;
+            cursor: pointer;
 
+        }
+
+        .checf p {
+            padding: 0px;
+            margin: 0px;
         }
 
         .checf button {
@@ -386,11 +391,6 @@ padding: 0px;
             display: flex;
             align-items: center;
             /* gap: 50px; */
-        }
-        .number p{
-            font-size: 16px;
-            margin: 0px;
-            padding: 0px;
         }
 
         .activebtnee {
@@ -496,8 +496,10 @@ padding: 0px;
         }
 
         .forminput input {
-            padding: 6px;
+            padding: 7px;
             border-radius: 5px;
+            font-size: 12px;
+            border: 3px solid #eee;
 
         }
 
@@ -507,7 +509,7 @@ padding: 0px;
         }
 
         .number p {
-            font-size: 16px;
+            font-size: 14px;
             color: #fff;
             font-weight: bold;
         }
@@ -548,6 +550,20 @@ padding: 0px;
         .monthName span,
         .totalBookings span {
             color: #7a7797
+        }
+
+        .submitbtn1 {
+            background-color: #3abb69;
+            color: #fff;
+            font-size: 13px;
+            font-weight: bold;
+            border: 0;
+            border-radius: 5px;
+            padding: 4px 12px;
+
+        }
+        .abcbtn{
+            cursor: pointer;
         }
     </style>
 </head>
@@ -688,7 +704,7 @@ padding: 0px;
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td class="abcbtn" style="cursor: pointer;">Abc </td>
+                                <td class="abcbtn">Abc </td>
                                 <td>999999998</td>
                                 <td>Saharanpur</td>
                                 <td>2 Month</td>
@@ -706,7 +722,7 @@ padding: 0px;
 
                             <tr>
                                 <td>2</td>
-                                <td class="abcbtn" style="cursor: pointer;">Abc </td>
+                                <td class="abcbtn">Abc </td>
                                 <td>999999998</td>
                                 <td>Saharanpur</td>
                                 <td>2 Month</td>
@@ -722,7 +738,7 @@ padding: 0px;
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td class="abcbtn" style="cursor: pointer;">Abc </td>
+                                <td class="abcbtn">Abc </td>
                                 <td>999999998</td>
                                 <td>Saharanpur</td>
                                 <td>2 Month</td>
@@ -739,7 +755,7 @@ padding: 0px;
 
                             <tr>
                                 <td>4</td>
-                                <td class="abcbtn" style="cursor: pointer;">Abc </td>
+                                <td class="abcbtn" >Abc </td>
                                 <td>999999998</td>
                                 <td>Saharanpur</td>
                                 <td>2 Month</td>
@@ -755,7 +771,7 @@ padding: 0px;
                             </tr>
                             <tr>
                                 <td>5</td>
-                                <td class="abcbtn" style="cursor: pointer;">Abc </td>
+                                <td class="abcbtn">Abc </td>
                                 <td>999999998</td>
                                 <td>Saharanpur</td>
                                 <td>2 Month</td>
@@ -772,12 +788,7 @@ padding: 0px;
 
                         </tbody>
                     </table>
-                    <!-- <div class="table1Btns text-right my-3 mx-3">
-            <button class="btn btn-primary btn-sm showVenderDetails">
-              Next
-            </button>
-          </div>
-        </div> -->
+
                 </div>
             </div>
 
@@ -848,16 +859,17 @@ padding: 0px;
                                 <div class="row justify-content-between text-left">
                                     <div class="form-group col-sm-3 flex-column d-flex forminput"> <label
                                             class="form-control-label px-3">Upload Image<span class="text-danger">
-                                                *</span></label> <input style="border: none;" type="file" id="fname"
-                                            name="fname" placeholder="Enter your Upload Image" onblur="validate(1)">
+                                                *</span></label> <input style="" type="file" id="fname" name="fname"
+                                            placeholder="Enter your Upload Image" onblur="validate(1)">
                                     </div>
                                     <div class="form-group col-sm-3 flex-column d-flex forminput"> <label
                                             class="form-control-label px-3">Upload Id<span class="text-danger">
-                                                *</span></label> <input style="border: none;" type="file" id="lname"
-                                            name="lname" placeholder="Enter your Upload Id" onblur="validate(2)"> </div>
+                                                *</span></label> <input style="" type="file" id="lname" name="lname"
+                                            placeholder="Enter your Upload Id" onblur="validate(2)"> </div>
                                     <div class=" col-sm-3 form-radio" style="font-size: 12px;">
                                         <label for="gender">Gender</label>
-                                        <div class="form-flex">
+                                        <div class="form-flex"
+                                            style="border: 3px solid #eee; border-radius: 5px; padding: 4px;">
                                             <input type="radio" name="gender" value="male" id="male"
                                                 checked="checked" />
                                             <label for="male">Male</label>
@@ -867,20 +879,9 @@ padding: 0px;
                                     </div>
                                 </div>
 
-
-
-                                <div class="row justify-content-center ">
-
-
-                                </div>
-
-
-
-
                                 <div class="form-group text-center >          
                                                                 <div class=" col-sm-offset-2 col-sm-12">
-                                    <button type="submit" class="btn btn-default"
-                                        style="background-color: #3abb69; color: #fff;">Submit</button>
+                                    <button type="submit" class=" submitbtn1">Submit</button>
                                 </div>
                         </div>
                     </div>
@@ -937,10 +938,6 @@ padding: 0px;
                                     <p style="color: #bfc2cb;">Shift Timing:</p>
                                     <p style="color: #9ca0ac;">12 Hours</p>
                                 </div>
-
-
-
-
                             </div>
                             <div class="empoey-salarey">
                                 <div style="display: flex; gap: 4px;">
@@ -1016,15 +1013,6 @@ padding: 0px;
             $(".closeform").click(function () {
                 $(".formpop").hide()
             })
-
-
-
-
-
-
-
-
-
 
 
         </script>

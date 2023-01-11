@@ -1,366 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-    <title>Document</title>
-    <style>
-        #addVenderWrapper {
-  /* display: none; */
-  background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-  border-radius: 5px;
-  padding: 30px 0px;
-}
-#addVenderWrapper .addVenderTitle {
-  text-align: center;
-  padding-bottom: 20px;
-}
-#addVenderWrapper .addVenderTitle h2 {
-  display: inline-block;
-  border-bottom: 2px solid #3abb69;
-  color: #7a7797;
-  font-weight: bold;
-  padding-bottom: 5px;
-  font-size: 20px;
-}
-#addVenderWrapper .addVenderForm .formGroup {
-  margin-bottom: 20px;
-}
-#addVenderWrapper .addVenderForm .formGroup label {
-  color: #7a7797;
-  font-size: 14px;
-  font-weight: 500;
-  padding-left: 5px;
-}
-#addVenderWrapper .addVenderForm .formGroup input {
-  border: 2px solid #eee;
-  width: 100%;
-  border-radius: 4px;
-  padding-left: 15px;
-  height: 35px;
-}
-#addVenderWrapper .addVenderForm .addVenderSubmitBtn {
-  text-transform: capitalize;
-  border-radius: 3px;
-  border: 0px;
-  background-color: #3abb69;
-  color: #fff;
-  padding: 2px 30px;
-  font-weight: bold;
-}
-.breadcrumb ul {
-        margin-bottom: 0rem;
-      }
-      .breadcrumb ul li {
-        color: #3abb69;
-        font-weight: bold;
-        margin: 10px 1px;
-      }
-      .breadcrumb ul li a {
-        color: inherit;
-        padding: 10px;
-        text-decoration: none;
-      }
-      .breadcrumb ul li i {
-        font-size: 12px;
-      }
-      .breadcrumb ul li .ActiveBreadcrumb {
-        color: #7a7797;
-      }
-      .breadcrumb{
-        background-color: #eee;
-    padding: 4px;
-    font-size: 13px;
-      }
-      .formGroup input{
-        font-size: 12px;
-      }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  <title>Document</title>
+  <style>
+    #addVenderWrapper {
+      /* display: none; */
+      background-color: #fff;
+      box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+      border-radius: 5px;
+      padding: 30px 0px;
+    }
+
+    #addVenderWrapper .addVenderTitle {
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    #addVenderWrapper .addVenderTitle h2 {
+      display: inline-block;
+      border-bottom: 2px solid #3abb69;
+      color: #7a7797;
+      font-weight: bold;
+      padding-bottom: 5px;
+      font-size: 20px;
+    }
+
+    #addVenderWrapper .addVenderForm .formGroup {
+      margin-bottom: 20px;
+    }
+
+    #addVenderWrapper .addVenderForm .formGroup label {
+      color: #7a7797;
+      font-size: 14px;
+      font-weight: 500;
+      padding-left: 5px;
+    }
+
+    #addVenderWrapper .addVenderForm .formGroup input {
+      border: 2px solid #eee;
+      width: 100%;
+      border-radius: 4px;
+      padding-left: 15px;
+      height: 35px;
+    }
+
+    #addVenderWrapper .addVenderForm .addVenderSubmitBtn {
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0px;
+      background-color: #3abb69;
+      color: #fff;
+      padding: 2px 30px;
+      font-weight: bold;
+    }
+
+    .breadcrumb ul {
+      margin-bottom: 0rem;
+    }
+
+    .breadcrumb ul li {
+      color: #3abb69;
+      font-weight: bold;
+      margin: 10px 1px;
+    }
+
+    .breadcrumb ul li a {
+      color: inherit;
+      padding: 10px;
+      text-decoration: none;
+    }
+
+    .breadcrumb ul li i {
+      font-size: 12px;
+    }
+
+    .breadcrumb ul li .ActiveBreadcrumb {
+      color: #7a7797;
+    }
+
+    .breadcrumb {
+      background-color: #eee;
+      padding: 4px;
+      font-size: 13px;
+    }
+
+    .Percentagediv {
+      border: 2px solid #eee;
+      background-color: #fff;
+      padding: 2px;
+      border-radius: 4px;
+    }
+
+    .radiobtn {
+      color: #7a7797;
+      font-size: 14px;
+      font-weight: 500;
+      padding-left: 5px;
+    }
+
+    .addVenderSubmitBtn {
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0px;
+      background-color: #3abb69;
+      color: #fff;
+      padding: 6px 34px;
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 13px
+    }
+
+    .inputfile {
+      border: 2px solid #eee;
+      background-color: #fff;
+      padding: 2px;
+      border-radius: 4px;
+    }
+
+    .yearinputs {
+      border: 2px solid #eee;
+      background-color: #fff;
+      padding: 2px;
+      border-radius: 4px;
+    }
+
+    .validtimelable {
+      color: #7a7797;
+      font-size: 14px;
+      font-weight: 500;
+      padding-left: 5px;
+    }
+  </style>
 </head>
+
 <body>
-    
-    <div class="breadcrumb">
-       
 
-        <ul class="list-unstyled d-flex align-items-center">
-            <li><a href="">Dashboard</a></li>
-            <li><i class="fa-solid fa-angles-right"></i></li>
-            <li><a href="" class="ActiveBreadcrumb">Add Membership</a></li>
-          </ul>
-       
-        <!-- <h4>Total Employee-20</h4> -->
-        
-        
-  
+  <div class="breadcrumb">
 
 
-</div> 
-    <div class="container-fluid" >
-        <div id="addVenderWrapper" class="mt-4" style="box-shadow: 0 0 2px;">
-          <div class="addVenderTitle">
-            <h2>Membership Form</h2>
-          </div>
-          <div class="addVenderForm container">
-            <form>
-              <div class="row justify-content-center">
-                <div class="col-12">
-                  <div
-                    class="row justify-content-center align-items-center"
-                    style="background-color: #eee; padding: 20px"
-                  >
-                    <div class="col-md-4">
-                      <div class="formGroup">
-                        <label for="venderName"> Name</label>
-                        <br />
-                        <input type="text" placeholder="Enter Your Name" />
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="formGroup">
-                        <label for="Phone">Phone No.</label>
-                        <br />
-                        <input type="text" placeholder="Enter Your Phone No" />
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="formGroup">
-                        <label for="Address">Address</label>
-                        <br />
-                        <input type="text" placeholder="Enter Your Address" />
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="formGroup">
-                        <label for="upiN">City</label>
-                        <br />
-                        <input type="text" placeholder="Enter Your City Name" />
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="formGroup">
-                        <label for="bankName">State</label>
-                        <br />
-                        <input type="text" placeholder="Enter Your State Name" />
-                      </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3">
-                      <div class="formGroup">
-                        <label for="AccN">Member</label>
-                        <br />
-                        <select style="    padding: 8px;
+    <ul class="list-unstyled d-flex align-items-center">
+      <li><a href="">Dashboard</a></li>
+      <li><i class="fa-solid fa-angles-right"></i></li>
+      <li><a href="" class="ActiveBreadcrumb">Add Membership</a></li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+  <div class="container-fluid">
+    <div id="addVenderWrapper" class="mt-4" style="box-shadow: 0 0 2px;">
+      <div class="addVenderTitle">
+        <h2>Membership Form</h2>
+      </div>
+      <div class="addVenderForm container">
+        <form>
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="row justify-content-center align-items-center" style="background-color: #eee; padding: 20px">
+                <div class="col-md-4">
+                  <div class="formGroup">
+                    <label for="venderName"> Name</label>
+                    <br />
+                    <input type="text" placeholder="Enter Your Name" />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="formGroup">
+                    <label for="Phone">Phone No.</label>
+                    <br />
+                    <input type="text" placeholder="Enter Your Phone No" />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="formGroup">
+                    <label for="Address">Address</label>
+                    <br />
+                    <input type="text" placeholder="Enter Your Address" />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="formGroup">
+                    <label for="upiN">City</label>
+                    <br />
+                    <input type="text" placeholder="Enter Your City Name" />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="formGroup">
+                    <label for="bankName">State</label>
+                    <br />
+                    <input type="text" placeholder="Enter Your State Name" />
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                  <div class="formGroup">
+                    <label for="AccN">Member</label>
+                    <br />
+                    <select style="    padding: 8px;
                         width: 100%;
                         border-radius: 4px;
                         border: 2px solid #eeee;">
-                        
-                            <option>abc</option>
-                            <option>abc</option>
-                        </select>
-                         
-                      </div>
-                    </div>
-                    
-                    <div class="col-md-1 col-sm-2" style="top: 14px;">
-                        <div class="formGroup">
-                        
-                          <input type="text" placeholder="abc" />
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="formGroup">
-                          <label for="bankName">Email</label>
-                          <br />
-                          <input type="text" placeholder="Enter Your Email" />
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="formGroup">
-                          <label for="bankName">Image</label>
-                          <br />
-                          <input type="file"  style="border: 2px solid #eee;
-                          background-color: #fff;
-                          padding: 2px;
-                          border-radius: 4px;" />
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="formGroup">
-                          <label for="bankName">Id Proof</label>
-                          <br />
-                          <input type="file"  style="border: 2px solid #eee;
-                          background-color: #fff;
-                          padding: 2px;
-                          border-radius: 4px;"/>
-                        </div>
-                      </div>
-                    <div class="row justify-content-left ">
-                        <div class=" col-sm-4 form-radio" style="color: #7a7797;
-                        font-size: 14px;
-                        font-weight: 500;
-                        padding-left: 5px;">
-                            <label for="gender" >Valid Time</label>
-                            <div class="form-flex" style="border: 2px solid #eee;
-                            background-color: #fff;
-                            padding: 2px;
-                            border-radius: 4px;">
-                                <input  type="radio" name="1year"
-                                    checked="checked" />
-                                <label for="1year">1 year</label>
-                                <input type="radio" name="2year" />
-                                <label for="2year">2 year</label>
-                                <input type="radio" name="3year" />
-                                <label for="3year">3 year</label>
-                            </div>
-                        </div>
-                        <div class=" col-sm-4 form-radio" style="color: #7a7797;
-                        font-size: 14px;
-                        font-weight: 500;
-                        padding-left: 5px;" >
-                            <label for="gender" >Percentage</label>
-                            <div class="form-flex" style="border: 2px solid #eee;
-                            background-color: #fff;
-                            padding: 2px;
-                            border-radius: 4px;">
-                                <input  type="radio" 
-                                    checked="checked"  name="50%"/>
-                                <label for="10%" >10%</label>
-                                <input type="radio" name="10%" />
-                                <label for="lable">20%</label>
-                                <input type="radio" name="20%" />
-                                <label for="lable">30%</label>
-                                <input type="radio" name="30%" />
-                                <label for="lable">40%</label>
-                                <input type="radio"  name="40%"/>
-                                <label for="lable">50%</label>
-                            </div>
-                        </div>
-                       
-        
-                    </div>
-                 
-                    <div class="col-12 text-center mt-2">
-                      <button type="submit" class="addVenderSubmitBtn" style="    text-transform: capitalize;
-                      border-radius: 3px;
-                      border: 0px;
-                      background-color: #3abb69;
-                      color: #fff;
-                      padding: 6px 34px;
-                      margin-top: 20px;
-                      font-weight: bold;
-                      font-size:13px">
-                        Submit
-                      </button>
-                    </div>
+
+                      <option>abc</option>
+                      <option>abc</option>
+                    </select>
+
                   </div>
                 </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    <!-- <div class="container">
-        <div class="row justify-content-between text-left">
-            <div class="col-sm-5 text-center" style="padding-bottom: 10px;     color: #bd9a13;
-            font-size: 21px;">
-                <h2>Membership Form</h2>
-            </div>
-        </div>
 
-        <form class="form-horizontal" role="form"
-            action="https://www.javatpoint.com/javascriptpages/valid.jsp">
+                <div class="col-md-1 col-sm-2" style="top: 14px;">
+                  <div class="formGroup">
 
-            <div class="row justify-content-center text-left " style="gap: 30px;">
-                <div class="form-group col-lg-2 col-sm-6 flex-column d-flex forminput"> <label
-                        class="form-control-label px-3">Name<span class="text-danger">
-                            *</span></label> <input type="text" id="fname" name="fname"
-                        placeholder="Enter your first name" onblur="validate(1)"> </div>
-                        <div class="form-group  col-lg-2 col-sm-6 flex-column d-flex forminput "> <label
-                            class="form-control-label px-3">Phone No<span class="text-danger">
-                                *</span></label> <input type="text" id="lname" name="lname"
-                            placeholder="Enter your Phone No" onblur="validate(2)"> </div>
-                            <div class="form-group col-lg-2 col-sm-6 flex-column d-flex forminput "> <label
-                                class="form-control-label px-3">Address<span class="text-danger">
-                                    *</span></label> <input type="text" id="lname" name="lname"
-                                placeholder="Enter your Address" onblur="validate(2)"> </div>
-               
-            </div>
-          
-           
-            <div class="row justify-content-center text-left" style="gap: 30px;">
-                <div class="form-group col-lg-3 col-sm-3 flex-column d-flex forminput"> <label
-                        class="form-control-label px-3">City<span class="text-danger">
-                            *</span></label> <input type="text" id="fname" name="fname"
-                        placeholder="Enter your City" onblur="validate(1)"> </div>
-                <div class="form-group col-lg-3 col-sm-3 flex-column d-flex forminput"> <label
-                        class="form-control-label px-3">State<span class="text-danger">
-                            *</span></label> <input type="text" id="lname" name="lname"
-                        placeholder="Enter your State" onblur="validate(2)"> </div>
-            </div>
-            
-          
-            <div class="row justify-content-center " style="gap: 30px;">
-                <div class="form-group col-lg-3 col-sm-3 flex-column d-flex forminput">
-                    <label>Member</label>
-                    <select>
-                        
-                        <option>abc</option>
-                        <option>abc</option>
-                    </select>
+                    <input type="text" placeholder="abc" />
+                  </div>
                 </div>
-                <div class="form-group col-lg-2 col-sm-3 flex-column d-flex forminput">
-                    <label>Percentage </label>
-                    <select>
-                    <option>10%</option>
-                    <option>20%</option>
-                    <option>30%</option>
-                    <option>40%</option>
-                    <option>50%</option>
-
-                </select></div>
-                <div class="form-group col-lg-1 col-sm-3 flex-column d-flex forminput" style="top: 17px;">
-                   <input placeholder="10%">
-                    <!-- <select>
-                    <option>10%</option>
-                    <option>20%</option>
-                    <option>30%</option>
-                    <option>40%</option>
-                    <option>50%</option>
-
-                </select> -->
-            <!-- </div>
-              
-            </div>
-
-
-            <div class="row justify-content-center ">
-                <div class=" col-sm-6 form-radio" style="font-size: 12px;">
-                    <label for="gender" >Valid Time</label>
-                    <div class="form-flex">
-                        <input  type="radio" 
-                            checked="checked" />
-                        <label for="male">1 year</label>
-                        <input type="radio" />
-                        <label for="female">2 year</label>
-                        <input type="radio" />
-                        <label for="female">3 year</label>
+                <div class="col-md-4">
+                  <div class="formGroup">
+                    <label for="">Email</label>
+                    <br />
+                    <input type="text" placeholder="Enter Your Email" />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="formGroup">
+                    <label for="bankName">Image</label>
+                    <br />
+                    <input type="file" class="inputfile" />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="formGroup">
+                    <label for="bankName">Id Proof</label>
+                    <br />
+                    <input type="file" class="inputfile">
+                  </div>
+                </div>
+                <div class="row justify-content-left ">
+                  <div class=" col-sm-4 form-radio validtimelable">
+                    <label for="">Valid Time</label>
+                    <div class="form-flex yearinputs">
+                      <input type="radio" checked="checked" />
+                      <label for="">1 year</label>
+                      <input type="radio" />
+                      <label for="">2 year</label>
+                      <input type="radio" />
+                      <label for="">3 year</label>
                     </div>
+
+                  </div>
+                  <div class=" col-sm-4 form-radio radiobtn">
+                    <label for="">Percentage</label>
+                    <div class="form-flex Percentagediv">
+                      <input type="radio" checked="checked" />
+                      <label for="">10%</label>
+                      <input type="radio" />
+                      <label for="">20%</label>
+                      <input type="radio" />
+                      <label for="">30%</label>
+                      <input type="radio" />
+                      <label for="">40%</label>
+                      <input type="radio" />
+                      <label>50%</label>
+                    </div>
+                  </div>
+
+
                 </div>
-               
 
+                <div class="col-12 text-center mt-2">
+                  <button type="submit" class="addVenderSubmitBtn">
+                    Submit
+                  </button>
+                </div>
+              </div>
             </div>
-          
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
-
-
-            <div class="form-group text-center >          
-                                            <div class=" col-sm-offset-2 col-sm-12">
-                <button type="submit" class="btn btn-default"
-                    style="background-color: #3abb69; color: #fff;">Submit</button>
-            </div>
-    </div> --> 
 </body>
+
 </html>
