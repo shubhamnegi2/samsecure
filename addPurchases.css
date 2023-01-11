@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
-.breadcrumb {
-  margin-bottom: 0rem !important;
+.breadcrumbs {
   position: relative;
+  background-color: #fc8019;
+  padding: 5px 0px;
 }
-.breadcrumb .addVender {
+.breadcrumbs .addVender {
   position: absolute;
   right: 2%;
   top: 50%;
@@ -11,37 +12,35 @@
   text-transform: capitalize;
   border-radius: 3px;
   border: 0px;
-  background-color: #3abb69;
+  background-color: #fc8d30;
   color: #fff;
   padding: 2px 30px;
   font-weight: bold;
+  border: 1px solid #fff;
 }
-.breadcrumb ul {
+.breadcrumbs ul {
   margin-bottom: 0rem;
 }
-.breadcrumb ul li {
-  color: #3abb69;
+.breadcrumbs ul li {
+  color: #eee;
   font-weight: bold;
   margin: 10px 1px;
 }
-.breadcrumb ul li a {
+.breadcrumbs ul li a {
   color: inherit;
   padding: 10px;
   text-decoration: none;
 }
-.breadcrumb ul li i {
+.breadcrumbs ul li i {
   font-size: 12px;
 }
-.breadcrumb ul li .ActiveBreadcrumb {
-  color: #7a7797;
-}
-
-main {
-  background-color: #eee;
+.breadcrumbs ul li .ActiveBreadcrumb {
+  color: #fff;
 }
 
 .allBtnsWrapper .allBtns {
-  background-color: #fff;
+  background-color: #fff2e7;
+  border: 1px solid #fc8019;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
   text-align: center;
   border-radius: 5px;
@@ -52,7 +51,7 @@ main {
   text-transform: capitalize;
   border-radius: 3px;
   border: 0;
-  background-color: #7a7797;
+  background-color: #fc8019;
   color: #fff;
   font-size: 13px;
   font-weight: 500;
@@ -60,15 +59,16 @@ main {
   font-family: "Montserrat", sans-serif;
 }
 .allBtnsWrapper .allBtns .activeBtn {
-  background-color: #3abb69;
+  background-color: #df6703;
 }
 
 .ProductDetailsWrapper {
-  background-color: #fff;
+  background-color: #eee;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
   border-radius: 5px;
   padding: 10px;
   overflow: hidden;
+  border: 1px solid #fc8019;
 }
 .ProductDetailsWrapper .details {
   transition: all 0.5s ease;
@@ -81,8 +81,8 @@ main {
 }
 .ProductDetailsWrapper .details .title h3 {
   display: inline-block;
-  border-bottom: 2px solid #3abb69;
-  color: #7a7797;
+  border-bottom: 2px solid #fc8019;
+  color: #000;
   font-weight: bold;
   padding-bottom: 5px;
   font-size: 20px;

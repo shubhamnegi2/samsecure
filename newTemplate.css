@@ -53,8 +53,6 @@
 .FeaturesWraper .contentSecWrapper .commonSecStyle .detailsSecWrapper .ineerLeft img {
   width: 100%;
   height: 300px;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 .FeaturesWraper .contentSecWrapper .commonSecStyle .detailsSecWrapper .ineerLeft .bottomLeft {
   margin-top: 5px;

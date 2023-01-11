@@ -10,38 +10,7 @@
     />
   </head>
   <body>
-    <div class="form-check form-check-inline">
-      <input
-        class="form-check-input"
-        type="radio"
-        name="inlineRadioOptions"
-        id="inlineRadio1"
-        value="option1"
-      />
-      <label class="form-check-label" for="inlineRadio1">1</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input
-        class="form-check-input"
-        type="radio"
-        name="inlineRadioOptions"
-        id="inlineRadio2"
-        value="option2"
-      />
-      <label class="form-check-label" for="inlineRadio2">2</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input
-        class="form-check-input"
-        type="radio"
-        name="inlineRadioOptions"
-        id="inlineRadio3"
-        value="option3"
-        disabled
-      />
-      <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
-    </div>
-    <p>Date: <input type="text" id="datepicker" /></p>
+   
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -86,9 +55,10 @@
       /* ========================================================*/
       // let square = [[5, 3, 4],[1, 5, 8],[6, 4, 2]];
       let square = [
-        [5,3,4],
-        [1,5,8],
-        [6,4,2]];
+        [5, 3, 4],
+        [1, 5, 8],
+        [6, 4, 2],
+      ];
       formingMagicSquare(square);
       function formingMagicSquare(s) {
         // whole function will run is square row and colum will be same
@@ -98,37 +68,40 @@
         let a = 0;
         let b = 0;
         // finding the max value
-        let leftRightElmNo = simpleSquare.length/2;
-        
-        let k=0;
+        let leftRightElmNo = simpleSquare.length / 2;
+
+        let k = 0;
         for (let i = 0; i < simpleSquare.length; i++) {
           let sum = 0;
           a += simpleSquare[i][k];
-          b += simpleSquare[i][simpleSquare.length-(1+k)];        
+          b += simpleSquare[i][simpleSquare.length - (1 + k)];
           k++;
           for (let j = 0; j < simpleSquare[i].length; j++) {
-            sum+=simpleSquare[i][j];
+            sum += simpleSquare[i][j];
           }
           suOfAllElement.push(sum);
         }
-                suOfAllElement.push(a);
+        suOfAllElement.push(a);
         suOfAllElement.push(b);
-        console.log(suOfAllElement)
-      
-        suOfAllElement = suOfAllElement.sort()
-        let maxValue = suOfAllElement[suOfAllElement.length-1];        
+        console.log(suOfAllElement);
+
+        suOfAllElement = suOfAllElement.sort();
+        let maxValue = suOfAllElement[suOfAllElement.length - 1];
         // checking the element
-        let i=0;
-        let j=0;
+        let i = 0;
+        let j = 0;
         let firstValue = simpleSquare[i][j];
-        if((simpleSquare[i][j+1]+simpleSquare[i][j+2] )== (simpleSquare[i+1][j]+simpleSquare[i+2][j] )){
-          let increase = (maxValue - ((simpleSquare[i][j+1]+simpleSquare[i][j+2]) + firstValue))
-          simpleSquare[i][j] +=increase;
+        if (
+          simpleSquare[i][j + 1] + simpleSquare[i][j + 2] ==
+          simpleSquare[i + 1][j] + simpleSquare[i + 2][j]
+        ) {
+          let increase =
+            maxValue -
+            (simpleSquare[i][j + 1] + simpleSquare[i][j + 2] + firstValue);
+          simpleSquare[i][j] += increase;
 
-          result+=(increase)
+          result += increase;
         }
-        
-
       }
       /* ========================================================*/
       /* ========================================================*/
