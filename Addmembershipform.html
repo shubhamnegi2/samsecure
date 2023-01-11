@@ -77,6 +77,9 @@
     padding: 4px;
     font-size: 13px;
       }
+      .formGroup input{
+        font-size: 12px;
+      }
     </style>
 </head>
 <body>
@@ -160,13 +163,40 @@
                          
                       </div>
                     </div>
+                    
                     <div class="col-md-1 col-sm-2" style="top: 14px;">
                         <div class="formGroup">
                         
                           <input type="text" placeholder="abc" />
                         </div>
                       </div>
-                   
+                      <div class="col-md-4">
+                        <div class="formGroup">
+                          <label for="bankName">Email</label>
+                          <br />
+                          <input type="text" placeholder="Enter Your Email" />
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="formGroup">
+                          <label for="bankName">Image</label>
+                          <br />
+                          <input type="file"  style="border: 2px solid #eee;
+                          background-color: #fff;
+                          padding: 2px;
+                          border-radius: 4px;" />
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="formGroup">
+                          <label for="bankName">Id Proof</label>
+                          <br />
+                          <input type="file"  style="border: 2px solid #eee;
+                          background-color: #fff;
+                          padding: 2px;
+                          border-radius: 4px;"/>
+                        </div>
+                      </div>
                     <div class="row justify-content-left ">
                         <div class=" col-sm-4 form-radio" style="color: #7a7797;
                         font-size: 14px;
@@ -177,13 +207,13 @@
                             background-color: #fff;
                             padding: 2px;
                             border-radius: 4px;">
-                                <input  type="radio" 
+                                <input  type="radio" name="1year"
                                     checked="checked" />
-                                <label for="male">1 year</label>
-                                <input type="radio" />
-                                <label for="female">2 year</label>
-                                <input type="radio" />
-                                <label for="female">3 year</label>
+                                <label for="1year">1 year</label>
+                                <input type="radio" name="2year" />
+                                <label for="2year">2 year</label>
+                                <input type="radio" name="3year" />
+                                <label for="3year">3 year</label>
                             </div>
                         </div>
                         <div class=" col-sm-4 form-radio" style="color: #7a7797;
@@ -196,16 +226,16 @@
                             padding: 2px;
                             border-radius: 4px;">
                                 <input  type="radio" 
-                                    checked="checked" />
-                                <label for="male">10%</label>
-                                <input type="radio" />
-                                <label for="female">20%</label>
-                                <input type="radio" />
-                                <label for="female">30%</label>
-                                <input type="radio" />
-                                <label for="female">40%</label>
-                                <input type="radio" />
-                                <label for="female">50%</label>
+                                    checked="checked"  name="50%"/>
+                                <label for="10%" >10%</label>
+                                <input type="radio" name="10%" />
+                                <label for="lable">20%</label>
+                                <input type="radio" name="20%" />
+                                <label for="lable">30%</label>
+                                <input type="radio" name="30%" />
+                                <label for="lable">40%</label>
+                                <input type="radio"  name="40%"/>
+                                <label for="lable">50%</label>
                             </div>
                         </div>
                        

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
@@ -413,11 +413,30 @@
 
         }
 
+        .createcategory {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .creategoreypop {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1%;
+
+        }
+
         .form-wraper {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 2%;
+            margin-top: 1%;
         }
 
         .popmain {
@@ -437,6 +456,14 @@
         }
 
         .form-container {
+            border-radius: 10px;
+            height: auto;
+            padding: 3px;
+            width: 70%;
+            background-color: #fff;
+        }
+
+        .popcatgorey {
             border-radius: 10px;
             height: auto;
             padding: 3px;
@@ -498,16 +525,178 @@
             font-size: 12px;
 
         }
+
+        .croosicon {
+            display: flex;
+            justify-content: right;
+            margin-right: 3px;
+            cursor: pointer;
+        }
+
+        .allp3 {
+            padding: 0 5px;
+            background: #f01010;
+            padding: 2px 7px;
+            color: #fff;
+            border-radius: 10px;
+            font-size: 10px
+        }
+
+        .allp2 {
+            padding: 0 5px;
+            background: green;
+            padding: 2px 7px;
+            color: #fff;
+            border-radius: 10px;
+            font-size: 10px
+        }
+
+        .allp1 {
+            background: #fff;
+            border-radius: 50%;
+            height: 20px;
+            text-align: center;
+            width: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 10px
+        }
+
+        .chefp {
+            padding: 0 5px;
+            background: #fff;
+            padding: 2px 7px;
+            border-radius: 10px;
+            font-size: 10px;
+        }
+
+        .chefp2 {
+            padding: 0 5px;
+            background: green;
+            padding: 2px 7px;
+            color: #fff;
+            border-radius: 10px;
+            font-size: 10px
+        }
+
+        .chef3 {
+            padding: 0 5px;
+            background: #f01010;
+            padding: 2px 7px;
+            color: #fff;
+            border-radius: 10px;
+            font-size: 10px
+        }
+
+        .mangerp1 {
+            padding: 0 5px;
+            background: #fff;
+            padding: 2px 7px;
+            border-radius: 10px;
+            font-size: 10px
+        }
+
+        .mangerp2 {
+            padding: 0 5px;
+            background: green;
+            padding: 2px 7px;
+            color: #fff;
+            border-radius: 10px;
+            font-size: 10px
+        }
+
+        .mangerp3 {
+            padding: 0 5px;
+            background: #f01010;
+            padding: 2px 7px;
+            color: #fff;
+            border-radius: 10px;
+            font-size: 10px
+        }
+
+        .waiter1 {
+            padding: 0 5px;
+            background: #fff;
+            border-radius: 10px;
+        }
+
+        .waiter2 {
+            padding: 0 5px;
+            background: green;
+            padding: 2px 7px;
+            color: #fff;
+            border-radius: 10px;
+            font-size: 10px
+        }
+
+        .waiter3 {
+            padding: 0 5px;
+            background: #f01010;
+            padding: 2px 7px;
+            color: #fff;
+            border-radius: 10px;
+            font-size: 10px
+        }
+
+        .waiter4 {
+            padding: 0 5px;
+            background: #fff;
+            border-radius: 10px;
+        }
+
+        .waiter5 {
+            padding: 0 5px;
+            background: green;
+            padding: 2px 7px;
+            color: #fff;
+            border-radius: 10px;
+            font-size: 10px
+        }
+
+        .waiter6 {
+            padding: 0 5px;
+            background: #f01010;
+            padding: 2px 7px;
+            color: #fff;
+            border-radius: 10px;
+            font-size: 10px
+        }
+
+        .closeform {
+            display: flex;
+            align-items: center;
+            justify-content: right;
+        }
+
+        .closeform button {
+            height: 22px;
+            border-radius: 10px;
+            color: black;
+            font-size: 14px;
+            width: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 5px;
+        }
+
+        .employeeformh2 {
+            display: inline-block;
+            border-bottom: 2px solid #3abb69;
+            color: #7a7797;
+            font-weight: bold;
+            padding-bottom: 5px;
+            font-size: 20px;
+        }
     </style>
 </head>
 
 <body>
 
 
-    <div class="breadcrumb" style="
-    padding: 5px;
-    font-size: 13px;
-">
+    <div class="breadcrumb" style=" padding: 5px; font-size: 13px;">
 
 
         <ul class="list-unstyled d-flex align-items-center">
@@ -517,14 +706,38 @@
         </ul>
 
         <!-- <h4>Total Employee-20</h4> -->
-        <button class="addVender">Create Category</button>
+        <button class="addVender addcreatecategory">Create Category</button>
         <button class="addvender1 add-embtn">Add Employee </button>
 
 
 
     </div>
 
+    <div class="createcategory">
+        <div class="creategoreypop">
+            <div class="popcatgorey">
+                <div class="croosicon"><i class="fa fa-close" style="font-size:24px"></i></div>
+                <div class="container">
+                    <div class="row justify-content-between text-left ">
 
+                        <div class="form-group col-sm-9 flex-column d-flex forminput "> <label
+                                class="form-control-label px-3">Aadhaar No<span class="text-danger">
+                                    *</span></label> <input type="text" id="fname" name="fname"
+                                placeholder="Enter your Addhre No" onblur="validate(1)"> </div>
+
+                    </div>
+                    <div class="row justify-content-between text-left ">
+                        <div class="form-group col-sm-9 flex-column d-flex forminput"> <label
+                                class="form-control-label px-3">First name<span class="text-danger">
+                                    *</span></label> <input type="text" id="fname" name="fname"
+                                placeholder="Enter your first name" onblur="validate(1)"> </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="allBtnsWrapper pt-3 pb-3" style="background-color: #eee;">
         <div class="container-fluid">
             <div class="allBtns1 pt-3 pb-3">
@@ -544,101 +757,60 @@
             <div class="container-fluid">
                 <div class="allBtns pt-3 pb-3" style="display: flex;
                 align-items: center; justify-content: center;">
-                    <div class="checf divchangbackground">
-                        <div class="chefbuuu">
-                            <button class="activeBtn">All</button>
-                            <p style=" background: #fff;     border-radius: 50%;
-                            height: 20px;
-                            text-align: center;
-                            width: 20px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                        
-                            font-size: 10px">10</p>
-                        </div>
-                        <div class="number">
-                            <p style="padding: 0 5px; background: green; padding: 2px 7px;
-                            color: #fff;
-                            border-radius: 10px;
-                            font-size: 10px">8</p>
-                            <p style="padding: 0 5px; background: #f01010; padding: 2px 7px;
-                            color: #fff;
-                            border-radius: 10px;
-                            font-size: 10px">2</p>
-                        </div>
-                    </div>
-                    <div class="checf ">
+
+
+                    <div class="checf  divchangbackground">
                         <div class="chefbuuu ">
-                            <button>chef</button>
-                            <p style="padding: 0 5px; background: #fff; padding: 2px 7px;
-                       border-radius: 10px;
-                            font-size: 10px">2</p>
+                            <button class="activeBtn">chef</button>
+                            <p class="chefp">2</p>
                         </div>
                         <div class="number">
-                            <p style="padding: 0 5px; background: green; padding: 2px 7px;
-                            color: #fff;
-                            border-radius: 10px;
-                            font-size: 10px">2</p>
-                            <p style="    padding: 0 5px; background: #f01010; padding: 2px 7px;
-                            color: #fff;
-                            border-radius: 10px;
-                            font-size: 10px">0</p>
+                            <p class="chefp2">2</p>
+                            <p class="chef3">0</p>
                         </div>
                     </div>
                     <div class="checf">
                         <div class="chefbuuu">
                             <button>Manager</button>
-                            <p style="padding: 0 5px; background: #fff; padding: 2px 7px;
-                         border-radius: 10px;
-                            font-size: 10px">1</p>
+                            <p class="mangerp1">1</p>
                         </div>
                         <div class="number">
-                            <p style="padding: 0 5px; background: green; padding: 2px 7px;
-                            color: #fff;
-                            border-radius: 10px;
-                            font-size: 10px">1</p>
-                            <p style="    padding: 0 5px; background: #f01010; padding: 2px 7px;
-                            color: #fff;
-                            border-radius: 10px;
-                            font-size: 10px">0</p>
+                            <p class="mangerp2">1</p>
+                            <p class="mangerp3">0</p>
                         </div>
                     </div>
                     <div class="checf">
                         <div class="chefbuuu">
                             <button>Waiter</button>
-                            <p style="padding: 0 5px; background: #fff; border-radius: 10px;">5</p>
+                            <p class="waiter1"></p>
                         </div>
                         <div class="number">
-                            <p style="padding: 0 5px; background: green; padding: 2px 7px;
-                            color: #fff;
-                            border-radius: 10px;
-                            font-size: 10px">4</p>
-                            <p style="    padding: 0 5px; background: #f01010; padding: 2px 7px;
-                            color: #fff;
-                            border-radius: 10px;
-                            font-size: 10px">1</p>
+                            <p class="waiter2">4</p>
+                            <p class="waiter3">1</p>
                         </div>
                     </div>
 
                     <div class="checf">
                         <div class="chefbuuu">
                             <button>Waiter</button>
-                            <p style="padding: 0 5px; background: #fff; border-radius: 10px;">2</p>
+                            <p class="waiter4">2</p>
                         </div>
                         <div class="number">
-                            <p style="padding: 0 5px; background: green; padding: 2px 7px;
-                            color: #fff;
-                            border-radius: 10px;
-                            font-size: 10px">1</p>
-                            <p style=" padding: 0 5px; background: #f01010; padding: 2px 7px;
-                            color: #fff;
-                            border-radius: 10px;
-                            font-size: 10px">1</p>
+                            <p class="waiter5">1</p>
+                            <p class="waiter6">1</p>
                         </div>
                     </div>
 
-
+                    <div class="checf ">
+                        <div class="chefbuuu">
+                            <button>All</button>
+                            <p class="allp1">10</p>
+                        </div>
+                        <div class="number">
+                            <p class="allp2">8</p>
+                            <p class="allp3">2</p>
+                        </div>
+                    </div>
 
 
 
@@ -760,114 +932,122 @@
 
                         </tbody>
                     </table>
-                    <!-- <div class="table1Btns text-right my-3 mx-3">
-            <button class="btn btn-primary btn-sm showVenderDetails">
-              Next
-            </button>
-          </div>
-        </div> -->
+
                 </div>
             </div>
             <div class="formpop">
                 <div class="form-wraper">
                     <div class="form-container">
-                        <div class="closeform" style="display: flex; align-items: center; justify-content: right;  "><button style="height: 22px;
-                            border-radius: 10px; color: black;  font-size: 14px; width: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 5px;">&times;</button></div>
+                        <div class="closeform"><button>&times;</button></div>
                         <div class="container ">
                             <div class="row justify-content-between text-left">
                                 <div class="col-sm-5 text-center" style="padding-bottom: 10px; 
                                 font-size: 21px;">
-                                    <h2 style="    display: inline-block;
-                                    border-bottom: 2px solid #3abb69;
-                                    color: #7a7797;
-                                    font-weight: bold;
-                                    padding-bottom: 5px;
-                                    font-size: 20px;">Employee Form</h2>
+                                    <h2 class="employeeformh2">Employee Form</h2>
                                 </div>
                             </div>
 
-                            <form class="form-horizontal" >
+                            <form class="form-horizontal">
 
                                 <div class="row justify-content-between text-left ">
-                                    <div class="form-group col-sm-5 flex-column d-flex forminput"> <label
+                                    <div class="form-group col-sm-3 flex-column d-flex forminput"> <label
                                             class="form-control-label px-3">First name<span class="text-danger">
                                                 *</span></label> <input type="text" id="fname" name="fname"
                                             placeholder="Enter your first name" onblur="validate(1)"> </div>
-                                    <div class="form-group col-sm-5 flex-column d-flex forminput"> <label
+                                    <div class="form-group col-sm-3 flex-column d-flex forminput"> <label
                                             class="form-control-label px-3">Last name<span class="text-danger">
-                                                *</span></label> <input type="text" id="lname" name="lname"
-                                            placeholder="Enter your last name" onblur="validate(2)"> </div>
-                                </div>
-                                <div class="row justify-content-between text-left">
-                                    <div class="form-group col-sm-5 flex-column d-flex forminput "> <label
+                                                *</span></label> <input type="text" id="fname" name="fname"
+                                            placeholder="Enter your last name" onblur="validate(1)"> </div>
+                                    <div class="form-group col-sm-3 flex-column d-flex forminput "> <label
                                             class="form-control-label px-3">Aadhaar No<span class="text-danger">
                                                 *</span></label> <input type="text" id="fname" name="fname"
                                             placeholder="Enter your Addhre No" onblur="validate(1)"> </div>
-                                    <div class="form-group col-sm-5 flex-column d-flex forminput "> <label
+
+                                </div>
+                                <div class="row justify-content-between text-left">
+                                    <div class="form-group col-sm-3 flex-column d-flex forminput"> <label
+                                            class="form-control-label px-3">Address<span class="text-danger">
+                                                *</span></label> <input type="text" id="fname" name="fname"
+                                            placeholder="Enter your Address" onblur="validate(1)"> </div>
+                                    <div class="form-group col-sm-3 flex-column d-flex forminput "> <label
+                                            class="form-control-label px-3">Phone No<span class="text-danger">
+                                                *</span></label> <input type="text" id="lname" name="lname"
+                                            placeholder="Enter your Phone No" onblur="validate(2)"> </div>
+                                    <div class="form-group col-sm-3 flex-column d-flex forminput "> <label
                                             class="form-control-label px-3">Phone No<span class="text-danger">
                                                 *</span></label> <input type="text" id="lname" name="lname"
                                             placeholder="Enter your Phone No" onblur="validate(2)"> </div>
                                 </div>
                                 <div class="row justify-content-between text-left">
-                                    <div class="form-group col-sm-5 flex-column d-flex forminput"> <label
+                                    <div class="form-group col-sm-3 flex-column d-flex forminput"> <label
                                             class="form-control-label px-3">City<span class="text-danger">
                                                 *</span></label> <input type="text" id="fname" name="fname"
                                             placeholder="Enter your City" onblur="validate(1)"> </div>
-                                    <div class="form-group col-sm-5 flex-column d-flex forminput"> <label
-                                            class="form-control-label px-3">State<span class="text-danger">
+                                    <div class="form-group col-sm-3 flex-column d-flex forminput"> <label
+                                            class="form-control-label px-4">State<span class="text-danger">
                                                 *</span></label> <input type="text" id="lname" name="lname"
                                             placeholder="Enter your State" onblur="validate(2)"> </div>
-                                </div>
-                                <div class="row justify-content-between text-left">
-                                    <div class="form-group col-sm-5 flex-column d-flex forminput"> <label
-                                            class="form-control-label px-3">Country<span class="text-danger">
-                                                *</span></label> <input type="text" id="fname" name="fname"
-                                            placeholder="Enter your Country" onblur="validate(1)"> </div>
-                                    <div class="form-group col-sm-5 flex-column d-flex forminput"> <label
-                                            class="form-control-label px-3">DOB<span class="text-danger">
-                                                *</span></label> <input type="text" id="lname" name="lname"
+                                    <div class="form-group col-sm-3 flex-column d-flex forminput"> <label
+                                            class="form-control-label px-3">Date of Birth<span class="text-danger">
+                                                *</span></label> <input type="date" id="lname" name="lname"
                                             placeholder="Enter your DOB" onblur="validate(2)"> </div>
                                 </div>
                                 <div class="row justify-content-between text-left">
-                                    <div class="form-group col-sm-5 flex-column d-flex forminput"> <label
+                                    <div class="form-group col-sm-3 flex-column d-flex forminput"> <label
+                                            class="form-control-label px-3">Country<span class="text-danger">
+                                                *</span></label> <input type="text" id="fname" name="fname"
+                                            placeholder="Enter your Country" onblur="validate(1)"> </div>
+                                    <div class="form-group col-sm-3 flex-column d-flex forminput"> <label
                                             class="form-control-label px-3">Salary<span class="text-danger">
                                                 *</span></label> <input type="text" id="fname" name="fname"
                                             placeholder="Enter your Salary" onblur="validate(1)"> </div>
-                                    <div class="form-group col-sm-5 flex-column d-flex forminput"> <label
+                                    <div class="form-group col-sm-3 flex-column d-flex forminput"> <label
                                             class="form-control-label px-3">Shift Timing<span class="text-danger">
                                                 *</span></label> <input type="text" id="lname" name="lname"
                                             placeholder="Enter your Shift Timing" onblur="validate(2)"> </div>
+
                                 </div>
                                 <div class="row justify-content-between text-left">
                                     <div class="form-group col-sm-3 flex-column d-flex forminput"> <label
+                                            class="form-control-label px-3">Select Marital Status<span
+                                                class="text-danger">
+                                                *</span></label>
+                                        <select class="form-control" name="Personal_Family_Marital_Status"
+                                            id="Personal_Family_Marital_Status" style="color:  black;" required>
+
+                                            <option value="Married">Married</option>
+                                            <option value="Un-Married">Un-Married</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-sm-2 flex-column d-flex forminput"> <label
                                             class="form-control-label px-3">Upload Image<span class="text-danger">
                                                 *</span></label> <input style="border: none;" type="file" id="fname"
                                             name="fname" placeholder="Enter your Upload Image" onblur="validate(1)">
                                     </div>
-                                    <div class="form-group col-sm-3 flex-column d-flex forminput"> <label
+
+                                    <div class=" col-sm-2 form-radio" style="font-size: 12px;">
+                                        <label for="gender">Gender</label>
+                                        <div class="form-flex">
+                                            <input type="radio" name="gender" value="male" id="male"
+                                                checked="checked" />
+                                            <label for="male">Male</label>
+                                            <input type="radio" name="gender" value="female" id="female" />
+                                            <label for="female">Female</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-sm-2 flex-column d-flex forminput"> <label
                                             class="form-control-label px-3">Upload Id<span class="text-danger">
                                                 *</span></label> <input style="border: none;" type="file" id="lname"
                                             name="lname" placeholder="Enter your Upload Id" onblur="validate(2)"> </div>
-                                            <div class=" col-sm-3 form-radio" style="font-size: 12px;">
-                                                <label for="gender">Gender</label>
-                                                <div class="form-flex">
-                                                    <input type="radio" name="gender" value="male" id="male"
-                                                        checked="checked" />
-                                                    <label for="male">Male</label>
-                                                    <input type="radio" name="gender" value="female" id="female" />
-                                                    <label for="female">Female</label>
-                                                </div>
-                                            </div>
+
                                 </div>
 
 
 
+
+
                                 <div class="row justify-content-center ">
-                                 
+
 
                                 </div>
 
@@ -891,7 +1071,8 @@
         <div class="openpop">
             <div class="popmain">
                 <div class="popopen">
-                    <div class="close" style="display: flex; align-items: center; justify-content: right; "><button style=" height: 22px; width: 22px;
+                    <div class="close" style="display: flex; align-items: center; justify-content: right; "><button
+                            style=" height: 22px; width: 22px;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -907,30 +1088,59 @@
 
                             </div>
                         </div>
+                        <style>
+                            .salaryemp {
+                                display: flex;
+                                gap: 4px;
+                            }
+                        </style>
                         <div class="empolet-detail">
-                            <div><h2 style="color: #3abb69;">ABC CBA</h2></div>
-                            <div class="empoey-salarey">
-                             <div style="display: flex; gap: 4px;"><p style="color: #bfc2cb;">Salary:</p><p style="color: #9ca0ac;"> 2000</p></div>
-                            
-                             <div style="display: flex; gap: 4px;"><p style="color: #bfc2cb;">Leave:</p><p style="color: #9ca0ac;">Sunday</p></div>   
-                            
-                            
+                            <div>
+                                <h2 style="color: #3abb69;">ABC CBA</h2>
                             </div>
                             <div class="empoey-salarey">
-                                <div style="display: flex; gap: 4px;"><p style="color: #bfc2cb;">Phone No:</p><p style="color: #9ca0ac;">9999776666</p></div>   
-                                <div style="display: flex; gap: 4px;"><p style="color: #bfc2cb;">Shift Timing:</p><p style="color: #9ca0ac;">12 Hours</p></div>   
+                                <div class="salaryemp">
+                                    <p style="color: #bfc2cb;">Salary:</p>
+                                    <p style="color: #9ca0ac;"> 2000</p>
+                                </div>
 
-                               
-                               
-                               
+                                <div class="salaryemp">
+                                    <p style="color: #bfc2cb;">Leave:</p>
+                                    <p style="color: #9ca0ac;">Sunday</p>
+                                </div>
+
+
                             </div>
                             <div class="empoey-salarey">
-                                <div style="display: flex; gap: 4px;"><p style="color: #bfc2cb;">Address:</p><p style="color: #9ca0ac;">Saharanpur</p></div>   
-                                <div style="display: flex; gap: 4px;"><p style="color: #bfc2cb;">Gender:</p><p style="color: #9ca0ac;">Female</p></div>   
+                                <div class="salaryemp">
+                                    <p style="color: #bfc2cb;">Phone No:</p>
+                                    <p style="color: #9ca0ac;">9999776666</p>
+                                </div>
+                                <div class="salaryemp">
+                                    <p style="color: #bfc2cb;">Shift Timing:</p>
+                                    <p style="color: #9ca0ac;">12 Hours</p>
+                                </div>
+
+
+
+
                             </div>
                             <div class="empoey-salarey">
-                               
-                                <div style="display: flex; gap: 4px;"><p style="color: #bfc2cb;">Date of Joining:</p><p style="color: #9ca0ac;">12/04/2022</p></div>   
+                                <div class="salaryemp">
+                                    <p style="color: #bfc2cb;">Address:</p>
+                                    <p style="color: #9ca0ac;">Saharanpur</p>
+                                </div>
+                                <div class="salaryemp">
+                                    <p style="color: #bfc2cb;">Gender:</p>
+                                    <p style="color: #9ca0ac;">Female</p>
+                                </div>
+                            </div>
+                            <div class="empoey-salarey">
+
+                                <div class="salaryemp">
+                                    <p style="color: #bfc2cb;">Date of Joining:</p>
+                                    <p style="color: #9ca0ac;">12/04/2022</p>
+                                </div>
 
                             </div>
                         </div>
@@ -967,7 +1177,7 @@
             $(".checf").click(function () {
                 $(".checf ").removeClass("divchangbackground");
                 $(this).addClass("divchangbackground")
-                
+
             })
 
 
@@ -975,7 +1185,7 @@
 
                 $(".allBtns button").removeClass("activeBtn");
                 $(this).addClass("activeBtn");
-              
+
 
                 $(".ProductDetailsWrapper .details .title h3").text($(this).text());
             });
@@ -997,7 +1207,12 @@
             })
 
 
-
+            $(".addcreatecategory").click(function () {
+                $(".createcategory").show()
+            })
+            $(".croosicon").click(function () {
+                $(".createcategory").hide()
+            })
 
 
 
@@ -1007,45 +1222,45 @@
 
 
         </script>
-    <!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
+        <!-- Code injected by live-server -->
+        <script>
+            // <![CDATA[  <-- For SVG support
+            if ('WebSocket' in window) {
+                (function () {
+                    function refreshCSS() {
+                        var sheets = [].slice.call(document.getElementsByTagName("link"));
+                        var head = document.getElementsByTagName("head")[0];
+                        for (var i = 0; i < sheets.length; ++i) {
+                            var elem = sheets[i];
+                            var parent = elem.parentElement || head;
+                            parent.removeChild(elem);
+                            var rel = elem.rel;
+                            if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                                elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                            }
+                            parent.appendChild(elem);
+                        }
+                    }
+                    var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                    var address = protocol + window.location.host + window.location.pathname + '/ws';
+                    var socket = new WebSocket(address);
+                    socket.onmessage = function (msg) {
+                        if (msg.data == 'reload') window.location.reload();
+                        else if (msg.data == 'refreshcss') refreshCSS();
+                    };
+                    if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                        console.log('Live reload enabled.');
+                        sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                    }
+                })();
+            }
+            else {
+                console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+            }
 	// ]]>
-</script>
-</body>
+        </script>
+    </body>
 
 </html>
 <!-- Code injected
