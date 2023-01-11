@@ -4,18 +4,690 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>new template</title>
-    <link rel="stylesheet" href="./newTemplate.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    />
+    <title>Document</title>
   </head>
-
   <body>
-    <section class="dummySec">
-      <img src="./dummyImg/header.jpeg" alt="">
-    </section>
+    <!--====== HEADER PART START ======-->
+
+    <header class="header-area">
+      <div class="navigation-area navigation-transparent">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <div
+                class="header-navbar d-flex align-items-center justify-content-between"
+              >
+                <div class="header-menu d-lg-flex align-items-center">
+                  <a class="logo" href="index.php">
+                    <!-- <img src="assets/images/logo.png" alt="Logo"> -->
+                    <h2>Restro Digital Billing</h2>
+                  </a>
+                  <!-- Logo -->
+
+                  <nav class="header-nav">
+                    <div class="mobile-close d-lg-none">
+                      <a href="#javascript:void(0)">
+                        <span></span>
+                        <span></span>
+                      </a>
+                    </div>
+
+                    <ul class="menu-bar d-lg-flex">
+                      <li><a class="active" href="index.php">Home </a></li>
+                      <li><a href="pricing.php">Pricing</a></li>
+                      <li class="menu-item-has-children">
+                        <a href="#">Software Features</a>
+                        <ul class="sub-menu">
+                          <li><a href="pos-page.php">POS</a></li>
+                          <li><a href="dine-in.php">Dine In</a></li>
+                          <li><a href="crm-page.php">CRM</a></li>
+                          <li><a href="back-office.php">Back Office</a></li>
+                          <li><a href="delivery.php">Delivery Manager</a></li>
+                        </ul>
+                      </li>
+                      <!-- <li class="menu-item-has-children"><a href="blog.php">Blog</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="blog.php">Blog</a></li>
+                                            <li><a href="blog-details.php">Blog Details</a></li>
+                                        </ul>
+                                    </li> -->
+                      <li><a href="contact.php">Contact Us</a></li>
+                    </ul>
+                    <!-- menu-bar -->
+                  </nav>
+                </div>
+                <!-- header menu -->
+
+                <div class="header-btn d-none d-sm-block">
+                  <ul>
+                    <!-- <li><a class="login" href="#">Login</a></li> -->
+                    <li>
+                      <a class="Try" href="#myModal" data-toggle="modal"
+                        >Get Access Now</a
+                      >
+                    </li>
+                    <!-- <li><a class="Try" href="access_now.php" >Get Access Now</a></li> -->
+                  </ul>
+                </div>
+                <!-- header btn -->
+
+                <div class="mobile-toggle d-lg-none">
+                  <a href="#javascript:void(0)">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </a>
+                </div>
+              </div>
+              <!-- header navbar -->
+            </div>
+          </div>
+          <!-- row -->
+        </div>
+        <!-- container -->
+      </div>
+      <!-- navigation area -->
+
+      <!--====== HEADER PART ENDS ======-->
+
+      <!-- The Modal -->
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Get Access Now</h4>
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <form method="post" id="getAccessForm">
+                <div class="row">
+                  <div class="col-md-6 form-group mt-3">
+                    <label for="ownerName">Owner Name:</label>
+                    <!-- <input type="hidden" name="url" value="/"> -->
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="ownerName"
+                      required
+                      value=""
+                    />
+                  </div>
+                  <div class="col-md-6 form-group mt-3">
+                    <label for="ownerPhone">Owner Number:</label>
+                    <input
+                      type="text"
+                      required
+                      class="form-control"
+                      name="ownerPhone"
+                      required=""
+                      value=""
+                    />
+                  </div>
+                  <div class="col-md-6 form-group mt-3">
+                    <label for="ownerEmail">Owner Email</label>
+                    <input
+                      type="emaiil"
+                      required
+                      class="form-control"
+                      name="ownerEmail"
+                      required=""
+                      value=""
+                    />
+                  </div>
+                  <div class="col-md-6 orm-group mt-3 selectBoxWrapper">
+                    <label>Select State</label> <br />
+                    <select
+                      class="details stateDetail form-select form-select-lg"
+                      name="stateDetail"
+                    >
+                      <option disabled selected>Select State</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 orm-group mt-3 selectBoxWrapper">
+                    <label>Select City</label> <br />
+                    <select
+                      class="details cityDetail form-select form-select-lg"
+                      name="cityDetail"
+                    >
+                      <option disabled selected>Select City</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 form-group mt-3 selectBoxWrapper">
+                    <label for="outlet_type">Outlet type</label>
+                    <select
+                      name="outlet_type"
+                      required
+                      id="outlet_type"
+                      class="form-select form-select-lg"
+                      aria-label=".form-select-lg example"
+                    >
+                      <option value="" selected disabled>
+                        Select Outlet Type
+                      </option>
+                      <option value="Café">Café</option>
+                      <option value="Restaurant">Restaurant</option>
+                      ß
+                      <option value="Bakery">Bakery</option>
+                      <option value="Food truck">Food truck</option>
+                      <option value="Drive in">Drive in</option>
+                      <option value="Cloud kitchen">Cloud kitchen</option>
+                      ß
+                    </select>
+                  </div>
+
+                  <div class="col-md-12 form-group mt-3">
+                    <label for="text">Outlet Name:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="OutletName"
+                      required
+                      value=""
+                    />
+                  </div>
+
+                  <div class="col-md-12 form-group mt-3">
+                    <label>Outlet Address:</label>
+                    <textarea
+                      class="form-control"
+                      required
+                      name="outlet_location"
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="col-md-12 mt-3 form-group text-right">
+                    <button
+                      type="submit"
+                      name="userdata"
+                      value="Submit"
+                      class="btn btn-success px-5 getAccessSubmitBtn"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
+        * {
+          font-family: "Lora", serif;
+          font-size: 16px;
+          text-decoration: none;
+        }
+
+        .dummySec img {
+          width: 100%;
+        }
+
+        .FeaturesWraper {
+          padding: 40px 0px;
+        }
+        .FeaturesWraper .categoriesLists ul {
+          padding-left: 0px;
+          margin-bottom: 0px;
+        }
+        .FeaturesWraper .categoriesLists ul li {
+          font-size: 14px;
+          border-radius: 20px;
+          font-weight: 500;
+          margin: 5px 0px;
+          padding: 5px 10px;
+          cursor: pointer;
+          color: #000;
+        }
+        .FeaturesWraper .categoriesLists ul .activeFeatureBtn {
+          background-color: #38ba67;
+          color: #fff;
+        }
+        .FeaturesWraper .contentSecWrapper {
+          margin-top: 50px;
+        }
+        .FeaturesWraper .contentSecWrapper .commonSecStyle .title {
+          display: inline-block;
+          font-size: 28px;
+          font-weight: bold;
+          border-bottom: 2px solid #38ba67;
+          text-transform: capitalize;
+        }
+        .FeaturesWraper .contentSecWrapper .commonSecStyle .topBarContent {
+          font-size: 16px;
+          font-weight: bold;
+        }
+        .FeaturesWraper
+          .contentSecWrapper
+          .commonSecStyle
+          .detailsSecWrapper
+          .ineerLeft
+          h2 {
+          font-size: 25px;
+          font-weight: 500;
+          margin-bottom: 20px;
+          color: #38ba67;
+          text-transform: capitalize;
+          font-weight: bold;
+          text-align: center;
+        }
+        .FeaturesWraper
+          .contentSecWrapper
+          .commonSecStyle
+          .detailsSecWrapper
+          .ineerLeft
+          img {
+          width: 100%;
+          max-height: 300px;
+          /* -o-object-fit: cover;
+ object-fit: cover; */
+          border: 1px solid #31b561;
+          border-radius: 4px;
+        }
+        .FeaturesWraper
+          .contentSecWrapper
+          .commonSecStyle
+          .detailsSecWrapper
+          .ineerLeft
+          .bottomLeft {
+          margin-top: 5px;
+        }
+        .FeaturesWraper
+          .contentSecWrapper
+          .commonSecStyle
+          .detailsSecWrapper
+          .ineerLeft
+          .bottomLeft
+          .content {
+          max-width: 50%;
+          width: 100%;
+          padding: 10px 10px 0px 0px;
+        }
+        .FeaturesWraper
+          .contentSecWrapper
+          .commonSecStyle
+          .detailsSecWrapper
+          .ineerLeft
+          .bottomLeft
+          img {
+          width: 50%;
+          height: auto;
+          -o-object-fit: cover;
+          object-fit: cover;
+        }
+        .FeaturesWraper
+          .contentSecWrapper
+          .commonSecStyle
+          .detailsSecWrapper
+          .detailsSec {
+          border: 1px solid #000;
+        }
+        .FeaturesWraper
+          .contentSecWrapper
+          .commonSecStyle
+          .detailsSecWrapper
+          .innerRight
+          .imgCard {
+          text-align: center;
+          border-radius: 4px;
+          overflow: hidden;
+        }
+        .FeaturesWraper
+          .contentSecWrapper
+          .commonSecStyle
+          .detailsSecWrapper
+          .innerRight
+          .imgCard
+          img {
+          width: 100%;
+          height: 150px;
+          border: 1px solid #35b865;
+          border-radius: 4px;
+        }
+        .FeaturesWraper
+          .contentSecWrapper
+          .commonSecStyle
+          .detailsSecWrapper
+          .innerRight
+          .imgCard
+          h4 {
+          background-color: #38ba67;
+          color: #fff;
+          text-transform: capitalize;
+          margin-bottom: 0px;
+          padding: 3px 0px;
+          font-size: 18px;
+          font-weight: bold;
+        }
+        .FeaturesWraper
+          .contentSecWrapper
+          .commonSecStyle
+          .detailsSecWrapper
+          .innerRight
+          ul {
+          list-style: none;
+        }
+        .FeaturesWraper
+          .contentSecWrapper
+          .commonSecStyle
+          .detailsSecWrapper
+          .innerRight
+          ul
+          li {
+          position: relative;
+          font-weight: 500;
+          padding: 8px 0px 8px 15px;
+          border-bottom: 1px solid #eee;
+          color: #000;
+        }
+        .FeaturesWraper
+          .contentSecWrapper
+          .commonSecStyle
+          .detailsSecWrapper
+          .innerRight
+          ul
+          li
+          i {
+          color: #38ba67;
+          position: absolute;
+          left: -10px;
+          top: 16px;
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .FeaturesWraper .contentSecWrapper .commonSecStyle .commonFeatureBox {
+          display: none;
+        }
+        .FeaturesWraper .contentSecWrapper .commonSecStyle .expenses {
+          display: block;
+        }
+
+        .gap {
+          width: 4% !important;
+        }
+
+        .outletType {
+          background-color: #f4f9ff;
+          padding: 40px 0px;
+        }
+        .outletType .title {
+          display: inline-block;
+          text-transform: capitalize;
+          font-size: 28px;
+          font-weight: bold;
+          border-bottom: 2px solid #38ba67;
+        }
+        .outletType .topBarContent {
+          font-size: 16px;
+          font-weight: bold;
+        }
+        .outletType .outletTypeCard {
+          transition: all 0.3s ease;
+        }
+        .outletType .outletTypeCard img {
+          width: 100%;
+          height: 120px;
+          -o-object-fit: cover;
+          object-fit: cover;
+        }
+        .outletType .outletTypeCard h4 {
+          background-color: #38ba67;
+          color: #fff;
+          text-transform: capitalize;
+          font-size: 18px;
+          padding: 4px 0px;
+          font-weight: 500;
+          margin-bottom: 0px;
+        }
+
+        .MobileApplication {
+          padding: 40px 0px;
+        }
+        .MobileApplication .imagesWrapper .imgCard {
+          border-radius: 4px;
+          overflow: hidden;
+          text-align: center;
+        }
+        .MobileApplication .imagesWrapper .imgCard img {
+          width: 100%;
+          height: 150px;
+          object-fit: cover;
+        }
+        .MobileApplication .imagesWrapper .imgCard h4 {
+          background-color: #38ba67;
+          color: #fff;
+          margin-bottom: 0px;
+          padding: 3px 0px;
+          font-size: 18px;
+          text-transform: capitalize;
+          font-weight: bold;
+        }
+        .MobileApplication .content h2 {
+          display: inline-block;
+          font-size: 28px;
+          font-weight: bold;
+          border-bottom: 2px solid #38ba67;
+        }
+        .MobileApplication .content p {
+          font-size: 16px;
+          font-weight: 500;
+          color: #000;
+          font-family: "Lora", serif;
+        }
+        .MobileApplication .content ul {
+          list-style: none;
+        }
+        .MobileApplication .content ul li {
+          position: relative;
+          font-weight: 500;
+          padding: 8px 0px 8px 15px;
+          color: #000;
+        }
+        .MobileApplication .content ul li i {
+          color: #38ba67;
+          position: absolute;
+          left: -10px;
+          top: 16px;
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .MobileApplication .content button {
+          padding: 5px 35px;
+          background: linear-gradient(
+            to right,
+            #3abb69 0%,
+            #009536 50%,
+            #3abb69 100%
+          );
+          border: 0;
+        }
+        a {
+          text-decoration: none;
+        }
+        header h2,
+        h4 {
+          font-weight: bold;
+        }
+        header h4 {
+          font-size: 22px;
+        }
+        header p {
+          margin-bottom: 0rem;
+        }
+      </style>
+
+      <style>
+        #list_style {
+          list-style-type: none;
+          padding-left: 23px;
+        }
+        #list_style h3 {
+          color: #009536;
+        }
+        #list_style li {
+          margin-top: 10px;
+        }
+        #list_styletype li {
+          margin-top: 15px;
+          list-style-type: disc;
+        }
+        #list_styletypes li {
+          margin-top: 15px;
+          list-style-type: none;
+        }
+        .services-wrapper
+          .services-content
+          .single-services
+          .services-text
+          .services-title
+          a {
+          font-size: 18px !important;
+        }
+        #outlefttype img {
+          height: 200px;
+        }
+        #offer_banner .bg {
+          background: url(assets/images/navratri.jpg) no-repeat;
+          background-size: cover;
+          height: 440px;
+        }
+        .offer_title {
+          text-align: left;
+          position: relative;
+          top: 70px;
+          left: 20px;
+          color: #fff;
+          font-size: 45px;
+        }
+        @media only screen and (max-width: 600px) {
+          #offer_banner .bg {
+            height: 130px !important;
+          }
+          .offer_title {
+            top: 30px !important;
+            font-size: 13px !important;
+          }
+        }
+        .header-banner {
+          height: 600px !important;
+        }
+        /* .sectionMargin{
+    margin-top: 50px;
+} */
+        .servicesList {
+          position: relative;
+          padding-left: 22px;
+          list-style-type: decimal !important;
+        }
+        .servicesList li {
+          list-style-type: decimal !important;
+        }
+        .outletTypeList li {
+          margin: 10px 0px;
+          position: relative;
+          padding-left: 25px;
+        }
+        .servicesList li i {
+          display: none;
+        }
+        .outletTypeList li i {
+          position: absolute;
+          top: 5px;
+          left: 0px;
+        }
+        .outletTypeCard {
+          transition: all 0.3s ease;
+        }
+        .outletTypeCard:hover {
+          transition: all 0.3s ease;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          margin-top: -15px;
+        }
+        @media screen and (max-width: 991px) {
+          .services-wrapper
+            .services-content
+            .single-services.services-right
+            .services-text {
+            padding-left: 50px;
+            text-align: left !important;
+          }
+          .services-wrapper
+            .services-content
+            .single-services.services-right
+            .services-icon {
+            left: 30px;
+          }
+        }
+        @media screen and (min-width: 1652px) {
+          .banner-shape {
+            top: 80%;
+            width: 100%;
+          }
+        }
+        .banner-shape {
+          display: none;
+        }
+        header .header-nav .menu-bar {
+          margin-bottom: 0rem;
+        }
+        .width100 {
+          max-width: 100% !important;
+        }
+        /* .autoHeight{
+  max-height: 100% !important;
+} */
+      </style>
+
+      <div class="header-banner d-flex align-items-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="banner-content pt-0 mb-2">
+                <!-- <h2 class="banner-title">The restaurant and retail <span>point of sale</span> at our service.</h2> -->
+                <h4 class="mt-3">
+                  Online Ordering System For Takeaway, Delivery, Order Ahead &
+                  Table Reservations in One Solution
+                </h4>
+                <p class="text">
+                  Searching for an online food ordering system with table
+                  reservations, pickup and delivery software?
+                </p>
+                <p>Say no more. We've got you covered.</p>
+                <p>
+                  Our online food ordering and delivery system centralizes all
+                  pick-up, delivery & dine in orders, so you can easily be in
+                  full control of your business.
+                </p>
+
+                <a class="main-btn" href="#myModal" data-toggle="modal"
+                  >Get Access Now</a
+                >
+              </div>
+              <!-- banner content -->
+            </div>
+          </div>
+          <!-- row -->
+        </div>
+        <!-- container -->
+        <div class="banner-image d-none d-lg-flex align-items-center">
+          <div class="image">
+            <img src="assets/images/banner-image.png" alt="Banner" />
+          </div>
+        </div>
+        <!-- banner image -->
+        <div class="banner-shape">
+          <img src="assets/images/banner-shape.png" alt="Shape" />
+        </div>
+      </div>
+      <!-- header-banner -->
+    </header>
+
     <section class="FeaturesWraper">
       <div class="container-fluid">
         <div class="contentSecWrapper">
@@ -33,22 +705,45 @@
               </div>
             </div>
 
+            <style>
+              @media screen and (max-width: 991px) {
+                .categoriesLists ul li {
+                  margin: 5px;
+                }
+                .categoriesLists ul {
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                }
+                .detailsSecWrapper .gap,
+                .MobileApplication .gap{
+                  display: none;
+                }
+              }
+              @media screen and (max-width: 500px) {
+                .FeaturesWraper .contentSecWrapper .commonSecStyle .detailsSecWrapper .ineerLeft .bottomLeft img{
+                  display: none;
+                }
+                .FeaturesWraper .contentSecWrapper .commonSecStyle .detailsSecWrapper .ineerLeft .bottomLeft .content{
+                  max-width: 100%;
+                }
+              }
+            </style>
             <div class="row justify-content-center mt-4">
-              <div class="col-lg-2">
+              <div class="col-lg-2 col-sm-10">
                 <div class="categoriesLists">
                   <ul class="list-unstyled">
                     <li class="activeFeatureBtn ShowExpensesBtn">Expenses</li>
                     <li class="ShowInventoryBtn">Inventory</li>
-                    <li>Sales</li>
-                    <li>Account</li>
-                    <li>Food Menu</li>
-                    <li>POS Point Of Sale</li>
-                    <li>Membership Of Client</li>
-                    <li>Event Managers</li>
-                    <li>Employee</li>
-                    <li>Calendar</li>
-                    <li>Bill</li>
-                    <li>Searching Employee</li>
+                    <li class="showSalesBtn">Sales</li>
+                    <li class="showAccountBtn">Account</li>
+                    <li class="showFoodMenuBtn">Food Menu</li>
+                    <li class="showPOSBtn">POS Point Of Sale</li>
+                    <li class="showMembershipBtn">Membership Of Client</li>
+                    <li class="showEventBtn">Event Managers</li>
+                    <li class="showEmployeeBtn">Employee</li>
+                    <li class="showCalendarBtn">Calendar</li>
+                    <li class="showBillBtn">Bill</li>
                   </ul>
                 </div>
               </div>
@@ -57,73 +752,88 @@
                   <div class="expenses commonFeatureBox">
                     <div class="row">
                       <div class="col-lg-1 gap"></div>
-                      <div class="col-lg-5">
+                      <div class="col-lg-5 col-md-6">
                         <div class="ineerLeft">
-                          <h2>Expences will be Lorem ipsum dolor sit.</h2>
-                          <img src="https://img.freepik.com/free-vector/indian-rupee-investment-concept_23-2148007574.jpg?w=740&t=st=1673249756~exp=1673250356~hmac=0e75ec4a6042ff642c7624fc83383f576c2188111d83695c6e6b195c2bb76bed" />
+                          <h2>Track And Maintain All Your Expenses</h2>
+                          <img
+                            src="./assets/images/new-images/Expenses.jpg"
+                            alt="Expenses"
+                          />
                           <div class="d-flex bottomLeft">
-                            <div class="content">
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Quia dolorem ipsa in numquam libero
-                              cupiditate ex ducimus nemo expedita deserunt, vel
-                              doloribus unde, quibusdam nobis quam commodi
-                              repudiandae at labore!
+                            <div class="content width100">
+                              An expense is an outflow of money from a business
+                              or individual. Expenses typically refer to costs
+                              incurred as a result of business operations or
+                              personal activities. It's important to track and
+                              manage expenses carefully, as they can have a
+                              significant impact on the profitability and
+                              financial health of a business.
                             </div>
-                            <img
-                              src="./image.png"
-                              alt="img about content"
-                            />
+                            <!-- <img
+                                  src="./assets/images/new-images/testingimg2.jpeg"
+                                  alt="img about content"
+                                  /> -->
                           </div>
                         </div>
                       </div>
                       <div class="col-lg-1 gap"></div>
-                      <div class="col-lg-5">
+                      <div class="col-lg-5 col-md-6">
                         <div class="innerRight">
-                          <div class="row">
-                            <div class="col-lg-6">
+                          <div class="row justify-content-center">
+                            <div class="col-sm-6">
                               <div class="imgCard">
-                                <img src="./dummyImg/dummy (2).jpeg" alt="" />
-                                <h4>Lorem, ipsum.</h4>
+                                <img
+                                  src="./assets/images/new-images/purchase.jpg"
+                                  alt="purchase"
+                                />
+                                <h4>Purchases</h4>
                               </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-sm-6">
                               <div class="imgCard">
-                                <img src="./dummyImg/dummy (3).jpeg" alt="" />
-                                <h4>Lorem, ipsum.</h4>
+                                <img
+                                  src="./assets/images/new-images/vendor.jpg"
+                                  alt="Wastage"
+                                />
+                                <h4>Vender</h4>
                               </div>
                             </div>
-                            <div class="col-lg-6 mt-4">
+                            <div class="col-lg-12 col-sm-6 mt-4">
                               <div class="imgCard">
-                                <img src="./dummyImg/dummy (4).jpeg" alt="" />
-                                <h4>Lorem, ipsum.</h4>
+                                <img
+                                  src="./assets/images/new-images/Wastage.jpg"
+                                  alt="Wastage"
+                                />
+                                <h4>Wastage</h4>
                               </div>
                             </div>
-                            <div class="col-lg-6 mt-4">
-                              <div class="imgCard">
-                                <img src="./dummyImg/dummy (1).jpeg" alt="" />
-                                <h4>Lorem, ipsum.</h4>
-                              </div>
-                            </div>
+                            <!-- <div class="col-lg-6 mt-4">
+                                  <div class="imgCard">
+                                      <img src="./assets/images/new-images/testingimg2.jpeg" alt="" />
+                                      <h4>Lorem, ipsum.</h4>
+                                  </div>
+                                  </div> -->
                           </div>
                           <div class="row mt-4">
                             <ul>
                               <li>
-                                <i class="fa-solid fa-check"></i> Lorem ipsum
-                                dolor sit amet consectetur adipisicing.
+                                <i class="fa-solid fa-check"></i>We manage all
+                                your Food, beverage costs,Labour costs,Marketing
+                                and advertising coast,Insurance and other Taxes
+                                coasts.
                               </li>
                               <li>
-                                <i class="fa-solid fa-check"></i> Lorem ipsum
-                                dolor sit, amet consectetur adipisicing elit.
-                                Fuga consectetur impedit earum.
+                                <i class="fa-solid fa-check"></i>Rent and other
+                                equipment coast such as ovens, stoves,
+                                refrigerators, dishwashers coast, with
+                                electricity, gas, water, and other utilities
+                                coasts.
                               </li>
                               <li>
-                                <i class="fa-solid fa-check"></i> Lorem ipsum
-                                dolor sit amet consectetur adipisicing.
-                              </li>
-                              <li>
-                                <i class="fa-solid fa-check"></i> Lorem ipsum
-                                dolor sit, amet consectetur adipisicing elit.
-                                Fuga consectetur impedit earum.
+                                <i class="fa-solid fa-check"></i> will help you
+                                to find best vendors and maintain your purchases
+                                with all venders. also reduce your food and
+                                other wastages.
                               </li>
                             </ul>
                           </div>
@@ -131,77 +841,910 @@
                       </div>
                     </div>
                   </div>
+
                   <div class="inventory commonFeatureBox">
                     <div class="row">
                       <div class="col-lg-1 gap"></div>
-                      <div class="col-lg-5">
+                      <div class="col-lg-5 col-md-6">
                         <div class="ineerLeft">
-                          <h2>Inventory details Lorem ipsum dolor sit amet.</h2>
-                          <img src="https://img.freepik.com/premium-photo/word-expenses-calculator-white-background-concept-counting-expenses_507676-2311.jpg?w=740" alt="main img" />
+                          <h2>
+                            Track,Create, Maintain and organize your Inventory
+                          </h2>
+                          <img
+                            src="./assets/images/new-images/inventory.jpg"
+                            alt="inventory"
+                          />
                           <div class="d-flex bottomLeft">
                             <div class="content">
-                              distinctio. Porro consectetur esse nemo commodi
-                              ratione? Ea, ex cupiditate a et odio facilis
-                              fugiat repellendus natus officia voluptates
-                              reiciendis eaque facere odit eligendi at
-                              architecto?
+                              we will help you to manage your inventory
+                              efficiently, we will provide you a batter
+                              inventory system, so you can continuously tracked
+                              and updated all you products , and you have always
+                              counted and recorded each and individual items.
                             </div>
                             <img
-                              src="./dummyImg/dummy (3).jpeg"
-                              alt="img about content"
+                              src="./assets/images/new-images/Fixed-Stock.jpg"
+                              alt="Fixed-Stock"
                             />
                           </div>
                         </div>
                       </div>
                       <div class="col-lg-1 gap"></div>
-                      <div class="col-lg-5">
+                      <div class="col-lg-5 col-md-6">
                         <div class="innerRight">
                           <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-sm-6">
                               <div class="imgCard">
-                                <img src="./dummyImg/dummy (3).jpeg" alt="" />
-                                <h4>Lorem, ipsum.</h4>
+                                <img
+                                  src="./assets/images/new-images/raw-maetial.jpg"
+                                  alt="raw-maetial"
+                                />
+                                <h4>Raw Martial</h4>
                               </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-sm-6">
                               <div class="imgCard">
-                                <img src="./dummyImg/dummy (2).jpeg" alt="" />
-                                <h4>Lorem, ipsum.</h4>
+                                <img
+                                  src="./assets/images/new-images/Foos-Value.jpg"
+                                  alt="Foos-Value"
+                                />
+                                <h4>Food Value</h4>
                               </div>
                             </div>
 
-                            <div class="col-lg-6 mt-4">
+                            <div class="col-sm-6 mt-4">
                               <div class="imgCard">
-                                <img src="./dummyImg/dummy (1).jpeg" alt="" />
-                                <h4>Lorem, ipsum.</h4>
+                                <img
+                                  src="./assets/images/new-images/bar.jpg"
+                                  alt=""
+                                />
+                                <h4>Bar stock</h4>
                               </div>
                             </div>
-                            <div class="col-lg-6 mt-4">
+                            <div class="col-sm-6 mt-4">
                               <div class="imgCard">
-                                <img src="./dummyImg/dummy (4).jpeg" alt="" />
-                                <h4>Lorem, ipsum.</h4>
+                                <img
+                                  src="./assets/images/new-images/beverages.jpg"
+                                  alt=""
+                                />
+                                <h4>Beverages</h4>
                               </div>
                             </div>
                           </div>
                           <div class="row mt-4">
                             <ul>
                               <li>
-                                <i class="fa-solid fa-check"></i> Lorem ipsum
-                                dolor sit amet consectetur adipisicing.
+                                <i class="fa-solid fa-check"></i> We will help
+                                you categories all your stocks smartly.
                               </li>
                               <li>
-                                <i class="fa-solid fa-check"></i> Lorem ipsum
-                                dolor sit, amet consectetur adipisicing elit.
-                                Fuga consectetur impedit earum.
+                                <i class="fa-solid fa-check"></i>Now you have a
+                                batter inventory for each and individual stocks
+                                category like Raw Martial, Food-Value, Food
+                                Stock & Value, Bar Stock, Beverages.
                               </li>
                               <li>
-                                <i class="fa-solid fa-check"></i> Lorem ipsum
-                                dolor sit amet consectetur adipisicing.
+                                <i class="fa-solid fa-check"></i>Our Product
+                                alert you to sudden Shortage of any product.
                               </li>
                               <li>
-                                <i class="fa-solid fa-check"></i> Lorem ipsum
-                                dolor sit, amet consectetur adipisicing elit.
-                                Fuga consectetur impedit earum.
+                                <i class="fa-solid fa-check"></i>Now you have
+                                all of your product expiry data.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="sales commonFeatureBox">
+                    <div class="row">
+                      <div class="col-lg-1 gap"></div>
+                      <div class="col-lg-5 col-md-6">
+                        <div class="ineerLeft">
+                          <h2>Track, Maintain and organize your sales</h2>
+                          <img
+                            src="./assets/images/new-images/Sales.jpg"
+                            alt="inventory"
+                          />
+                          <div class="d-flex bottomLeft">
+                            <div class="content width100">
+                              Sale in the backbone of any business. In order to
+                              increase sales, a restaurant may need to consider
+                              ways to improve any of these factors or to find
+                              new ways to attract customers. This could involve
+                              offering promotions or discounts, adding new menu
+                              items, improving the dining experience, or
+                              increasing the restaurant's visibility through
+                              advertising and social media. We are offering you
+                              a product that will defiantly increase your sale
+                              and make you stand out in the crowd
+                            </div>
+                            <!-- <img
+                          src="./assets/images/new-images/Fixed-Stock.jpg"
+                          alt="Fixed-Stock"
+                        /> -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-1 gap"></div>
+                      <div class="col-lg-5 col-md-6">
+                        <div class="innerRight">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/paymnetgateway.jpg"
+                                  alt="raw-maetial"
+                                />
+                                <h4>Payemnt Mode</h4>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/comsumption.jpg"
+                                  alt="Foos-Value"
+                                />
+                                <h4>Consumption</h4>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row mt-4">
+                            <ul>
+                              <li>
+                                <i class="fa-solid fa-check"></i> There are many
+                                ways to measure the sales of a restaurant,
+                                including by the total number of customers
+                                served, the total revenue generated, and the
+                                average sale per customer.
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i> It is also
+                                important to track changes in sales over time,
+                                as this can help a restaurant owner or manager
+                                understand the factors that are driving business
+                                and identify any potential problems or
+                                opportunities.
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i>Additionally,
+                                tracking sales can help a restaurant owner or
+                                manager make informed decisions about pricing,
+                                menu selection, and other business strategies.
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i>We will track
+                                all your sales, payment mode ,consumption that
+                                helps you to build your strategies
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="account commonFeatureBox">
+                    <div class="row">
+                      <div class="col-lg-1 gap"></div>
+                      <div class="col-lg-5 col-md-6">
+                        <div class="ineerLeft">
+                          <h2>Track All Your Payments</h2>
+                          <img
+                            src="./assets/images/new-images/account.jpg"
+                            alt="inventory"
+                          />
+                          <div class="d-flex bottomLeft">
+                            <div class="content">
+                              An account is a record of financial transactions
+                              for a specific asset, liability, or owner's
+                              equity. In the context of a business, an account
+                              can refer to a specific category in the financial
+                              records, such as a cash account, an accounts
+                              receivable account, or an inventory account.
+                            </div>
+                            <img
+                              src="./assets/images/new-images/login.jpg"
+                              alt="Fixed-Stock"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-1 gap"></div>
+                      <div class="col-lg-5 col-md-6">
+                        <div class="innerRight">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/useraccount.jpg"
+                                  alt="raw-maetial"
+                                />
+                                <h4>User Account</h4>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/integration.jpg"
+                                  alt="Foos-Value"
+                                />
+                                <h4>Integration</h4>
+                              </div>
+                            </div>
+
+                            <div class="col-sm-6 mt-4">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/paymnetgateway.jpg"
+                                  alt=""
+                                />
+                                <h4>Payment Gateways</h4>
+                              </div>
+                            </div>
+                            <div class="col-sm-6 mt-4">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/SwiggyZomato.jpg"
+                                  alt=""
+                                />
+                                <h4>Swiggy, Zomato</h4>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row mt-4">
+                            <ul>
+                              <li>
+                                <i class="fa-solid fa-check"></i>An account
+                                typically has a balance, which is the sum of all
+                                the transactions recorded in the account.
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i> A login is a
+                                process that allows a user to access a computer
+                                system, website, or application by entering a
+                                unique combination of credentials, such as a
+                                username and password.
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i> A user account
+                                is a record of an individual's access to a
+                                computer system, website, or application. Each
+                                user account typically has a unique username and
+                                password, which are used to verify the user's
+                                identity and allow them to log in to the system.
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i>Third party
+                                integration helps you to maintain your other
+                                channel sales recodes and expense records.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="foodMenu commonFeatureBox">
+                    <div class="row">
+                      <div class="col-lg-1 gap"></div>
+                      <div class="col-lg-5 col-md-6">
+                        <div class="ineerLeft">
+                          <h2>
+                            Track,Create, Maintain and organize your Food Menu
+                          </h2>
+                          <img
+                            src="./assets/images/new-images/foodmenu.jpg"
+                            alt="inventory"
+                          />
+                          <div class="d-flex bottomLeft">
+                            <div class="content width100">
+                              A digital food menu is a menu that is presented in
+                              a digital format, rather than on paper or a
+                              physical board. Digital food menus can be
+                              displayed on screens or tablets in the restaurant,
+                              or they may be accessed online or through a mobile
+                              app. Digital food menus offer several benefits
+                              over traditional paper menus, including the
+                              ability to update the menu items and prices in
+                              real-time, the ability to display photographs or
+                              videos of the dishes, and the ability to provide
+                              additional information, such as ingredient lists
+                              or dietary restrictions.
+                            </div>
+                            <!-- <img
+                          src="./assets/images/new-images/POS.jpg"
+                          alt="Fixed-Stock"
+                        /> -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-1 gap"></div>
+                      <div class="col-lg-5 col-md-6">
+                        <div class="innerRight">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/raw-maetial.jpg"
+                                  alt="raw-maetial"
+                                />
+                                <h4>Raw Martial</h4>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/Foos-Value.jpg"
+                                  alt="Foos-Value"
+                                />
+                                <h4>Food Value</h4>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row mt-4">
+                            <ul>
+                              <li>
+                                <i class="fa-solid fa-check"></i> Digital food
+                                menus can also be more interactive and engaging,
+                                as they may allow customers to place orders
+                                directly from the menu or to provide feedback
+                                about their experience.
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i> Some
+                                restaurants may choose to offer both a
+                                traditional paper menu and a digital menu, in
+                                order to give customers, the option to choose
+                                the format that they prefer.
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i> A food menu
+                                can be presented in a variety of formats,
+                                including as a printed list, an online menu, or
+                                a physical board displayed in the restaurant.
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i>Food menus can
+                                be an important marketing tool for a restaurant,
+                                as they can help to attract customers and
+                                influence their purchasing decisions.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pos commonFeatureBox">
+                    <div class="row">
+                      <div class="col-lg-1 gap"></div>
+                      <div class="col-lg-5 col-md-6">
+                        <div class="ineerLeft">
+                          <h2>
+                            Maintain all your current processes through POS
+                          </h2>
+                          <img
+                            src="./assets/images/new-images/POS.jpg"
+                            alt="inventory"
+                          />
+                          <div class="d-flex bottomLeft">
+                            <div class="content width100">
+                              A restaurant point of sale (POS) system is a
+                              computerized system that is specifically designed
+                              to support the needs of a restaurant or food
+                              service business. A restaurant POS system
+                              typically includes a computer, a printer, a cash
+                              drawer, a barcode scanner, and a payment terminal,
+                              and is used to process orders, process payments,
+                              and track inventory.
+                            </div>
+                            <!-- <img
+                          src="./assets/images/new-images/Fixed-Stock.jpg"
+                          alt="Fixed-Stock"
+                        /> -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-1 gap"></div>
+                      <div class="col-lg-5 col-md-6">
+                        <div class="innerRight">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/raw-maetial.jpg"
+                                  alt="raw-maetial"
+                                />
+                                <h4>Raw Martial</h4>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/Foos-Value.jpg"
+                                  alt="Foos-Value"
+                                />
+                                <h4>Food Value</h4>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row mt-4">
+                            <ul>
+                              <li>
+                                <i class="fa-solid fa-check"></i>Restaurant POS
+                                systems often have additional features and
+                                capabilities that are tailored to the needs of
+                                the food service industry, such as the ability
+                                to manage multiple orders at once, the ability
+                                to split bills, and the ability to track food
+                                allergies and dietary restrictions.
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i> Restaurant POS
+                                systems can help restaurants to streamline their
+                                operations, improve customer service, and
+                                increase efficiency. Some restaurant POS systems
+                                may also include additional functionality, such
+                                as marketing and customer relationship
+                                management tools.
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i> A point of
+                                sale (POS) system is a computerized system that
+                                is used to process sales transactions in a
+                                retail or hospitality setting. A POS system
+                                typically includes a computer, a printer, a cash
+                                drawer, a barcode scanner, and a payment
+                                terminal, and is used to register the sale of
+                                goods or services, process payments, and track
+                                inventory.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="membership commonFeatureBox">
+                    <div class="row">
+                      <div class="col-lg-1 gap"></div>
+                      <div class="col-lg-5 col-md-6">
+                        <div class="ineerLeft">
+                          <h2>Invite More customers with membership Scheme</h2>
+                          <img
+                            src="./assets/images/new-images/membership.jpg"
+                            alt="inventory"
+                          />
+                          <div class="d-flex bottomLeft">
+                            <div class="content width100">
+                              Membership can refer to the state of being a
+                              member of a group or organization, or it can refer
+                              to the process of becoming a member. For example,
+                              you might become a member of a club by paying
+                              membership fees and agreeing to follow the club's
+                              rules and regulations.
+                            </div>
+                            <!-- <img
+                          src="./assets/images/new-images/Fixed-Stock.jpg"
+                          alt="Fixed-Stock"
+                        /> -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-1 gap"></div>
+                      <div class="col-lg-5 col-md-6">
+                        <div class="innerRight">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/memberShip2.webp"
+                                  alt="Foos-Value"
+                                />
+                                <h4>Membership Card</h4>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/memberShipp.webp"
+                                  alt="raw-maetial"
+                                />
+                                <h4>Membership</h4>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row mt-4">
+                            <ul>
+                              <li>
+                                <i class="fa-solid fa-check"></i>membership
+                                would give you certain privileges or benefits,
+                                such as the ability to participate in club
+                                activities or use club facilities.
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i>Event
+                                management is the process of planning,
+                                organizing, and coordinating events. This can
+                                include events such as meetings, conferences,
+                                festivals, concerts, or sporting events.
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i>Event managers
+                                are responsible for overseeing all aspects of an
+                                event, including budgeting, securing venues,
+                                coordinating logistics, promoting the event, and
+                                managing the day-of operations.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="event commonFeatureBox">
+                    <div class="row">
+                      <div class="col-lg-1 gap"></div>
+                      <div class="col-lg-5 col-md-6">
+                        <div class="ineerLeft">
+                          <h2>Track, Maintain and organize all your events</h2>
+                          <img
+                            src="./assets/images/new-images/event.jpg"
+                            alt="inventory"
+                          />
+                          <div class="d-flex bottomLeft">
+                            <div class="content width100">
+                              Event management is the process of planning,
+                              organizing, and coordinating events. This can
+                              include events such as meetings, conferences,
+                              festivals, concerts, or sporting events. Event
+                              managers are responsible for overseeing all
+                              aspects of an event, including budgeting, securing
+                              venues, coordinating logistics, promoting the
+                              event, and managing the day-of operations.
+                            </div>
+                            <!-- <img
+                          src="./assets/images/new-images/Fixed-Stock.jpg"
+                          alt="Fixed-Stock"
+                        /> -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-1 gap"></div>
+                      <div class="col-lg-5 col-md-6">
+                        <div class="innerRight">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/GuestList.jpg"
+                                  alt="raw-maetial"
+                                />
+                                <h4>Guest List</h4>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/Foos-Value.jpg"
+                                  alt="Foos-Value"
+                                />
+                                <h4>Selected food</h4>
+                              </div>
+                            </div>
+
+                            <div class="col-sm-6 mt-4">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/billing.jpg"
+                                  alt=""
+                                />
+                                <h4>Party billing</h4>
+                              </div>
+                            </div>
+                            <div class="col-sm-6 mt-4">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/payemntmode2.jpg"
+                                  alt=""
+                                />
+                                <h4>Payment Mode</h4>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row mt-4">
+                            <ul>
+                              <li>
+                                <i class="fa-solid fa-check"></i>The goal of
+                                event management is to ensure that an event is
+                                successful, meets the needs of all parties
+                                involved, and runs smoothly.
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i>A guest list is
+                                a list of people who have been invited to attend
+                                an event. This list can include the names of
+                                attendees, their contact information, and any
+                                other relevant details such as dietary
+                                restrictions or special needs.
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i>Food selection
+                                is the process of choosing and planning the food
+                                and beverages that will be served at an event.
+                                When selecting food for an event, there are a
+                                number of factors to consider, such as the theme
+                                or purpose of the event, the number of guests,
+                                the time of day, and any dietary restrictions or
+                                allergies that need to be accommodated.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="employee commonFeatureBox">
+                    <div class="row">
+                      <div class="col-lg-1 gap"></div>
+                      <div class="col-lg-5 col-md-6">
+                        <div class="ineerLeft">
+                          <h2>
+                            Track, and Maintain all your employees performance
+                          </h2>
+                          <img
+                            src="./assets/images/new-images/employee.jpg"
+                            alt="inventory"
+                          />
+                          <div class="d-flex bottomLeft">
+                            <div class="content">
+                              If you are an employee of a restaurant, your
+                              responsibilities may vary depending on your
+                              specific job role. Some common responsibilities
+                              for restaurant employees include:
+                            </div>
+                            <img
+                              src="./assets/images/new-images/profile.jpg"
+                              alt="Fixed-Stock"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-1 gap"></div>
+                      <div class="col-lg-5 col-md-6">
+                        <div class="innerRight">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/profile.jpg"
+                                  alt=""
+                                />
+                                <h4>profile</h4>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/salary.jpg"
+                                  alt="raw-maetial"
+                                />
+                                <h4>Salary</h4>
+                              </div>
+                            </div>
+                            <div class="col-sm-6 mt-4">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/attendance.jpg"
+                                  alt="Foos-Value"
+                                />
+                                <h4>Attendance</h4>
+                              </div>
+                            </div>
+
+                            <div class="col-sm-6 mt-4">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/payment.jpg"
+                                  alt=""
+                                />
+                                <h4>payment</h4>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row mt-4">
+                            <ul>
+                              <li>
+                                <i class="fa-solid fa-check"></i>Track all your
+                                employee and their performance according every
+                                aspect
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i>Track all
+                                old,current and advanced salaries.
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i> Track amd
+                                maintain daily payments
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i>Maintain and
+                                notice employee attendance and performance.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="calendar commonFeatureBox">
+                    <div class="row">
+                      <div class="col-lg-1 gap"></div>
+                      <div class="col-lg-5 col-md-6">
+                        <div class="ineerLeft">
+                          <h2>
+                            Maintain and organize your important notes and dates
+                          </h2>
+                          <img
+                            src="./assets/images/new-images/calendar.jpg"
+                            alt="inventory"
+                          />
+                          <div class="d-flex bottomLeft">
+                            <div class="content width100">
+                              A calendar is a system for organizing and
+                              scheduling events and activities, typically by
+                              dividing the year into months, weeks, and days.
+                              Calendars are used to mark important dates and
+                              events, such as holidays, birthdays, meetings, and
+                              appointments. There are many different types of
+                              calendars, including traditional calendars that
+                              use a twelve-month year with fixed dates for each
+                              month, as well as more flexible calendars that
+                              allow for the addition of new events and
+                              activities as needed.
+                            </div>
+                            <!-- <img
+                          src="./assets/images/new-images/Fixed-Stock.jpg"
+                          alt="Fixed-Stock"
+                        /> -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-1 gap"></div>
+                      <div class="col-lg-5 col-md-6">
+                        <div class="innerRight">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/img2.jpg"
+                                  alt="raw-maetial"
+                                />
+                                <h4>Note</h4>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/calender12.webp"
+                                  alt="Foos-Value"
+                                />
+                                <h4>Informations</h4>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row mt-4">
+                            <ul>
+                              <li>
+                                <i class="fa-solid fa-check"></i>Write, record
+                                and maintain your notes and important
+                                information.
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i>we can be use
+                                it for a variety of purposes, such as making a
+                                list of tasks to do, jotting down ideas or
+                                thoughts, or leaving a message for someone else.
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i> Notes are
+                                often brief and to the point, and are intended
+                                to convey information quickly and efficiently.
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i>Calendars can
+                                be physical, such as a paper calendar with
+                                printed dates and events, or digital, such as a
+                                calendar app on a phone or computer.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bill commonFeatureBox">
+                    <div class="row">
+                      <div class="col-lg-1 gap"></div>
+                      <div class="col-lg-5 col-md-6">
+                        <div class="ineerLeft">
+                          <h2>
+                            Maintain and organize your all bills digitally
+                          </h2>
+                          <img
+                            src="./assets/images/new-images/biilling.jpg"
+                            alt="inventory"
+                          />
+                          <div class="d-flex bottomLeft">
+                            <div class="content width100">
+                              Billing is the process of issuing an invoice to a
+                              customer for goods or services that have been
+                              provided. It typically involves calculating the
+                              total amount due, including any applicable taxes
+                              or fees, and providing the customer with a
+                              statement outlining the details of the
+                              transaction.
+                            </div>
+                            <!-- <img
+                          src="./assets/images/new-images/Fixed-Stock.jpg"
+                          alt="Fixed-Stock"
+                        /> -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-1 gap"></div>
+                      <div class="col-lg-5 col-md-6">
+                        <div class="innerRight">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/bill.jpg"
+                                  alt="raw-maetial"
+                                />
+                                <h4>bill</h4>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="imgCard">
+                                <img
+                                  src="./assets/images/new-images/img4.jpg"
+                                  alt="Foos-Value"
+                                />
+                                <h4>Email</h4>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row mt-4">
+                            <ul>
+                              <li>
+                                <i class="fa-solid fa-check"></i>The billing
+                                process can be manual, using paper invoices and
+                                checks, or it can be automated using electronic
+                                billing and payment systems.
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i>. The frequency
+                                of billing can vary depending on the type of
+                                goods or services being provided and the terms
+                                of the agreement between the customer and the
+                                supplier.
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-check"></i>. In some
+                                cases, billing may occur on a one-time basis,
+                                while in other cases it may be done on a regular
+                                basis, such as monthly or quarterly.
                               </li>
                             </ul>
                           </div>
@@ -354,122 +1897,95 @@
     <section class="MobileApplication mt-5 mb-5">
       <div class="container-fluid">
         <div class="row justify-content-center">
-         
           <!-- <div class="col-lg-1 gap"></div> -->
-          <div class="col-lg-5">
+          <div class="col-lg-5 col-md-6">
             <div class="imagesWrapper">
               <div class="row">
-                <div class="col-lg-4">
+                <div class="col-4">
                   <div class="imgCard">
-                    <img src="./dummyImg/dummy (2).jpeg" alt="" />
+                    <img
+                      src="./assets/images/new-images/testingimg1.jpeg"
+                      alt=""
+                    />
                     <h4>Delivery</h4>
                   </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-4">
                   <div class="imgCard">
-                    <img src="./dummyImg/dummy (3).jpeg" alt="" />
+                    <img
+                      src="./assets/images/new-images/testingimg2.jpeg"
+                      alt=""
+                    />
                     <h4>Client</h4>
                   </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-4">
                   <div class="imgCard">
-                    <img src="./dummyImg/dummy (4).jpeg" alt="" />
-                    <h4>Waiter </h4>
+                    <img
+                      src="./assets/images/new-images/testingimg3.jpeg"
+                      alt=""
+                    />
+                    <h4>Waiter</h4>
                   </div>
                 </div>
-                <div class="col-lg-6 mt-4 ">
+                <div class="col-6 mt-4">
                   <div class="imgCard">
-                    <img src="./dummyImg/dummy (1).jpeg" alt="" />
+                    <img
+                      src="./assets/images/new-images/testingimg4.jpeg"
+                      alt=""
+                    />
                     <h4>Manger (Captain app)</h4>
                   </div>
                 </div>
-                <div class="col-lg-6 mt-4">
+                <div class="col-6 mt-4">
                   <div class="imgCard">
-                    <img src="./dummyImg/dummy (1).jpeg" alt="" />
-                    <h4> Owner / partner</h4>
+                    <img
+                      src="./assets/images/new-images/testingimg1.jpeg"
+                      alt=""
+                    />
+                    <h4>Owner / partner</h4>
                   </div>
                 </div>
               </div>
             </div>
-          </div>       
+          </div>
           <div class="col-lg-1 gap"></div>
-          <div class="col-lg-5">
+          <div class="col-lg-5 col-md-6">
             <div class="content">
-              <h2 class="title">Our Services</h2>
-              <p >
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Recusandae, aliquam harum soluta blanditiis ullam libero veniam
-                labore quod optio doloribus deserunt possimus quibusdam laborum
-                vero voluptate accusamus est pariatur cupiditate atque! Est
-               
+              <h2 class="title">Mobile Applications</h2>
+              <p>
+                Our mobile applications are designed to provide an intuitive and seamless user experience, with a focus on functionality and ease of use. They are built using the latest technologies and are optimized for both iOS and Android platforms.
               </p>
               <ul class="list-unstyled">
-                <li> <i class="fa-solid fa-check"></i> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet.</li>
-                <li> <i class="fa-solid fa-check"></i> Lorem ipsum dolor sit amet. lorem9</li>
-                <li> <i class="fa-solid fa-check"></i> Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
-                <li> <i class="fa-solid fa-check"></i> Lorem ipsum dolor sit amet.</li>
+                <li>
+                  <i class="fa-solid fa-check"></i>Empowering waiters to serve better, faster and smarter
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>Empowering delivery partners to connect and deliver, with ease
+                </li>
+                <li>
+                <li>
+                  <i class="fa-solid fa-check"></i>Transforming the way you connect and grow with your clients, anytime, anywhere
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>Empowering managers to lead smarter and more efficiently
+                </li>
+                <li>
+                  <i class="fa-solid fa-check"></i>Owning your business just got easier, with our mobile solution
+                </li>
               </ul>
               <button class="btn btn-primary btn-sm">Read More..</button>
             </div>
-          </div>  
+          </div>
         </div>
       </div>
     </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script>
-      $("head").append(
-        '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
-      );
-      $("head").append(
-        ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
-  />'
-      );
-      $("head").append(
-        '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
-      );
-    </script>
-    <script>
-      $(function () {
-        $(".owl-carousel").owlCarousel({
-          loop: true,
-          margin: 10,
-          nav: false,
-          autoplay: true,
-          autoplayTimeout: 2000,
-          autoplaySpeed: 4000,
-          slideTransition: "linear",
-          autoplayHoverPause: true,
-          responsive: {
-            0: {
-              items: 2,
-            },
-            600: {
-              items: 5,
-            },
-            1000: {
-              items: 7,
-            },
-          },
-        });
-      });
-    </script>
-    <script>
-      $(".categoriesLists li").click(function () {
-        $(".categoriesLists li").removeClass("activeFeatureBtn");
-        $(this).addClass("activeFeatureBtn");
-      });
-
-      $(".ShowExpensesBtn").click(function () {
-        $(".commonFeatureBox").hide();
-        $(".expenses").show();
-      });
-
-      $(".ShowInventoryBtn").click(function () {
-        $(".commonFeatureBox").hide();
-        $(".inventory").show();
-      });
-    </script>
+    <!--====== FOOTER PART START ======-->
   </body>
 </html>
+
+<!-- 
+
+
+ -->
