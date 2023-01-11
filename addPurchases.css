@@ -43,6 +43,10 @@
   color: #fff;
 }
 
+main {
+  background-color: transparent;
+}
+
 .allBtnsWrapper .allBtns {
   background-color: #fff2e7;
   border: 1px solid #fc8019;
