@@ -46,15 +46,7 @@
 main {
   background-color: transparent;
 }
-
-.allBtnsWrapper .allBtns {
-  background-color: #fff;
-  border: 1px solid #fc8019;
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-  text-align: center;
-  border-radius: 5px;
-}
-.allBtnsWrapper .allBtns button {
+main .CategoryActionBtn button {
   min-width: 80px;
   margin: 10px;
   text-transform: capitalize;
@@ -67,54 +59,25 @@ main {
   padding: 2px 8px;
   font-family: "Montserrat", sans-serif;
 }
-.allBtnsWrapper .allBtns .activeBtn {
-  background-color: #fe9037;
-}
-
-.ProductDetailsWrapper {
-  background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-  border-radius: 5px;
-  padding: 10px;
-  overflow: hidden;
-  border: 1px solid #fc8019;
-}
-.ProductDetailsWrapper .title {
+main .categoryheading {
   display: inline-block;
-  border-bottom: 2px solid #fc8019;
   color: #083e5a;
   font-weight: bold;
   padding-bottom: 5px;
-  margin: 10px 0px;
+  margin-left: 15px;
   font-size: 20px;
 }
-.ProductDetailsWrapper .IngtopBar label {
-  color: #083e5a;
-  font-weight: bold;
-  font-size: 20px;
-  margin-right: 15px;
-}
-.ProductDetailsWrapper .IngtopBar select {
-  border: 1px solid #ef7d0b;
-  border-radius: 4px;
-  min-width: 150px;
-  font-size: 14px;
-  color: #083e5a;
+
+.allBtnsWrapper .allBtns, .allVenderBtnsWrapper .allBtns {
+  background-color: #fff;
+  border: 1px solid #fc8019;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
   text-align: center;
-  height: 25px;
+  border-radius: 5px;
 }
-.ProductDetailsWrapper .IngtopBar ul li {
-  list-style: none;
-  margin: 0px 10px;
-  font-size: 14px;
-  color: #083e5a;
-}
-.ProductDetailsWrapper .IngtopBar ul li span {
-  font-weight: bold;
-}
-.ProductDetailsWrapper .IngtopBar .ingredientsActionBtn button {
+.allBtnsWrapper .allBtns button, .allVenderBtnsWrapper .allBtns button {
   min-width: 80px;
-  margin: 0px 10px;
+  margin: 10px;
   text-transform: capitalize;
   border-radius: 3px;
   border: 0;
@@ -125,9 +88,22 @@ main {
   padding: 2px 8px;
   font-family: "Montserrat", sans-serif;
 }
+.allBtnsWrapper .allBtns .activeBtn, .allVenderBtnsWrapper .allBtns .activeBtn {
+  background-color: #fe9037;
+}
+.allBtnsWrapper .allBtns hr, .allVenderBtnsWrapper .allBtns hr {
+  margin: 0px;
+}
+
+.ProductDetailsWrapper {
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  border-radius: 5px;
+  padding: 10px;
+  overflow: hidden;
+  border: 1px solid #fc8019;
+}
 .ProductDetailsWrapper .details {
-  max-width: 85%;
-  width: 100%;
   transition: all 0.5s ease;
   position: relative;
   top: 0px;
@@ -147,7 +123,9 @@ main {
 .ProductDetailsWrapper table {
   max-width: 100%;
   width: 100%;
+  border-radius: 4px;
   overflow: hidden;
+  border-radius: 5px;
 }
 .ProductDetailsWrapper table tr:nth-child(even) {
   background-color: #fff2e7;
@@ -225,8 +203,8 @@ main {
 }
 #addVenderWrapper .addVenderTitle h2 {
   display: inline-block;
-  border-bottom: 2px solid #fc8e32;
-  color: #083e5a;
+  border-bottom: 2px solid #3abb69;
+  color: #7a7797;
   font-weight: bold;
   padding-bottom: 5px;
   font-size: 20px;
@@ -264,7 +242,8 @@ main {
   text-align: left;
 }
 
-.table1Btns button, .table2Btns button {
+.table1Btns button,
+.table2Btns button {
   text-transform: capitalize;
   border-radius: 3px;
   border: 0px;
@@ -273,4 +252,4 @@ main {
   padding: 3px 50px;
   font-size: 16px;
   font-weight: bold;
-}/*# sourceMappingURL=addPurchases.css.map */
+}/*# sourceMappingURL=addPurchases2.css.map */

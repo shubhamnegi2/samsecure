@@ -5,20 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Purchases</title>
-    <link rel="stylesheet" href="./addPurchases.css" />
+    <link rel="stylesheet" href="./addPurchases2.css" />
     <style>
       .itemNameWrapper ul {
-        /* display: flex; */
+        display: flex;
         flex-wrap: wrap;
       }
       .itemNameWrapper ul li {
-        /* max-width: 150px; */
+        max-width: 150px;
         overflow: hidden;
+        margin-right: 10px;
         font-size: 14px;
-        border-bottom: 1px solid #fc8e32;
-        padding-right: 10px;
-        padding-left: 15px;
-        display: block;
       }
       .itemNameWrapper ul li input {
         cursor: pointer;
@@ -29,68 +26,51 @@
         white-space: nowrap;
         overflow: hidden !important;
         text-overflow: ellipsis;
-        color: #083e5a;
+        color: #7a7797;
         font-size: 12px;
       }
-      .itemNameWrapper h3 {
-        background-color: #fc8e32;
-        font-size: 14px;
-        font-weight: 600;
-        color: #fff;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-right: 1px solid #fc8e32;
-      }
       .itemNameWrapper {
-        max-width: 15%;
-        width: 100%;
         box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
-        /* border-radius: 5px; */
-        border-right: 1px solid #fc8019;
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid #fc8019;
         background-color: #eee;
+      }
+      .itemNameWrapper h3 {
+        /* border-bottom: 2px solid #fc8e32; */
+        color: #7a7797;
+        font-weight: bold;
+        font-size: 16px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        display: inline-block;
+      }
+      .allBtnsWrapper h3 {
+        /* text-align: center; */
+        /* border-bottom: 2px solid #fc8e32; */
+        color: #7a7797;
+        font-weight: bold;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        /* margin-top: 1rem; */
+        font-size: 16px;
+        text-align: right;
+        padding-right: 15px;
+      }
+      .totalCatgry ,.totalIngredients {
+        font-weight: bold;
+        color: #083e5a;
       }
       .ProductDetailsWrapper .eventDateTime {
         color: #3abb69;
       }
       .ProductDetailsWrapper .eventDateTime span {
         font-weight: bold;
-        color: #083e5a;
+        color: #7a7797;
       }
-      .myborder {
-        border: 1px solid #fc8019;
-        border-radius: 5px;
-        overflow: hidden;
-      }
-      .CategoriesDetails {
-        background-color: #eee;
-        border: 1px solid #fc8019;
-        box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
-        border-radius: 5px;
-        padding: 10px;
-      }
-      .CategoriesDetails h3 {
-        display: inline-block;
-        /* border-bottom: 2px solid #fc8019; */
-        color: #083e5a;
-        font-weight: bold;
-        padding-bottom: 0px;
-        margin-bottom: 0px;
-        font-size: 20px;
-      }
-      .CategoriesDetails ul li {
-        font-size: 14px;
-        list-style: none;
-        margin: 0px 10px;
-      }
-      .CategoriesDetails ul li span {
-        color: #083e5a;
-        font-weight: bold;
-      }
-      .CategoriesDetails .CategoryActionBtn button {
+      .ingredientsActionBtn button {
         min-width: 80px;
-        margin: 0px 10px;
+        margin: 10px;
         text-transform: capitalize;
         border-radius: 3px;
         border: 0;
@@ -100,6 +80,10 @@
         font-weight: 600;
         padding: 2px 8px;
         font-family: "Montserrat", sans-serif;
+        /* margin-bottom: 15px; */
+      }
+      .itemNameWrapper hr{
+        margin: 0px;
       }
     </style>
   </head>
@@ -110,16 +94,27 @@
         <li><i class="fa-solid fa-angles-right"></i></li>
         <li><a href="" class="ActiveBreadcrumb">Add Purchases</a></li>
       </ul>
-      <div>
+      <!-- <div>
         <button class="btn btn-primary addVender">Add Vender</button>
-        <button class="btn btn-primary">Add Category</button>
-        <button class="btn btn-primary">Add ingredients</button>
-      </div>
+        <button class="btn btn-primary ">Add Category</button>
+        <button class="btn btn-primary ">Add ingredients</button>
+      </div> -->
     </div>
     <main>
-      <div class="allBtnsWrapper pt-3 pb-3">
+     
+      <div class="allBtnsWrapper pb-3 mt-3">
         <div class="container-fluid">
-          <div class="allBtns pt-3 pb-3">
+          <div class="allBtns  pb-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <h3 class="categoryheading">Select Category :</h3>
+              <div class="CategoryActionBtn text-right">
+                <button class="btn btn-primary btn-sm">Add Category</button>
+                <button class="btn btn-primary btn-sm">Edit Category</button>
+                <button class="btn btn-primary btn-sm">Delete Category</button>
+              </div>
+            </div>
+            <hr>
+            <div class="mt-3"></div>
             <button class="activeBtn">Dairy Products</button>
             <button>Drinkable</button>
             <button>Fast Food</button>
@@ -135,173 +130,185 @@
             <button>Indian</button>
             <button>South Indian</button>
             <button>North Indian</button>
+            <h3>Total Categories : <span class="totalCatgry">22</span></h3>
           </div>
         </div>
       </div>
 
       <div class="container-fluid mb-3">
-        <div
-          class="CategoriesDetails d-flex justify-content-between align-items-center"
-        >
+        <div class="itemNameWrapper pt-0">
           <div class="d-flex justify-content-between align-items-center">
-            <h3>Dairy Products :</h3>
-            <ul class="d-flex mb-0">
-              <li>Total Items : <span class="totalCatitems">34</span></li>
-              <li>Leftover Items : <span class="catLeftoveItem">23</span></li>
-            </ul>
-          </div>
-          <div class="CategoryActionBtn">
-            <button class="btn btn-primary btn-sm">Add Category</button>
-            <button class="btn btn-primary btn-sm">Edit Category</button>
-            <button class="btn btn-primary btn-sm">Delete Category</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-fluid">
-        <div class="ProductDetailsWrapper">
-          <div class="text-center">
-            <h3 class="title">Add Your Purchases</h3>
-          </div>
-          <div class="IngtopBar d-flex justify-content-between my-3">
-            <div class="form-group d-flex align-items-center">
-              <label>Select Vender : </label>
-              <select>
-                <option selected disabled>Select Vender</option>
-                <option value="">Amit</option>
-                <option value="">Rahul</option>
-                <option value="">shubham</option>
-              </select>
-              <ul class="d-flex mb-0 ">
-                <li>Total Items : <span class="totalCatitems">34</span></li>
-                <li>Leftover Items : <span class="catLeftoveItem">23</span></li>
-              </ul>
-            </div>
-            <div class="ingredientsActionBtn">
+            <h3>Ingredient List :</h3>
+            <div class="ingredientsActionBtn text-right">
               <button class="btn btn-primary btn-sm">Add Ingredients</button>
               <button class="btn btn-primary btn-sm">Edit Ingredients</button>
               <button class="btn btn-primary btn-sm">Delete Ingredients</button>
             </div>
           </div>
-
-          <div class="d-flex myborder">
-            <div class="itemNameWrapper">
-              <h3>Ingredients</h3>
-              <ul class="list-unstyled mb-0 ">
-                <li>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" />
-                    <label class="form-check-label" for=""> Milk Powder </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" />
-                    <label class="form-check-label" for=""> Curd </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" />
-                    <label class="form-check-label" for=""> Paneer </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" />
-                    <label class="form-check-label" for="">assadf </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" />
-                    <label class="form-check-label" for=""> Lorem asasa </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" />
-                    <label class="form-check-label" for=""> Powder </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" />
-                    <label class="form-check-label" for=""> Curdsa </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" />
-                    <label class="form-check-label" for=""> Paneerssaaa </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" />
-                    <label class="form-check-label" for="">
-                      loremfdfispum
-                    </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" />
-                    <label class="form-check-label" for="">
-                      Lorem sdipsum, doldsor sit
-                    </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" />
-                    <label class="form-check-label" for=""> Milk Powder </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" />
-                    <label class="form-check-label" for=""> Curdbf </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" />
-                    <label class="form-check-label" for=""> Paneerrt </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" />
-                    <label class="form-check-label" for="">
-                      loremrfispum
-                    </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" />
-                    <label class="form-check-label" for="">
-                      Loremdf ipsumolor sit
-                    </label>
-                  </div>
-                </li>
-              </ul>
+          <hr />
+          <div class="mt-3"></div>
+          <ul class="list-unstyled mb-0">
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Milk Powder </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Curd </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Paneer </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for="">assadf </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Lorem asasa </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Powder </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Curdsa </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Paneerssaaa </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> loremfdfispum </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for="">
+                  Lorem sdipsum, doldsor sit
+                </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Milk Powder </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Curdbf </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Paneerrt </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> loremrfispum </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for="">
+                  Loremdf ipsumolor sit
+                </label>
+              </div>
+            </li>
+          </ul>
+          <div class="text-right">
+            <h3>Total Ingredients : <span class="totalIngredients">52</span></h3>
+          </div>
+        </div>
+      </div>
+      <div class="allVenderBtnsWrapper pb-3">
+        <div class="container-fluid">
+          <div class="allBtns pt-3 pb-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <h3>Ingredient List :</h3>
+              <!-- <div class="ingredientsActionBtn text-right">
+                <button class="btn btn-primary btn-sm">Add Vender</button>
+                <button class="btn btn-primary btn-sm">Edit Vender</button>
+                <button class="btn btn-primary btn-sm">Delete Vender</button>
+              </div> -->
             </div>
-            <div class="details">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Item name</th>
-                    <th>Price/Qty</th>
-                    <th>No. Of Days</th>
-                    <th>Quantity</th>
-                    <th>Select Vender</th>
-                    <!-- <th>Save</th> -->
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- <tr>
+            <hr />
+            <div class="mt-3"></div>
+            <!-- <button class="activeBtn"></button> -->
+            <button>Amit</button>
+            <button>Rohit</button>
+            <button>Mohit</button>
+            <button>Rahul</button>
+            <button>Manish</button>
+            <button>Prateek</button>
+            <button>Sohan</button>
+            <button>Mohan</button>
+            <button>Sandeep</button>
+            <button>Gaurav</button>
+            <button>Amit</button>
+            <button>Rohit</button>
+            <button>Mohit</button>
+            <button>Rahul</button>
+            <button>Manish</button>
+            <button>Prateek</button>
+            <button>Sohan</button>
+            <button>Mohan</button>
+            <button>Sandeep</button>
+            <button>Gaurav</button>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="ProductDetailsWrapper">
+          <div class="details">
+            <div class="col-12 my-3">
+              <div class="title">
+                <h3>Dairy Products :</h3>
+              </div>
+            </div>
+            <!-- <div class="title mb-3">
+              <h3>Dairy Products</h3>
+            </div> -->
+            <table>
+              <thead>
+                <tr>
+                  <th>Item name</th>
+                  <th>Price/Qty</th>
+                  <th>No. Of Days</th>
+                  <th>Quantity</th>
+                  <th>Select Vender</th>
+                  <!-- <th>Save</th> -->
+                </tr>
+              </thead>
+              <tbody>
+                <!-- <tr>
                   <td class="name">Milk Powder</td>
                   <td>
                     <input
@@ -340,41 +347,44 @@
                     </select>
                   </td>
                 </tr> -->
-                </tbody>
-              </table>
-              <div class="table1Btns text-right my-3 mx-3">
-                <button class="btn btn-primary btn-sm showVenderDetails">
-                  Next
-                </button>
-              </div>
+              </tbody>
+            </table>
+            <div class="table1Btns text-right my-3 mx-3">
+              <button class="btn btn-primary btn-sm showVenderDetails">
+                Next
+              </button>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="venderDetailsTable">
-        <table>
-          <thead>
-            <tr>
-              <th>Selected Vender</th>
-              <th>Total Items</th>
-              <th>Total Price</th>
-              <th>Paid</th>
-              <th>Remaining</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- <tr>
-            <td>Amit</td>
-            <td><input type="text" placeholder="Total Items"></td>
-            <td><input type="text" placeholder="Total Items"></td>
-            <td><input type="text" placeholder="Total Items"></td>
-            <td>988</td>
-          </tr> -->
-          </tbody>
-        </table>
-        <div class="table2Btns text-right my-3 mx-3">
-          <button class="btn btn-primary btn-sm showItemDetails">Prev</button>
-          <button class="btn btn-primary btn-sm submitAllData">Submit</button>
+          <div class="venderDetailsTable">
+            <table>
+              <thead>
+                <tr>
+                  <th>Selected Vender</th>
+                  <th>Total Items</th>
+                  <th>Total Price</th>
+                  <th>Paid</th>
+                  <th>Remaining</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- <tr>
+                <td>Amit</td>
+                <td><input type="text" placeholder="Total Items"></td>
+                <td><input type="text" placeholder="Total Items"></td>
+                <td><input type="text" placeholder="Total Items"></td>
+                <td>988</td>
+              </tr> -->
+              </tbody>
+            </table>
+            <div class="table2Btns text-right my-3 mx-3">
+              <button class="btn btn-primary btn-sm showItemDetails">
+                Prev
+              </button>
+              <button class="btn btn-primary btn-sm submitAllData">
+                Submit
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       <div class="container-fluid">
