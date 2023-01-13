@@ -1,8 +1,11 @@
 <style type="text/css">
-  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+  * {
+    font-family: "Poppins", sans-serif;
+  }
   .breadcrumb {
     margin-bottom: 0rem !important;
-    background-color: #ef7d0b !important; 
+    background-color: #ef7d0b !important;
     position: relative;
     /* color: #fff; */
   }
@@ -43,23 +46,21 @@
   .allBtnsWrapper .allBtns {
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-    text-align: center;
+    /* text-align: center; */
+    padding: 15px;
     border-radius: 5px;
   }
   .allBtnsWrapper .allBtns button {
-    /*  min-width: 150px;*/
-    width: 198px;
-    /* height: 35px; */
-    margin: 10px;
+    min-width: 50px;
+    margin: 2px 10px;
     text-transform: capitalize;
-    border-radius: 4px;
+    border-radius: 3px;
     border: 0;
     background-color: #083e5a;
     color: #fff;
-    font-size: 14px;
+    font-size: 10px;
     font-weight: 600;
-    padding: 3px 0px;
-    font-family: "Montserrat", sans-serif;
+    padding: 2px 8px;
   }
 
   .allBtnsWrapper .allBtns .activeBtn {
@@ -136,7 +137,7 @@
   }
   .ProductDetailsWrapper thead tr,
   .ProductDetailsWrapper thead th {
-    border:none;
+    border: none;
   }
   .ProductDetailsWrapper tbody tr td:first-child {
     font-weight: 500;
@@ -181,12 +182,57 @@
     top: 50%;
     transform: translate(0%, -50%);
     text-transform: capitalize;
-  } 
+  }
   .activeTopBarBtn {
-        background-color: #083e5a !important;
-        color: #fff !important;
-      }
-  
+    background-color: #083e5a !important;
+    color: #fff !important;
+  }
+  main .filters label {
+    margin-right: 15px;
+    color: #083e5a;
+    font-size: 12px;
+  }
+  main .filters select {
+    font-size: 12px;
+    border: 0;
+    border-radius: 5px;
+    padding-left: 15px;
+    color: #7a7797;
+    width: 120px;
+    margin-left: 0px;
+    height: 18px;
+  }
+  main .filters input::placeholder {
+    font-size: 14px;
+    color: #7a7797;
+  }
+  main .filters input {
+    font-size: 12px;
+    border: 0;
+    border-radius: 5px;
+    padding-left: 15px;
+    height: 18px;
+    color: #7a7797;
+  }
+  .categoryheading {
+    color: #7a7797;
+    font-weight: bold;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    text-align: right;
+    padding-right: 15px;
+  }
+  .allBtnsWrapper hr {
+    margin: 0px;
+  }
+  .color2 {
+    color: #083e5a;
+  }
+  .allBtns button:first-child {
+    margin-left: 0px;
+  }
+
   /*# sourceMappingURL=test.css.map */
 </style>
 <!DOCTYPE html>
@@ -220,80 +266,134 @@
         </div>
       </div>
     </div> -->
-    <div class="allBtnsWrapper pt-3 pb-3">
+
+    <div class="container-fluid">
+      <div class="filters py-1 d-flex align-items-center">
+        <label for="dateWise" class="title">Select Year</label>
+        <!-- <input type="text" id="dateWise" placeholder="03/12/2012" />
+        <select name="" id="">
+          <option disabled selected>Monthly</option>
+          <option value="January">January</option>
+          <option value="February">February</option>
+          <option value="march">march</option>
+          <option value="April">April</option>
+          <option value="May">May</option>
+          <option value="June">June</option>
+          <option value="July">July</option>
+          <option value="August">August</option>
+          <option value="September">September</option>
+          <option value="October">October</option>
+          <option value="November">November</option>
+          <option value="December">December</option>
+        </select> -->
+        <select name="year" id="year">
+          <!-- <option disabled selected>Year</option> -->
+          <option value="2023" selected>2023</option>
+          <option value="2022">2022</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="allBtnsWrapper pb-3 mt-1">
       <div class="container-fluid">
-        <div class="allBtns pt-3 pb-3">
-          <button class="activeBtn">Dairy Products</button>
-          <button>Drinkable</button>
-          <button>Fast Food</button>
-          <button>My Fav</button>
-          <button>Mostly Used</button>
-          <button>Top</button>
-          <button>Commonly Used</button>
-          <button>Less Used</button>
-          <button>Chinese</button>
-          <button>Italian</button>
-          <button>Thai</button>
-          <button>Continental</button>
-          <button>Indian</button>
-          <button>South Indian</button>
-          <button>North Indian</button>
+        <div class="allBtns pt-0 pb-1">
+          <div class="mb-1 pt-1 monthBtnWrapper">
+            <button class="activeBtn" data-month="1">January</button>
+            <button data-month="2">February</button>
+            <button data-month="3">March</button>
+            <button data-month="4">April</button>
+            <button data-month="5">May</button>
+            <button data-month="6">June</button>
+            <button data-month="7">July</button>
+            <button data-month="8">August</button>
+            <button data-month="9">September</button>
+            <button data-month="10">October</button>
+            <button data-month="11">November</button>
+            <button data-month="12">December</button>
+          </div>
+          <hr />
+          <div class="d-flex justify-content-between align-items-center py-0">
+            <h3 class="categoryheading">
+              Month : <span class="month color2">January</span>
+              <!-- <span class="px-2 mainColor">|</span> -->
+            </h3>
+            <span class="categoryheading"
+              ><span class="month">January</span> Total Purchases : ₹
+              <span class="totalCatgry color2">2200</span></span
+            >
+          </div>
         </div>
       </div>
     </div>
+    <style>
+      .ProductDetailsWrapper .details .leftBar {
+        width: 10%;
+      }
+      .ProductDetailsWrapper .details .purchasesTable {
+        width: 90%;
+      }
+    </style>
     <div class="container-fluid">
       <div class="ProductDetailsWrapper">
         <div class="details">
           <div class="title">
-            <h3>Row Material</h3>
+            <h3>Row Material Purchases</h3>
           </div>
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>item</th>
-                <th>Quantity</th>
-                <th>Consumption</th>
-                <th>Wastage</th>
-                <th>Food Value</th>
-                <!-- <th>Save</th> -->
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="name">Milk Powder</td>
-                <td>4</td>
-                <td>4</td>
-                <td>100</td>
-                <td>1</td>
-                <td>200</td>
-              </tr>
-              <tr>
-                <td class="name">Milk Powder</td>
-                <td>4</td>
-                <td>4</td>
-                <td>100</td>
-                <td>1</td>
-                <td>200</td>
-              </tr>
-              <tr>
-                <td class="name">Milk Powder</td>
-                <td>4</td>
-                <td>4</td>
-                <td>100</td>
-                <td>1</td>
-                <td>200</td>
-              </tr>
-              <tr>
-                <td class="name">Milk Powder</td>
-                <td>4</td>
-                <td>4</td>
-                <td>100</td>
-                <td>1</td>
-                <td>200</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="d-flex">
+            <aside class="leftBar ">
+              <div class="title">Days</div>
+              <ul class="list-unstyled mb-0 pl-0">
+                
+              </ul>
+            </aside>
+            <table class="purchasesTable">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>item</th>
+                  <th>Quantity</th>
+                  <th>Consumption</th>
+                  <th>Wastage</th>
+                  <th>Food Value</th>
+                  <!-- <th>Save</th> -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="name">Milk Powder</td>
+                  <td>4</td>
+                  <td>4</td>
+                  <td>100</td>
+                  <td>1</td>
+                  <td>200</td>
+                </tr>
+                <tr>
+                  <td class="name">Milk Powder</td>
+                  <td>4</td>
+                  <td>4</td>
+                  <td>100</td>
+                  <td>1</td>
+                  <td>200</td>
+                </tr>
+                <tr>
+                  <td class="name">Milk Powder</td>
+                  <td>4</td>
+                  <td>4</td>
+                  <td>100</td>
+                  <td>1</td>
+                  <td>200</td>
+                </tr>
+                <tr>
+                  <td class="name">Milk Powder</td>
+                  <td>4</td>
+                  <td>4</td>
+                  <td>100</td>
+                  <td>1</td>
+                  <td>200</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -315,14 +415,27 @@
     </script>
     <script>
       $(".addVender").click(function () {
-        $(".addVender").removeClass('activeTopBarBtn')
-        $(this).addClass('activeTopBarBtn')
-      })
-      $(".allBtns button").click(function () {
+        $(".addVender").removeClass("activeTopBarBtn");
+        $(this).addClass("activeTopBarBtn");
+      });
+      $(".monthBtnWrapper button").click(function () {
         $(".allBtns button").removeClass("activeBtn");
         $(this).addClass("activeBtn");
-        $(".ProductDetailsWrapper .details .title h3").text($(this).text());
+        $(".month").text($(this).text());
+
+        let year = $('#year option:selected').val();
+        let month = $(this).data('month')
+        let TodaysDate = new Date()
+        let thisDay = TodaysDate.getDate();
+        let thisMonth = TodaysDate.getMonth();
+        thisMonth = (thisMonth < 10 ? '0' : '') +(thisMonth+1);
+        let thisYear = TodaysDate.getFullYear();
+        TodaysDate = (thisMonth+'/'+thisYear);
+
+
+        
       });
+
     </script>
   </body>
 </html>

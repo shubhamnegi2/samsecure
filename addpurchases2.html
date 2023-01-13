@@ -6,7 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Purchases</title>
     <link rel="stylesheet" href="./addPurchases2.css" />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
     <style>
+      .ProductDetailsWrapper {
+        counter-reset: Serial;
+      }
+      .ProductDetailsWrapper tr td:first-child:before {
+        counter-increment: Serial;
+        content: counter(Serial);
+      }
       .itemNameWrapper ul {
         display: flex;
         flex-wrap: wrap;
@@ -26,7 +37,7 @@
         white-space: nowrap;
         overflow: hidden !important;
         text-overflow: ellipsis;
-        color: #7a7797;
+        color: #000;
         font-size: 12px;
       }
       .itemNameWrapper .form-check {
@@ -43,7 +54,7 @@
         /* border-bottom: 2px solid #fc8e32; */
         color: #7a7797;
         font-weight: bold;
-        font-size: 16px;
+        font-size: 14px;
         padding-bottom: 0px;
         margin-bottom: 0px;
         display: inline-block;
@@ -56,7 +67,7 @@
         padding-bottom: 0px;
         margin-bottom: 0px;
         /* margin-top: 1rem; */
-        font-size: 16px;
+        font-size: 14px;
         text-align: right;
         padding-right: 15px;
       }
@@ -73,17 +84,16 @@
         color: #7a7797;
       }
       .ingredientsActionBtn button {
-        min-width: 80px;
-        margin: 5px 10px;
+        min-width: 50px;
+        margin: 2px 10px;
         text-transform: capitalize;
         border-radius: 3px;
         border: 0;
         background-color: #083e5a;
         color: #fff;
-        font-size: 12px;
+        font-size: 10px;
         font-weight: 600;
         padding: 2px 8px;
-        font-family: "Montserrat", sans-serif;
         /* margin-bottom: 15px; */
       }
       .itemNameWrapper hr {
@@ -92,7 +102,7 @@
       .allVenderBtnsWrapper h3 {
         color: #7a7797;
         font-weight: bold;
-        font-size: 16px;
+        font-size: 14px;
         padding-bottom: 0px;
         margin-bottom: 0px;
         display: inline-block;
@@ -111,12 +121,39 @@
       .itemNameWrapper .ingredientsActionBtn button {
         background-color: #fc8019;
       }
+      .itemNameWrapper .ingredientsActionBtn button:last-child {
+        margin-right: 0px;
+      }
       .allVenderBtnsWrapper .vendersActionBtn button {
         background-color: #fc8019;
       }
-      .allVenderBtnsWrapper ul li{
+      .allVenderBtnsWrapper ul li {
         margin: 0px 5px;
         font-size: 12px;
+      }
+      .dateWrapper {
+        font-size: 12px;
+      }
+      #dateWise {
+        border: 0;
+        border-radius: 4px;
+        padding-left: 15px;
+        color: #7a7797;
+        height: 16px;
+        background-color: #eee;
+      }
+      .dateWrapper button {
+        min-width: 50px;
+        margin: 2px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+        
       }
     </style>
   </head>
@@ -136,7 +173,16 @@
       </div>
     </div>
     <main>
-      <div class="allBtnsWrapper pb-3 mt-3">
+      <div class="container-fluid my-1">
+        <div class="dateWrapper d-flex justify-content-between">
+          <div>
+            Date : <input type="text" id="dateWise" placeholder="03/12/2012" />
+          </div>
+          <!-- <button>Add vender</button> -->
+        </div>
+      </div>
+
+      <div class="allBtnsWrapper pb-3 mt-1">
         <div class="container-fluid">
           <div class="allBtns pt-0 pb-1">
             <div class="d-flex justify-content-between align-items-center">
@@ -169,7 +215,7 @@
             <button>Continental</button>
             <button>Indian</button>
             <button>South Indian</button>
-            <button>North Indian</button>
+            <!-- <button>North Indian</button> -->
           </div>
         </div>
       </div>
@@ -342,6 +388,7 @@
             <table>
               <thead>
                 <tr>
+                  <th>S. No.</th>
                   <th>Item name</th>
                   <th>Price/Qty</th>
                   <th>No. Of Days</th>
@@ -392,7 +439,7 @@
                 </tr> -->
               </tbody>
             </table>
-            <div class="table1Btns text-right my-3 mx-3">
+            <div class="table1Btns text-right my-1 mx-3">
               <button class="btn btn-primary btn-sm showVenderDetails">
                 Next
               </button>
@@ -402,6 +449,7 @@
             <table>
               <thead>
                 <tr>
+                  <th>S. No.</th>
                   <th>Selected Vender</th>
                   <th>Total Items</th>
                   <th>Total Price</th>
@@ -540,7 +588,13 @@
         '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
       );
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
+      $(function () {
+        $("#dateWise").datepicker();
+      });
       $(".addVender").click(function () {
         $("#addVenderWrapper").show();
         let top = $("#addVenderWrapper").position().top;
@@ -567,7 +621,7 @@
           $(".venderDetailsTable table tbody").html("");
           selectedVender.map((elem, index) => {
             $(".venderDetailsTable table tbody")
-              .append(`<tr data-venderMoneyKey="${index}"><td>${elem}</td>
+              .append(`<tr data-venderMoneyKey="${index}"><td></td><td>${elem}</td>
                 <td><input type="text" class="venderTotalItems" placeholder="Total Items"></td>
                 <td><input type="text" class="venderTotalPrice" placeholder="Total Items"></td>
                 <td><input type="text" class="venderTotalPaid" placeholder="Total Items"></td>
@@ -615,7 +669,7 @@
             $(".ProductDetailsWrapper table").append(
               "<tr data-key=" +
                 key +
-                '> <td class="name">' +
+                '><td></td> <td class="name">' +
                 value +
                 '</td><td> <input type="text" class="price" placeholder="Price/Qty" name="price"/> </td><td> <select name="days" id="days"> <option selected disabled>Used In</option> <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> </select> </td><td> <select name="quantity" id="quantity"> <option selected disabled>Select Quantity</option> <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> </select> </td><td> <select name="Vender" class="chooseVender" id="Vender"> <option selected disabled>Select Vender</option> <option value="Amit">Amit</option> <option value="Ankit">Ankit</option> <option value="Rohit">Rohit</option> <option value="Akash">Akash</option> <option value="Ramu">Ramu</option> <option value="Sonu">Sonu</option> <option value="Manish Joshi">Manish Joshi</option> </select> </td></tr>'
             );
