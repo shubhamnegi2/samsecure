@@ -72,6 +72,9 @@
     box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
     border-radius: 5px;
     padding: 10px;
+    max-height: 100vh;
+    height: 100%;
+    overflow-y: scroll;
   }
   .ProductDetailsWrapper .details .title {
     padding: 10px 0px;
@@ -298,7 +301,7 @@
       <div class="container-fluid">
         <div class="allBtns pt-0 pb-1">
           <div class="mb-1 pt-1 monthBtnWrapper">
-            <button class="activeBtn" data-month="1">January</button>
+            <button class="" data-month="1">January</button>
             <button data-month="2">February</button>
             <button data-month="3">March</button>
             <button data-month="4">April</button>
@@ -331,6 +334,30 @@
       }
       .ProductDetailsWrapper .details .purchasesTable {
         width: 90%;
+        height: 100%;
+      }
+      .dateListWraper li{
+        height: 30px;
+        border-bottom: 1px solid #083e5a;
+        padding-top: 4px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .activeDate{
+        background-color: #083e5a;
+        color: #fff;
+      }
+      .dateListWraper {
+        background-color: #eee;
+        text-align: center;
+      }
+      .listTitle{
+        font-size: 14px;
+        text-align: center;
+        background-color: #fe9037;
+        padding: 7px 0px;
+        margin-top: 1px;
+        margin-bottom: 0px;
       }
     </style>
     <div class="container-fluid">
@@ -340,11 +367,9 @@
             <h3>Row Material Purchases</h3>
           </div>
           <div class="d-flex">
-            <aside class="leftBar ">
-              <div class="title">Days</div>
-              <ul class="list-unstyled mb-0 pl-0">
-                
-              </ul>
+            <aside class="leftBar">
+              <h3 class="listTitle">Days</h3>
+              <ul class="list-unstyled mb-0 pl-0 dateListWraper"></ul>
             </aside>
             <table class="purchasesTable">
               <thead>
@@ -418,24 +443,72 @@
         $(".addVender").removeClass("activeTopBarBtn");
         $(this).addClass("activeTopBarBtn");
       });
+
+      GetThisMonth();
+      getthisMonthDates();
+      function GetThisMonth() {
+        let TodaysDate = new Date();
+        let thisDay = TodaysDate.getDate();
+        let thisMonth = TodaysDate.getMonth();
+        $(".allBtns button").removeClass("activeBtn");
+        $(`.monthBtnWrapper button:nth-child(${thisMonth + 1})`).addClass(
+          "activeBtn"
+        );
+      }
+
+      function getthisMonthDates() {
+        let year = $("#year option:selected").val();
+        let month = $(".activeBtn").data("month");
+        let TodaysDate = new Date();
+        let thisDay = TodaysDate.getDate();
+        let thisMonth = TodaysDate.getMonth();
+        thisMonth = (thisMonth < 10 ? "0" : "") + (thisMonth + 1);
+        let thisYear = TodaysDate.getFullYear();
+        TodaysDate = thisMonth + "/" + thisYear;
+        let totalDays = 0;
+        if (+year - +thisYear == 0 && +month - +thisMonth == 0) {
+          totalDays = +thisDay;
+          $(".dateListWraper").html("");
+          for (let i = 0; i < totalDays - 1; i++) {
+            $(".dateListWraper").append(
+              `<li>${
+                (i < 9 ? "0" : " ") + (i + 1)
+              } / ${thisMonth} / ${thisYear}</li>`
+            );
+          }
+        } else {
+          getAllMonthDetails(month,year);
+        }
+      }
+
+      function getAllMonthDetails(month,year) {
+        var numOfDays = new Date(year, month, 0).getDate();
+        $(".dateListWraper").html("");
+        month = (month < 10 ? "0" : "") + (month);
+
+        for (var i = 0; i <= numOfDays-1; i++) {
+          $(".dateListWraper").append(
+              `<li>${
+                (i < 9 ? "0" : " ") + (i + 1)
+              } / ${month} / ${year}</li>`
+            );
+        }
+      }
+
       $(".monthBtnWrapper button").click(function () {
         $(".allBtns button").removeClass("activeBtn");
         $(this).addClass("activeBtn");
         $(".month").text($(this).text());
 
-        let year = $('#year option:selected').val();
-        let month = $(this).data('month')
-        let TodaysDate = new Date()
-        let thisDay = TodaysDate.getDate();
-        let thisMonth = TodaysDate.getMonth();
-        thisMonth = (thisMonth < 10 ? '0' : '') +(thisMonth+1);
-        let thisYear = TodaysDate.getFullYear();
-        TodaysDate = (thisMonth+'/'+thisYear);
-
-
-        
+        let year = $("#year option:selected").val();
+        let month = $(this).data("month");
+        getthisMonthDates();
       });
 
+      $(document).on('click','.dateListWraper li', function(){
+        $(".dateListWraper li").removeClass("activeDate");
+        $(this).addClass("activeDate");
+      })
     </script>
   </body>
 </html>
