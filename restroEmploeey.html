@@ -100,6 +100,7 @@
         .breadcrumb ul li {
             color: #fff;
             font-weight: bold;
+            font-size: 16px;
             margin: 10px 1px;
         }
 
@@ -259,7 +260,7 @@
         .ProductDetailsWrapper table,
         .ProductDetailsWrapper th,
         .ProductDetailsWrapper td {
-            border: 1px solid #ddcece;
+            /* border: 1px solid #ddcece; */
             border-collapse: collapse;
             font-size: 14px;
             text-align: center;
@@ -549,13 +550,14 @@
 
         .monthName,
         .totalBookings {
-            color: #3abb69;
+            color: #083e5a;
             font-size: 18px;
+            font-weight: bold;
         }
 
         .monthName span,
         .totalBookings span {
-            color: #7a7797
+            color: #ef7d0b
         }
 
         .submitbtn1 {
@@ -571,19 +573,24 @@
         .abcbtn{
             cursor: pointer;
         }
+        .allBtns1{
+            border: 1px solid #fc8019;
+        }
+        .allBtns{
+            border: 1px solid #fc8019;   
+        }
+        .ProductDetailsWrapper{
+            border: 1px solid #fc8019;   
+        }
+      
     </style>
 </head>
 
 <body>
 
 
-    <div class="breadcrumb" style="background-color: #ef7d0b;
-    padding: 5px;
-    font-size: 13px;
-">
-
-
-        <ul class="list-unstyled d-flex align-items-center">
+    <div class="breadcrumb" style="background-color: #ef7d0b;padding: 5px;font-size: 13px;">
+<ul class="list-unstyled d-flex align-items-center">
             <li><a href="">Dashboard</a></li>
             <li><i class="fa-solid fa-angles-right"></i></li>
             <li><a href="" class="ActiveBreadcrumb">Employee Dashboard</a></li>
@@ -596,9 +603,10 @@
 
 
     </div>
+  
 
 
-    <div class="allBtnsWrapper pt-3 pb-3" style="background-color: #eee;">
+    <div class="allBtnsWrapper pt-3 pb-3" style="background-color: #eee;    ">
         <div class="container-fluid">
             <div class="allBtns1 pt-3 pb-3">
                 <button class="thisMonthEventBtn">
@@ -872,7 +880,7 @@
                                             class="form-control-label px-3">Upload Id<span class="text-danger">
                                                 *</span></label> <input style="" type="file" id="lname" name="lname"
                                             placeholder="Enter your Upload Id" onblur="validate(2)"> </div>
-                                    <div class=" col-sm-3 form-radio" style="font-size: 12px;">
+                                    <div class=" col-sm-3 form-radio" style="font-size: 12px; color: #ef7d0b;">
                                         <label for="gender">Gender</label>
                                         <div class="form-flex"
                                             style="border: 3px solid #eee; border-radius: 5px; padding: 4px;">
@@ -913,53 +921,53 @@
                                 src="https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg">
                             <div class="empoley-name">
 
-                                <button style="background-color: #f01010;">Activate</button>
-                                <button>Deactivate</button>
+                                <button style="background-color: #ef7d0b;">Activate</button>
+                                <button style="background-color: #083e5a;">Deactivate</button>
 
                             </div>
                         </div>
                         <div class="empolet-detail">
                             <div>
-                                <h2 style="color: #3abb69;">ABC CBA</h2>
+                                <h2 style="color: #fc8e32;">ABC CBA</h2>
                             </div>
                             <div class="empoey-salarey">
                                 <div style="display: flex; gap: 4px;">
-                                    <p style="color: #bfc2cb;">Salary:</p>
-                                    <p style="color: #9ca0ac;"> 2000</p>
+                                    <p style="color: #083e5a;">Salary:</p>
+                                    <p style="color: #ef7d0b;"> 2000</p>
                                 </div>
 
                                 <div style="display: flex; gap: 4px;">
-                                    <p style="color: #bfc2cb;">Leave:</p>
-                                    <p style="color: #9ca0ac;">Sunday</p>
+                                    <p style="color: #083e5a;">Leave:</p>
+                                    <p style="color: #ef7d0b;">Sunday</p>
                                 </div>
 
 
                             </div>
                             <div class="empoey-salarey">
                                 <div style="display: flex; gap: 4px;">
-                                    <p style="color: #bfc2cb;">Phone No:</p>
-                                    <p style="color: #9ca0ac;">9999776666</p>
+                                    <p style="color: #083e5a;">Phone No:</p>
+                                    <p style="color: #ef7d0b;">9999776666</p>
                                 </div>
                                 <div style="display: flex; gap: 4px;">
-                                    <p style="color: #bfc2cb;">Shift Timing:</p>
-                                    <p style="color: #9ca0ac;">12 Hours</p>
+                                    <p style="color: #083e5a;">Shift Timing:</p>
+                                    <p style="color: #ef7d0b;">12 Hours</p>
                                 </div>
                             </div>
                             <div class="empoey-salarey">
                                 <div style="display: flex; gap: 4px;">
-                                    <p style="color: #bfc2cb;">Address:</p>
-                                    <p style="color: #9ca0ac;">Saharanpur</p>
+                                    <p style="color: #083e5a;">Address:</p>
+                                    <p style="color: #ef7d0b;">Saharanpur</p>
                                 </div>
                                 <div style="display: flex; gap: 4px;">
-                                    <p style="color: #bfc2cb;">Gender:</p>
-                                    <p style="color: #9ca0ac;">Female</p>
+                                    <p style="color: #083e5a;">Gender:</p>
+                                    <p style="color: #ef7d0b;">Female</p>
                                 </div>
                             </div>
                             <div class="empoey-salarey">
 
                                 <div style="display: flex; gap: 4px;">
-                                    <p style="color: #bfc2cb;">Date of Joining:</p>
-                                    <p style="color: #9ca0ac;">12/04/2022</p>
+                                    <p style="color: #083e5a;">Date of Joining:</p>
+                                    <p style="color: #ef7d0b;">12/04/2022</p>
                                 </div>
 
                             </div>

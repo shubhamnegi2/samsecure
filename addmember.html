@@ -22,7 +22,7 @@
 
         .breadcrumb .addVender {
             position: absolute;
-            right: 2%;
+          
             top: 50%;
             transform: translate(0%, -50%);
             text-transform: capitalize;
@@ -99,6 +99,7 @@
             border-radius: 5px;
             display: flex;
             gap: 20px;
+            border: 1px solid #fc8019;
         }
 
         .allBtnsWrapper .allBtns1 {
@@ -145,6 +146,7 @@
             border-radius: 5px;
             padding: 10px;
             overflow: hidden;
+            border: 1px solid #fc8019;
         }
 
         .ProductDetailsWrapper .details {
@@ -220,7 +222,7 @@
         .ProductDetailsWrapper table,
         .ProductDetailsWrapper th,
         .ProductDetailsWrapper td {
-            border: 1px solid #ddcece;
+            /* border: 1px solid #ddcece; */
             border-collapse: collapse;
             font-size: 14px;
             text-align: center;
@@ -330,7 +332,7 @@
 
         .breadcrumb .addVender {
             position: absolute;
-            right: 10%;
+            right: 5%;
             top: 50%;
             transform: translate(0%, -50%);
             text-transform: capitalize;
@@ -348,10 +350,12 @@
             text-transform: capitalize;
             border-radius: 3px;
             border: 0px;
-            background-color: #3abb69;
+            background-color: #083e5a;
             color: #fff;
+            font-size: 14px;
             padding: 6px 30px;
             font-weight: bold;
+            margin-top: 20px;
         }
 
         .createcaegory {
@@ -444,31 +448,6 @@
             border-radius: 10px;
             font-size: 12px
         }
-    </style>
-</head>
-
-<body>
-
-
-    <div class="breadcrumb" style="padding: 8px; background-color: #ef7d0b;
-    font-size: 13px;">
-
-
-        <ul class="list-unstyled d-flex align-items-center">
-            <li><a href="">Dashboard</a></li>
-            <li><i class="fa-solid fa-angles-right"></i></li>
-            <li><a href="" class="ActiveBreadcrumb">Add Membership</a></li>
-        </ul>
-
-        <!-- <h4>Total Employee-20</h4> -->
-
-        <button class="addvender1 add-embtn">Add Member</button>
-        <button class="addVender addvenderpop">Create Category</button>
-
-
-
-    </div>
-    <style>
         .closeform {
             display: flex;
             align-items: center;
@@ -486,186 +465,161 @@
             justify-content: center;
             padding-bottom: 5px;
         }
+        .addempoyeebtn{
+            display: flex;
+            justify-content: right;
+            margin-left: 3px;
+        }
+        .addempoyeebtn button{
+            transform: translate(0%, -50%);
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0px;
+            background-color: #fe9037;
+            color: #fff;
+        
+            font-weight: bold;
+            padding: 5px 15px;
+            font-size: 13px;
+            border: 2px solid #ffcd8f;
+        }
+        .addVender1{
+            position: absolute; cursor: pointer; right: 2%; top: 30%;
+        }
+        .addVender1{
+        color: #083e5a;
+        }
     </style>
+</head>
+
+<body>
+
+
+    <div class="breadcrumb" style="padding: 8px; background-color: #ef7d0b;
+    font-size: 13px;">
+
+
+        <ul class="list-unstyled d-flex align-items-center">
+            <li><a href="">Dashboard</a></li>
+            <li><i class="fa-solid fa-angles-right"></i></li>
+            <li><a href="" class="ActiveBreadcrumb"> Membership</a></li>
+        </ul>
+
+        <!-- <h4>Total Employee-20</h4> -->
+
+      <span class="addVender1"><i class="fa fa-gear addvenderpop" style="font-size:20px; "></i></span>
+        <!-- <button class="addVender ">Create Category</button> -->
+
+
+
+    </div>
+   
 
     <div class="createcaegory">
         <div class="createcategorypop">
             <div class="catgoreypop">
-                <div class="closeform" style=""><button class="cloesbtn1">&times;</button></div>
+                <div class="closeform"><i class="fa fa-close cloesbtn1"
+                    style="font-size:21px; cursor: pointer;"></i></div>
+               
                 <div class="container">
-                    <div class="row justify-content-center text-center">
+                    <!-- <div class="row justify-content-center text-center">
                         <h1>Create Category</h1>
 
-                    </div>
-                    <div class="row justify-content-between text-left mt-5">
-                        <div class="form-group col-lg-8 col-sm-3 flex-column d-flex forminput"> <label
-                                class="form-control-label px-3">Member<span class="text-danger">
-                                    *</span></label>
-                            <select>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                                <option>11</option>
-                                <option>12</option>
-                                <option>13</option>
-                                <option>14</option>
-                                <option>15</option>
-                                <option>16</option>
-                                <option>17</option>
-                                <option>18</option>
-                                <option>19</option>
-                                <option>20</option>
-                                <option>21</option>
-                                <option>22</option>
-                                <option>23</option>
-                                <option>24</option>
-                                <option>25</option>
-                                <option>26</option>
-                                <option>28</option>
-                                <option>29</option>
-                                <option>30</option>
-
-                                <option>31</option>
-                                <option>32</option>
-                                <option>33</option>
-                                <option>34</option>
-                                <option>35</option>
-                                <option>36</option>
-                                <option>38</option>
-                                <option>39</option>
-                                <option>40</option>
-                                <option>41</option>
-                                <option>42</option>
-                                <option>43</option>
-                                <option>44</option>
-                                <option>45</option>
-                                <option>46</option>
-                                <option>48</option>
-                                <option>49</option>
-                                <option>50</option>
-
-
-                            </select>
+                    </div> -->
+                
+                   <div  class="row justify-content-center text-left mt-3">
+                    <div class=" col-lg-12 form-radio validtimelable" style="    font-size: 15px; color: #ef7d0b;">
+                        <label for="" >Valid Time</label>
+                        <div class="form-flex yearinputs " style="    border: 1px solid #fc8019; width: 81%; color: #083e5a;">
+                          <input type="radio" checked="checked" name="1year" />
+                          <label for="">1 year</label>
+                          <input type="radio" name="1year" />
+                          <label for="" >2 year</label>
+                          <input type="radio"name="1year" />
+                          <label for="" >3 year</label>
+                          <input type="text" placeholder="Add Validity">
                         </div>
+    
+                      </div>
+                   </div>
+                   <div class="row justify-contenr-center text-left>
+                    
+                  <div class="col-md-5">
+                    <div class="row justify-contenr-left mt-3 newclasss" style="color: #083e5a;">
+                      
+                    <label for="" style="    font-size: 15px; color: #ef7d0b;">Percentage</label>
+<div class="col-sm-2">
+  <div class="radiobtns"  style="font-size: 11px; padding: 4px 5px; border: 1px solid #fc8019; background-color: #eee; border-radius: 5px; color: #083e5a; background-color: #eee;">
+    <div> <input type="radio" checked="checked"  name="10"/>
+      <label for="">10%</label></div>
+      <div>2000</div>
+      <input type="text"  style="    width: 80px;
+      margin: 2px;" placeholder="price Change">
+  </div>
+ 
 
-                    </div>
-                    <div class="row justify-content-between text-left">
-                        <div class="form-group col-lg-8 col-sm-3 flex-column d-flex forminput"> <label
-                                class="form-control-label px-3">Percentage<span class="text-danger">
-                                    *</span></label>
+  
+ 
+</div>
+<div class="col-sm-2">
+    <div class="radiobtns"  style="font-size: 11px; padding: 4px 5px; border: 1px solid #fc8019; background-color: #eee; border-radius: 5px; color: #083e5a; background-color: #eee;">
+      <div> <input type="radio" checked="checked"  name="10"/>
+        <label for="">20%</label></div>
+        <div>3000</div>
+        <input type="text"  style="    width: 80px;
+        margin: 2px;" placeholder="price Change">
+    </div>
+   
+  
+    
+   
+  </div>
+  <div class="col-sm-2">
+    <div class="radiobtns"  style="font-size: 11px; padding: 4px 5px; border: 1px solid #fc8019; background-color: #eee; border-radius: 5px; color: #083e5a; background-color: #eee;">
+      <div> <input type="radio" checked="checked"  name="10"/>
+        <label for="">30%</label></div>
+        <div>20000</div>
+        <input type="text"  style="    width: 80px;
+        margin: 2px;" placeholder="price Change">
+    </div>
+   
+  
+    
+   
+  </div>
+  <div class="col-sm-2">
+    <div class="radiobtns"  style="font-size: 11px; padding: 4px 5px; border: 1px solid #fc8019; background-color: #eee; border-radius: 5px; color: #083e5a; background-color: #eee;">
+      <div> <input type="radio" checked="checked"  name="10"/>
+        <label for="">40%</label></div>
+        <div>40000</div>
+        <input type="text"  style="    width: 80px;
+        margin: 2px;" placeholder="price Change">
+    </div>
+   
+  
+    
+   
+  </div>
+  <div class="col-sm-2">
+    <div class="radiobtns"  style="font-size: 11px; padding: 4px 5px; border: 1px solid #fc8019; background-color: #eee; border-radius: 5px; color: #083e5a; background-color: #eee;">
+      <div> <input type="radio" checked="checked"  name="10"/>
+        <label for="">50%</label></div>
+        <div>50000</div>
+        <input type="text"  style="    width: 80px;
+        margin: 2px;" placeholder="price Change">
+    </div>
+   
+  
+    
+   
+  </div>
 
-                            <select>
-                                <option>1%</option>
-                                <option>2%</option>
-                                <option>3%</option>
-                                <option>4%</option>
-                                <option>5%</option>
-                                <option>6%</option>
-                                <option>7%</option>
-                                <option>8%</option>
-                                <option>9%</option>
-                                <option>10%</option>
-                                <option>11%</option>
-                                <option>12%</option>
-                                <option>13%</option>
-                                <option>14%</option>
-                                <option>15%</option>
-                                <option>16%</option>
-                                <option>17%</option>
-                                <option>18%</option>
-                                <option>19%</option>
-                                <option>20%</option>
-                                <option>21%</option>
-                                <option>22%</option>
-                                <option>23%</option>
-                                <option>24%</option>
-                                <option>25%</option>
-                                <option>26%</option>
-                                <option>28%</option>
-                                <option>29%</option>
-                                <option>30%</option>
+                  </div>
+                </div>
+                   </div>
+                  
 
-                                <option>31%</option>
-                                <option>32%</option>
-                                <option>33%</option>
-                                <option>34%</option>
-                                <option>35%</option>
-                                <option>36%</option>
-                                <option>38%</option>
-                                <option>39%</option>
-                                <option>40%</option>
-                                <option>41%</option>
-                                <option>42%</option>
-                                <option>43%</option>
-                                <option>44%</option>
-                                <option>45%</option>
-                                <option>46%</option>
-                                <option>48%</option>
-                                <option>49%</option>
-                                <option>50%</option>
-                            </select>
-                        </div>
-
-                    </div>
-                    <div class="row justify-content-between text-left">
-                        <div class="form-group col-lg-8 col-sm-3 flex-column d-flex forminput"> <label
-                                class="form-control-label px-3">Valid Time<span class="text-danger">
-                                    *</span></label>
-                            <div class="validtime">
-
-                                <div class="monthinput"><input type="radio" name="testing" id="testing_op1"
-                                        value="Month"><label>Month</label></div>
-                                <div class="yearinput"><input type="radio" value="Year1" name="testing"
-                                        id="testing_op2"><label>Year</label></div>
-
-
-                                <select class="Month">
-                                    <option selected value='1'>Janaury</option>
-                                    <option value='2'>February</option>
-                                    <option value='3'>March</option>
-                                    <option value='4'>April</option>
-                                    <option value='5'>May</option>
-                                    <option value='6'>June</option>
-                                    <option value='7'>July</option>
-                                    <option value='8'>August</option>
-                                    <option value='9'>September</option>
-                                    <option value='10'>October</option>
-                                    <option value='11'>November</option>
-                                    <option value='12'>December</option>
-                                </select>
-
-                                <select class="Year">
-                                    <option value="">2012</option>
-                                    <option value="">2013</option>
-                                    <option value="">2014</option>
-                                    <option value="">2015</option>
-                                    <option value="">2016</option>
-                                    <option value="">2017</option>
-                                    <option value="">2018</option>
-                                    <option value="">2019</option>
-                                    <option value="">2020</option>
-                                    <option value="">2021</option>
-                                    <option value="">2022</option>
-                                    <option value="">2023</option>
-                                    <option value="">2024</option>
-                                    <option value="">2025</option>
-                                    <option value="">2026</option>
-                                    <option value="">2027</option>
-                                </select>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="form-group text-center mt-3 >          
+                    <div class="form-group text-center mt-4 >          
                         <div class=" col-sm-offset-2 col-sm-12">
                         <button type="submit" class="  submitbtn">Submit</button>
                     </div>
@@ -683,9 +637,9 @@
             <div class="container-fluid">
                 <div class="allBtns pt-3 pb-3" style="display: flex;
                 align-items: center; justify-content: center; ">
-                    <div class="checf divchangbackground">
+                    <div class="checf allbtnclick divchangbackground">
                         <div class="chefbuuu">
-                            <button>All</button>
+                            <button class="">All</button>
 
                         </div>
                         <div class="number">
@@ -693,7 +647,7 @@
                             <p class="allp5">45</p>
                         </div>
                     </div>
-                    <div class="checf ">
+                    <div class="checf newbtn3">
                         <div class="chefbuuu ">
                             <button>Foods Bar</button>
 
@@ -703,7 +657,7 @@
                             <p class="allp6">20</p>
                         </div>
                     </div>
-                    <div class="checf">
+                    <div class="checf newbtn3">
                         <div class="chefbuuu">
                             <button>Food</button>
 
@@ -713,7 +667,7 @@
                             <p class="foodp1">10</p>
                         </div>
                     </div>
-                    <div class="checf">
+                    <div class="checf newbtn3">
                         <div class="chefbuuu">
                             <button>Bar</button>
 
@@ -736,11 +690,15 @@
         </div>
         <div class="container-fluid">
             <div class="ProductDetailsWrapper">
+                
                 <div class="details">
+                 
                     <div class="title">
                         <h3 style="padding-bottom: 10px;">Membership Detail</h3>
 
                     </div>
+                    <div class="addempoyeebtn"> <button class="addvender2 add-embtn" style="display: none;">Add Member</button></div>
+                   
                     <table>
                         <thead>
                             <tr>
@@ -749,11 +707,13 @@
                                 <th>Phone No</th>
                                 <th>Foods</th>
                                 <th>Pay Amount</th>
-                                <th>Discount</th>
+                            
                                 <th>Percentage</th>
                                 <th>Member</th>
-                                <th>Till Valid</th>
                                 <th>Date of Purchase</th>
+                                <th>Expired Date</th>
+                                <th>Days Left</th>
+                              
 
 
                             </tr>
@@ -764,12 +724,14 @@
                                 <td class="abcbtn">Abc </td>
                                 <td>999999998</td>
                                 <td>Bar</td>
-                                <td>2000</td>
+                              
                                 <td>30</td>
                                 <td>10%</td>
-                                <td>abc</td>
                                 <td>1</td>
-                                <td>20/10/2002</td>
+                                <td id="date1">13/01/2023</td>
+                                <td id="date2">14/01/2023</td>
+                                <td>500 Days</td>
+                               
 
 
                             </tr>
@@ -778,12 +740,14 @@
                                 <td class="abcbtn">Abc </td>
                                 <td>999999998</td>
                                 <td>Bar</td>
-                                <td>2000</td>
+                              
                                 <td>30</td>
                                 <td>10%</td>
-                                <td>abc</td>
                                 <td>1</td>
-                                <td>20/10/2002</td>
+                                <td>13/01/2023</td>
+                                <td>12/01/2023</td>
+                                <td>400 Days</td>
+                               
 
 
                             </tr>
@@ -793,12 +757,13 @@
                                 <td class="abcbtn">Abc </td>
                                 <td>999999998</td>
                                 <td>Bar</td>
-                                <td>2000</td>
+                               
                                 <td>30</td>
                                 <td>10%</td>
-                                <td>abc</td>
                                 <td>1</td>
-                                <td>20/10/2002</td>
+                                <td>13/01/2023</td>
+                                <td>1 Year</td>
+                                <td>400 Days</td>
 
 
                             </tr>
@@ -807,12 +772,13 @@
                                 <td class="abcbtn">Abc </td>
                                 <td>999999998</td>
                                 <td>Bar</td>
-                                <td>2000</td>
+                               
                                 <td>30</td>
                                 <td>10%</td>
-                                <td>abc</td>
                                 <td>1</td>
-                                <td>20/10/2002</td>
+                                <td>13/01/2023</td>
+                                <td>2 Year</td>
+                                <td>200 Days</td>
 
 
                             </tr>
@@ -821,12 +787,13 @@
                                 <td class="abcbtn">Abc </td>
                                 <td>999999998</td>
                                 <td>Bar</td>
-                                <td>2000</td>
+                               
                                 <td>30</td>
                                 <td>10%</td>
-                                <td>abc</td>
                                 <td>1</td>
-                                <td>20/10/2002</td>
+                                <td>13/01/2023</td>
+                                <td>1 Year</td>
+                                <td>200 Days</td>
 
 
                             </tr>
@@ -835,12 +802,13 @@
                                 <td class="abcbtn">Abc </td>
                                 <td>999999998</td>
                                 <td>Bar</td>
-                                <td>2000</td>
+                              
                                 <td>30</td>
                                 <td>10%</td>
-                                <td>abc</td>
                                 <td>1</td>
-                                <td>20/10/2002</td>
+                                <td>13/01/2023</td>
+                                <td>1 Year</td>
+                                <td>200 Days</td>
 
 
                             </tr>
@@ -888,6 +856,12 @@
 
 
             })
+            $(".allbtnclick").click( function(){
+                $(".addvender2").hide()
+            })
+            $(".newbtn3").click(function (){
+                $(".addvender2").show()
+            })
 
 
 
@@ -910,6 +884,33 @@
                 $(".Month").hide()
                 $(".Year").show()
             })
+
+
+
+
+
+
+            $(function() {
+            $("#date1").datepicker();
+            var date1 = $("#date1")
+        });
+        $(function() {
+            $("#date2").datepicker();
+            var date2 = $("#date2")
+        });
+     
+        function func() {
+            date1 = new Date(date1.value);
+            console.log(date1)
+            date2 = new Date(date2.value);
+            var milli_secs = date1.getTime() - date2.getTime();
+             
+            // Convert the milli seconds to Days 
+            var days = milli_secs / (1000 * 3600 * 24);
+            document.getElementById("ans").innerHTML =
+            Math.round(Math.abs(days));
+            console.log(days)
+        }
         </script>
 
     </body>
