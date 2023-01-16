@@ -137,6 +137,7 @@
             border-radius: 5px;
             display: flex;
             gap: 20px;
+            border: 1px solid #fc8019;
         }
 
         .allBtnsWrapper .allBtns1 {
@@ -184,6 +185,8 @@
             border-radius: 5px;
             padding: 10px;
             overflow: hidden;
+            border: 1px solid #fc8019;
+            margin-top: 20px;
         }
 
         .ProductDetailsWrapper .details {
@@ -235,7 +238,7 @@
         .ProductDetailsWrapper table,
         .ProductDetailsWrapper th,
         .ProductDetailsWrapper td {
-            border: 1px solid #ddcece;
+            /* border: 1px solid #ddcece; */
             border-collapse: collapse;
             font-size: 14px;
             text-align: center;
@@ -248,7 +251,7 @@
 
         .ProductDetailsWrapper thead tr,
         .ProductDetailsWrapper thead th {
-            /* border: 1px solid #000; */
+            border: transparent;
         }
 
         .ProductDetailsWrapper tbody tr td:first-child {
@@ -342,14 +345,31 @@
         .divchangbackground {
             background-color: #fe9037;
         }
+        .dateCalender input{
+            /* margin-left: 10px; */
+            /* text-align: center; */
+            font-size: 14px;
+            border: 0;
+            border-radius: 5px;
+            padding-left: 15px;
+            color: #083e5a;
+        }
+        .dateCalender label{
+            margin-right: 15px;
+            margin-left: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #3abb69;
+        }
+     
     </style>
 </head>
 
 <body>
 
 
-    <div class="breadcrumb" style="padding: 8px;     background-color: #ef7d0b;
-    font-size: 13px;">
+    <div class="breadcrumb" style="background-color: #ef7d0b;
+    font-size: 12px;">
 
 
         <ul class="list-unstyled d-flex align-items-center">
@@ -370,12 +390,26 @@
 
     <main>
         <div class="allBtnsWrapper pt-3 pb-3">
+            <div class="dateCalender mt-2">
+            <label for="dateWise" class="title">View By</label>
+            <input type="text" id="dateWise"  placeholder="13/01/2023">
+            </div>
             <div class="container-fluid">
-                <div class="allBtns pt-3 pb-3" style="display: flex;
+                <div class="allBtns pt-3 pb-3 border mb-4 mt-5" style="display: flex;
                 align-items: center; justify-content: center;">
-                    <div class="checf divchangbackground">
+                <div class="checf divchangbackground">
+                    <div class="chefbuuu">
+                        <div> <button>All</button></div>
+                        <div>
+                            <p style="color: #fff; font-size: 14px;">Total</p>
+                        </div>
+
+                    </div>
+
+                </div>
+                    <div class="checf ">
                         <div class="chefbuuu">
-                            <div> <button>Contact list</button></div>
+                            <div> <button>Dine In Contact</button></div>
                             <div>
                                 <p style="color: #fff; font-size: 14px;">2900</p>
                             </div>
@@ -385,7 +419,7 @@
                     </div>
                     <div class="checf ">
                         <div class="chefbuuu">
-                            <div><button>Guest list</button></div>
+                            <div><button>Party Visitor Guest </button></div>
 
                             <div>
                                 <p style="color: #fff; font-size: 14px;">4600</p>
@@ -395,7 +429,7 @@
                     </div>
                     <div class="checf">
                         <div class="chefbuuu">
-                            <div><button>Membership list</button></div>
+                            <div><button>Membership </button></div>
                             <div>
                                 <p style="color: #fff; font-size: 14px;">5500</p>
                             </div>
@@ -403,16 +437,10 @@
                         </div>
 
 
-
-
-
-
-
-
                     </div>
                     <div class="checf ">
                         <div class="chefbuuu">
-                            <div><button>Employee list</button></div>
+                            <div><button>Employee </button></div>
 
                             <div>
                                 <p style="color: #fff; font-size: 14px;">4600</p>
@@ -427,7 +455,7 @@
                     <div class="details">
                         <div class="title">
                             <h3 style="padding-bottom: 10px;">Contact list</h3>
-
+                            
                         </div>
                         <table>
                             <thead>
@@ -521,6 +549,31 @@
 
                             })
 
+                        </script>
+
+                        <script>
+                                $(function () {
+                                $("#dateWise").datepicker();
+                                let formattedDate = new Date();
+                                let d = formattedDate.getDate();
+                                let m = formattedDate.getMonth();
+                                m += 1; // JavaScript months are 0-11
+                                if (d < 10) {
+                                d = "0" + d;
+                                }
+                                if (m < 10) {
+                                m = "0" + m;
+                                }
+                                let y = formattedDate.getFullYear();
+                                $("#dateWise").attr("placeholder", d + "/" + m + "/" + y);
+
+                                $(".allBtnsWrapper .allBtns .topBtns").click(function () {
+                                $(".allBtnsWrapper .allBtns .topBtns").removeClass(
+                                    "activeTopBarTitleBtn"
+                                );
+                                $(this).addClass("activeTopBarTitleBtn");
+                                });
+                            });
                         </script>
                     </body>
 
