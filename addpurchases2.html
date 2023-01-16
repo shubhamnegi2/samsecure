@@ -171,9 +171,9 @@
         justify-content: center;
         background-color: rgba(0, 0, 0, 0.5);
       }
-      .editIngredientModelWrapper{
+      /* .editIngredientModelWrapper {
         display: flex;
-      }
+      } */
       .editCategoryModel h2,
       .addCategoryModel h2,
       .editIngredientModel h2,
@@ -197,26 +197,30 @@
         position: relative;
         border-radius: 4px;
       }
-      .editCategoryModel,.editIngredientModel {
+      .editCategoryModel,
+      .editIngredientModel {
         width: 70%;
       }
-      .editCategoryModel table tbody,.editIngredientModel  table tbody {
+      .editCategoryModel table tbody,
+      .editIngredientModel table tbody {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
       }
       .editCategoryModel table tbody tr,
-      .editIngredientModel table tbody tr{
+      .editIngredientModel table tbody tr {
         max-width: 30%;
         width: 100%;
         margin-bottom: 10px;
       }
       .editCategoryModel i,
+      .editIngredientModel i,
       .addIngredientModelWrapper i {
         cursor: pointer;
         padding: 3px;
       }
-      .editCategoryModel input {
+      .editCategoryModel input,
+      .editIngredientModel input {
         border: 1px solid #7a7797;
         border-radius: 3px;
         margin-right: 10px;
@@ -247,6 +251,7 @@
       }
       .closeAddCategoryModel,
       .closeEditCategoryModel,
+      .closeEditIngredientModel,
       .closeaddIngredientModelWrapper {
         position: absolute;
         right: 5px;
@@ -281,6 +286,21 @@
       }
       .undoDeleteCat {
         display: none;
+      }
+      .undoDelete {
+        display: none;
+      }
+      .saveEditedIng {
+        min-width: 50px;
+        margin: 2px px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 5px 8px;
       }
     </style>
   </head>
@@ -768,7 +788,7 @@
         <table>
           <tr>
             <td><input type="text" value="Dairy Products" /></td>
-            <td><i class="fa-solid fa-trash deleteCategory"></i></td>
+            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
             <td class="undoDeleteCat">
               <i class="fa-solid fa-rotate-left"></i>
             </td>
@@ -823,39 +843,71 @@
         <h2 class="mb-3">Edit Ingredient</h2>
         <table>
           <tr>
-            <td><input type="text" value="Dairy Products" /></td>
+            <td><input type="text" value="Milk Powder" /></td>
             <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDelete"><i class="fa-solid fa-trash-undo"></i></td>
+            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
           </tr>
           <tr>
-            <td><input type="text" value="Drinkable" /></td>
+            <td><input type="text" value="Curd" /></td>
             <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDelete"><i class="fa-solid fa-trash-undo"></i></td>
+            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
           </tr>
           <tr>
-            <td><input type="text" value="Fast Food" /></td>
+            <td><input type="text" value="Paneer" /></td>
             <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDelete"><i class="fa-solid fa-trash-undo"></i></td>
+            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
           </tr>
           <tr>
-            <td><input type="text" value="Dairy Products" /></td>
+            <td><input type="text" value="Dairyfg" /></td>
             <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDelete"><i class="fa-solid fa-trash-undo"></i></td>
+            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
           </tr>
           <tr>
-            <td><input type="text" value="Drinkable" /></td>
+            <td><input type="text" value="dgf" /></td>
             <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDelete"><i class="fa-solid fa-trash-undo"></i></td>
+            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
           </tr>
           <tr>
             <td><input type="text" value="Fast Food" /></td>
             <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDelete"><i class="fa-solid fa-trash-undo"></i></td>
+            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Milk Powder" /></td>
+            <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Curd" /></td>
+            <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Paneer" /></td>
+            <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Dairyfg" /></td>
+            <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="dgf" /></td>
+            <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Fast Food" /></td>
+            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
           </tr>
         </table>
+        <div class="text-center">
+          <button class="saveEditedIng">Submit</button>
+        </div>
       </div>
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -892,6 +944,21 @@
             `<div class="form-group mt-3 text-left"> <label for="category">Ingredient : </label> <input type="text" name="" id=""> <input type="text" value="${category}" disabled=""> <i class="fa-solid fa-trash deleteAddedIngredient"></i> </div>`
           );
       });
+      $(".closeEditIngredientModel").click(function () {
+        $(".editIngredientModelWrapper").hide();
+        $(".editIngredientModelWrapper .editIngredientModel").animate({
+          top: -50,
+        });
+      });
+      $(".editIngredientModelBtn").click(function () {
+        $(".editIngredientModelWrapper").css({
+          display: "flex",
+        });
+        $(".editIngredientModelWrapper .editIngredientModel").animate({
+          top: 50,
+        });
+      });
+
       $(".closeAddCategoryModel").click(function () {
         $(".addCategoryModelWrapper").hide();
         $(".addCategoryModelWrapper .addCategoryModel").animate({ top: -50 });
@@ -947,6 +1014,26 @@
           .prop("disabled", false);
         $(this).closest("tr").children(".undoDeleteCat").hide();
         $(this).closest("tr").children(".deleteCategory").show();
+      });
+
+      $(document).on("click", ".deleteIngCategory", function () {
+        $(this)
+          .closest("tr")
+          .children("td")
+          .children("input")
+          .prop("disabled", true);
+        $(this).closest("tr").children(".deleteIngCategory").hide();
+        $(this).closest("tr").children(".undoDelete").show();
+      });
+
+      $(document).on("click", ".undoDelete", function () {
+        $(this)
+          .closest("tr")
+          .children("td")
+          .children("input")
+          .prop("disabled", false);
+        $(this).closest("tr").children(".undoDelete").hide();
+        $(this).closest("tr").children(".deleteIngCategory").show();
       });
 
       $(".addVender").click(function () {
