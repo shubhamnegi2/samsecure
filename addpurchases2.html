@@ -10,6 +10,7 @@
       rel="stylesheet"
       href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
     />
+
     <style>
       .ProductDetailsWrapper {
         counter-reset: Serial;
@@ -154,6 +155,133 @@
         font-weight: 600;
         padding: 2px 8px;
       }
+      .addCategoryModelWrapper,
+      .editCategoryModelWrapper,
+      .addIngredientModelWrapper,
+      .editIngredientModelWrapper {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        overflow-y: scroll;
+        /* display: flex; */
+        display: none;
+        align-items: flex-start;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .editIngredientModelWrapper{
+        display: flex;
+      }
+      .editCategoryModel h2,
+      .addCategoryModel h2,
+      .editIngredientModel h2,
+      .addIngredientModel h2 {
+        display: inline-block;
+        border-bottom: 2px solid #fc8e32;
+        color: #083e5a;
+        font-weight: bold;
+        padding-bottom: 1px;
+        font-size: 18px;
+      }
+      .addCategoryModel,
+      .editCategoryModel,
+      .addIngredientModel,
+      .editIngredientModel {
+        background-color: #fff;
+        transition: all 0.3 ease;
+        /* width: 50%; */
+        text-align: center;
+        padding: 15px;
+        position: relative;
+        border-radius: 4px;
+      }
+      .editCategoryModel,.editIngredientModel {
+        width: 70%;
+      }
+      .editCategoryModel table tbody,.editIngredientModel  table tbody {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .editCategoryModel table tbody tr,
+      .editIngredientModel table tbody tr{
+        max-width: 30%;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .editCategoryModel i,
+      .addIngredientModelWrapper i {
+        cursor: pointer;
+        padding: 3px;
+      }
+      .editCategoryModel input {
+        border: 1px solid #7a7797;
+        border-radius: 3px;
+        margin-right: 10px;
+        padding-left: 15px;
+        font-size: 14px;
+      }
+      .addCategoryModel input,
+      .addCategoryModel label {
+        width: 100%;
+        text-align-last: left;
+      }
+      .addCategoryModel label {
+        color: #7a7797;
+        font-size: 14px;
+      }
+      .addCategoryModel button,
+      .addIngredientModelWrapper button {
+        min-width: 50px;
+        margin: 2px px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 5px 8px;
+      }
+      .closeAddCategoryModel,
+      .closeEditCategoryModel,
+      .closeaddIngredientModelWrapper {
+        position: absolute;
+        right: 5px;
+        top: 3px;
+        width: 30px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      .editCategoryModel button {
+        min-width: 50px;
+        margin: 2px px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 5px 8px;
+      }
+      .addIngredientModelWrapper .topbar select,
+      .addIngredientModelWrapper input {
+        border: 1px solid rgb(190, 188, 188);
+        border-radius: 4px;
+        font-size: 14px;
+        color: #083e5a;
+        padding-left: 15px;
+      }
+      .addIngredientModelWrapper .topbar {
+        color: #083e5a;
+        font-size: 14px;
+      }
+      .undoDeleteCat {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -193,9 +321,13 @@
                 >
               </h3>
               <div class="CategoryActionBtn text-right">
-                <button class="btn btn-primary btn-sm">Add Category</button>
-                <button class="btn btn-primary btn-sm">Edit Category</button>
-                <button class="btn btn-primary btn-sm">Delete Category</button>
+                <button class="btn btn-primary btn-sm addNewCategoryBtn">
+                  Add Category
+                </button>
+                <button class="btn btn-primary btn-sm editNewCategoryBtn">
+                  Edit Category
+                </button>
+                <!-- <button class="btn btn-primary btn-sm">Delete Category</button> -->
               </div>
             </div>
             <hr />
@@ -217,7 +349,7 @@
             <!-- <button>North Indian</button> -->
           </div>
         </div>
-      </div>      
+      </div>
       <div class="container-fluid mb-3">
         <div class="itemNameWrapper pt-0">
           <div class="d-flex justify-content-between align-items-center">
@@ -229,9 +361,13 @@
               </span>
             </h3>
             <div class="ingredientsActionBtn text-right">
-              <button class="btn btn-primary btn-sm">Add Ingredients</button>
-              <button class="btn btn-primary btn-sm">Edit Ingredients</button>
-              <button class="btn btn-primary btn-sm">Delete Ingredients</button>
+              <button class="btn btn-primary btn-sm addIngredientModelBtn">
+                Add Ingredients
+              </button>
+              <button class="btn btn-primary btn-sm editIngredientModelBtn">
+                Edit Ingredients
+              </button>
+              <!-- <button class="btn btn-primary btn-sm">Delete Ingredients</button> -->
             </div>
           </div>
           <hr />
@@ -573,31 +709,252 @@
       </div>
     </main>
 
+    <!--add category model  -->
+    <div class="addIngredientModelWrapper">
+      <div class="addIngredientModel">
+        <div class="closeaddIngredientModelWrapper">
+          <i class="fa-regular fa-circle-xmark"></i>
+        </div>
+        <h2 class="mb-3">Add Ingredients</h2>
+        <form action="">
+          <div class="form-group text-left mt-3 topbar">
+            <label for="category">Ingredient Category : </label>
+            <select name="" id="selectedIngCatList">
+              <option value="Dairy Products">Dairy Products</option>
+              <option value="Drinkable">Drinkable</option>
+              <option value="Fav">Fav</option>
+            </select>
+          </div>
+
+          <div class="form-group mt-3 text-left">
+            <label for="category">Ingredient : </label>
+            <input type="text" name="" id="" />
+            <input type="text" value="Dairy Product" disabled />
+            <td><i class="fa-solid fa-trash deleteAddedIngredient"></i></td>
+          </div>
+          <div class="text-right mt-3 btns">
+            <button class="addMoreIngredientBtn">Add More Ingredients</button>
+            <button>Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="addCategoryModelWrapper">
+      <div class="addCategoryModel">
+        <div class="closeAddCategoryModel">
+          <i class="fa-regular fa-circle-xmark"></i>
+        </div>
+        <h2 class="mb-3">Add New Category</h2>
+        <form action="">
+          <div class="form-group">
+            <label for="category">Enter Category Name : </label>
+            <input type="text" name="" id="" />
+          </div>
+          <div class="text-right mt-3">
+            <button>Save Category</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- edit category model -->
+    <div class="editCategoryModelWrapper">
+      <div class="editCategoryModel">
+        <div class="closeEditCategoryModel">
+          <i class="fa-regular fa-circle-xmark"></i>
+        </div>
+        <h2 class="mb-4">Edit Category</h2>
+        <table>
+          <tr>
+            <td><input type="text" value="Dairy Products" /></td>
+            <td><i class="fa-solid fa-trash deleteCategory"></i></td>
+            <td class="undoDeleteCat">
+              <i class="fa-solid fa-rotate-left"></i>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Drinkable" /></td>
+            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDeleteCat">
+              <i class="fa-solid fa-rotate-left"></i>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Fast Food" /></td>
+            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDeleteCat">
+              <i class="fa-solid fa-rotate-left"></i>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Dairy Products" /></td>
+            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDeleteCat">
+              <i class="fa-solid fa-rotate-left"></i>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Drinkable" /></td>
+            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDeleteCat">
+              <i class="fa-solid fa-rotate-left"></i>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Fast Food" /></td>
+            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDeleteCat">
+              <i class="fa-solid fa-rotate-left"></i>
+            </td>
+          </tr>
+        </table>
+        <div class="text-center">
+          <button>Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="editIngredientModelWrapper">
+      <div class="editIngredientModel">
+        <div class="closeEditIngredientModel">
+          <i class="fa-regular fa-circle-xmark"></i>
+        </div>
+        <h2 class="mb-3">Edit Ingredient</h2>
+        <table>
+          <tr>
+            <td><input type="text" value="Dairy Products" /></td>
+            <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDelete"><i class="fa-solid fa-trash-undo"></i></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Drinkable" /></td>
+            <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDelete"><i class="fa-solid fa-trash-undo"></i></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Fast Food" /></td>
+            <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDelete"><i class="fa-solid fa-trash-undo"></i></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Dairy Products" /></td>
+            <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDelete"><i class="fa-solid fa-trash-undo"></i></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Drinkable" /></td>
+            <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDelete"><i class="fa-solid fa-trash-undo"></i></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Fast Food" /></td>
+            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDelete"><i class="fa-solid fa-trash-undo"></i></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
       $("head").append(
         '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
       );
       $("head").append(
         ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
-/>'
+        />'
       );
       $("head").append(
         '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
       );
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
       $(function () {
         $("#dateWise").datepicker();
       });
+
+      $(document).on("click", ".deleteAddedIngredient", function () {
+        $(this).closest("div").remove();
+      });
+
+      $(".addMoreIngredientBtn").click(function (e) {
+        e.preventDefault();
+        let category = $("#selectedIngCatList option:selected").val();
+        console.log(category);
+        $(this)
+          .closest("form")
+          .children(".btns")
+          .before(
+            `<div class="form-group mt-3 text-left"> <label for="category">Ingredient : </label> <input type="text" name="" id=""> <input type="text" value="${category}" disabled=""> <i class="fa-solid fa-trash deleteAddedIngredient"></i> </div>`
+          );
+      });
+      $(".closeAddCategoryModel").click(function () {
+        $(".addCategoryModelWrapper").hide();
+        $(".addCategoryModelWrapper .addCategoryModel").animate({ top: -50 });
+      });
+      $(".addNewCategoryBtn").click(function () {
+        $(".addCategoryModelWrapper").css({
+          display: "flex",
+        });
+        $(".addCategoryModelWrapper .addCategoryModel").animate({ top: 50 });
+      });
+
+      $(".closeaddIngredientModelWrapper").click(function () {
+        $(".addIngredientModelWrapper").hide();
+        $(".addIngredientModelWrapper .addIngredientModel").animate({
+          top: -50,
+        });
+      });
+      $(".addIngredientModelBtn").click(function () {
+        $(".addIngredientModelWrapper").css({
+          display: "flex",
+        });
+        $(".addIngredientModelWrapper .addIngredientModel").animate({
+          top: 50,
+        });
+      });
+
+      $(".closeEditCategoryModel").click(function () {
+        $(".editCategoryModelWrapper").hide();
+        $(".editCategoryModelWrapper .addCategoryModel").animate({ top: -50 });
+      });
+      $(".editNewCategoryBtn").click(function () {
+        $(".editCategoryModelWrapper").css({
+          display: "flex",
+        });
+        $(".editCategoryModelWrapper .editCategoryModel").animate({ top: 50 });
+      });
+
+      $(document).on("click", ".deleteCategory", function () {
+        $(this)
+          .closest("tr")
+          .children("td")
+          .children("input")
+          .prop("disabled", true);
+        $(this).closest("tr").children(".deleteCategory").hide();
+        $(this).closest("tr").children(".undoDeleteCat").show();
+      });
+
+      $(document).on("click", ".undoDeleteCat", function () {
+        $(this)
+          .closest("tr")
+          .children("td")
+          .children("input")
+          .prop("disabled", false);
+        $(this).closest("tr").children(".undoDeleteCat").hide();
+        $(this).closest("tr").children(".deleteCategory").show();
+      });
+
       $(".addVender").click(function () {
         $("#addVenderWrapper").show();
         let top = $("#addVenderWrapper").position().top;
         $("html, body").animate({ scrollTop: top });
       });
+
       $(".breadcrumbs button").click(function () {
         $(".breadcrumbs button").removeClass("activeBreadcurmbtn");
         $(this).addClass("activeBreadcurmbtn");
