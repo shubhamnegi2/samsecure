@@ -261,13 +261,13 @@
             padding-bottom: 5px;
             font-size: 20px;
             color: #7a7797;
-    font-weight: bold;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    /* margin-top: 1rem; */
-    font-size: 14px;
-    text-align: right;
-    padding-right: 15px;
+            font-weight: bold;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            /* margin-top: 1rem; */
+            font-size: 14px;
+            text-align: right;
+            padding-right: 15px;
         }
 
         main .categoryheading i {
@@ -327,15 +327,16 @@
             top: 0px;
         }
 
-        .ProductDetailsWrapper .details .title  {
+        .ProductDetailsWrapper .details .title {
             text-align: center;
         }
-        .title1{
-            text-align: center;   
+
+        .title1 {
+            text-align: center;
         }
 
 
-        .ProductDetailsWrapper .details .title  h3 {
+        .ProductDetailsWrapper .details .title h3 {
             display: inline-block;
             border-bottom: 2px solid #fc8e32;
             color: #083e5a;
@@ -343,7 +344,8 @@
             padding-bottom: 1px;
             font-size: 18px;
         }
-        .title1 h3{
+
+        .title1 h3 {
             display: inline-block;
             border-bottom: 2px solid #fc8e32;
             color: #083e5a;
@@ -525,77 +527,81 @@
             font-size: 16px;
             font-weight: bold;
         }
+
         .fixstockpop {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: 999;
-                height: 100%;
-                width: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
-            }
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
 
-            .fixstockitempop {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-top: 4%;
-            }
+        .fixstockitempop {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 4%;
+        }
 
-            .fixstockpopmodel {
-                border-radius: 5px;
+        .fixstockpopmodel {
+            border-radius: 5px;
 
-                height: auto;
-              
-                width: 50%;
-                background-color: #fff;
-            }
-            .wastagebtn button{
-                border: 0;
-    padding: 3px 13px;
-    border-radius: 5px;
-    background-color: #083e5a;
-    color: #fff;
-            }
-            .mt6{
-                padding-left:  20px;
-                padding-right: 20px;
-                padding-bottom: 60px;
-            }
-            .crossicon{
-                display: flex;
-                align-items: center;
-                justify-content: right;
-            }
-            .crossicon i{
-                margin-top: 2px;
-    margin-right: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    border: 2px solid black;
-    height: 20px;
-    width: 20px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    padding: 10px;
-            }
-            .tablessss tr td:first-child:before {
-        counter-increment: Serial;
-        content: counter(Serial);
-      }
+            height: auto;
 
-       
+            width: 50%;
+            background-color: #fff;
+        }
+
+        .wastagebtn button {
+            border: 0;
+            padding: 3px 13px;
+            border-radius: 5px;
+            background-color: #083e5a;
+            color: #fff;
+        }
+
+        .mt6 {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 60px;
+        }
+
+        .crossicon {
+            display: flex;
+            align-items: center;
+            justify-content: right;
+        }
+
+        .crossicon i {
+            margin-top: 2px;
+            margin-right: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            border: 2px solid black;
+            height: 20px;
+            width: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .tablessss tr td:first-child:before {
+            counter-increment: Serial;
+            content: counter(Serial);
+        }
     </style>
 </head>
 
 <body>
     <div class="breadcrumbs">
         <ul class="list-unstyled d-flex align-items-center">
-            <li><a href="">Invitatory</a></li>
+            <li><a href="">Inventory</a></li>
             <li><i class="fa-solid fa-angles-right"></i></li>
             <li><a href="" class="ActiveBreadcrumb ">Fix Stock</a></li>
 
@@ -614,7 +620,7 @@
                 <div>
                     Date : <input type="text" id="dateWise" placeholder="03/12/2012" />
                 </div>
-                <button class="addVender">Add vender</button>
+                <!-- <button class="addVender">Add vender</button> -->
             </div>
         </div>
         <div class="allBtnsWrapper pb-3 mt-0">
@@ -710,7 +716,7 @@
                 </ul>
             </div>
         </div>
-      
+
 
         <div class="container-fluid">
             <div class="ProductDetailsWrapper">
@@ -734,7 +740,7 @@
                                 <th>Price/unit</th>
                                 <!-- <th>Selling Prices/Qty</th> -->
                                 <th>Total</th>
-                             
+
 
 
                                 <th>Expiry/product</th>
@@ -828,75 +834,77 @@
 
             </div>
         </div>
-       
+
         <div class="fixstockpop">
             <div class="fixstockitempop">
                 <div class="fixstockpopmodel">
                     <div class="crossicon"><i class="fa fa-close crossiconbtn"></i></div>
                     <div class="container-fluid mt-4 mt6">
-                        <div class="title1 my-2"><h3>View Purchase</h3></div>
-                        <div class="ProductDetailsWrapper tablessss">
-                            
+                        <div class="title1 my-2">
+                            <h3>View Purchase</h3>
+                        </div>
+                        <div class="ProductDetailsWrapper ">
+
                             <div class="details my-2">
-                
-                                 <table class="">
-                        <thead>
-                            <tr>
-                          
-                                <th>S.No</th>
-                                <th>Checkbox</th>
-                                <th>item Name</th>
-                              <th>Date of Purchase</th>
-                              <th>Wastage</th>
+
+                                <table class="tablessss">
+                                    <thead>
+                                        <tr>
+
+                                            <th>S.No</th>
+                                            <th>Checkbox</th>
+                                            <th>item Name</th>
+                                            <th>Date of Purchase</th>
+                                            <th>Wastage</th>
 
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                              
-                                <td>1</td>
-                                <td class="checkboxtd" > <input type="checkbox" style="width: 15px;"/></td>
-                                <td >Milk </td>
-                                <td>16/01/2023</td>
-                                <td class="wastagebtn"><button>Wastage</button></td>
-                              
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+
+                                            <td>1</td>
+                                            <td class="checkboxtd"> <input type="checkbox" style="width: 15px;" /></td>
+                                            <td>Milk </td>
+                                            <td>16/01/2023</td>
+                                            <td class="wastagebtn"><button>Wastage</button></td>
 
 
-                            </tr>
-                            <tr>
-                              
-                                <td>1</td>
-                                <td class="checkboxtd" > <input type="checkbox" style="width: 15px;"/></td>
-                                <td >Milk </td>
-                                <td>16/01/2023</td>
-                                <td class="wastagebtn"><button>Wastage</button></td>
-                              
+
+                                        </tr>
+                                        <tr>
+
+                                            <td>1</td>
+                                            <td class="checkboxtd"> <input type="checkbox" style="width: 15px;" /></td>
+                                            <td>Milk </td>
+                                            <td>16/01/2023</td>
+                                            <td class="wastagebtn"><button>Wastage</button></td>
 
 
-                            </tr>
-                            <tr>
-                              
-                                <td>1</td>
-                                <td class="checkboxtd" > <input type="checkbox" style="width: 15px;"/></td>
-                                <td >Milk </td>
-                                <td>16/01/2023</td>
-                                <td class="wastagebtn"><button>Wastage</button></td>
-                              
+
+                                        </tr>
+                                        <tr>
+
+                                            <td>1</td>
+                                            <td class="checkboxtd"> <input type="checkbox" style="width: 15px;" /></td>
+                                            <td>Milk </td>
+                                            <td>16/01/2023</td>
+                                            <td class="wastagebtn"><button>Wastage</button></td>
 
 
-                            </tr>
-                            <tr>
-                              
-                                <td>1</td>
-                                <td class="checkboxtd" > <input type="checkbox" style="width: 15px;"/></td>
-                                <td >Milk </td>
-                                <td>16/01/2023</td>
-                                <td class="wastagebtn"><button>Wastage</button></td>
-                               </tr>
-                             </tbody>
-                    </table>
-             
+
+                                        </tr>
+                                        <tr>
+
+                                            <td>1</td>
+                                            <td class="checkboxtd"> <input type="checkbox" style="width: 15px;" /></td>
+                                            <td>Milk </td>
+                                            <td>16/01/2023</td>
+                                            <td class="wastagebtn"><button>Wastage</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
                             </div>
 
                         </div>
@@ -937,13 +945,13 @@
             $(this).addClass("activeBtn");
             $(".ProductDetailsWrapper .details .title h3").text($(this).text());
         });
-$(".viewpurchase").click( function (){
-    $(".fixstockpop").show()
-   
-})
-$(".crossiconbtn").click( function(){
-    $(".fixstockpop").hide()
-})
+        $(".viewpurchase").click(function () {
+            $(".fixstockpop").show()
+
+        })
+        $(".crossiconbtn").click(function () {
+            $(".fixstockpop").hide()
+        })
 
     </script>
 </body>
