@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Purchases</title>
+    <link rel="stylesheet" href="./addPurchases.css" />
+    <style>
+      .itemNameWrapper ul {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .itemNameWrapper ul li {
+        max-width: 150px;
+        overflow: hidden;
+        margin-right: 10px;
+        font-size: 14px;
+      }
+      .itemNameWrapper ul li input {
+        cursor: pointer;
+      }
+      .itemNameWrapper ul li label {
+        display: inline-block;
+        width: 110px;
+        white-space: nowrap;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        color:#7a7797;
+        font-size: 12px;
+      }
+      .itemNameWrapper {
+        box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid #fc8019;
+        background-color: #eee;
+      }
+      .ProductDetailsWrapper .eventDateTime {
+        color: #3abb69;
+      }
+      .ProductDetailsWrapper .eventDateTime span {
+        font-weight: bold;
+        color: #7a7797;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="breadcrumbs">
+      <ul class="list-unstyled d-flex align-items-center">
+        <li><a href="">Purchases</a></li>
+        <li><i class="fa-solid fa-angles-right"></i></li>
+        <li><a href="" class="ActiveBreadcrumb">Add Purchases</a></li>
+      </ul>
+      <div>
+        <button class="btn btn-primary addVender">Add Vender</button>
+        <button class="btn btn-primary ">Add Category</button>
+        <button class="btn btn-primary ">Add ingredients</button>
+      </div>
+    </div>
+    <main>
+      <div class="allBtnsWrapper pt-3 pb-3">
+        <div class="container-fluid">
+          <div class="allBtns pt-3 pb-3">
+            <button class="activeBtn">Dairy Products</button>
+            <button>Drinkable</button>
+            <button>Fast Food</button>
+            <button>My Fav</button>
+            <button>Mostly Used</button>
+            <button>Top</button>
+            <button>Commonly Used</button>
+            <button>Less Used</button>
+            <button>Chinese</button>
+            <button>Italian</button>
+            <button>Thai</button>
+            <button>Continental</button>
+            <button>Indian</button>
+            <button>South Indian</button>
+            <button>North Indian</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid mb-3">
+       
+      </div>
+
+      <div class="container-fluid">
+        <div class="ProductDetailsWrapper">
+            <style>
+                .adddetails2{
+                    display: flex;
+                    
+                    width: 100%;
+                }
+                .details{
+                    width: 85%;
+                }
+                .listdetail{
+                    width: 25%;
+                }
+            </style>
+            <div class="adddetails2">
+                <div class="itemNameWrapper listdetail">
+                    <ol class=" mb-0">
+                      <li>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" />
+                          <label class="form-check-label" for=""> Milk Powder </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" />
+                          <label class="form-check-label" for=""> Curd </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" />
+                          <label class="form-check-label" for=""> Paneer </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" />
+                          <label class="form-check-label" for="">assadf </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" />
+                          <label class="form-check-label" for=""> Lorem asasa </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" />
+                          <label class="form-check-label" for=""> Powder </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" />
+                          <label class="form-check-label" for=""> Curdsa </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" />
+                          <label class="form-check-label" for=""> Paneerssaaa </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" />
+                          <label class="form-check-label" for=""> loremfdfispum </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" />
+                          <label class="form-check-label" for="">
+                            Lorem sdipsum, doldsor sit
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" />
+                          <label class="form-check-label" for=""> Milk Powder </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" />
+                          <label class="form-check-label" for=""> Curdbf </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" />
+                          <label class="form-check-label" for=""> Paneerrt </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" />
+                          <label class="form-check-label" for=""> loremrfispum </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" />
+                          <label class="form-check-label" for="">
+                            Loremdf ipsumolor sit
+                          </label>
+                        </div>
+                      </li>
+                    </ol>
+                  </div>
+                <div class="details">
+                    <div class="title">
+                      <h3>Dairy Products</h3>
+                    </div>
+                    <div class="col-12 mb-3">
+                      <div class="d-flex justify-content-between eventDateTime">
+                        <div class="monthName">Total : <span>34</span></div>
+                        <div class="totalBookings">
+                          Leftover In Stock : <span>9</span>
+                        </div>
+                      </div>
+                    </div>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Item name</th>
+                          <th>Price/Qty</th>
+                          <th>No. Of Days</th>
+                          <th>Quantity</th>
+                          <th>Select Vender</th>
+                          <!-- <th>Save</th> -->
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!-- <tr>
+                          <td class="name">Milk Powder</td>
+                          <td>
+                            <input
+                              type="text"
+                              class="price"
+                              placeholder="Price/Qty"
+                              name="price"
+                            />
+                          </td>
+                          <td>
+                            <select name="days" id="days">
+                              <option selected disabled>Used In</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select name="quantity" id="quantity">
+                              <option selected disabled>Select Quantity</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select name="Vender" class="chooseVender" id="Vender">
+                              <option selected disabled>Select Vender</option>
+                              <option value="Amit">Amit</option>
+                              <option value="Ankit">Ankit</option>
+                              <option value="Rohit">Rohit</option>
+                              <option value="Akash">Akash</option>
+                              <option value="Ramu">Ramu</option>
+                              <option value="Sonu">Sonu</option>
+                              <option value="Manish Joshi">Manish Joshi</option>
+                            </select>
+                          </td>
+                        </tr> -->
+                      </tbody>
+                    </table>
+                    <div class="table1Btns text-right my-3 mx-3">
+                      <button class="btn btn-primary btn-sm showVenderDetails">
+                        Next
+                      </button>
+                    </div>
+                  </div>
+
+
+                
+
+            </div>
+         
+          <div class="venderDetailsTable">
+            <table>
+              <thead>
+                <tr>
+                  <th>Selected Vender</th>
+                  <th>Total Items</th>
+                  <th>Total Price</th>
+                  <th>Paid</th>
+                  <th>Remaining</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- <tr>
+                <td>Amit</td>
+                <td><input type="text" placeholder="Total Items"></td>
+                <td><input type="text" placeholder="Total Items"></td>
+                <td><input type="text" placeholder="Total Items"></td>
+                <td>988</td>
+              </tr> -->
+              </tbody>
+            </table>
+            <div class="table2Btns text-right my-3 mx-3">
+              <button class="btn btn-primary btn-sm showItemDetails">
+                Prev
+              </button>
+              <button class="btn btn-primary btn-sm submitAllData">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div id="addVenderWrapper" class="mt-4">
+          <div class="addVenderTitle">
+            <h2>Add New Vender</h2>
+          </div>
+          <div class="addVenderForm container">
+            <form>
+              <div class="row justify-content-center">
+                <div class="col-12">
+                  <div
+                    class="row justify-content-center align-items-center"
+                    style="background-color: #eee; padding: 20px"
+                  >
+                    <div class="col-md-4">
+                      <div class="formGroup">
+                        <label for="venderName">Vender Name</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="formGroup">
+                        <label for="Phone">Phone No.</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="formGroup">
+                        <label for="Address">Address</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="formGroup">
+                        <label for="upiN">UPI ID</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="formGroup">
+                        <label for="bankName">Bank Name</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="formGroup">
+                        <label for="AccN">Account No.</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="formGroup">
+                        <label for="ifsc">IFSC Code</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="formGroup">
+                        <label for="ACHName">Account Holder Name</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="formGroup">
+                        <label for="state">State</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="formGroup">
+                        <label for="city">City</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-12 text-center mt-2">
+                      <button type="submit" class="addVenderSubmitBtn">
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $("head").append(
+        '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
+      );
+      $("head").append(
+        ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
+/>'
+      );
+      $("head").append(
+        '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
+      );
+    </script>
+    <script>
+      $(".addVender").click(function () {
+        $("#addVenderWrapper").show();
+        let top = $("#addVenderWrapper").position().top;
+        $("html, body").animate({ scrollTop: top });
+      });
+
+      $(".allBtns button").click(function () {
+        $(".allBtns button").removeClass("activeBtn");
+        $(this).addClass("activeBtn");
+
+        $(".ProductDetailsWrapper .details .title h3").text($(this).text());
+      });
+
+      $(".showVenderDetails").click(function () {
+        $("#addVenderWrapper").hide();
+
+        if (selectedVender.length <= 0) {
+          alert("please select vender");
+        } else {
+          $(".venderDetailsTable table tbody").html("");
+          selectedVender.map((elem, index) => {
+            $(".venderDetailsTable table tbody")
+              .append(`<tr data-venderMoneyKey="${index}"><td>${elem}</td>
+                <td><input type="text" class="venderTotalItems" placeholder="Total Items"></td>
+                <td><input type="text" class="venderTotalPrice" placeholder="Total Items"></td>
+                <td><input type="text" class="venderTotalPaid" placeholder="Total Items"></td>
+                <td class="venderTotalRemaining">-</td></tr>`);
+          });
+
+          $(".ProductDetailsWrapper .details").animate(
+            { left: "-200%" },
+            "slow"
+          );
+          $(".ProductDetailsWrapper .details").hide();
+          $(".ProductDetailsWrapper .venderDetailsTable").animate(
+            { left: "0%" },
+            "slow"
+          );
+          $(".ProductDetailsWrapper .venderDetailsTable").show();
+        }
+      });
+
+      $(".showItemDetails").click(function () {
+        // $('#addVenderWrapper').show();
+        $(".ProductDetailsWrapper .details")
+          .animate({ left: "0%" }, "fast")
+          .show();
+        $(".ProductDetailsWrapper .venderDetailsTable")
+          .animate({ left: "200%" }, "fast")
+          .hide();
+      });
+
+      let selectedVender = [];
+      $(document).on("change", ".chooseVender", function () {
+        let vender = $(this).val();
+        if (!selectedVender.includes(vender)) {
+          selectedVender.push(vender);
+        }
+      });
+
+      $(document).on(
+        "click ",
+        ".itemNameWrapper input[type='checkbox']",
+        function () {
+          let value = $(this).closest(".form-check").children("label").text();
+          let key = value.replaceAll(/\s/g, "");
+          if ($(this).is(":checked")) {
+            $(".ProductDetailsWrapper table").append(
+              "<tr data-key=" +
+                key +
+                '> <td class="name">' +
+                value +
+                '</td><td> <input type="text" class="price" placeholder="Price/Qty" name="price"/> </td><td> <select name="days" id="days"> <option selected disabled>Used In</option> <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> </select> </td><td> <select name="quantity" id="quantity"> <option selected disabled>Select Quantity</option> <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> </select> </td><td> <select name="Vender" class="chooseVender" id="Vender"> <option selected disabled>Select Vender</option> <option value="Amit">Amit</option> <option value="Ankit">Ankit</option> <option value="Rohit">Rohit</option> <option value="Akash">Akash</option> <option value="Ramu">Ramu</option> <option value="Sonu">Sonu</option> <option value="Manish Joshi">Manish Joshi</option> </select> </td></tr>'
+            );
+          } else {
+            $(".ProductDetailsWrapper table tbody tr").each(function (i) {
+              if ($(this).data("key") == key) {
+                $(this).remove();
+              }
+            });
+          }
+        }
+      );
+      $(document).on("keyup ", ".venderTotalPaid", function () {
+        let totalPrice = $(this)
+          .closest("tr")
+          .children("td")
+          .children(".venderTotalPrice")
+          .val();
+        let paidAmount = $(this).val();
+
+        if (+totalPrice !== NaN || +paidAmount !== NaN) {
+          $(this)
+            .closest("tr")
+            .children(".venderTotalRemaining")
+            .text(+totalPrice - +paidAmount);
+        }
+      });
+    </script>
+  </body>
+</html>
