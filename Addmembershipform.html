@@ -11,7 +11,7 @@
   <title>Document</title>
   <style>
     #addVenderWrapper {
-  
+
       background-color: #fff;
       box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
       border-radius: 5px;
@@ -37,7 +37,7 @@
     }
 
     #addVenderWrapper .addVenderForm .formGroup label {
-      color: #7a7797;
+      color: #083e5a;
       font-size: 14px;
       font-weight: 500;
       padding-left: 5px;
@@ -49,6 +49,7 @@
       border-radius: 4px;
       padding-left: 15px;
       height: 35px;
+      font-size: 12px;
     }
 
     #addVenderWrapper .addVenderForm .addVenderSubmitBtn {
@@ -137,47 +138,51 @@
       font-weight: 500;
       padding-left: 5px;
     }
-    #addVenderWrapper{
+
+    #addVenderWrapper {
       border: 1px solid #fc8019;
     }
-    .newclasss{
+
+    .newclasss {
       color: #7a7797;
       font-size: 14px;
       font-weight: 500;
       padding-left: 5px;
     }
+
     .popmodel {
-                          display: none;
-                          position: fixed;
-                          top: 0;
-                          left: 0;
-                          z-index: 999;
-                          height: 100%;
-                          width: 100%;
-                          background-color: rgba(0, 0, 0, 0.5);
-                        }
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
 
-                        .popmodelopen {
-                          display: flex;
-                          align-items: center;
-                          justify-content: center;
-                          margin-top: 3%;
-                        }
+    .popmodelopen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 3%;
+    }
 
-                        .openmodel {
-                          border-radius: 10px;
-                          height: 200px;
-                          padding: 0px 10px;
-                          width: 25%;
-                          background-color: #fff;
-                        }
+    .openmodel {
+      border-radius: 10px;
+      height: 200px;
+      padding: 0px 10px;
+      width: 25%;
+      background-color: #fff;
+    }
 
-                        .closebtnicon {
-                          display: flex;
-                          justify-content: right;
+    .closebtnicon {
+      display: flex;
+      justify-content: right;
 
-                        }
-                        .djdecoration {
+    }
+
+    .djdecoration {
       display: flex;
       gap: 20px;
       height: 34px;
@@ -187,14 +192,18 @@
       color: #7a7797;
       padding-left: 10px;
       color: #7a7797;
-    font-size: 14px;
-    font-weight: 500;
+      font-size: 14px;
+      font-weight: 500;
     }
-    .djdecoration label{
-      color: #7a7797;
-    font-size: 14px;
-    font-weight: 500;
-    padding-left: 5px;
+
+    .djdecoration label {
+      color: #083e5a;
+      font-size: 14px;
+      font-weight: 500;
+      padding-left: 5px;
+    }
+    label{
+      color: #083e5a;
     }
   </style>
 </head>
@@ -209,7 +218,7 @@
       <li><i class="fa-solid fa-angles-right"></i></li>
       <li><a href="" class="ActiveBreadcrumb">Add Membership</a></li>
     </ul>
-   </div>
+  </div>
   <div class="container-fluid">
     <div id="addVenderWrapper" class="mt-2" style="box-shadow: 0 0 2px;">
       <div class="addVenderTitle">
@@ -385,25 +394,26 @@
                       <option>98</option>
                       <option>99</option>
                       <option>100</option>
-                      
 
 
 
-                      
+
+
                     </select>
 
                   </div>
                 </div>
 
                 <div class="col-md-1 col-sm-2" style="top: 14px;">
-                  <div class="formGroup" style="display: flex; align-items: center; height: 32px; justify-content: center; background-color: #fff;">
+                  <div class="formGroup"
+                    style="display: flex; align-items: center; height: 32px; justify-content: center; background-color: #fff;">
 
-                    <input  style="width: 15px;"   type="checkbox" placeholder="₹" class="coupon_question4"
-                    name="coupon_question4" value="4" onchange="valueChangedsd1()" />
+                    <input style="width: 15px;" type="checkbox" placeholder="₹" class="coupon_question4"
+                      name="coupon_question4" value="4" onchange="valueChangedsd1()" />
                     <label style="    padding-top: 5px;">None</label>
                   </div>
                 </div>
-               
+
                 <div class="col-md-4">
                   <div class="formGroup">
                     <label for="bankName">Image</label>
@@ -425,9 +435,9 @@
                     <input type="file" class="inputfile">
                   </div>
                 </div>
-                
-                
-                
+
+
+
                 <div class="row justify-content-left ">
                   <div class=" col-sm-3 form-radio validtimelable">
                     <label for="">Valid Time</label>
@@ -435,114 +445,125 @@
                       <input type="radio" checked="checked" name="1year" />
                       <label for="">1 year</label>
                       <input type="radio" name="1year" />
-                      <label for="" >2 year</label>
-                      <input type="radio"name="1year" />
-                      <label for="" >3 year</label>
+                      <label for="">2 year</label>
+                      <input type="radio" name="1year" />
+                      <label for="">3 year</label>
                     </div>
 
                   </div>
 
                   <div class="col-md-5">
-                    <div class="row justify-contenr-left mt-3 newclasss" >
-                      
-                    <label for="">Percentage</label>
-<div class="col-sm-2">
-  <div class="radiobtns"  style="font-size: 14px; background-color: #fff; padding: 2px 5px; border-radius: 5px;">
-    <div> <input type="radio" checked="checked"  name="10"/>
-      <label for="">10%</label></div>
-      <div>2000</div>
-  </div>
- 
+                    <div class="row justify-contenr-left mt-3 newclasss">
 
-  
- 
-</div>
-<div class="col-sm-2">
-  <div class="radiobtns"  style="font-size: 14px; background-color: #fff; padding: 2px 5px; border-radius: 5px;">
-    <div> <input type="radio" checked="checked"  name="10"/>
-      <label for="">20%</label></div>
-      <div>4000</div>
-  </div>
- </div>
- <div class="col-sm-2">
-  <div class="radiobtns"  style="font-size: 14px; background-color: #fff; padding: 2px 5px; border-radius: 5px;">
-    <div> <input type="radio" checked="checked"  name="10"/>
-      <label for="">30%</label></div>
-      <div>5000</div>
-  </div>
- </div>
- <div class="col-sm-2">
-  <div class="radiobtns"  style="font-size: 14px; background-color: #fff; padding: 2px 5px; border-radius: 5px;">
-    <div> <input type="radio" checked="checked"  name="10"/>
-      <label for="">40%</label></div>
-      <div>6000</div>
-  </div>
- </div>
- <div class="col-sm-2">
-  <div class="radiobtns"  style="font-size: 14px; background-color: #fff; padding: 2px 5px; border-radius: 5px;">
-    <div> <input type="radio" checked="checked"  name="10"/>
-      <label for="">10%</label></div>
-      <div>2000</div>
-  </div>
- </div>
+                      <label for="">Percentage</label>
+                      <div class="col-sm-2">
+                        <div class="radiobtns"
+                          style="font-size: 14px; background-color: #fff; padding: 2px 5px; border-radius: 5px;">
+                          <div> <input type="radio" checked="checked" name="10" />
+                            <label for="">10%</label>
+                          </div>
+                          <div>2000</div>
+                        </div>
 
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="row justify-contenr-right mt-3" style=" flex: none; color: #7a7797; font-size: 14px;   margin-left: 65px;">
-                    <div class="col-md-12 mt-2">
-                      <div style="display: flex; gap: 2px;">
-                        <label>Total Amount</label>
-                        <input type="text" placeholder="₹">
+
+
+
                       </div>
-                      <div class="col-md-12 mt-2">
-                        <div style="display: flex; gap: 10px; justify-content: right; margin-right: 3px;">
-                          <label>Remove Tax</label>
-                          <input type="checkbox" type="checkbox" placeholder="₹" class="coupon_question2"
-                            name="coupon_question2" value="3" onchange="valueChangedsd()">
+                      <div class="col-sm-2">
+                        <div class="radiobtns"
+                          style="font-size: 14px; background-color: #fff; padding: 2px 5px; border-radius: 5px;">
+                          <div> <input type="radio" checked="checked" name="10" />
+                            <label for="">20%</label>
+                          </div>
+                          <div>4000</div>
                         </div>
                       </div>
-                      <div class="taxtgst" style="display: flex;
+                      <div class="col-sm-2">
+                        <div class="radiobtns"
+                          style="font-size: 14px; background-color: #fff; padding: 2px 5px; border-radius: 5px;">
+                          <div> <input type="radio" checked="checked" name="10" />
+                            <label for="">30%</label>
+                          </div>
+                          <div>5000</div>
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="radiobtns"
+                          style="font-size: 14px; background-color: #fff; padding: 2px 5px; border-radius: 5px;">
+                          <div> <input type="radio" checked="checked" name="10" />
+                            <label for="">40%</label>
+                          </div>
+                          <div>6000</div>
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="radiobtns"
+                          style="font-size: 14px; background-color: #fff; padding: 2px 5px; border-radius: 5px;">
+                          <div> <input type="radio" checked="checked" name="10" />
+                            <label for="">10%</label>
+                          </div>
+                          <div>2000</div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="row justify-contenr-right mt-3"
+                      style=" flex: none; color: #7a7797; font-size: 14px;   margin-left: 65px;">
+                      <div class="col-md-12 mt-2">
+                        <div style="display: flex; gap: 2px;">
+                          <label>Total Amount</label>
+                          <input type="text" placeholder="₹">
+                        </div>
+                        <div class="col-md-12 mt-2">
+                          <div style="display: flex; gap: 10px; justify-content: right; margin-right: 3px;">
+                            <label>Remove Tax</label>
+                            <input type="checkbox" type="checkbox" placeholder="₹" class="coupon_question2"
+                              name="coupon_question2" value="3" onchange="valueChangedsd()">
+                          </div>
+                        </div>
+                        <div class="taxtgst" style="display: flex;
                     align-items: center;
                     justify-content: right;
                     margin-top: 15px;
                     ">
-                        <div class="mt-4">
-                          <h3 style="font-size: 18px;">TAX</h3>
-                        </div>
-                        <div>
-                          <div class="col-md-12 mt-3">
-                            <div style="display: flex; gap: 5px; margin-top: 10px;">
-                              <label> <span></span> SGST</label>
-                              <input type="text" style="height: 20px; 
+                          <div class="mt-4">
+                            <h3 style="font-size: 18px;">TAX</h3>
+                          </div>
+                          <div>
+                            <div class="col-md-12 mt-3">
+                              <div style="display: flex; gap: 5px; margin-top: 10px;">
+                                <label> <span></span> SGST</label>
+                                <input type="text" style="height: 20px; 
                         width: 71px;" placeholder="₹">
+                              </div>
                             </div>
-                          </div>
-                          <div class="col-md-12 ">
-                            <div style="display: flex; gap: 
+                            <div class="col-md-12 ">
+                              <div style="display: flex; gap: 
                             5px;">
-                              <label>CGST</label>
-                              <input type="text" style="height: 20px; 
+                                <label>CGST</label>
+                                <input type="text" style="height: 20px; 
                     width: 71px;" placeholder="₹">
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="col-md-12 mt-2">
-                        <div style="display: flex; gap: 2px;">
-                          <label style="flex: none;">Grand Total</label>
-                          <input type="text" placeholder="₹">
+                        <div class="col-md-12 mt-2">
+                          <div style="display: flex; gap: 2px;">
+                            <label style="flex: none;">Grand Total</label>
+                            <input type="text" placeholder="₹">
+                          </div>
                         </div>
-                      </div>
-                      <!-- <div class="col-md-12 mt-3">
+                        <!-- <div class="col-md-12 mt-3">
                    <div style="display: flex; gap: 10px;" >
                    <label>Grand </label>
                     <input type="text">
                      </div>
                  </div> -->
+                      </div>
                     </div>
                   </div>
-                </div>
                   <!-- <div class="col-sm-4 form-radio radiobtn">
                     <div>
                       <div>  <label for="">Percentage</label>
@@ -628,52 +649,51 @@
                       <input type="text">
                        </div>
                    </div> -->
-                      </div>
-                    </div>
-                  </div> 
-
-
-                </div>
-
-                <div class="col-12 text-center mt-2">
-                  <button type="button" class="addVenderSubmitBtn openbtnpop">
-                    Pay Now
-                  </button>
                 </div>
               </div>
             </div>
+
+
           </div>
-        </form>
+
+          <div class="col-12 text-center mt-2">
+            <button type="button" class="addVenderSubmitBtn openbtnpop">
+              Pay Now
+            </button>
+          </div>
       </div>
     </div>
+  </div>
+  </form>
+  </div>
+  </div>
   </div>
   <div class="popmodel">
     <div class="popmodelopen">
       <div class="openmodel">
-        <div class="closebtnicon"><i class="fa fa-close closeicon"
-            style="font-size:21px; cursor: pointer;"></i></div>
-      
+        <div class="closebtnicon"><i class="fa fa-close closeicon" style="font-size:21px; cursor: pointer;"></i></div>
+
         <div class="row justify-content-center mt-3">
           <div class="col-md-12 mt-3">
             <label for="" class="noLabel" style="font-size: 15px;"> Payment Mode</label>
             <div class="djdecoration">
-              <div> <input class="form-check-input  coupon_question" type="radio" id=""
-                  name="coupon_question1" value="1" />
+              <div> <input class="form-check-input  coupon_question" type="radio" id="" name="coupon_question1"
+                  value="1" />
                 <label class="form-check-label" for="">
                   Card
                 </label>
                 <input type="text" class="decoration" style="display: none;" placeholder="Amount">
 
               </div>
-              <div> <input class="form-check-input coupon_question1" type="radio" id=""
-                  name="coupon_question1" value="2" />
+              <div> <input class="form-check-input coupon_question1" type="radio" id="" name="coupon_question1"
+                  value="2" />
                 <label class="form-check-label" for="">
                   Cash
                 </label>
 
               </div>
-              <div> <input class="form-check-input coupon_question1" type="radio" id=""
-                  name="coupon_question1" value="2" />
+              <div> <input class="form-check-input coupon_question1" type="radio" id="" name="coupon_question1"
+                  value="2" />
                 <label class="form-check-label" for="">
                   Upi
                 </label>
@@ -709,8 +729,8 @@
       '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
     );
   </script>
-<script>
-      $(".openbtnpop").click(function () {
+  <script>
+    $(".openbtnpop").click(function () {
       $(".popmodel").show()
     })
     $(".closeicon").click(function () {
@@ -722,13 +742,13 @@
       else
         $(".taxtgst").show();
     }
-   function valueChangedsd1() {
+    function valueChangedsd1() {
       if ($('.coupon_question4').is(":checked"))
-      $(".selectbox").prop("disabled", true);
+        $(".selectbox").prop("disabled", true);
       else
-      $(".selectbox").prop("disabled", false); 
+        $(".selectbox").prop("disabled", false);
     }
-</script>
+  </script>
 </body>
 
 </html>
