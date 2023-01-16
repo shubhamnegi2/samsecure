@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory</title>
+
+    <style>
+        body {
+            counter-reset: Serial;
+        }
+
+        tr td:first-child:before {
+            counter-increment: Serial;
+            content: counter(Serial);
+        }
+
+        .itemNameWrapper ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .itemNameWrapper ul li {
+            max-width: 150px;
+            overflow: hidden;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        .itemNameWrapper ul li input {
+            cursor: pointer;
+        }
+
+        .itemNameWrapper ul li button {
+            min-width: 50px;
+            margin: 5px 10px;
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0;
+            background-color: #083e5a;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 8px;
+        }
+
+        .itemNameWrapper .form-check {
+            margin-bottom: -5px;
+        }
+
+        .itemNameWrapper {
+            box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+            padding: 1px 15px;
+            border-radius: 5px;
+            border: 1px solid #fc8019;
+            background-color: #eee;
+        }
+
+        .itemNameWrapper h3 {
+            /* border-bottom: 2px solid #fc8e32; */
+            color: #7a7797;
+            font-weight: bold;
+            font-size: 14px;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            display: inline-block;
+        }
+
+        .allBtnsWrapper h3 {
+            /* text-align: center; */
+            /* border-bottom: 2px solid #fc8e32; */
+            color: #7a7797;
+            font-weight: bold;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            /* margin-top: 1rem; */
+            font-size: 14px;
+            text-align: right;
+            padding-right: 15px;
+        }
+
+        .totalCatgry,
+        .totalIngredients {
+            font-weight: bold;
+            color: #083e5a;
+        }
+
+        .ProductDetailsWrapper .eventDateTime {
+            color: #3abb69;
+        }
+
+        .ProductDetailsWrapper .eventDateTime span {
+            font-weight: bold;
+            color: #7a7797;
+        }
+
+        .ingredientsActionBtn button {
+            min-width: 50px;
+            margin: 2px 10px;
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0;
+            background-color: #083e5a;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 8px;
+            /* margin-bottom: 15px; */
+        }
+
+        .itemNameWrapper hr {
+            margin: 0px;
+        }
+
+        .allVenderBtnsWrapper h3 {
+            color: #7a7797;
+            font-weight: bold;
+            font-size: 16px;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            display: inline-block;
+        }
+
+        .breadcrumbs button.activeBreadcurmbtn {
+            background-color: #083e5a;
+            border-color: #083e5a;
+            /* border-radius: 5px; */
+        }
+
+        .mainColor {
+            color: #fc8019;
+        }
+
+        .allBtnsWrapper .CategoryActionBtn button {
+            background-color: #fc8019;
+        }
+
+        .itemNameWrapper .ingredientsActionBtn button {
+            background-color: #fc8019;
+        }
+
+        .itemNameWrapper .ingredientsActionBtn button:last-child {
+            margin-right: 0px;
+        }
+
+        .allVenderBtnsWrapper ul li {
+            margin: 0px 5px;
+            font-size: 12px;
+        }
+
+        .activeFixedIng {
+            background-color: #fe9037 !important;
+        }
+
+        .dateWrapper {
+            font-size: 12px;
+        }
+
+        #dateWise {
+            border: 0;
+            border-radius: 4px;
+            padding-left: 15px;
+            color: #7a7797;
+            height: 16px;
+            background-color: #eee;
+        }
+
+        .dateWrapper button {
+            min-width: 50px;
+            margin: 0px 10px;
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0;
+            background-color: #083e5a;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 8px;
+        }
+
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+        * {
+            font-family: "Poppins", sans-serif;
+        }
+
+        .breadcrumbs {
+            position: relative;
+            background-color: #ef7d0b;
+            padding: 5px 0px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .breadcrumbs button {
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0px;
+            background-color: #fe9037;
+            color: #fff;
+            padding: 2px 30px;
+            font-weight: bold;
+            border: 1px solid #ffcd8f;
+            margin-right: 5px;
+            font-size: 14px;
+        }
+
+        .breadcrumbs ul {
+            margin-bottom: 0rem;
+        }
+
+        .breadcrumbs ul li {
+            color: #eee;
+            font-weight: bold;
+            margin: 10px 1px;
+        }
+
+        .breadcrumbs ul li a {
+            color: inherit;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .breadcrumbs ul li i {
+            font-size: 12px;
+        }
+
+        .breadcrumbs ul li .ActiveBreadcrumb {
+            color: #fff;
+        }
+
+        main {
+            background-color: transparent;
+        }
+
+        main .CategoryActionBtn button {
+            min-width: 80px;
+            margin: 10px;
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0;
+            background-color: #083e5a;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 8px;
+        }
+
+        main .CategoryActionBtn button:last-child {
+            margin-right: 0px;
+        }
+
+        main .categoryheading {
+            display: inline-block;
+            color: #083e5a;
+            font-weight: bold;
+            padding-bottom: 5px;
+            font-size: 20px;
+            color: #7a7797;
+            font-weight: bold;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            /* margin-top: 1rem; */
+            font-size: 14px;
+            text-align: right;
+            padding-right: 15px;
+        }
+
+        main .categoryheading i {
+            font-size: 12px;
+        }
+
+        .allBtnsWrapper .allBtns,
+        .allVenderBtnsWrapper .allBtns {
+            background-color: #fff;
+            border: 1px solid #fc8019;
+            box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+            border-radius: 5px;
+            padding: 15px;
+        }
+
+        .allBtnsWrapper .allBtns button,
+        .allVenderBtnsWrapper .allBtns button {
+            min-width: 50px;
+            margin: 2px 10px;
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0;
+            background-color: #083e5a;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 8px;
+        }
+
+        .allBtnsWrapper .allBtns button:last-child,
+        .allVenderBtnsWrapper .allBtns button:last-child {
+            margin-right: 0px;
+        }
+
+        .allBtnsWrapper .allBtns .activeBtn,
+        .allVenderBtnsWrapper .allBtns .activeBtn {
+            background-color: #fe9037;
+        }
+
+        .allBtnsWrapper .allBtns hr,
+        .allVenderBtnsWrapper .allBtns hr {
+            margin: 0px;
+        }
+
+        .ProductDetailsWrapper {
+            background-color: #fff;
+            box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+            border-radius: 5px;
+            padding: 0px 10px;
+            overflow: hidden;
+            border: 1px solid #fc8019;
+        }
+
+        .ProductDetailsWrapper .details {
+            transition: all 0.5s ease;
+            position: relative;
+            top: 0px;
+        }
+
+        .ProductDetailsWrapper .details .title {
+            text-align: center;
+        }
+
+        .ProductDetailsWrapper .details .title h3 {
+            display: inline-block;
+            border-bottom: 2px solid #fc8e32;
+            color: #083e5a;
+            font-weight: bold;
+            padding-bottom: 1px;
+            font-size: 18px;
+        }
+
+        .ProductDetailsWrapper table {
+            width: 100%;
+            border-radius: 4px;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .ProductDetailsWrapper table tr:nth-child(even) {
+            background-color: #fff2e7;
+        }
+
+        .ProductDetailsWrapper table tr:nth-child(even) input,
+        .ProductDetailsWrapper table tr:nth-child(even) select,
+        .ProductDetailsWrapper table tr:nth-child(even) td {
+            color: #000;
+        }
+
+        .ProductDetailsWrapper table tr:nth-child(even) input::-moz-placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) select::-moz-placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) td::-moz-placeholder {
+            color: #000;
+        }
+
+        .ProductDetailsWrapper table tr:nth-child(even) input:-ms-input-placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) select:-ms-input-placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) td:-ms-input-placeholder {
+            color: #000;
+        }
+
+        .ProductDetailsWrapper table tr:nth-child(even) input::placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) select::placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) td::placeholder {
+            color: #000;
+        }
+
+        .ProductDetailsWrapper table tr:nth-child(even) select option {
+            background-color: rgba(58, 187, 105, 0.3411764706);
+        }
+
+        .ProductDetailsWrapper table tr {
+            height: 30px;
+        }
+
+        .ProductDetailsWrapper table tr:last-child {
+            border-bottom: 2px solid #ddcece;
+        }
+
+        .ProductDetailsWrapper table,
+        .ProductDetailsWrapper th,
+        .ProductDetailsWrapper td {
+            border-collapse: collapse;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .ProductDetailsWrapper thead {
+            background-color: #fc8e32;
+            color: #fff;
+        }
+
+        .ProductDetailsWrapper thead tr,
+        .ProductDetailsWrapper thead th {
+            border: 1px solid transparent #000;
+        }
+
+        .ProductDetailsWrapper tbody tr td:first-child {
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+
+        .ProductDetailsWrapper tbody tr td i {
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .ProductDetailsWrapper tbody tr input,
+        .ProductDetailsWrapper tbody tr select {
+            width: 100%;
+            height: 30px;
+            border: 0;
+            text-align: center;
+            background-color: transparent;
+            color: #7a7797;
+        }
+
+        .ProductDetailsWrapper .venderDetailsTable {
+            position: relative;
+            left: 200%;
+            top: 0px;
+            display: none;
+        }
+
+        .ProductDetailsWrapper .venderDetailsTable table {
+            min-width: 100%;
+        }
+
+        #addVenderWrapper {
+            display: none;
+            background-color: #fff;
+            box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+            border-radius: 5px;
+            padding: 30px 0px;
+        }
+
+        #addVenderWrapper .addVenderTitle {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        #addVenderWrapper .addVenderTitle h2 {
+            display: inline-block;
+            border-bottom: 2px solid #3abb69;
+            color: #7a7797;
+            font-weight: bold;
+            padding-bottom: 5px;
+            font-size: 20px;
+        }
+
+        #addVenderWrapper .addVenderForm .formGroup {
+            margin-bottom: 20px;
+        }
+
+        #addVenderWrapper .addVenderForm .formGroup label {
+            color: #7a7797;
+            font-size: 14px;
+            font-weight: 500;
+            padding-left: 5px;
+        }
+
+        #addVenderWrapper .addVenderForm .formGroup input {
+            border: 2px solid #eee;
+            width: 100%;
+            border-radius: 4px;
+            padding-left: 15px;
+        }
+
+        #addVenderWrapper .addVenderForm .addVenderSubmitBtn {
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0px;
+            background-color: #fc8e32;
+            color: #fff;
+            padding: 2px 30px;
+            font-weight: bold;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .viewpurchase button {
+            border: 0;
+            padding: 2px 12px;
+            border-radius: 5px;
+            background-color: #083e5a;
+            color: #fff;
+        }
+
+        .table1Btns button,
+        .table2Btns button {
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0px;
+            background-color: #fc8e32;
+            color: #fff;
+            padding: 3px 50px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .wastagebtns button {
+            border: 0;
+            padding: 3px 14px;
+            background-color: #083e5a;
+            color: #fff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="breadcrumbs">
+        <ul class="list-unstyled d-flex align-items-center">
+            <li><a href="">Invitatory</a></li>
+            <li><i class="fa-solid fa-angles-right"></i></li>
+            <li><a href="" class="ActiveBreadcrumb ">Fixed Stock</a></li>
+
+        </ul>
+        <!-- <div>
+        <button class="btn btn-primary activeBreadcurmbtn">
+          Add Row Material
+        </button>
+        <button class="btn btn-primary">Add Fixed Stock</button>
+      
+      </div> -->
+    </div>
+    <main>
+        <div class="container-fluid my-1">
+            <div class="dateWrapper d-flex justify-content-between">
+                <div>
+                    Date : <input type="text" id="dateWise" placeholder="03/12/2012" />
+                </div>
+                <button class="addVender">Add vender</button>
+            </div>
+        </div>
+        <div class="allBtnsWrapper pb-3 mt-0">
+            <div class="container-fluid">
+                <div class="allBtns pt-0 pb-1">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h3 class="categoryheading">
+                            Fixed Stock List
+                            <span class="px-2 mainColor">|</span>
+                            <span>Total : <span class="totalCatgry">22</span></span>
+                        </h3>
+                        <div class="CategoryActionBtn text-right">
+                            <button class="btn btn-primary btn-sm">Add Category</button>
+                            <button class="btn btn-primary btn-sm">Edit Category</button>
+                            <button class="btn btn-primary btn-sm">Delete Category</button>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="mt-1"></div>
+                    <button class="activeBtn">Dairy Products</button>
+                    <button>Drinkable</button>
+                    <button>Fast Food</button>
+                    <button>My Fav</button>
+                    <button>Mostly Used</button>
+                    <button>Top</button>
+                    <button>Commonly Used</button>
+                    <button>Less Used</button>
+                    <button>Chinese</button>
+                    <button>Italian</button>
+                    <button>Thai</button>
+                    <button>Continental</button>
+                    <button>Indian</button>
+                    <button>South Indian</button>
+                    <!-- <button>North Indian</button> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid mb-3">
+            <div class="itemNameWrapper pt-0">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h3>
+                        Product List
+                        <span class="px-2 mainColor">|</span>
+                        <span>
+                            Total : <span class="totalIngredients">52</span>
+                        </span>
+                    </h3>
+                    <div class="ingredientsActionBtn text-right">
+                        <button class="btn btn-primary btn-sm">Add Product</button>
+                        <button class="btn btn-primary btn-sm">Edit Product</button>
+                        <button class="btn btn-primary btn-sm">Delete Product</button>
+                    </div>
+                </div>
+                <hr />
+                <div class="mt-1"></div>
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <button class="activeFixedIng">
+                            <span>Coca cola</span><b> + </b>
+                        </button>
+                    </li>
+                    <li>
+                        <button><span> Milk</span><b> + </b></button>
+                    </li>
+                    <li>
+                        <button><span> buttermilk</span><b> + </b></button>
+                    </li>
+                    <li>
+                        <button><span> Lassie</span><b> + </b></button>
+                    </li>
+                    <li>
+                        <button><span> Lassie</span><b> + </b></button>
+                    </li>
+                    <li>
+                        <button><span> Abc</span><b> + </b></button>
+                    </li>
+                    <li>
+                        <button><span> Coca cola</span><b> + </b></button>
+                    </li>
+                    <li>
+                        <button><span> Milk</span><b> + </b></button>
+                    </li>
+                    <li>
+                        <button><span> buttermilk</span><b> + </b></button>
+                    </li>
+                    <li>
+                        <button><span> Lassie</span><b> + </b></button>
+                    </li>
+                    <li>
+                        <button><span> Abc</span><b> + </b></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="container-fluid">
+            <div class="ProductDetailsWrapper">
+                <div class="details">
+                    <div class="col-12 my-1">
+                        <div class="title">
+                            <h3>Dairy Products :</h3>
+                        </div>
+                    </div>
+                    <!-- <div class="title mb-3">
+              <h3>Dairy Products</h3>
+            </div> -->
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>S. No.</th>
+                                <th>Product type</th>
+
+                                <th>Quantity</th>
+                                <th>Unit/type</th>
+                                <th>Price/unit</th>
+                                 <th>Total</th>
+                                <th>Date of Purchase</th>
+                                <td>Wastage</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>Milk</td>
+                                <td>3</td>
+                                <td>1kg</td>
+                                <td>₹ 20</td>
+                                <td>1</td>
+
+
+                                <td>12/01/2024</td>
+                                <td class="wastagebtns"><button>Wastage</button></td>
+
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Milk</td>
+                                <td>3</td>
+                                <td>1kg</td>
+                                <td>₹ 20</td>
+                                <td>1</td>
+
+
+                                <td>12/01/2024</td>
+                                <td class="wastagebtns"><button>Wastage</button></td>
+
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Milk</td>
+                                <td>3</td>
+                                <td>1kg</td>
+                                <td>₹ 20</td>
+                                <td>1</td>
+
+
+                                <td>12/01/2024</td>
+                                <td class="wastagebtns"><button>Wastage</button></td>
+
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Milk</td>
+                                <td>3</td>
+                                <td>1kg</td>
+                                <td>₹ 20</td>
+                                <td>1</td>
+
+
+                                <td>12/01/2024</td>
+                                <td class="wastagebtns"><button>Wastage</button></td>
+
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Milk</td>
+                                <td>3</td>
+                                <td>1kg</td>
+                                <td>₹ 20</td>
+                                <td>1</td>
+
+
+                                <td>12/01/2024</td>
+                                <td class="wastagebtns"><button>Wastage</button></td>
+
+                            </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <!-- <div class="table1Btns text-right my-1 mx-3">
+            
+              <button class="btn btn-primary btn-sm ">
+                Submit
+              </button>
+            </div> -->
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $("head").append(
+            '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
+        );
+        $("head").append(
+            ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
+/>'
+        );
+        $("head").append(
+            '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
+        );
+    </script>
+    <script>
+        $(".addVender").click(function () {
+            $("#addVenderWrapper").show();
+            let top = $("#addVenderWrapper").position().top;
+            $("html, body").animate({ scrollTop: top });
+        });
+        $(".breadcrumbs button").click(function () {
+            $(".breadcrumbs button").removeClass("activeBreadcurmbtn");
+            $(this).addClass("activeBreadcurmbtn");
+        });
+
+        $(".allBtns button").click(function () {
+            $(".allBtns button").removeClass("activeBtn");
+            $(this).addClass("activeBtn");
+            $(".ProductDetailsWrapper .details .title h3").text($(this).text());
+        });
+
+
+    </script>
+</body>
+
+</html>
+<!-- 
+  <tr> <td class="name">Milk Powder</td><td> <input type="text" class="variation" placeholder="variations" name="Variation"/> </td><td> <input type="text" class="quantity" placeholder="Quantity" name="quantity"/> </td><td> <input type="text" class="price/Qty" placeholder="Price/Qty" name="price/Qty"/> </td><td> <input type="text" class="sellingPrice/Qty" placeholder="sellingPrice/Qty" name="Selling Price/Qty"/> </td><td> <input type="text" name="totalPayment" placeholder="Total Payment"> </td><td> <input type="text" name="paidPayment" placeholder="Paid Payment"> </td><td> <input type="text" name="remainingPayment" placeholder="Remaining Payment"> </td></tr>
+ -->
