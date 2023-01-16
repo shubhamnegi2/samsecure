@@ -76,15 +76,15 @@
         }
 
         .addvender1 {
-            position: absolute;
-            right: 14%;
-            top: 50%;
+            /* position: absolute; */
+            /* right: 14%; */
+            /* top: 50%; */
             transform: translate(0%, -50%);
             text-transform: capitalize;
             border-radius: 3px;
             border: 0px;
-            background-color: #fe9037;
-            border: 1px solid #ffcd8f;
+            background-color: #083e5a;
+            /* border: 1px solid #ffcd8f; */
             color: #fff;
             padding: 2px 30px;
             font-weight: bold;
@@ -273,7 +273,7 @@
 
         .ProductDetailsWrapper thead tr,
         .ProductDetailsWrapper thead th {
-            /* border: 1px solid #000; */
+            border:transparent;
         }
 
         .ProductDetailsWrapper tbody tr td:first-child {
@@ -506,7 +506,7 @@
             padding: 7px;
             border-radius: 5px;
             font-size: 12px;
-            border: 3px solid #eee;
+            border: 3px solid #083e5a;
 
         }
 
@@ -573,6 +573,7 @@
         .abcbtn{
             cursor: pointer;
         }
+<<<<<<< HEAD:restroEmploeey.html
         .allBtns1{
             border: 1px solid #fc8019;
         }
@@ -583,23 +584,100 @@
             border: 1px solid #fc8019;   
         }
       
+=======
+        .dateCalender input{
+            /* margin-left: 10px; */
+            /* text-align: center; */
+            font-size: 14px;
+            border: 0;
+            border-radius: 5px;
+            padding-left: 15px;
+            color: #083e5a;
+        }
+        .dateCalender label{
+            margin-right: 15px;
+            margin-left: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #3abb69;
+        }
+        #categorypop{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        #createCategory{
+            /* border: none; */
+            /* color: #3abb69; */
+            padding: 5px 15px;
+            font-size: 13px;
+            border-radius: 5px;
+        }
+        .thisMonth{
+            font-size: 10px;
+            font-weight: none;
+            text-align: center;
+        }
+        .profilepop{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .ProfileDetail{
+            cursor: pointer;
+        }
+        .ProfileDetailpop{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .designation{
+            font-size: 14px;
+        }
+        .activeDeactive{
+            font-size: 14px;
+        }
+        .ProfileName{
+            font-size: 16px;
+        }
+>>>>>>> 5e8e5472c0c4d0668fb8b8a8d887852590d2ff0e:restroEmployee.html
     </style>
 </head>
 
 <body>
 
 
+<<<<<<< HEAD:restroEmploeey.html
     <div class="breadcrumb" style="background-color: #ef7d0b;padding: 5px;font-size: 13px;">
 <ul class="list-unstyled d-flex align-items-center">
+=======
+    <div class="breadcrumb" style="background-color: #ef7d0b;
+    padding: 5px;
+    font-size: 13px;">
+
+
+        <ul class="list-unstyled d-flex align-items-center">
+>>>>>>> 5e8e5472c0c4d0668fb8b8a8d887852590d2ff0e:restroEmployee.html
             <li><a href="">Dashboard</a></li>
             <li><i class="fa-solid fa-angles-right"></i></li>
             <li><a href="" class="ActiveBreadcrumb">Employee Dashboard</a></li>
         </ul>
 
         <!-- <h4>Total Employee-20</h4> -->
-        <button class="addVender">Create Category</button>
-        <button class="addvender1 add-embtn">Add Employee </button>
-
+        <button class="addVender" id="createCategory">Create Category</button>
+      
 
 
     </div>
@@ -608,12 +686,16 @@
 
     <div class="allBtnsWrapper pt-3 pb-3" style="background-color: #eee;    ">
         <div class="container-fluid">
-            <div class="allBtns1 pt-3 pb-3">
+            <!-- <div class="allBtns1 pt-3 pb-3">
                 <button class="thisMonthEventBtn">
                     Attendance
                 </button>
                 <button class="allEventBtn">Salary</button>
-                <button class="prevEventBtn">leave</button>
+                <button class="prevEventBtn">leave</button> 
+            </div> -->
+            <div class="dateCalender mt-2">
+                <label for="dateWise" class="title">View By</label>
+                <input type="text" id="dateWise"  placeholder="13/01/2023">
             </div>
         </div>
     </div>
@@ -626,11 +708,20 @@
                 <div class="allBtns pt-3 pb-3" style="display: flex;
                 align-items: center; justify-content: center;">
 
-                    <div class="checf divchangbackground">
-                        <div class="chefbuuu ">
+                        <div class="checf divchangbackground">
+                            <div class="chefbuuu">
+                                <button>All</button>
+
+                            </div>
+                            <div class="number">
+                                <p>10</p>
+                            </div>
+                        </div>
+                        <div class="checf ">
+                            <div class="chefbuuu ">
                             <button>chef</button>
 
-                        </div>
+                            </div>
                         <div class="number">
                             <p>2</p>
                         </div>
@@ -665,15 +756,6 @@
                     </div>
 
 
-                    <div class="checf ">
-                        <div class="chefbuuu">
-                            <button>All</button>
-
-                        </div>
-                        <div class="number">
-                            <p>10</p>
-                        </div>
-                    </div>
 
 
 
@@ -686,14 +768,19 @@
                 <div class="details">
                     <div class="title">
                         <h3 style="padding-bottom: 10px;">Employee Detail</h3>
-
                     </div>
+                   
 
                     <div class="col-12 mb-3">
                         <div class="d-flex justify-content-between eventDateTime">
                             <div class="monthName">Total : <span>8</span></div>
                             <div class="totalBookings">Present : <span>2</span></div>
+                            
                         </div>
+                    </div>
+                    <div class="mt-5 text-right">
+                        <button class="addvender1 add-embtn">Add Employee </button>
+
                     </div>
                     <table>
                         <thead>
@@ -702,15 +789,19 @@
                                 <th>Name</th>
                                 <th>Phone No</th>
                                 <th>City</th>
-                                <th>Working time</th>
+                                <th>Working From</th>
                                 <th>Salary</th>
-                                <th>Advance</th>
-                                <th>Pending</th>
-                                <th>Leave</th>
+                                <th>Advance<br><span class="thisMonth">this Month</span></th>
+                                <th>Pending<br><span class="thisMonth">this Month</span></th>
+                                <th>Leave<br><span class="thisMonth">this Month</span></th>
                                 <th>Present</th>
                                 <th>Status</th>
-                                <th>Week Off</th>
-                                <th>Shift timing</th>
+                                <th>Week Off<br><span class="thisMonth">Day</span></th>
+                                <th>Shift timing<br><span>Start Time</span></th>
+                                <th>Shift timing<br><span>Start Time</span></th>
+                                <th>view details</th>
+
+                                
 
                                 <!-- <th>Save</th> -->
                             </tr>
@@ -718,7 +809,7 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td class="abcbtn">Abc </td>
+                                <td class="abcbtn" >Abc </td>
                                 <td>999999998</td>
                                 <td>Saharanpur</td>
                                 <td>2 Month</td>
@@ -730,7 +821,11 @@
                                 <td>A</td>
                                 <td>Activate</td>
                                 <td>20</td>
-                                <td>06:20</td>
+                                <td>06:00</td>
+                                <td>06:00</td>
+                                <td class="ProfileDetail">Details</td>
+
+
                             </tr>
 
 
@@ -749,6 +844,10 @@
                                 <td>Activate</td>
                                 <td>20</td>
                                 <td>06:20</td>
+                                <td>06:00</td>
+                                <td class="ProfileDetail">Details</td>
+
+
                             </tr>
                             <tr>
                                 <td>3</td>
@@ -765,6 +864,10 @@
                                 <td>Activate</td>
                                 <td>20</td>
                                 <td>06:20</td>
+                                <td>06:00</td>
+                                <td class="ProfileDetail" >Details</td>
+
+
                             </tr>
 
                             <tr>
@@ -782,6 +885,10 @@
                                 <td>Activate</td>
                                 <td>20</td>
                                 <td>06:20</td>
+                                <td>06:00</td>
+                                <td class="ProfileDetail">Details</td>
+
+
                             </tr>
                             <tr>
                                 <td>5</td>
@@ -798,6 +905,10 @@
                                 <td>Activate</td>
                                 <td>20</td>
                                 <td>06:20</td>
+                                <td>06:00</td>
+                                <td class="ProfileDetail">Details</td>
+
+
                             </tr>
 
                         </tbody>
@@ -814,7 +925,7 @@
                             <div class="row justify-content-between text-left">
                                 <div class="col-sm-5 text-center" style="padding-bottom: 10px; 
                                 font-size: 21px;">
-                                    <h2 class="employemformh2">Employee Form</h2>
+                                    <h2 class="employemformh2">Add Employee</h2>
                                 </div>
                             </div>
 
@@ -873,12 +984,12 @@
                                 <div class="row justify-content-between text-left">
                                     <div class="form-group col-sm-3 flex-column d-flex forminput"> <label
                                             class="form-control-label px-3">Upload Image<span class="text-danger">
-                                                *</span></label> <input style="" type="file" id="fname" name="fname"
+                                                *</span></label> <input type="file" id="fname" name="fname"
                                             placeholder="Enter your Upload Image" onblur="validate(1)">
                                     </div>
                                     <div class="form-group col-sm-3 flex-column d-flex forminput"> <label
                                             class="form-control-label px-3">Upload Id<span class="text-danger">
-                                                *</span></label> <input style="" type="file" id="lname" name="lname"
+                                                *</span></label> <input  type="file" id="lname" name="lname"
                                             placeholder="Enter your Upload Id" onblur="validate(2)"> </div>
                                     <div class=" col-sm-3 form-radio" style="font-size: 12px; color: #ef7d0b;">
                                         <label for="gender">Gender</label>
@@ -893,8 +1004,8 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group text-center >          
-                                                                <div class=" col-sm-offset-2 col-sm-12">
+                                <div class="form-group text-center">          
+                                    <div class=" col-sm-offset-2 col-sm-12">
                                     <button type="submit" class=" submitbtn1">Submit</button>
                                 </div>
                         </div>
@@ -904,6 +1015,9 @@
                     </form>
                 </div>
             </div>
+
+
+
         </div>
         </div>
         <div class="openpop">
@@ -943,6 +1057,7 @@
 
 
                             </div>
+
                             <div class="empoey-salarey">
                                 <div style="display: flex; gap: 4px;">
                                     <p style="color: #083e5a;">Phone No:</p>
@@ -980,10 +1095,220 @@
                 </div>
             </div>
         </div>
+
+        <div id="categorypop">
+            <div class="form-wraper">
+                <div class="form-container">
+                    <div class="closeform"><button>&times;</button></div>
+                    <div class="container">
+                            <div class="row justify-content-between text-left">
+                                <div class="col-sm-5 text-center" style="padding-bottom: 10px; 
+                                font-size: 21px;">
+                                    <h2 class="employemformh2">Create Category</h2>
+                                </div>       
+                            </div>
+                            <form class="form-horizontal">
+                                <div class="row justify-content-between text-left">
+                                    <div class="form-group col-sm-3 flex-column d-flex forminput">
+                                        <label for="name">Name</label>
+                                        <input type="text" name="name" id="name">
+                                    </div>
+                                </div>
+
+                                <div class="form-group text-center">          
+                                    <div class=" col-sm-offset-2 col-sm-12">
+                                    <button type="submit" class=" submitbtn1">Submit</button>
+                                </div>
+                            </form>
+
+
+                </form>
+            </div>
         </div>
+        </div>
+
+
         </div>
     </main>
+    <div class="ProfileDetailpop">
+        <div class="form-wraper">
+            <div class="form-container">
+                <div class="closeform"><button>&times;</button></div>
+                <div class="container ">
+                    <div class="row justify-content-between text-left">
+                        <div class="col-sm-5 text-center" style="padding-bottom: 10px; 
+                        font-size: 21px;">
+                            <h2 class="employemformh2">Employee Profile</h2>
+                        </div>
+                    </div>
+                       
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class=""><h3>Profile</h3></div>
+                                    <div class=" form-group mt-4">
+                                        <div class="">
+                                          <img src="https://www.nicepng.com/png/full/933-9332131_profile-picture-default-png.png" alt="" width="40px" height="40px">
+                                        </div>
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>:</td>
+                                                    <td>Preeti Kurmi</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Status</td>
+                                                    <td>:</td>
+                                                    <td>Active</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Designation</td>
+                                                    <td>:</td>
+                                                    <td>Manager</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DOJ</td>
+                                                    <td>:</td>
+                                                    <td><input type="date"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Salary</td>
+                                                    <td>:</td>
+                                                    <td>1111111</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="text-center"><h3>Details</h3></div>
+                                    <div class="mt-4">
+                                        <form action="">
+                                            <div class="row">
+                                            <div class="form-group col-md-4">
+                                                <label for="name">Name :</label>
+                                                <input type="text" id="name">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="gnder">Gender :</label>
+                                                <label for="female">Female</label>
+                                                <input type="radio" name="gender" id="female">
+                                                <label for="male">male</label>
+                                                <input type="radio" name="gender" id="male">
+                                            </div>
+                                           
+                                            <div class="form-group col-md-4">
+                                                <label for="phone">Phone :</label>
+                                                <input type="text" name="phone" id="phone">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="email">email :</label>
+                                                <input type="email" name="email" id="email">
+                                            </div>
+                                            <div class="form-group col-md-4 ">
+                                                <label for="address">Address:</label>
+                                                <input type="text" name="address" id="address"></input>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="state">State :</label>
+                                                <select name="state" id="state">
+                                                    <option value="Select State">Select State</option>
+                                                    <option value="uttarakhand">uttarakhand</option>
+                                                    <option value="Uttarpradesh">Uttarpradesh</option>
+                                                    <option value="Haryana">Haryana</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="city">City :</label>
+                                                <select name="city" id="city">
+                                                    <option value="Select city" >Select city</option>
+                                                    <option value="dehradun">dehradun</option>
+                                                    <option value="Vikasnagar">Vikasnagar</option>
+                                                    <option value="chandigarh">chandigarh</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="dateWise">Date of birth :</label>
+                                                <input type="date" name="dateWise" id="dateWise">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="weekoff">Week Off</label>
+                                                <input type="text" name="weekoff" id="weekoff">
+                                            </div>
+                                           
+                                           
+                                            </div>
 
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="container-fluid">
+                            <div class="row">
+                                <div class="text-center col-md-6">
+                                    <h3>Attendance & Salary</h3>
+                                </div>
+                                <div class="text-right col-md-6">
+                                   Working Since<input type="date" name="" >
+                                </div>
+                                <div class="col-12">
+                                    <div>
+                                        <button>2023</button>
+                                        <button>2022</button>
+                                        <button>2021</button>
+                                        <button>2020</button>
+                                        <button>2019</button>
+                                        <button>2018</button>
+                                        <button>2017</button>
+                                        <button>2016</button>
+                                        <button>2015</button>
+                                        <button>2014</button>
+                                        <button>2013</button>
+                                        <button>2012</button>
+                                        <button>2011</button>
+                                        <button>2010</button>
+                                        <button>2009</button>
+                                        <button>2008</button>
+                                        <button>2007</button>
+                                        <button>2006</button>
+                                        <button>2005</button>
+                                        <button>2004</button>
+                                        <button>2003</button>
+                                        <button>2002</button>
+                                    </div>
+                                 </div>
+                                 <div class="col-12">
+                                    <div>
+                                        <button>jan</button>
+                                        <button>feb</button>
+                                        <button>march</button>
+                                        <button>april</button>
+                                        <button>may</button>
+                                        <button>june</button>
+                                        <button>july</button>
+                                        <button>august</button>
+                                        <button>september</button>
+                                        <button>october</button>
+                                        <button>november</button>
+                                        <button>december</button>
+                                    </div>
+                                 </div>
+                                 <div class="col-12">
+                                    <h5>view of</h5>
+                                    <input type="text" name="" id="">
+                                 </div>
+                                 
+                                 
+
+
+                            </div>
+                        </div> -->
+                        
+                    
+            </div>
+           </div> 
+                
+    </div>    
+    
     <body>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
         <script>
@@ -1015,7 +1340,6 @@
 
             $(".abcbtn").click(function () {
                 $(".openpop").show()
-
             })
             $(".close").click(function () {
                 $(".openpop").hide()
@@ -1027,9 +1351,43 @@
             $(".closeform").click(function () {
                 $(".formpop").hide()
             })
-
+            $("#createCategory").click(function(){
+                $("#categorypop").show()
+            })
+            $(".closeform").click(function () {
+                $("#categorypop").hide()
+            })
+            $(".ProfileDetail").click(function () {
+                $(".ProfileDetailpop").show()
+            })
 
         </script>
+
+
+            <script>
+                $(function () {
+                $("#dateWise").datepicker();
+                let formattedDate = new Date();
+                let d = formattedDate.getDate();
+                let m = formattedDate.getMonth();
+                m += 1; // JavaScript months are 0-11
+                if (d < 10) {
+                d = "0" + d;
+                }
+                if (m < 10) {
+                m = "0" + m;
+                }
+                let y = formattedDate.getFullYear();
+                $("#dateWise").attr("placeholder", d + "/" + m + "/" + y);
+
+                $(".allBtnsWrapper .allBtns .topBtns").click(function () {
+                $(".allBtnsWrapper .allBtns .topBtns").removeClass(
+                    "activeTopBarTitleBtn"
+                );
+                $(this).addClass("activeTopBarTitleBtn");
+                });
+            });
+            </script>
     </body>
 
 </html>
