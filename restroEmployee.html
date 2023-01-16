@@ -253,10 +253,11 @@
         }
 
         .ProductDetailsWrapper table tr {
-            height: 40px;
+            height: 30px;
         }
 
         .ProductDetailsWrapper table tr:last-child {
+            height: 30px;
             border-bottom: 2px solid #ddcece;
         }
 
@@ -277,6 +278,7 @@
         .ProductDetailsWrapper thead tr,
         .ProductDetailsWrapper thead th {
             border: transparent;
+
         }
 
         .ProductDetailsWrapper tbody tr td:first-child {
@@ -566,13 +568,14 @@
         .submitbtn1 {
             background-color: #fc8e32;
             color: #fff;
-            font-size: 13px;
-            font-weight: bold;
+            font-size: 12px;
+            /* font-weight: bold; */
             border: 0;
             border-radius: 5px;
-            padding: 4px 12px;
-
+            padding: 1px 5px;
         }
+
+
 
         .abcbtn {
             cursor: pointer;
@@ -630,12 +633,23 @@
             background-color: rgba(0, 0, 0, 0.5);
         }
 
-        .ProfileDetail {
+        .ProfileDetail button {
             cursor: pointer;
+            /* transform: translate(0%, -50%);
+            text-transform: capitalize;*/
+            border-radius: 3px;
+            border: 0px;
+            background-color: #083e5a;
+            /* border: 1px solid #ffcd8f; */
+            color: #fff;
+            /* padding: 2px 30px; */
+            font-weight: bold;
+            padding: 5px 15px;
+            font-size: 13px;
         }
 
         .ProfileDetailpop {
-            display: block;
+            display: none;
             position: fixed;
             top: 0;
             overflow-y: scroll;
@@ -733,25 +747,32 @@
             background-color: #fff;
             border: 1px solid #fc8019;
             box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
-            /* text-align: center; */
             border-radius: 5px;
         }
 
         .allBtns .activeMonth {
-            /* margin-left: 0px; */
             background-color: #fe9037;
         }
 
-        .allBtns .activeYear {
+        .allBtns select {
+            color: #fff;
+            min-width: 60px;
+            margin: 6px;
+            text-transform: capitalize;
+            border: 0;
+            box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+            border-radius: 5px;
+            border: 1px solid #fc8019;
+            font-size: 10px;
+            font-weight: 500;
+            padding: 1px 10px;
+            font-family: "Montserrat", sans-serif;
             background-color: #fe9037;
         }
 
         .allBtns button {
             min-width: 60px;
             margin: 6px;
-            /* float: left; */
-            /* text-align: left; */
-            /* margin-left: 0px; */
             text-transform: capitalize;
             border-radius: 3px;
             border: 0;
@@ -859,6 +880,102 @@
         .userDetails ul li {
             font-size: 12px;
             font-weight: 500;
+        }
+
+        .EditGender {
+            display: none;
+        }
+
+        .EditWeekoff {
+            display: none;
+        }
+
+        .categoryInput input {
+            width: 180px;
+            height: 20px;
+            border: 1px solid;
+        }
+
+        .StateShow {
+            display: none;
+        }
+
+        .ShowDateoFBirth {
+            display: none;
+        }
+
+        .EditJoiningDate {
+            display: none;
+        }
+
+        .Showcity {
+            display: none;
+        }
+
+        .SaveButton {
+            display: none;
+        }
+
+        .dateListWraper {
+            font-size: 10px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .dateListWraper li {
+            height: 30px;
+            border-bottom: 1px solid #083e5a;
+            padding-top: 4px;
+            font-size: 10px;
+            cursor: pointer;
+        }
+
+        .purchasesTable th {
+            font-size: 10px;
+            width: 30px;
+        }
+
+        .details .purchasesTable {
+            width: 90%;
+            height: 100%;
+
+        }
+
+        .ProductDetailsWrapper thead {
+            background-color: #fe9037;
+            color: #fff;
+        }
+
+        tbody,
+        td,
+        tfoot,
+        th,
+        thead,
+        tr {
+
+            border-color: inherit;
+            border-style: solid;
+            border-width: 0;
+        }
+
+        .listTitle {
+            font-size: 10px;
+            text-align: center;
+            background-color: #fe9037;
+            padding: 7px 0px;
+            color: #fff;
+            margin-top: 1px;
+            margin-bottom: 0px;
+        }
+
+        /* .HideActive{
+           color: #3abb69;
+        } */
+        .HideDeactive {
+            display: none;
+        }
+        .ProductDetailsWrapper table {
+                max-width: 100%;
         }
     </style>
 
@@ -973,13 +1090,13 @@
                     </div>
 
 
-                    <div class="col-12 mb-3">
+                    <!-- <div class="col-12 mb-3">
                         <div class="d-flex justify-content-between eventDateTime">
                             <div class="monthName">Total : <span>8</span></div>
                             <div class="totalBookings">Present : <span>2</span></div>
 
                         </div>
-                    </div>
+                    </div> -->
                     <div class="mt-5 text-right">
                         <button class="addvender1 add-embtn">Add Employee </button>
 
@@ -1025,7 +1142,7 @@
                                 <td>20</td>
                                 <td>06:00</td>
                                 <td>06:00</td>
-                                <td class="ProfileDetail">Details</td>
+                                <td class="ProfileDetail "><button>Details</button> </td>
 
 
                             </tr>
@@ -1047,7 +1164,7 @@
                                 <td>20</td>
                                 <td>06:20</td>
                                 <td>06:00</td>
-                                <td class="ProfileDetail">Details</td>
+                                <td class="ProfileDetail"><button>Details</button> </td>
 
 
                             </tr>
@@ -1067,7 +1184,7 @@
                                 <td>20</td>
                                 <td>06:20</td>
                                 <td>06:00</td>
-                                <td class="ProfileDetail">Details</td>
+                                <td class="ProfileDetail"><button>Details</button> </td>
 
 
                             </tr>
@@ -1088,7 +1205,7 @@
                                 <td>20</td>
                                 <td>06:20</td>
                                 <td>06:00</td>
-                                <td class="ProfileDetail">Details</td>
+                                <td class="ProfileDetail"><button>Details</button> </td>
 
 
                             </tr>
@@ -1108,7 +1225,7 @@
                                 <td>20</td>
                                 <td>06:20</td>
                                 <td>06:00</td>
-                                <td class="ProfileDetail">Details</td>
+                                <td class="ProfileDetail"><button>Details</button> </td>
 
 
                             </tr>
@@ -1130,7 +1247,6 @@
                                     <h2 class="employemformh2">Add Employee</h2>
                                 </div>
                             </div>
-
                             <form class="form-horizontal">
 
                                 <div class="row justify-content-between text-left ">
@@ -1306,20 +1422,17 @@
                             </div>
                         </div>
                         <form class="form-horizontal">
-                            <div class="row justify-content-between text-left">
-                                <div class="form-group col-sm-3 flex-column d-flex forminput">
-                                    <label for="name">Name</label>
+                            <div class="row justify-content-between">
+                                <div class="form-group col-sm-8  forminput categoryInput ">
+                                    <label for="name">Name :</label>
                                     <input type="text" name="name" id="name">
                                 </div>
                             </div>
-
-                            <div class="form-group text-center">
-                                <div class=" col-sm-offset-2 col-sm-12">
+                            <div class="form-group text-center ">
+                                <div class=" col-sm-2 col-sm-5">
                                     <button type="submit" class=" submitbtn1">Submit</button>
                                 </div>
-                        </form>
-
-
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -1358,7 +1471,8 @@
                                             <tr>
                                                 <td><b>Status</td>
                                                 <td>:</td>
-                                                <td>Active</td>
+                                                <td class="HideActive">Active</td>
+                                                <td class="HideDeactive">Deactive </td>
                                             </tr>
                                             <!-- <tr>
                                                     <td><b>Designation</td>
@@ -1377,9 +1491,15 @@
                                                 </tr> -->
                                         </tbody>
                                     </table>
+                                    <div class="EditEmployeDetail "><button id="ShowActive" class="bg-success">Active
+                                        </button>
+                                        <button id="ShowDeactive" class="bg-danger">Deactive </button>
+                                    </div>
                                     <div class="row EditEmployeDetail">
                                         <div class="col-md-10">
-                                            <button class="">edit</button>
+                                            <div id="EditDisable">
+                                                <button>Edit</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1392,30 +1512,33 @@
 
                             <!-- <div class="text-center"><h3 class="profileHead">Details</h3></div> -->
                             <div class="mt-4">
-                                <form action="">
+                                <form action="" id="diableEnable">
 
                                     <div class="row">
                                         <div class="form-group col-md-4 formData">
                                             <label for="name">Name :</label>
                                             <input type="text" id="name" value="Preeti Kurmi" disabled>
                                         </div>
-                                        <div class="form-group col-md-4 formData">
+                                        <div class="form-group col-md-4 formData GenderHide">
                                             <label for="gnder">Gender :</label>
-                                            <!-- <label for="male">Male</label>
-                                                <input type="radio" name="gender" id="male" male>
-                                                <label for="female">Female</label>
-                                                <input type="radio" name="gender" id="female" value="female">
-                                                <label for="other">Other</label>
-                                                <input type="radio" name="gender" id="other"> -->
+
                                             <input type="text" name="gender" id="gender" value="female" disabled>
                                         </div>
-
+                                        <div class="EditGender form-group col-md-4 formData">
+                                            <label for="gnder">Gender :</label>
+                                            <label for="male">Male</label>
+                                            <input type="radio" name="gender" id="male" male>
+                                            <label for="female">Female</label>
+                                            <input type="radio" name="gender" id="female" value="female">
+                                            <label for="other">Other</label>
+                                            <input type="radio" name="gender" id="other">
+                                        </div>
                                         <div class="form-group col-md-4 formData">
                                             <label for="phone">Phone :</label>
                                             <input type="text" name="phone" id="phone" value="1234567890" disabled>
                                         </div>
                                         <div class="form-group col-md-4 formData">
-                                            <label for="email">email :</label>
+                                            <label for="email">Email :</label>
                                             <input type="email" name="email" id="email" value="preeti@gmail.com"
                                                 disabled>
                                         </div>
@@ -1424,48 +1547,79 @@
                                             <input type="text" name="address" id="address" value="chukhuwala"
                                                 disabled></input>
                                         </div>
-                                        <div class="form-group col-md-4 formData">
+                                        <div class="form-group col-md-4 formData StateHide">
                                             <label for="state">State :</label>
                                             <input type="text" name="state" id="state" value="uttarakhand" disabled>
-                                            <!-- <select name="state" id="state">
-                                                    <option value="Select State">Select Your State</option>
-                                                    <option value="uttarakhand" selected>uttarakhand</option>
-                                                    <option value="Uttarpradesh">Uttarpradesh</option>
-                                                    <option value="Haryana">Haryana</option>
-                                                </select> -->
                                         </div>
-                                        <div class="form-group col-md-4 formData">
+                                        <div class="form-group col-md-4 formData StateShow">
+                                            <label for="state">State :</label>
+                                            <select name="state" id="state">
+                                                <option value="Select State">Select Your State</option>
+                                                <option value="uttarakhand" selected>uttarakhand</option>
+                                                <option value="Uttarpradesh">Uttarpradesh</option>
+                                                <option value="Haryana">Haryana</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-4 formData Hidecity">
                                             <label for="city">City :</label>
                                             <input type="text" name="city" id="city" value="Dehradun" disabled>
-                                            <!-- <select name="city" id="city">
-                                                    <option value="Select city" >Select Your city</option>
-                                                    <option value="dehradun" selected>dehradun</option>
-                                                    <option value="Vikasnagar">Vikasnagar</option>
-                                                    <option value="chandigarh">chandigarh</option>
-                                                </select> -->
                                         </div>
-                                        <div class="form-group col-md-4 formData">
-                                            <label for="dateWise">Date of birth :</label>
+                                        <div class="form-group col-md-4 formData Showcity">
+                                            <label for="city">City :</label>
+                                            <select name="city" id="city">
+                                                <option value="Select city">Select Your city</option>
+                                                <option value="dehradun" selected>dehradun</option>
+                                                <option value="Vikasnagar">Vikasnagar</option>
+                                                <option value="chandigarh">chandigarh</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-4 formData hideDateofBirth">
+                                            <label for="dateWise">Date of Birth :</label>
                                             <input type="text" name="dateWise" id="dateWise" value="01-11-2001"
                                                 disabled>
                                         </div>
-
-
-                                        <div class="form-group col-md-4 formData">
-                                            <label for="weekoff">Week Off</label>
-                                            <input type="text" name="weekoff" id="weekoff" value="Sunday" disabled>
+                                        <div class="form-group col-md-4 formData ShowDateoFBirth">
+                                            <label for="dateWise">Date of birth :</label>
+                                            <input type="date" name="dateWise" id="dateWise" value="01-11-2001"
+                                                disabled>
                                         </div>
-                                        <div class="form-group col-md-4 formData">
-                                            <label for="dateWise">DOJ:</label>
-                                            <input type="text" name="dateWise" id="dateWise" value="21-01-20023"
+
+
+                                        <div class="form-group col-md-4 formData WeekoffHide">
+                                            <label for="weekoff">Week Off:</label>
+                                            <input type="text" name="weekoff" id="weekoff" value="Monday" disabled>
+                                        </div>
+                                        <div class="form-group col-md-4 formData EditWeekoff">
+                                            <label for="weekoff">Week off:</label>
+                                            <select name="" id="">
+                                                <option value="Sunday">Sunday</option>
+                                                <option value="Monday" selected>Monday</option>
+                                                <option value="Tuesday">Tuesday</option>
+                                                <option value="Wednesday">Wednesday</option>
+                                                <option value="Thursday">Thursday</option>
+                                                <option value="Friday">Friday</option>
+                                                <option value="Saturday">Saturday</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-4 formData JoiningDate">
+                                            <label for="dateWise">Date of Joining:</label>
+                                            <input type="text" name="dateWise" id="dateWise" value="21-01-2023"
+                                                disabled>
+                                        </div>
+                                        <div class="form-group col-md-4 formData EditJoiningDate">
+                                            <label for="dateWise">Date of Joining:</label>
+                                            <input type="date" name="dateWise" id="dateWise" value="21-01-2023"
                                                 disabled>
                                         </div>
                                         <div class="form-group col-md-4 formData">
-                                            <label for="salary">Salary</label>
+                                            <label for="salary">Salary:</label>
                                             <input type="text" name="salary" id="salary" value="111111" disabled>
                                         </div>
+                                        <div class="form-group col-md-9 formData SaveButton EditEmployeDetail">
+                                            <button type="submit">Save</button>
+                                        </div>
                                     </div>
-
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -1489,7 +1643,15 @@
                         </div>
                         <div class="col-12 mt-2">
                             <div class="allBtns">
-                                <button class="activeYear">2023</button>
+
+                                <select name="" id="" class="activeYear">
+                                    <option value="2023">2023</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2020">2020</option>
+
+                                </select>
+
                                 <button class="activeMonth">January</button>
                                 <button>February</button>
                                 <button>March</button>
@@ -1559,8 +1721,8 @@
                                 <div class="userDetails d-flex justify-content-between">
                                     <ul class="list-unstyled d-flex justify-content-between w-100 mb-0 pl-0 p-1">
                                         <li>salary paid on : <span>01/02/2023</span></li>
-                                        <li>future : <span>02:00:00</span></li>
-                                        <li>abc Date : <span>Shubham Negi</span></li>
+                                        <li><span></span></li>
+                                        <li><span></span></li>
                                         <!-- <li>: <span>9897909090</span></li>
                                         <li>Advance Payment : <span>1000</span></li>
                                         <li>Pending Payment : <span>4000</span></li> -->
@@ -1573,38 +1735,67 @@
                                 <!-- <div class="title">
                                         <h3>Order Details</h3>
                                       </div> -->
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <td>S. No.</td>
-                                            <td>Absent</td>
-                                            <td>Present</td>
-                                            <td>Salary</td>
-                                            <td>Salary Paid date</td>
 
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>2</td>
-                                            <td>25</td>
-                                            <td>111111</td>
-                                            <td>5</td>
-
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <div class="d-flex">
+                                    <aside class="leftBar">
+                                        <h3 class="listTitle">Days</h3>
+                                        <ul class="list-unstyled mb-0 pl-0 dateListWraper">
+                                            <li>01 / 01 / 2023</li>
+                                            <li>02 / 01 / 2023</li>
+                                            <li>03 / 01 / 2023</li>
+                                            <li>04 / 01 / 2023</li>
+                                            <li>05 / 01 / 2023</li>
+                                            <li>06 / 01 / 2023</li>
+                                            <li>07 / 01 / 2023</li>
+                                            <li>08 / 01 / 2023</li>
+                                            <li>09 / 01 / 2023</li>
+                                            <li>10 / 01 / 2023</li>
+                                            <li>11 / 01 / 2023</li>
+                                            <li>12 / 01 / 2023</li>
+                                            <li>13 / 01 / 2023</li>
+                                            <li>14 / 01 / 2023</li>
+                                            <li>15 / 01 / 2023</li>
+                                        </ul>
+                                    </aside>
+                                    <table class="purchasesTable">
+                                        <thead>
+                                            <tr>
+                                                <th>Present</th>
+                                                <th>Absent</th>
+                                                <th>Advance Pay</th>
+                                                <!-- <th>Save</th> -->
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>p</td>
+                                                <td>-</td>
+                                                <td>100</td>
+                                            </tr>
+                                            <tr>
+                                                <td>p</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td >-</td>
+                                                <td>A</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td >p</td>
+                                                <td>p</td>
+                                                <td>4</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
-
     </div>
 
     <body>
@@ -1614,8 +1805,7 @@
                 '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
             );
             $("head").append(
-                ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
-/>'
+                ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\/>'
             );
             $("head").append(
                 '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
@@ -1658,7 +1848,53 @@
             $(".ProfileDetail").click(function () {
                 $(".ProfileDetailpop").show()
             })
+            $(".closeform").click(function () {
+                $(".ProfileDetailpop").hide()
+            })
+            $("#EditDisable").click(function () {
+                $("#diableEnable :input").prop("disabled", false);
+                $("#diableEnable :input").css({
+                    border: '1px solid #000'
+                });
+            })
+            $("#EditDisable").click(function () {
+                $(".GenderHide").hide()
+                $(".EditGender").show()
+            })
+            $("#EditDisable").click(function () {
+                $(".WeekoffHide").hide()
+                $(".EditWeekoff").show()
+            })
+            $("#EditDisable").click(function () {
+                $(".JoiningDate").hide()
+                $(".EditJoiningDate").show()
+            })
+            $("#EditDisable").click(function () {
+                $(".StateHide").hide()
+                $(".StateShow").show()
+            })
+            $("#EditDisable").click(function () {
+                $(".hideDateofBirth").hide()
+                $(".ShowDateoFBirth").show()
+            })
+            $("#EditDisable").click(function () {
+                $(".Hidecity").hide()
+                $(".Showcity").show()
+            })
 
+            $("#EditDisable").click(function () {
+
+                $(".SaveButton").show()
+            })
+            $("#ShowActive").click(function () {
+                $(".HideDeactive").hide()
+                $(".HideActive").show()
+            })
+            $("#ShowDeactive").click(function () {
+
+                $(".HideDeactive").show()
+                $(".HideActive").hide()
+            })
         </script>
 
 
@@ -1686,6 +1922,11 @@
                 });
             });
         </script>
+
+
+
+
+
     </body>
 
 </html>
