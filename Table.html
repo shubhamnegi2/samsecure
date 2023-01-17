@@ -1,663 +1,702 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
     <title>Table</title>
-</head>
-<style>
+  </head>
+  <style>
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
     * {
-        font-family: "Poppins", sans-serif;
+      font-family: "Poppins", sans-serif;
     }
 
     .breadcrumb ul {
-        margin-bottom: 0rem;
+      margin-bottom: 0rem;
     }
 
     .breadcrumb ul li {
-        color: #fff;
-        font-weight: bold;
-        margin: 10px 1px;
+      color: #fff;
+      font-weight: bold;
+      margin: 10px 1px;
     }
 
     .breadcrumb ul li a {
-        color: inherit;
-        padding: 10px;
-        text-decoration: none;
-        font-size: 16px;
+      color: inherit;
+      padding: 10px;
+      text-decoration: none;
+      font-size: 16px;
     }
 
     .breadcrumb ul li i {
-        font-size: 12px;
+      font-size: 12px;
     }
 
     .breadcrumb ul li .ActiveBreadcrumb {
-        color: #fff;
+      color: #fff;
     }
 
     .breadcrumb {
-        background-color: #ef7d0b !important;
-        padding: 4px;
-        font-size: 16px;
+      background-color: #ef7d0b !important;
+      padding: 4px;
+      font-size: 16px;
     }
 
-
     .CategoriesDetails1 {
-        padding: 0px 2px;
-        background-color: #fff;
-        border: 1px solid #fc8019;
-        box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
-        border-radius: 5px;
+      padding: 0px 2px;
+      background-color: #fff;
+      border: 1px solid #fc8019;
+      box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+      border-radius: 5px;
     }
 
     .CategoriesDetails1 button {
-     
-        min-width: 50px;
-        margin: 2px 10px;
-        text-transform: capitalize;
-        border-radius: 3px;
-        border: 0;
-        background-color: #083e5a;
-        color: #fff;
-        font-size: 10px;
-        font-weight: 600;
-        padding: 2px 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      min-width: 50px;
+      margin: 2px 10px;
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0;
+      background-color: #083e5a;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .CategoriesDetails1 span {
-        font-size: 12px;
-        padding-right: 2px;
+      font-size: 12px;
+      padding-right: 2px;
     }
 
     .CategoriesDetails {
-        background-color: #fff;
-        border: 1px solid #fc8019;
-        box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
-        border-radius: 5px;
-        padding: 0px 15px;
+      background-color: #fff;
+      border: 1px solid #fc8019;
+      box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+      border-radius: 5px;
+      padding: 0px 15px;
     }
 
     .CategoriesDetails h3 {
-        display: inline-block;
+      display: inline-block;
 
-        color: #083e5a;
-        font-weight: bold;
-        padding-bottom: 0px;
-        margin-bottom: 0px;
-        font-size: 12px;
+      color: #083e5a;
+      font-weight: bold;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+      font-size: 12px;
     }
 
     .CategoriesDetails .CategoryActionBtn button {
-    
-        min-width: 50px;
-        margin: 2px 10px;
-        text-transform: capitalize;
-        border-radius: 3px;
-        border: 0;
-        background-color: #083e5a;
-        color: #fff;
-        font-size: 10px;
-        font-weight: 600;
-        padding: 2px 8px;
+      min-width: 50px;
+      margin: 2px 10px;
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0;
+      background-color: #083e5a;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
     }
 
     .tablecolorside {
-        gap: 10px;
-        align-items: center;
-        display: flex;
-        justify-content: center;
+      gap: 10px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
     }
 
     .tablekotitems {
-
-        align-items: center;
-        display: flex;
-        justify-content: center;
+      align-items: center;
+      display: flex;
+      justify-content: center;
     }
 
     .tablekotitems p {
-        gap: 5px;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        background-color: #eee;
-        padding: 2px 15px;
-        text-align: center;
-        align-items: center;
-        font-size: 13px;
-        border-radius: 2px;
-        font-weight: 500;
+      gap: 5px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      background-color: #eee;
+      padding: 2px 15px;
+      text-align: center;
+      align-items: center;
+      font-size: 13px;
+      border-radius: 2px;
+      font-weight: 500;
     }
 
     .changetablebackground {
-        height: 15px;
-        background: red;
-        width: 15px;
-        border-radius: 50%;
+      height: 15px;
+      background: red;
+      width: 15px;
+      border-radius: 50%;
     }
 
     .tablecoloradd {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
     }
 
     .tablecoloradd p {
-        font-size: 12px;
-        font-weight: 500;
+      font-size: 12px;
+      font-weight: 500;
     }
 
     .tablecolors {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
 
     .ProductDetailsWrapper table {
-        max-width: 100%;
-        width: 100%;
-        border-radius: 4px;
-        overflow: hidden;
-        border-radius: 5px;
-        color: #083e5a;
+      max-width: 100%;
+      width: 100%;
+      border-radius: 4px;
+      overflow: hidden;
+      border-radius: 5px;
+      color: #083e5a;
     }
 
     .ProductDetailsWrapper table tr:nth-child(even) {
-        background-color: #fff2e7;
-
+      background-color: #fff2e7;
     }
 
-
-
     .ProductDetailsWrapper table tr:nth-child(even) select option {
-        background-color: rgba(58, 187, 105, 0.3411764706);
+      background-color: rgba(58, 187, 105, 0.3411764706);
     }
 
     .ProductDetailsWrapper table tr {
-        height: 40px;
+      height: 40px;
     }
 
     .ProductDetailsWrapper table tr:last-child {
-        border-bottom: 2px solid #ddcece;
+      border-bottom: 2px solid #ddcece;
     }
 
     .ProductDetailsWrapper table,
     .ProductDetailsWrapper th,
     .ProductDetailsWrapper td {
-        /* border: 1px solid #ddcece; */
-        border-collapse: collapse;
-        font-size: 14px;
-        /* text-align: center; */
+      /* border: 1px solid #ddcece; */
+      border-collapse: collapse;
+      font-size: 14px;
+      /* text-align: center; */
     }
 
     .ProductDetailsWrapper thead {
-        background-color: #fc8e32;
-        color: #fff;
+      background-color: #fc8e32;
+      color: #fff;
+      max-height: 30px;
+      height: 100%;
     }
 
     .ProductDetailsWrapper thead tr,
     .ProductDetailsWrapper thead th {
-        /* border: 1px solid #000; */
+      /* border: 1px solid #000; */
+      
     }
 
     .ProductDetailsWrapper tbody tr td:first-child {
-        font-weight: 500;
-        text-transform: capitalize;
+      font-weight: 500;
+      text-transform: capitalize;
     }
 
     .ProductDetailsWrapper tbody tr input,
     .ProductDetailsWrapper tbody tr select {
-        width: 100%;
-        height: 37px;
-        border: 0;
-        text-align: center;
-        background-color: transparent;
-        color: #7a7797;
+      width: 100%;
+      height: 37px;
+      border: 0;
+      text-align: center;
+      background-color: transparent;
+      color: #7a7797;
     }
 
     .ProductDetailsWrapper .venderDetailsTable {
-        position: relative;
-        left: 200%;
-        top: 0px;
-        display: none;
+      position: relative;
+      left: 200%;
+      top: 0px;
+      display: none;
     }
 
-
-
     .text-right {
-        text-align: right;
+      text-align: right;
     }
 
     .text-left {
-        text-align: left;
+      text-align: left;
     }
 
     .tableleftside {
-        width: 15%;
-        padding-left: 10px;
-        color: #083e5a;
+      width: 15%;
+      padding-left: 10px;
+      color: #083e5a;
     }
 
     .tablenumber {
-        display: block;
-        align-items: center;
-        gap: 30px;
-        /* width: 70%; */
-        color: #083e5a;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        hyphens: auto;
-
+      display: block;
+      align-items: center;
+      gap: 30px;
+      /* width: 70%; */
+      color: #083e5a;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: auto;
     }
 
     body {
-        background-color: #eee;
+      background-color: #eee;
     }
 
     .tablenumber span {
-        border: 3px solid #eee;
-        padding: 0px 8px;
-        border-radius: 5px;
-        color: #083e5a;
-        margin-right: 12px;
-        display: inline-block;
-        margin-top: 5px;
-cursor: pointer;
-
+      border: 3px solid #eee;
+      padding: 0px 8px;
+      border-radius: 5px;
+      color: #083e5a;
+      margin-right: 12px;
+      display: inline-block;
+      margin-top: 5px;
+      cursor: pointer;
     }
 
     .totaltable {
-        width: 7%;
-        color: #083e5a;
+      width: 7%;
+      color: #083e5a;
     }
 
     .tablesnam {
-        width: 70%;
-        color: #083e5a;
+      width: 70%;
+      color: #083e5a;
     }
 
     .runningtabledetail {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        position: relative;
-        gap: 7px;
-        border: 2px solid #3c32322c;
-        border-radius: 6px;
-        background-color: #eee;
-        color: #083e5a;
-        font-size: 14px;
-        font-weight: 500;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      gap: 7px;
+      border: 2px solid #3c32322c;
+      border-radius: 6px;
+      background-color: #eee;
+      color: #083e5a;
+      font-size: 14px;
+      font-weight: 500;
     }
 
     .tableno {
-        position: absolute;
-        left: -5%;
-        top: -7px;
-        height: 25px;
-        width: 25px;
-        border-radius: 50%;
-        background-color: #fc8e32;
-        text-align: center;
-        font-size: 15px;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center
+      position: absolute;
+      left: -5%;
+      top: -7px;
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+      background-color: #fc8e32;
+      text-align: center;
+      font-size: 15px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .tableicon i {
-        position: absolute;
-        font-size: 24px;
-        /* top: -11%; */
-        bottom: -12%;
-        border: 1px solid;
-        /* padding: 36%; */
-        left: 34%;
-        padding: 2px 5px;
-        background-color: #fff;
-        border-radius: 4px;
-        cursor: pointer;
-        z-index: 999;
-        font-size: 15px;
-
+      position: absolute;
+      font-size: 24px;
+      /* top: -11%; */
+      bottom: -12%;
+      border: 1px solid;
+      /* padding: 36%; */
+      left: 34%;
+      padding: 2px 5px;
+      background-color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      z-index: 999;
+      font-size: 15px;
     }
 
     .groundfloortableorder {
-        border: 1px solid #ef7d0b;
-        padding: 10px 10px;
-        border-radius: 5px;
+      border: 1px solid #ef7d0b;
+      padding: 10px 10px;
+      border-radius: 5px;
     }
 
     .newProductDetailsWrapper {
-        background-color: #fff;
-        border: 1px solid #fc8019;
-        box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
-        border-radius: 5px;
-        padding: 5px;
+      background-color: #fff;
+      border: 1px solid #fc8019;
+      box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+      border-radius: 5px;
+      padding: 5px;
     }
 
     .title h3 {
-        padding-bottom: 5px;
-        text-align: center;
+      display: inline-block;
+      border-bottom: 2px solid #fc8e32;
+      color: #083e5a;
+      font-weight: bold;
+      padding-bottom: 1px;
+      font-size: 18px;
     }
-</style>
+  </style>
 
-<body>
+  <body>
     <div class="breadcrumb">
-
-
-        <ul class="list-unstyled d-flex align-items-center">
-            <li><a href="">Dashboard</a></li>
-            <li><i class="fa-solid fa-angles-right"></i></li>
-            <li><a href="" class="ActiveBreadcrumb">Table</a></li>
-        </ul>
+      <ul class="list-unstyled d-flex align-items-center">
+        <li><a href="">Dashboard</a></li>
+        <li><i class="fa-solid fa-angles-right"></i></li>
+        <li><a href="" class="ActiveBreadcrumb">Table</a></li>
+      </ul>
     </div>
     <div class="container-fluid mb-3">
-        <div class="CategoriesDetails d-flex justify-content-between align-items-center">
-            <div class="d-flex justify-content-between align-items-center">
-                <h3>Table View</h3>
-
-            </div>
-            <div class="CategoryActionBtn">
-                <button class="btn btn-primary btn-sm">Delivery</button>
-                <button class="btn btn-primary btn-sm">Pick Up</button>
-                <button class="btn btn-primary btn-sm">Add Table</button>
-            </div>
+      <div
+        class="CategoriesDetails d-flex justify-content-between align-items-center"
+      >
+        <div class="d-flex justify-content-between align-items-center">
+          <h3>Table View</h3>
         </div>
+        <div class="CategoryActionBtn">
+          <button class="btn btn-primary btn-sm">Delivery</button>
+          <button class="btn btn-primary btn-sm">Pick Up</button>
+          <button class="btn btn-primary btn-sm">Add Table</button>
+        </div>
+      </div>
     </div>
     <div class="container-fluid mb-3">
-        <div class="CategoriesDetails1 d-flex justify-content-between align-items-center">
-            <div class="d-flex justify-content-between align-items-center">
-                <button class="btn btn-primary btn-sm"> <span>+</span>Table Reservation</button>
-                <button class="btn btn-primary btn-sm"><span>+</span> Contactiess</button>
-
-            </div>
-            <div class="CategoryActionBtn2">
-                <div class="tablecolorside ">
-                    <div class="tablekotitems">
-                        <p style="margin: 0px;"> <input type="checkbox"> KOT/Items</p>
-                    </div>
-                    <div class="tablecolors">
-                        <div class="tablecoloradd ">
-                            <div class="changetablebackground" style="background-color: #eee;"></div>
-                            <p style="margin: 0px;">Blank Table</p>
-                        </div>
-                        <div class="tablecoloradd ">
-                            <div class="changetablebackground" style="background-color: aquamarine;"></div>
-                            <p style="margin: 0px;">Running Table</p>
-                        </div>
-                        <div class="tablecoloradd ">
-                            <div class="changetablebackground" style="background-color: green;"></div>
-                            <p style="margin: 0px;">Printed Table</p>
-                        </div>
-                    </div>
-                    <div class="tablecoloradd ">
-                        <div class="changetablebackground" style="background-color: bisque;"></div>
-                        <p style="margin: 0px;">Paid Table</p>
-                    </div>
-                    <div class="tablecoloradd ">
-                        <div class="changetablebackground" style="background-color: #ef7d0b;"></div>
-                        <p style="margin: 0px;">Running KOT Table</p>
-                    </div>
-                </div>
-
-            </div>
-
+      <div
+        class="CategoriesDetails1 d-flex justify-content-between align-items-center"
+      >
+        <div class="d-flex justify-content-between align-items-center">
+          <button class="btn btn-primary btn-sm">
+            <span>+</span>Table Reservation
+          </button>
+          <button class="btn btn-primary btn-sm">
+            <span>+</span> Contactiess
+          </button>
         </div>
-
+        <div class="CategoryActionBtn2">
+          <div class="tablecolorside">
+            <div class="tablekotitems">
+              <p style="margin: 0px"><input type="checkbox" /> KOT/Items</p>
+            </div>
+            <div class="tablecolors">
+              <div class="tablecoloradd">
+                <div
+                  class="changetablebackground"
+                  style="background-color: #eee"
+                ></div>
+                <p style="margin: 0px">Blank Table</p>
+              </div>
+              <div class="tablecoloradd">
+                <div
+                  class="changetablebackground"
+                  style="background-color: aquamarine"
+                ></div>
+                <p style="margin: 0px">Running Table</p>
+              </div>
+              <div class="tablecoloradd">
+                <div
+                  class="changetablebackground"
+                  style="background-color: green"
+                ></div>
+                <p style="margin: 0px">Printed Table</p>
+              </div>
+            </div>
+            <div class="tablecoloradd">
+              <div
+                class="changetablebackground"
+                style="background-color: bisque"
+              ></div>
+              <p style="margin: 0px">Paid Table</p>
+            </div>
+            <div class="tablecoloradd">
+              <div
+                class="changetablebackground"
+                style="background-color: #ef7d0b"
+              ></div>
+              <p style="margin: 0px">Running KOT Table</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="container-fluid mb-3">
-        <div class="ProductDetailsWrapper newProductDetailsWrapper">
-            <div class="details">
-                <div class="title">
-                    <h3 style="padding-bottom: 10px; text-align: center; ">Select Table</h3>
-
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th class="tableleftside" style="text-align: left;">Floors</th>
-                            <th style="text-align: left;" class="tablesnam">Tables</th>
-                            <th style="text-align: center; " class="totaltable">Total table</th>
-
-
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="tableleftside" style="text-align: left;">Ground Floor</td>
-                            <td style="text-align: left;" class="tablenumber mt-2"> <span>1</span>
-                                <span>2</span><span>3</span>
-                                <span>4</span> <span>5</span><span>6</span>
-                                <span>7</span> <span>8</span><span>9</span>
-                                <span>10</span>
-                            </td>
-                            <td class="totaltable text-center">10</td>
-
-
-                        </tr>
-                        <tr>
-                            <td class="tableleftside text-left" style="text-align: left;">First Floor</td>
-                            <td class="tablenumber mt-2 text-left"> <span>1</span>
-                                <span>2</span><span>3</span>
-                                <span>4</span> <span>5</span><span>6</span>
-                                <span>7</span> <span>8</span><span>9</span>
-                                <span>10</span>
-                                <span>11</span> <span>12</span><span>13</span>
-                                <span>14</span> <span>15</span><span>16</span>
-                                <span>17</span>
-                                <span>18</span> <span>19</span><span>20</span>
-                               
-                            </td>
-                            <td style="text-align: center; width: 5%;" class="totaltable">20</td>
-                        </tr>
-                        <tr>
-                            <td class="tableleftside mt-1" style="text-align: left; ">Second Floor</td>
-                            <td style="text-align: left;" class="tablenumber mt-2"> <span>1</span>
-                                <span>2</span><span>3</span>
-                            </td>
-                            <td class="totaltable" style="text-align: center;">3</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-            </div>
+      <div class="ProductDetailsWrapper newProductDetailsWrapper">
+        <div class="details">
+          <div class="title text-center">
+            <h3>
+              All Tables
+            </h3>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th class="tableleftside" style="text-align: left">Floors</th>
+                <th style="text-align: left" class="tablesnam">Tables</th>
+                <th style="text-align: center" class="totaltable">
+                  Total table
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tableleftside" style="text-align: left">
+                  Ground Floor
+                </td>
+                <td style="text-align: left" class="tablenumber mt-2">
+                  <span>1</span> <span>2</span><span>3</span> <span>4</span>
+                  <span>5</span><span>6</span> <span>7</span> <span>8</span
+                  ><span>9</span>
+                  <span>10</span>
+                </td>
+                <td class="totaltable text-center">10</td>
+              </tr>
+              <tr>
+                <td class="tableleftside text-left" style="text-align: left">
+                  First Floor
+                </td>
+                <td class="tablenumber mt-2 text-left">
+                  <span>1</span> <span>2</span><span>3</span> <span>4</span>
+                  <span>5</span><span>6</span> <span>7</span> <span>8</span
+                  ><span>9</span>
+                  <span>10</span>
+                  <span>11</span> <span>12</span><span>13</span>
+                  <span>14</span> <span>15</span><span>16</span>
+                  <span>17</span>
+                  <span>18</span> <span>19</span><span>20</span>
+                </td>
+                <td style="text-align: center; width: 5%" class="totaltable">
+                  20
+                </td>
+              </tr>
+              <tr>
+                <td class="tableleftside mt-1" style="text-align: left">
+                  Second Floor
+                </td>
+                <td style="text-align: left" class="tablenumber mt-2">
+                  <span>1</span> <span>2</span><span>3</span>
+                </td>
+                <td class="totaltable" style="text-align: center">3</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
     </div>
-    <div class="container-fluid  mb-4">
-        <div class="ProductDetailsWrapper newProductDetailsWrapper">
-            <div class="details">
-                <div class="title mt-2">
-                    <h3>Running Table</h3>
-
-                </div>
+    <div class="container-fluid mb-4">
+      <div class="ProductDetailsWrapper newProductDetailsWrapper">
+        <div class="details">
+          <div class="title mt-2 text-center">
+            <h3>Running Tables</h3>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="groundfloortableorder">
+                <h3 class="text-center">Ground Floor</h3>
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="groundfloortableorder">
-                            <h3 class="text-center">Ground Floor</h3>
-                            <div class="row">
-                                <div class="col-lg-4 mt-3">
-                                    <div class="runningtabledetail">
-                                        <span class="tableno">7</span>
-                                        <span>1 Min</span>
-                                        <span>705.00</span>
-                                        <span class="">Order 5</span>
-                                        <!-- <span class="tableicon"><i class="fa fa-file" aria-hidden="true" style="display: none;"></i></span> -->
-                                        <span class="tableicon"><i class="fa fa-eye" style="font-size:15px;"></i></span>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 mt-3">
-                                    <div class="runningtabledetail" style="background-color: #e8e825;">
-                                        <span class="tableno">8</span>
-                                        <span>1 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 mt-3">
-                                    <div class="runningtabledetail">
-                                        <span class="tableno">3</span>
-                                        <span>1 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 mt-4">
-                                    <div class="runningtabledetail">
-                                        <span class="tableno">2</span>
-                                        <span>1 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 mt-4">
-                                    <div class="runningtabledetail">
-                                        <span class="tableno">2</span>
-                                        <span>1 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
+                  <div class="col-lg-4 mt-3">
+                    <div class="runningtabledetail">
+                      <span class="tableno">7</span>
+                      <span>1 Min</span>
+                      <span>705.00</span>
+                      <span class="">Order 5</span>
+                      <!-- <span class="tableicon"><i class="fa fa-file" aria-hidden="true" style="display: none;"></i></span> -->
+                      <span class="tableicon"
+                        ><i class="fa fa-eye" style="font-size: 15px"></i
+                      ></span>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="groundfloortableorder">
-                            <h3 class="text-center">First Floor</h3>
-                            <div class="row">
-                                <div class="col-lg-4 mt-3">
-                                    <div class="runningtabledetail">
-                                        <span class="tableno">2</span>
-                                        <span>10 Min</span>
-                                        <span>705.00</span>
-                                        <span class="">Order 5</span>
-                                        <!-- <span class="tableicon"><i class="fa fa-file" aria-hidden="true" style="display: none;"></i></span> -->
-                                        <span class="tableicon"><i class="fa fa-eye" style="font-size:15px;"></i></span>
-                                    </div>
-                                </div>
+                  </div>
 
-                                <div class="col-lg-4 mt-3">
-                                    <div class="runningtabledetail" style="background-color: #e8e825;">
-                                        <span class="tableno">2</span>
-                                        <span>4 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 mt-3">
-                                    <div class="runningtabledetail">
-                                        <span class="tableno">6</span>
-                                        <span>1 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 mt-4">
-                                    <div class="runningtabledetail" style="background-color: bisque;">
-                                        <span class="tableno">4</span>
-                                        <span>8 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 mt-4">
-                                    <div class="runningtabledetail">
-                                        <span class="tableno">9</span>
-                                        <span>20 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
+                  <div class="col-lg-4 mt-3">
+                    <div
+                      class="runningtabledetail"
+                      style="background-color: #e8e825"
+                    >
+                      <span class="tableno">8</span>
+                      <span>1 Min</span>
+                      <span>705.00</span>
+                      <span>Order 5</span>
+                      <span></span>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="groundfloortableorder">
-                            <h3 class="text-center">Second Floor</h3>
-                            <div class="row">
-                                <div class="col-lg-4 mt-3">
-                                    <div class="runningtabledetail" style="background-color: #ef7d0b;">
-                                        <span class="tableno">2</span>
-                                        <span>1 Min</span>
-                                        <span>705.00</span>
-                                        <span class="">Order 6</span>
-                                        <!-- <span class="tableicon"><i class="fa fa-file" aria-hidden="true" style="display: none;"></i></span> -->
-                                        <span class="tableicon"><i class="fa fa-eye" style="font-size:15px;"></i></span>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 mt-3">
-                                    <div class="runningtabledetail" style="background-color: #e8e825;">
-                                        <span class="tableno">2</span>
-                                        <span>1 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 mt-3">
-                                    <div class="runningtabledetail">
-                                        <span class="tableno">7</span>
-                                        <span>1 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 mt-4">
-                                    <div class="runningtabledetail">
-                                        <span class="tableno">4</span>
-                                        <span>10 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 mt-4">
-                                    <div class="runningtabledetail" style="background-color: #ef7d0b;">
-                                        <span class="tableno">9</span>
-                                        <span>1 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
+                  </div>
+                  <div class="col-lg-4 mt-3">
+                    <div class="runningtabledetail">
+                      <span class="tableno">3</span>
+                      <span>1 Min</span>
+                      <span>705.00</span>
+                      <span>Order 5</span>
+                      <span></span>
                     </div>
-
+                  </div>
+                  <div class="col-lg-4 mt-4">
+                    <div class="runningtabledetail">
+                      <span class="tableno">2</span>
+                      <span>1 Min</span>
+                      <span>705.00</span>
+                      <span>Order 5</span>
+                      <span></span>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 mt-4">
+                    <div class="runningtabledetail">
+                      <span class="tableno">2</span>
+                      <span>1 Min</span>
+                      <span>705.00</span>
+                      <span>Order 5</span>
+                      <span></span>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
+            <div class="col-lg-4">
+              <div class="groundfloortableorder">
+                <h3 class="text-center">First Floor</h3>
+                <div class="row">
+                  <div class="col-lg-4 mt-3">
+                    <div class="runningtabledetail">
+                      <span class="tableno">2</span>
+                      <span>10 Min</span>
+                      <span>705.00</span>
+                      <span class="">Order 5</span>
+                      <!-- <span class="tableicon"><i class="fa fa-file" aria-hidden="true" style="display: none;"></i></span> -->
+                      <span class="tableicon"
+                        ><i class="fa fa-eye" style="font-size: 15px"></i
+                      ></span>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 mt-3">
+                    <div
+                      class="runningtabledetail"
+                      style="background-color: #e8e825"
+                    >
+                      <span class="tableno">2</span>
+                      <span>4 Min</span>
+                      <span>705.00</span>
+                      <span>Order 5</span>
+                      <span></span>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 mt-3">
+                    <div class="runningtabledetail">
+                      <span class="tableno">6</span>
+                      <span>1 Min</span>
+                      <span>705.00</span>
+                      <span>Order 5</span>
+                      <span></span>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 mt-4">
+                    <div
+                      class="runningtabledetail"
+                      style="background-color: bisque"
+                    >
+                      <span class="tableno">4</span>
+                      <span>8 Min</span>
+                      <span>705.00</span>
+                      <span>Order 5</span>
+                      <span></span>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 mt-4">
+                    <div class="runningtabledetail">
+                      <span class="tableno">9</span>
+                      <span>20 Min</span>
+                      <span>705.00</span>
+                      <span>Order 5</span>
+                      <span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="groundfloortableorder">
+                <h3 class="text-center">Second Floor</h3>
+                <div class="row">
+                  <div class="col-lg-4 mt-3">
+                    <div
+                      class="runningtabledetail"
+                      style="background-color: #ef7d0b"
+                    >
+                      <span class="tableno">2</span>
+                      <span>1 Min</span>
+                      <span>705.00</span>
+                      <span class="">Order 6</span>
+                      <!-- <span class="tableicon"><i class="fa fa-file" aria-hidden="true" style="display: none;"></i></span> -->
+                      <span class="tableicon"
+                        ><i class="fa fa-eye" style="font-size: 15px"></i
+                      ></span>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 mt-3">
+                    <div
+                      class="runningtabledetail"
+                      style="background-color: #e8e825"
+                    >
+                      <span class="tableno">2</span>
+                      <span>1 Min</span>
+                      <span>705.00</span>
+                      <span>Order 5</span>
+                      <span></span>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 mt-3">
+                    <div class="runningtabledetail">
+                      <span class="tableno">7</span>
+                      <span>1 Min</span>
+                      <span>705.00</span>
+                      <span>Order 5</span>
+                      <span></span>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 mt-4">
+                    <div class="runningtabledetail">
+                      <span class="tableno">4</span>
+                      <span>10 Min</span>
+                      <span>705.00</span>
+                      <span>Order 5</span>
+                      <span></span>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 mt-4">
+                    <div
+                      class="runningtabledetail"
+                      style="background-color: #ef7d0b"
+                    >
+                      <span class="tableno">9</span>
+                      <span>1 Min</span>
+                      <span>705.00</span>
+                      <span>Order 5</span>
+                      <span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
+      </div>
     </div>
-
-</body>
-
+  </body>
 </html>
