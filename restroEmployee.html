@@ -1,789 +1,781 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    />
-    <title>Document</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
-
-      * {
-        font-family: "Poppins", sans-serif;
-      }
-
-      .employee-button {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 40px;
-      }
-
-      .employee-button button {
-        border: none;
-        color: #3abb69;
-        padding: 5px 15px;
-        font-size: 13px;
-        border-radius: 5px;
-      }
-
-      .Cate {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-      }
-
-      .Cate button {
-        border: none;
-        color: #3abb69;
-        padding: 5px 15px;
-        font-size: 13px;
-        border-radius: 5px;
-      }
-
-      .add-embtn {
-        border: none;
-        color: #3abb69;
-        padding: 5px 15px;
-        font-size: 13px;
-        border-radius: 5px;
-      }
-
-      .breadcrumb {
-        margin-bottom: 0rem !important;
-        position: relative;
-      }
-
-      .breadcrumb .addVender {
-        position: absolute;
-        right: 2%;
-        top: 50%;
-        transform: translate(0%, -50%);
-        text-transform: capitalize;
-        border-radius: 3px;
-        border: 0px;
-        background-color: #fe9037;
-        border: 1px solid #ffcd8f;
-        color: #fff;
-        /* padding: 2px 30px; */
-        font-weight: bold;
-        padding: 5px 15px;
-        font-size: 13px;
-      }
-
-      .addvender1 {
-        /* position: absolute; */
-        /* right: 14%; */
-        /* top: 50%; */
-        transform: translate(0%, -50%);
-        text-transform: capitalize;
-        border-radius: 3px;
-        border: 0px;
-        background-color: #083e5a;
-        /* border: 1px solid #ffcd8f; */
-        color: #fff;
-        padding: 2px 30px;
-        font-weight: bold;
-        padding: 5px 15px;
-        font-size: 13px;
-      }
-
-      .breadcrumb ul {
-        margin-bottom: 0rem;
-      }
-
-      .breadcrumb ul li {
-        color: #fff;
-        font-weight: bold;
-        margin: 10px 1px;
-      }
-
-      .breadcrumb ul li a {
-        color: inherit;
-        padding: 10px;
-        text-decoration: none;
-      }
-
-      .breadcrumb ul li i {
-        font-size: 12px;
-      }
-
-      .breadcrumb ul li .ActiveBreadcrumb {
-        color: #fff;
-        font-size: 16px;
-      }
-
-      main {
-        background-color: #eee;
-      }
-
-      .employee-button {
-        background-color: #fff;
-        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-        text-align: center;
-        border-radius: 5px;
-        display: flex;
-        gap: 20px;
-      }
-
-      .allBtnsWrapper .allBtns {
-        background-color: #fff;
-        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-        text-align: center;
-        border-radius: 5px;
-        display: flex;
-        gap: 20px;
-      }
-
-      .allBtnsWrapper .allBtns1 {
-        background-color: #fff;
-        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-        text-align: center;
-        border-radius: 5px;
-      }
-
-      .allBtnsWrapper .allBtns button {
-        margin: 0px;
-        text-transform: capitalize;
-        border-radius: 3px;
-        border: 0;
-        background-color: transparent;
-        color: #fff;
-        font-size: 14px;
-        color: #fff;
-        font-weight: bold;
-        padding: 0px;
-        font-family: "Montserrat", sans-serif;
-      }
-
-      .allBtns1 button {
-        margin: 10px;
-        text-transform: capitalize;
-        border-radius: 3px;
-        border: 0;
-        background-color: #083e5a;
-        color: #fff;
-        font-size: 13px;
-        font-weight: bold;
-
-        font-family: "Montserrat", sans-serif;
-        padding: 5px 15px;
-      }
-
-      .allBtnsWrapper .allBtns .activeBtn {
-        background-color: #3abb69;
-      }
-
-      .ProductDetailsWrapper {
-        background-color: #fff;
-        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-        border-radius: 5px;
-        padding: 10px;
-        overflow: hidden;
-      }
-
-      .ProductDetailsWrapper .details {
-        transition: all 0.5s ease;
-        position: relative;
-        top: 0px;
-      }
-
-      .ProductDetailsWrapper .details .title {
-        padding: 10px 0px;
-        text-align: center;
-      }
-
-      .ProductDetailsWrapper .details .title h3 {
-        display: inline-block;
-        border-bottom: 2px solid #ef7d0b;
-        color: #083e5a;
-        font-weight: bold;
-        padding-bottom: 5px;
-        font-size: 20px;
-      }
-
-      .ProductDetailsWrapper table {
-        max-width: 100%;
-        width: 100%;
-        border-radius: 4px;
-        overflow: hidden;
-        border-radius: 5px;
-      }
-
-      .ProductDetailsWrapper table tr:nth-child(even) {
-        background-color: #fff2e7;
-      }
-
-      .ProductDetailsWrapper table tr:nth-child(even) input,
-      .ProductDetailsWrapper table tr:nth-child(even) select,
-      .ProductDetailsWrapper table tr:nth-child(even) td {
-        color: #000;
-      }
-
-      .ProductDetailsWrapper table tr:nth-child(even) input::-moz-placeholder,
-      .ProductDetailsWrapper table tr:nth-child(even) select::-moz-placeholder,
-      .ProductDetailsWrapper table tr:nth-child(even) td::-moz-placeholder {
-        color: #000;
-      }
-
-      .ProductDetailsWrapper
-        table
-        tr:nth-child(even)
-        input:-ms-input-placeholder,
-      .ProductDetailsWrapper
-        table
-        tr:nth-child(even)
-        select:-ms-input-placeholder,
-      .ProductDetailsWrapper table tr:nth-child(even) td:-ms-input-placeholder {
-        color: #000;
-      }
-
-      .ProductDetailsWrapper table tr:nth-child(even) input::placeholder,
-      .ProductDetailsWrapper table tr:nth-child(even) select::placeholder,
-      .ProductDetailsWrapper table tr:nth-child(even) td::placeholder {
-        color: #000;
-      }
-
-      .ProductDetailsWrapper table tr:nth-child(even) select option {
-        background-color: rgba(58, 187, 105, 0.3411764706);
-      }
-
-      .ProductDetailsWrapper table tr {
-        height: 30px;
-      }
-
-      .ProductDetailsWrapper table tr:last-child {
-        height: 30px;
-        border-bottom: 2px solid #ddcece;
-      }
-
-      .ProductDetailsWrapper table,
-      .ProductDetailsWrapper th,
-      .ProductDetailsWrapper td {
-        border: 1px solid #ddcece;
-        border-collapse: collapse;
-        font-size: 14px;
-        text-align: center;
-      }
-
-      .ProductDetailsWrapper thead {
-        background-color: #fc8e32;
-        color: #fff;
-      }
-
-      .ProductDetailsWrapper thead tr,
-      .ProductDetailsWrapper thead th {
-        border: transparent;
-      }
-
-      .ProductDetailsWrapper tbody tr td:first-child {
-        font-weight: 500;
-        text-transform: capitalize;
-      }
-
-      .ProductDetailsWrapper tbody tr input,
-      .ProductDetailsWrapper tbody tr select {
-        width: 100%;
-        height: 37px;
-        border: 0;
-        text-align: center;
-        background-color: transparent;
-        color: #7a7797;
-      }
-
-      .ProductDetailsWrapper .venderDetailsTable {
-        position: relative;
-        left: 200%;
-        top: 0px;
-        display: none;
-      }
-
-      .text-right {
-        text-align: right;
-      }
-
-      .text-left {
-        text-align: left;
-      }
-
-      .table1Btns button,
-      .table2Btns button {
-        text-transform: capitalize;
-        border-radius: 3px;
-        border: 0px;
-        background-color: #3abb69;
-        color: #fff;
-        padding: 3px 50px;
-        font-size: 16px;
-        font-weight: bold;
-      }
-
-      .content {
-        position: absolute;
-        top: 50%;
-        border-radius: 10px;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 45%;
-        height: auto;
-        text-align: center;
-        background-color: #e8eae6;
-        box-sizing: border-box;
-        padding: 10px;
-        z-index: 100;
-        display: none;
-        color: #3abb69;
-        /*to hide popup initially*/
-      }
-
-      .close-btn {
-        position: absolute;
-        right: 20px;
-        top: 15px;
-        background-color: black;
-        color: white;
-        border-radius: 50%;
-        padding: 4px;
-      }
-
-      .cont {
-        display: block;
-
-        height: 480px;
-        overflow: auto;
-      }
-
-      .cont {
-        scrollbar-width: none;
-      }
-
-      .cont::-webkit-scrollbar {
-        display: none;
-      }
-
-      .checf {
-        display: flex;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        background-color: #083e5a;
-        border-radius: 5px;
-        padding: 7px;
-        cursor: pointer;
-      }
-
-      .checf p {
-        padding: 0px;
-        margin: 0px;
-      }
-
-      .checf button {
-        background-color: #7a7797;
-      }
-
-      .chefbuuu {
-        display: flex;
-        /* gap: 17px; */
-        align-items: center;
-        padding: 0px 15px;
-      }
-
-      .number {
-        display: flex;
-        align-items: center;
-        /* gap: 50px; */
-      }
-
-      .activebtnee {
-        background-color: #3abb69;
-      }
-
-      .formpop {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-
-      .openpop {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-
-      .form-wraper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 2%;
-      }
-
-      .popmain {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 12%;
-      }
-
-      .popopen {
-        border-radius: 10px;
-        height: auto;
-        padding: 10px;
-        width: auto;
-        background-color: #fff;
-      }
-
-      .form-container {
-        border-radius: 10px;
-        height: auto;
-        padding: 3px;
-        width: 90%;
-        background-color: #fff;
-      }
-
-      .empoley-img img {
-        height: 150px;
-        width: 150px;
-        border-radius: 50%;
-      }
-
-      .pop-content {
-        display: flex;
-
-        padding: 10px;
-        gap: 40px;
-      }
-
-      .empoey-salarey {
-        margin-top: 10px;
-        display: flex;
-        gap: 50px;
-        font-size: 15px;
-        color: #3abb69;
-      }
-
-      .empoley-name {
-        margin-top: 22px;
-
-        display: flex;
-        gap: 19px;
-        font-size: 12px;
-      }
-
-      .empoley-name button {
-        border: none;
-        background-color: #3abb69;
-        color: #fff;
-        padding: 3px 10px;
-        border-radius: 5px;
-      }
-
-      .divchangbackground {
-        background-color: #fe9037;
-      }
-
-      .forminput {
-        color: #ef7d0b;
-      }
-
-      .forminput input {
-        padding: 7px;
-        border-radius: 5px;
-        font-size: 12px;
-        border: 3px solid #083e5a;
-      }
-
-      .forminput label {
-        font-size: 12px;
-      }
-
-      .number p {
-        font-size: 14px;
-        color: #fff;
-        font-weight: bold;
-      }
-
-      .closeform {
-        display: flex;
-        align-items: center;
-        justify-content: right;
-      }
-
-      .closeform button {
-        height: 22px;
-        border-radius: 10px;
-        color: black;
-        font-size: 14px;
-        width: 22px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-bottom: 5px;
-      }
-
-      .employemformh2 {
-        display: inline-block;
-        border-bottom: 2px solid #083e5a;
-        color: #fc8e32;
-        font-weight: bold;
-        padding-bottom: 5px;
-        font-size: 20px;
-      }
-
-      .monthName,
-      .totalBookings {
-        color: #3abb69;
-        font-size: 18px;
-      }
-
-      .monthName span,
-      .totalBookings span {
-        color: #7a7797;
-      }
-
-      .submitbtn1 {
-        background-color: #fc8e32;
-        color: #fff;
-        font-size: 12px;
-        /* font-weight: bold; */
-        border: 0;
-        border-radius: 5px;
-        padding: 1px 5px;
-      }
-
-      .abcbtn {
-        cursor: pointer;
-      }
-
-      .dateCalender input {
-        /* margin-left: 10px; */
-        /* text-align: center; */
-        font-size: 14px;
-        border: 0;
-        border-radius: 5px;
-        padding-left: 15px;
-        color: #083e5a;
-      }
-
-      .dateCalender label {
-        margin-right: 15px;
-        margin-left: 10px;
-        font-weight: bold;
-        font-size: 16px;
-        color: #3abb69;
-      }
-
-      #categorypop {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-
-      #createCategory {
-        /* border: none; */
-        /* color: #3abb69; */
-        padding: 5px 15px;
-        font-size: 13px;
-        border-radius: 5px;
-      }
-
-      .thisMonth {
-        font-size: 10px;
-        font-weight: none;
-        text-align: center;
-      }
-
-      .profilepop {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-
-      .ProfileDetail button {
-        cursor: pointer;
-        /* transform: translate(0%, -50%);
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  <title>Document</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+    * {
+      font-family: "Poppins", sans-serif;
+    }
+
+    .employee-button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .employee-button button {
+      border: none;
+      color: #3abb69;
+      padding: 5px 15px;
+      font-size: 13px;
+      border-radius: 5px;
+    }
+
+    .Cate {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .Cate button {
+      border: none;
+      color: #3abb69;
+      padding: 5px 15px;
+      font-size: 13px;
+      border-radius: 5px;
+    }
+
+    .add-embtn {
+      border: none;
+      color: #3abb69;
+      padding: 5px 15px;
+      font-size: 13px;
+      border-radius: 5px;
+    }
+
+    .breadcrumb {
+      margin-bottom: 0rem !important;
+      position: relative;
+    }
+
+    .breadcrumb .addVender {
+      position: absolute;
+      right: 2%;
+      top: 50%;
+      transform: translate(0%, -50%);
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0px;
+      background-color: #fe9037;
+      border: 1px solid #ffcd8f;
+      color: #fff;
+      /* padding: 2px 30px; */
+      font-weight: bold;
+      padding: 5px 15px;
+      font-size: 13px;
+    }
+
+    .addvender1 {
+      /* position: absolute; */
+      /* right: 14%; */
+      /* top: 50%; */
+      transform: translate(0%, -50%);
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0px;
+      background-color: #083e5a;
+      /* border: 1px solid #ffcd8f; */
+      color: #fff;
+      padding: 2px 30px;
+      font-weight: bold;
+      padding: 4px 8px;
+    font-size: 11px;
+    }
+
+    .breadcrumb ul {
+      margin-bottom: 0rem;
+    }
+
+    .breadcrumb ul li {
+      color: #fff;
+      font-weight: bold;
+      margin: 10px 1px;
+    }
+
+    .breadcrumb ul li a {
+      color: inherit;
+      padding: 10px;
+      text-decoration: none;
+    }
+
+    .breadcrumb ul li i {
+      font-size: 12px;
+    }
+
+    .breadcrumb ul li .ActiveBreadcrumb {
+      color: #fff;
+      font-size: 16px;
+    }
+
+    main {
+      background-color: #eee;
+    }
+
+    .employee-button {
+      background-color: #fff;
+      box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+      text-align: center;
+      border-radius: 5px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .allBtnsWrapper .allBtns {
+      background-color: #fff;
+      box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+      text-align: center;
+      border-radius: 5px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .allBtnsWrapper .allBtns1 {
+      background-color: #fff;
+      box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+      text-align: center;
+      border-radius: 5px;
+    }
+
+    .allBtnsWrapper .allBtns button {
+      margin: 0px;
+      min-width: 50px;
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0;
+      background-color: transparent;
+      color: #fff;
+      font-size: 10px;
+      color: #fff;
+      font-weight: 600;
+    padding: 2px 8px;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .allBtns1 button {
+      margin: 10px;
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0;
+      background-color: #083e5a;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+
+      font-family: "Montserrat", sans-serif;
+      padding: 5px 15px;
+    }
+
+    .allBtnsWrapper .allBtns .activeBtn {
+      background-color: #3abb69;
+    }
+
+    .ProductDetailsWrapper {
+      background-color: #fff;
+      box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+      border-radius: 5px;
+      padding: 10px;
+      overflow: hidden;
+    }
+
+    .ProductDetailsWrapper .details {
+      transition: all 0.5s ease;
+      position: relative;
+      top: 0px;
+    }
+
+    .ProductDetailsWrapper .details .title {
+      padding: 10px 0px;
+      text-align: center;
+    }
+
+    .ProductDetailsWrapper .details .title h3 {
+      display: inline-block;
+      border-bottom: 2px solid #ef7d0b;
+      color: #083e5a;
+      font-weight: bold;
+      padding-bottom: 5px;
+      font-size: 20px;
+    }
+
+    .ProductDetailsWrapper table {
+      max-width: 100%;
+      width: 100%;
+      border-radius: 4px;
+      overflow: hidden;
+      border-radius: 5px;
+    }
+
+    .ProductDetailsWrapper table tr:nth-child(even) {
+      background-color: #fff2e7;
+    }
+
+    .ProductDetailsWrapper table tr:nth-child(even) input,
+    .ProductDetailsWrapper table tr:nth-child(even) select,
+    .ProductDetailsWrapper table tr:nth-child(even) td {
+      color: #000;
+    }
+
+    .ProductDetailsWrapper table tr:nth-child(even) input::-moz-placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) select::-moz-placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) td::-moz-placeholder {
+      color: #000;
+    }
+
+    .ProductDetailsWrapper table tr:nth-child(even) input:-ms-input-placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) select:-ms-input-placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) td:-ms-input-placeholder {
+      color: #000;
+    }
+
+    .ProductDetailsWrapper table tr:nth-child(even) input::placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) select::placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) td::placeholder {
+      color: #000;
+    }
+
+    .ProductDetailsWrapper table tr:nth-child(even) select option {
+      background-color: rgba(58, 187, 105, 0.3411764706);
+    }
+
+    .ProductDetailsWrapper table tr {
+      height: 30px;
+    }
+
+    .ProductDetailsWrapper table tr:last-child {
+      height: 30px;
+      border-bottom: 2px solid #ddcece;
+    }
+
+    .ProductDetailsWrapper table,
+    .ProductDetailsWrapper th,
+    .ProductDetailsWrapper td {
+      border: 1px solid #ddcece;
+      border-collapse: collapse;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .ProductDetailsWrapper thead {
+      background-color: #fc8e32;
+      color: #fff;
+    }
+
+    .ProductDetailsWrapper thead tr,
+    .ProductDetailsWrapper thead th {
+      border: transparent;
+    
+    border-collapse: collapse;
+    font-size: 12px;
+    text-align: center;
+    }
+
+    .ProductDetailsWrapper tbody tr td:first-child {
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+
+    .ProductDetailsWrapper tbody tr input,
+    .ProductDetailsWrapper tbody tr select {
+      width: 100%;
+      height: 37px;
+      border: 0;
+      text-align: center;
+      background-color: transparent;
+      color: #7a7797;
+    }
+
+    .ProductDetailsWrapper .venderDetailsTable {
+      position: relative;
+      left: 200%;
+      border: 1px solid transparent;
+      top: 0px;
+      display: none;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    .table1Btns button,
+    .table2Btns button {
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0px;
+      background-color: #3abb69;
+      color: #fff;
+      padding: 3px 50px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .content {
+      position: absolute;
+      top: 50%;
+      border-radius: 10px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 45%;
+      height: auto;
+      text-align: center;
+      background-color: #e8eae6;
+      box-sizing: border-box;
+      padding: 10px;
+      z-index: 100;
+      display: none;
+      color: #3abb69;
+      /*to hide popup initially*/
+    }
+
+    .close-btn {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      background-color: black;
+      color: white;
+      border-radius: 50%;
+      padding: 4px;
+    }
+
+    .cont {
+      display: block;
+
+      height: 480px;
+      overflow: auto;
+    }
+
+    .cont {
+      scrollbar-width: none;
+    }
+
+    .cont::-webkit-scrollbar {
+      display: none;
+    }
+
+    .checf {
+      display: flex;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      background-color: #083e5a;
+      border-radius: 5px;
+      padding: 1px 3px;
+      cursor: pointer;
+    }
+
+    .checf p {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    .checf button {
+      background-color: #7a7797;
+    }
+
+    .chefbuuu {
+      display: flex;
+      /* gap: 17px; */
+      align-items: center;
+      padding: 0px 15px;
+    }
+
+    .number {
+      display: flex;
+      align-items: center;
+      /* gap: 50px; */
+    }
+
+    .activebtnee {
+      background-color: #3abb69;
+    }
+
+    .formpop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .openpop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .form-wraper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2%;
+    }
+
+    .popmain {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 12%;
+    }
+
+    .popopen {
+      border-radius: 10px;
+      height: auto;
+      padding: 10px;
+      width: auto;
+      background-color: #fff;
+    }
+
+    .form-container {
+      border-radius: 10px;
+      height: auto;
+      padding: 3px;
+      width: 90%;
+      background-color: #fff;
+    }
+
+    .empoley-img img {
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+    }
+
+    .pop-content {
+      display: flex;
+
+      padding: 10px;
+      gap: 40px;
+    }
+
+    .empoey-salarey {
+      margin-top: 10px;
+      display: flex;
+      gap: 50px;
+      font-size: 15px;
+      color: #3abb69;
+    }
+
+    .empoley-name {
+      margin-top: 22px;
+
+      display: flex;
+      gap: 19px;
+      font-size: 12px;
+    }
+
+    .empoley-name button {
+      border: none;
+      background-color: #3abb69;
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 5px;
+    }
+
+    .divchangbackground {
+      background-color: #fe9037;
+    }
+
+    .forminput {
+      color: #ef7d0b;
+    }
+
+    .forminput input {
+      padding: 7px;
+      border-radius: 5px;
+      font-size: 12px;
+      border: 3px solid #083e5a;
+    }
+
+    .forminput label {
+      font-size: 12px;
+    }
+
+    .number p {
+      font-size: 10px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .closeform {
+      display: flex;
+      align-items: center;
+      justify-content: right;
+    }
+
+    .closeform button {
+      height: 22px;
+      border-radius: 10px;
+      color: black;
+      font-size: 14px;
+      width: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 5px;
+    }
+
+    .employemformh2 {
+      display: inline-block;
+      border-bottom: 2px solid #083e5a;
+      color: #fc8e32;
+      font-weight: bold;
+      padding-bottom: 5px;
+      font-size: 20px;
+    }
+
+    .monthName,
+    .totalBookings {
+      color: #3abb69;
+      font-size: 18px;
+    }
+
+    .monthName span,
+    .totalBookings span {
+      color: #7a7797;
+    }
+
+    .submitbtn1 {
+      background-color: #fc8e32;
+      color: #fff;
+      font-size: 12px;
+      /* font-weight: bold; */
+      border: 0;
+      border-radius: 5px;
+      padding: 1px 5px;
+    }
+
+    .abcbtn {
+      cursor: pointer;
+    }
+
+    .dateCalender input {
+      /* margin-left: 10px; */
+      /* text-align: center; */
+      font-size: 14px;
+      border: 0;
+      border-radius: 5px;
+      padding-left: 15px;
+      color: #083e5a;
+    }
+
+    .dateCalender label {
+      margin-right: 15px;
+      margin-left: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      color: #3abb69;
+    }
+
+    #categorypop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    #createCategory {
+      /* border: none; */
+      /* color: #3abb69; */
+      padding: 5px 15px;
+      font-size: 13px;
+      border-radius: 5px;
+    }
+
+    .thisMonth {
+      font-size: 10px;
+      font-weight: none;
+      text-align: center;
+    }
+
+    .profilepop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .ProfileDetail button {
+      cursor: pointer;
+      /* transform: translate(0%, -50%);
             text-transform: capitalize;*/
-        border-radius: 3px;
-        border: 0px;
-        background-color: #083e5a;
-        /* border: 1px solid #ffcd8f; */
-        color: #fff;
-        /* padding: 2px 30px; */
-        font-weight: bold;
-        padding: 5px 15px;
-        font-size: 13px;
-      }
+      border-radius: 3px;
+      border: 0px;
+      background-color: #083e5a;
+      /* border: 1px solid #ffcd8f; */
+      color: #fff;
+      /* padding: 2px 30px; */
+      font-weight: bold;
+      padding: 3px 11px;
+    font-size: 11px;
+    }
 
-      .ProfileDetailpop {
-        display: none;
-        position: fixed;
-        top: 0;
-        overflow-y: scroll;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-      }
+    .ProfileDetailpop {
+      display: none;
+      position: fixed;
+      top: 0;
+      overflow-y: scroll;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
 
-      .designation {
-        font-size: 14px;
-      }
+    .designation {
+      font-size: 14px;
+    }
 
-      .activeDeactive {
-        font-size: 14px;
-      }
+    .activeDeactive {
+      font-size: 14px;
+    }
 
-      .profileHead {
-        color: #fc8e32;
-        display: inline-block;
-        margin-left: 20px;
-        border-bottom: 2px solid #083e5a;
-      }
+    .profileHead {
+      color: #fc8e32;
+      display: inline-block;
+      margin-left: 20px;
+      border-bottom: 2px solid #083e5a;
+    }
 
-      .ProfileName {
-        font-size: 16px;
-      }
+    .ProfileName {
+      font-size: 16px;
+    }
 
-      .profileImage {
-        /* margin-left: 20px; */
-        text-align: center;
-      }
+    .profileImage {
+      /* margin-left: 20px; */
+      text-align: center;
+    }
 
-      .profileImage img {
-        /* border: solid; */
-        margin-right: 10px;
-        border-radius: 45%;
-        /* text-align: center; */
-      }
+    .profileImage img {
+      /* border: solid; */
+      margin-right: 10px;
+      border-radius: 45%;
+      /* text-align: center; */
+    }
 
-      .profileImage table {
-        /* margin-left: 100px; */
-        text-align: center;
-        width: 100%;
-        font-size: 14px;
-      }
+    .profileImage table {
+      /* margin-left: 100px; */
+      text-align: center;
+      width: 100%;
+      font-size: 14px;
+    }
 
-      .formData label {
-        font-size: 11px;
-      }
+    .formData label {
+      font-size: 11px;
+    }
 
-      .formData input {
-        font-size: 11px;
-        border: 00;
-        background-color: transparent;
-        /* border-bottom: 1px solid; */
-      }
+    .formData input {
+      font-size: 11px;
+      border: 00;
+      background-color: transparent;
+      /* border-bottom: 1px solid; */
+    }
 
-      .formData select {
-        font-size: 11px;
-        border: 0;
-        /* border-bottom: 1px solid */
-      }
+    .formData select {
+      font-size: 11px;
+      border: 0;
+      /* border-bottom: 1px solid */
+    }
 
-      .vertical {
-        border-right: 1px solid #ef7d0b;
-      }
+    .vertical {
+      border-right: 1px solid #ef7d0b;
+    }
 
-      .EditEmployeDetail {
-        text-align: center;
-      }
+    .EditEmployeDetail {
+      text-align: center;
+    }
 
-      .EditEmployeDetail button {
-        min-width: 60px;
-        margin: 5px;
-        text-transform: capitalize;
-        border-radius: 3px;
-        border: 0;
-        background-color: #083e5a;
-        color: #fff;
-        font-size: 10px;
-        font-weight: 500;
-        padding: 3px 0px;
-        font-family: "Montserrat", sans-serif;
-      }
+    .EditEmployeDetail button {
+      min-width: 60px;
+      margin: 5px;
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0;
+      background-color: #083e5a;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 500;
+      padding: 3px 0px;
+      font-family: "Montserrat", sans-serif;
+    }
 
-      .ProfileFormData {
-        border: 1px solid #ef7d0b;
-      }
+    .ProfileFormData {
+      border: 1px solid #ef7d0b;
+    }
 
-      .allBtns {
-        background-color: #fff;
-        border: 1px solid #fc8019;
-        box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
-        border-radius: 5px;
-      }
+    .allBtns {
+      background-color: #fff;
+      border: 1px solid #fc8019;
+      box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+      border-radius: 5px;
+    }
 
-      .allBtns .activeMonth {
-        background-color: #fe9037;
-      }
+    .allBtns .activeMonth {
+      background-color: #fe9037;
+    }
 
-      .allBtns select {
-        color: #fff;
-        min-width: 60px;
-        margin: 6px;
-        text-transform: capitalize;
-        border: 0;
-        box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
-        border-radius: 5px;
-        border: 1px solid #fc8019;
-        font-size: 10px;
-        font-weight: 500;
-        padding: 1px 10px;
-        font-family: "Montserrat", sans-serif;
-        background-color: #fe9037;
-      }
+    .allBtns select {
+      color: #fff;
+      min-width: 60px;
+      margin: 6px;
+      text-transform: capitalize;
+      border: 0;
+      box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+      border-radius: 5px;
+      border: 1px solid #fc8019;
+      font-size: 10px;
+      font-weight: 500;
+      padding: 1px 10px;
+      font-family: "Montserrat", sans-serif;
+      background-color: #fe9037;
+    }
 
-      .allBtns button {
-        min-width: 60px;
-        margin: 6px;
-        text-transform: capitalize;
-        border-radius: 3px;
-        border: 0;
-        background-color: #083e5a;
-        color: #fff;
-        font-size: 10px;
-        font-weight: 500;
-        padding: 1px 10px;
-        font-family: "Montserrat", sans-serif;
-      }
+    .allBtns button {
+      min-width: 60px;
+      margin: 6px;
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0;
+      background-color: #083e5a;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 500;
+      padding: 1px 10px;
+      font-family: "Montserrat", sans-serif;
+    }
 
-      /* .allBtnsYear{
+    /* .allBtnsYear{
                 background-color: #fff;
                 border: 1px solid #fc8019;
                 box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
                 text-align: left;
                 border-radius: 5px;
                 } */
-      /* .allBtnsYear button{
+    /* .allBtnsYear button{
                     min-width: 60px;
                     margin: 5px;
                     text-transform: capitalize;
@@ -796,652 +788,516 @@
                     padding: 3px 0px;
                     font-family: "Montserrat", sans-serif;
                 } */
-      .filters {
-        background-color: #fff;
-        border: 1px solid #fc8019;
-        box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
-        /* text-align: center; */
-        border-radius: 5px;
-      }
+    .filters {
+      background-color: #fff;
+      border: 1px solid #fc8019;
+      box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+      /* text-align: center; */
+      border-radius: 5px;
+    }
 
-      .filters label {
-        font-size: 14px;
-        margin-right: 10px;
-        font-weight: bold;
-        color: #3abb69;
-      }
+    .filters label {
+      font-size: 14px;
+      margin-right: 10px;
+      font-weight: bold;
+      color: #3abb69;
+    }
 
-      .filters input {
-        font-size: 10px;
-        border: 0;
-        border-radius: 5px;
-        /* padding-left: 15px; */
-        color: #7a7797;
-      }
+    .filters input {
+      font-size: 10px;
+      border: 0;
+      border-radius: 5px;
+      /* padding-left: 15px; */
+      color: #7a7797;
+    }
 
-      .filters select {
-        font-size: 10px;
-        border: 0;
-        border-radius: 5px;
-        /* padding-left: 15px; */
-        color: #7a7797;
-        width: 120px;
-        /* margin-left: 20px; */
-      }
+    .filters select {
+      font-size: 10px;
+      border: 0;
+      border-radius: 5px;
+      /* padding-left: 15px; */
+      color: #7a7797;
+      width: 120px;
+      /* margin-left: 20px; */
+    }
 
-      .topBtnWrapper {
-        /* border: 1px solid #000; */
-        display: flex;
-        flex-wrap: wrap;
+    .topBtnWrapper {
+      /* border: 1px solid #000; */
+      display: flex;
+      flex-wrap: wrap;
 
-        justify-content: center;
-        /* justify-content: space-evenly; */
-        /* align-items: center; */
-      }
+      justify-content: center;
+      /* justify-content: space-evenly; */
+      /* align-items: center; */
+    }
 
-      .topBtnWrapper .activeTopBarTitleBtn {
-        background-color: #fe9037;
-      }
+    .topBtnWrapper .activeTopBarTitleBtn {
+      background-color: #fe9037;
+    }
 
-      .topBtnWrapper .topBtns {
-        /* border: 1px solid #000; */
-        padding: 1px 10px;
-        min-width: 50px;
-        font-weight: 600;
-        margin: 0px 10px;
-        background-color: #083e5a;
-        color: #fff;
-        border-radius: 5px;
-        text-align: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
+    .topBtnWrapper .topBtns {
+      /* border: 1px solid #000; */
+      padding: 1px 10px;
+      min-width: 50px;
+      font-weight: 600;
+      margin: 0px 10px;
+      background-color: #083e5a;
+      color: #fff;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
 
-      .userDetails {
-        border: 1px solid #ef7d0b;
-        background-color: #fff;
-        border-radius: 4px;
-        min-width: 70px;
-      }
+    .userDetails {
+      border: 1px solid #ef7d0b;
+      background-color: #fff;
+      border-radius: 4px;
+      min-width: 70px;
+    }
 
-      .userDetails ul li span {
-        color: #7a7797;
-        font-weight: 600;
-      }
+    .userDetails ul li span {
+      color: #7a7797;
+      font-weight: 600;
+    }
 
-      .userDetails ul li {
-        font-size: 12px;
-        font-weight: 500;
-      }
+    .userDetails ul li {
+      font-size: 12px;
+      font-weight: 500;
+    }
 
-      .EditGender {
-        display: none;
-      }
+    .EditGender {
+      display: none;
+    }
 
-      .EditWeekoff {
-        display: none;
-      }
+    .EditWeekoff {
+      display: none;
+    }
 
-      .categoryInput input {
-        width: 180px;
-        height: 20px;
-        border: 1px solid;
-      }
+    .categoryInput input {
+      width: 180px;
+      height: 20px;
+      border: 1px solid;
+    }
 
-      .StateShow {
-        display: none;
-      }
+    .StateShow {
+      display: none;
+    }
 
-      .ShowDateoFBirth {
-        display: none;
-      }
+    .ShowDateoFBirth {
+      display: none;
+    }
 
-      .EditJoiningDate {
-        display: none;
-      }
+    .EditJoiningDate {
+      display: none;
+    }
 
-      .Showcity {
-        display: none;
-      }
+    .Showcity {
+      display: none;
+    }
 
-      .SaveButton {
-        display: none;
-      }
+    .SaveButton {
+      display: none;
+    }
 
-      .dateListWraper {
-        font-size: 10px;
-        background-color: #fff;
-        text-align: center;
-      }
+    .dateListWraper {
+      font-size: 10px;
+      background-color: #fff;
+      text-align: center;
+    }
 
-      .dateListWraper li {
-        height: 30px;
-        border-bottom: 1px solid #083e5a;
-        padding-top: 4px;
-        font-size: 10px;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+    .dateListWraper li {
+      height: 30px;
+      border-bottom: 1px solid #083e5a;
+      padding-top: 4px;
+      font-size: 10px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-      .purchasesTable th {
-        font-size: 10px;
-        width: 30px;
-      }
+    .purchasesTable th {
+      font-size: 10px;
+      width: 30px;
+    }
 
-      .details .purchasesTable {
-        width: 90%;
-        height: 100%;
-      }
+    .details .purchasesTable {
+      width: 90%;
+      height: 100%;
+    }
 
-      .ProductDetailsWrapper thead {
-        background-color: #fe9037;
-        color: #fff;
-      }
+    .ProductDetailsWrapper thead {
+      background-color: #fe9037;
+      color: #fff;
+    }
 
-      tbody,
-      td,
-      tfoot,
-      th,
-      thead,
-      tr {
-        border-color: inherit;
-        border-style: solid;
-        border-width: 0;
-      }
+    tbody,
+    td,
+    tfoot,
+    th,
+    thead,
+    tr {
+      border-color: inherit;
+      border-style: solid;
+      border-width: 0;
+    }
 
-      .listTitle {
-        font-size: 10px;
-        text-align: center;
-        background-color: #fe9037;
-        padding: 7px 0px;
-        color: #fff;
-        height: 30px;
-        margin-top: 1px;
-        margin-bottom: 0px;
-      }
+    .listTitle {
+      font-size: 10px;
+      text-align: center;
+      background-color: #fe9037;
+      padding: 7px 0px;
+      color: #fff;
+      height: 30px;
+      margin-top: 1px;
+      margin-bottom: 0px;
+    }
 
-      /* .HideActive{
+    /* .HideActive{
            color: #3abb69;
         } */
-      .HideDeactive {
-        display: none;
-      }
-      .ProductDetailsWrapper table {
-        max-width: 100%;
-      }
-    </style>
-  </head>
+    .HideDeactive {
+      display: none;
+    }
 
-  <body>
-    <div
-      class="breadcrumb"
-      style="background-color: #ef7d0b; padding: 5px; font-size: 13px"
-    >
-      <ul class="list-unstyled d-flex align-items-center">
-        <li><a href="">Dashboard</a></li>
-        <li><i class="fa-solid fa-angles-right"></i></li>
-        <li><a href="" class="ActiveBreadcrumb">Employee Dashboard</a></li>
-      </ul>
+    .ProductDetailsWrapper table {
+      max-width: 100%;
+      
+    }
+    
+    
+     
+  </style>
+</head>
 
-      <!-- <h4>Total Employee-20</h4> -->
-      <button class="addVender" id="createCategory">Create Category</button>
-    </div>
+<body>
+  <div class="breadcrumb" style="background-color: #ef7d0b; padding: 5px; font-size: 13px">
+    <ul class="list-unstyled d-flex align-items-center">
+      <li><a href="">Dashboard</a></li>
+      <li><i class="fa-solid fa-angles-right"></i></li>
+      <li><a href="" class="ActiveBreadcrumb">Employee Dashboard</a></li>
+    </ul>
 
-    <div class="allBtnsWrapper pt-3 pb-3" style="background-color: #eee">
-      <div class="container-fluid">
-        <!-- <div class="allBtns1 pt-3 pb-3">
+    <!-- <h4>Total Employee-20</h4> -->
+    <button class="addVender" id="createCategory">Create Category</button>
+  </div>
+
+  <div class="allBtnsWrapper pt-3 pb-3" style="background-color: #eee">
+    <div class="container-fluid">
+      <!-- <div class="allBtns1 pt-3 pb-3">
                 <button class="thisMonthEventBtn">
                     Attendance
                 </button>
                 <button class="allEventBtn">Salary</button>
                 <button class="prevEventBtn">leave</button> 
             </div> -->
-        <div class="dateCalender mt-2">
-          <label for="dateWise" class="title">View By</label>
-          <input type="text" id="dateWise" placeholder="13/01/2023" />
-        </div>
+      <div class="dateCalender mt-2">
+        <label for="dateWise" class="title">View By</label>
+        <input type="text" id="dateWise" placeholder="13/01/2023" />
       </div>
     </div>
+  </div>
 
-    <main>
-      <div class="allBtnsWrapper pt-3 pb-3">
-        <div class="container-fluid">
-          <div
-            class="allBtns pt-3 pb-3"
-            style="display: flex; align-items: center; justify-content: center"
-          >
-            <div class="checf divchangbackground">
-              <div class="chefbuuu">
-                <button>All</button>
-              </div>
-              <div class="number">
-                <p>10</p>
-              </div>
+  <main>
+    <div class="allBtnsWrapper pt-3 pb-3">
+      <div class="container-fluid">
+        <div class="allBtns pt-3 pb-3" style="display: flex; align-items: center; justify-content: center">
+          <div class="checf divchangbackground">
+            <div class="chefbuuu">
+              <button>All</button>
             </div>
-            <div class="checf">
-              <div class="chefbuuu">
-                <button>chef</button>
-              </div>
-              <div class="number">
-                <p>2</p>
-              </div>
+            <div class="number">
+              <p>10</p>
             </div>
-            <div class="checf">
-              <div class="chefbuuu">
-                <button>Manager</button>
-              </div>
-              <div class="number">
-                <p>1</p>
-              </div>
+          </div>
+          <div class="checf">
+            <div class="chefbuuu">
+              <button>chef</button>
             </div>
-            <div class="checf">
-              <div class="chefbuuu">
-                <button>Waiter</button>
-              </div>
-              <div class="number">
-                <p>5</p>
-              </div>
+            <div class="number">
+              <p>2</p>
             </div>
+          </div>
+          <div class="checf">
+            <div class="chefbuuu">
+              <button>Manager</button>
+            </div>
+            <div class="number">
+              <p>1</p>
+            </div>
+          </div>
+          <div class="checf">
+            <div class="chefbuuu">
+              <button>Waiter</button>
+            </div>
+            <div class="number">
+              <p>5</p>
+            </div>
+          </div>
 
-            <div class="checf">
-              <div class="chefbuuu">
-                <button>Waiter</button>
-              </div>
-              <div class="number">
-                <p>2</p>
-              </div>
+          <div class="checf">
+            <div class="chefbuuu">
+              <button>Waiter</button>
+            </div>
+            <div class="number">
+              <p>2</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="container-fluid">
-        <div class="ProductDetailsWrapper">
-          <div class="details">
-            <div class="title">
-              <h3 style="padding-bottom: 10px">Employee Detail</h3>
-            </div>
+    </div>
+    <div class="container-fluid">
+      <div class="ProductDetailsWrapper">
+        <div class="details">
+          <div class="title">
+            <h3 style="padding-bottom: 10px">Employee Detail</h3>
+          </div>
 
-            <!-- <div class="col-12 mb-3">
+          <!-- <div class="col-12 mb-3">
                         <div class="d-flex justify-content-between eventDateTime">
                             <div class="monthName">Total : <span>8</span></div>
                             <div class="totalBookings">Present : <span>2</span></div>
 
                         </div>
                     </div> -->
-            <div class="mt-5 text-right">
-              <button class="addvender1 add-embtn">Add Employee</button>
-            </div>
-            <table>
-              <thead>
-                <tr>
-                  <th>S.No</th>
-                  <th>Name</th>
-                  <th>Phone No</th>
-                  <th>City</th>
-                  <th>Working From</th>
-                  <th>Salary</th>
-                  <th>
-                    Advance<br /><span class="thisMonth">this Month</span>
-                  </th>
-                  <th>
-                    Pending<br /><span class="thisMonth">this Month</span>
-                  </th>
-                  <th>Leave<br /><span class="thisMonth">this Month</span></th>
-                  <th>Present</th>
-                  <th>Status</th>
-                  <th>Week Off<br /><span class="thisMonth">Day</span></th>
-                  <th>Shift timing<br /><span>Start Time</span></th>
-                  <th>Shift timing<br /><span>Start Time</span></th>
-                  <th>view details</th>
-
-                  <!-- <th>Save</th> -->
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td class="abcbtn">Abc</td>
-                  <td>999999998</td>
-                  <td>Saharanpur</td>
-                  <td>2 Month</td>
-                  <td>20000</td>
-                  <td>1000</td>
-                  <td>4000</td>
-
-                  <td>2</td>
-                  <td>A</td>
-                  <td>Activate</td>
-                  <td>20</td>
-                  <td>06:00</td>
-                  <td>06:00</td>
-                  <td class="ProfileDetail"><button>Details</button></td>
-                </tr>
-
-                <tr>
-                  <td>2</td>
-                  <td class="abcbtn">Abc</td>
-                  <td>999999998</td>
-                  <td>Saharanpur</td>
-                  <td>2 Month</td>
-                  <td>20000</td>
-                  <td>1000</td>
-                  <td>4000</td>
-
-                  <td>2</td>
-                  <td>A</td>
-                  <td>Activate</td>
-                  <td>20</td>
-                  <td>06:20</td>
-                  <td>06:00</td>
-                  <td class="ProfileDetail"><button>Details</button></td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td class="abcbtn">Abc</td>
-                  <td>999999998</td>
-                  <td>Saharanpur</td>
-                  <td>2 Month</td>
-                  <td>20000</td>
-                  <td>1000</td>
-                  <td>4000</td>
-
-                  <td>2</td>
-                  <td>A</td>
-                  <td>Activate</td>
-                  <td>20</td>
-                  <td>06:20</td>
-                  <td>06:00</td>
-                  <td class="ProfileDetail"><button>Details</button></td>
-                </tr>
-
-                <tr>
-                  <td>4</td>
-                  <td class="abcbtn">Abc</td>
-                  <td>999999998</td>
-                  <td>Saharanpur</td>
-                  <td>2 Month</td>
-                  <td>20000</td>
-                  <td>1000</td>
-                  <td>4000</td>
-
-                  <td>2</td>
-                  <td>A</td>
-                  <td>Activate</td>
-                  <td>20</td>
-                  <td>06:20</td>
-                  <td>06:00</td>
-                  <td class="ProfileDetail"><button>Details</button></td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td class="abcbtn">Abc</td>
-                  <td>999999998</td>
-                  <td>Saharanpur</td>
-                  <td>2 Month</td>
-                  <td>20000</td>
-                  <td>1000</td>
-                  <td>4000</td>
-
-                  <td>2</td>
-                  <td>A</td>
-                  <td>Activate</td>
-                  <td>20</td>
-                  <td>06:20</td>
-                  <td>06:00</td>
-                  <td class="ProfileDetail"><button>Details</button></td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="mt-5 text-right">
+            <button class="addvender1 add-embtn">Add Employee</button>
           </div>
+          <table>
+            <thead>
+              <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Phone No</th>
+                <th>City</th>
+                <th>Working From</th>
+                <th>Salary</th>
+                <th>
+                  Advance<br /><span class="thisMonth">this Month</span>
+                </th>
+                <th>
+                  Pending<br /><span class="thisMonth">this Month</span>
+                </th>
+                <th>Leave<br /><span class="thisMonth">this Month</span></th>
+                <th>Present</th>
+                <th>Status</th>
+                <th>Week Off<br /><span class="thisMonth">Day</span></th>
+                <th>Shift timing<br /><span>Start Time</span></th>
+                <th>Shift timing<br /><span>Start Time</span></th>
+                <th>view details</th>
+
+                <!-- <th>Save</th> -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td class="abcbtn">Abc</td>
+                <td>999999998</td>
+                <td>Saharanpur</td>
+                <td>2 Month</td>
+                <td>20000</td>
+                <td>1000</td>
+                <td>4000</td>
+
+                <td>2</td>
+                <td>A</td>
+                <td>Activate</td>
+                <td>20</td>
+                <td>06:00</td>
+                <td>06:00</td>
+                <td class="ProfileDetail"><button>Details</button></td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+                <td class="abcbtn">Abc</td>
+                <td>999999998</td>
+                <td>Saharanpur</td>
+                <td>2 Month</td>
+                <td>20000</td>
+                <td>1000</td>
+                <td>4000</td>
+
+                <td>2</td>
+                <td>A</td>
+                <td>Activate</td>
+                <td>20</td>
+                <td>06:20</td>
+                <td>06:00</td>
+                <td class="ProfileDetail"><button>Details</button></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td class="abcbtn">Abc</td>
+                <td>999999998</td>
+                <td>Saharanpur</td>
+                <td>2 Month</td>
+                <td>20000</td>
+                <td>1000</td>
+                <td>4000</td>
+
+                <td>2</td>
+                <td>A</td>
+                <td>Activate</td>
+                <td>20</td>
+                <td>06:20</td>
+                <td>06:00</td>
+                <td class="ProfileDetail"><button>Details</button></td>
+              </tr>
+
+              <tr>
+                <td>4</td>
+                <td class="abcbtn">Abc</td>
+                <td>999999998</td>
+                <td>Saharanpur</td>
+                <td>2 Month</td>
+                <td>20000</td>
+                <td>1000</td>
+                <td>4000</td>
+
+                <td>2</td>
+                <td>A</td>
+                <td>Activate</td>
+                <td>20</td>
+                <td>06:20</td>
+                <td>06:00</td>
+                <td class="ProfileDetail"><button>Details</button></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td class="abcbtn">Abc</td>
+                <td>999999998</td>
+                <td>Saharanpur</td>
+                <td>2 Month</td>
+                <td>20000</td>
+                <td>1000</td>
+                <td>4000</td>
+
+                <td>2</td>
+                <td>A</td>
+                <td>Activate</td>
+                <td>20</td>
+                <td>06:20</td>
+                <td>06:00</td>
+                <td class="ProfileDetail"><button>Details</button></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="formpop">
-          <div class="form-wraper">
-            <div class="form-container">
-              <div class="closeform"><button>&times;</button></div>
-              <div class="container">
+      </div>
+      <div class="formpop">
+        <div class="form-wraper">
+          <div class="form-container">
+            <div class="closeform"><button>&times;</button></div>
+            <div class="container">
+              <div class="row justify-content-between text-left">
+                <div class="col-sm-5 text-center" style="padding-bottom: 10px; font-size: 21px">
+                  <h2 class="employemformh2">Add Employee</h2>
+                </div>
+              </div>
+              <form class="form-horizontal">
                 <div class="row justify-content-between text-left">
-                  <div
-                    class="col-sm-5 text-center"
-                    style="padding-bottom: 10px; font-size: 21px"
-                  >
-                    <h2 class="employemformh2">Add Employee</h2>
+                  <div class="form-group col-sm-5 flex-column d-flex forminput">
+                    <label class="form-control-label px-3">First name<span class="text-danger"> *</span></label>
+                    <input type="text" id="fname" name="fname" placeholder="Enter your first name"
+                      onblur="validate(1)" />
+                  </div>
+                  <div class="form-group col-sm-5 flex-column d-flex forminput">
+                    <label class="form-control-label px-3">Last name<span class="text-danger"> *</span></label>
+                    <input type="text" id="lname" name="lname" placeholder="Enter your last name"
+                      onblur="validate(2)" />
                   </div>
                 </div>
-                <form class="form-horizontal">
-                  <div class="row justify-content-between text-left">
-                    <div
-                      class="form-group col-sm-5 flex-column d-flex forminput"
-                    >
-                      <label class="form-control-label px-3"
-                        >First name<span class="text-danger"> *</span></label
-                      >
-                      <input
-                        type="text"
-                        id="fname"
-                        name="fname"
-                        placeholder="Enter your first name"
-                        onblur="validate(1)"
-                      />
-                    </div>
-                    <div
-                      class="form-group col-sm-5 flex-column d-flex forminput"
-                    >
-                      <label class="form-control-label px-3"
-                        >Last name<span class="text-danger"> *</span></label
-                      >
-                      <input
-                        type="text"
-                        id="lname"
-                        name="lname"
-                        placeholder="Enter your last name"
-                        onblur="validate(2)"
-                      />
-                    </div>
+                <div class="row justify-content-between text-left">
+                  <div class="form-group col-sm-5 flex-column d-flex forminput">
+                    <label class="form-control-label px-3">Aadhaar No<span class="text-danger"> *</span></label>
+                    <input type="text" id="fname" name="fname" placeholder="Enter your Addhre No"
+                      onblur="validate(1)" />
                   </div>
-                  <div class="row justify-content-between text-left">
-                    <div
-                      class="form-group col-sm-5 flex-column d-flex forminput"
-                    >
-                      <label class="form-control-label px-3"
-                        >Aadhaar No<span class="text-danger"> *</span></label
-                      >
-                      <input
-                        type="text"
-                        id="fname"
-                        name="fname"
-                        placeholder="Enter your Addhre No"
-                        onblur="validate(1)"
-                      />
-                    </div>
-                    <div
-                      class="form-group col-sm-5 flex-column d-flex forminput"
-                    >
-                      <label class="form-control-label px-3"
-                        >Phone No<span class="text-danger"> *</span></label
-                      >
-                      <input
-                        type="text"
-                        id="lname"
-                        name="lname"
-                        placeholder="Enter your Phone No"
-                        onblur="validate(2)"
-                      />
-                    </div>
+                  <div class="form-group col-sm-5 flex-column d-flex forminput">
+                    <label class="form-control-label px-3">Phone No<span class="text-danger"> *</span></label>
+                    <input type="text" id="lname" name="lname" placeholder="Enter your Phone No" onblur="validate(2)" />
                   </div>
-                  <div class="row justify-content-between text-left">
-                    <div
-                      class="form-group col-sm-5 flex-column d-flex forminput"
-                    >
-                      <label class="form-control-label px-3"
-                        >City<span class="text-danger"> *</span></label
-                      >
-                      <input
-                        type="text"
-                        id="fname"
-                        name="fname"
-                        placeholder="Enter your City"
-                        onblur="validate(1)"
-                      />
-                    </div>
-                    <div
-                      class="form-group col-sm-5 flex-column d-flex forminput"
-                    >
-                      <label class="form-control-label px-3"
-                        >State<span class="text-danger"> *</span></label
-                      >
-                      <input
-                        type="text"
-                        id="lname"
-                        name="lname"
-                        placeholder="Enter your State"
-                        onblur="validate(2)"
-                      />
-                    </div>
+                </div>
+                <div class="row justify-content-between text-left">
+                  <div class="form-group col-sm-5 flex-column d-flex forminput">
+                    <label class="form-control-label px-3">City<span class="text-danger"> *</span></label>
+                    <input type="text" id="fname" name="fname" placeholder="Enter your City" onblur="validate(1)" />
                   </div>
-                  <div class="row justify-content-between text-left">
-                    <div
-                      class="form-group col-sm-5 flex-column d-flex forminput"
-                    >
-                      <label class="form-control-label px-3"
-                        >Country<span class="text-danger"> *</span></label
-                      >
-                      <input
-                        type="text"
-                        id="fname"
-                        name="fname"
-                        placeholder="Enter your Country"
-                        onblur="validate(1)"
-                      />
-                    </div>
-                    <div
-                      class="form-group col-sm-5 flex-column d-flex forminput"
-                    >
-                      <label class="form-control-label px-3"
-                        >DOB<span class="text-danger"> *</span></label
-                      >
-                      <input
-                        type="text"
-                        id="lname"
-                        name="lname"
-                        placeholder="Enter your DOB"
-                        onblur="validate(2)"
-                      />
-                    </div>
+                  <div class="form-group col-sm-5 flex-column d-flex forminput">
+                    <label class="form-control-label px-3">State<span class="text-danger"> *</span></label>
+                    <input type="text" id="lname" name="lname" placeholder="Enter your State" onblur="validate(2)" />
                   </div>
-                  <div class="row justify-content-between text-left">
-                    <div
-                      class="form-group col-sm-5 flex-column d-flex forminput"
-                    >
-                      <label class="form-control-label px-3"
-                        >Salary<span class="text-danger"> *</span></label
-                      >
-                      <input
-                        type="text"
-                        id="fname"
-                        name="fname"
-                        placeholder="Enter your Salary"
-                        onblur="validate(1)"
-                      />
-                    </div>
-                    <div
-                      class="form-group col-sm-5 flex-column d-flex forminput"
-                    >
-                      <label class="form-control-label px-3"
-                        >Shift Timing<span class="text-danger"> *</span></label
-                      >
-                      <input
-                        type="text"
-                        id="lname"
-                        name="lname"
-                        placeholder="Enter your Shift Timing"
-                        onblur="validate(2)"
-                      />
-                    </div>
+                </div>
+                <div class="row justify-content-between text-left">
+                  <div class="form-group col-sm-5 flex-column d-flex forminput">
+                    <label class="form-control-label px-3">Country<span class="text-danger"> *</span></label>
+                    <input type="text" id="fname" name="fname" placeholder="Enter your Country" onblur="validate(1)" />
                   </div>
-                  <div class="row justify-content-between text-left">
-                    <div
-                      class="form-group col-sm-3 flex-column d-flex forminput"
-                    >
-                      <label class="form-control-label px-3"
-                        >Upload Image<span class="text-danger"> *</span></label
-                      >
-                      <input
-                        type="file"
-                        id="fname"
-                        name="fname"
-                        placeholder="Enter your Upload Image"
-                        onblur="validate(1)"
-                      />
-                    </div>
-                    <div
-                      class="form-group col-sm-3 flex-column d-flex forminput"
-                    >
-                      <label class="form-control-label px-3"
-                        >Upload Id<span class="text-danger"> *</span></label
-                      >
-                      <input
-                        type="file"
-                        id="lname"
-                        name="lname"
-                        placeholder="Enter your Upload Id"
-                        onblur="validate(2)"
-                      />
-                    </div>
-                    <div class="col-sm-3 form-radio" style="font-size: 12px">
-                      <label for="gender">Gender</label>
-                      <div
-                        class="form-flex"
-                        style="
+                  <div class="form-group col-sm-5 flex-column d-flex forminput">
+                    <label class="form-control-label px-3">DOB<span class="text-danger"> *</span></label>
+                    <input type="text" id="lname" name="lname" placeholder="Enter your DOB" onblur="validate(2)" />
+                  </div>
+                </div>
+                <div class="row justify-content-between text-left">
+                  <div class="form-group col-sm-5 flex-column d-flex forminput">
+                    <label class="form-control-label px-3">Salary<span class="text-danger"> *</span></label>
+                    <input type="text" id="fname" name="fname" placeholder="Enter your Salary" onblur="validate(1)" />
+                  </div>
+                  <div class="form-group col-sm-5 flex-column d-flex forminput">
+                    <label class="form-control-label px-3">Shift Timing<span class="text-danger"> *</span></label>
+                    <input type="text" id="lname" name="lname" placeholder="Enter your Shift Timing"
+                      onblur="validate(2)" />
+                  </div>
+                </div>
+                <div class="row justify-content-between text-left">
+                  <div class="form-group col-sm-3 flex-column d-flex forminput">
+                    <label class="form-control-label px-3">Upload Image<span class="text-danger"> *</span></label>
+                    <input type="file" id="fname" name="fname" placeholder="Enter your Upload Image"
+                      onblur="validate(1)" />
+                  </div>
+                  <div class="form-group col-sm-3 flex-column d-flex forminput">
+                    <label class="form-control-label px-3">Upload Id<span class="text-danger"> *</span></label>
+                    <input type="file" id="lname" name="lname" placeholder="Enter your Upload Id"
+                      onblur="validate(2)" />
+                  </div>
+                  <div class="col-sm-3 form-radio" style="font-size: 12px">
+                    <label for="gender">Gender</label>
+                    <div class="form-flex" style="
                           border: 3px solid #eee;
                           border-radius: 5px;
                           padding: 4px;
-                        "
-                      >
-                        <input
-                          type="radio"
-                          name="gender"
-                          value="male"
-                          id="male"
-                          checked="checked"
-                        />
-                        <label for="male">Male</label>
-                        <input
-                          type="radio"
-                          name="gender"
-                          value="female"
-                          id="female"
-                        />
-                        <label for="female">Female</label>
-                      </div>
+                        ">
+                      <input type="radio" name="gender" value="male" id="male" checked="checked" />
+                      <label for="male">Male</label>
+                      <input type="radio" name="gender" value="female" id="female" />
+                      <label for="female">Female</label>
                     </div>
                   </div>
+                </div>
 
-                  <div class="form-group text-center">
-                    <div class="col-sm-offset-2 col-sm-12">
-                      <button type="submit" class="submitbtn1">Submit</button>
-                    </div>
+                <div class="form-group text-center">
+                  <div class="col-sm-offset-2 col-sm-12">
+                    <button type="submit" class="submitbtn1">Submit</button>
                   </div>
-                </form>
-              </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="openpop">
-          <div class="popmain">
-            <div class="popopen">
-              <div
-                class="close"
-                style="
+      <div class="openpop">
+        <div class="popmain">
+          <div class="popopen">
+            <div class="close" style="
                   display: flex;
                   align-items: center;
                   justify-content: right;
-                "
-              >
-                <button
-                  style="
+                ">
+              <button style="
                     height: 22px;
                     width: 22px;
                     display: flex;
@@ -1449,141 +1305,118 @@
                     justify-content: center;
                     padding-bottom: 5px;
                     border-radius: 10px;
-                  "
-                >
-                  &times;
-                </button>
-              </div>
-              <div class="pop-content">
-                <div class="empoley-img">
-                  <img
-                    src="https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg"
-                  />
-                  <div class="empoley-name">
-                    <button style="background-color: #f01010">Activate</button>
-                    <button>Deactivate</button>
-                  </div>
-                </div>
-                <div class="empolet-detail">
-                  <div>
-                    <h2 style="color: #3abb69">ABC CBA</h2>
-                  </div>
-                  <div class="empoey-salarey">
-                    <div style="display: flex; gap: 4px">
-                      <p style="color: #bfc2cb">Salary:</p>
-                      <p style="color: #9ca0ac">2000</p>
-                    </div>
-
-                    <div style="display: flex; gap: 4px">
-                      <p style="color: #bfc2cb">Leave:</p>
-                      <p style="color: #9ca0ac">Sunday</p>
-                    </div>
-                  </div>
-
-                  <div class="empoey-salarey">
-                    <div style="display: flex; gap: 4px">
-                      <p style="color: #bfc2cb">Phone No:</p>
-                      <p style="color: #9ca0ac">9999776666</p>
-                    </div>
-                    <div style="display: flex; gap: 4px">
-                      <p style="color: #bfc2cb">Shift Timing:</p>
-                      <p style="color: #9ca0ac">12 Hours</p>
-                    </div>
-                  </div>
-                  <div class="empoey-salarey">
-                    <div style="display: flex; gap: 4px">
-                      <p style="color: #bfc2cb">Address:</p>
-                      <p style="color: #9ca0ac">Saharanpur</p>
-                    </div>
-                    <div style="display: flex; gap: 4px">
-                      <p style="color: #bfc2cb">Gender:</p>
-                      <p style="color: #9ca0ac">Female</p>
-                    </div>
-                  </div>
-                  <div class="empoey-salarey">
-                    <div style="display: flex; gap: 4px">
-                      <p style="color: #bfc2cb">Date of Joining:</p>
-                      <p style="color: #9ca0ac">12/04/2022</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  ">
+                &times;
+              </button>
             </div>
-          </div>
-        </div>
+            <div class="pop-content">
+              <div class="empoley-img">
+                <img src="https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg" />
+                <div class="empoley-name">
+                  <button style="background-color: #f01010">Activate</button>
+                  <button>Deactivate</button>
+                </div>
+              </div>
+              <div class="empolet-detail">
+                <div>
+                  <h2 style="color: #3abb69">ABC CBA</h2>
+                </div>
+                <div class="empoey-salarey">
+                  <div style="display: flex; gap: 4px">
+                    <p style="color: #bfc2cb">Salary:</p>
+                    <p style="color: #9ca0ac">2000</p>
+                  </div>
 
-        <div id="categorypop">
-          <div class="form-wraper">
-            <div class="form-container">
-              <div class="closeform"><button>&times;</button></div>
-              <div class="container">
-                <div class="row justify-content-between text-left">
-                  <div
-                    class="col-sm-5 text-center"
-                    style="padding-bottom: 10px; font-size: 21px"
-                  >
-                    <h2 class="employemformh2">Create Category</h2>
+                  <div style="display: flex; gap: 4px">
+                    <p style="color: #bfc2cb">Leave:</p>
+                    <p style="color: #9ca0ac">Sunday</p>
                   </div>
                 </div>
-                <form class="form-horizontal">
-                  <div class="row justify-content-between">
-                    <div class="form-group col-sm-8 forminput categoryInput">
-                      <label for="name">Name :</label>
-                      <input type="text" name="name" id="name" />
-                    </div>
+
+                <div class="empoey-salarey">
+                  <div style="display: flex; gap: 4px">
+                    <p style="color: #bfc2cb">Phone No:</p>
+                    <p style="color: #9ca0ac">9999776666</p>
                   </div>
-                  <div class="form-group text-center">
-                    <div class="col-sm-2 col-sm-5">
-                      <button type="submit" class="submitbtn1">Submit</button>
-                    </div>
+                  <div style="display: flex; gap: 4px">
+                    <p style="color: #bfc2cb">Shift Timing:</p>
+                    <p style="color: #9ca0ac">12 Hours</p>
                   </div>
-                </form>
+                </div>
+                <div class="empoey-salarey">
+                  <div style="display: flex; gap: 4px">
+                    <p style="color: #bfc2cb">Address:</p>
+                    <p style="color: #9ca0ac">Saharanpur</p>
+                  </div>
+                  <div style="display: flex; gap: 4px">
+                    <p style="color: #bfc2cb">Gender:</p>
+                    <p style="color: #9ca0ac">Female</p>
+                  </div>
+                </div>
+                <div class="empoey-salarey">
+                  <div style="display: flex; gap: 4px">
+                    <p style="color: #bfc2cb">Date of Joining:</p>
+                    <p style="color: #9ca0ac">12/04/2022</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </main>
-    <div class="ProfileDetailpop">
-      <div class="form-wraper">
-        <div class="form-container">
-          <div class="closeform"><button>&times;</button></div>
-          <div class="container">
-            <div class="row justify-content-between text-left">
-              <div
-                class="col-sm-5 text-center"
-                style="padding-bottom: 10px; font-size: 21px"
-              >
-                <h2 class="employemformh2">Employee Profile</h2>
-              </div>
+
+      <!-- <div class="addCategoryModelWrapper" style="display: flex;">
+        <div class="addCategoryModel" style="top: 50px;">
+          <div class="closeAddCategoryModel">
+            <i class="fa-regular fa-circle-xmark"></i>
+          </div>
+          <h2 class="mb-3">Add New Category</h2>
+          <form action="">
+            <div class="form-group">
+              <label for="category">Enter Category Name : </label>
+              <input type="text" name="" id="">
             </div>
+            <div class="text-right mt-3">
+              <button>Save Category</button>
+            </div>
+          </form>
+        </div>
+      </div> -->
+    </div>
+  </main>
+  <div class="ProfileDetailpop">
+    <div class="form-wraper">
+      <div class="form-container">
+        <div class="closeform"><button>&times;</button></div>
+        <div class="container">
+          <div class="row justify-content-between text-left">
+            <div class="col-sm-5 text-center" style="padding-bottom: 10px; font-size: 21px">
+              <h2 class="employemformh2">Employee Profile</h2>
+            </div>
+          </div>
 
-            <div class="row ProfileFormData">
-              <div class="col-md-3 vertical">
-                <!-- <div class=""><h3 class="profileHead">Profile</h3></div> -->
-                <div class="form-group mt-4">
-                  <div class="profileImage">
-                    <img
-                      src="https://www.nicepng.com/png/full/933-9332131_profile-picture-default-png.png"
-                      alt=""
-                      width="50px"
-                      height="50px"
-                    />
+          <div class="row ProfileFormData">
+            <div class="col-md-3 vertical">
+              <!-- <div class=""><h3 class="profileHead">Profile</h3></div> -->
+              <div class="form-group mt-4">
+                <div class="profileImage">
+                  <img src="https://www.nicepng.com/png/full/933-9332131_profile-picture-default-png.png" alt=""
+                    width="50px" height="50px" />
 
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td>Name</td>
-                          <td>:</td>
-                          <td>Preeti Kurmi</td>
-                        </tr>
-                        <tr>
-                          <td>Status</td>
-                          <td>:</td>
-                          <td class="HideActive">Active</td>
-                          <td class="HideDeactive">Deactive</td>
-                        </tr>
-                        <!-- <tr>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td>Name</td>
+                        <td>:</td>
+                        <td>Preeti Kurmi</td>
+                      </tr>
+                      <tr>
+                        <td>Status</td>
+                        <td>:</td>
+                        <td class="HideActive">Active</td>
+                        <td class="HideDeactive">Deactive</td>
+                      </tr>
+                      <!-- <tr>
                                                     <td><b>Designation</td>
                                                     <td>:</td>
                                                     <td>Manager</td>
@@ -1598,336 +1431,252 @@
                                                     <td>:</td>
                                                     <td>1111111</td>
                                                 </tr> -->
-                      </tbody>
-                    </table>
-                    <div class="EditEmployeDetail">
-                      <button id="ShowActive" class="bg-success">Active</button>
-                      <button id="ShowDeactive" class="bg-danger">
-                        Deactive
-                      </button>
-                    </div>
-                    <div class="row EditEmployeDetail">
-                      <div class="col-md-10">
-                        <div id="EditDisable">
-                          <button>Edit</button>
-                        </div>
+                    </tbody>
+                  </table>
+                  <div class="EditEmployeDetail">
+                    <button id="ShowActive" class="bg-success">Active</button>
+                    <button id="ShowDeactive" class="bg-danger">
+                      Deactive
+                    </button>
+                  </div>
+                  <div class="row EditEmployeDetail">
+                    <div class="col-md-10">
+                      <div id="EditDisable">
+                        <button>Edit</button>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <!-- <div class="col-md-1 vertical"></div> -->
-              <div class="col-md-9 gx-5">
-                <!-- <div class="text-center"><h3 class="profileHead">Details</h3></div> -->
-                <div class="mt-4">
-                  <form action="" id="diableEnable">
-                    <div class="row">
-                      <div class="form-group col-md-4 formData">
-                        <label for="name">Name :</label>
-                        <input
-                          type="text"
-                          id="name"
-                          value="Preeti Kurmi"
-                          disabled
-                        />
-                      </div>
-                      <div class="form-group col-md-4 formData GenderHide">
-                        <label for="gnder">Gender :</label>
-
-                        <input
-                          type="text"
-                          name="gender"
-                          id="gender"
-                          value="female"
-                          disabled
-                        />
-                      </div>
-                      <div class="EditGender form-group col-md-4 formData">
-                        <label for="gnder">Gender :</label>
-                        <label for="male">Male</label>
-                        <input type="radio" name="gender" id="male" male />
-                        <label for="female">Female</label>
-                        <input
-                          type="radio"
-                          name="gender"
-                          id="female"
-                          value="female"
-                        />
-                        <label for="other">Other</label>
-                        <input type="radio" name="gender" id="other" />
-                      </div>
-                      <div class="form-group col-md-4 formData">
-                        <label for="phone">Phone :</label>
-                        <input
-                          type="text"
-                          name="phone"
-                          id="phone"
-                          value="1234567890"
-                          disabled
-                        />
-                      </div>
-                      <div class="form-group col-md-4 formData">
-                        <label for="email">Email :</label>
-                        <input
-                          type="email"
-                          name="email"
-                          id="email"
-                          value="preeti@gmail.com"
-                          disabled
-                        />
-                      </div>
-                      <div class="form-group col-md-4 formData">
-                        <label for="address">Address:</label>
-                        <input
-                          type="text"
-                          name="address"
-                          id="address"
-                          value="chukhuwala"
-                          disabled
-                        />
-                      </div>
-                      <div class="form-group col-md-4 formData StateHide">
-                        <label for="state">State :</label>
-                        <input
-                          type="text"
-                          name="state"
-                          id="state"
-                          value="uttarakhand"
-                          disabled
-                        />
-                      </div>
-                      <div class="form-group col-md-4 formData StateShow">
-                        <label for="state">State :</label>
-                        <select name="state" id="state">
-                          <option value="Select State">
-                            Select Your State
-                          </option>
-                          <option value="uttarakhand" selected>
-                            uttarakhand
-                          </option>
-                          <option value="Uttarpradesh">Uttarpradesh</option>
-                          <option value="Haryana">Haryana</option>
-                        </select>
-                      </div>
-                      <div class="form-group col-md-4 formData Hidecity">
-                        <label for="city">City :</label>
-                        <input
-                          type="text"
-                          name="city"
-                          id="city"
-                          value="Dehradun"
-                          disabled
-                        />
-                      </div>
-                      <div class="form-group col-md-4 formData Showcity">
-                        <label for="city">City :</label>
-                        <select name="city" id="city">
-                          <option value="Select city">Select Your city</option>
-                          <option value="dehradun" selected>dehradun</option>
-                          <option value="Vikasnagar">Vikasnagar</option>
-                          <option value="chandigarh">chandigarh</option>
-                        </select>
-                      </div>
-                      <div class="form-group col-md-4 formData hideDateofBirth">
-                        <label for="dateWise">Date of Birth :</label>
-                        <input
-                          type="text"
-                          name="dateWise"
-                          id="dateWise"
-                          value="01-11-2001"
-                          disabled
-                        />
-                      </div>
-                      <div class="form-group col-md-4 formData ShowDateoFBirth">
-                        <label for="dateWise">Date of birth :</label>
-                        <input
-                          type="date"
-                          name="dateWise"
-                          id="dateWise"
-                          value="01-11-2001"
-                          disabled
-                        />
-                      </div>
-
-                      <div class="form-group col-md-4 formData WeekoffHide">
-                        <label for="weekoff">Week Off:</label>
-                        <input
-                          type="text"
-                          name="weekoff"
-                          id="weekoff"
-                          value="Monday"
-                          disabled
-                        />
-                      </div>
-                      <div class="form-group col-md-4 formData EditWeekoff">
-                        <label for="weekoff">Week off:</label>
-                        <select name="" id="">
-                          <option value="Sunday">Sunday</option>
-                          <option value="Monday" selected>Monday</option>
-                          <option value="Tuesday">Tuesday</option>
-                          <option value="Wednesday">Wednesday</option>
-                          <option value="Thursday">Thursday</option>
-                          <option value="Friday">Friday</option>
-                          <option value="Saturday">Saturday</option>
-                        </select>
-                      </div>
-                      <div class="form-group col-md-4 formData JoiningDate">
-                        <label for="dateWise">Date of Joining:</label>
-                        <input
-                          type="text"
-                          name="dateWise"
-                          id="dateWise"
-                          value="21-01-2023"
-                          disabled
-                        />
-                      </div>
-                      <div class="form-group col-md-4 formData EditJoiningDate">
-                        <label for="dateWise">Date of Joining:</label>
-                        <input
-                          type="date"
-                          name="dateWise"
-                          id="dateWise"
-                          value="21-01-2023"
-                          disabled
-                        />
-                      </div>
-                      <div class="form-group col-md-4 formData">
-                        <label for="salary">Salary:</label>
-                        <input
-                          type="text"
-                          name="salary"
-                          id="salary"
-                          value="111111"
-                          disabled
-                        />
-                      </div>
-                      <div
-                        class="form-group col-md-9 formData SaveButton EditEmployeDetail"
-                      >
-                        <button type="submit">Save</button>
-                      </div>
-                    </div>
-                  </form>
                 </div>
               </div>
             </div>
-            <div class="container-fluid">
-              <div class="row mt-4">
-                <div class="text-center col-md-12">
-                  <h3>Attendance & Salary</h3>
-                </div>
-              </div>
-              <div class="col-12 mt-2">
-                <div class="allBtns d-flex">
-                  <select name="" id="year" class="activeYear">
-                    <option value="2023">2023</option>
-                    <option value="2022">2022</option>
-                    <option value="2021">2021</option>
-                    <option value="2020">2020</option>
-                  </select>
-                  <div class="monthsBtnWrapper">
-                    <button class="" data-month="1">January</button>
-                    <button data-month="2">February</button>
-                    <button data-month="3">March</button>
-                    <button data-month="4">April</button>
-                    <button data-month="5">May</button>
-                    <button data-month="6">June</button>
-                    <button data-month="7">July</button>
-                    <button data-month="8">August</button>
-                    <button data-month="9">September</button>
-                    <button data-month="10">October</button>
-                    <button data-month="11">November</button>
-                    <button data-month="12">December</button>
-                  </div>
-                </div>
-              </div>
-              <div class="filters py-2 d-flex align-items-center mt-3">
-                <div class="topBtnWrapper">
-                  <div class="topBtns">
-                    <div class="title">Present</div>
-                    <span>20</span>
-                  </div>
-                  <div class="topBtns">
-                    <div class="title">Absent</div>
-                    <span>6</span>
-                  </div>
-                  <div class="topBtns">
-                    <div class="title">Salary</div>
-                    <span>44444</span>
-                  </div>
+            <!-- <div class="col-md-1 vertical"></div> -->
+            <div class="col-md-9 gx-5">
+              <!-- <div class="text-center"><h3 class="profileHead">Details</h3></div> -->
+              <div class="mt-4">
+                <form action="" id="diableEnable">
+                  <div class="row">
+                    <div class="form-group col-md-4 formData">
+                      <label for="name">Name :</label>
+                      <input type="text" id="name" value="Preeti Kurmi" disabled />
+                    </div>
+                    <div class="form-group col-md-4 formData GenderHide">
+                      <label for="gnder">Gender :</label>
 
-                  <div class="topBtns">
-                    <div class="title">Advance</div>
-                    <span>444</span>
+                      <input type="text" name="gender" id="gender" value="female" disabled />
+                    </div>
+                    <div class="EditGender form-group col-md-4 formData">
+                      <label for="gnder">Gender :</label>
+                      <label for="male">Male</label>
+                      <input type="radio" name="gender" id="male" male />
+                      <label for="female">Female</label>
+                      <input type="radio" name="gender" id="female" value="female" />
+                      <label for="other">Other</label>
+                      <input type="radio" name="gender" id="other" />
+                    </div>
+                    <div class="form-group col-md-4 formData">
+                      <label for="phone">Phone :</label>
+                      <input type="text" name="phone" id="phone" value="1234567890" disabled />
+                    </div>
+                    <div class="form-group col-md-4 formData">
+                      <label for="email">Email :</label>
+                      <input type="email" name="email" id="email" value="preeti@gmail.com" disabled />
+                    </div>
+                    <div class="form-group col-md-4 formData">
+                      <label for="address">Address:</label>
+                      <input type="text" name="address" id="address" value="chukhuwala" disabled />
+                    </div>
+                    <div class="form-group col-md-4 formData StateHide">
+                      <label for="state">State :</label>
+                      <input type="text" name="state" id="state" value="uttarakhand" disabled />
+                    </div>
+                    <div class="form-group col-md-4 formData StateShow">
+                      <label for="state">State :</label>
+                      <select name="state" id="state">
+                        <option value="Select State">
+                          Select Your State
+                        </option>
+                        <option value="uttarakhand" selected>
+                          uttarakhand
+                        </option>
+                        <option value="Uttarpradesh">Uttarpradesh</option>
+                        <option value="Haryana">Haryana</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-4 formData Hidecity">
+                      <label for="city">City :</label>
+                      <input type="text" name="city" id="city" value="Dehradun" disabled />
+                    </div>
+                    <div class="form-group col-md-4 formData Showcity">
+                      <label for="city">City :</label>
+                      <select name="city" id="city">
+                        <option value="Select city">Select Your city</option>
+                        <option value="dehradun" selected>dehradun</option>
+                        <option value="Vikasnagar">Vikasnagar</option>
+                        <option value="chandigarh">chandigarh</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-4 formData hideDateofBirth">
+                      <label for="dateWise">Date of Birth :</label>
+                      <input type="text" name="dateWise" id="dateWise" value="01-11-2001" disabled />
+                    </div>
+                    <div class="form-group col-md-4 formData ShowDateoFBirth">
+                      <label for="dateWise">Date of birth :</label>
+                      <input type = "text" id = "datepicker" placeholder="16-02-2022">
+                    </div>
+
+                    <div class="form-group col-md-4 formData WeekoffHide">
+                      <label for="weekoff">Week Off:</label>
+                      <input type="text" name="weekoff" id="weekoff" value="Monday" disabled />
+                    </div>
+                    <div class="form-group col-md-4 formData EditWeekoff">
+                      <label for="weekoff">Week off:</label>
+                      <select name="" id="">
+                        <option value="Sunday">Sunday</option>
+                        <option value="Monday" selected>Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-4 formData JoiningDate">
+                      <label for="dateWise">Date of Joining:</label>
+                      <input type="text" name="dateWise" id="dateWise" value="21-01-2023" disabled />
+                    </div>
+                    <div class="form-group col-md-4 formData EditJoiningDate">
+                      <label for="dateWise">Date of Joining:</label>
+                      <input type = "text" id = "datepicker" placeholder="16-02-2022">
+                    </div>
+                    <div class="form-group col-md-4 formData">
+                      <label for="salary">Salary:</label>
+                      <input type="text" name="salary" id="salary" value="111111" disabled />
+                    </div>
+                    <div class="form-group col-md-9 formData SaveButton EditEmployeDetail">
+
+                      <button type="submit">Save</button>
+                      <button type="submit">Cancel</button>
+
+                    </div>
                   </div>
-                  <div class="topBtns">
-                    <div class="title">Pending</div>
-                    <span>4000</span>
-                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row mt-4">
+              <div class="text-center col-md-12">
+                <h3>Attendance & Salary</h3>
+              </div>
+            </div>
+            <div class="col-12 mt-2">
+              <div class="allBtns d-flex">
+                <select name="" id="year" class="activeYear">
+                  <option value="2023">2023</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                </select>
+                <div class="monthsBtnWrapper">
+                  <button class="" data-month="1">January</button>
+                  <button data-month="2">February</button>
+                  <button data-month="3">March</button>
+                  <button data-month="4">April</button>
+                  <button data-month="5">May</button>
+                  <button data-month="6">June</button>
+                  <button data-month="7">July</button>
+                  <button data-month="8">August</button>
+                  <button data-month="9">September</button>
+                  <button data-month="10">October</button>
+                  <button data-month="11">November</button>
+                  <button data-month="12">December</button>
                 </div>
               </div>
-              <div class="container-fluid py-1">
-                <div class="row mt-2">
-                  <div class="userDetails d-flex justify-content-between">
-                    <ul
-                      class="list-unstyled d-flex justify-content-between w-100 mb-0 pl-0 p-1"
-                    >
-                      <li>salary paid on : <span>01/02/2023</span></li>
-                      <li><span></span></li>
-                      <li><span></span></li>
-                      <!-- <li>: <span>9897909090</span></li>
-                                        <li>Advance Payment : <span>1000</span></li>
+            </div>
+            <div class="filters py-2 d-flex align-items-center mt-3">
+              <div class="topBtnWrapper">
+                <div class="topBtns">
+                  <div class="title">Present</div>
+                  <span>20</span>
+                </div>
+                <div class="topBtns">
+                  <div class="title">Absent</div>
+                  <span>6</span>
+                </div>
+                <div class="topBtns">
+                  <div class="title">Salary</div>
+                  <span>44444</span>
+                </div>
+
+                <div class="topBtns">
+                  <div class="title">Advance</div>
+                  <span>444</span>
+                </div>
+                <div class="topBtns">
+                  <div class="title">Pending</div>
+                  <span>4000</span>
+                </div>
+              </div>
+            </div>
+            <div class="container-fluid py-1">
+              <div class="row mt-2">
+                <div class="userDetails d-flex justify-content-between">
+                  <ul class="list-unstyled d-flex justify-content-between w-100 mb-0 pl-0 p-1">
+                    <li>salary paid on : <span>01/02/2023</span></li>
+                    <li><span></span></li>
+                    <li><span></span></li>
+                    <!-- <li>: <span>9897909090</span></li>
+                          <li>Advance Payment : <span>1000</span></li>
                                         <li>Pending Payment : <span>4000</span></li> -->
-                    </ul>
-                  </div>
+                  </ul>
                 </div>
               </div>
-              <div class="ProductDetailsWrapper">
-                <div class="details">
-                  <!-- <div class="title">
+            </div>
+            <div class="ProductDetailsWrapper">
+              <div class="details">
+                <!-- <div class="title">
                                         <h3>Order Details</h3>
                                       </div> -->
 
-                  <div class="d-flex">
-                    <aside class="leftBar">
-                      <h3 class="listTitle">Days</h3>
-                      <ul class="list-unstyled mb-0 pl-0 dateListWraper">
-                        <li>15 / 01 / 2023</li>
-                      </ul>
-                    </aside>
-                    <table class="purchasesTable">
-                      <thead>
-                        <tr>
-                          <th>Present</th>
-                          <th>Absent</th>
-                          <th>Advance Pay</th>
-                          <!-- <th>Save</th> -->
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>p</td>
-                          <td>-</td>
-                          <td>100</td>
-                        </tr>
-                        <tr>
-                          <td>p</td>
-                          <td>-</td>
-                          <td>-</td>
-                        </tr>
-                        <tr>
-                          <td>-</td>
-                          <td>A</td>
-                          <td>-</td>
-                        </tr>
-                        <tr>
-                          <td>p</td>
-                          <td>p</td>
-                          <td>4</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                <div class="d-flex">
+                  <aside class="leftBar">
+                    <h3 class="listTitle">Days</h3>
+                    <ul class="list-unstyled mb-0 pl-0 dateListWraper">
+                      <li>15 / 01 / 2023</li>
+                    </ul>
+                  </aside>
+                  <table class="purchasesTable">
+                    <thead>
+                      <tr>
+                        <th>Present</th>
+                        <th>Absent</th>
+                        <th>Advance Pay</th>
+                        <!-- <th>Save</th> -->
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>p</td>
+                        <td>-</td>
+                        <td>100</td>
+                      </tr>
+                      <tr>
+                        <td>p</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>-</td>
+                        <td>A</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>p</td>
+                        <td>p</td>
+                        <td>4</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
@@ -1935,184 +1684,217 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script>
-      $("head").append(
-        '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script>
+    $("head").append(
+      '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
+    );
+    $("head").append(
+      ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\/>'
+    );
+    $("head").append(
+      '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
+    );
+  </script>
+  <script>
+    function togglePopup() {
+      $(".content").toggle();
+    }
+
+    $(".checf").click(function () {
+      $(".checf").removeClass("divchangbackground ");
+      $(this).addClass("divchangbackground ");
+
+      $(".ProductDetailsWrapper .details .title h3").text(
+        $(this).children(".chefbuuu").children("button").text()
       );
-      $("head").append(
-        ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\/>'
-      );
-      $("head").append(
-        '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
-      );
-    </script>
-    <script>
-      function togglePopup() {
-        $(".content").toggle();
+    });
+
+    $(".abcbtn").click(function () {
+      $(".openpop").show();
+    });
+    $(".close").click(function () {
+      $(".openpop").hide();
+    });
+    $(".add-embtn").click(function () {
+      $(".formpop").show();
+    });
+    $(".closeform").click(function () {
+      $(".formpop").hide();
+    });
+    $("#createCategory").click(function () {
+      $("#categorypop").show();
+    });
+    $(".closeform").click(function () {
+      $("#categorypop").hide();
+    });
+    $(".ProfileDetail").click(function () {
+      $(".ProfileDetailpop").show();
+    });
+    $(".closeform").click(function () {
+      $(".ProfileDetailpop").hide();
+    });
+    $("#EditDisable").click(function () {
+      $("#diableEnable :input").prop("disabled", false);
+      $("#diableEnable :input").css({
+        border: "1px solid #000",
+      });
+    });
+    $("#EditDisable").click(function () {
+      $(".GenderHide").hide();
+      $(".EditGender").show();
+    });
+    $("#EditDisable").click(function () {
+      $(".WeekoffHide").hide();
+      $(".EditWeekoff").show();
+    });
+    $("#EditDisable").click(function () {
+      $(".JoiningDate").hide();
+      $(".EditJoiningDate").show();
+    });
+    $("#EditDisable").click(function () {
+      $(".StateHide").hide();
+      $(".StateShow").show();
+    });
+    $("#EditDisable").click(function () {
+      $(".hideDateofBirth").hide();
+      $(".ShowDateoFBirth").show();
+    });
+    $("#EditDisable").click(function () {
+      $(".Hidecity").hide();
+      $(".Showcity").show();
+    });
+
+    $("#EditDisable").click(function () {
+      $(".SaveButton").show();
+    });
+    $("#ShowActive").click(function () {
+      $(".HideDeactive").hide();
+      $(".HideActive").show();
+    });
+    $("#ShowDeactive").click(function () {
+      $(".HideDeactive").show();
+      $(".HideActive").hide();
+    });
+  </script>
+
+  <script>
+    $(function () {
+      $("#dateWise").datepicker();
+      let formattedDate = new Date();
+      let d = formattedDate.getDate();
+      let m = formattedDate.getMonth();
+      m += 1; // JavaScript months are 0-11
+      if (d < 10) {
+        d = "0" + d;
       }
+      if (m < 10) {
+        m = "0" + m;
+      }
+      let y = formattedDate.getFullYear();
+      $("#dateWise").attr("placeholder", d + "/" + m + "/" + y);
 
-      $(".checf").click(function () {
-        $(".checf").removeClass("divchangbackground ");
-        $(this).addClass("divchangbackground ");
-
-        $(".ProductDetailsWrapper .details .title h3").text(
-          $(this).children(".chefbuuu").children("button").text()
+      $(".allBtnsWrapper .allBtns .topBtns").click(function () {
+        $(".allBtnsWrapper .allBtns .topBtns").removeClass(
+          "activeTopBarTitleBtn"
         );
+        $(this).addClass("activeTopBarTitleBtn");
       });
+    });
+  </script>
+  <script>
+    GetThisMonth();
+    getthisMonthDates();
+    function GetThisMonth() {
+      let TodaysDate = new Date();
+      let thisDay = TodaysDate.getDate();
+      let thisMonth = TodaysDate.getMonth();
+      $(".monthsBtnWrapper button").removeClass("activeMonth");
+      $(`.monthsBtnWrapper button:nth-child(${thisMonth + 1})`).addClass(
+        "activeMonth"
+      );
+    }
 
-      $(".abcbtn").click(function () {
-        $(".openpop").show();
-      });
-      $(".close").click(function () {
-        $(".openpop").hide();
-      });
-      $(".add-embtn").click(function () {
-        $(".formpop").show();
-      });
-      $(".closeform").click(function () {
-        $(".formpop").hide();
-      });
-      $("#createCategory").click(function () {
-        $("#categorypop").show();
-      });
-      $(".closeform").click(function () {
-        $("#categorypop").hide();
-      });
-      $(".ProfileDetail").click(function () {
-        $(".ProfileDetailpop").show();
-      });
-      $(".closeform").click(function () {
-        $(".ProfileDetailpop").hide();
-      });
-      $("#EditDisable").click(function () {
-        $("#diableEnable :input").prop("disabled", false);
-        $("#diableEnable :input").css({
-          border: "1px solid #000",
-        });
-      });
-      $("#EditDisable").click(function () {
-        $(".GenderHide").hide();
-        $(".EditGender").show();
-      });
-      $("#EditDisable").click(function () {
-        $(".WeekoffHide").hide();
-        $(".EditWeekoff").show();
-      });
-      $("#EditDisable").click(function () {
-        $(".JoiningDate").hide();
-        $(".EditJoiningDate").show();
-      });
-      $("#EditDisable").click(function () {
-        $(".StateHide").hide();
-        $(".StateShow").show();
-      });
-      $("#EditDisable").click(function () {
-        $(".hideDateofBirth").hide();
-        $(".ShowDateoFBirth").show();
-      });
-      $("#EditDisable").click(function () {
-        $(".Hidecity").hide();
-        $(".Showcity").show();
-      });
-
-      $("#EditDisable").click(function () {
-        $(".SaveButton").show();
-      });
-      $("#ShowActive").click(function () {
-        $(".HideDeactive").hide();
-        $(".HideActive").show();
-      });
-      $("#ShowDeactive").click(function () {
-        $(".HideDeactive").show();
-        $(".HideActive").hide();
-      });
-    </script>
-
-    <script>
-      $(function () {
-        $("#dateWise").datepicker();
-        let formattedDate = new Date();
-        let d = formattedDate.getDate();
-        let m = formattedDate.getMonth();
-        m += 1; // JavaScript months are 0-11
-        if (d < 10) {
-          d = "0" + d;
-        }
-        if (m < 10) {
-          m = "0" + m;
-        }
-        let y = formattedDate.getFullYear();
-        $("#dateWise").attr("placeholder", d + "/" + m + "/" + y);
-
-        $(".allBtnsWrapper .allBtns .topBtns").click(function () {
-          $(".allBtnsWrapper .allBtns .topBtns").removeClass(
-            "activeTopBarTitleBtn"
-          );
-          $(this).addClass("activeTopBarTitleBtn");
-        });
-      });
-    </script>
-    <script>
-      GetThisMonth();
-      getthisMonthDates();
-      function GetThisMonth() {
-        let TodaysDate = new Date();
-        let thisDay = TodaysDate.getDate();
-        let thisMonth = TodaysDate.getMonth();
-        $(".monthsBtnWrapper button").removeClass("activeMonth");
-        $(`.monthsBtnWrapper button:nth-child(${thisMonth + 1})`).addClass(
-          "activeMonth"
-        );
-      }
-
-      function getthisMonthDates() {
-        let year = $("#year option:selected").val();
-        let month = $(".activeMonth").data("month");
-        let TodaysDate = new Date();
-        let thisDay = TodaysDate.getDate();
-        let thisMonth = TodaysDate.getMonth();
-        thisMonth = (thisMonth < 10 ? "0" : "") + (thisMonth + 1);
-        let thisYear = TodaysDate.getFullYear();
-        TodaysDate = thisMonth + "/" + thisYear;
-        let totalDays = 0;
-        if (+year - +thisYear == 0 && +month - +thisMonth == 0) {
-          totalDays = +thisDay;
-          $(".dateListWraper").html("");
-          for (let i = 0; i < totalDays - 1; i++) {
-            $(".dateListWraper").append(
-              `<li>${
-                (i < 9 ? "0" : " ") + (i + 1)
-              } / ${thisMonth} / ${thisYear}</li>`
-            );
-          }
-        } else {
-          getAllMonthDetails(month, year);
-        }
-      }
-
-      function getAllMonthDetails(month, year) {
-        var numOfDays = new Date(year, month, 0).getDate();
+    function getthisMonthDates() {
+      let year = $("#year option:selected").val();
+      let month = $(".activeMonth").data("month");
+      let TodaysDate = new Date();
+      let thisDay = TodaysDate.getDate();
+      let thisMonth = TodaysDate.getMonth();
+      thisMonth = (thisMonth < 10 ? "0" : "") + (thisMonth + 1);
+      let thisYear = TodaysDate.getFullYear();
+      TodaysDate = thisMonth + "/" + thisYear;
+      let totalDays = 0;
+      if (+year - +thisYear == 0 && +month - +thisMonth == 0) {
+        totalDays = +thisDay;
         $(".dateListWraper").html("");
-        month = (month < 10 ? "0" : "") + month;
-
-        for (var i = 0; i <= numOfDays - 1; i++) {
+        for (let i = 0; i < totalDays - 1; i++) {
           $(".dateListWraper").append(
-            `<li>${(i < 9 ? "0" : " ") + (i + 1)} / ${month} / ${year}</li>`
+            `<li>${(i < 9 ? "0" : " ") + (i + 1)
+            } / ${thisMonth} / ${thisYear}</li>`
           );
         }
+      } else {
+        getAllMonthDetails(month, year);
       }
+    }
 
-      $(".monthsBtnWrapper button").click(function () {
-        $(".monthsBtnWrapper button").removeClass("activeMonth");
-        $(this).addClass("activeMonth");
-        $(".month").text($(this).text());
+    function getAllMonthDetails(month, year) {
+      var numOfDays = new Date(year, month, 0).getDate();
+      $(".dateListWraper").html("");
+      month = (month < 10 ? "0" : "") + month;
 
-        let year = $("#year option:selected").val();
-        let month = $(this).data("month");
-        getthisMonthDates();
+      for (var i = 0; i <= numOfDays - 1; i++) {
+        $(".dateListWraper").append(
+          `<li>${(i < 9 ? "0" : " ") + (i + 1)} / ${month} / ${year}</li>`
+        );
+      }
+    }
+
+    $(".monthsBtnWrapper button").click(function () {
+      $(".monthsBtnWrapper button").removeClass("activeMonth");
+      $(this).addClass("activeMonth");
+      $(".month").text($(this).text());
+
+      let year = $("#year option:selected").val();
+      let month = $(this).data("month");
+      getthisMonthDates();
+    });
+  </script>
+   <link rel = "stylesheet" 
+   href = "//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script type = "text/javascript" 
+   src = "https://www.tutorialspoint.com/jquery/jquery-3.6.0.js">
+</script>
+
+<script type = "text/javascript" 
+   src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js">
+</script>
+
+<script>
+
+
+
+ 
+  $(function () {
+    $( "#datepicker" ).datepicker();
       });
-    </script>
-  </body>
+
+      $(".closeAddCategoryModel").click(function () {
+        $(".addCategoryModelWrapper").hide();
+        $(".addCategoryModelWrapper .addCategoryModel").animate({ top: -50 });
+      });
+      $(".addNewCategoryBtn").click(function () {
+        $(".addCategoryModelWrapper").css({
+          display: "flex",
+        });
+        $(".addCategoryModelWrapper .addCategoryModel").animate({ top: 50 });
+      });
+
+</script>
+</body>
+
 </html>
