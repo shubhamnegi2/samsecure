@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Purchases</title>
     <link rel="stylesheet" href="./addFixedStock.css" />
+    <link rel="stylesheet" href="./popup-models.css" />
+
     <style>
-      body {
+      .ProductDetailsWrapper {
         counter-reset: Serial;
       }
-      tr td:first-child:before {
+      .ProductDetailsWrapper tr td:first-child:before {
         counter-increment: Serial;
         content: counter(Serial);
       }
@@ -151,7 +153,7 @@
         color: #fff;
         font-size: 10px;
         font-weight: 600;
-        padding: 2px 8px;        
+        padding: 2px 8px;
       }
     </style>
   </head>
@@ -160,7 +162,7 @@
       <ul class="list-unstyled d-flex align-items-center">
         <li><a href="">Purchases</a></li>
         <li><i class="fa-solid fa-angles-right"></i></li>
-        <li><a href="" class="ActiveBreadcrumb ">Add Purchases</a></li>
+        <li><a href="" class="ActiveBreadcrumb">Add Purchases</a></li>
       </ul>
       <div>
         <button class="btn btn-primary activeBreadcurmbtn">
@@ -186,14 +188,11 @@
               <h3 class="categoryheading">
                 Fixed Stock List
                 <span class="px-2 mainColor">|</span>
-                <span
-                  >Total  : <span class="totalCatgry">22</span></span
-                >
+                <span>Total : <span class="totalCatgry">22</span></span>
               </h3>
               <div class="CategoryActionBtn text-right">
-                <button class="btn btn-primary btn-sm">Add Category</button>
-                <button class="btn btn-primary btn-sm">Edit Category</button>
-                <button class="btn btn-primary btn-sm">Delete Category</button>
+                <button class="btn btn-primary btn-sm addNewCategoryBtn ">Add Category</button>
+                <button class="btn btn-primary btn-sm editNewCategoryBtn">Edit Category</button>
               </div>
             </div>
             <hr />
@@ -223,14 +222,11 @@
             <h3>
               Product List
               <span class="px-2 mainColor">|</span>
-              <span>
-                Total  : <span class="totalIngredients">52</span>
-              </span>
+              <span> Total : <span class="totalIngredients">52</span> </span>
             </h3>
             <div class="ingredientsActionBtn text-right">
               <button class="btn btn-primary btn-sm">Add Product</button>
               <button class="btn btn-primary btn-sm">Edit Product</button>
-              <button class="btn btn-primary btn-sm">Delete Product</button>
             </div>
           </div>
           <hr />
@@ -323,7 +319,7 @@
           </div>
         </div>
       </div> -->
-      
+
       <div class="container-fluid">
         <div class="ProductDetailsWrapper">
           <div class="details">
@@ -430,9 +426,7 @@
               <!-- <button class="btn btn-primary btn-sm showVenderDetails">
                 Next
               </button> -->
-              <button class="btn btn-primary btn-sm ">
-                Submit
-              </button>
+              <button class="btn btn-primary btn-sm">Submit</button>
             </div>
           </div>
           <div class="venderDetailsTable">
@@ -564,9 +558,20 @@
         </div>
       </div>
     </main>
+    <!-- 
+      models will load inside the div
+    -->
+    <div id="addCategoryModelWrapper"></div>
+    <div id="editCategoryModelWrapper"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="./common-model.js"></script>
     <script>
+      $(document).ready(function () {
+
+        $("#addCategoryModelWrapper").load("add-category-model.html");
+        $("#editCategoryModelWrapper").load("edit-category-model.html");
+      });
       $("head").append(
         '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
       );
@@ -647,7 +652,11 @@
         $(".ProductDetailsWrapper .details .title h3").text(
           $(this).children("span").text()
         );
-        $(".ProductDetailsWrapper table tbody").append('<tr> <td></td><td class="name">'+ $(this).children("span").text()+'</td><td> <input type="text" class="variation" placeholder="variations" name="Variation"/> </td><td> <input type="text" class="quantity" placeholder="Quantity" name="quantity"/> </td><td> <input type="text" class="price/Qty" placeholder="Price/Qty" name="price/Qty"/> </td><td> <input type="text" name="totalPayment" placeholder="Total Payment"/> </td><td> <input type="text" name="paidPayment" placeholder="Paid Payment"/> </td><td> <select name="Vender" class="chooseVender" id="Vender"> <option selected="" disabled="">Select Vender</option> <option value="Amit">Amit</option> <option value="Ankit">Ankit</option> <option value="Rohit">Rohit</option> <option value="Akash">Akash</option> <option value="Ramu">Ramu</option> <option value="Sonu">Sonu</option> <option value="Manish Joshi">Manish Joshi</option> </select> </td><td> <i class="fa-solid fa-trash deleteThisRow"></i> </td></tr>');
+        $(".ProductDetailsWrapper table tbody").append(
+          '<tr> <td></td><td class="name">' +
+            $(this).children("span").text() +
+            '</td><td> <input type="text" class="variation" placeholder="variations" name="Variation"/> </td><td> <input type="text" class="quantity" placeholder="Quantity" name="quantity"/> </td><td> <input type="text" class="price/Qty" placeholder="Price/Qty" name="price/Qty"/> </td><td> <input type="text" name="totalPayment" placeholder="Total Payment"/> </td><td> <input type="text" name="paidPayment" placeholder="Paid Payment"/> </td><td> <select name="Vender" class="chooseVender" id="Vender"> <option selected="" disabled="">Select Vender</option> <option value="Amit">Amit</option> <option value="Ankit">Ankit</option> <option value="Rohit">Rohit</option> <option value="Akash">Akash</option> <option value="Ramu">Ramu</option> <option value="Sonu">Sonu</option> <option value="Manish Joshi">Manish Joshi</option> </select> </td><td> <i class="fa-solid fa-trash deleteThisRow"></i> </td></tr>'
+        );
       });
 
       $(document).on("click ", ".deleteThisRow", function () {
