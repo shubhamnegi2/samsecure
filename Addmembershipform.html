@@ -10,6 +10,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
   <title>Document</title>
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+    * {
+      font-family: "Poppins", sans-serif;
+    }
+
     #addVenderWrapper {
 
       background-color: #fff;
@@ -37,10 +43,14 @@
     }
 
     #addVenderWrapper .addVenderForm .formGroup label {
+
       color: #083e5a;
+
       font-size: 14px;
       font-weight: 500;
       padding-left: 5px;
+      margin-bottom: 0px;
+
     }
 
     #addVenderWrapper .addVenderForm .formGroup input {
@@ -76,6 +86,7 @@
       color: inherit;
       padding: 10px;
       text-decoration: none;
+      font-size: 16px;
     }
 
     .breadcrumb ul li i {
@@ -87,7 +98,7 @@
     }
 
     .breadcrumb {
-      background-color: #ef7d0b;
+      background-color: #ef7d0b !important;
       padding: 4px;
       font-size: 16px;
     }
@@ -202,9 +213,42 @@
       font-weight: 500;
       padding-left: 5px;
     }
-    label{
+
+    label {
+      /* color: #083e5a;
+      font-size: 14px;
+      font-weight: 500; */
+      display: block;
       color: #083e5a;
+      font-size: 14px;
+      font-weight: 500;
     }
+    .mamebershipformtotalamount {
+                      display: flex;
+                      gap: 2px;
+                      width: 105%
+                    }
+
+                    .Membershipformrightside {
+                      flex: none;
+                      color: #7a7797;
+                      font-size: 14px;
+                      margin-left: 65px;
+                    }
+
+                    .membershipformremovetax {
+                      display: flex;
+                      gap: 10px;
+                      justify-content: right;
+                      margin-right: 3px;
+                    }
+
+                    .taxtgst {
+                      display: flex;
+                      align-items: center;
+                      justify-content: right;
+                      margin-top: 15px;
+                    }
   </style>
 </head>
 
@@ -453,7 +497,7 @@
                   </div>
 
                   <div class="col-md-5">
-                    <div class="row justify-contenr-left mt-3 newclasss">
+                    <div class="row justify-contenr-left  newclasss">
 
                       <label for="">Percentage</label>
                       <div class="col-sm-2">
@@ -508,26 +552,22 @@
 
                     </div>
                   </div>
+                 
                   <div class="col-md-4">
-                    <div class="row justify-contenr-right mt-3"
-                      style=" flex: none; color: #7a7797; font-size: 14px;   margin-left: 65px;">
+                    <div class="row justify-contenr-right mt-3 Membershipformrightside" style="   margin-left: 65px;">
                       <div class="col-md-12 mt-2">
-                        <div style="display: flex; gap: 2px;">
+                        <div class="mamebershipformtotalamount">
                           <label>Total Amount</label>
-                          <input type="text" placeholder="₹">
+                          <input type="text" placeholder="₹" onkeypress="return /[0-9]/i.test(event.key)">
                         </div>
                         <div class="col-md-12 mt-2">
-                          <div style="display: flex; gap: 10px; justify-content: right; margin-right: 3px;">
+                          <div class="membershipformremovetax">
                             <label>Remove Tax</label>
                             <input type="checkbox" type="checkbox" placeholder="₹" class="coupon_question2"
                               name="coupon_question2" value="3" onchange="valueChangedsd()">
                           </div>
                         </div>
-                        <div class="taxtgst" style="display: flex;
-                    align-items: center;
-                    justify-content: right;
-                    margin-top: 15px;
-                    ">
+                        <div class="taxtgst">
                           <div class="mt-4">
                             <h3 style="font-size: 18px;">TAX</h3>
                           </div>
@@ -536,7 +576,7 @@
                               <div style="display: flex; gap: 5px; margin-top: 10px;">
                                 <label> <span></span> SGST</label>
                                 <input type="text" style="height: 20px; 
-                        width: 71px;" placeholder="₹">
+                        width: 71px;" placeholder="₹" onkeypress="return /[0-9]/i.test(event.key)">
                               </div>
                             </div>
                             <div class="col-md-12 ">
@@ -544,7 +584,7 @@
                             5px;">
                                 <label>CGST</label>
                                 <input type="text" style="height: 20px; 
-                    width: 71px;" placeholder="₹">
+                    width: 71px;" placeholder="₹" onkeypress="return /[0-9]/i.test(event.key)">
                               </div>
                             </div>
                           </div>
@@ -552,7 +592,7 @@
                         <div class="col-md-12 mt-2">
                           <div style="display: flex; gap: 2px;">
                             <label style="flex: none;">Grand Total</label>
-                            <input type="text" placeholder="₹">
+                            <input type="text" placeholder="₹" onkeypress="return /[0-9]/i.test(event.key)">
                           </div>
                         </div>
                         <!-- <div class="col-md-12 mt-3">
