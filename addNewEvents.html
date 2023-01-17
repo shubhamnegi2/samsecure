@@ -111,7 +111,7 @@
 
       .ProductDetailsWrapper .title {
         display: inline-block;
-        border-bottom: 2px solid #3abb69;
+        border-bottom: 2px solid #fc8019;
         color: #083e5a;
         font-weight: bold;
         padding-bottom: 5px;
@@ -222,7 +222,7 @@
       .addNewEvents h2 {
         display: inline-block;
         text-align: center;
-        border-bottom: 3px solid #3abb69;
+        border-bottom: 3px solid #ef7d0b;
         color: #7a7797;
         font-weight: bold;
         padding-bottom: 5px;
@@ -570,7 +570,7 @@
       main .filters label {
         margin-right: 15px;
         font-weight: bold;
-        color: #3abb69;
+        color: #ef7d0b;
       }
 
       main .filters select {
@@ -712,11 +712,14 @@
       }
 
       .openmodel {
-        border-radius: 10px;
+        border-radius: 6px;
         height: 300px;
         padding: 0px 10px;
-        width: 25%;
+        width: 35%;
         background-color: #fff;
+      }
+      .openmodel label{
+        color: #083e5a;
       }
 
       .closebtnicon {
@@ -737,6 +740,11 @@
         border-radius: 4px;
         border: 2px solid rgb(201, 190, 190);
         width: 100%;
+      }
+      .Submitbtnadvanpay{
+        background-color: #083e5a;
+        color: #fff;
+        border-radius: 5px;
       }
     </style>
   </head>
@@ -1015,7 +1023,7 @@
                       <div class="col-md-6 mt-3">
                         <div class="formGroup">
                           <label for="">No. Of Guests</label>
-                          <select class="noofguests">
+                          <select class="noofguests" id="myselect">
                             <option>No of Guests</option>
                             <option>1</option>
                             <option>2</option>
@@ -1091,10 +1099,10 @@
                               DJ
                             </label>
                             <input
-                              type="text"
+                              name="number"
                               class="djammount"
                               style=""
-                              placeholder="Amount"
+                              placeholder="Amount" onkeypress="return /[0-9]/i.test(event.key)"
                             />
                             <!-- <label class="djammount" style="display: none; margin-left: 2px;">Amount- 2000</label> -->
                           </div>
@@ -1139,10 +1147,10 @@
                               Decoration
                             </label>
                             <input
-                              type="text"
+                              name="number"
                               class="decoration"
                               style=""
-                              placeholder="Amount"
+                              placeholder="Amount" onkeypress="return /[0-9]/i.test(event.key)"
                             />
                             <!-- <label  style="display: none; margin-left: 2px;">Amount- 2000</label> -->
                           </div>
@@ -1170,8 +1178,8 @@
                         <div class="col-md-6 mt-3" style="padding: 0">
                           <div class="formGroup">
                             <label for="">Per Plate</label>
-                            <span style="position: absolute; left: 4%">₹</span>
-                            <input type="text" />
+                            <!-- <span style="position: absolute; left: 4%">₹</span> -->
+                            <input name="number" id="inputtext" placeholder="₹" onkeypress="return /[0-9]/i.test(event.key)" />
                           </div>
                         </div>
                         <div class="col-md-6">
@@ -1190,7 +1198,7 @@
                                 "
                               >
                                 <label>Total Amount</label>
-                                <input type="text" placeholder="₹" />
+                                <input name="number" placeholder="₹" min="0"  onkeypress="return /[0-9]/i.test(event.key)"/>
                               </div>
                               <div class="col-md-12 mt-2">
                                 <div
@@ -1229,9 +1237,9 @@
                                     <div style="display: flex">
                                       <label> <span></span> SGST</label>
                                       <input
-                                        type="text"
+                                        name="number"
                                         style="height: 20px; width: 71px"
-                                        placeholder="₹"
+                                        placeholder="₹" onkeypress="return /[0-9]/i.test(event.key)"
                                       />
                                     </div>
                                   </div>
@@ -1239,9 +1247,9 @@
                                     <div style="display: flex">
                                       <label>CGST</label>
                                       <input
-                                        type="text"
+                                        name="number"
                                         style="height: 20px; width: 71px"
-                                        placeholder="₹"
+                                        placeholder="₹" onkeypress="return /[0-9]/i.test(event.key)"
                                       />
                                     </div>
                                   </div>
@@ -1256,7 +1264,7 @@
                                   "
                                 >
                                   <label>Grand Total</label>
-                                  <input type="text" placeholder="₹" />
+                                  <input name="number" placeholder="₹"  onkeypress="return /[0-9]/i.test(event.key)"/>
                                 </div>
                               </div>
                               <!-- <div class="col-md-12 mt-3">
@@ -1288,12 +1296,13 @@
                                   style="font-size: 21px; cursor: pointer"
                                 ></i>
                               </div>
+                          <div style="padding: 0px 30px;">
                               <div class="row justify-content-center mt-1">
                                 <div class="col-md-12">
                                   <div class="addvancpaydiv">
                                     <label>Advance Pay</label>
                                     <br />
-                                    <input type="text" placeholder="₹" />
+                                    <input name="number" placeholder="₹"  onkeypress="return /[0-9]/i.test(event.key)"/>
                                   </div>
                                 </div>
 
@@ -1302,12 +1311,12 @@
                                     <label>Waive Off</label>
                                     <br />
 
-                                    <input type="text" placeholder="₹" />
+                                    <input name="number" placeholder="₹"  onkeypress="return /[0-9]/i.test(event.key)"/>
                                   </div>
                                 </div>
                               </div>
                               <div class="row justify-content-center">
-                                <div class="col-md-12 mt-3">
+                                <div class="col-md-12 mt-3 newclassadd">
                                   <label for="" class="noLabel">
                                     Payment Mode</label
                                   >
@@ -1357,7 +1366,7 @@
                                   </div>
                                   <div class="row justify-content-center mt-3">
                                     <div class="col-md-4 text-center">
-                                      <button class="btn btn-primary btn-sm">
+                                      <button class=" Submitbtnadvanpay">
                                         Submit
                                       </button>
                                     </div>
@@ -1365,6 +1374,7 @@
                                 </div>
                               </div>
                               <div></div>
+                            </div>
                             </div>
                           </div>
                         </div>
@@ -1646,6 +1656,7 @@
           </div>
         </div>
       </div>
+  
       <!-- popups -->
     </main>
 
@@ -1738,6 +1749,41 @@
         $(".form").hide();
         $(".form2").show();
       });
+    
+
+
+
+    
+    
+      $("#myselect").change(function() {
+  
+ let optionval=$("option:selected", this).text()
+ console.log(optionval)
+ 
+})
+   $("#inputtext").keyup(function() {
+    let  inputval=$(this).val();
+        console.log(inputval)
+   
+
+  });
+ console.log(optionval)
+   console.log(inputval)
+
+
+//    $('#inputtext').keyup(function(){
+//     var $this=$(this);
+//     setTimeout(function(){
+      
+//         var n1 = $this.val();
+//         var n2 = $('#n2').val();
+//         var n3 = $('#n3').val();
+//         var calc = n1 * n2 * n3;
+  
+//     },400);
+// });
+
+  
     </script>
   </body>
 </html>
