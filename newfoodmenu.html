@@ -1,0 +1,1279 @@
+<style>
+    .EditEmployeDetail {
+        text-align: center;
+    }
+
+    .EditEmployeDetail button {
+        min-width: 100px;
+        margin: 5px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        float: right;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 7px 6px;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .formData label {
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 15px;
+    }
+
+    .formData input {
+        font-size: 12px;
+        border: 2px solid #083e5a;
+        text-transform: capitalize;
+        padding: 7px;
+        border-radius: 5px;
+        /* border: 00;*/
+        /* background-color: transparent; */
+        /* border-bottom: 1px solid; */
+    }
+
+    .formData textarea {
+        font-size: 12px;
+        border: 2px solid #083e5a;
+        text-transform: capitalize;
+        padding: 7px;
+        border-radius: 5px;
+        /* max-width: 60px;
+        height: 90px; */
+        /* border: 00; */
+        /* background-color: transparent; */
+        /* border-bottom: 1px solid; */
+    }
+
+    .formData select {
+        font-size: 12px;
+        border: 2px solid #083e5a;
+        text-transform: capitalize;
+        padding: 7px;
+        border-radius: 5px;
+        /* border: 0; */
+        /* border-bottom: 1px solid */
+    }
+
+    #createCategory {
+        /* border: none; */
+        /* color: #3abb69; */
+        padding: 5px 15px;
+        font-size: 13px;
+        border-radius: 5px;
+    }
+
+    .breadcrumb ul li {
+        color: #fff;
+        font-weight: bold;
+        margin: 10px 1px;
+    }
+
+    .breadcrumb ul li a {
+        color: inherit;
+        padding: 10px;
+        text-decoration: none;
+    }
+
+    .breadcrumb .addVender {
+        position: absolute;
+        right: 2%;
+        top: 50%;
+        transform: translate(0%, -50%);
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0px;
+        background-color: #fe9037;
+        border: 1px solid #ffcd8f;
+        color: #fff;
+        /* padding: 2px 30px; */
+        font-weight: bold;
+        padding: 5px 15px;
+        font-size: 13px;
+    }
+
+    .ProfileDetailpop {
+        display: none;
+        position: fixed;
+        top: 0;
+        overflow-y: scroll;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .form-wraper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2%;
+    }
+
+    .form-container {
+        position: relative;
+        border-radius: 10px;
+        height: auto;
+        padding: 3px;
+        width: 90%;
+        background-color: #fff;
+    }
+
+    .closeform {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+    }
+
+    .closeform i {
+        font-size: 20px;
+    }
+
+    .employemformh2 {
+        display: inline-block;
+        border-bottom: 2px solid #083e5a;
+        color: #fc8e32;
+        font-weight: bold;
+        padding-bottom: 5px;
+        font-size: 20px;
+    }
+
+    .ProfileFormData {
+        border: 1px solid #ef7d0b;
+    }
+</style>
+
+<style>
+    .ProductDetailsWrapper {
+        counter-reset: Serial;
+    }
+
+    .ProductDetailsWrapper tr td:first-child:before {
+        counter-increment: Serial;
+        content: counter(Serial);
+    }
+
+    .itemNameWrapper ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .itemNameWrapper ul li {
+        max-width: 150px;
+        overflow: hidden;
+        margin-right: 10px;
+        font-size: 14px;
+    }
+
+    .itemNameWrapper ul li input {
+        cursor: pointer;
+    }
+
+    .itemNameWrapper ul li label {
+        display: inline-block;
+        width: 110px;
+        white-space: nowrap;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        color: #000;
+        font-size: 12px;
+    }
+
+    .itemNameWrapper .form-check {
+        margin-bottom: -5px;
+    }
+
+    .itemNameWrapper {
+        box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+        padding: 10px 15px;
+        border-radius: 5px;
+        border: 1px solid #fc8019;
+        background-color: #eee;
+    }
+
+    .itemNameWrapper h3 {
+        /* border-bottom: 2px solid #fc8e32; */
+        color: #7a7797;
+        font-weight: bold;
+        font-size: 14px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        display: inline-block;
+    }
+
+    .allBtnsWrapper h3 {
+        /* text-align: center; */
+        /* border-bottom: 2px solid #fc8e32; */
+        color: #7a7797;
+        font-weight: bold;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        /* margin-top: 1rem; */
+        font-size: 14px;
+        text-align: right;
+        padding-right: 15px;
+    }
+
+    .totalCatgry,
+    .totalIngredients {
+        /* font-weight: bold; */
+        color: #083e5a;
+    }
+
+    .ProductDetailsWrapper .eventDateTime {
+        color: #3abb69;
+    }
+
+    .ProductDetailsWrapper .eventDateTime span {
+        font-weight: bold;
+        color: #7a7797;
+    }
+
+    .ingredientsActionBtn button {
+        min-width: 50px;
+        margin: 2px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+        /* margin-bottom: 15px; */
+    }
+
+    .itemNameWrapper hr {
+        margin: 0px;
+    }
+
+    .allVenderBtnsWrapper h3 {
+        color: #7a7797;
+        font-weight: bold;
+        font-size: 14px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        display: inline-block;
+    }
+
+    .breadcrumbs button.activeBreadcurmbtn {
+        background-color: #083e5a;
+        border-color: #083e5a;
+        /* border-radius: 5px; */
+    }
+
+    .mainColor {
+        color: #fc8019;
+    }
+
+    .allBtnsWrapper .CategoryActionBtn button {
+        background-color: #fc8019;
+    }
+
+    .itemNameWrapper .ingredientsActionBtn button {
+        background-color: #fc8019;
+    }
+
+    .itemNameWrapper .ingredientsActionBtn button:last-child {
+        margin-right: 0px;
+    }
+
+    .allVenderBtnsWrapper .vendersActionBtn button {
+        background-color: #fc8019;
+    }
+
+    .allVenderBtnsWrapper ul li {
+        margin: 0px 5px;
+        font-size: 12px;
+    }
+
+    .dateWrapper {
+        font-size: 12px;
+    }
+
+    #dateWise {
+        border: 0;
+        border-radius: 4px;
+        padding-left: 15px;
+        color: #7a7797;
+        height: 16px;
+        background-color: #eee;
+    }
+
+    .dateWrapper button {
+        min-width: 50px;
+        margin: 2px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+    }
+
+    .addCategoryModelWrapper,
+    .editCategoryModelWrapper,
+    .addIngredientModelWrapper,
+    .editIngredientModelWrapper {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        overflow-y: scroll;
+        /* display: flex; */
+        display: none;
+        align-items: flex-start;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    /* .editIngredientModelWrapper {
+      display: flex;
+    } */
+    .editCategoryModel h2,
+    .addCategoryModel h2,
+    .editIngredientModel h2,
+    .addIngredientModel h2 {
+        display: inline-block;
+        border-bottom: 2px solid #fc8e32;
+        color: #083e5a;
+        font-weight: bold;
+        padding-bottom: 1px;
+        font-size: 18px;
+    }
+
+    .addCategoryModel,
+    .editCategoryModel,
+    .addIngredientModel,
+    .editIngredientModel {
+        background-color: #fff;
+        transition: all 0.3 ease;
+        /* width: 50%; */
+        text-align: center;
+        padding: 15px;
+        position: relative;
+        border-radius: 4px;
+    }
+
+    .editCategoryModel,
+    .editIngredientModel {
+        width: 70%;
+    }
+
+    .editCategoryModel table tbody,
+    .editIngredientModel table tbody {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .editCategoryModel table tbody tr,
+    .editIngredientModel table tbody tr {
+        max-width: 30%;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .editCategoryModel i,
+    .editIngredientModel i,
+    .addIngredientModelWrapper i {
+        cursor: pointer;
+        padding: 3px;
+    }
+
+    .editCategoryModel input,
+    .editIngredientModel input {
+        border: 1px solid #7a7797;
+        border-radius: 3px;
+        margin-right: 10px;
+        padding-left: 15px;
+        font-size: 14px;
+    }
+
+    .addCategoryModel input,
+    .addCategoryModel label {
+        width: 100%;
+        text-align-last: left;
+    }
+
+    .addCategoryModel label {
+        color: #7a7797;
+        font-size: 14px;
+    }
+
+    .addCategoryModel button,
+    .addIngredientModelWrapper button {
+        min-width: 50px;
+        margin: 2px px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 5px 8px;
+    }
+
+    .closeAddCategoryModel,
+    .closeEditCategoryModel,
+    .closeEditIngredientModel,
+    .closeaddIngredientModelWrapper {
+        position: absolute;
+        right: 5px;
+        top: 3px;
+        width: 30px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .editCategoryModel button {
+        min-width: 50px;
+        margin: 2px px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 5px 8px;
+    }
+
+    .addIngredientModelWrapper .topbar select,
+    .addIngredientModelWrapper input {
+        border: 1px solid rgb(190, 188, 188);
+        border-radius: 4px;
+        font-size: 14px;
+        color: #083e5a;
+        padding-left: 15px;
+    }
+
+    .addIngredientModelWrapper .topbar {
+        color: #083e5a;
+        font-size: 14px;
+    }
+
+    .undoDeleteCat {
+        display: none;
+    }
+
+    .undoDelete {
+        display: none;
+    }
+
+    .saveEditedIng {
+        min-width: 50px;
+        margin: 2px px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 5px 8px;
+    }
+</style>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+    * {
+        font-family: "Poppins", sans-serif;
+    }
+
+    .breadcrumbs {
+        position: relative;
+        background-color: #ef7d0b;
+        padding: 5px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .breadcrumbs button {
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0px;
+        background-color: #fe9037;
+        color: #fff;
+        padding: 2px 30px;
+        font-weight: bold;
+        border: 1px solid #ffcd8f;
+        margin-right: 5px;
+        font-size: 14px;
+    }
+
+    .breadcrumbs ul {
+        margin-bottom: 0rem;
+    }
+
+    .breadcrumbs ul li {
+        color: #eee;
+        font-weight: bold;
+        margin: 10px 1px;
+    }
+
+    .breadcrumbs ul li a {
+        color: inherit;
+        padding: 10px;
+        text-decoration: none;
+    }
+
+    .breadcrumbs ul li i {
+        font-size: 12px;
+    }
+
+    .breadcrumbs ul li .ActiveBreadcrumb {
+        color: #fff;
+    }
+
+    main {
+        background-color: transparent;
+    }
+
+    main .CategoryActionBtn button {
+        min-width: 80px;
+        margin: 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 2px 8px;
+    }
+
+    main .CategoryActionBtn button:last-child {
+        margin-right: 0px;
+    }
+
+    main .categoryheading {
+        display: inline-block;
+        color: #083e5a;
+        /* font-weight: bold; */
+        padding-bottom: 5px;
+        font-size: 14px;
+    }
+
+    main .categoryheading i {
+        font-size: 12px;
+    }
+
+    .allBtnsWrapper .allBtns,
+    .allVenderBtnsWrapper .allBtns {
+        background-color: #fff;
+        border: 1px solid #fc8019;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        border-radius: 5px;
+        padding: 15px;
+    }
+
+    .allBtnsWrapper .allBtns button,
+    .allVenderBtnsWrapper .allBtns button {
+        min-width: 50px;
+        margin: 2px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+    }
+
+    .allBtnsWrapper .allBtns button:last-child,
+    .allVenderBtnsWrapper .allBtns button:last-child {
+        margin-right: 0px;
+    }
+
+    .allBtnsWrapper .allBtns .activeBtn,
+    .allVenderBtnsWrapper .allBtns .activeBtn {
+        background-color: #fe9037;
+    }
+
+    .allBtnsWrapper .allBtns hr,
+    .allVenderBtnsWrapper .allBtns hr {
+        margin: 0px;
+    }
+
+    .ProductDetailsWrapper {
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        border-radius: 5px;
+        padding: 0px 10px;
+        overflow: hidden;
+        border: 1px solid #fc8019;
+    }
+
+    .ProductDetailsWrapper .details {
+        transition: all 0.5s ease;
+        position: relative;
+        top: 0px;
+    }
+
+  .title {
+    /* float: right;
+         transition: all 0.5s ease;
+        position: relative;
+        top: 0px; */
+        text-align: center;
+    }
+
+     .title h5 {
+        display: inline-block;
+        border-bottom: 2px solid #fc8e32;
+        color: #083e5a;
+        font-weight: bold;
+        padding-bottom: 1px;
+        font-size: 20px;
+    }
+
+    .ProductDetailsWrapper table {
+        max-width: 100%;
+        width: 100%;
+        border-radius: 4px;
+        overflow: hidden;
+        border-radius: 5px;
+    }
+
+    .ProductDetailsWrapper table tr:nth-child(even) {
+        background-color: #fff2e7;
+    }
+
+    .ProductDetailsWrapper table tr:nth-child(even) input,
+    .ProductDetailsWrapper table tr:nth-child(even) select,
+    .ProductDetailsWrapper table tr:nth-child(even) td {
+        color: #000;
+    }
+
+    .ProductDetailsWrapper table tr:nth-child(even) input::-moz-placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) select::-moz-placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) td::-moz-placeholder {
+        color: #000;
+    }
+
+    .ProductDetailsWrapper table tr:nth-child(even) input:-ms-input-placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) select:-ms-input-placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) td:-ms-input-placeholder {
+        color: #000;
+    }
+
+    .ProductDetailsWrapper table tr:nth-child(even) input::placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) select::placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) td::placeholder {
+        color: #000;
+    }
+
+    .ProductDetailsWrapper table tr:nth-child(even) select option {
+        background-color: rgba(58, 187, 105, 0.3411764706);
+    }
+
+    .ProductDetailsWrapper table tr {
+        height: 30px;
+    }
+
+    .ProductDetailsWrapper table tr:last-child {
+        border-bottom: 2px solid #ddcece;
+    }
+
+    .ProductDetailsWrapper table,
+    .ProductDetailsWrapper th,
+    .ProductDetailsWrapper td {
+        border-collapse: collapse;
+        font-size: 12px;
+        /* border: 1px solid; */
+        text-align: center;
+    }
+
+    .ProductDetailsWrapper thead {
+        background-color: #fc8e32;
+        color: #fff;
+    }
+
+    .ProductDetailsWrapper thead tr,
+    .ProductDetailsWrapper thead th {
+        border: 1px solid transparent #000;
+    }
+
+    .ProductDetailsWrapper tbody tr td:first-child {
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+
+    .ProductDetailsWrapper tbody tr input,
+    .ProductDetailsWrapper tbody tr select {
+        width: 100%;
+        height: 30px;
+        border: 0;
+        text-align: center;
+        background-color: transparent;
+        color: #7a7797;
+    }
+
+    .ProductDetailsWrapper .venderDetailsTable {
+        position: relative;
+        left: 200%;
+        top: 0px;
+        display: none;
+    }
+
+    #addVenderWrapper {
+        display: none;
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        border-radius: 5px;
+        padding: 30px 0px;
+    }
+
+    #addVenderWrapper .addVenderTitle {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    #addVenderWrapper .addVenderTitle h2 {
+        display: inline-block;
+        border-bottom: 2px solid #3abb69;
+        color: #7a7797;
+        font-weight: bold;
+        padding-bottom: 5px;
+        font-size: 20px;
+    }
+
+    #addVenderWrapper .addVenderForm .formGroup {
+        margin-bottom: 20px;
+    }
+
+    #addVenderWrapper .addVenderForm .formGroup label {
+        color: #7a7797;
+        font-size: 14px;
+        font-weight: 500;
+        padding-left: 5px;
+    }
+
+    #addVenderWrapper .addVenderForm .formGroup input {
+        border: 2px solid #eee;
+        width: 100%;
+        border-radius: 4px;
+        padding-left: 15px;
+    }
+
+    #addVenderWrapper .addVenderForm .addVenderSubmitBtn {
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0px;
+        background-color: #fc8e32;
+        color: #fff;
+        padding: 2px 30px;
+        font-weight: bold;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .text-left {
+        text-align: left;
+    }
+
+    .table1Btns button,
+    .table2Btns button {
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0px;
+        background-color: #083e5a;
+        color: #fff;
+        padding: 3px 20px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+.ProductDetailsWrapper table tbody tr td:nth-child(3){
+   /* border: 1px solid #000; */
+}
+.ProductDetailsWrapper table tbody tr td:nth-child(3) input{
+  padding: 2px;
+  border: 1px solid #000;
+
+}
+    /*# sourceMappingURL=addPurchases2.css.map */
+</style>
+<!-- <link rel="stylesheet" href="./addPurchases2.css" /> -->
+
+<body>
+    <div class="breadcrumb" style="background-color: #ef7d0b; padding: 0px;  font-size: 13px">
+        <ul class="list-unstyled d-flex align-items-center mb-0">
+            <li><a href=""></a></li>
+            <li><i class="fa-solid fa-angles-right"></i></li>
+            <li><a href="" class="ActiveBreadcrumb">Food Menu</a></li>
+        </ul>
+
+        <!-- <h4>Total Employee-20</h4> -->
+
+    </div>
+    <div class="container   ">
+        <form action="" id="">
+            <div class="row justify-content-between">
+                <div class="form-group col-md-4 formData flex-column d-flex">
+                    <label for="itmename">Item Name : <span class="text-danger"> *</span></label>
+
+                    <input type="text" id="itemname">
+                </div>
+                <div class="form-group col-md-4 formData flex-column d-flex">
+                    <label for="price">Price : <span class="text-danger"> *</span></label>
+
+                    <input type="text" name="price" id="price">
+                </div>
+
+                <div class="form-group col-md-4 formData flex-column d-flex">
+                    <label for="code">Code : <span class="text-danger"> *</span></label>
+
+                    <input type="text" name="code" id="code">
+                </div>
+
+
+                <div class="form-group col-md-4 formData flex-column d-flex">
+                    <label for="state">Select category : <span class="text-danger"> *</span></label>
+
+                    <select name="category" id="category">
+                        <option value="Select category"> Select Category </option>
+                        <option value="Veg">Veg</option>
+                        <option value="Nov-veg">Non-Veg</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Italian">Italian</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4 formData flex-column d-flex">
+                    <label for="file">image: <span class="text-danger"> *</span></label>
+
+                    <input type="file" name="" id="file">
+                </div>
+
+                <div class="form-group col-md-4 formData flex-column d-flex ">
+                    <label for="type">Type: <span class="text-danger"> *</span></label>
+
+                    <select name="type" id="type">
+                        <option value="Select Type">Select Type</option>
+                        <option value="djjf">fg</option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12 formData flex-column d-flex">
+                    <label for="description">Description: <span class="text-danger"> *</span></label>
+
+                    <textarea type="text" name="description" id="description"></textarea>
+                </div>
+                <div class="form-group col-md-12 formData  EditEmployeDetail">
+                    <button type="submit">Add food Menu</button>
+                </div>
+            </div>
+        </form>
+        <div class="ProfileDetailpop">
+            <div class="form-wraper">
+                <div class="form-container">
+                    <div class="closeform"><i class="fa-regular fa-circle-xmark"></i></div>
+                    <div class="container">
+                        
+                        <!-- <div class="row justify-content-between text-left">
+                   
+                  </div>
+       -->
+                        
+                    
+
+                        <main>
+                            <div class="container-fluid my-1">
+                                <div class="title">
+                                    <h5>Add Ingredient</h5>
+                                </div>
+                                <!-- <div class="dateWrapper d-flex justify-content-between"> -->
+                                    
+                                    <!-- <div>
+                          Date : <input type="text" id="dateWise" placeholder="03/12/2012" class="hasDatepicker">
+                        </div>
+                        <button>Add vender</button> -->
+                                <!-- </div> -->
+                            </div>
+
+                            <div class="allBtnsWrapper pb-3 mt-1">
+                                <div class="container-fluid">
+                                    <div class="allBtns pt-0 pb-1">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h5 class="categoryheading mb-0">
+                                                Ingredient Categories List
+                                                <span class="px-2 mainColor">|</span>
+                                                <span>Total Categories : <span class="totalCatgry">22</span></span>
+                                            </h5>
+                                            <div class="CategoryActionBtn text-right">
+                                                <!-- <button class="btn btn-primary btn-sm addNewCategoryBtn">
+                                                    Add Category
+                                                </button>
+                                                <button class="btn btn-primary btn-sm editNewCategoryBtn">
+                                                    Edit Category
+                                                </button> -->
+                                                <!-- <button class="btn btn-primary btn-sm">Delete Category</button> -->
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="mt-1"></div>
+                                        <button class="activeBtn">Dairy Products</button>
+                                        <button>Drinkable</button>
+                                        <button>Fast Food</button>
+                                        <button>My Fav</button>
+                                        <button>Mostly Used</button>
+                                        <button>Top</button>
+                                        <button>Commonly Used</button>
+                                        <button>Less Used</button>
+                                        <button>Chinese</button>
+                                        <button>Italian</button>
+                                        <button>Thai</button>
+                                        <button>Continental</button>
+                                        <button>Indian</button>
+                                        <button>South Indian</button>
+                                        <!-- <button>North Indian</button> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-fluid mb-3">
+                                <div class="itemNameWrapper pt-0">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                       
+                                        <h3>
+                                            Ingredient List
+                                            <span class="px-2 mainColor">|</span>
+                                            <span>
+                                                Total Ingredients : <span class="totalIngredients">52</span>
+                                            </span>
+                                        </h3>
+                                        <div class="ingredientsActionBtn text-right">
+                                            <!-- <button class="btn btn-primary btn-sm addIngredientModelBtn">
+                                                Add Ingredients
+                                            </button>
+                                            <button class="btn btn-primary btn-sm editIngredientModelBtn">
+                                                Edit Ingredients
+                                            </button> -->
+                                            <!-- <button class="btn btn-primary btn-sm">Delete Ingredients</button> -->
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mt-2"></div>
+                                    <ul class="list-unstyled mb-0">
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="">
+                                                <label class="form-check-label" for=""> Milk Powder </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="">
+                                                <label class="form-check-label" for=""> Curd </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="">
+                                                <label class="form-check-label" for=""> Paneer </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="">
+                                                <label class="form-check-label" for="">assadf </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="">
+                                                <label class="form-check-label" for=""> Lorem asasa </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="">
+                                                <label class="form-check-label" for=""> Powder </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="">
+                                                <label class="form-check-label" for=""> Curdsa </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="">
+                                                <label class="form-check-label" for=""> Paneerssaaa </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="">
+                                                <label class="form-check-label" for=""> loremfdfispum </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="">
+                                                <label class="form-check-label" for="">
+                                                    Lorem sdipsum, doldsor sit
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="">
+                                                <label class="form-check-label" for=""> Milk Powder </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="">
+                                                <label class="form-check-label" for=""> Curdbf </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="">
+                                                <label class="form-check-label" for=""> Paneerrt </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="">
+                                                <label class="form-check-label" for=""> loremrfispum </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="">
+                                                <label class="form-check-label" for="">
+                                                    Loremdf ipsumolor sit
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- <div class="allVenderBtnsWrapper pb-3">
+                      <div class="container-fluid">
+                        <div class="allBtns pt-0 pb-1">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <h3>
+                              Vender List : <span class="px-2 mainColor">|</span><span>Total Venders : <span class="totalCatgry">22</span></span>
+                            </h3>
+                            <div class="vendersActionBtn text-right">
+                              <button class="btn btn-primary btn-sm addVender">
+                                Add Vender
+                              </button>
+                              <button class="btn btn-primary btn-sm">Edit Vender</button>
+                            </div>
+                          </div>
+                          <hr>
+                          <div class="mt-1"></div>
+                          <ul class="d-flex list-unstyled mb-0">
+                            <li>Amit</li>
+                            <li>Rohit</li>
+                            <li>Mohit</li>
+                            <li>Rahul</li>
+                            <li>Manish</li>
+                            <li>Prateek</li>
+                            <li>Sohan</li>
+                            <li>Mohan</li>
+                            <li>Sandeep</li>
+                            <li>Gaurav</li>
+                            <li>Amit</li>
+                            <li>Rohit</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div> -->
+                            <div class="container-fluid">
+                                <div class="ProductDetailsWrapper">
+                                    <div class="details">
+                                        <div class="col-12 my-1">
+                                          
+                                        </div>
+                                        <!-- <div class="title mb-3">
+                            <h3>Dairy Products</h3>
+                          </div> -->
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>S. No.</th>
+                                                    <th>Item name</th>
+                                                    <th>Cosumption</th>
+                                                    <th>Units</th>
+                                                    <th>Delete</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                               
+                                            </tbody>
+                                        </table>
+                                        <div class="table1Btns text-right my-1 mx-3">
+                            <button class="btn btn-primary btn-sm ">
+                              Save
+                            </button>
+                          </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $("head").append(
+            '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
+        );
+        $("head").append(
+            ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\/>'
+        );
+        $("head").append(
+            '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
+        );
+    </script>
+    <script>
+        $(".addVender").click(function () {
+            $("#addVenderWrapper").show();
+            let top = $("#addVenderWrapper").position().top;
+            $("html, body").animate({ scrollTop: top });
+        });
+
+        $(".allBtns button").click(function () {
+            $(".allBtns button").removeClass("activeBtn");
+            $(this).addClass("activeBtn");
+
+            $(".ProductDetailsWrapper .details .title h3").text($(this).text());
+        });
+
+        $(".showVenderDetails").click(function () {
+            $("#addVenderWrapper").hide();
+
+            if (selectedVender.length <= 0) {
+                alert("please select vender");
+            } else {
+                $(".venderDetailsTable table tbody").html("");
+                selectedVender.map((elem, index) => {
+                    $(".venderDetailsTable table tbody")
+                        .append(`<tr data-venderMoneyKey="${index}"><td>${elem}</td>
+                  <td><input type="text" class="venderTotalItems" placeholder="Total Items"></td>
+                  <td><input type="text" class="venderTotalPrice" placeholder="Total Items"></td>
+                  <td><input type="text" class="venderTotalPaid" placeholder="Total Items"></td>
+                  <td class="venderTotalRemaining">-</td></tr>`);
+                });
+
+                $(".ProductDetailsWrapper .details").animate(
+                    { left: "-200%" },
+                    "slow"
+                );
+                $(".ProductDetailsWrapper .details").hide();
+                $(".ProductDetailsWrapper .venderDetailsTable").animate(
+                    { left: "0%" },
+                    "slow"
+                );
+                $(".ProductDetailsWrapper .venderDetailsTable").show();
+            }
+        });
+
+        $(".showItemDetails").click(function () {
+            // $('#addVenderWrapper').show();
+            $(".ProductDetailsWrapper .details")
+                .animate({ left: "0%" }, "fast")
+                .show();
+            $(".ProductDetailsWrapper .venderDetailsTable")
+                .animate({ left: "200%" }, "fast")
+                .hide();
+        });
+
+        let selectedVender = [];
+        $(document).on("change", ".chooseVender", function () {
+            let vender = $(this).val();
+            if (!selectedVender.includes(vender)) {
+                selectedVender.push(vender);
+            }
+        });
+
+        $(document).on(
+            "click ",
+            ".itemNameWrapper input[type='checkbox']",
+            function () {
+                let value = $(this).closest(".form-check").children("label").text();
+                let key = value.replaceAll(/\s/g, "");
+                if ($(this).is(":checked")) {
+                    $(".ProductDetailsWrapper table").append(
+                        "<tr data-key=" +
+                        key +
+                        '><td></td> <td class="name">' +
+                        value +
+                        '</td><td> <input type="text" class="price" placeholder="" name="price"/><td> <select name="units" id="units "> <option selected="" disabled="">Units</option> <option value="kilogram">kilogram</option> <option value="gram">gram</option> <option value="Litre">Litre</option> </select> </td> </td><td><i class="fa-solid fa-trash deleteThisRow"></i></td></tr>'
+                    );
+                } else {
+                    $(".ProductDetailsWrapper table tbody tr").each(function (i) {
+                        if ($(this).data("key") == key) {
+                            $(this).remove();
+                        }
+                    });
+                }
+            }
+        );
+        $(document).on("keyup ", ".venderTotalPaid", function () {
+            let totalPrice = $(this)
+                .closest("tr")
+                .children("td")
+                .children(".venderTotalPrice")
+                .val();
+            let paidAmount = $(this).val();
+
+            if (+totalPrice !== NaN || +paidAmount !== NaN) {
+                $(this)
+                    .closest("tr")
+                    .children(".venderTotalRemaining")
+                    .text(+totalPrice - +paidAmount);
+            }
+        });
+    </script>
+    <script>
+        $(".EditEmployeDetail").click(function (e) {
+            // alert('djf')
+            e.preventDefault();
+            $(".ProfileDetailpop").show();
+        });
+        $(".closeform").click(function () {
+            $(".ProfileDetailpop").hide();
+        });
+     
+        $(document).on('click','.deleteThisRow',function()
+        {
+           let key= $(this).closest('tr').data('key')
+            $(this).closest('tr').remove();
+
+        })
+
+
+
+    </script>
+</body>
+
+</html>
