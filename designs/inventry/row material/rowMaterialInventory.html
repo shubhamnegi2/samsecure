@@ -4,9 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fix Stock Inventory</title>
-    <link rel="stylesheet" href="./popup-models.css">
+    <title>Row Material Inventory</title>
+
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+      * {
+        font-family: "Poppins", sans-serif;
+      }
       .ProductDetailsWrapper {
         counter-reset: Serial;
       }
@@ -330,7 +334,20 @@
         text-align: center;
       }
 
+      .title1 {
+        text-align: center;
+      }
+
       .ProductDetailsWrapper .details .title h3 {
+        display: inline-block;
+        border-bottom: 2px solid #fc8e32;
+        color: #083e5a;
+        font-weight: bold;
+        padding-bottom: 1px;
+        font-size: 18px;
+      }
+
+      .title1 h3 {
         display: inline-block;
         border-bottom: 2px solid #fc8e32;
         color: #083e5a;
@@ -519,12 +536,124 @@
         font-weight: bold;
       }
 
-      .wastagebtns button {
+      .fixstockpop {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .fixstockitempop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 4%;
+      }
+
+      .fixstockpopmodel {
+        border-radius: 5px;
+
+        height: auto;
+
+        width: 50%;
+        background-color: #fff;
+      }
+
+      .wastagebtn button {
         border: 0;
-        padding: 3px 14px;
+        padding: 3px 13px;
+        border-radius: 5px;
         background-color: #083e5a;
         color: #fff;
+      }
+
+      .mt6 {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 60px;
+      }
+
+      .crossicon {
+        display: flex;
+        align-items: center;
+        justify-content: right;
+      }
+
+      .crossicon i {
+        margin-top: 2px;
+        margin-right: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        border: 2px solid black;
+        height: 20px;
+        width: 20px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        padding: 10px;
+      }
+
+      .tablessss tr td:first-child:before {
+        counter-increment: Serial;
+        content: counter(Serial);
+      }
+    </style>
+    <style>
+      .itemNameWrapper ul {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .itemNameWrapper ul li {
+        max-width: 150px;
+        overflow: hidden;
+        margin-right: 10px;
+        font-size: 14px;
+      }
+      .itemNameWrapper ul li input {
+        cursor: pointer;
+      }
+      .itemNameWrapper ul li label {
+        display: inline-block;
+        width: 110px;
+        white-space: nowrap;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        color: #000;
+        font-size: 12px;
+      }
+      .itemNameWrapper .form-check {
+        margin-bottom: -5px;
+      }
+      .itemNameWrapper {
+        box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+        padding: 10px 15px;
         border-radius: 5px;
+        border: 1px solid #fc8019;
+        background-color: #eee;
+      }
+      .itemNameWrapper h3 {
+        /* border-bottom: 2px solid #fc8e32; */
+        color: #7a7797;
+        font-weight: bold;
+        font-size: 14px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        display: inline-block;
+      }
+      .itemNameWrapper hr {
+        margin: 0px;
+      }
+      .itemNameWrapper .ingredientsActionBtn button {
+        background-color: #fc8019;
+      }
+      .itemNameWrapper .ingredientsActionBtn button:last-child {
+        margin-right: 0px;
       }
     </style>
   </head>
@@ -534,7 +663,7 @@
       <ul class="list-unstyled d-flex align-items-center">
         <li><a href="">Inventory</a></li>
         <li><i class="fa-solid fa-angles-right"></i></li>
-        <li><a href="" class="ActiveBreadcrumb">Fixed Stock</a></li>
+        <li><a href="" class="ActiveBreadcrumb">Row Material</a></li>
       </ul>
       <!-- <div>
         <button class="btn btn-primary activeBreadcurmbtn">
@@ -563,9 +692,9 @@
                 <span>Total : <span class="totalCatgry">22</span></span>
               </h3>
               <div class="CategoryActionBtn text-right">
-                <button class="btn btn-primary btn-sm addNewCategoryBtn">Add Category</button>
-                <button class="btn btn-primary btn-sm editNewCategoryBtn">Edit Category</button>
-                <!-- <button class="btn btn-primary btn-sm">Delete Category</button> -->
+                <button class="btn btn-primary btn-sm">Add Category</button>
+                <button class="btn btn-primary btn-sm">Edit Category</button>
+                <button class="btn btn-primary btn-sm">Delete Category</button>
               </div>
             </div>
             <hr />
@@ -593,57 +722,118 @@
         <div class="itemNameWrapper pt-0">
           <div class="d-flex justify-content-between align-items-center">
             <h3>
-              Product List
+              Ingredient List
               <span class="px-2 mainColor">|</span>
-              <span> Total : <span class="totalIngredients">52</span> </span>
+              <span>
+                Total Ingredients : <span class="totalIngredients">52</span>
+              </span>
             </h3>
             <div class="ingredientsActionBtn text-right">
-              <button class="btn btn-primary btn-sm addNewCategoryBtn">
-                Add Product
+              <button class="btn btn-primary btn-sm addIngredientModelBtn">
+                Add Ingredients
               </button>
-              <button class="btn btn-primary btn-sm editNewCategoryBtn">
-                Edit Product
+              <button class="btn btn-primary btn-sm editIngredientModelBtn">
+                Edit Ingredients
               </button>
-              <!-- <button class="btn btn-primary btn-sm">Delete Product</button> -->
+              <!-- <button class="btn btn-primary btn-sm">Delete Ingredients</button> -->
             </div>
           </div>
           <hr />
-          <div class="mt-1"></div>
+          <div class="mt-2"></div>
           <ul class="list-unstyled mb-0">
             <li>
-              <button class="activeFixedIng">
-                <span>Coca cola</span><b> + </b>
-              </button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Milk Powder </label>
+              </div>
             </li>
             <li>
-              <button><span> Milk</span><b> + </b></button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Curd </label>
+              </div>
             </li>
             <li>
-              <button><span> buttermilk</span><b> + </b></button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Paneer </label>
+              </div>
             </li>
             <li>
-              <button><span> Lassie</span><b> + </b></button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for="">assadf </label>
+              </div>
             </li>
             <li>
-              <button><span> Lassie</span><b> + </b></button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Lorem asasa </label>
+              </div>
             </li>
             <li>
-              <button><span> Abc</span><b> + </b></button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Powder </label>
+              </div>
             </li>
             <li>
-              <button><span> Coca cola</span><b> + </b></button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Curdsa </label>
+              </div>
             </li>
             <li>
-              <button><span> Milk</span><b> + </b></button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Paneerssaaa </label>
+              </div>
             </li>
             <li>
-              <button><span> buttermilk</span><b> + </b></button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> loremfdfispum </label>
+              </div>
             </li>
             <li>
-              <button><span> Lassie</span><b> + </b></button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for="">
+                  Lorem sdipsum, doldsor sit
+                </label>
+              </div>
             </li>
             <li>
-              <button><span> Abc</span><b> + </b></button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Milk Powder </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Curdbf </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Paneerrt </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> loremrfispum </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for="">
+                  Loremdf ipsumolor sit
+                </label>
+              </div>
             </li>
           </ul>
         </div>
@@ -664,71 +854,96 @@
               <thead>
                 <tr>
                   <th>S. No.</th>
-                  <th>Product type</th>
-
+                  <th>Item name</th>
+                  <!-- <th>Product Type</th> -->
                   <th>Quantity</th>
                   <th>Unit/type</th>
                   <th>Price/unit</th>
+                  <!-- <th>Selling Prices/Qty</th> -->
                   <th>Total</th>
-                  <th>Date of Purchase</th>
-                  <td>Wastage</td>
+
+                  <th>Expiry/product</th>
+                  <th>Purchase</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td></td>
                   <td>Milk</td>
-                  <td>3</td>
+                  <td>2</td>
                   <td>1kg</td>
                   <td>₹ 20</td>
                   <td>1</td>
 
                   <td>12/01/2024</td>
-                  <td class="wastagebtns"><button>Wastage</button></td>
+                  <td class="viewpurchase">
+                    <button class="viewpurchasebtn">View Purchase</button>
+                  </td>
                 </tr>
                 <tr>
                   <td></td>
                   <td>Milk</td>
-                  <td>3</td>
-                  <td>1kg</td>
+                  <td>2</td>
+                  <td>kg</td>
                   <td>₹ 20</td>
                   <td>1</td>
 
                   <td>12/01/2024</td>
-                  <td class="wastagebtns"><button>Wastage</button></td>
+                  <td class="viewpurchase">
+                    <button class="viewpurchasebtn">View Purchase</button>
+                  </td>
                 </tr>
                 <tr>
                   <td></td>
                   <td>Milk</td>
-                  <td>3</td>
+                  <td>2</td>
                   <td>1kg</td>
                   <td>₹ 20</td>
                   <td>1</td>
 
                   <td>12/01/2024</td>
-                  <td class="wastagebtns"><button>Wastage</button></td>
+                  <td class="viewpurchase">
+                    <button class="viewpurchasebtn">View Purchase</button>
+                  </td>
                 </tr>
                 <tr>
                   <td></td>
                   <td>Milk</td>
-                  <td>3</td>
+                  <td>2</td>
                   <td>1kg</td>
                   <td>₹ 20</td>
                   <td>1</td>
 
                   <td>12/01/2024</td>
-                  <td class="wastagebtns"><button>Wastage</button></td>
+                  <td class="viewpurchase">
+                    <button class="viewpurchasebtn">View Purchase</button>
+                  </td>
                 </tr>
                 <tr>
                   <td></td>
                   <td>Milk</td>
-                  <td>3</td>
+                  <td>2</td>
                   <td>1kg</td>
                   <td>₹ 20</td>
                   <td>1</td>
 
                   <td>12/01/2024</td>
-                  <td class="wastagebtns"><button>Wastage</button></td>
+                  <td class="viewpurchase">
+                    <button class="viewpurchasebtn">View Purchase</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Milk</td>
+                  <td>2</td>
+                  <td>1kg</td>
+                  <td>₹ 20</td>
+                  <td>1</td>
+
+                  <td>12/01/2024</td>
+                  <td class="viewpurchase">
+                    <button class="viewpurchasebtn">View Purchase</button>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -741,14 +956,75 @@
           </div>
         </div>
       </div>
+
+      <div class="fixstockpop">
+        <div class="fixstockitempop">
+          <div class="fixstockpopmodel">
+            <div class="crossicon">
+              <i class="fa fa-close crossiconbtn"></i>
+            </div>
+            <div class="container-fluid mb-2">
+              <div class="title1 my-2">
+                <h3>View Purchase</h3>
+              </div>
+              <div class="ProductDetailsWrapper">
+                <div class="details my-2">
+                  <table class="tablessss">
+                    <thead>
+                      <tr>
+                        <th>S.No</th>
+                        <th>Checkbox</th>
+                        <th>item Name</th>
+                        <th>Date of Purchase</th>
+                        <th>Wastage</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td></td>
+                        <td class="checkboxtd">
+                          <input type="checkbox" style="width: 15px" />
+                        </td>
+                        <td>Milk</td>
+                        <td>16/01/2023</td>
+                        <td class="wastagebtn"><button>Wastage</button></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td class="checkboxtd">
+                          <input type="checkbox" style="width: 15px" />
+                        </td>
+                        <td>Milk</td>
+                        <td>16/01/2023</td>
+                        <td class="wastagebtn"><button>Wastage</button></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td class="checkboxtd">
+                          <input type="checkbox" style="width: 15px" />
+                        </td>
+                        <td>Milk</td>
+                        <td>16/01/2023</td>
+                        <td class="wastagebtn"><button>Wastage</button></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td class="checkboxtd">
+                          <input type="checkbox" style="width: 15px" />
+                        </td>
+                        <td>Milk</td>
+                        <td>16/01/2023</td>
+                        <td class="wastagebtn"><button>Wastage</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
-
-    <!-- 
-      models will load inside the div
-    -->
-
-    <div id="addCategoryModelWrapper"></div>
-    <div id="editCategoryModelWrapper"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script>
@@ -763,13 +1039,7 @@
         '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
       );
     </script>
-    <script src="./common-model.js"></script>
     <script>
-      $(function () {
-        $("#addCategoryModelWrapper").load("add-category-model.html");
-        $("#editCategoryModelWrapper").load("edit-category-model.html");
-      });
-
       $(".addVender").click(function () {
         $("#addVenderWrapper").show();
         let top = $("#addVenderWrapper").position().top;
@@ -784,6 +1054,12 @@
         $(".allBtns button").removeClass("activeBtn");
         $(this).addClass("activeBtn");
         $(".ProductDetailsWrapper .details .title h3").text($(this).text());
+      });
+      $(".viewpurchasebtn").click(function () {
+        $(".fixstockpop").show();
+      });
+      $(".crossiconbtn").click(function () {
+        $(".fixstockpop").hide();
       });
     </script>
   </body>

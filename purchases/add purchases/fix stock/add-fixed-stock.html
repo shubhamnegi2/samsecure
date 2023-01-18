@@ -5,13 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Purchases</title>
-    <link rel="stylesheet" href="./addPurchases2.css" />
+    <link rel="stylesheet" href="./addFixedStock.css" />
     <link rel="stylesheet" href="./popup-models.css" />
-
-    <link
-      rel="stylesheet"
-      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
-    />
 
     <style>
       .ProductDetailsWrapper {
@@ -34,21 +29,24 @@
       .itemNameWrapper ul li input {
         cursor: pointer;
       }
-      .itemNameWrapper ul li label {
-        display: inline-block;
-        width: 110px;
-        white-space: nowrap;
-        overflow: hidden !important;
-        text-overflow: ellipsis;
-        color: #000;
-        font-size: 12px;
+      .itemNameWrapper ul li button {
+        min-width: 50px;
+        margin: 5px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
       }
       .itemNameWrapper .form-check {
         margin-bottom: -5px;
       }
       .itemNameWrapper {
         box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
-        padding: 10px 15px;
+        padding: 1px 15px;
         border-radius: 5px;
         border: 1px solid #fc8019;
         background-color: #eee;
@@ -105,7 +103,7 @@
       .allVenderBtnsWrapper h3 {
         color: #7a7797;
         font-weight: bold;
-        font-size: 14px;
+        font-size: 16px;
         padding-bottom: 0px;
         margin-bottom: 0px;
         display: inline-block;
@@ -127,12 +125,12 @@
       .itemNameWrapper .ingredientsActionBtn button:last-child {
         margin-right: 0px;
       }
-      .allVenderBtnsWrapper .vendersActionBtn button {
-        background-color: #fc8019;
-      }
       .allVenderBtnsWrapper ul li {
         margin: 0px 5px;
         font-size: 12px;
+      }
+      .activeFixedIng {
+        background-color: #fe9037 !important;
       }
       .dateWrapper {
         font-size: 12px;
@@ -147,7 +145,7 @@
       }
       .dateWrapper button {
         min-width: 50px;
-        margin: 2px 10px;
+        margin: 0px 10px;
         text-transform: capitalize;
         border-radius: 3px;
         border: 0;
@@ -157,8 +155,7 @@
         font-weight: 600;
         padding: 2px 8px;
       }
-      
-    </style>  
+    </style>
   </head>
   <body>
     <div class="breadcrumbs">
@@ -181,29 +178,21 @@
           <div>
             Date : <input type="text" id="dateWise" placeholder="03/12/2012" />
           </div>
-          <!-- <button>Add vender</button> -->
+          <button class="addVender">Add vender</button>
         </div>
       </div>
-
-      <div class="allBtnsWrapper pb-3 mt-1">
+      <div class="allBtnsWrapper pb-3 mt-0">
         <div class="container-fluid">
           <div class="allBtns pt-0 pb-1">
             <div class="d-flex justify-content-between align-items-center">
               <h3 class="categoryheading">
-                Ingredient Categories List
+                Fixed Stock List
                 <span class="px-2 mainColor">|</span>
-                <span
-                  >Total Categories : <span class="totalCatgry">22</span></span
-                >
+                <span>Total : <span class="totalCatgry">22</span></span>
               </h3>
               <div class="CategoryActionBtn text-right">
-                <button class="btn btn-primary btn-sm addNewCategoryBtn">
-                  Add Category
-                </button>
-                <button class="btn btn-primary btn-sm editNewCategoryBtn">
-                  Edit Category
-                </button>
-                <!-- <button class="btn btn-primary btn-sm">Delete Category</button> -->
+                <button class="btn btn-primary btn-sm addNewCategoryBtn ">Add Category</button>
+                <button class="btn btn-primary btn-sm editNewCategoryBtn">Edit Category</button>
               </div>
             </div>
             <hr />
@@ -226,147 +215,93 @@
           </div>
         </div>
       </div>
+
       <div class="container-fluid mb-3">
         <div class="itemNameWrapper pt-0">
           <div class="d-flex justify-content-between align-items-center">
             <h3>
-              Ingredient List
+              Product List
               <span class="px-2 mainColor">|</span>
-              <span>
-                Total Ingredients : <span class="totalIngredients">52</span>
-              </span>
+              <span> Total : <span class="totalIngredients">52</span> </span>
             </h3>
             <div class="ingredientsActionBtn text-right">
-              <button class="btn btn-primary btn-sm addIngredientModelBtn">
-                Add Ingredients
-              </button>
-              <button class="btn btn-primary btn-sm editIngredientModelBtn">
-                Edit Ingredients
-              </button>
-              <!-- <button class="btn btn-primary btn-sm">Delete Ingredients</button> -->
+              <button class="btn btn-primary btn-sm">Add Product</button>
+              <button class="btn btn-primary btn-sm">Edit Product</button>
             </div>
           </div>
           <hr />
-          <div class="mt-2"></div>
+          <div class="mt-1"></div>
           <ul class="list-unstyled mb-0">
             <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> Milk Powder </label>
-              </div>
+              <button class="activeFixedIng">
+                <span>Coca cola</span><b> + </b>
+              </button>
             </li>
             <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> Curd </label>
-              </div>
+              <button><span> Milk</span><b> + </b></button>
             </li>
             <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> Paneer </label>
-              </div>
+              <button><span> buttermilk</span><b> + </b></button>
             </li>
             <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for="">assadf </label>
-              </div>
+              <button><span> Lassie</span><b> + </b></button>
             </li>
             <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> Lorem asasa </label>
-              </div>
+              <button><span> Lassie</span><b> + </b></button>
             </li>
             <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> Powder </label>
-              </div>
+              <button><span> Abc</span><b> + </b></button>
             </li>
             <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> Curdsa </label>
-              </div>
+              <button><span> Coca cola</span><b> + </b></button>
             </li>
             <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> Paneerssaaa </label>
-              </div>
+              <button><span> Milk</span><b> + </b></button>
             </li>
             <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> loremfdfispum </label>
-              </div>
+              <button><span> buttermilk</span><b> + </b></button>
             </li>
             <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for="">
-                  Lorem sdipsum, doldsor sit
-                </label>
-              </div>
+              <button><span> Lassie</span><b> + </b></button>
             </li>
             <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> Milk Powder </label>
-              </div>
-            </li>
-            <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> Curdbf </label>
-              </div>
-            </li>
-            <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> Paneerrt </label>
-              </div>
-            </li>
-            <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> loremrfispum </label>
-              </div>
-            </li>
-            <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for="">
-                  Loremdf ipsumolor sit
-                </label>
-              </div>
+              <button><span> Abc</span><b> + </b></button>
             </li>
           </ul>
         </div>
       </div>
-      <div class="allVenderBtnsWrapper pb-3">
+      <!-- <div class="allVenderBtnsWrapper pb-3">
+        <div class="container-fluid">
+          <div class="allBtns px-2 p-0 mb-2">
+            <div class="d-flex justify-content-between align-items-center">
+              <h3>Added Item List :</h3>
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <button>Coca cola +</button>
+                  <button>Milk +</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div class="allVenderBtnsWrapper pb-3">
         <div class="container-fluid">
           <div class="allBtns pt-0 pb-1">
             <div class="d-flex justify-content-between align-items-center">
               <h3>
-                Vender List : <span class="px-2 mainColor">|</span
-                ><span
-                  >Total Venders : <span class="totalCatgry">22</span></span
-                >
+                Vender List : <span class="px-2 mainColor">|</span><span>Total Venders : <span class="totalCatgry">22</span></span>
               </h3>
               <div class="vendersActionBtn text-right">
                 <button class="btn btn-primary btn-sm addVender">
                   Add Vender
                 </button>
                 <button class="btn btn-primary btn-sm">Edit Vender</button>
-                <!-- <button class="btn btn-primary btn-sm">Delete Vender</button> -->
               </div>
             </div>
-            <hr />
+            <hr>
             <div class="mt-1"></div>
-            <!-- <button class="activeBtn"></button> -->
             <ul class="d-flex list-unstyled mb-0">
               <li>Amit</li>
               <li>Rohit</li>
@@ -383,7 +318,8 @@
             </ul>
           </div>
         </div>
-      </div>
+      </div> -->
+
       <div class="container-fluid">
         <div class="ProductDetailsWrapper">
           <div class="details">
@@ -400,43 +336,77 @@
                 <tr>
                   <th>S. No.</th>
                   <th>Item name</th>
-                  <th>Price/Qty</th>
-                  <th>No. Of Days</th>
+                  <th>Product Type</th>
                   <th>Quantity</th>
+                  <th>Price/Qty</th>
+                  <!-- <th>Selling Prices/Qty</th> -->
+                  <th>Total Payment</th>
+                  <th>Paid Payment</th>
+                  <!-- <th>Remaining</th> -->
                   <th>Select Vender</th>
-                  <!-- <th>Save</th> -->
+                  <th>Remove</th>
                 </tr>
               </thead>
               <tbody>
                 <!-- <tr>
+                  <td></td>
                   <td class="name">Milk Powder</td>
                   <td>
                     <input
                       type="text"
-                      class="price"
-                      placeholder="Price/Qty"
-                      name="price"
+                      class="variation"
+                      placeholder="variations"
+                      name="Variation"
                     />
                   </td>
                   <td>
-                    <select name="days" id="days">
-                      <option selected disabled>Used In</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                    </select>
+                    <input
+                      type="text"
+                      class="quantity"
+                      placeholder="Quantity"
+                      name="quantity"
+                    />
                   </td>
                   <td>
-                    <select name="quantity" id="quantity">
-                      <option selected disabled>Select Quantity</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                    </select>
+                    <input
+                      type="text"
+                      class="price/Qty"
+                      placeholder="Price/Qty"
+                      name="price/Qty"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="sellingPrice/Qty"
+                      placeholder="sellingPrice/Qty"
+                      name="Selling Price/Qty"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="totalPayment"
+                      placeholder="Total Payment"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="paidPayment"
+                      placeholder="Paid Payment"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="remainingPayment"
+                      placeholder="Remaining Payment"
+                    />
                   </td>
                   <td>
                     <select name="Vender" class="chooseVender" id="Vender">
-                      <option selected disabled>Select Vender</option>
+                      <option selected="" disabled="">Select Vender</option>
                       <option value="Amit">Amit</option>
                       <option value="Ankit">Ankit</option>
                       <option value="Rohit">Rohit</option>
@@ -446,13 +416,17 @@
                       <option value="Manish Joshi">Manish Joshi</option>
                     </select>
                   </td>
+                  <td>
+                    <i class="fa-solid fa-trash deleteThisRow"></i>
+                  </td>
                 </tr> -->
               </tbody>
             </table>
             <div class="table1Btns text-right my-1 mx-3">
-              <button class="btn btn-primary btn-sm showVenderDetails">
+              <!-- <button class="btn btn-primary btn-sm showVenderDetails">
                 Next
-              </button>
+              </button> -->
+              <button class="btn btn-primary btn-sm">Submit</button>
             </div>
           </div>
           <div class="venderDetailsTable">
@@ -584,155 +558,37 @@
         </div>
       </div>
     </main>
-
-
     <!-- 
       models will load inside the div
     -->
     <div id="addCategoryModelWrapper"></div>
-    <div id="addIngredientModelWrapper"></div>
     <div id="editCategoryModelWrapper"></div>
-    <div id="editIngredientModelWrapper"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="./common-model.js"></script>
     <script>
+      $(document).ready(function () {
+
+        $("#addCategoryModelWrapper").load("add-category-model.html");
+        $("#editCategoryModelWrapper").load("edit-category-model.html");
+      });
       $("head").append(
         '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
       );
       $("head").append(
         ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
-        />'
+/>'
       );
       $("head").append(
         '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
       );
     </script>
-    <script src="./common-model.js"></script>
     <script>
-      $(function () {
-        $("#dateWise").datepicker();
-        $("#addIngredientModelWrapper").load("add-ingredients-model.html");
-        $("#editIngredientModelWrapper").load("edit-ingredient-model.html");
-
-        $("#addCategoryModelWrapper").load("add-category-model.html");
-        $("#editCategoryModelWrapper").load("edit-category-model.html");
-      });
-
-      // $(document).on("click", ".deleteAddedIngredient", function () {
-      //   $(this).closest("div").remove();
-      // });
-
-      // $(".addMoreIngredientBtn").click(function (e) {
-      //   e.preventDefault();
-      //   let category = $("#selectedIngCatList option:selected").val();
-      //   console.log(category);
-      //   $(this)
-      //     .closest("form")
-      //     .children(".btns")
-      //     .before(
-      //       `<div class="form-group mt-3 text-left"> <label for="category">Ingredient : </label> <input type="text" name="" id=""> <input type="text" value="${category}" disabled=""> <i class="fa-solid fa-trash deleteAddedIngredient"></i> </div>`
-      //     );
-      // });
-      // $(".closeEditIngredientModel").click(function () {
-      //   $(".editIngredientModelWrapper").hide();
-      //   $(".editIngredientModelWrapper .editIngredientModel").animate({
-      //     top: -50,
-      //   });
-      // });
-      // $(".editIngredientModelBtn").click(function () {
-      //   $(".editIngredientModelWrapper").css({
-      //     display: "flex",
-      //   });
-      //   $(".editIngredientModelWrapper .editIngredientModel").animate({
-      //     top: 50,
-      //   });
-      // });
-
-      // $(".closeAddCategoryModel").click(function () {
-      //   $(".addCategoryModelWrapper").hide();
-      //   $(".addCategoryModelWrapper .addCategoryModel").animate({ top: -50 });
-      // });
-      // $(".addNewCategoryBtn").click(function () {
-      //   $(".addCategoryModelWrapper").css({
-      //     display: "flex",
-      //   });
-      //   $(".addCategoryModelWrapper .addCategoryModel").animate({ top: 50 });
-      // });
-
-      // $(".closeaddIngredientModelWrapper").click(function () {
-      //   $(".addIngredientModelWrapper").hide();
-      //   $(".addIngredientModelWrapper .addIngredientModel").animate({
-      //     top: -50,
-      //   });
-      // });
-      // $(".addIngredientModelBtn").click(function () {
-      //   $(".addIngredientModelWrapper").css({
-      //     display: "flex",
-      //   });
-      //   $(".addIngredientModelWrapper .addIngredientModel").animate({
-      //     top: 50,
-      //   });
-      // });
-
-      // $(".closeEditCategoryModel").click(function () {
-      //   $(".editCategoryModelWrapper").hide();
-      //   $(".editCategoryModelWrapper .addCategoryModel").animate({ top: -50 });
-      // });
-      // $(".editNewCategoryBtn").click(function () {
-      //   $(".editCategoryModelWrapper").css({
-      //     display: "flex",
-      //   });
-      //   $(".editCategoryModelWrapper .editCategoryModel").animate({ top: 50 });
-      // });
-
-      // $(document).on("click", ".deleteCategory", function () {
-      //   $(this)
-      //     .closest("tr")
-      //     .children("td")
-      //     .children("input")
-      //     .prop("disabled", true);
-      //   $(this).closest("tr").children(".deleteCategory").hide();
-      //   $(this).closest("tr").children(".undoDeleteCat").show();
-      // });
-
-      // $(document).on("click", ".undoDeleteCat", function () {
-      //   $(this)
-      //     .closest("tr")
-      //     .children("td")
-      //     .children("input")
-      //     .prop("disabled", false);
-      //   $(this).closest("tr").children(".undoDeleteCat").hide();
-      //   $(this).closest("tr").children(".deleteCategory").show();
-      // });
-
-      // $(document).on("click", ".deleteIngCategory", function () {
-      //   $(this)
-      //     .closest("tr")
-      //     .children("td")
-      //     .children("input")
-      //     .prop("disabled", true);
-      //   $(this).closest("tr").children(".deleteIngCategory").hide();
-      //   $(this).closest("tr").children(".undoDelete").show();
-      // });
-
-      // $(document).on("click", ".undoDelete", function () {
-      //   $(this)
-      //     .closest("tr")
-      //     .children("td")
-      //     .children("input")
-      //     .prop("disabled", false);
-      //   $(this).closest("tr").children(".undoDelete").hide();
-      //   $(this).closest("tr").children(".deleteIngCategory").show();
-      // });
-
       $(".addVender").click(function () {
         $("#addVenderWrapper").show();
         let top = $("#addVenderWrapper").position().top;
         $("html, body").animate({ scrollTop: top });
       });
-
       $(".breadcrumbs button").click(function () {
         $(".breadcrumbs button").removeClass("activeBreadcurmbtn");
         $(this).addClass("activeBreadcurmbtn");
@@ -741,13 +597,11 @@
       $(".allBtns button").click(function () {
         $(".allBtns button").removeClass("activeBtn");
         $(this).addClass("activeBtn");
-
         $(".ProductDetailsWrapper .details .title h3").text($(this).text());
       });
 
       $(".showVenderDetails").click(function () {
         $("#addVenderWrapper").hide();
-
         if (selectedVender.length <= 0) {
           alert("please select vender");
         } else {
@@ -792,29 +646,23 @@
         }
       });
 
-      $(document).on(
-        "click ",
-        ".itemNameWrapper input[type='checkbox']",
-        function () {
-          let value = $(this).closest(".form-check").children("label").text();
-          let key = value.replaceAll(/\s/g, "");
-          if ($(this).is(":checked")) {
-            $(".ProductDetailsWrapper table").append(
-              "<tr data-key=" +
-                key +
-                '><td></td> <td class="name">' +
-                value +
-                '</td><td> <input type="text" class="price" placeholder="Price/Qty" name="price"/> </td><td> <select name="days" id="days"> <option selected disabled>Used In</option> <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> </select> </td><td> <select name="quantity" id="quantity"> <option selected disabled>Select Quantity</option> <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> </select> </td><td> <select name="Vender" class="chooseVender" id="Vender"> <option selected disabled>Select Vender</option> <option value="Amit">Amit</option> <option value="Ankit">Ankit</option> <option value="Rohit">Rohit</option> <option value="Akash">Akash</option> <option value="Ramu">Ramu</option> <option value="Sonu">Sonu</option> <option value="Manish Joshi">Manish Joshi</option> </select> </td></tr>'
-            );
-          } else {
-            $(".ProductDetailsWrapper table tbody tr").each(function (i) {
-              if ($(this).data("key") == key) {
-                $(this).remove();
-              }
-            });
-          }
-        }
-      );
+      $(document).on("click", ".itemNameWrapper ul li button", function () {
+        $(".itemNameWrapper ul li button").removeClass("activeFixedIng");
+        $(this).addClass("activeFixedIng");
+        $(".ProductDetailsWrapper .details .title h3").text(
+          $(this).children("span").text()
+        );
+        $(".ProductDetailsWrapper table tbody").append(
+          '<tr> <td></td><td class="name">' +
+            $(this).children("span").text() +
+            '</td><td> <input type="text" class="variation" placeholder="variations" name="Variation"/> </td><td> <input type="text" class="quantity" placeholder="Quantity" name="quantity"/> </td><td> <input type="text" class="price/Qty" placeholder="Price/Qty" name="price/Qty"/> </td><td> <input type="text" name="totalPayment" placeholder="Total Payment"/> </td><td> <input type="text" name="paidPayment" placeholder="Paid Payment"/> </td><td> <select name="Vender" class="chooseVender" id="Vender"> <option selected="" disabled="">Select Vender</option> <option value="Amit">Amit</option> <option value="Ankit">Ankit</option> <option value="Rohit">Rohit</option> <option value="Akash">Akash</option> <option value="Ramu">Ramu</option> <option value="Sonu">Sonu</option> <option value="Manish Joshi">Manish Joshi</option> </select> </td><td> <i class="fa-solid fa-trash deleteThisRow"></i> </td></tr>'
+        );
+      });
+
+      $(document).on("click ", ".deleteThisRow", function () {
+        $(this).closest("tr").remove();
+      });
+
       $(document).on("keyup ", ".venderTotalPaid", function () {
         let totalPrice = $(this)
           .closest("tr")
@@ -822,6 +670,7 @@
           .children(".venderTotalPrice")
           .val();
         let paidAmount = $(this).val();
+
         if (+totalPrice !== NaN || +paidAmount !== NaN) {
           $(this)
             .closest("tr")
@@ -832,3 +681,6 @@
     </script>
   </body>
 </html>
+<!-- 
+  <tr> <td class="name">Milk Powder</td><td> <input type="text" class="variation" placeholder="variations" name="Variation"/> </td><td> <input type="text" class="quantity" placeholder="Quantity" name="quantity"/> </td><td> <input type="text" class="price/Qty" placeholder="Price/Qty" name="price/Qty"/> </td><td> <input type="text" class="sellingPrice/Qty" placeholder="sellingPrice/Qty" name="Selling Price/Qty"/> </td><td> <input type="text" name="totalPayment" placeholder="Total Payment"> </td><td> <input type="text" name="paidPayment" placeholder="Paid Payment"> </td><td> <input type="text" name="remainingPayment" placeholder="Remaining Payment"> </td></tr>
+ -->

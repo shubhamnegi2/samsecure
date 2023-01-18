@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inventory</title>
+    <title>Row Material Inventory</title>
 
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
@@ -604,6 +604,58 @@
         content: counter(Serial);
       }
     </style>
+    <style>
+      .itemNameWrapper ul {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .itemNameWrapper ul li {
+        max-width: 150px;
+        overflow: hidden;
+        margin-right: 10px;
+        font-size: 14px;
+      }
+      .itemNameWrapper ul li input {
+        cursor: pointer;
+      }
+      .itemNameWrapper ul li label {
+        display: inline-block;
+        width: 110px;
+        white-space: nowrap;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        color: #000;
+        font-size: 12px;
+      }
+      .itemNameWrapper .form-check {
+        margin-bottom: -5px;
+      }
+      .itemNameWrapper {
+        box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+        padding: 10px 15px;
+        border-radius: 5px;
+        border: 1px solid #fc8019;
+        background-color: #eee;
+      }
+      .itemNameWrapper h3 {
+        /* border-bottom: 2px solid #fc8e32; */
+        color: #7a7797;
+        font-weight: bold;
+        font-size: 14px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        display: inline-block;
+      }
+      .itemNameWrapper hr {
+        margin: 0px;
+      }
+      .itemNameWrapper .ingredientsActionBtn button {
+        background-color: #fc8019;
+      }
+      .itemNameWrapper .ingredientsActionBtn button:last-child {
+        margin-right: 0px;
+      }
+    </style>
   </head>
 
   <body>
@@ -670,53 +722,118 @@
         <div class="itemNameWrapper pt-0">
           <div class="d-flex justify-content-between align-items-center">
             <h3>
-              Product List
+              Ingredient List
               <span class="px-2 mainColor">|</span>
-              <span> Total : <span class="totalIngredients">52</span> </span>
+              <span>
+                Total Ingredients : <span class="totalIngredients">52</span>
+              </span>
             </h3>
             <div class="ingredientsActionBtn text-right">
-              <button class="btn btn-primary btn-sm">Add Product</button>
-              <button class="btn btn-primary btn-sm">Edit Product</button>
-              <button class="btn btn-primary btn-sm">Delete Product</button>
+              <button class="btn btn-primary btn-sm addIngredientModelBtn">
+                Add Ingredients
+              </button>
+              <button class="btn btn-primary btn-sm editIngredientModelBtn">
+                Edit Ingredients
+              </button>
+              <!-- <button class="btn btn-primary btn-sm">Delete Ingredients</button> -->
             </div>
           </div>
           <hr />
-          <div class="mt-1"></div>
+          <div class="mt-2"></div>
           <ul class="list-unstyled mb-0">
             <li>
-              <button class="activeFixedIng">
-                <span>Coca cola</span><b> + </b>
-              </button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Milk Powder </label>
+              </div>
             </li>
             <li>
-              <button><span> Milk</span><b> + </b></button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Curd </label>
+              </div>
             </li>
             <li>
-              <button><span> buttermilk</span><b> + </b></button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Paneer </label>
+              </div>
             </li>
             <li>
-              <button><span> Lassie</span><b> + </b></button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for="">assadf </label>
+              </div>
             </li>
             <li>
-              <button><span> Lassie</span><b> + </b></button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Lorem asasa </label>
+              </div>
             </li>
             <li>
-              <button><span> Abc</span><b> + </b></button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Powder </label>
+              </div>
             </li>
             <li>
-              <button><span> Coca cola</span><b> + </b></button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Curdsa </label>
+              </div>
             </li>
             <li>
-              <button><span> Milk</span><b> + </b></button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Paneerssaaa </label>
+              </div>
             </li>
             <li>
-              <button><span> buttermilk</span><b> + </b></button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> loremfdfispum </label>
+              </div>
             </li>
             <li>
-              <button><span> Lassie</span><b> + </b></button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for="">
+                  Lorem sdipsum, doldsor sit
+                </label>
+              </div>
             </li>
             <li>
-              <button><span> Abc</span><b> + </b></button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Milk Powder </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Curdbf </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> Paneerrt </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for=""> loremrfispum </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for="">
+                  Loremdf ipsumolor sit
+                </label>
+              </div>
             </li>
           </ul>
         </div>
