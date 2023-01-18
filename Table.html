@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
@@ -48,7 +48,6 @@
         font-size: 16px;
     }
 
-
     .CategoriesDetails1 {
         padding: 5px;
         background-color: #fff;
@@ -58,7 +57,6 @@
     }
 
     .CategoriesDetails1 button {
-     
         min-width: 50px;
         margin: 2px 10px;
         text-transform: capitalize;
@@ -98,7 +96,6 @@
     }
 
     .CategoriesDetails .CategoryActionBtn button {
-    
         min-width: 50px;
         margin: 2px 10px;
         text-transform: capitalize;
@@ -119,13 +116,12 @@
     }
 
     .tablekotitems {
-
         align-items: center;
         display: flex;
         justify-content: center;
     }
 
-    .tablekotitems p {
+    .tablekotitems span {
         gap: 5px;
         align-items: center;
         display: flex;
@@ -153,7 +149,7 @@
         gap: 3px;
     }
 
-    .tablecoloradd p {
+    .tablecoloradd span {
         font-size: 13px;
         font-weight: 500;
     }
@@ -176,17 +172,14 @@
 
     .ProductDetailsWrapper table tr:nth-child(even) {
         background-color: #fff2e7;
-
     }
-
-
 
     .ProductDetailsWrapper table tr:nth-child(even) select option {
         background-color: rgba(58, 187, 105, 0.3411764706);
     }
 
     .ProductDetailsWrapper table tr {
-        height: 40px;
+        height: 30px;
     }
 
     .ProductDetailsWrapper table tr:last-child {
@@ -220,7 +213,7 @@
     .ProductDetailsWrapper tbody tr input,
     .ProductDetailsWrapper tbody tr select {
         width: 100%;
-        height: 37px;
+        height: 30px;
         border: 0;
         text-align: center;
         background-color: transparent;
@@ -233,8 +226,6 @@
         top: 0px;
         display: none;
     }
-
-
 
     .text-right {
         text-align: right;
@@ -259,7 +250,6 @@
         overflow-wrap: break-word;
         word-wrap: break-word;
         hyphens: auto;
-
     }
 
     body {
@@ -268,14 +258,12 @@
 
     .tablenumber span {
         border: 3px solid #eee;
-        padding: 0px 8px;
+        padding: 0px 6px;
         border-radius: 5px;
         color: #083e5a;
         margin-right: 12px;
+        font-size: 14px;
         display: inline-block;
-        margin-top: 5px;
-
-
     }
 
     .totaltable {
@@ -293,8 +281,9 @@
         align-items: center;
         flex-direction: column;
         position: relative;
-        gap: 7px;
-        border: 2px solid #3c32322c;
+        padding-top: 12px;
+        gap: 2px;
+        border: 2px solid #623a3a;
         border-radius: 6px;
         background-color: #eee;
         color: #083e5a;
@@ -302,12 +291,22 @@
         font-weight: 500;
     }
 
+    .runningtabledetail span {
+        font-size: 10px;
+    }
+
     .tableno {
         position: absolute;
-        left: -5%;
-        top: -7px;
+        /* left: -5%;
+        top: -7px; */
+        /* left: 36%;
+    top: -16px;
         height: 25px;
-        width: 25px;
+        width: 25px; */
+        left: 30%;
+        top: -25px;
+        height: 36px;
+        width: 36px;
         border-radius: 50%;
         background-color: #fc8e32;
         text-align: center;
@@ -315,24 +314,24 @@
         color: #fff;
         display: flex;
         align-items: center;
-        justify-content: center
+        justify-content: center;
     }
 
     .tableicon i {
         position: absolute;
-        font-size: 24px;
+        font-size: 20px;
         /* top: -11%; */
-        bottom: -12%;
+        bottom: -25%;
         border: 1px solid;
         /* padding: 36%; */
-        left: 34%;
+        left: 33%;
+
         padding: 2px 5px;
         background-color: #fff;
         border-radius: 4px;
         cursor: pointer;
         z-index: 999;
         font-size: 15px;
-
     }
 
     .groundfloortableorder {
@@ -353,191 +352,375 @@
         padding-bottom: 10px;
         text-align: center;
     }
+
+    .title1 h3 {
+        display: inline-block;
+        padding-bottom: 5px;
+        border-bottom: 2px solid #ef7d0b;
+    }
+
+    .tablemain {
+        display: flex;
+        gap: 20px;
+        position: relative;
+        font-size: 10px;
+        font-weight: 500;
+        justify-content: right;
+        padding-right: 2px;
+        border-radius: 5px;
+        background-color: #fff;
+        border: 3px solid aquamarine;
+    }
+
+    .tabletopdamo {
+        position: absolute;
+        top: -25%;
+        left: 15%;
+        background-color: aquamarine;
+        width: 70px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .tablenumber9 {
+        height: 40px;
+        width: 40px;
+        background-color: aquamarine;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: -35%;
+        left: -8%;
+
+        color: #fff;
+
+        font-size: 30px;
+    }
+
+    .tabletime {
+        display: flex;
+        gap: 15px;
+    }
+
+    .tableprice {
+        display: flex;
+        gap: 15px;
+    }
+
+    .tableorder {
+        display: flex;
+        gap: 15px;
+    }
+
+    .tablewaiter {
+        display: flex;
+        gap: 9px;
+    }
+
+    .tablebookcolor {
+        border: 3px solid bisque;
+    }
+
+    .tablebookcolor .tabletopdamo {
+        background-color: bisque;
+    }
+
+    .tablebookcolor .tablenumber9 {
+        background-color: bisque;
+    }
+
+    .tablemaintableno2 {
+        border: 3px solid green;
+    }
+
+    .tablemaintableno2 .tablenumber9 {
+        background-color: green;
+    }
+
+    .tablemaintableno2 .tabletopdamo {
+        background-color: green;
+    }
+
+    .tablenumber1 {
+
+        border: 3px solid #fc8e32;
+    }
+
+    .tablenumber1 .tabletopdamo {
+        background-color: #fc8e32;
+    }
+
+    .tablenumber1 .tablenumber9 {
+        background-color: #fc8e32;
+    }
 </style>
 
 <body>
     <div class="breadcrumb">
-
-
         <ul class="list-unstyled d-flex align-items-center">
             <li><a href="">Dashboard</a></li>
             <li><i class="fa-solid fa-angles-right"></i></li>
             <li><a href="" class="ActiveBreadcrumb">Table</a></li>
         </ul>
     </div>
-    <div class="container-fluid mb-3">
+    <div class="container-fluid mb-2">
         <div class="CategoriesDetails d-flex justify-content-between align-items-center">
             <div class="d-flex justify-content-between align-items-center">
                 <h3>Table View</h3>
-
             </div>
             <div class="CategoryActionBtn">
-                <button class="btn btn-primary btn-sm">Delivery</button>
-                <button class="btn btn-primary btn-sm">Pick Up</button>
-                <button class="btn btn-primary btn-sm">Add Table</button>
+                <!-- <button class="btn btn-primary btn-sm">Delivery</button>
+                <button class="btn btn-primary btn-sm">Pick Up</button> -->
+                <button class="btn btn-primary btn-sm">
+                    <span>+</span> Add Table
+                </button>
             </div>
         </div>
     </div>
-    <div class="container-fluid mb-3">
+    <div class="container-fluid mb-2">
         <div class="CategoriesDetails1 d-flex justify-content-between align-items-center">
             <div class="d-flex justify-content-between align-items-center">
-                <button class="btn btn-primary btn-sm"> <span>+</span>Table Reservation</button>
-                <button class="btn btn-primary btn-sm"><span>+</span> Contactiess</button>
-
+                <button class="btn btn-primary btn-sm">
+                    <span>+</span>Table Reservation
+                </button>
+                <button class="btn btn-primary btn-sm">
+                    <span>+</span> Contactiess
+                </button>
             </div>
             <div class="CategoryActionBtn2">
-                <div class="tablecolorside ">
+                <div class="tablecolorside">
                     <div class="tablekotitems">
-                        <p style="margin: 0px;"> <input type="checkbox"> KOT/Items</p>
+                        <span style="margin: 0px">
+                            <input type="checkbox" style="margin: 0" /> KOT/Items</span>
                     </div>
                     <div class="tablecolors">
-                        <div class="tablecoloradd ">
-                            <div class="changetablebackground" style="background-color: #eee;"></div>
-                            <p style="margin: 0px;">Blank Table</p>
+                        <div class="tablecoloradd">
+                            <div class="changetablebackground" style="background-color: #eee"></div>
+                            <span style="margin: 0px">Blank Table</span>
                         </div>
-                        <div class="tablecoloradd ">
-                            <div class="changetablebackground" style="background-color: aquamarine;"></div>
-                            <p style="margin: 0px;">Running Table</p>
+                        <div class="tablecoloradd">
+                            <div class="changetablebackground" style="background-color: aquamarine"></div>
+                            <span style="margin: 0px">Running Table</span>
                         </div>
-                        <div class="tablecoloradd ">
-                            <div class="changetablebackground" style="background-color: green;"></div>
-                            <p style="margin: 0px;">Printed Table</p>
+                        <div class="tablecoloradd">
+                            <div class="changetablebackground" style="background-color: green"></div>
+                            <span style="margin: 0px">Printed Table</span>
                         </div>
                     </div>
-                    <div class="tablecoloradd ">
-                        <div class="changetablebackground" style="background-color: bisque;"></div>
-                        <p style="margin: 0px;">Paid Table</p>
+                    <div class="tablecoloradd">
+                        <div class="changetablebackground" style="background-color: bisque"></div>
+                        <span style="margin: 0px">Paid Table</span>
                     </div>
-                    <div class="tablecoloradd ">
-                        <div class="changetablebackground" style="background-color: #ef7d0b;"></div>
-                        <p style="margin: 0px;">Running KOT Table</p>
+                    <div class="tablecoloradd">
+                        <div class="changetablebackground" style="background-color: #ef7d0b"></div>
+                        <span style="margin: 0px">Running KOT Table</span>
                     </div>
                 </div>
-
             </div>
-
         </div>
-
     </div>
     <div class="container-fluid mb-3">
         <div class="ProductDetailsWrapper newProductDetailsWrapper">
             <div class="details">
-                <div class="title">
-                    <h3 style="padding-bottom: 10px; text-align: center; ">Select Table</h3>
-
+                <div class="title1 text-center">
+                    <h3 style="padding-bottom: 5px">Select Table</h3>
                 </div>
                 <table>
                     <thead>
                         <tr>
-                            <th class="tableleftside" style="text-align: left;">Floors</th>
-                            <th style="text-align: left;" class="tablesnam">Tables</th>
-                            <th style="text-align: center; " class="totaltable">Total table</th>
-
-
-
+                            <th class="tableleftside" style="text-align: left; color: #fff">
+                                Floors
+                            </th>
+                            <th style="text-align: center; color: #fff" class="tablesnam">
+                                All Tables
+                            </th>
+                            <th style="text-align: center; color: #fff" class="totaltable">
+                                Total table
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="tableleftside" style="text-align: left;">Ground Floor</td>
-                            <td style="text-align: left;" class="tablenumber mt-2"> <span>1</span>
-                                <span>2</span><span>3</span>
-                                <span>4</span> <span>5</span><span>6</span>
-                                <span>7</span> <span>8</span><span>9</span>
+                            <td class="tableleftside" style="text-align: left">
+                                Ground Floor
+                            </td>
+                            <td style="text-align: left" class="tablenumber mt-2">
+                                <span>1</span> <span>2</span><span>3</span> <span>4</span>
+                                <span>5</span><span>6</span> <span>7</span> <span>8</span><span>9</span>
                                 <span>10</span>
                             </td>
                             <td class="totaltable text-center">10</td>
-
-
                         </tr>
                         <tr>
-                            <td class="tableleftside text-left" style="text-align: left;">First Floor</td>
-                            <td class="tablenumber mt-2 text-left"> <span>1</span>
-                                <span>2</span><span>3</span>
-                                <span>4</span> <span>5</span><span>6</span>
-                                <span>7</span> <span>8</span><span>9</span>
+                            <td class="tableleftside text-left" style="text-align: left">
+                                First Floor
+                            </td>
+                            <td class="tablenumber text-left">
+                                <span>1</span> <span>2</span><span>3</span> <span>4</span>
+                                <span>5</span><span>6</span> <span>7</span> <span>8</span><span>9</span>
                                 <span>10</span>
                                 <span>11</span> <span>12</span><span>13</span>
                                 <span>14</span> <span>15</span><span>16</span>
                                 <span>17</span>
                                 <span>18</span> <span>19</span><span>20</span>
-                               
                             </td>
-                            <td style="text-align: center; width: 5%;" class="totaltable">20</td>
+                            <td style="text-align: center; width: 5%" class="totaltable">
+                                20
+                            </td>
                         </tr>
                         <tr>
-                            <td class="tableleftside mt-1" style="text-align: left; ">Second Floor</td>
-                            <td style="text-align: left;" class="tablenumber mt-2"> <span>1</span>
-                                <span>2</span><span>3</span>
+                            <td class="tableleftside" style="text-align: left">
+                                Second Floor
                             </td>
-                            <td class="totaltable" style="text-align: center;">3</td>
+                            <td style="text-align: left" class="tablenumber">
+                                <span>1</span> <span>2</span><span>3</span>
+                            </td>
+                            <td class="totaltable" style="text-align: center">3</td>
                         </tr>
                     </tbody>
                 </table>
-
             </div>
         </div>
     </div>
-    <div class="container-fluid  mb-4">
+    <div class="container-fluid mb-4">
         <div class="ProductDetailsWrapper newProductDetailsWrapper">
             <div class="details">
-                <div class="title mt-2">
+                <div class="title1 mt-1 text-center mb-1">
                     <h3>Running Table</h3>
-
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="groundfloortableorder">
                             <h3 class="text-center">Ground Floor</h3>
                             <div class="row">
-                                <div class="col-lg-4 mt-3">
-                                    <div class="runningtabledetail">
-                                        <span class="tableno">7</span>
-                                        <span>1 Min</span>
-                                        <span>705.00</span>
-                                        <span class="">Order 5</span>
-                                        <!-- <span class="tableicon"><i class="fa fa-file" aria-hidden="true" style="display: none;"></i></span> -->
-                                        <span class="tableicon"><i class="fa fa-eye" style="font-size:15px;"></i></span>
+                                <div class="col-lg-4 mt-4">
+                                    <div class="tablemain">
+                                        <div class="tabletopdamo">1</div>
+                                        <div><span class="tablenumber9"> 9</span></div>
+                                        <div>
+                                            <div class="tabletime">
+                                                <span>Time: </span> <span>2 Min</span>
+                                            </div>
+                                            <div>
+                                                <div class="tableprice">
+                                                    <span>Price: </span>
+                                                    <span>₹705.00</span>
+                                                </div>
+                                                <div class="tableorder">
+                                                    <span>Order: </span>
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="tablewaiter">
+                                                    <span>Waiter:</span>
+                                                    <span>Abc</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="col-lg-4 mt-3">
-                                    <div class="runningtabledetail" style="background-color: #e8e825;">
-                                        <span class="tableno">8</span>
-                                        <span>1 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 mt-3">
-                                    <div class="runningtabledetail">
-                                        <span class="tableno">3</span>
-                                        <span>1 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
+                                <div class="col-lg-4 mt-4">
+                                    <div class="tablemain tablemaintableno2">
+                                        <div class="tabletopdamo">1</div>
+                                        <div><span class="tablenumber9"> 2</span></div>
+                                        <div>
+                                            <div class="tabletime">
+                                                <span>Time: </span> <span>2 Min</span>
+                                            </div>
+                                            <div>
+                                                <div class="tableprice">
+                                                    <span>Price: </span>
+                                                    <span>₹705.00</span>
+                                                </div>
+                                                <div class="tableorder">
+                                                    <span>Order: </span>
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="tablewaiter">
+                                                    <span>Waiter:</span>
+                                                    <span>Abc</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 mt-4">
-                                    <div class="runningtabledetail">
-                                        <span class="tableno">2</span>
-                                        <span>1 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
+                                    <div class="tablemain">
+                                        <div class="tabletopdamo">1</div>
+                                        <div><span class="tablenumber9"> 10</span></div>
+                                        <div>
+                                            <div class="tabletime">
+                                                <span>Time: </span> <span>2 Min</span>
+                                            </div>
+                                            <div>
+                                                <div class="tableprice">
+                                                    <span>Price: </span>
+                                                    <span>₹705.00</span>
+                                                </div>
+                                                <div class="tableorder">
+                                                    <span>Order: </span>
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="tablewaiter">
+                                                    <span>Waiter:</span>
+                                                    <span>Abc</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 mt-4">
-                                    <div class="runningtabledetail">
-                                        <span class="tableno">2</span>
-                                        <span>1 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
+                                <div class="col-lg-4 mt-5">
+                                    <div class="tablemain">
+                                        <div class="tabletopdamo">1</div>
+                                        <div><span class="tablenumber9"> 4</span></div>
+                                        <div>
+                                            <div class="tabletime">
+                                                <span>Time: </span> <span>2 Min</span>
+                                            </div>
+                                            <div>
+                                                <div class="tableprice">
+                                                    <span>Price: </span>
+                                                    <span>₹705.00</span>
+                                                </div>
+                                                <div class="tableorder">
+                                                    <span>Order: </span>
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="tablewaiter">
+                                                    <span>Waiter:</span>
+                                                    <span>Abc</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-
+                                <div class="col-lg-4 mt-5">
+                                    <div class="tablemain">
+                                        <div class="tabletopdamo">1</div>
+                                        <div><span class="tablenumber9"> 9</span></div>
+                                        <div>
+                                            <div class="tabletime">
+                                                <span>Time: </span> <span>2 Min</span>
+                                            </div>
+                                            <div>
+                                                <div class="tableprice">
+                                                    <span>Price: </span>
+                                                    <span>₹705.00</span>
+                                                </div>
+                                                <div class="tableorder">
+                                                    <span>Order: </span>
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="tablewaiter">
+                                                    <span>Waiter:</span>
+                                                    <span>Abc</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -545,54 +728,132 @@
                         <div class="groundfloortableorder">
                             <h3 class="text-center">First Floor</h3>
                             <div class="row">
-                                <div class="col-lg-4 mt-3">
-                                    <div class="runningtabledetail">
-                                        <span class="tableno">2</span>
-                                        <span>10 Min</span>
-                                        <span>705.00</span>
-                                        <span class="">Order 5</span>
-                                        <!-- <span class="tableicon"><i class="fa fa-file" aria-hidden="true" style="display: none;"></i></span> -->
-                                        <span class="tableicon"><i class="fa fa-eye" style="font-size:15px;"></i></span>
+                                <div class="col-lg-4 mt-4">
+                                    <div class="tablemain tablebookcolor">
+                                        <div class="tabletopdamo">1</div>
+                                        <div><span class="tablenumber9"> 9</span></div>
+                                        <div>
+                                            <div class="tabletime">
+                                                <span>Time: </span> <span>2 Min</span>
+                                            </div>
+                                            <div>
+                                                <div class="tableprice">
+                                                    <span>Price: </span>
+                                                    <span>₹705.00</span>
+                                                </div>
+                                                <div class="tableorder">
+                                                    <span>Order: </span>
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="tablewaiter">
+                                                    <span>Waiter:</span>
+                                                    <span>Abc</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="col-lg-4 mt-3">
-                                    <div class="runningtabledetail" style="background-color: #e8e825;">
-                                        <span class="tableno">2</span>
-                                        <span>4 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 mt-3">
-                                    <div class="runningtabledetail">
-                                        <span class="tableno">6</span>
-                                        <span>1 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
+                                <div class="col-lg-4 mt-4">
+                                    <div class="tablemain tablenumber1">
+                                        <div class="tabletopdamo">1</div>
+                                        <div><span class="tablenumber9"> 2</span></div>
+                                        <div>
+                                            <div class="tabletime">
+                                                <span>Time: </span> <span>2 Min</span>
+                                            </div>
+                                            <div>
+                                                <div class="tableprice">
+                                                    <span>Price: </span>
+                                                    <span>₹705.00</span>
+                                                </div>
+                                                <div class="tableorder">
+                                                    <span>Order: </span>
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="tablewaiter">
+                                                    <span>Waiter:</span>
+                                                    <span>Abc</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 mt-4">
-                                    <div class="runningtabledetail" style="background-color: bisque;">
-                                        <span class="tableno">4</span>
-                                        <span>8 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
+                                    <div class="tablemain">
+                                        <div class="tabletopdamo">1</div>
+                                        <div><span class="tablenumber9"> 10</span></div>
+                                        <div>
+                                            <div class="tabletime">
+                                                <span>Time: </span> <span>2 Min</span>
+                                            </div>
+                                            <div>
+                                                <div class="tableprice">
+                                                    <span>Price: </span>
+                                                    <span>₹705.00</span>
+                                                </div>
+                                                <div class="tableorder">
+                                                    <span>Order: </span>
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="tablewaiter">
+                                                    <span>Waiter:</span>
+                                                    <span>Abc</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 mt-4">
-                                    <div class="runningtabledetail">
-                                        <span class="tableno">9</span>
-                                        <span>20 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
+                                <div class="col-lg-4 mt-5">
+                                    <div class="tablemain">
+                                        <div class="tabletopdamo">1</div>
+                                        <div><span class="tablenumber9"> 4</span></div>
+                                        <div>
+                                            <div class="tabletime">
+                                                <span>Time: </span> <span>2 Min</span>
+                                            </div>
+                                            <div>
+                                                <div class="tableprice">
+                                                    <span>Price: </span>
+                                                    <span>₹705.00</span>
+                                                </div>
+                                                <div class="tableorder">
+                                                    <span>Order: </span>
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="tablewaiter">
+                                                    <span>Waiter:</span>
+                                                    <span>Abc</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-
+                                <div class="col-lg-4 mt-5">
+                                    <div class="tablemain">
+                                        <div class="tabletopdamo">1</div>
+                                        <div><span class="tablenumber9"> 9</span></div>
+                                        <div>
+                                            <div class="tabletime">
+                                                <span>Time: </span> <span>2 Min</span>
+                                            </div>
+                                            <div>
+                                                <div class="tableprice">
+                                                    <span>Price: </span>
+                                                    <span>₹705.00</span>
+                                                </div>
+                                                <div class="tableorder">
+                                                    <span>Order: </span>
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="tablewaiter">
+                                                    <span>Waiter:</span>
+                                                    <span>Abc</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -600,66 +861,138 @@
                         <div class="groundfloortableorder">
                             <h3 class="text-center">Second Floor</h3>
                             <div class="row">
-                                <div class="col-lg-4 mt-3">
-                                    <div class="runningtabledetail" style="background-color: #ef7d0b;">
-                                        <span class="tableno">2</span>
-                                        <span>1 Min</span>
-                                        <span>705.00</span>
-                                        <span class="">Order 6</span>
-                                        <!-- <span class="tableicon"><i class="fa fa-file" aria-hidden="true" style="display: none;"></i></span> -->
-                                        <span class="tableicon"><i class="fa fa-eye" style="font-size:15px;"></i></span>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 mt-3">
-                                    <div class="runningtabledetail" style="background-color: #e8e825;">
-                                        <span class="tableno">2</span>
-                                        <span>1 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 mt-3">
-                                    <div class="runningtabledetail">
-                                        <span class="tableno">7</span>
-                                        <span>1 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
+                                <div class="col-lg-4 mt-4">
+                                    <div class="tablemain">
+                                        <div class="tabletopdamo">1</div>
+                                        <div><span class="tablenumber9"> 9</span></div>
+                                        <div>
+                                            <div class="tabletime">
+                                                <span>Time: </span> <span>2 Min</span>
+                                            </div>
+                                            <div>
+                                                <div class="tableprice">
+                                                    <span>Price: </span>
+                                                    <span>₹705.00</span>
+                                                </div>
+                                                <div class="tableorder">
+                                                    <span>Order: </span>
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="tablewaiter">
+                                                    <span>Waiter:</span>
+                                                    <span>Abc</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 mt-4">
-                                    <div class="runningtabledetail">
-                                        <span class="tableno">4</span>
-                                        <span>10 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
+                                    <div class="tablemain">
+                                        <div class="tabletopdamo">1</div>
+                                        <div><span class="tablenumber9"> 2</span></div>
+                                        <div>
+                                            <div class="tabletime">
+                                                <span>Time: </span> <span>2 Min</span>
+                                            </div>
+                                            <div>
+                                                <div class="tableprice">
+                                                    <span>Price: </span>
+                                                    <span>₹705.00</span>
+                                                </div>
+                                                <div class="tableorder">
+                                                    <span>Order: </span>
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="tablewaiter">
+                                                    <span>Waiter:</span>
+                                                    <span>Abc</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 mt-4">
-                                    <div class="runningtabledetail" style="background-color: #ef7d0b;">
-                                        <span class="tableno">9</span>
-                                        <span>1 Min</span>
-                                        <span>705.00</span>
-                                        <span>Order 5</span>
-                                        <span></span>
+                                    <div class="tablemain">
+                                        <div class="tabletopdamo">1</div>
+                                        <div><span class="tablenumber9"> 10</span></div>
+                                        <div>
+                                            <div class="tabletime">
+                                                <span>Time: </span> <span>2 Min</span>
+                                            </div>
+                                            <div>
+                                                <div class="tableprice">
+                                                    <span>Price: </span>
+                                                    <span>₹705.00</span>
+                                                </div>
+                                                <div class="tableorder">
+                                                    <span>Order: </span>
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="tablewaiter">
+                                                    <span>Waiter:</span>
+                                                    <span>Abc</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-
+                                <div class="col-lg-4 mt-5">
+                                    <div class="tablemain">
+                                        <div class="tabletopdamo">1</div>
+                                        <div><span class="tablenumber9"> 4</span></div>
+                                        <div>
+                                            <div class="tabletime">
+                                                <span>Time: </span> <span>2 Min</span>
+                                            </div>
+                                            <div>
+                                                <div class="tableprice">
+                                                    <span>Price: </span>
+                                                    <span>₹705.00</span>
+                                                </div>
+                                                <div class="tableorder">
+                                                    <span>Order: </span>
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="tablewaiter">
+                                                    <span>Waiter:</span>
+                                                    <span>Abc</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mt-5">
+                                    <div class="tablemain">
+                                        <div class="tabletopdamo">1</div>
+                                        <div><span class="tablenumber9"> 9</span></div>
+                                        <div>
+                                            <div class="tabletime">
+                                                <span>Time: </span> <span>2 Min</span>
+                                            </div>
+                                            <div>
+                                                <div class="tableprice">
+                                                    <span>Price: </span>
+                                                    <span>₹705.00</span>
+                                                </div>
+                                                <div class="tableorder">
+                                                    <span>Order: </span>
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="tablewaiter">
+                                                    <span>Waiter:</span>
+                                                    <span>Abc</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-
     </div>
-    </div>
-    </div>
-
 </body>
 
 </html>

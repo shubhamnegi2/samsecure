@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <title>Wastage</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+        * {
+            font-family: "Poppins", sans-serif;
+        }
+
+        .breadcrumb ul {
+            margin-bottom: 0rem;
+        }
+
+        .breadcrumb ul li {
+            color: #fff;
+            font-weight: bold;
+            margin: 10px 1px;
+        }
+
+        .breadcrumb ul li a {
+            color: inherit;
+            padding: 10px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .breadcrumb ul li i {
+            font-size: 12px;
+        }
+
+        .breadcrumb ul li .ActiveBreadcrumb {
+            color: #fff;
+        }
+
+        .breadcrumb {
+            background-color: #ef7d0b !important;
+            padding: 4px;
+            font-size: 16px;
+        }
+
+        .allBtns {
+            background-color: #fff;
+            border: 1px solid #fc8019;
+            box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+            border-radius: 5px;
+        }
+
+        .allBtns button {
+            min-width: 60px;
+            margin: 6px;
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0;
+            background-color: #083e5a;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 500;
+            padding: 1px 10px;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .allBtns select {
+            color: #083e5a;
+            min-width: 60px;
+            margin: 6px;
+            text-transform: capitalize;
+            border: 0;
+            box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+            border-radius: 5px;
+            /* border: 1px solid #fc8019; */
+            font-size: 10px;
+            font-weight: 500;
+            padding: 1px 10px;
+            font-family: "Montserrat", sans-serif;
+            background-color: #eee;
+        }
+
+        .allBtns .activeMonth {
+            background-color: #fe9037;
+        }
+
+        .allBtnsWrapper .CategoryActionBtn button {
+            background-color: #fc8019;
+        }
+
+        .mainColor {
+            color: #fc8019;
+        }
+
+        .totalCatgry,
+        .totalIngredients {
+            font-weight: bold;
+            color: #083e5a;
+        }
+
+        .allBtnsWrapper .allBtns,
+        .allVenderBtnsWrapper .allBtns {
+            background-color: #fff;
+            border: 1px solid #fc8019;
+            box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+            border-radius: 5px;
+            padding: 15px;
+        }
+
+        .allBtnsWrapper .allBtns button,
+        .allVenderBtnsWrapper .allBtns button {
+            min-width: 50px;
+            margin: 2px 10px;
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0;
+            background-color: #083e5a;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 8px;
+        }
+
+        .allBtnsWrapper .allBtns button:last-child,
+        .allVenderBtnsWrapper .allBtns button:last-child {
+            margin-right: 0px;
+        }
+
+        .allBtnsWrapper .allBtns .activeBtn,
+        .allVenderBtnsWrapper .allBtns .activeBtn {
+            background-color: #fe9037;
+        }
+
+        .allBtnsWrapper .allBtns hr,
+        .allVenderBtnsWrapper .allBtns hr {
+            margin: 0px;
+        }
+
+        .allBtnsWrapper h3 {
+            /* text-align: center; */
+            /* border-bottom: 2px solid #fc8e32; */
+            color: #7a7797;
+            font-weight: bold;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            /* margin-top: 1rem; */
+            font-size: 14px;
+            text-align: right;
+            padding-right: 15px;
+        }
+
+        .allBtnsWrapper .allBtns button,
+        .allVenderBtnsWrapper .allBtns button {
+            min-width: 50px;
+            margin: 2px 10px;
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0;
+            background-color: #083e5a;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 8px;
+        }
+        .listTitle {
+            font-size: 10px;
+            text-align: center;
+            background-color: #fe9037;
+            padding: 7px 0px;
+            color: #fff;
+            height: 29px;
+            border-top-left-radius: 5px;
+            margin-bottom: 0px;
+        }
+        .dateListWraper {
+            font-size: 10px;
+            background-color: #fff;
+            text-align: center;
+            width: 100%;
+        }
+
+        .dateListWraper li {
+            height: 30px;
+            border-bottom: 1px solid #083e5a;
+            padding-top: 4px;
+            font-size: 10px;
+            cursor: pointer;
+        }
+        .ProductDetailsWrapper table {
+        max-width: 100%;
+        width: 100%;
+        /* border-radius: 4px; */
+        overflow: hidden;
+        /* border-radius: 5px; */
+        color: #083e5a;
+        text-align: center;
+        border-top-right-radius: 5px;
+    }
+
+    .ProductDetailsWrapper table tr:nth-child(even) {
+        background-color: #fff2e7;
+    }
+
+    .ProductDetailsWrapper table tr:nth-child(even) select option {
+        background-color: rgba(58, 187, 105, 0.3411764706);
+    }
+
+    .ProductDetailsWrapper table tr {
+        height: 29px;
+    }
+
+    .ProductDetailsWrapper table tr:last-child {
+        border-bottom: 2px solid #ddcece;
+    }
+
+    .ProductDetailsWrapper table,
+    .ProductDetailsWrapper th,
+    .ProductDetailsWrapper td {
+        /* border: 1px solid #ddcece; */
+        border-collapse: collapse;
+        font-size: 14px;
+        /* text-align: center; */
+    }
+
+    .ProductDetailsWrapper thead {
+        background-color: #fc8e32;
+        color: #fff;
+    }
+
+    .ProductDetailsWrapper thead tr,
+    .ProductDetailsWrapper thead th {
+        /* border: 1px solid #000; */
+    }
+
+    .ProductDetailsWrapper tbody tr td:first-child {
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+
+    .ProductDetailsWrapper tbody tr input,
+    .ProductDetailsWrapper tbody tr select {
+        width: 100%;
+        height: 29px;
+        border: 0;
+        text-align: center;
+        background-color: transparent;
+        color: #7a7797;
+    }
+
+    .ProductDetailsWrapper .venderDetailsTable {
+        position: relative;
+        left: 200%;
+        top: 0px;
+        display: none;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .text-left {
+        text-align: left;
+    }
+
+    </style>
+</head>
+
+<body>
+    <div class="breadcrumb">
+        <ul class="list-unstyled d-flex align-items-center">
+            <li><a href="">Wastage</a></li>
+            <li><i class="fa-solid fa-angles-right"></i></li>
+            <li><a href="" class="ActiveBreadcrumb">Row Material</a></li>
+        </ul>
+    </div>
+    <div class="container-fluid mb-3">
+        <div class="ProductDetailsWrapper ">
+            <div class="col-12 mt-2">
+                <div class="allBtns">
+
+                    <select name="" id="" class="activeYear">
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+
+                    </select>
+
+                    <button class="activeMonth">January</button>
+                    <button>February</button>
+                    <button>March</button>
+                    <button>April</button>
+                    <button>May</button>
+                    <button>June</button>
+                    <button>July</button>
+                    <button>August</button>
+                    <button>September</button>
+                    <button>October</button>
+                    <button>November</button>
+                    <button>December</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="allBtnsWrapper pb-3 mt-1">
+        <div class="container-fluid">
+            <div class="allBtns pt-0 pb-1">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h3 class="categoryheading">
+                        Ingredient Categories List
+                        <span class="px-2 mainColor">|</span>
+                        <span>Total Categories : <span class="totalCatgry">22</span></span>
+                    </h3>
+
+                </div>
+                <hr />
+                <div class="mt-1">
+                    <button class="activeBtn">Dairy Products</button>
+                    <button>Drinkable</button>
+                    <button>Fast Food</button>
+                    <button>My Fav</button>
+                    <button>Mostly Used</button>
+                    <button>Top</button>
+                    <button>Commonly Used</button>
+                    <button>Less Used</button>
+                    <button>Chinese</button>
+                    <button>Italian</button>
+                    <button>Thai</button>
+                    <button>Continental</button>
+                    <button>Indian</button>
+                    <button>South Indian</button>
+                </div>
+                <!-- <button>North Indian</button> -->
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mb-3">
+        <div class="ProductDetailsWrapper">
+            <div class="details">
+                <div class="title">
+                        <h3>Wastage</h3>
+                      </div>
+
+                <div class="d-flex">
+                    <aside class="leftBar" style="width: 10%;">
+                        <h3 class="listTitle">Days</h3>
+                        <ul class="list-unstyled mb-0 pl-0 dateListWraper">
+                            <li>01 / 01 / 2023</li>
+                            <li>02 / 01 / 2023</li>
+                            <li>03 / 01 / 2023</li>
+                            <li>04 / 01 / 2023</li>
+                            <li>05 / 01 / 2023</li>
+                            <li>06 / 01 / 2023</li>
+                            <li>07 / 01 / 2023</li>
+                            <li>08 / 01 / 2023</li>
+                            <li>09 / 01 / 2023</li>
+                            <li>10 / 01 / 2023</li>
+                            <li>11 / 01 / 2023</li>
+                            <li>12 / 01 / 2023</li>
+                            <li>13 / 01 / 2023</li>
+                            <li>14 / 01 / 2023</li>
+                            <li>15 / 01 / 2023</li>
+                        </ul>
+                    </aside>
+                    <div class="" style="width: 100%;">    <table>
+                        <thead>
+                          <tr>
+                            <th>S.No</th>
+                            <th>Item Name</th>
+                            <th>Quantity</th>
+                           
+                            <th> Amount</th>
+          
+                        
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>Fast Food</td>
+                            <td>2</td>
+                            <td>200</td>
+          
+                          
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>Fast Food</td>
+                            <td>2</td>
+                            <td>200</td>
+          
+                          
+                          </tr>
+          
+                     
+                      
+                   
+                      
+                        </tbody>
+                      </table></div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
