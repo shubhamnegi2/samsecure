@@ -5,7 +5,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Fix Stock Consumption</title>
+        <title>Row Material Consumption</title>
         <!-- <link rel="stylesheet" href="./test.css" /> -->
     </head>
 
@@ -19,7 +19,7 @@
         content: counter(Serial);
       }.ProductDetailsWrapper tr td:first-child {
             width: 150px;
-    border-right: 1px solid #fff;
+    border-right: 1px solid #eee;
       }
         .breadcrumb {
             margin-bottom: 0rem !important;
@@ -289,15 +289,9 @@
             color: #fff;
         }
 
-        .dateListWraper,.categoryListwrapper {
+        .dateListWraper {
             background-color: #eee;
             text-align: center;
-        }
-        .categoryListwrapper li{
-            font-size: 15px;
-            border-bottom: 1px solid #000;
-            height: 30px;
-            cursor: pointer;
         }
         .listTitle {
             font-size: 14px;
@@ -313,7 +307,7 @@
         border: 1px solid #fc8019;
         box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
         border-radius: 5px;
-        padding: 15px;
+        padding: 14px;
         }
         .datePicker input{
             border: transparent;
@@ -330,9 +324,7 @@
     text-align: right;
     padding-right: 14px;
       }
-.bdrLeft{
-    border-left: 1px solid #fff;
-}
+
 
     </style>
 
@@ -341,7 +333,7 @@
             <ul class="list-unstyled d-flex align-items-center">
                 <li><a href="" class="">Consumption</a></li>
                 <li><i class="fa-solid fa-angles-right"></i></li>
-                <li><a href="" class="ActiveBreadcrumb">Fix Stock Consumption</a></li>
+                <li><a href="" class="ActiveBreadcrumb">Raw Material Consumption</a></li>
             </ul>
             
 
@@ -432,26 +424,6 @@
                             <h3 class="listTitle">Days</h3>
                             <ul class="list-unstyled mb-0 pl-0 dateListWraper"></ul>
                         </aside>
-                        <aside class="leftBar bdrLeft">
-                            <h3 class="listTitle">Days</h3>
-                            <ul class="list-unstyled mb-0 pl-0 categoryListwrapper text-center">                                                                 
-                                <li>Dairy Products</li>
-                                <li>Drinkable</li>
-                                <li>Fast Food</li>
-                                <li>My Fav</li>
-                                <li>Mostly Used</li>
-                                <li>Top</li>
-                                <li>Commonly Used</li>
-                                <li>Less Used </li>
-                                <li>Chinese</li>
-                                <li>Italian</li>
-                                <li>Thai</li>
-                                <li>Continental</li>
-                                <li>Indian </li>
-                                <li>South</li>
-                                <li>Indian</li>                               
-                            </ul>
-                        </aside>
                       
                         <table class="purchasesTable">
                             <thead>
@@ -467,7 +439,7 @@
                             </thead>
                           <tbody>
                             <tr>
-                                <td>coca cola</td>
+                                <td>Dairy Products</td>
                                 <td></td>
                                 <td>milk</td>
                                 <td>3</td>
@@ -498,7 +470,7 @@
                                 <td>60</td>
                             </tr>
                             <tr>
-                                <td>milk</td>
+                                <td> Drinkable</td>
                                 <td></td>
                                 <td>milk</td>
                                 <td>3</td>
@@ -529,7 +501,7 @@
                                 <td>60</td>
                             </tr>
                             <tr>
-                                <td>lassi</td>
+                                <td> Fast Food</td>
                                 <td></td>
                                 <td>milk</td>
                                 <td>3</td>
@@ -589,7 +561,317 @@
                                 <td>3</td>
                                 <td>20</td>
                                 <td>60</td>
-                              </tr>                            
+                            </tr>
+                            <tr>
+                                <td> Mostly used</td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>  <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td> Top</td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>  <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td> Commonly Used</td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>  <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td> Less Used</td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>  <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td> Chinese</td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>  <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td> Italian</td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>  <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td> Thai</td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>  <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td> Continental</td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>  <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td> Indian</td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>  <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td> South Indian</td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>  <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td>milk</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>60</td>
+                            </tr>
                           </tbody>
                          
                         </table>
