@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  <title>Table</title>
+</head>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+  * {
+    font-family: "Poppins", sans-serif;
+  }
+
+  .breadcrumb ul {
+    margin-bottom: 0rem;
+  }
+
+  .breadcrumb ul li {
+    color: #fff;
+    font-weight: bold;
+    margin: 10px 1px;
+  }
+
+  .breadcrumb ul li a {
+    color: inherit;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .breadcrumb ul li i {
+    font-size: 12px;
+  }
+
+  .breadcrumb ul li .ActiveBreadcrumb {
+    color: #fff;
+  }
+
+  .breadcrumb {
+    background-color: #ef7d0b !important;
+    padding: 4px;
+    font-size: 16px;
+  }
+
+  .CategoriesDetails1 {
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #fc8019;
+    box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+    border-radius: 5px;
+  }
+
+  .CategoriesDetails1 button {
+    min-width: 50px;
+    margin: 2px 10px;
+    text-transform: capitalize;
+    border-radius: 3px;
+    border: 0;
+    background-color: #083e5a;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .CategoriesDetails1 span {
+    font-size: 12px;
+    padding-right: 2px;
+  }
+
+  .CategoriesDetails {
+    background-color: #fff;
+    border: 1px solid #fc8019;
+    box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .CategoriesDetails h3 {
+    display: inline-block;
+
+    color: #083e5a;
+    font-weight: bold;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    font-size: 12px;
+  }
+
+  .CategoriesDetails .CategoryActionBtn button {
+    min-width: 50px;
+    margin: 2px 10px;
+    text-transform: capitalize;
+    border-radius: 3px;
+    border: 0;
+    background-color: #083e5a;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+  }
+
+  .tablecolorside {
+    gap: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .tablekotitems {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .tablekotitems span {
+    gap: 5px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #eee;
+    padding: 2px 15px;
+    text-align: center;
+    align-items: center;
+    font-size: 13px;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+
+  .changetablebackground {
+    height: 15px;
+    background: red;
+    width: 15px;
+    border-radius: 50%;
+  }
+
+  .tablecoloradd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+  }
+
+  .tablecoloradd span {
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .tablecolors {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-right: 10px;
+  }
+
+  table td button {
+    background-color: #083e5a;
+  }
+
+  .ProductDetailsWrapper table {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    border-radius: 5px;
+    color: #083e5a;
+  }
+
+  .ProductDetailsWrapper table tr:nth-child(even) {
+    background-color: #fff2e7;
+  }
+
+  .ProductDetailsWrapper table tr:nth-child(even) select option {
+    background-color: rgba(58, 187, 105, 0.3411764706);
+  }
+
+  .ProductDetailsWrapper table tr {
+    height: 30px;
+  }
+
+  .ProductDetailsWrapper table tr:last-child {
+    border-bottom: 2px solid #ddcece;
+  }
+
+  .ProductDetailsWrapper table,
+  .ProductDetailsWrapper th,
+  .ProductDetailsWrapper td {
+    border-collapse: collapse;
+    font-size: 14px;
+
+  }
+
+  .ProductDetailsWrapper thead {
+    background-color: #fc8e32;
+    color: #fff;
+  }
+
+  .ProductDetailsWrapper tbody tr td:first-child {
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+
+  .ProductDetailsWrapper tbody tr input,
+  .ProductDetailsWrapper tbody tr select {
+    width: 100%;
+    height: 30px;
+    border: 0;
+    text-align: center;
+    background-color: transparent;
+    color: #7a7797;
+  }
+
+  .ProductDetailsWrapper .venderDetailsTable {
+    position: relative;
+    left: 200%;
+    top: 0px;
+    display: none;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+
+  .text-left {
+    text-align: left;
+  }
+
+  .tableleftside {
+    width: 15%;
+    padding-left: 10px;
+    color: #083e5a;
+  }
+
+  .tablenumber {
+    display: block;
+    align-items: center;
+    gap: 30px;
+
+    color: #083e5a;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+
+  body {
+    background-color: #eee;
+  }
+
+  .tablenumber span {
+    border: 3px solid #eee;
+    padding: 0px 6px;
+    border-radius: 5px;
+    color: #083e5a;
+    margin-right: 12px;
+    font-size: 14px;
+    display: inline-block;
+  }
+
+  .totaltable {
+    width: 7%;
+    color: #083e5a;
+  }
+
+  .tablesnam {
+    width: 35%;
+    color: #083e5a;
+  }
+
+  .runningtabledetail {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    padding-top: 12px;
+    gap: 2px;
+    border: 2px solid #623a3a;
+    border-radius: 6px;
+    background-color: #eee;
+    color: #083e5a;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .runningtabledetail span {
+    font-size: 10px;
+  }
+
+  .tableno {
+    position: absolute;
+
+    left: 30%;
+    top: -25px;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    background-color: #fc8e32;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tableicon i {
+    position: absolute;
+    font-size: 20px;
+
+    bottom: -25%;
+    border: 1px solid;
+
+    left: 33%;
+
+    padding: 2px 5px;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 999;
+    font-size: 15px;
+  }
+
+  .groundfloortableorder {
+    border: 1px solid #ef7d0b;
+    padding: 10px 10px;
+    border-radius: 5px;
+  }
+
+  .newProductDetailsWrapper {
+    background-color: #fff;
+    border: 1px solid #fc8019;
+    box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .title h3 {
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  .tablebtn button {
+    background-color: #083e5a;
+  }
+
+  .title1 h3 {
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #ef7d0b;
+  }
+
+  .tablemain {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    font-size: 10px;
+    font-weight: 500;
+    justify-content: right;
+    padding-right: 2px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 3px solid #fc8019;
+  }
+
+  .tabletopdamo {
+    position: absolute;
+    top: -25%;
+    left: 15%;
+    background-color: #fc8019;
+    width: 70px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .tablenumber9 {
+    height: 40px;
+    width: 40px;
+    background-color: #fc8019;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -35%;
+    left: -8%;
+
+    color: #fff;
+
+    font-size: 30px;
+  }
+
+  .tabletime {
+    display: flex;
+    gap: 15px;
+  }
+
+  .tableprice {
+    display: flex;
+    gap: 15px;
+  }
+
+  .tableorder {
+    display: flex;
+    gap: 15px;
+  }
+
+  .tablewaiter {
+    display: flex;
+    gap: 9px;
+  }
+
+  .tablebookcolor {
+    border: 3px solid blue;
+  }
+
+  .tablebookcolor .tabletopdamo {
+    background-color: blue;
+  }
+
+  .tablebookcolor .tablenumber9 {
+    background-color: blue;
+  }
+
+  .tablemaintableno2 {
+    border: 3px solid blue;
+  }
+
+  .tablemaintableno2 .tablenumber9 {
+    background-color: blue;
+  }
+
+  .tablemaintableno2 .tabletopdamo {
+    background-color: blue;
+  }
+
+  .tablenumber1 {
+    border: 3px solid blue;
+  }
+
+  .tablenumber1 .tabletopdamo {
+    background-color: blue;
+  }
+
+  .tablenumber1 .tablenumber9 {
+    background-color: blue;
+  }
+
+  .addtablepop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .addtablepopwraper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+  }
+
+  .tablepop {
+    border-radius: 5px;
+    height: 270px;
+    padding: 3px;
+    width: 42%;
+    background-color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .closeform {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+  }
+
+  .closeform i {
+    font-size: 20px;
+    cursor: pointer;
+    border: 3px solid;
+
+    height: 27px;
+    width: 27px;
+    border-radius: 50%;
+    text-align: center;
+  }
+
+  .tablepop select,
+  input {
+    width: 95%;
+    height: 33px;
+  }
+
+  .addtablesubmitbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .addtablesubmitbtn button {
+    border: 0;
+    border-radius: 3px;
+    background-color: #083e5a;
+    color: #fff;
+    padding: 4px 20px;
+  }
+
+  .titele h3 {
+    color: #083e5a;
+    display: inline-block;
+    border-bottom: 3px solid #fc8019;
+    padding-bottom: 8px;
+  }
+
+  .addfloorpop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .addfloopops {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+  }
+
+  .floorpop {
+    border-radius: 5px;
+    height: 250px;
+    padding: 3px;
+    width: 42%;
+    background-color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .runningtablevalue {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    font-size: 14px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    font-weight: 500;
+  }
+</style>
+
+<body>
+  <div class="breadcrumb">
+    <ul class="list-unstyled d-flex align-items-center">
+      <li><a href="">Dashboard</a></li>
+      <li><i class="fa-solid fa-angles-right"></i></li>
+      <li><a href="" class="ActiveBreadcrumb">All Table</a></li>
+    </ul>
+  </div>
+  <div class="container-fluid mb-2">
+    <div class="CategoriesDetails d-flex justify-content-between align-items-center">
+      <div class="d-flex justify-content-between align-items-center">
+        <h3>Dine in Table:26</h3>
+      </div>
+      <div class="CategoryActionBtn">
+     
+        <button class="btn btn-primary btn-sm addfloorsbtn">
+          <span>+</span> Add Floor
+        </button>
+        <button class="btn btn-primary btn-sm addtablebtns">
+          <span>+</span> Add Table
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="addtablepop">
+    <div class="addtablepopwraper">
+      <div class="tablepop">
+        <div class="closeform">
+          <i class="fa fa-close cloesbtn1" style="font-size: 21px; cursor: pointer"></i>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="titele text-center mt-2">
+              <h3>Add Table</h3>
+            </div>
+            <div class="col-lg-12 mt-2">
+              <div>
+                <label>Floors</label>
+                <br />
+                <select>
+                  <option>Ground Floor</option>
+                  <option>First Floor</option>
+                  <option>Second Floor</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-12 mt-3">
+              <div>
+                <label>Add Table</label><br />
+                <input type="text" />
+              </div>
+            </div>
+            <div class="col-lg-12 mt-4">
+              <div class="addtablesubmitbtn">
+                <button>Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="addfloorpop">
+    <div class="addfloopops">
+      <div class="floorpop">
+        <div class="closeform">
+          <i class="fa fa-close cloesbtn2" style="font-size: 21px; cursor: pointer"></i>
+        </div>
+        <div class="container-fluid">
+          <div class="titele text-center mt-2">
+            <h3>Add Floors</h3>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div>
+                <label>Floor</label><br />
+                <input type="text" />
+              </div>
+            </div>
+            <div class="col-lg-12 mt-4">
+              <div class="addtablesubmitbtn">
+                <button>Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mb-2">
+    <div class="CategoriesDetails1 d-flex justify-content-between align-items-center">
+      <div class="d-flex justify-content-between align-items-center">
+      
+      </div>
+      <div class="CategoryActionBtn2">
+        <div class="tablecolorside">
+        
+          <div class="tablecolors">
+        
+            <div class="tablecoloradd">
+              <div class="changetablebackground" style="background-color: #fc8019"></div>
+              <span style="margin: 0px">Running Table</span>
+            </div>
+            <div class="tablecoloradd">
+              <div class="changetablebackground" style="background-color: blue"></div>
+              <span style="margin: 0px">Only Print </span>
+            </div>
+          </div>
+       
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mb-3">
+    <div class="ProductDetailsWrapper newProductDetailsWrapper">
+      <div class="details">
+        <div class="title1 text-center">
+          <div class="runningtablevalue">Running Table:20</div>
+          <h3 style="padding-bottom: 8px">Dine in Table</h3>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th class="tableleftside" style="text-align: left; color: #fff">
+                Floors
+              </th>
+              <th style="text-align: center; color: #fff" class="tablesnam">
+                All Dine in Tables
+              </th>
+              <th style="text-align: center; color: #fff" class="totaltable">
+                Total table
+              </th>
+              <th style="text-align: center; color: #fff" class="totaltable">
+                Edit table
+              </th>
+              <th style="text-align: center; color: #fff" class="totaltable">
+                Table Reservation
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tableleftside" style="text-align: left">
+                Ground Floor
+              </td>
+              <td style="text-align: left" class="tablenumber mt-2">
+                <span>1</span> <span>2</span><span>3</span> <span>4</span>
+                <span>5</span><span>6</span> <span>7</span> <span>8</span><span>9</span>
+                <span>10</span>
+              </td>
+              <td class="totaltable text-center">10</td>
+              <td style="text-align: center" class="tablebtn">
+                <button class="btn btn-primary btn-sm">Edit Table</button>
+              </td>
+              <td style="text-align: center" class="tablebtn">
+                <button class="btn btn-primary btn-sm">
+                  <span>+</span>Table Reservation
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableleftside text-left" style="text-align: left">
+                First Floor
+              </td>
+              <td class="tablenumber text-left">
+                <span>1</span> <span>2</span><span>3</span> <span>4</span>
+                <span>5</span><span>6</span> <span>7</span> <span>8</span><span>9</span>
+                <span>10</span>
+                <span>11</span> <span>12</span><span>13</span>
+              </td>
+
+              <td style="text-align: center; width: 5%" class="totaltable">
+                20
+              </td>
+              <td style="text-align: center" class="tablebtn">
+                <button class="btn btn-primary btn-sm">Edit Table</button>
+              </td>
+              <td style="text-align: center" class="tablebtn">
+                <button class="btn btn-primary btn-sm">
+                  <span>+</span>Table Reservation
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableleftside" style="text-align: left">
+                Second Floor
+              </td>
+              <td style="text-align: left" class="tablenumber">
+                <span>1</span> <span>2</span><span>3</span>
+              </td>
+              <td class="totaltable" style="text-align: center">3</td>
+              <td style="text-align: center" class="tablebtn">
+                <button class="btn btn-primary btn-sm">Edit Table</button>
+              </td>
+              <td style="text-align: center" class="tablebtn">
+                <button class="btn btn-primary btn-sm">
+                  <span>+</span>Table Reservation
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mb-4">
+    <div class="ProductDetailsWrapper newProductDetailsWrapper">
+      <div class="details">
+        <div class="title1 mt-1 text-center mb-1">
+          <h3>Running Table</h3>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="groundfloortableorder">
+              <h3 class="text-center">Ground Floor</h3>
+              <div class="row">
+                <div class="col-lg-4 mt-4">
+                  <div class="tablemain">
+                    <div class="tabletopdamo">1</div>
+                    <div><span class="tablenumber9"> 9</span></div>
+                    <div>
+                      <div class="tabletime">
+                        <span>Time: </span> <span>2 Min</span>
+                      </div>
+                      <div>
+                        <div class="tableprice">
+                          <span>Price: </span>
+                          <span>₹705.00</span>
+                        </div>
+                        <div class="tableorder">
+                          <span>Order: </span>
+                          <span>5</span>
+                        </div>
+                        <div class="tablewaiter">
+                          <span>Waiter:</span>
+                          <span>Abc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 mt-4">
+                  <div class="tablemain tablemaintableno2">
+                    <div class="tabletopdamo">1</div>
+                    <div><span class="tablenumber9"> 2</span></div>
+                    <div>
+                      <div class="tabletime">
+                        <span>Time: </span> <span>2 Min</span>
+                      </div>
+                      <div>
+                        <div class="tableprice">
+                          <span>Price: </span>
+                          <span>₹705.00</span>
+                        </div>
+                        <div class="tableorder">
+                          <span>Order: </span>
+                          <span>5</span>
+                        </div>
+                        <div class="tablewaiter">
+                          <span>Waiter:</span>
+                          <span>Abc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 mt-4">
+                  <div class="tablemain">
+                    <div class="tabletopdamo">1</div>
+                    <div><span class="tablenumber9"> 10</span></div>
+                    <div>
+                      <div class="tabletime">
+                        <span>Time: </span> <span>2 Min</span>
+                      </div>
+                      <div>
+                        <div class="tableprice">
+                          <span>Price: </span>
+                          <span>₹705.00</span>
+                        </div>
+                        <div class="tableorder">
+                          <span>Order: </span>
+                          <span>5</span>
+                        </div>
+                        <div class="tablewaiter">
+                          <span>Waiter:</span>
+                          <span>Abc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 mt-5">
+                  <div class="tablemain">
+                    <div class="tabletopdamo">1</div>
+                    <div><span class="tablenumber9"> 4</span></div>
+                    <div>
+                      <div class="tabletime">
+                        <span>Time: </span> <span>2 Min</span>
+                      </div>
+                      <div>
+                        <div class="tableprice">
+                          <span>Price: </span>
+                          <span>₹705.00</span>
+                        </div>
+                        <div class="tableorder">
+                          <span>Order: </span>
+                          <span>5</span>
+                        </div>
+                        <div class="tablewaiter">
+                          <span>Waiter:</span>
+                          <span>Abc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 mt-5">
+                  <div class="tablemain">
+                    <div class="tabletopdamo">1</div>
+                    <div><span class="tablenumber9"> 9</span></div>
+                    <div>
+                      <div class="tabletime">
+                        <span>Time: </span> <span>2 Min</span>
+                      </div>
+                      <div>
+                        <div class="tableprice">
+                          <span>Price: </span>
+                          <span>₹705.00</span>
+                        </div>
+                        <div class="tableorder">
+                          <span>Order: </span>
+                          <span>5</span>
+                        </div>
+                        <div class="tablewaiter">
+                          <span>Waiter:</span>
+                          <span>Abc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="groundfloortableorder">
+              <h3 class="text-center">First Floor</h3>
+              <div class="row">
+                <div class="col-lg-4 mt-4">
+                  <div class="tablemain tablebookcolor">
+                    <div class="tabletopdamo">1</div>
+                    <div><span class="tablenumber9"> 9</span></div>
+                    <div>
+                      <div class="tabletime">
+                        <span>Time: </span> <span>2 Min</span>
+                      </div>
+                      <div>
+                        <div class="tableprice">
+                          <span>Price: </span>
+                          <span>₹705.00</span>
+                        </div>
+                        <div class="tableorder">
+                          <span>Order: </span>
+                          <span>5</span>
+                        </div>
+                        <div class="tablewaiter">
+                          <span>Waiter:</span>
+                          <span>Abc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 mt-4">
+                  <div class="tablemain tablenumber1">
+                    <div class="tabletopdamo">1</div>
+                    <div><span class="tablenumber9"> 2</span></div>
+                    <div>
+                      <div class="tabletime">
+                        <span>Time: </span> <span>2 Min</span>
+                      </div>
+                      <div>
+                        <div class="tableprice">
+                          <span>Price: </span>
+                          <span>₹705.00</span>
+                        </div>
+                        <div class="tableorder">
+                          <span>Order: </span>
+                          <span>5</span>
+                        </div>
+                        <div class="tablewaiter">
+                          <span>Waiter:</span>
+                          <span>Abc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 mt-4">
+                  <div class="tablemain">
+                    <div class="tabletopdamo">1</div>
+                    <div><span class="tablenumber9"> 10</span></div>
+                    <div>
+                      <div class="tabletime">
+                        <span>Time: </span> <span>2 Min</span>
+                      </div>
+                      <div>
+                        <div class="tableprice">
+                          <span>Price: </span>
+                          <span>₹705.00</span>
+                        </div>
+                        <div class="tableorder">
+                          <span>Order: </span>
+                          <span>5</span>
+                        </div>
+                        <div class="tablewaiter">
+                          <span>Waiter:</span>
+                          <span>Abc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 mt-5">
+                  <div class="tablemain">
+                    <div class="tabletopdamo">1</div>
+                    <div><span class="tablenumber9"> 4</span></div>
+                    <div>
+                      <div class="tabletime">
+                        <span>Time: </span> <span>2 Min</span>
+                      </div>
+                      <div>
+                        <div class="tableprice">
+                          <span>Price: </span>
+                          <span>₹705.00</span>
+                        </div>
+                        <div class="tableorder">
+                          <span>Order: </span>
+                          <span>5</span>
+                        </div>
+                        <div class="tablewaiter">
+                          <span>Waiter:</span>
+                          <span>Abc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 mt-5">
+                  <div class="tablemain">
+                    <div class="tabletopdamo">1</div>
+                    <div><span class="tablenumber9"> 9</span></div>
+                    <div>
+                      <div class="tabletime">
+                        <span>Time: </span> <span>2 Min</span>
+                      </div>
+                      <div>
+                        <div class="tableprice">
+                          <span>Price: </span>
+                          <span>₹705.00</span>
+                        </div>
+                        <div class="tableorder">
+                          <span>Order: </span>
+                          <span>5</span>
+                        </div>
+                        <div class="tablewaiter">
+                          <span>Waiter:</span>
+                          <span>Abc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="groundfloortableorder">
+              <h3 class="text-center">Second Floor</h3>
+              <div class="row">
+                <div class="col-lg-4 mt-4">
+                  <div class="tablemain">
+                    <div class="tabletopdamo">1</div>
+                    <div><span class="tablenumber9"> 9</span></div>
+                    <div>
+                      <div class="tabletime">
+                        <span>Time: </span> <span>2 Min</span>
+                      </div>
+                      <div>
+                        <div class="tableprice">
+                          <span>Price: </span>
+                          <span>₹705.00</span>
+                        </div>
+                        <div class="tableorder">
+                          <span>Order: </span>
+                          <span>5</span>
+                        </div>
+                        <div class="tablewaiter">
+                          <span>Waiter:</span>
+                          <span>Abc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 mt-4">
+                  <div class="tablemain">
+                    <div class="tabletopdamo">1</div>
+                    <div><span class="tablenumber9"> 2</span></div>
+                    <div>
+                      <div class="tabletime">
+                        <span>Time: </span> <span>2 Min</span>
+                      </div>
+                      <div>
+                        <div class="tableprice">
+                          <span>Price: </span>
+                          <span>₹705.00</span>
+                        </div>
+                        <div class="tableorder">
+                          <span>Order: </span>
+                          <span>5</span>
+                        </div>
+                        <div class="tablewaiter">
+                          <span>Waiter:</span>
+                          <span>Abc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 mt-4">
+                  <div class="tablemain">
+                    <div class="tabletopdamo">1</div>
+                    <div><span class="tablenumber9"> 10</span></div>
+                    <div>
+                      <div class="tabletime">
+                        <span>Time: </span> <span>2 Min</span>
+                      </div>
+                      <div>
+                        <div class="tableprice">
+                          <span>Price: </span>
+                          <span>₹705.00</span>
+                        </div>
+                        <div class="tableorder">
+                          <span>Order: </span>
+                          <span>5</span>
+                        </div>
+                        <div class="tablewaiter">
+                          <span>Waiter:</span>
+                          <span>Abc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 mt-5">
+                  <div class="tablemain">
+                    <div class="tabletopdamo">1</div>
+                    <div><span class="tablenumber9"> 4</span></div>
+                    <div>
+                      <div class="tabletime">
+                        <span>Time: </span> <span>2 Min</span>
+                      </div>
+                      <div>
+                        <div class="tableprice">
+                          <span>Price: </span>
+                          <span>₹705.00</span>
+                        </div>
+                        <div class="tableorder">
+                          <span>Order: </span>
+                          <span>5</span>
+                        </div>
+                        <div class="tablewaiter">
+                          <span>Waiter:</span>
+                          <span>Abc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 mt-5">
+                  <div class="tablemain">
+                    <div class="tabletopdamo">1</div>
+                    <div><span class="tablenumber9"> 9</span></div>
+                    <div>
+                      <div class="tabletime">
+                        <span>Time: </span> <span>2 Min</span>
+                      </div>
+                      <div>
+                        <div class="tableprice">
+                          <span>Price: </span>
+                          <span>₹705.00</span>
+                        </div>
+                        <div class="tableorder">
+                          <span>Order: </span>
+                          <span>5</span>
+                        </div>
+                        <div class="tablewaiter">
+                          <span>Waiter:</span>
+                          <span>Abc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+    $("head").append(
+      '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
+    );
+    $("head").append(
+      ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
+/>'
+    );
+    $("head").append(
+      '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
+    );
+  </script>
+  <script>
+    $(".addtablebtns").click(function () {
+      $(".addtablepop").show();
+    });
+    $(".cloesbtn1").click(function () {
+      $(".addtablepop").hide();
+    });
+    $(".addfloorsbtn").click(function () {
+      $(".addfloorpop").show();
+    });
+    $(".cloesbtn2").click(function () {
+      $(".addfloorpop").hide();
+    });
+  </script>
+</body>
+
+</html>
