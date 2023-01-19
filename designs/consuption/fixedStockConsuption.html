@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Row Material</title>
+        <!-- <link rel="stylesheet" href="./test.css" /> -->
+    </head>
+
+
+    <style>
+        .breadcrumb {
+            margin-bottom: 0rem !important;
+            background-color: #ef7d0b !important;
+            position: relative;
+            /* color: #fff; */
+        }
+
+        .breadcrumb .addVender {
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0px;
+            background-color: #fe9037;
+            color: #fff;
+            padding: 2px 30px;
+            font-weight: bold;
+        }
+
+        .breadcrumb ul {
+            margin-bottom: 0rem;
+        }
+
+        .breadcrumb ul li {
+            color: #eee;
+            font-weight: bold;
+            margin: 10px 1px;
+        }
+
+        .breadcrumb ul li a {
+            color: inherit;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .breadcrumb ul li i {
+            font-size: 12px;
+        }
+
+        .breadcrumb ul li .ActiveBreadcrumb {
+            color: #fff;
+        }
+        .ProductDetailsWrapper tr td:nth-child(2):before {
+            counter-increment: Serial;
+            content: counter(Serial);
+        }
+        .allBtns {
+            background-color: #fff;
+            border: 1px solid #fc8019;
+            box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+            border-radius: 5px;
+        }
+
+        .allBtns .activeMonth {
+            background-color: #fe9037;
+        }
+
+        .allBtns select {
+            color: #fff;
+            margin-left: 25px;
+            min-width: 60px;
+            margin: 6px;
+            text-transform: capitalize;
+            border: 0;
+            box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+            border-radius: 5px;
+            border: 1px solid #fc8019;
+            font-size: 10px;
+            font-weight: 500;
+            padding: 1px 10px;
+            font-family: "Montserrat", sans-serif;
+            background-color: #fe9037;
+        }
+
+        .allBtns button {
+            min-width: 60px;
+            margin: 6px;
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0;
+            background-color: #083e5a;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 500;
+            padding: 1px 10px;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .allBtnsWrapper h3 {
+            /* text-align: center; */
+            /* border-bottom: 2px solid #fc8e32; */
+            color: #7a7797;
+            font-weight: bold;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            /* margin-top: 1rem; */
+            font-size: 14px;
+            text-align: right;
+            padding-right: 15px;
+        }
+
+        .allBtnsWrapper .CategoryActionBtn button {
+            background-color: #fc8019;
+        }
+
+        .allBtnsWrapper .allBtns .activeBtn {
+            background-color: #fc8019;
+        }
+
+        .ProductDetailsWrapper .details .leftBar {
+            width: 10%;
+        }
+
+        .ProductDetailsWrapper .details .purchasesTable {
+            width: 90%;
+            height: 100%;
+        }
+
+        .ProductDetailsWrapper {
+            background-color: #fff;
+            box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+            border-radius: 5px;
+            padding: 10px;
+            max-height: 100vh;
+            height: 100%;
+            overflow-y: scroll;
+        }
+
+        .ProductDetailsWrapper .details .title {
+            padding: 10px 0px;
+            text-align: center;
+        }
+
+        .ProductDetailsWrapper .details .title h3 {
+            display: inline-block;
+            border-bottom: 2px solid #fe9037;
+            color: #083e5a;
+            font-weight: bold;
+            padding-bottom: 5px;
+            font-size: 20px;
+        }
+
+        .ProductDetailsWrapper table {
+            max-width: 100%;
+            width: 100%;
+            border-radius: 4px;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .ProductDetailsWrapper table tr:nth-child(even) {
+            background-color: #fff2e7;
+        }
+
+        .ProductDetailsWrapper table tr:nth-child(even) input,
+        .ProductDetailsWrapper table tr:nth-child(even) select,
+        .ProductDetailsWrapper table tr:nth-child(even) td {
+            color: #000;
+        }
+
+        .ProductDetailsWrapper table tr:nth-child(even) input::-moz-placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) select::-moz-placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) td::-moz-placeholder {
+            color: #000;
+        }
+
+        .ProductDetailsWrapper table tr:nth-child(even) input:-ms-input-placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) select:-ms-input-placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) td:-ms-input-placeholder {
+            color: #000;
+        }
+
+        .ProductDetailsWrapper table tr:nth-child(even) input::placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) select::placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) td::placeholder {
+            color: #000;
+        }
+
+        .ProductDetailsWrapper table tr:nth-child(even) select option {
+            background-color: #fff2e7;
+        }
+
+        .ProductDetailsWrapper table tr {
+            height: 30px;
+        }
+
+        .ProductDetailsWrapper table tr:last-child {
+            border-bottom: 2px solid #ddcece;
+        }
+
+        .ProductDetailsWrapper table,
+        .ProductDetailsWrapper th {
+            border: 1px solid #ddcece;
+            border-collapse: collapse;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .ProductDetailsWrapper thead {
+            background-color: #fe9037;
+            color: #fff;
+        }
+
+        .ProductDetailsWrapper thead tr,
+        .ProductDetailsWrapper thead th {
+            border: none;
+        }
+
+        .ProductDetailsWrapper tbody tr td:first-child {
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+
+        .ProductDetailsWrapper tbody tr input,
+        .ProductDetailsWrapper tbody tr select {
+            width: 100%;
+            height: 37px;
+            border: 0;
+            text-align: center;
+            background-color: transparent;
+            color: #7a7797;
+        }
+
+        .dateListWraper li {
+            height: 30px;
+            border-bottom: 1px solid #083e5a;
+            padding-top: 4px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .ProductDetailsWrapper .details .leftBar {
+            width: 10%;
+        }
+
+        .ProductDetailsWrapper .details .purchasesTable {
+            width: 90%;
+            height: 100%;
+        }
+
+        .dateListWraper li {
+            height: 30px;
+            border-bottom: 1px solid #083e5a;
+            padding-top: 4px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .activeDate {
+            background-color: #083e5a;
+            color: #fff;
+        }
+
+        .dateListWraper {
+            background-color: #eee;
+            text-align: center;
+        }
+
+        .listTitle {
+            font-size: 14px;
+            text-align: center;
+            background-color: #fe9037;
+            padding: 7px 0px;
+            margin-top: 1px;
+            margin-bottom: 0px;
+        }
+         .allBtnsWrapper .allBtns, .allVenderBtnsWrapper .allBtns {
+        background-color: #fff;
+        border: 1px solid #fc8019;
+        box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+        border-radius: 5px;
+        padding: 15px;
+        }
+      
+
+
+    </style>
+
+    <body>
+        <div class="breadcrumb">
+            <ul class="list-unstyled d-flex align-items-center">
+                <li><a href="" class="">Consumption</a></li>
+                <li><i class="fa-solid fa-angles-right"></i></li>
+                <li><a href="" class="ActiveBreadcrumb">Fix Stock Consumption</a></li>
+            </ul>
+            <!-- <div class="butn-addvender">
+          <button class="addVender activeTopBarBtn">Row Material</button>
+          <button class="addVender">Fix Stock</button> -->
+            <!-- <button class="addVender">Monthly</button> -->
+            <!-- </div> -->
+
+
+
+        </div>
+        <div class="container-fluid">
+            <div class="allBtns d-flex mt-3">
+                <div class="mx-3">
+                <select name="" id="year" class="activeYear ">
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                </select>
+            </div>
+                <div class="monthsBtnWrapper">
+                    <button class="" data-month="1">January</button>
+                    <button data-month="2">February</button>
+                    <button data-month="3">March</button>
+                    <button data-month="4">April</button>
+                    <button data-month="5">May</button>
+                    <button data-month="6">June</button>
+                    <button data-month="7">July</button>
+                    <button data-month="8">August</button>
+                    <button data-month="9">September</button>
+                    <button data-month="10">October</button>
+                    <button data-month="11">November</button>
+                    <button data-month="12">December</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="allBtnsWrapper pb-3 mt-3">
+            <div class="container-fluid">
+                <div class="allBtns pt-0 pb-1">
+                    <!-- <div class="d-flex justify-content-between align-items-center mb-0">
+                        <h3 class="categoryheading mx-1">
+                            Ingredient Categories List
+                            <span class="px-2 mainColor">|</span>
+                            <span>Total Categories : <span class="totalCatgry">22</span></span>
+                        </h3> -->
+                        <!-- <div class="CategoryActionBtn text-right">
+                <button class="btn btn-primary btn-sm addNewCategoryBtn">
+                  Add Category
+                </button>
+                <button class="btn btn-primary btn-sm editNewCategoryBtn">
+                  Edit Category
+                </button>
+                <button class="btn btn-primary btn-sm">Delete Category</button>
+              </div> -->
+                    <!-- </div> -->
+                    <!-- <hr class="mt-0 mb-0" />
+                    <div class="mt-0"></div>
+                    <button class="activeBtn">Dairy Products</button>
+                    <button>Drinkable</button>
+                    <button>Fast Food</button>
+                    <button>My Fav</button>
+                    <button>Mostly Used</button>
+                    <button>Top</button>
+                    <button>Commonly Used</button>
+                    <button>Less Used</button>
+                    <button>Chinese</button>
+                    <button>Italian</button>
+                    <button>Thai</button>
+                    <button>Continental</button>
+                    <button>Indian</button>
+                    <button>South Indian</button> -->
+                    <!-- <button>North Indian</button> -->
+                    <!-- <hr class="mt-0 mb-0"/> -->
+                    <div class="d-flex justify-content-between align-items-center py-0 mx-1">
+                        <h3 class="categoryheading">
+                            Month : <span class="month color2">January</span>
+                            <!-- <span class="px-2 mainColor">|</span> -->
+                        </h3>
+                        <span class="categoryheading"><span class="month">January</span> Total Purchases : ₹
+                            <span class="totalCatgry color2">2200</span></span>
+                    </div>
+                </div>
+             
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="ProductDetailsWrapper">
+                <div class="details">
+                    <div class="title">
+                        <h3>Consumption</h3>
+                    </div>
+                    <div class="d-flex">
+                        <aside class="leftBar">
+                            <h3 class="listTitle">Days</h3>
+                            <ul class="list-unstyled mb-0 pl-0 dateListWraper"></ul>
+                        </aside>
+                        <table class="purchasesTable">
+                       
+                       
+                            <thead>
+                                <tr>
+                                 
+                                    <th>S No.</th>
+                                    <th>Name</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Price/unit</th> 
+                                    <th>Total Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  
+                                    <td class="name">1</td>
+                                    <td>dsf</td>
+                                    <td>4</td>
+                                    <td>100</td>
+                                    <td>54</td>
+                                     <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td class="name">2</td>
+                                    <td>dfs</td>
+                                    <td>4</td>
+                                    <td>100</td>
+                                    <td>1</td>
+                                    <td>200</td> 
+                                </tr>
+                                <tr>
+                                    <td class="name">3</td>
+                                    <td>dsf</td>
+                                    <td>4</td>
+                                    <td>100</td>
+                                    <td>1</td>
+                                     <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td class="name">4</td>
+                                    <td>dsf</td>
+                                    <td>4</td>
+                                    <td>100</td>
+                                    <td>1</td>
+                                    <td>200</td> 
+                                </tr>
+                                <tr>
+                                    <td class="name">5</td>
+                                    <td>dsf</td>
+                                    <td>4</td>
+                                    <td>100</td>
+                                    <td>1</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td class="name">6</td>
+                                    <td>dsf</td>
+                                    <td>4</td>
+                                    <td>100</td>
+                                     <td>1</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td class="name">7</td>
+                                    <td>dsf</td>
+                                    <td>4</td>
+                                    <td>100</td>
+                                     <td>1</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td class="name">8</td>
+                                    <td>dsf</td>
+                                    <td>4</td>
+                                    <td>100</td>
+                                    <td>1</td>
+                                    <td>200</td> 
+                                </tr>
+                                <tr>
+                                    <td class="name">4</td>
+                                    <td>dsf</td>
+                                    <td>4</td>
+                                    <td>100</td>
+                                   <td>1</td>
+                                    <td>200</td> 
+                                </tr>
+                                <tr>
+                                    <td class="name">9</td>
+                                    <td>dsf</td>
+                                    <td>4</td>
+                                    <td>100</td>
+                                    <td>1</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td class="name">10</td>
+                                    <td>dsf</td>
+                                    <td>4</td>
+                                    <td>100</td>
+                                     <td>1</td>
+                                    <td>200</td> 
+                                </tr>
+                                <tr>
+                                    <td class="name">11</td>
+                                    <td>dsf</td>
+                                    <td>4</td>
+                                    <td>100</td>
+                                     <td>1</td>
+                                    <td>200</td> 
+                                </tr>  <tr>
+                                    <td class="name">12</td>
+                                    <td>dsf</td>
+                                    <td>4</td>
+                                    <td>100</td>
+                                    <td>1</td>
+                                    <td>200</td> 
+                                </tr>  <tr>
+                                    <td class="name">13</td>
+                                    <td>dsf</td>
+                                    <td>4</td>
+                                    <td>100</td>
+                                    <td>1</td>
+                                    <td>200</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script>
+            $("head").append(
+                '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
+            );
+            $("head").append(
+                ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
+    />'
+            );
+            $("head").append(
+                '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
+            );
+        </script>
+        <script>
+            GetThisMonth();
+            getthisMonthDates();
+            function GetThisMonth() {
+                let TodaysDate = new Date();
+                let thisDay = TodaysDate.getDate();
+                let thisMonth = TodaysDate.getMonth();
+                $(".monthsBtnWrapper button").removeClass("activeMonth");
+                $(`.monthsBtnWrapper button:nth-child(${thisMonth + 1})`).addClass(
+                    "activeMonth"
+                );
+            }
+
+            function getthisMonthDates() {
+                let year = $("#year option:selected").val();
+                let month = $(".activeMonth").data("month");
+                let TodaysDate = new Date();
+                let thisDay = TodaysDate.getDate();
+                let thisMonth = TodaysDate.getMonth();
+                thisMonth = (thisMonth < 10 ? "0" : "") + (thisMonth + 1);
+                let thisYear = TodaysDate.getFullYear();
+                TodaysDate = thisMonth + "/" + thisYear;
+                let totalDays = 0;
+                if (+year - +thisYear == 0 && +month - +thisMonth == 0) {
+                    totalDays = +thisDay;
+                    $(".dateListWraper").html("");
+                    for (let i = 0; i < totalDays - 1; i++) {
+                        $(".dateListWraper").append(
+                            `<li>${(i < 9 ? "0" : " ") + (i + 1)
+                            } / ${thisMonth} / ${thisYear}</li>`
+                        );
+                    }
+                } else {
+                    getAllMonthDetails(month, year);
+                }
+            }
+
+            function getAllMonthDetails(month, year) {
+                var numOfDays = new Date(year, month, 0).getDate();
+                $(".dateListWraper").html("");
+                month = (month < 10 ? "0" : "") + month;
+
+                for (var i = 0; i <= numOfDays - 1; i++) {
+                    $(".dateListWraper").append(
+                        `<li>${(i < 9 ? "0" : " ") + (i + 1)} / ${month} / ${year}</li>`
+                    );
+                }
+            }
+
+            $(".monthsBtnWrapper button").click(function () {
+                $(".monthsBtnWrapper button").removeClass("activeMonth");
+                $(this).addClass("activeMonth");
+                $(".month").text($(this).text());
+
+                let year = $("#year option:selected").val();
+                let month = $(this).data("month");
+                getthisMonthDates();
+            });
+
+            $(".allBtns button").click(function () {
+                $(".allBtns button").removeClass("activeBtn");
+                $(this).addClass("activeBtn");
+
+
+            });
+            $(".addNewCategoryBtn").click(function () {
+                $(".addCategoryModelWrapper").css({
+                    display: "flex",
+                });
+                $(".addCategoryModelWrapper .addCategoryModel").animate({ top: 50 });
+            });
+
+            $(".checf").click(function () {
+                $(".checf").removeClass("activeBtn ");
+                $(this).addClass("divchangbackground ");
+
+                $(".ProductDetailsWrapper .details .title h3").text(
+                    $(this).children(".chefbuuu").children("button").text()
+                );
+            });
+
+        </script>
+    </body>
+
+    </html>
