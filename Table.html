@@ -271,7 +271,7 @@
   }
 
   .tablesnam {
-    width: 35%;
+    width: 30%;
     color: #083e5a;
   }
 
@@ -614,7 +614,7 @@
             <div class="col-lg-12 mt-3">
               <div>
                 <label>Add Table</label><br />
-                <input type="text" />
+                <input type="text"  onkeypress="return /[0-9]/i.test(event.key)"/>
               </div>
             </div>
             <div class="col-lg-12 mt-4">
@@ -671,7 +671,7 @@
             </div>
             <div class="tablecoloradd">
               <div class="changetablebackground" style="background-color: blue"></div>
-              <span style="margin: 0px">Only Print </span>
+              <span style="margin: 0px">Only Bill Print </span>
             </div>
           </div>
        
@@ -683,8 +683,9 @@
     <div class="ProductDetailsWrapper newProductDetailsWrapper">
       <div class="details">
         <div class="title1 text-center">
-          <div class="runningtablevalue">Running Table:20</div>
+        
           <h3 style="padding-bottom: 8px">Dine in Table</h3>
+          <div class="runningtablevalue">Running Table:20</div>
         </div>
         <table>
           <thead>
@@ -696,10 +697,13 @@
                 All Dine in Tables
               </th>
               <th style="text-align: center; color: #fff" class="totaltable">
-                Total table
+                Total Table
               </th>
               <th style="text-align: center; color: #fff" class="totaltable">
-                Edit table
+                Ruining Table
+              </th>
+              <th style="text-align: center; color: #fff" class="totaltable">
+                Edit Table
               </th>
               <th style="text-align: center; color: #fff" class="totaltable">
                 Table Reservation
@@ -712,11 +716,13 @@
                 Ground Floor
               </td>
               <td style="text-align: left" class="tablenumber mt-2">
-                <span>1</span> <span>2</span><span>3</span> <span>4</span>
-                <span>5</span><span>6</span> <span>7</span> <span>8</span><span>9</span>
-                <span>10</span>
+                <span>1</span> <span >2</span><span>3</span> <span style="color: #ef7d0b;">4</span>
+                <span>5</span><span>6</span> <span>7</span> <span>8</span><span style="color: #ef7d0b;">9</span>
+                <span style="color: #ef7d0b;">10</span>
               </td>
               <td class="totaltable text-center">10</td>
+              <td class="totaltable text-center">3</td>
+              
               <td style="text-align: center" class="tablebtn">
                 <button class="btn btn-primary btn-sm">Edit Table</button>
               </td>
@@ -731,15 +737,16 @@
                 First Floor
               </td>
               <td class="tablenumber text-left">
-                <span>1</span> <span>2</span><span>3</span> <span>4</span>
-                <span>5</span><span>6</span> <span>7</span> <span>8</span><span>9</span>
-                <span>10</span>
-                <span>11</span> <span>12</span><span>13</span>
+                <span>1</span> <span style="color: #ef7d0b;">2</span><span>3</span> <span style="color: #ef7d0b;">4</span>
+                <span>5</span><span style="color: #ef7d0b;">6</span> <span>7</span> <span>8</span><span style="color: #ef7d0b;">9</span>
+                <span style="color: #ef7d0b;">10</span>
+            
               </td>
 
               <td style="text-align: center; width: 5%" class="totaltable">
                 20
               </td>
+              <td class="totaltable text-center">3</td>
               <td style="text-align: center" class="tablebtn">
                 <button class="btn btn-primary btn-sm">Edit Table</button>
               </td>
@@ -754,9 +761,10 @@
                 Second Floor
               </td>
               <td style="text-align: left" class="tablenumber">
-                <span>1</span> <span>2</span><span>3</span>
+                <span style="color: #ef7d0b;">1</span> <span>2</span><span style="color: #ef7d0b;">3</span>
               </td>
               <td class="totaltable" style="text-align: center">3</td>
+              <td class="totaltable text-center">3</td>
               <td style="text-align: center" class="tablebtn">
                 <button class="btn btn-primary btn-sm">Edit Table</button>
               </td>
