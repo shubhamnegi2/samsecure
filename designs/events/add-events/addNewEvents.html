@@ -714,11 +714,11 @@
       .openmodel {
         border-radius: 6px;
         height: 300px;
-        padding: 0px 10px;
+        padding: 0px 3px;
         width: 35%;
         background-color: #fff;
       }
-      .openmodel label{
+      .openmodel label {
         color: #083e5a;
       }
 
@@ -741,10 +741,17 @@
         border: 2px solid rgb(201, 190, 190);
         width: 100%;
       }
-      .Submitbtnadvanpay{
+      .Submitbtnadvanpay {
         background-color: #083e5a;
         color: #fff;
         border-radius: 5px;
+      }
+      .closeicon {
+        border: 3px solid;
+        height: 27px;
+        width: 27px;
+        text-align: center;
+        border-radius: 50%;
       }
     </style>
   </head>
@@ -1101,7 +1108,8 @@
                             <input
                               name="number"
                               class="djammount"
-                              placeholder="Amount" onkeypress="return /[0-9]/i.test(event.key)"
+                              placeholder="Amount"
+                              onkeypress="return /[0-9]/i.test(event.key)"
                             />
                             <!-- <label class="djammount" style="display: none; margin-left: 2px;">Amount- 2000</label> -->
                           </div>
@@ -1148,7 +1156,8 @@
                             <input
                               name="number"
                               class="decoration"
-                              placeholder="Amount" onkeypress="return /[0-9]/i.test(event.key)"
+                              placeholder="Amount"
+                              onkeypress="return /[0-9]/i.test(event.key)"
                             />
                             <!-- <label  style="display: none; margin-left: 2px;">Amount- 2000</label> -->
                           </div>
@@ -1177,7 +1186,12 @@
                           <div class="formGroup">
                             <label for="">Per Plate</label>
                             <!-- <span style="position: absolute; left: 4%">₹</span> -->
-                            <input name="number" id="inputtext" placeholder="₹" onkeypress="return /[0-9]/i.test(event.key)" />
+                            <input
+                              name="number"
+                              id="inputtext"
+                              placeholder="₹"
+                              onkeypress="return /[0-9]/i.test(event.key)"
+                            />
                           </div>
                         </div>
                         <div class="col-md-6">
@@ -1196,7 +1210,12 @@
                                 "
                               >
                                 <label>Total Amount</label>
-                                <input name="number" placeholder="₹" min="0"  onkeypress="return /[0-9]/i.test(event.key)"/>
+                                <input
+                                  name="number"
+                                  placeholder="₹"
+                                  min="0"
+                                  onkeypress="return /[0-9]/i.test(event.key)"
+                                />
                               </div>
                               <div class="col-md-12 mt-2">
                                 <div
@@ -1237,7 +1256,8 @@
                                       <input
                                         name="number"
                                         style="height: 20px; width: 71px"
-                                        placeholder="₹" onkeypress="return /[0-9]/i.test(event.key)"
+                                        placeholder="₹"
+                                        onkeypress="return /[0-9]/i.test(event.key)"
                                       />
                                     </div>
                                   </div>
@@ -1247,7 +1267,8 @@
                                       <input
                                         name="number"
                                         style="height: 20px; width: 71px"
-                                        placeholder="₹" onkeypress="return /[0-9]/i.test(event.key)"
+                                        placeholder="₹"
+                                        onkeypress="return /[0-9]/i.test(event.key)"
                                       />
                                     </div>
                                   </div>
@@ -1262,7 +1283,11 @@
                                   "
                                 >
                                   <label>Grand Total</label>
-                                  <input name="number" placeholder="₹"  onkeypress="return /[0-9]/i.test(event.key)"/>
+                                  <input
+                                    name="number"
+                                    placeholder="₹"
+                                    onkeypress="return /[0-9]/i.test(event.key)"
+                                  />
                                 </div>
                               </div>
                               <!-- <div class="col-md-12 mt-3">
@@ -1294,85 +1319,95 @@
                                   style="font-size: 21px; cursor: pointer"
                                 ></i>
                               </div>
-                          <div style="padding: 0px 30px;">
-                              <div class="row justify-content-center mt-1">
-                                <div class="col-md-12">
-                                  <div class="addvancpaydiv">
-                                    <label>Advance Pay</label>
-                                    <br />
-                                    <input name="number" placeholder="₹"  onkeypress="return /[0-9]/i.test(event.key)"/>
+                              <div style="padding: 0px 30px">
+                                <div class="row justify-content-center mt-1">
+                                  <div class="col-md-12">
+                                    <div class="addvancpaydiv">
+                                      <label>Advance Pay</label>
+                                      <br />
+                                      <input
+                                        name="number"
+                                        placeholder="₹"
+                                        onkeypress="return /[0-9]/i.test(event.key)"
+                                      />
+                                    </div>
                                   </div>
-                                </div>
 
-                                <div class="col-md-12 mt-2">
-                                  <div class="waiveoffdiv">
-                                    <label>Waive Off</label>
-                                    <br />
+                                  <div class="col-md-12 mt-2">
+                                    <div class="waiveoffdiv">
+                                      <label>Waive Off</label>
+                                      <br />
 
-                                    <input name="number" placeholder="₹"  onkeypress="return /[0-9]/i.test(event.key)"/>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row justify-content-center">
-                                <div class="col-md-12 mt-3 newclassadd">
-                                  <label for="" class="noLabel">
-                                    Payment Mode</label
-                                  >
-                                  <div class="djdecoration">
-                                    <div>
                                       <input
-                                        class="form-check-input coupon_question"
-                                        type="radio"
-                                        id=""
-                                        name="coupon_question1"
-                                        value="1"
+                                        name="number"
+                                        placeholder="₹"
+                                        onkeypress="return /[0-9]/i.test(event.key)"
                                       />
-                                      <label class="form-check-label" for="">
-                                        Card
-                                      </label>
-                                      <input
-                                        type="text"
-                                        class="decoration"
-                                        style="display: none"
-                                        placeholder="Amount"
-                                      />
-                                    </div>
-                                    <div>
-                                      <input
-                                        class="form-check-input coupon_question1"
-                                        type="radio"
-                                        id=""
-                                        name="coupon_question1"
-                                        value="2"
-                                      />
-                                      <label class="form-check-label" for="">
-                                        Cash
-                                      </label>
-                                    </div>
-                                    <div>
-                                      <input
-                                        class="form-check-input coupon_question1"
-                                        type="radio"
-                                        id=""
-                                        name="coupon_question1"
-                                        value="2"
-                                      />
-                                      <label class="form-check-label" for="">
-                                        Upi
-                                      </label>
-                                    </div>
-                                  </div>
-                                  <div class="row justify-content-center mt-3">
-                                    <div class="col-md-4 text-center">
-                                      <button class=" Submitbtnadvanpay">
-                                        Submit
-                                      </button>
                                     </div>
                                   </div>
                                 </div>
+                                <div class="row justify-content-center">
+                                  <div class="col-md-12 mt-3 newclassadd">
+                                    <label for="" class="noLabel">
+                                      Payment Mode</label
+                                    >
+                                    <div class="djdecoration">
+                                      <div>
+                                        <input
+                                          class="form-check-input coupon_question"
+                                          type="radio"
+                                          id=""
+                                          name="coupon_question1"
+                                          value="1"
+                                        />
+                                        <label class="form-check-label" for="">
+                                          Card
+                                        </label>
+                                        <input
+                                          type="text"
+                                          class="decoration"
+                                          style="display: none"
+                                          placeholder="Amount"
+                                        />
+                                      </div>
+                                      <div>
+                                        <input
+                                          class="form-check-input coupon_question1"
+                                          type="radio"
+                                          id=""
+                                          name="coupon_question1"
+                                          value="2"
+                                        />
+                                        <label class="form-check-label" for="">
+                                          Cash
+                                        </label>
+                                      </div>
+                                      <div>
+                                        <input
+                                          class="form-check-input coupon_question1"
+                                          type="radio"
+                                          id=""
+                                          name="coupon_question1"
+                                          value="2"
+                                        />
+                                        <label class="form-check-label" for="">
+                                          Upi
+                                        </label>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="row justify-content-center mt-3"
+                                    >
+                                      <div class="col-md-4 text-center">
+                                        <button class="Submitbtnadvanpay">
+                                          Submit
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div></div>
                               </div>
-                              <div></div>
-                            </div>
                             </div>
                           </div>
                         </div>
@@ -1654,7 +1689,7 @@
           </div>
         </div>
       </div>
-  
+
       <!-- popups -->
     </main>
 
@@ -1747,41 +1782,29 @@
         $(".form").hide();
         $(".form2").show();
       });
-    
 
+      $("#myselect").change(function () {
+        let optionval = $("option:selected", this).text();
+        console.log(optionval);
+      });
+      $("#inputtext").keyup(function () {
+        let inputval = $(this).val();
+        console.log(inputval);
+      });
+      console.log(optionval);
+      console.log(inputval);
 
+      //    $('#inputtext').keyup(function(){
+      //     var $this=$(this);
+      //     setTimeout(function(){
 
-    
-    
-      $("#myselect").change(function() {
-  
- let optionval=$("option:selected", this).text()
- console.log(optionval)
- 
-})
-   $("#inputtext").keyup(function() {
-    let  inputval=$(this).val();
-        console.log(inputval)
-   
+      //         var n1 = $this.val();
+      //         var n2 = $('#n2').val();
+      //         var n3 = $('#n3').val();
+      //         var calc = n1 * n2 * n3;
 
-  });
- console.log(optionval)
-   console.log(inputval)
-
-
-//    $('#inputtext').keyup(function(){
-//     var $this=$(this);
-//     setTimeout(function(){
-      
-//         var n1 = $this.val();
-//         var n2 = $('#n2').val();
-//         var n3 = $('#n3').val();
-//         var calc = n1 * n2 * n3;
-  
-//     },400);
-// });
-
-  
+      //     },400);
+      // });
     </script>
   </body>
 </html>
