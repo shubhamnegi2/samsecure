@@ -390,7 +390,7 @@
         font-size: 14px;
         text-align: right;
       }
-      .topSearchAndBtns .actinBtns button {
+       .actinBtns button {
         min-width: 50px;
         margin: 2px 10px;
         text-transform: capitalize;
@@ -664,6 +664,29 @@
         padding: 2px 30px;
       }
 
+      .foodCategoryWrapper ul li .countDetails {
+        border-left: 1px solid #7a7797;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .foodCategoryWrapper ul li:first-child button {
+        min-width: 50px;
+        margin: 2px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+      }
+      .foodCategoryWrapper ul li:first-child {
+        cursor: default;
+      }
       .foodCategoryWrapper ul li {
         color: #7a7797;
         font-weight: bold;
@@ -672,6 +695,7 @@
         border-bottom: 1px solid #7a7797;
         padding-left: 10px;
         display: flex;
+        justify-content: space-between;
         align-items: center;
         height: 30px;
         cursor: pointer;
@@ -689,14 +713,13 @@
         background-color: #fc8019;
         color: #fff !important;
       }
-      .vegColor {
+      /* .vegColor {
         border-left: 5px solid green !important;
-        /* border-radius: 5px !important; */
-      }
-      .nonvegColor {
+      } */
+      /* .nonvegColor {
         border-left: 5px solid brown !important;
-        /* border-radius: 5px !important; */
-      }
+        
+      } */
       .removeToMyfav {
         cursor: pointer;
         position: absolute;
@@ -705,6 +728,21 @@
         cursor: pointer;
         color: #fe9037;
         display: none !important;
+      }
+      .catTopBtn {
+        border-bottom: 1px solid #7a7797;
+      }
+      .catTopBtn button {
+        min-width: 50px;
+        margin: 2px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
       }
     </style>
   </head>
@@ -715,11 +753,11 @@
         <li><i class="fa-solid fa-angles-right"></i></li>
         <li><a href="" class="ActiveBreadcrumb">food menu</a></li>
       </ul>
-      <div>
+      <!-- <div>
         <button class="btn btn-primary activeBreadcurmbtn">
           Upload Food Menu
         </button>
-      </div>
+      </div> -->
     </div>
     <main class="container-fluid">
       <div class="allBtnsWrapper pb-3 mt-1">
@@ -772,17 +810,26 @@
         <div
           class="topSearchAndBtns d-flex justify-content-between align-content-center"
         >
-          <div class="form-group searchboxWrapper">
-            <label for="search">Search : </label>
-            <input type="text" name="" id="" />
+          <div
+            class="form-group searchboxWrapper d-flex justify-content-between"
+          >
+            <div>
+              <label for="search">Search : </label>
+              <input type="text" name="" id="" />
+            </div>
           </div>
-          <div class="actinBtns">
-            <button class="btn btn-primary addFoodMenuBtn">
-              Add Food menu
-            </button>
+
+          <div class="d-flex justify-content-end eventDateTime">
+            <!-- <div class="monthName">Date : <span>01/01/23</span></div>
+            <div class="mx-3"></div> -->
+            <div class="totalBookings">Total Menu Items : <span>9</span></div>
           </div>
         </div>
-
+        <div class="actinBtns text-right">
+          <button class="btn btn-primary addFoodMenuBtn">
+            Add Food menu
+          </button>
+        </div>
         <div class="foodMenuTableFormWrapper my-2">
           <table>
             <thead>
@@ -823,22 +870,37 @@
           </div>
         </div>
 
-        <div class="d-flex justify-content-end eventDateTime">
-          <div class="monthName">Date : <span>01/01/23</span></div>
-          <div class="mx-3"></div>
-          <div class="totalBookings">Total Menu Items : <span>9</span></div>
-        </div>
         <div class="foodMenuWrapper d-flex">
           <aside>
             <div class="foodCategoryWrapper">
+              <div class="catTopBtn d-flex">
+                <button>Add</button><button>Edit</button>
+              </div>
               <ul class="list-unstyled mb-0 pl-0">
-                <li class="">Coca Cola</li>
-                <li>Milk</li>
-                <li>Curd</li>
-                <li>Chips</li>
-                <li>Biscuit</li>
-                <li>Juice</li>
-                <li>Soup</li>
+                <li>
+                  <span>Milk</span>
+                  <div class="countDetails">12</div>
+                </li>
+                <li>
+                  <span>Curd</span>
+                  <div class="countDetails">22</div>
+                </li>
+                <li>
+                  <span>Chips</span>
+                  <div class="countDetails">14</div>
+                </li>
+                <li>
+                  <span>Biscuit</span>
+                  <div class="countDetails">2</div>
+                </li>
+                <li>
+                  <span>Juice</span>
+                  <div class="countDetails">32</div>
+                </li>
+                <li>
+                  <span>Soup</span>
+                  <div class="countDetails">1</div>
+                </li>
               </ul>
             </div>
           </aside>
@@ -874,7 +936,7 @@
               cursor: pointer;
             }
           </style>
-          <div class="allMenuWrapper">
+          <div class="allMenuWrapper">            
             <div class="width250px">
               <div class="foodMenuCard foodMenuCard1 nonvegColor nonvegBgColor">
                 <div class="topBar">
@@ -1294,7 +1356,7 @@
                       <div>
                         <span class="name">Chicken curry</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -1313,7 +1375,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                           
                         </div>
                       </div>
                     </div>
@@ -1376,7 +1437,7 @@
                       <div>
                         <span class="name">Sandwich</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -1395,7 +1456,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                           
                         </div>
                       </div>
                     </div>
@@ -1458,7 +1518,7 @@
                       <div>
                         <span class="name">Mutton</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -1477,7 +1537,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                           
                         </div>
                       </div>
                     </div>
@@ -1540,7 +1599,7 @@
                       <div>
                         <span class="name">Chicken Tikka</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -1559,7 +1618,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                           
                         </div>
                       </div>
                     </div>
@@ -1622,7 +1680,7 @@
                       <div>
                         <span class="name">Paneer Tikka</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -1641,7 +1699,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                          <span class="price">200</span>
                         </div>
                       </div>
                     </div>
@@ -1704,7 +1761,7 @@
                       <div>
                         <span class="name">special thali</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -1786,7 +1843,7 @@
                       <div>
                         <span class="name">Dal makhni</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -1805,7 +1862,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                           
                         </div>
                       </div>
                     </div>
@@ -1868,7 +1924,7 @@
                       <div>
                         <span class="name">dal fry</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -1887,7 +1943,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                           
                         </div>
                       </div>
                     </div>
@@ -1950,7 +2005,7 @@
                       <div>
                         <span class="name">Chicken curry</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -1969,7 +2024,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                           
                         </div>
                       </div>
                     </div>
@@ -2032,7 +2086,7 @@
                       <div>
                         <span class="name">Sandwich</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -2051,7 +2105,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                           
                         </div>
                       </div>
                     </div>
@@ -2114,7 +2167,7 @@
                       <div>
                         <span class="name">Chicken Tikka</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -2133,7 +2186,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                           
                         </div>
                       </div>
                     </div>
@@ -2196,7 +2248,7 @@
                       <div>
                         <span class="name">Paneer Tikka</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -2215,7 +2267,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                          <span class="price">200</span>
                         </div>
                       </div>
                     </div>
@@ -2278,7 +2329,7 @@
                       <div>
                         <span class="name">special thali</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -2360,7 +2411,7 @@
                       <div>
                         <span class="name">Dal makhni</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -2379,7 +2430,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                           
                         </div>
                       </div>
                     </div>
@@ -2442,7 +2492,7 @@
                       <div>
                         <span class="name">dal fry</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -2461,7 +2511,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                           
                         </div>
                       </div>
                     </div>
@@ -2524,7 +2573,7 @@
                       <div>
                         <span class="name">Chicken curry</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -2543,7 +2592,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                           
                         </div>
                       </div>
                     </div>
@@ -2606,7 +2654,7 @@
                       <div>
                         <span class="name">Sandwich</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -2625,7 +2673,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                           
                         </div>
                       </div>
                     </div>
@@ -2688,7 +2735,7 @@
                       <div>
                         <span class="name">Mutton</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -2707,7 +2754,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                           
                         </div>
                       </div>
                     </div>
@@ -2770,7 +2816,7 @@
                       <div>
                         <span class="name">Chicken Tikka</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -2789,7 +2835,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                           
                         </div>
                       </div>
                     </div>
@@ -2852,7 +2897,7 @@
                       <div>
                         <span class="name">Paneer Tikka</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -2871,7 +2916,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                          <span class="price">200</span>
                         </div>
                       </div>
                     </div>
@@ -2934,7 +2978,7 @@
                       <div>
                         <span class="name">special thali</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -3016,7 +3060,7 @@
                       <div>
                         <span class="name">Dal makhni</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -3035,7 +3079,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                           
                         </div>
                       </div>
                     </div>
@@ -3098,7 +3141,7 @@
                       <div>
                         <span class="name">dal fry</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -3117,7 +3160,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                           
                         </div>
                       </div>
                     </div>
@@ -3180,7 +3222,7 @@
                       <div>
                         <span class="name">Chicken curry</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -3199,7 +3241,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                           
                         </div>
                       </div>
                     </div>
@@ -3262,7 +3303,7 @@
                       <div>
                         <span class="name">Sandwich</span>
                         <div>
-                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
                           <span class="price"
                             >800
                             <sup
@@ -3281,7 +3322,6 @@
                               ><span class="ribben fullRibben">F</span></sup
                             ></span
                           >
-                           
                         </div>
                       </div>
                     </div>
