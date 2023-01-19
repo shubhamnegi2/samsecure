@@ -19,7 +19,9 @@
       * {
         font-family: "Poppins", sans-serif;
       }
-
+      .bottomsec .dBlock {
+        display: block !important;
+      }
       .breadcrumbs {
         position: relative;
         background-color: #ef7d0b;
@@ -549,6 +551,7 @@
       .foodMenuTableFormWrapper table tr:nth-child(even) {
         background-color: #fff2e7;
       }
+      .table1Btns .saveAddedIngBtn,
       .addMoreRowInIngTable,
       .saveMoreRowInIngTable,
       .closeMoreRowInIngTable {
@@ -644,9 +647,6 @@
         border: 1px solid #000;
         padding: 2px;
       }
-      .ProductDetailsWrapper table tr:nth-child(even) {
-        background-color: #fff2e7;
-      }
       .deleteThisRow {
         cursor: pointer;
         padding: 5px;
@@ -688,6 +688,23 @@
       .activeSubCat {
         background-color: #fc8019;
         color: #fff !important;
+      }
+      .vegColor {
+        border-left: 5px solid green !important;
+        /* border-radius: 5px !important; */
+      }
+      .nonvegColor {
+        border-left: 5px solid brown !important;
+        /* border-radius: 5px !important; */
+      }
+      .removeToMyfav {
+        cursor: pointer;
+        position: absolute;
+        right: 2px;
+        bottom: 2px;
+        cursor: pointer;
+        color: #fe9037;
+        display: none !important;
       }
     </style>
   </head>
@@ -763,7 +780,6 @@
             <button class="btn btn-primary addFoodMenuBtn">
               Add Food menu
             </button>
-           
           </div>
         </div>
 
@@ -827,43 +843,40 @@
             </div>
           </aside>
           <style>
-            .ribben{
+            .ribben {
               background-color: #fc8019;
               color: #fff;
-              border-radius: 50%;            
+              border-radius: 50%;
               padding: 0px 2px;
               font-size: 8px;
               margin-left: -3px;
             }
-            .fullRibben{
+            .fullRibben {
               padding: 0px 3px;
             }
-            .name{
+            .name {
               display: block;
-    width: 150px;
-    overflow: hidden;
-    white-space: nowrap; 
-    text-overflow: ellipsis;
+              width: 150px;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
             }
-            .foodMenuCheckbox{
+            .foodMenuCheckbox {
               position: absolute;
               right: 5px;
               top: 2px;
               cursor: pointer;
             }
-            .eggColor{
-
-            }
-            .nonVegColor{
-
-            }
-            .vegColor{
-
+            .addTofavBtn {
+              position: absolute;
+              right: 2px;
+              bottom: 2px;
+              cursor: pointer;
             }
           </style>
           <div class="allMenuWrapper">
             <div class="width250px">
-              <div class="foodMenuCard foodMenuCard1">
+              <div class="foodMenuCard foodMenuCard1 nonvegColor nonvegBgColor">
                 <div class="topBar">
                   <div class="TopContent">
                     <div class="d-flex">
@@ -872,12 +885,29 @@
                         alt=""
                       />
                       <div>
-                        <span class="name">Chicken Tikka Lorem, ipsum dolor.</span>
+                        <span class="name"
+                          >Chicken Tikka Lorem, ipsum dolor.</span
+                        >
                         <div>
                           <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">800 <sup><span class="ribben quaterRibben">Q</span></sup></span>
-                          <span class="price mx-2">400 <sup><span class="ribben halfRibben">H</span></sup></span>
-                          <span class="price">200 <sup><span class="ribben fullRibben">F</span></sup></span>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
                         </div>
                       </div>
                     </div>
@@ -917,13 +947,19 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
             </div>
             <div class="width250px">
-              <div class="foodMenuCard foodMenuCard1">
+              <div class="foodMenuCard foodMenuCard1 vegColor vegBgColor">
                 <div class="topBar">
                   <div class="TopContent">
                     <div class="d-flex">
@@ -935,7 +971,24 @@
                         <span class="name">Paneer Tikka</span>
                         <div>
                           <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">200</span>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
                         </div>
                       </div>
                     </div>
@@ -975,13 +1028,19 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
             </div>
             <div class="width250px">
-              <div class="foodMenuCard foodMenuCard1">
+              <div class="foodMenuCard foodMenuCard1 nonvegColor">
                 <div class="topBar">
                   <div class="TopContent">
                     <div class="d-flex">
@@ -993,7 +1052,24 @@
                         <span class="name">special thali</span>
                         <div>
                           <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">100</span>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
                         </div>
                       </div>
                     </div>
@@ -1033,13 +1109,19 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
             </div>
             <div class="width250px">
-              <div class="foodMenuCard foodMenuCard1">
+              <div class="foodMenuCard foodMenuCard1 vegColor">
                 <div class="topBar">
                   <div class="TopContent">
                     <div class="d-flex">
@@ -1051,7 +1133,24 @@
                         <span class="name">Dal makhni</span>
                         <div>
                           <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">1200</span>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
                         </div>
                       </div>
                     </div>
@@ -1091,7 +1190,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -1109,7 +1214,24 @@
                         <span class="name">dal fry</span>
                         <div>
                           <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">1200</span>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
                         </div>
                       </div>
                     </div>
@@ -1149,7 +1271,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -1166,8 +1294,26 @@
                       <div>
                         <span class="name">Chicken curry</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">1200</span>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
+                           
                         </div>
                       </div>
                     </div>
@@ -1207,7 +1353,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -1224,8 +1376,26 @@
                       <div>
                         <span class="name">Sandwich</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">1200</span>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
+                           
                         </div>
                       </div>
                     </div>
@@ -1265,7 +1435,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -1282,8 +1458,26 @@
                       <div>
                         <span class="name">Mutton</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">1200</span>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
+                           
                         </div>
                       </div>
                     </div>
@@ -1323,7 +1517,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -1340,8 +1540,26 @@
                       <div>
                         <span class="name">Chicken Tikka</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">1200</span>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
+                           
                         </div>
                       </div>
                     </div>
@@ -1381,7 +1599,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -1398,7 +1622,25 @@
                       <div>
                         <span class="name">Paneer Tikka</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
                           <span class="price">200</span>
                         </div>
                       </div>
@@ -1439,7 +1681,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -1456,7 +1704,25 @@
                       <div>
                         <span class="name">special thali</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
                           <span class="price">100</span>
                         </div>
                       </div>
@@ -1497,7 +1763,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -1514,8 +1786,26 @@
                       <div>
                         <span class="name">Dal makhni</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">1200</span>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
+                           
                         </div>
                       </div>
                     </div>
@@ -1555,7 +1845,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -1572,8 +1868,26 @@
                       <div>
                         <span class="name">dal fry</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">1200</span>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
+                           
                         </div>
                       </div>
                     </div>
@@ -1613,7 +1927,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -1630,8 +1950,26 @@
                       <div>
                         <span class="name">Chicken curry</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">1200</span>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
+                           
                         </div>
                       </div>
                     </div>
@@ -1671,7 +2009,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -1688,8 +2032,26 @@
                       <div>
                         <span class="name">Sandwich</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">1200</span>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
+                           
                         </div>
                       </div>
                     </div>
@@ -1729,7 +2091,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -1746,8 +2114,26 @@
                       <div>
                         <span class="name">Chicken Tikka</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">1200</span>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
+                           
                         </div>
                       </div>
                     </div>
@@ -1787,7 +2173,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -1804,7 +2196,25 @@
                       <div>
                         <span class="name">Paneer Tikka</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
                           <span class="price">200</span>
                         </div>
                       </div>
@@ -1845,7 +2255,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -1862,7 +2278,25 @@
                       <div>
                         <span class="name">special thali</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
                           <span class="price">100</span>
                         </div>
                       </div>
@@ -1903,7 +2337,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -1920,8 +2360,26 @@
                       <div>
                         <span class="name">Dal makhni</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">1200</span>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
+                           
                         </div>
                       </div>
                     </div>
@@ -1961,7 +2419,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -1978,8 +2442,26 @@
                       <div>
                         <span class="name">dal fry</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">1200</span>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
+                           
                         </div>
                       </div>
                     </div>
@@ -2019,7 +2501,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -2036,8 +2524,26 @@
                       <div>
                         <span class="name">Chicken curry</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">1200</span>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
+                           
                         </div>
                       </div>
                     </div>
@@ -2077,7 +2583,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -2094,8 +2606,26 @@
                       <div>
                         <span class="name">Sandwich</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">1200</span>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
+                           
                         </div>
                       </div>
                     </div>
@@ -2135,7 +2665,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -2152,8 +2688,26 @@
                       <div>
                         <span class="name">Mutton</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">1200</span>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
+                           
                         </div>
                       </div>
                     </div>
@@ -2193,7 +2747,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -2210,8 +2770,26 @@
                       <div>
                         <span class="name">Chicken Tikka</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">1200</span>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
+                           
                         </div>
                       </div>
                     </div>
@@ -2251,7 +2829,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -2268,7 +2852,25 @@
                       <div>
                         <span class="name">Paneer Tikka</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
                           <span class="price">200</span>
                         </div>
                       </div>
@@ -2309,7 +2911,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -2326,7 +2934,25 @@
                       <div>
                         <span class="name">special thali</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
                           <span class="price">100</span>
                         </div>
                       </div>
@@ -2367,7 +2993,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -2384,8 +3016,26 @@
                       <div>
                         <span class="name">Dal makhni</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">1200</span>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
+                           
                         </div>
                       </div>
                     </div>
@@ -2425,7 +3075,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -2442,8 +3098,26 @@
                       <div>
                         <span class="name">dal fry</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">1200</span>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
+                           
                         </div>
                       </div>
                     </div>
@@ -2483,7 +3157,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -2500,8 +3180,26 @@
                       <div>
                         <span class="name">Chicken curry</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">1200</span>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
+                           
                         </div>
                       </div>
                     </div>
@@ -2541,7 +3239,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -2558,8 +3262,26 @@
                       <div>
                         <span class="name">Sandwich</span>
                         <div>
-                          <i class="fa-solid fa-indian-rupee-sign"></i>
-                          <span class="price">1200</span>
+                           <i class="fa-solid fa-indian-rupee-sign"></i>
+                          <span class="price"
+                            >800
+                            <sup
+                              ><span class="ribben quaterRibben">Q</span></sup
+                            ></span
+                          >
+                          <span class="price mx-2"
+                            >400
+                            <sup
+                              ><span class="ribben halfRibben">H</span></sup
+                            ></span
+                          >
+                          <span class="price"
+                            >200
+                            <sup
+                              ><span class="ribben fullRibben">F</span></sup
+                            ></span
+                          >
+                           
                         </div>
                       </div>
                     </div>
@@ -2599,7 +3321,13 @@
                   <div class="bottomsec d-flex justify-content-start">
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm">Delete</button> <input class="form-check-input foodMenuCheckbox" type="checkbox">
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                    <i class="fa-regular fa-heart addTofavBtn"></i
+                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                    <input
+                      class="form-check-input foodMenuCheckbox"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
               </div>
@@ -2964,6 +3692,16 @@
       });
       $(".closeMoreRowInIngTable").click(function () {
         $(".foodMenuTableFormWrapper").slideUp();
+      });
+      $(document).on("click", ".addTofavBtn", function () {
+        $(this).closest("div").children(".removeToMyfav").addClass("dBlock");
+        $(this).removeClass("dBlock");
+        $(this).hide();
+      });
+      $(document).on("click", ".removeToMyfav", function () {
+        $(this).closest("div").children(".addTofavBtn").addClass("dBlock");
+        $(this).removeClass("dBlock");
+        $(this).hide();
       });
     </script>
   </body>
