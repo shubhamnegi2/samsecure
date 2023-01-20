@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Sale</title>
+
+    <style type="text/css">
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+
+        .breadcrumb {
+            background-color: #ef7d0b !important;
+            margin-bottom: 0rem !important;
+            position: relative;
+        }
+
+        .breadcrumb .addVender {
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0px;
+            background-color: #fe9037;
+            color: #fff;
+            padding: 2px 30px;
+            margin: 0px 10px;
+            font-weight: bold;
+        }
+
+        .butn-addvender {
+            position: absolute;
+            right: 2%;
+            top: 50%;
+            transform: translate(0%, -50%);
+            text-transform: capitalize;
+        }
+
+        .breadcrumb ul {
+            margin-bottom: 0rem;
+        }
+
+        .breadcrumb ul li {
+            color: #eee;
+            font-weight: bold;
+            margin: 10px 1px;
+        }
+
+        .breadcrumb ul li a {
+            color: inherit;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .breadcrumb ul li i {
+            font-size: 12px;
+        }
+
+        .breadcrumb ul li .ActiveBreadcrumb {
+            color: #fff;
+        }
+
+        main {
+            background-color: #eee;
+            min-height: 100vh;
+        }
+
+        main .filters label {
+            margin-right: 15px;
+            font-weight: bold;
+            color: #3abb69;
+        }
+
+        main .filters select {
+            font-size: 14px;
+            border: 0;
+            border-radius: 5px;
+            padding-left: 15px;
+            color: #7a7797;
+            width: 120px;
+            margin-left: 20px;
+        }
+
+        main .filters input::placeholder {
+            font-size: 14px;
+            color: #7a7797;
+        }
+
+        main .filters input {
+            font-size: 14px;
+            border: 0;
+            border-radius: 5px;
+            padding-left: 15px;
+            color: #7a7797;
+        }
+
+        .ProductDetailsWrapper {
+            border: 1px solid #ef7d0b;
+        }
+
+        .allBtnsWrapper .allBtns {
+            background-color: #fff;
+            box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+            text-align: center;
+            border-radius: 5px;
+            border: 1px solid #ef7d0b;
+        }
+
+        .allBtnsWrapper .allBtns h2 {
+            display: inline-block;
+            border-bottom: 2px solid #ef7d0b;
+            color: #083e5a;
+            font-weight: bold;
+            padding-bottom: 5px;
+            font-size: 17px;
+        }
+
+        .allBtnsWrapper .allBtns .topBtnWrapper {
+            /* border: 1px solid #000; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* justify-content: space-evenly; */
+            /* align-items: center; */
+        }
+
+        .allBtnsWrapper .allBtns .topBtnWrapper .topBtns {
+            /* border: 1px solid #000; */
+            display: flex;
+            flex-direction: column;
+            min-width: 85px;
+            font-weight: 500;
+            font-size: 12px;
+            margin: 0px 10px;
+            background-color: #083e5a;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .allBtnsWrapper .allBtns .topBtnWrapper .topBtns span {
+            font-weight: 500;
+            font-size: 12px;
+        }
+
+        .allBtnsWrapper .allBtns .topBtnWrapper .activeTopBarTitleBtn {
+            background-color: #fe9037;
+        }
+
+        .allBtnsWrapper .allBtns .topBtnWrapper .topBtns:hover {
+            transition: all 0.3s ease;
+            background-color: #fe9037;
+        }
+
+        /*
+        .allBtnsWrapper .allBtns button {
+          min-width: 150px;
+          margin: 10px;
+          text-transform: capitalize;
+          border-radius: 3px;
+          border: 0;
+          background-color: #7a7797;
+          color: #fff;
+          font-size: 13px;
+          font-weight: 500;
+          padding: 3px 0px;
+          font-family: "Montserrat", sans-serif;
+        }
+        .allBtnsWrapper .allBtns .activeBtn {
+          background-color: #3abb69;
+        } */
+
+        .ProductDetailsWrapper {
+            background-color: #fff;
+            box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .ProductDetailsWrapper .details .title {
+            padding: 0px 0px;
+            text-align: center;
+        }
+
+        .ProductDetailsWrapper .details .title h3 {
+            display: inline-block;
+            border-bottom: 2px solid #ef7d0b;
+            color: #083e5a;
+            font-weight: bold;
+            padding-bottom: 5px;
+            font-size: 17px;
+        }
+
+        .ProductDetailsWrapper table {
+            max-width: 100%;
+            width: 100%;
+            border-radius: 4px;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .ProductDetailsWrapper table tr:nth-child(even) {
+            background-color: #fff2e7;
+        }
+
+        .ProductDetailsWrapper table tr:nth-child(even) input,
+        .ProductDetailsWrapper table tr:nth-child(even) select,
+        .ProductDetailsWrapper table tr:nth-child(even) td {
+            color: #000;
+        }
+
+        .ProductDetailsWrapper table tr:nth-child(even) input::-moz-placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) select::-moz-placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) td::-moz-placeholder {
+            color: #000;
+        }
+
+        .ProductDetailsWrapper table tr:nth-child(even) input:-ms-input-placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) select:-ms-input-placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) td:-ms-input-placeholder {
+            color: #000;
+        }
+
+        .ProductDetailsWrapper table tr:nth-child(even) input::placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) select::placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) td::placeholder {
+            color: #000;
+        }
+
+        .ProductDetailsWrapper table tr:nth-child(even) select option {
+            background-color: #fff2e7;
+        }
+
+        .ProductDetailsWrapper table tr {
+            height: 40px;
+        }
+
+        .ProductDetailsWrapper table tr:last-child {
+            border-bottom: 2px solid #ddcece;
+        }
+
+        .ProductDetailsWrapper table,
+        .ProductDetailsWrapper th {
+            border: 1px solid #ddcece;
+            border-collapse: collapse;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .ProductDetailsWrapper table tbody tr button {
+            cursor: pointer;
+            background-color: #083e5a;
+            border: none;
+            padding: 1px 20px;
+        }
+
+        .ProductDetailsWrapper thead {
+            background-color: #fe9037;
+            color: #fff;
+        }
+
+        .ProductDetailsWrapper thead tr,
+        .ProductDetailsWrapper thead th {
+            border: 1px solid #000;
+        }
+
+        .ProductDetailsWrapper tbody tr td:first-child {
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+
+        .ProductDetailsWrapper tbody tr input,
+        .ProductDetailsWrapper tbody tr select {
+            width: 100%;
+            height: 37px;
+            border: 0;
+            text-align: center;
+            background-color: transparent;
+            color: #7a7797;
+        }
+
+        body {
+            background-color: #eee;
+        }
+
+        .addVenderWrapper {
+            background-color: #fff;
+        }
+
+        .addVenderWrapper .addVenderTitle {
+            text-align: center;
+            padding: 10px 0px;
+        }
+
+        .addVenderWrapper .addVenderTitle h2 {
+            display: inline-block;
+            border-bottom: 2px solid #ef7d0b;
+            color: #7a7797;
+            font-weight: bold;
+            padding-bottom: 5px;
+            font-size: 17px;
+        }
+
+        .addVenderWrapper .addVenderForm .formGroup {
+            margin-bottom: 20px;
+        }
+
+        .addVenderWrapper .addVenderForm .formGroup input {
+            border: 2px solid #eee;
+            width: 100%;
+            border-radius: 3px;
+        }
+
+        .activeTopBarBtn {
+            background-color: #083e5a !important;
+            color: #fff !important;
+        }
+
+        .allBtns {
+            background-color: #fff;
+            border: 1px solid #fc8019;
+            box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+            border-radius: 5px;
+        }
+
+        .allBtns .activeMonth {
+            background-color: #fe9037;
+        }
+
+        .allBtns select {
+
+            margin-left: 25px;
+            min-width: 60px;
+            margin: 6px;
+            text-transform: capitalize;
+            border: 0;
+            box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+            border-radius: 5px;
+            border: 1px solid #fc8019;
+            font-size: 10px;
+            font-weight: 500;
+            padding: 1px 10px;
+            font-family: "Montserrat", sans-serif;
+            background-color: #fff;
+            color: #000;
+        }
+
+        .allBtns button {
+            min-width: 60px;
+            margin: 6px;
+            text-transform: capitalize;
+            border-radius: 3px;
+            border: 0;
+            background-color: #083e5a;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 500;
+            padding: 1px 10px;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .allBtnsWrapper h3 {
+            /* text-align: center; */
+            /* border-bottom: 2px solid #fc8e32; */
+            color: #7a7797;
+            font-weight: bold;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            /* margin-top: 1rem; */
+            font-size: 14px;
+            text-align: right;
+            padding-right: 15px;
+        }
+
+        .allBtnsWrapper .CategoryActionBtn button {
+            background-color: #fc8019;
+        }
+
+        .allBtnsWrapper .allBtns .activeBtn {
+            background-color: #fc8019;
+        }
+
+        .mainbody {
+            background-color: #eee;
+        }
+
+
+        .categoryheading {
+            color: #7a7797;
+            font-weight: bold;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            font-size: 14px;
+            text-align: right;
+            padding-right: 15px;
+        }
+
+        .allBtns hr {
+            margin: 0;
+        }
+
+        .color2 {
+            color: #083e5a;
+        }
+
+        .membershipcard {
+            padding: 7px 4px;
+            display: flex;
+            gap: 20px;
+
+            min-width: 85px;
+            font-weight: 500;
+            font-size: 12px;
+            margin: 0px 10px;
+
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .numberofmember {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .monthysale {
+            display: flex;
+            gap: 37px;
+            align-items: center;
+        }
+
+        .membershipicon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .membershipicon i {
+            height: 48px;
+            width: 48px;
+            background: #eee;
+            color: #ef7d0b;
+            font-size: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .numberofmember .numbermember,
+        .monthysale {
+
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .numbermembership,
+        .monthynumber {
+
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        /*# sourceMappingURL=test.css.map */
+    </style>
+</head>
+
+<body>
+    <div class="mainbody">
+        <div class="breadcrumb">
+            <ul class="list-unstyled d-flex align-items-center">
+                <li><a href="">Dashboard</a></li>
+                <li><i class="fa-solid fa-angles-right"></i></li>
+                <li><a href="" class="ActiveBreadcrumb"> Event Sale</a></li>
+            </ul>
+            <!-- <div class="butn-addvender">
+        <button class="addVender activeTopBarBtn">Sales</button>
+        <button class="addVender">Pending Payments</button>
+      
+      </div> -->
+        </div>
+        <main>
+            <div class="container-fluid">
+                <div class="allBtns d-flex mt-3 flex-column px-3">
+                    <div class="d-flex">
+                        <div class="">
+                            <select name="" id="year" class="activeYear">
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                            </select>
+                        </div>
+                        <div class="monthsBtnWrapper monthBtnWrapper">
+                            <button class="" data-month="1">January</button>
+                            <button data-month="2">February</button>
+                            <button data-month="3">March</button>
+                            <button data-month="4">April</button>
+                            <button data-month="5">May</button>
+                            <button data-month="6">June</button>
+                            <button data-month="7">July</button>
+                            <button data-month="8">August</button>
+                            <button data-month="9">September</button>
+                            <button data-month="10">October</button>
+                            <button data-month="11">November</button>
+                            <button data-month="12">December</button>
+                        </div>
+                    </div>
+                    <!-- <hr />
+                    <div class="d-flex justify-content-between align-items-center py-0">
+                        <h3 class="categoryheading">
+                            Month : <span class="month color2">January</span>
+                           
+                        </h3>
+                        <span class="categoryheading"><span class="month">January</span> Total Membership Sale : ₹
+                            <span class="totalCatgry color2">2200</span></span>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="allBtnsWrapper pt-2 pb-2">
+                <div class="container-fluid">
+                    <div class="allBtns pt-1 pb-1">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h2 class="mt-1 mb-2">Event Details</h2>
+                                <div class="topBtnWrapper">
+                                    <div class="topBtns mb-3 mb-3 activeTopBarTitleBtn">
+                                        <!-- <div class="title">Dine-In</div>
+                      <span>5</span>
+                      <span>2000</span>
+                    </div>
+                    <div> -->
+
+                                        <div class="membershipcard">
+                                            <div class="membershipicon"><i class="fa-solid fa-users"></i></div>
+                                            <div class="membershipdetail">
+                                                <div class="numberofmember"><span class="numbermember"
+                                                        style="font-size: 15px;">Number Of
+                                                        Event:</span><span style="font-size: 15px;"
+                                                        class="numbermembership">4</span></div>
+                                                <div class="monthysale"> <span style="font-size: 15px;"
+                                                        class="monthysale">Monthly
+                                                        Sale:</span><span style="font-size: 15px;"
+                                                        class="monthynumber">₹ 2000</span></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="topBtns mb-3">
+                      <div class="title">Takeaway</div>
+                      <span>6</span>
+                      <span>2000</span>
+                    </div>
+                    <div class="topBtns mb-3">
+                      <div class="title">Delivery</div>
+                      <span>4</span>
+                      <span>2000</span>
+                    </div>
+
+                    <div class="topBtns mb-3">
+                      <div class="title">Online</div>
+                      <span>3</span>
+                      <span>3000</span>
+                    </div>
+                    <div class="topBtns mb-3">
+                      <div class="title">Total</div>
+                      <span>18</span>
+                      <span>10000</span>
+                    </div> -->
+                                    <!-- <div class="topBtns mb-3">
+                    <div class="title">Event</div>
+                    <span>6</span>
+                    <span>20000</span>
+                  </div> -->
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <h2 class="mt-1 mb-2">Payment Mode</h2>
+                                <div class="topBtnWrapper">
+                                    <div class="topBtns mb-3">
+                                        <div class="title">Cash</div>
+                                        <span>2</span>
+                                        <span>1000</span>
+                                    </div>
+                                    <div class="topBtns mb-3">
+                                        <div class="title">Card</div>
+                                        <span>6</span>
+                                        <span>3000</span>
+                                    </div>
+                                    <div class="topBtns mb-3">
+                                        <div class="title">UPI</div>
+                                        <span>4</span>
+                                        <span>4000</span>
+                                    </div>
+                                    <div class="topBtns mb-3">
+                                        <div class="title">Waive Off</div>
+                                        <span>3</span>
+                                        <span>5000</span>
+                                    </div>
+                                    <div class="topBtns mb-3">
+                                        <div class="title">Discount</div>
+                                        <span>1</span>
+                                        <span>1000</span>
+                                    </div>
+                                    <!-- <div class="topBtns  mb-3">
+                    <div class="title">Membership</div>
+                    <span>6</span>
+                    <span>20000</span>
+                  </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="ProductDetailsWrapper">
+                    <div class="details">
+                        <div class="title">
+                            <h3>Event Sale Details</h3>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>S. No.</td>
+                                    <td>Date</td>
+                                    <td>Time</td>
+                                    <td>Description</td>
+                                    <td>Host Name</td>
+
+                                    <td>Phone N.</td>
+                                    <td>Paid Amount</td>
+                                    <td>Payment Mode</td>
+                                    <td>Waiter</td>
+                                    <td>Billing Date</td>
+                                    <td>Details</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>03/01/2022</td>
+                                    <td>12:25:05</td>
+                                    <td>Description</td>
+
+                                    <td>Akash Negi</td>
+                                    <td>9897808080</td>
+                                    <td>1200</td>
+                                    <td>Cash</td>
+                                    <td>3</td>
+                                    <td>03/01/2022</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm viewDetailBtn">
+                                            Details
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>03/01/2022</td>
+                                    <td>12:25:05</td>
+                                    <td>Description</td>
+
+                                    <td>Akash Negi</td>
+                                    <td>9897808080</td>
+                                    <td>1200</td>
+                                    <td>Cash</td>
+                                    <td>3</td>
+                                    <td>03/01/2022</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm viewDetailBtn">
+                                            Details
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>03/01/2022</td>
+                                    <td>12:25:05</td>
+                                    <td>Description</td>
+
+                                    <td>Akash Negi</td>
+                                    <td>9897808080</td>
+                                    <td>1200</td>
+                                    <td>Cash</td>
+                                    <td>3</td>
+                                    <td>03/01/2022</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm viewDetailBtn">
+                                            Details
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>03/01/2022</td>
+                                    <td>12:25:05</td>
+                                    <td>Description</td>
+
+                                    <td>Akash Negi</td>
+                                    <td>9897808080</td>
+                                    <td>1200</td>
+                                    <td>Cash</td>
+                                    <td>3</td>
+                                    <td>03/01/2022</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm viewDetailBtn">
+                                            Details
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>03/01/2022</td>
+                                    <td>12:25:05</td>
+                                    <td>Description</td>
+
+                                    <td>Akash Negi</td>
+                                    <td>9897808080</td>
+                                    <td>1200</td>
+                                    <td>Cash</td>
+                                    <td>3</td>
+                                    <td>03/01/2022</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm viewDetailBtn">
+                                            Details
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>03/01/2022</td>
+                                    <td>12:25:05</td>
+                                    <td>Description</td>
+
+                                    <td>Akash Negi</td>
+                                    <td>9897808080</td>
+                                    <td>1200</td>
+                                    <td>Cash</td>
+                                    <td>3</td>
+                                    <td>03/01/2022</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm viewDetailBtn">
+                                            Details
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $("head").append(
+            '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
+        );
+        $("head").append(
+            ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
+/>'
+        );
+        $("head").append(
+            '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
+        );
+    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#dateWise").datepicker();
+            let formattedDate = new Date();
+            let d = formattedDate.getDate();
+            let m = formattedDate.getMonth();
+            m += 1; // JavaScript months are 0-11
+            if (d < 10) {
+                d = "0" + d;
+            }
+            if (m < 10) {
+                m = "0" + m;
+            }
+            let y = formattedDate.getFullYear();
+            $("#dateWise").attr("placeholder", d + "/" + m + "/" + y);
+
+            $(".allBtnsWrapper .allBtns .topBtns").click(function () {
+                $(".allBtnsWrapper .allBtns .topBtns").removeClass(
+                    "activeTopBarTitleBtn"
+                );
+                $(this).addClass("activeTopBarTitleBtn");
+            });
+        });
+        $(".monthBtnWrapper button").click(function () {
+            $(".allBtns button").removeClass("activeBtn");
+            $(this).addClass("activeBtn");
+            $(".month").text($(this).text());
+
+            let year = $("#year option:selected").val();
+            let month = $(this).data("month");
+            getthisMonthDates();
+        });
+
+        $(document).on('click', '.dateListWraper li', function () {
+            $(".dateListWraper li").removeClass("activeDate");
+            $(this).addClass("activeDate");
+        })
+    </script>
+</body>
+
+</html>
