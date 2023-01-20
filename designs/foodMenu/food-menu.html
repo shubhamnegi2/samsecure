@@ -402,12 +402,18 @@
         font-weight: 600;
         padding: 2px 8px;
       }
+      .actinBtns {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+      }
     </style>
     <style>
       .allMenuWrapper {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+        padding-top: 20px;
       }
 
       .foodMenuWrapper .foodMenuCard1 {
@@ -708,6 +714,8 @@
       .foodMenuWrapper {
         border: 1px solid #7a7797;
         border-radius: 4px;
+        position: relative;
+        /* padding-top: 10px; */
       }
       .activeSubCat {
         background-color: #fc8019;
@@ -732,7 +740,7 @@
       .catTopBtn {
         border-bottom: 1px solid #7a7797;
       }
-      .catTopBtn button {
+      .catTopBtn button,.addCategoryCard button {
         min-width: 50px;
         margin: 2px 10px;
         text-transform: capitalize;
@@ -744,7 +752,51 @@
         font-weight: 600;
         padding: 2px 8px;
       }
+      .addCategoryCard {
+        padding: 5px;
+        /* max-width: 140px; */
+        padding-bottom: 2px;
+        border: 1px solid #7a7797;
+        display: none;
+      }
+      .addCategoryCard input{
+        height: 25px;
+        font-size: 14px;
+        /* width: 100%; */
+      }
     </style>
+      <style>
+        .ribben {
+          background-color: #fc8019;
+          color: #fff;
+          border-radius: 50%;
+          padding: 0px 2px;
+          font-size: 8px;
+          margin-left: -3px;
+        }
+        .fullRibben {
+          padding: 0px 3px;
+        }
+        .name {
+          display: block;
+          width: 150px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        .foodMenuCheckbox {
+          position: absolute;
+          right: 5px;
+          top: 2px;
+          cursor: pointer;
+        }
+        .addTofavBtn {
+          position: absolute;
+          right: 2px;
+          bottom: 2px;
+          cursor: pointer;
+        }
+      </style>
   </head>
   <body>
     <div class="breadcrumbs">
@@ -807,6 +859,7 @@
             </div>
           </div>
         </div>
+        
         <div
           class="topSearchAndBtns d-flex justify-content-between align-content-center"
         >
@@ -825,56 +878,64 @@
             <div class="totalBookings">Total Menu Items : <span>9</span></div>
           </div>
         </div>
-        <div class="actinBtns text-right">
-          <button class="btn btn-primary addFoodMenuBtn">
-            Add Food menu
-          </button>
-        </div>
-        <div class="foodMenuTableFormWrapper my-2">
-          <table>
-            <thead>
-              <tr>
-                <th>S. No.</th>
-                <th>Item Name</th>
-                <th>Numeric Code</th>
-                <th>Short Code</th>
-                <th>Description</th>
-                <th>Q Price</th>
-                <th>H Price</th>
-                <th>F price</th>
-                <th>Add Img</th>
-                <th>Add Ingredients</th>
-                <th>Delete</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td></td>
-                <td><input type="text" /></td>
-                <td><input type="text" /></td>
-                <td><input type="text" /></td>
-                <td><textarea name="" id="" cols="30" rows="10"></textarea></td>
-                <td><input type="text" /></td>
-                <td><input type="text" /></td>
-                <td><input type="text" /></td>
-                <td><input type="file" /></td>
-                <td><button class="addIngBtn">Add Ingredients</button></td>
-                <td><i class="fa-solid fa-trash deleteThisRow"></i></td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="my-1">
-            <button class="addMoreRowInIngTable">Add More Items</button>
-            <button class="closeMoreRowInIngTable">Close</button>
-            <button class="saveMoreRowInIngTable">save</button>
-          </div>
-        </div>
+        
+        
 
-        <div class="foodMenuWrapper d-flex">
+        <div class="foodMenuWrapper">
+          <div class="actinBtns text-right">
+            <button class="btn btn-primary addFoodMenuBtn">
+              Add Food menu
+            </button>
+          </div>
+          <div class="foodMenuTableFormWrapper my-2 mt-4">
+            <table>
+              <thead>
+                <tr>
+                  <th>S. No.</th>
+                  <th>Item Name</th>
+                  <th>Numeric Code</th>
+                  <th>Short Code</th>
+                  <th>Description</th>
+                  <th>Q Price</th>
+                  <th>H Price</th>
+                  <th>F price</th>
+                  <th>Add Img</th>
+                  <th>Add Ingredients</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="file" /></td>
+                  <td><button class="addIngBtn">Add Ingredients</button></td>
+                  <td><i class="fa-solid fa-trash deleteThisRow"></i></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="my-1">
+              <button class="addMoreRowInIngTable">Add More Items</button>
+              <button class="closeMoreRowInIngTable">Close</button>
+              <button class="saveMoreRowInIngTable">save</button>
+            </div>
+          </div>
+          <div class="d-flex">
           <aside>
             <div class="foodCategoryWrapper">
               <div class="catTopBtn d-flex">
-                <button>Add</button><button>Edit</button>
+                <button class="addSubCatBtn">Add</button><button>Edit</button>
+              </div>
+              <div class="addCategoryCard text-right">
+                <input type="text" name="" id="" placeholder="Add Sub Category">
+                <button class="closeSubCatform">close</button>
+                <button >Save</button>
               </div>
               <ul class="list-unstyled mb-0 pl-0">
                 <li>
@@ -904,38 +965,7 @@
               </ul>
             </div>
           </aside>
-          <style>
-            .ribben {
-              background-color: #fc8019;
-              color: #fff;
-              border-radius: 50%;
-              padding: 0px 2px;
-              font-size: 8px;
-              margin-left: -3px;
-            }
-            .fullRibben {
-              padding: 0px 3px;
-            }
-            .name {
-              display: block;
-              width: 150px;
-              overflow: hidden;
-              white-space: nowrap;
-              text-overflow: ellipsis;
-            }
-            .foodMenuCheckbox {
-              position: absolute;
-              right: 5px;
-              top: 2px;
-              cursor: pointer;
-            }
-            .addTofavBtn {
-              position: absolute;
-              right: 2px;
-              bottom: 2px;
-              cursor: pointer;
-            }
-          </style>
+        
           <div class="allMenuWrapper">            
             <div class="width250px">
               <div class="foodMenuCard foodMenuCard1 nonvegColor nonvegBgColor">
@@ -978,7 +1008,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -998,9 +1028,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -1059,7 +1089,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -1079,9 +1109,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -1140,7 +1170,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -1160,9 +1190,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -1221,7 +1251,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -1241,9 +1271,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -1302,7 +1332,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -1322,9 +1352,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -1383,7 +1413,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -1403,9 +1433,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -1464,7 +1494,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -1484,9 +1514,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -1545,7 +1575,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -1565,9 +1595,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -1626,7 +1656,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -1646,9 +1676,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -1707,7 +1737,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -1727,9 +1757,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -1789,7 +1819,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -1809,9 +1839,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -1870,7 +1900,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -1890,9 +1920,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -1951,7 +1981,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -1971,9 +2001,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -2032,7 +2062,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -2052,9 +2082,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -2113,7 +2143,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -2133,9 +2163,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -2194,7 +2224,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -2214,9 +2244,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -2275,7 +2305,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -2295,9 +2325,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -2357,7 +2387,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -2377,9 +2407,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -2438,7 +2468,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -2458,9 +2488,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -2519,7 +2549,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -2539,9 +2569,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -2600,7 +2630,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -2620,9 +2650,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -2681,7 +2711,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -2701,9 +2731,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -2762,7 +2792,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -2782,9 +2812,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -2843,7 +2873,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -2863,9 +2893,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -2924,7 +2954,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -2944,9 +2974,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -3006,7 +3036,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -3026,9 +3056,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -3087,7 +3117,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -3107,9 +3137,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -3168,7 +3198,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -3188,9 +3218,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -3249,7 +3279,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -3269,9 +3299,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -3330,7 +3360,7 @@
                     <table>
                       <tbody>
                         <tr>
-                          <td>category</td>
+                          <td>Type</td>
                           <td>:</td>
                           <td>NonVeg</td>
                         </tr>
@@ -3350,9 +3380,9 @@
                             <td>6</td>
                           </tr>
                           <tr>
-                            <td>Added By</td>
+                            <td>Numeric Code</td>
                             <td>:</td>
-                            <td>Shubham</td>
+                            <td>AF12</td>
                           </tr>
                         </tbody>
                       </table>
@@ -3373,6 +3403,7 @@
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </main>
@@ -3743,6 +3774,13 @@
         $(this).removeClass("dBlock");
         $(this).hide();
       });
+
+      $('.addSubCatBtn').click(function(){
+        $('.addCategoryCard').slideDown();
+      })
+      $('.closeSubCatform').click(function(){
+        $('.addCategoryCard').slideUp();      
+      })
     </script>
   </body>
 </html>
