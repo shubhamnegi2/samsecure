@@ -79,21 +79,24 @@
         padding-left: 15px;
         color: #7a7797;
       }
+      .ProductDetailsWrapper{
+        border: 1px solid #ef7d0b;
+      }
 
       .allBtnsWrapper .allBtns {
         background-color: #fff;
         box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
         text-align: center;
         border-radius: 5px;
-        /* border: 1px solid #000; */
+        border: 1px solid #ef7d0b;
       }
       .allBtnsWrapper .allBtns h2 {
         display: inline-block;
-        border-bottom: 2px solid #3abb69;
+        border-bottom: 2px solid #ef7d0b;
         color: #083e5a;
         font-weight: bold;
         padding-bottom: 5px;
-        font-size: 20px;
+        font-size: 17px;
       }
       .allBtnsWrapper .allBtns .topBtnWrapper {
         /* border: 1px solid #000; */
@@ -106,9 +109,11 @@
 
       .allBtnsWrapper .allBtns .topBtnWrapper .topBtns {
         /* border: 1px solid #000; */
-        padding: 5px 0px;
-        min-width: 100px;
-        font-weight: 600;
+      display: flex;
+      flex-direction: column;
+        min-width: 85px;
+        font-weight: 500;
+        font-size: 12px;
         margin: 0px 10px;
         background-color:#083e5a;
         color: #fff;
@@ -117,7 +122,8 @@
         transition: all 0.3s ease;
       }
       .allBtnsWrapper .allBtns .topBtnWrapper .topBtns span {
-        font-weight: bold;
+        font-weight: 500;
+        font-size: 12px;
       }
       .allBtnsWrapper .allBtns .topBtnWrapper .activeTopBarTitleBtn {
         background-color: #fe9037;
@@ -151,16 +157,16 @@
         padding: 10px;
       }
       .ProductDetailsWrapper .details .title {
-        padding: 10px 0px;
+        padding: 0px 0px;
         text-align: center;
       }
       .ProductDetailsWrapper .details .title h3 {
         display: inline-block;
-        border-bottom: 2px solid #3abb69;
+        border-bottom: 2px solid #ef7d0b;
         color: #083e5a;
         font-weight: bold;
         padding-bottom: 5px;
-        font-size: 20px;
+        font-size: 17px;
       }
       .ProductDetailsWrapper table {
         max-width: 100%;
@@ -251,11 +257,11 @@
       }
       .addVenderWrapper .addVenderTitle h2 {
         display: inline-block;
-        border-bottom: 2px solid #3abb69;
+        border-bottom: 2px solid #ef7d0b;
         color: #7a7797;
         font-weight: bold;
         padding-bottom: 5px;
-        font-size: 20px;
+        font-size: 17px;
       }
       .addVenderWrapper .addVenderForm .formGroup {
         margin-bottom: 20px;
@@ -323,104 +329,74 @@
                   <div class="topBtns mb-3 mb-3 activeTopBarTitleBtn">
                     <div class="title">Dine-In</div>
                     <span>5</span>
+                    <span>2000</span>
                   </div>
                   <div class="topBtns mb-3">
                     <div class="title">Takeaway</div>
                     <span>6</span>
+                    <span>2000</span>
                   </div>
                   <div class="topBtns mb-3">
                     <div class="title">Delivery</div>
                     <span>4</span>
+                    <span>2000</span>
                   </div>
                   
                   <div class="topBtns mb-3">
                     <div class="title">Online</div>
                     <span>3</span>
+                    <span>3000</span>
                   </div>
                   <div class="topBtns mb-3">
                     <div class="title">Total</div>
                     <span>18</span>
+                    <span>10000</span>
+                  </div>
+                  <div class="topBtns mb-3">
+                    <div class="title">Event</div>
+                    <span>6</span>
+                    <span>20000</span>
                   </div>
                 
                 </div>
               </div>
               <div class="col-lg-6">
                 <h2 class="mt-2 mb-3">Payment Mode</h2>
-                <div class="topBtnWrapper">
-                  <div class="topBtns mb-3">
+                <div class="topBtnWrapper ">
+                  <div class="topBtns  mb-3">
                     <div class="title">Cash</div>
                     <span>2</span>
+                    <span>1000</span>
                   </div>
-                  <div class="topBtns mb-3">
+                  <div class="topBtns  mb-3">
                     <div class="title">Card</div>
                     <span>6</span>
+                    <span>3000</span>
                   </div>
-                  <div class="topBtns mb-3">
+                  <div class="topBtns  mb-3">
                     <div class="title">UPI</div>
                     <span>4</span>
+                    <span>4000</span>
                   </div>
-                  <div class="topBtns mb-3">
+                  <div class="topBtns  mb-3">
                     <div class="title">Waive Off</div>
                     <span>3</span>
+                    <span>5000</span>
                   </div>
                   <div class="topBtns mb-3">
                     <div class="title">Discount</div>
                     <span>1</span>
+                    <span>1000</span>
+                  </div>
+                  <div class="topBtns  mb-3">
+                    <div class="title">Membership</div>
+                    <span>6</span>
+                    <span>20000</span>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6">
-                <h2 class="mt-2 mb-3">Event</h2>
-                <div class="topBtnWrapper">
-                  <div class="topBtns mb-3 mb-3">
-                    <div class="title">Dine-In </div>
-                    <span>5000</span>
-                   
-                  </div>
-                  
-                  <div class="topBtns mb-3">
-                    <div class="title">Takeaway</div>
-                    <span>6000</span>
-                  </div>
-                  <div class="topBtns mb-3">
-                    <div class="title">Delivery</div>
-                    <span>4000</span>
-                  </div>
-                  <div class="topBtns mb-3">
-                    <div class="title">Online</div>
-                    <span>30000</span>
-                  </div>
-                  <div class="topBtns mb-3">
-                    <div class="title">Total</div>
-                    <span>1800</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <h2 class="mt-2 mb-3">Membership</h2>
-                <div class="topBtnWrapper">
-                  <div class="topBtns mb-3">
-                    <div class="title">Cash</div>
-                    <span>2000</span>
-                  </div>
-                  <div class="topBtns mb-3">
-                    <div class="title">Card</div>
-                    <span>600</span>
-                  </div>
-                  <div class="topBtns mb-3">
-                    <div class="title">UPI</div>
-                    <span>4000</span>
-                  </div>
-                  <div class="topBtns mb-3">
-                    <div class="title">Waive Off</div>
-                    <span>3000</span>
-                  </div>
-                  <div class="topBtns mb-3">
-                    <div class="title">Discount</div>
-                    <span>100</span>
-                  </div>
-                </div>
-              </div>
+            
+           
             </div>
           </div>
         </div>

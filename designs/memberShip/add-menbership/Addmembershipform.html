@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-  <title>Document</title>
+  <title>Add membershipform</title>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
@@ -182,7 +182,7 @@
     .openmodel {
       border-radius: 10px;
       height: 200px;
-      padding: 0px 10px;
+      padding: 0px 3px;
       width: 25%;
       background-color: #fff;
     }
@@ -223,32 +223,44 @@
       font-size: 14px;
       font-weight: 500;
     }
+
     .mamebershipformtotalamount {
-                      display: flex;
-                      gap: 2px;
-                      width: 105%
-                    }
+      display: flex;
+      gap: 2px;
+      width: 105%
+    }
 
-                    .Membershipformrightside {
-                      flex: none;
-                      color: #7a7797;
-                      font-size: 14px;
-                      margin-left: 65px;
-                    }
+    .Membershipformrightside {
+      flex: none;
+      color: #7a7797;
+      font-size: 14px;
+      margin-left: 65px;
+    }
 
-                    .membershipformremovetax {
-                      display: flex;
-                      gap: 10px;
-                      justify-content: right;
-                      margin-right: 3px;
-                    }
+    .membershipformremovetax {
+      display: flex;
+      gap: 10px;
+      justify-content: right;
+      margin-right: 3px;
+    }
 
-                    .taxtgst {
-                      display: flex;
-                      align-items: center;
-                      justify-content: right;
-                      margin-top: 15px;
-                    }
+    .taxtgst {
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      margin-top: 15px;
+    }
+
+    .closeicon {
+      height: 27px;
+      width: 27px;
+      text-align: center;
+      border: 3px solid;
+      border-radius: 50%;
+      font-size: 20px;
+
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -552,7 +564,7 @@
 
                     </div>
                   </div>
-                 
+
                   <div class="col-md-4">
                     <div class="row justify-contenr-right mt-3 Membershipformrightside" style="   margin-left: 65px;">
                       <div class="col-md-12 mt-2">
@@ -711,10 +723,11 @@
   <div class="popmodel">
     <div class="popmodelopen">
       <div class="openmodel">
-        <div class="closebtnicon"><i class="fa fa-close closeicon" style="font-size:21px; cursor: pointer;"></i></div>
+
+        <div class="closebtnicon mt-1"><i class="fa fa-close closeicon"></i></div>
 
         <div class="row justify-content-center mt-3">
-          <div class="col-md-12 mt-3">
+          <div class="col-md-12 mt-3" style="    padding: 2px 20px;">
             <label for="" class="noLabel" style="font-size: 15px;"> Payment Mode</label>
             <div class="djdecoration">
               <div> <input class="form-check-input  coupon_question" type="radio" id="" name="coupon_question1"
@@ -741,7 +754,8 @@
               </div>
             </div>
             <div class="row justify-content-center mt-4">
-              <div class="col-md-4  text-center"><button class="btn btn-primary ">Submit</button></div>
+              <div class="col-md-4  text-center"><button class="btn btn-primary " style="    padding: 2px 14px;
+                font-size: 12px; background-color: #083e5a;">Submit</button></div>
             </div>
 
 
