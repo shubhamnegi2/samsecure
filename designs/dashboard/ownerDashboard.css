@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  font-size: 14px;
+}
+
+body {
+  background-color: #eee !important;
+}
+
+.shrink {
+  transition: all 0.3s ease;
+  width: 5% !important;
+}
+
+.leftSec {
+  transition: all 0.3s ease;
+  width: 20%;
+  min-height: 100vh;
+}
+.leftSec .topSec {
+  height: 50px;
+  padding: 5px 0px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #fff;
+}
+.leftSec .topSec h1 {
+  font-size: 18px;
+  margin-bottom: 0px;
+  font-weight: 900;
+}
+.leftSec .topSec h1 span {
+  color: #ab93e1;
+}
+.leftSec .topSec .minimizeIconBtn {
+  cursor: pointer;
+}
+.leftSec .topSec .minimizeIconBtn i {
+  padding: 5px;
+  font-size: 20px;
+}
+.leftSec .leftMain {
+  background-color: #2f363e;
+  padding: 0px 10px 15px 15px;
+}
+.leftSec .leftMain .listCard {
+  padding-top: 10px;
+}
+.leftSec .leftMain .listCard:first-child {
+  padding-top: 15px;
+}
+.leftSec .leftMain .listCard .color1 {
+  color: #ab93e1;
+}
+.leftSec .leftMain .listCard .color2 {
+  color: #ea6f5f;
+}
+.leftSec .leftMain .listCard .color3 {
+  color: #f4c85f;
+}
+.leftSec .leftMain .listCard .color4 {
+  color: #aba6a6;
+}
+.leftSec .leftMain .listCard h2 {
+  color: #aba6a6;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.leftSec .leftMain .listCard ul {
+  padding-left: 0px;
+  margin-bottom: 0px;
+  color: #fff;
+}
+.leftSec .leftMain .listCard ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.leftSec .leftMain .listCard ul li .deepSidebarMenuBtn {
+  cursor: pointer;
+  padding: 5px;
+}
+.leftSec .leftMain .listCard ul li button {
+  background-color: #ab93e1;
+  color: #fff;
+  font-size: 10px;
+  height: 14px;
+  outline: 0;
+  border: 0;
+  box-shadow: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.leftSec .leftMain .listCard ul a {
+  color: #e7ebf0;
+  text-decoration: none;
+  padding: 8px 0px;
+}
+.leftSec .leftMain .listCard ul a i {
+  color: #e7ebf0;
+  margin-right: 10px;
+}
+
+.rightSec {
+  width: 100%;
+  min-height: 100vh;
+}
+.rightSec header {
+  height: 50px;
+  padding: 5px 0px;
+  display: flex;
+  background-color: #fff;
+  justify-content: space-between;
+}
+.rightSec header .topLeft {
+  display: flex;
+  align-items: center;
+}
+.rightSec header .topLeft .icons i {
+  margin: 0px 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.rightSec header .topLeft .searchBox {
+  margin-left: 10px;
+}
+.rightSec header .topLeft .searchBox input {
+  padding-left: 10px;
+  font-size: 14px;
+  border-radius: 20px;
+}
+.rightSec header .TopRight {
+  display: flex;
+  align-items: center;
+}
+.rightSec header .TopRight > i {
+  margin-right: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.rightSec header .TopRight .countryFleg {
+  display: flex;
+  align-items: center;
+  margin: 0px 20px;
+}
+.rightSec header .TopRight .countryFleg .dropDownIcon {
+  margin-left: 10px;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.rightSec header .TopRight .countryFleg img {
+  width: 20px;
+  height: 15px;
+  margin-right: 8px;
+}
+.rightSec header .TopRight .profileWrapper {
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+}
+.rightSec header .TopRight .profileWrapper img {
+  width: 30px;
+  border-radius: 50%;
+}
+.rightSec header .TopRight .profileWrapper .userName {
+  margin: 0px 10px;
+}
+.rightSec header .TopRight .profileWrapper i {
+  padding: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  cursor: pointer;
+}
+.rightSec nav {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  background-color: #fafafa;
+}
+.rightSec nav .breadcurmsMenu ul {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+  padding-left: 15px;
+}
+.rightSec nav .breadcurmsMenu ul li {
+  margin: 0px 5px;
+}
+.rightSec nav .breadcurmsMenu ul li:first-child a {
+  font-weight: 500;
+  font-size: 18px;
+}
+.rightSec nav .breadcurmsMenu ul li i {
+  margin-left: 5px;
+  color: #ab93e1;
+}
+.rightSec nav .breadcurmsMenu ul li a {
+  text-decoration: none;
+  color: #ab93e1;
+}
+.rightSec nav .breadcurmsMenu ul li a i {
+  margin-left: 5px;
+  color: #ab93e1;
+}
+.rightSec nav .filters {
+  display: flex;
+  align-items: center;
+  color: #ab93e1;
+}
+.rightSec nav .filters span {
+  margin-right: 10px;
+  text-transform: capitalize;
+}
+.rightSec nav .filters select {
+  border: 1px solid #aba6a6;
+  height: 25px;
+  border-radius: 3px;
+  background-color: #eee;
+  color: #000;
+}
+.rightSec nav .filters .exitIcon {
+  cursor: pointer;
+  margin: 0px 15px;
+  position: relative;
+}
+.rightSec nav .filters .exitIcon .notification {
+  position: absolute;
+  right: -18px;
+  top: -8px;
+  background-color: #ea6f5f;
+  color: #e7ebf0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 10px;
+  align-items: center;
+}
+.rightSec nav .filters .exitIcon i {
+  font-size: 20px;
+}
+
+.allOutletWrapper .outletCard1 {
+  background-color: #ab93e1;
+}
+.allOutletWrapper .outletCard2 {
+  background-color: #ea6f5f;
+}
+.allOutletWrapper .outletCard3 {
+  background-color: #f4c85f;
+}
+.allOutletWrapper .outletCard4 {
+  background-color: #2f363e;
+}
+.allOutletWrapper .outletCard {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.allOutletWrapper .outletCard h4 {
+  font-size: 18px;
+}
+.allOutletWrapper .outletCard i {
+  width: 20px;
+  height: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.allOutletWrapper .outletCard .descreseSale {
+  background-color: red;
+}
+.allOutletWrapper .outletCard .increseSale {
+  background-color: green;
+}
+.allOutletWrapper .outletCard img {
+  width: 50px;
+  height: 50px;
+  opacity: 0.6;
+  border-radius: 4px;
+}
+
+.dataPanel {
+  background-color: #fff;
+}
+.dataPanel .topBarSec {
+  background-color: #fafafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.dataPanel .topBarSec h4 {
+  font-size: 16px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  text-transform: capitalize;
+  color: #ab93e1;
+}
+.dataPanel .topBarSec .menuIcon i {
+  cursor: pointer;
+  padding: 5px;
+}
+.dataPanel .chartSec .topBar,
+.dataPanel .topRef .topBar,
+.dataPanel .trafficSource .topBar {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0.95px 1.6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+.dataPanel .chartSec .topBar h4,
+.dataPanel .topRef .topBar h4,
+.dataPanel .trafficSource .topBar h4 {
+  font-size: 14px;
+  margin-bottom: 0px;
+  text-transform: capitalize;
+  color: #2f363e;
+  font-weight: 500;
+}
+.dataPanel .chartSec .topBar span,
+.dataPanel .topRef .topBar span,
+.dataPanel .trafficSource .topBar span {
+  font-size: 14px;
+  color: #ab93e1;
+}
+.dataPanel .chartSec ul,
+.dataPanel .topRef ul,
+.dataPanel .trafficSource ul {
+  list-style: disc;
+  padding: 0px 10px;
+}
+.dataPanel .chartSec ul li,
+.dataPanel .topRef ul li,
+.dataPanel .trafficSource ul li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 5px 0px;
+}
+.dataPanel .chartSec ul li i,
+.dataPanel .topRef ul li i,
+.dataPanel .trafficSource ul li i {
+  font-size: 8px;
+  color: #ab93e1;
+}
+.dataPanel .chartSec ul li span,
+.dataPanel .topRef ul li span,
+.dataPanel .trafficSource ul li span {
+  color: #000;
+  font-weight: 500;
+}
+.dataPanel .chartSec ul li span:first-child,
+.dataPanel .topRef ul li span:first-child,
+.dataPanel .trafficSource ul li span:first-child {
+  color: #aba6a6;
+}
+.dataPanel .chartSec ul li img,
+.dataPanel .topRef ul li img,
+.dataPanel .trafficSource ul li img {
+  width: 20px;
+  height: 15px;
+  margin-right: 10px;
+}/*# sourceMappingURL=ownerDashboard.css.map */
