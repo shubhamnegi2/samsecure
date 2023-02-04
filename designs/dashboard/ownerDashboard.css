@@ -383,4 +383,45 @@ body {
   width: 20px;
   height: 15px;
   margin-right: 10px;
+}
+
+.dataPanel2 .consuption {
+  background-color: #fff;
+}
+.dataPanel2 .consuption .topBbar {
+  background-color: #fafafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.dataPanel2 .consuption .topBbar h4 {
+  font-size: 16px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  text-transform: capitalize;
+  color: #ab93e1;
+}
+.dataPanel2 .consuption .topBbar i {
+  cursor: pointer;
+  padding: 5px;
+}
+.dataPanel2 .consuption .middleSec span {
+  background-color: #ab93e1;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+.dataPanel2 .consuption .middleSec div:last-child {
+  margin-right: 10px;
+}
+.dataPanel2 .chartsWrapper {
+  height: 200px;
+}
+.dataPanel2 .chartsWrapper .myPiChart {
+  width: 33%;
 }/*# sourceMappingURL=ownerDashboard.css.map */

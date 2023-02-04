@@ -6,7 +6,6 @@
     font-size: 14px;
 }
 
-
 $color1: #ab93e1;
 $color2: #ea6f5f;
 $color3: #f4c85f;
@@ -375,23 +374,69 @@ body {
                 justify-content: space-between;
                 border-bottom: 1px solid #eee;
                 padding: 5px 0px;
-                i{
+                i {
                     font-size: 8px;
                     color: $color1;
                 }
-                span{
+                span {
                     color: $black;
                     font-weight: 500;
                 }
-                span:first-child{
+                span:first-child {
                     color: $fontColor2;
                 }
-                img{
+                img {
                     width: 20px;
                     height: 15px;
                     margin-right: 10px;
                 }
             }
+        }
+    }
+}
+.dataPanel2 {
+    .consuption {
+        background-color: #fff;
+        .topBbar {
+            background-color: #fafafa;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 10px;
+            box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
+            h4 {
+                font-size: 16px;
+                padding-bottom: 0px;
+                margin-bottom: 0px;
+                text-transform: capitalize;
+                color: #ab93e1;
+            }
+            i {
+                cursor: pointer;
+                padding: 5px;
+            }
+        }
+        .middleSec {
+            span {
+                background-color: $color1;
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                margin-left: 15px;
+                margin-right: 5px;
+            }
+            div {
+                &:last-child {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    .chartsWrapper {
+        height: 200px;
+        .myPiChart {
+            width: 33%;
         }
     }
 }
