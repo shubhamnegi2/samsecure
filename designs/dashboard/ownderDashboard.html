@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Owner Dashboard</title>
     <link rel="stylesheet" href="./ownerDashboard.css" />
+    <style>
+      #chartdiv {
+        width: 50%;
+        height: 500px;
+      }
+    </style>
   </head>
   <body>
     <div class="d-flex">
@@ -408,16 +414,12 @@
                     <h4>Consumption</h4>
                     <i class="fa-solid fa-bars"></i>
                   </div>
-                  <div class="middleSec mt-2 d-flex justify-content-end align-items-center">
-                    <div>
-                      <span></span>abc
-                    </div>
-                    <div>
-                      <span></span>xyz
-                    </div>
-                    <div>
-                      <span></span>pqr
-                    </div>
+                  <div
+                    class="middleSec mt-2 d-flex justify-content-end align-items-center"
+                  >
+                    <div><span></span>abc</div>
+                    <div><span></span>xyz</div>
+                    <div><span></span>pqr</div>
                   </div>
                   <div class="chartsWrapper d-flex">
                     <div class="piChart1 myPiChart"></div>
@@ -426,6 +428,67 @@
                   </div>
                 </div>
               </div>
+              <div class="col-lg-4">
+                <div class="consuption2">
+                  <div class="topBar d-flex justify-content-between">
+                    <h4>Lorem, ipsum.</h4>
+                    <i class="fa-solid fa-bars"></i>
+                  </div>
+                  <div id="piCarts1"></div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="consuption3">
+                  <div class="topBar">
+                    <h4>lorem</h4>
+                    <i class="fa-solid fa-bars"></i>
+                  </div>
+                  <div class="inputGroup d-flex">
+                    <input type="text" placeholder="Add More" />
+                    <div
+                      class="plusBtn d-flex justify-content-center align-items-center"
+                    >
+                      <i class="fa-solid fa-plus"></i>
+                    </div>
+                  </div>
+                  <ul class="list-unstyled">
+                    <li>
+                      <span><span class="dot dot1"></span> Facebook</span> 24%
+                    </li>
+                    <li>
+                      <span><span class="dot dot2"></span> Twitter</span> 41%
+                    </li>
+                    <li>
+                      <span><span class="dot dot3"></span> Linkedin</span> 28%
+                    </li>
+                    <li>
+                      <span><span class="dot dot4"></span> Facebook</span> 24%
+                    </li>
+                    <li>
+                      <span><span class="dot dot5"></span> Twitter</span> 41%
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container mt-4">
+          <div class="dataPanel3">
+            <div class="row">
+              <div class="col-lg-5">
+                <div class="topBbar d-flex justify-content-between">
+                  <h4>Consumption</h4>
+                  <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="leftSec">
+                  <div id="chartdiv"></div>
+                </div>
+                <div class="rightSec"></div>
+              </div>
+              <div class="col-lg-4"></div>
+              <div class="col-lg-pull-3"></div>
             </div>
           </div>
         </div>
@@ -446,7 +509,11 @@
       type="text/javascript"
       src="https://www.gstatic.com/charts/loader.js"
     ></script>
-<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
     <script src="./ownerDashboard.js"></script>
   </body>
 </html>

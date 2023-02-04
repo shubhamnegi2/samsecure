@@ -28,6 +28,7 @@ body {
     transition: all 0.3s ease;
     width: 20%;
     min-height: 100vh;
+    // height: 100%;
     .topSec {
         height: 50px;
         padding: 5px 0px;
@@ -54,6 +55,7 @@ body {
     .leftMain {
         background-color: $color4;
         padding: 0px 10px 15px 15px;
+        height: 100%;
         .listCard {
             &:first-child {
                 padding-top: 15px;
@@ -438,5 +440,123 @@ body {
         .myPiChart {
             width: 33%;
         }
+    }
+    .consuption2 {
+        background-color: #fff;
+        .topBar {
+            background-color: #fafafa;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 10px;
+            box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
+            h4 {
+                font-size: 16px;
+                padding-bottom: 0px;
+                margin-bottom: 0px;
+                text-transform: capitalize;
+                color: #ab93e1;
+            }
+            i {
+                cursor: pointer;
+                padding: 5px;
+            }
+        }
+    }
+    .consuption3 {
+        background-color: #fff;
+        .topBar {
+            background-color: #fafafa;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 10px;
+            box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
+            h4 {
+                font-size: 16px;
+                padding-bottom: 0px;
+                margin-bottom: 0px;
+                text-transform: capitalize;
+                color: #ab93e1;
+            }
+            i {
+                cursor: pointer;
+                padding: 5px;
+            }
+        }
+        .inputGroup{
+            input{
+                width: 85%;
+                padding-left: 10px;
+                outline: none;
+                border: 1px solid #eee;
+                border-radius: 5px;
+                font-size: 14px;
+                height: 32px;
+            }
+            .plusBtn{
+                width: 15%;
+                cursor: pointer;
+                background-color: $color1;
+                i{
+                    color: #fff;
+                }
+            }
+        }
+        ul {
+            padding: 0px 5px;
+            li {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid #eee;
+                padding: 5px 0px;
+                span{
+                    color: #aba6a6;
+                }
+                .dot {
+                    width: 8px;
+                    height: 8px;
+                    background-color: $color4;
+                    display: inline-block;
+                    border-radius: 50%;
+                }
+                .dot2{
+                    background-color: $color1;
+                }
+                .dot3{
+                    background-color: $color2;
+                }
+                .dot4{
+                    background-color: $color3;
+                }
+                .dot5{
+                    background-color: $color4;
+                }
+            }
+        }
+    }
+}
+.dataPanel3{
+    .topBbar {
+        background-color: #fafafa;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 10px;
+        box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
+        h4 {
+            font-size: 16px;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            text-transform: capitalize;
+            color: #ab93e1;
+        }
+        i {
+            cursor: pointer;
+            padding: 5px;
+        }
+    }
+    .leftSec{
+        
     }
 }

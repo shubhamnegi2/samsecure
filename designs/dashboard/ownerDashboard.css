@@ -46,6 +46,7 @@ body {
 .leftSec .leftMain {
   background-color: #2f363e;
   padding: 0px 10px 15px 15px;
+  height: 100%;
 }
 .leftSec .leftMain .listCard {
   padding-top: 10px;
@@ -424,4 +425,116 @@ body {
 }
 .dataPanel2 .chartsWrapper .myPiChart {
   width: 33%;
+}
+.dataPanel2 .consuption2 {
+  background-color: #fff;
+}
+.dataPanel2 .consuption2 .topBar {
+  background-color: #fafafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.dataPanel2 .consuption2 .topBar h4 {
+  font-size: 16px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  text-transform: capitalize;
+  color: #ab93e1;
+}
+.dataPanel2 .consuption2 .topBar i {
+  cursor: pointer;
+  padding: 5px;
+}
+.dataPanel2 .consuption3 {
+  background-color: #fff;
+}
+.dataPanel2 .consuption3 .topBar {
+  background-color: #fafafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.dataPanel2 .consuption3 .topBar h4 {
+  font-size: 16px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  text-transform: capitalize;
+  color: #ab93e1;
+}
+.dataPanel2 .consuption3 .topBar i {
+  cursor: pointer;
+  padding: 5px;
+}
+.dataPanel2 .consuption3 .inputGroup input {
+  width: 85%;
+  padding-left: 10px;
+  outline: none;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  font-size: 14px;
+  height: 32px;
+}
+.dataPanel2 .consuption3 .inputGroup .plusBtn {
+  width: 15%;
+  cursor: pointer;
+  background-color: #ab93e1;
+}
+.dataPanel2 .consuption3 .inputGroup .plusBtn i {
+  color: #fff;
+}
+.dataPanel2 .consuption3 ul {
+  padding: 0px 5px;
+}
+.dataPanel2 .consuption3 ul li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 5px 0px;
+}
+.dataPanel2 .consuption3 ul li span {
+  color: #aba6a6;
+}
+.dataPanel2 .consuption3 ul li .dot {
+  width: 8px;
+  height: 8px;
+  background-color: #2f363e;
+  display: inline-block;
+  border-radius: 50%;
+}
+.dataPanel2 .consuption3 ul li .dot2 {
+  background-color: #ab93e1;
+}
+.dataPanel2 .consuption3 ul li .dot3 {
+  background-color: #ea6f5f;
+}
+.dataPanel2 .consuption3 ul li .dot4 {
+  background-color: #f4c85f;
+}
+.dataPanel2 .consuption3 ul li .dot5 {
+  background-color: #2f363e;
+}
+
+.dataPanel3 .topBbar {
+  background-color: #fafafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.dataPanel3 .topBbar h4 {
+  font-size: 16px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  text-transform: capitalize;
+  color: #ab93e1;
+}
+.dataPanel3 .topBbar i {
+  cursor: pointer;
+  padding: 5px;
 }/*# sourceMappingURL=ownerDashboard.css.map */
