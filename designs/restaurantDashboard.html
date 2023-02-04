@@ -1,1189 +1,1148 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Restaurant Dashboard</title>
-</head>
-<style>
+  </head>
+  <style>
     :root {
-        --pink: #f9eed7;
-        --blue: #eae1fb;
-        --dark-pink: #fbdde1;
-        --green: #C9F7FA;
-        --yellow: #ffa800;
-
+      --pink: #f9eed7;
+      --blue: #eae1fb;
+      --dark-pink: #fbdde1;
+      --green: #c9f7fa;
+      --yellow: #ffa800;
     }
 
     body {
-        margin: 10px;
-        background-color: #f5f5f5;
+      margin: 10px;
+      background-color: #f5f5f5;
     }
 
     #Row1Graph {
-        /* background-color: red; */
-        height: 150px;
+      /* background-color: red; */
+      height: 150px;
     }
 
     .Row2Graph {
-        /* background-color: #3699ff; */
-        height: 150px;
+      /* background-color: #3699ff; */
+      height: 150px;
     }
-    .MainBackground2  .zindex{
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    .MainBackground2 .zindex {
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
     }
 
     .Row3Graph {
-        background-color: #212121;
-        height: 150px;
-        
+      background-color: #212121;
+      height: 150px;
     }
 
     .navBar {
-        position: fixed;
+      position: fixed;
     }
 
     .canvasjs-chart-toolbar,
     .canvasjs-chart-credit {
-        display: none;
+      display: none;
     }
 
     .zindex {
-        /* position: relative; */
-        /* margin-top: 40px; */
-        padding: 20px 20px;
-        /* z-index: 99; */
+      /* position: relative; */
+      /* margin-top: 40px; */
+      padding: 20px 20px;
+      /* z-index: 99; */
     }
 
     .iconwrapper i {
-        /* margin-top: 25px; */
-        font-size: 20px;
-        /* color: var(--green); */
-        /* height: 70px; */
+      /* margin-top: 25px; */
+      font-size: 20px;
+      /* color: var(--green); */
+      /* height: 70px; */
     }
 
     .MainBackground {
-        /* padding-bottom: 30px; */
-        border-radius: 4%;
-        border: transparent;
-        background-color: #fff;
+      /* padding-bottom: 30px; */
+      border-radius: 4%;
+      border: transparent;
+      background-color: #fff;
     }
 
     .MainBackground2 {
-        /* padding-bottom: 30px; */
-        border-radius: 4%;
-        border: transparent;
-        background-color: #f3f6f9;
+      /* padding-bottom: 30px; */
+      border-radius: 4%;
+      border: transparent;
+      background-color: #f3f6f9;
     }
 
     .MainBackground3 {
-        /* padding-bottom: 30px; */
-        border-radius: 4%;
-        border: transparent;
-        background-color: #e5eaee;
+      /* padding-bottom: 30px; */
+      border-radius: 4%;
+      border: transparent;
+      background-color: #e5eaee;
     }
 
     .borderStyle {
-        /* text-align: left; */
-        padding: 10px;
-        border-radius: 8%;
-        border: transparent;
+      /* text-align: left; */
+      padding: 10px;
+      border-radius: 8%;
+      border: transparent;
     }
 
     .bgcolor1 {
-        color: var(--yellow);
+      color: var(--yellow);
 
-        background-color: var(--pink);
+      background-color: var(--pink);
     }
 
     .bgcolor2 {
-        color: #8a50fc;
-        background-color: var(--blue);
+      color: #8a50fc;
+      background-color: var(--blue);
     }
 
     .bgcolor3 {
-        color: #f76674;
-        background-color: var(--dark-pink);
+      color: #f76674;
+      background-color: var(--dark-pink);
     }
 
     .bgcolor4 {
-        color: #1bc5bc;
-        background-color: var(--green);
+      color: #1bc5bc;
+      background-color: var(--green);
     }
 
     .bgcolor12 {
-        color: #1bc5bc;
+      color: #1bc5bc;
 
-        background-color: #fff;
+      background-color: #fff;
     }
 
     .bgcolor22 {
-        color: var(--yellow);
+      color: var(--yellow);
 
-        background-color: #fff;
-
+      background-color: #fff;
     }
 
     .bgcolor32 {
-        color: #f76674;
-        background-color: #fff;
-
+      color: #f76674;
+      background-color: #fff;
     }
 
     .bgcolor42 {
-        color: #1bc5bc;
-        background-color: #fff;
-
+      color: #1bc5bc;
+      background-color: #fff;
     }
 
-
     .bgcolor13 {
-        /* color: #1bc5bc; */
+      /* color: #1bc5bc; */
 
-        background-color: #fff;
+      background-color: #fff;
     }
 
     .bgcolor23 {
-        /* color: var(--yellow); */
+      /* color: var(--yellow); */
 
-        background-color: #fff;
-
+      background-color: #fff;
     }
 
     .bgcolor33 {
-        /* color: #f76674; */
-        background-color: #fff;
-
+      /* color: #f76674; */
+      background-color: #fff;
     }
 
     .bgcolor43 {
-        /* color: #1bc5bc; */
-        background-color: #fff;
+      /* color: #1bc5bc; */
+      background-color: #fff;
+    }
+    .otherOptions {
+      padding: 8px 10px;
+      color: #fff;
 
+      background-color: red;
     }
-    .otherOptions{
-        padding: 8px 10px;
-        color: #fff;
+    .otherOptions2 {
+      padding: 8px 10px;
+      color: #fff;
+      background-color: blue;
+    }
+    .otherOptions3 {
+      padding: 8px 10px;
+      color: #fff;
 
-        background-color: red;
+      background-color: #000;
     }
-    .otherOptions2{
-        padding: 8px 10px;
-        color: #fff;
-        background-color: blue;
+    .otherOptions select,
+    .otherOptions2 select,
+    .otherOptions3 select {
+      border: transparent;
+      color: #fff;
+      border-radius: 10%;
+      background-color: transparent;
     }
-    .otherOptions3{
-        padding: 8px 10px;
-        color: #fff;
-
-        background-color: #000;
+    .resize {
+      height: 200px;
+      border-radius: 10%;
     }
-    .otherOptions select,.otherOptions2 select,.otherOptions3 select {
-        border: transparent;
-        color: #fff;
-        border-radius: 10%;
-        background-color:  transparent;
-    }
-    .resize{
-        height: 200px;
-        border-radius: 10%;
-    }
-    .resize2{
-        height: 200px;
-        border-radius: 10%;
-    }
-    
-    .resize3{
-        height: 200px;
-        border-radius: 10%;
-    }
-    .spline{
-        height: 160px;
-        border-radius: 10%;
-    }
-    .otherOptionsgraph{
-        padding: 8px 10px;
-        color: #fff;
-        background-color: #1dd0c8;
-    }
-    .otherOptionsgraph2
-    {
-        padding: 8px 10px;
-        color: #fff;
-        background-color: hsl(260deg 92% 69%);
-    }
-    .otherOptionsgraph3
-    {
-        padding: 8px 10px;
-        color: #fff;
-        background-color: hsl(260deg 92% 69%);
+    .resize2 {
+      height: 200px;
+      border-radius: 10%;
     }
 
-    .SaleProgress{
-        background-color: #fff;
-        /* position: absolute; */
-        /* margin-top: 0; */
-       
-        /* z-index: 999; */
-        padding: 20px 20px;
-        /* border-radius: 10%; */
+    .resize3 {
+      height: 200px;
+      border-radius: 10%;
+    }
+    .spline {
+      height: 160px;
+      border-radius: 10%;
+    }
+    .otherOptionsgraph {
+      padding: 8px 10px;
+      color: #fff;
+      background-color: #1dd0c8;
+    }
+    .otherOptionsgraph2 {
+      padding: 8px 10px;
+      color: #fff;
+      background-color: hsl(260deg 92% 69%);
+    }
+    .otherOptionsgraph3 {
+      padding: 8px 10px;
+      color: #fff;
+      background-color: hsl(260deg 92% 69%);
+    }
 
-    }
-    .KeenThemeTemplate{
-        background-color: #fff;
-        padding: 10px 20px;
-    }
-    progress{
-        color: #f76674;
-        width: 100%;
-    }
-    .DummyImages{
-        padding: 10px 10px;
+    .SaleProgress {
+      background-color: #fff;
+      /* position: absolute; */
+      /* margin-top: 0; */
 
+      /* z-index: 999; */
+      padding: 20px 20px;
+      /* border-radius: 10%; */
     }
-    .DummyImages img{
-        background-color: #f7ded4;
-        border-radius: 30%;
+    .KeenThemeTemplate {
+      background-color: #fff;
+      padding: 10px 20px;
     }
-    .DummyImages2{
-        padding: 10px 10px;
+    progress {
+      color: #f76674;
+      width: 100%;
+    }
+    .DummyImages {
+      padding: 10px 10px;
+    }
+    .DummyImages img {
+      background-color: #f7ded4;
+      border-radius: 30%;
+    }
+    .DummyImages2 {
+      padding: 10px 10px;
+    }
+    .DummyImages2 img {
+      background-color: #f7ded4;
+      border-radius: 30%;
+    }
+    .DummyImages3 {
+      padding: 10px 10px;
+    }
+    .DummyImages3 img {
+      background-color: #f7ded4;
+      border-radius: 30%;
+    }
+    .SalesProgress {
+      border-radius: 5%;
+      background-color: #fff;
+    }
+    .OtherSales {
+      font-weight: 700;
+      padding: 15px 25px;
+    }
+    .resizeee {
+      height: 200px;
+      border-radius: 10%;
+    }
+    .ReportButton {
+      /* padding: 25px 20px ; */
+      background-color: #0bb783;
+      border-radius: 10%;
+    }
+    .ReportButton button {
+      border: transparent;
+      background-color: none;
+      /* border-radius:10%; */
+      color: #fff;
+      padding: 3px 10px;
+      background-color: #0bb783;
+    }
+    .OutlinesDiv {
+      padding: 10px 10px;
+      font-size: 15px;
+    }
+    .buttonGenerate {
+      padding: 5px 3px;
+    }
+    .columnDesign {
+      padding: 10px 25px;
+    }
+    .weeklySale {
+      background-color: #fff;
+      padding: 13px 25px;
+      font-weight: bold;
+    }
+    .resizeable {
+      height: 250px;
+      border-radius: 10%;
+    }
+  </style>
 
-    }
-    .DummyImages2 img{
-        background-color: #f7ded4;
-        border-radius: 30%;
-    }
-    .DummyImages3{
-        padding: 10px 10px;
-
-    }
-    .DummyImages3 img{
-        background-color: #f7ded4;
-        border-radius: 30%;
-    }
-    .SalesProgress{
-        border-radius: 5%;
-        background-color: #fff
-    }
-    .OtherSales{
-        font-weight: 700;
-        padding: 15px 25px;
-    }
-    .resizeee{
-        height: 200px;
-        border-radius: 10%;
-    }
-    .ReportButton{
-        /* padding: 25px 20px ; */
-        background-color: #0bb783;
-        border-radius: 10%;
-    }
-    .ReportButton button{
-        border: transparent;
-        background-color: none;
-        /* border-radius:10%; */
-        color: #fff;
-        padding: 3px 10px;
-        background-color: #0bb783;
-    }
-    .OutlinesDiv{
-        padding: 10px 10px;
-        font-size: 15px;
-    }
-    .buttonGenerate{
-        padding: 5px 3px;
-
-    }
-    .columnDesign{
-        padding: 10px 25px;
-    }
-    .weeklySale{
-        background-color: #fff;
-        padding: 13px 25px;
-        font-weight: bold;
-    }
-    .resizeable{
-        height: 250px;
-        border-radius: 10%;
-    }
-</style>
-
-<body>
-
-
+  <body>
     <div class="container-fluid">
-
-        <div class="row">
-            <div class="col-md-4 ">
-                <div class=" MainBackground ">
-                    <div class="d-flex justify-content-between align-items-center otherOptions">
-                        <span>Sales stat</span>
-                        <select name="" id="">
-                            <option disabled selected>export</option>
-                            <option >dg</option>
-                            <option >gjd</option>
-                        </select>
-                    </div>
-                    <div id="Row1Graph" >
-                    </div>
-                    <div class="zindex">
-                        <div class="row justify-content-center">
-                            <div class="col-md-5">
-
-                                <div class="borderStyle bgcolor1  text-center">
-                                    <div><i class="fa-solid fa-chart-simple "></i></div>
-                                    <div class="">Weekly sale</div>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="borderStyle bgcolor2 text-center">
-                                    <div><i class="fa-solid fa-user-plus"></i></div>
-                                    <div>new users</div>
-                                </div>
-                            </div>
-                            <div></div>
-                            <div class="col-md-5">
-
-                                <div class="borderStyle bgcolor3 text-center mt-4">
-                                    <div><i class="fa-solid fa-solid fa-sitemap"></i></div>
-                                    <div>Items orders</div>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="borderStyle text-center bgcolor4 mt-4">
-                                    <div><i class="fa-sharp fa-solid fa-sitemap"></i></div>
-                                    <div>Bug reports</div>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="MainBackground">
+            <div
+              class="d-flex justify-content-between align-items-center otherOptions"
+            >
+              <span>Sales stat</span>
+              <select name="" id="">
+                <option disabled selected>export</option>
+                <option>dg</option>
+                <option>gjd</option>
+              </select>
             </div>
-            <div class="col-md-4 ">
-                <div class=" MainBackground2 ">
-                    <div class="d-flex justify-content-between align-items-center otherOptions2">
-                        <span>Sales stat</span>
-                        <select name="" id="">
-                            <option disabled selected>export</option>
-                            <option >dg</option>
-                            <option >gjd</option>
-                        </select>
-                    </div>
-                    <div class="Row2Graph">
-                        <div class="navBar row">
-                            <div class="col-md-4">sale</div>
-                            <div></div>
-                        </div>
-                    </div>
-                    <div class="zindex">
-                        <div class="row justify-content-center">
-                            <div class="col-md-5">
-
-                                <div class="borderStyle bgcolor12  text-center">
-                                    <div><i class="fa-solid fa-chart-simple "></i></div>
-                                    <div class="">Weekly sale</div>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="borderStyle bgcolor22 text-center">
-                                    <div><i class="fa-solid fa-user-plus"></i></div>
-                                    <div>new users</div>
-                                </div>
-                            </div>
-                            <div></div>
-                            <div class="col-md-5">
-
-                                <div class="borderStyle bgcolor32 text-center mt-4">
-                                    <div><i class="fa-solid fa-solid fa-sitemap"></i></div>
-                                    <div>Items orders</div>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="borderStyle text-center bgcolor42 mt-4">
-                                    <div><i class="fa-sharp fa-solid fa-sitemap"></i></div>
-                                    <div>Bug reports</div>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
+            <div id="Row1Graph"></div>
+            <div class="zindex">
+              <div class="row justify-content-center">
+                <div class="col-md-5">
+                  <div class="borderStyle bgcolor1 text-center">
+                    <div><i class="fa-solid fa-chart-simple"></i></div>
+                    <div class="">Weekly sale</div>
+                  </div>
                 </div>
-            </div>
-            <div class="col-md-4 ">
-                <div class=" MainBackground3 ">
-                    <div class="d-flex justify-content-between align-items-center otherOptions3">
-                        <span>Sales stat</span>
-                        <select name="" id="">
-                            <option disabled selected>export</option>
-                            <option >dg</option>
-                            <option >gjd</option>
-                        </select>
-                    </div>
-                    <div class="Row3Graph">
-                        <div class="navBar row">
-                            <div class="col-md-4">sale</div>
-                            <div></div>
-                        </div>
-                    </div>
-                    <div class="zindex">
-                        <div class="row justify-content-center">
-                            <div class="col-md-5">
-
-                                <div class="borderStyle bgcolor13  text-center">
-                                    <div><i class="fa-solid fa-chart-simple "></i></div>
-                                    <div class="">Weekly sale</div>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="borderStyle bgcolor23 text-center">
-                                    <div><i class="fa-solid fa-user-plus"></i></div>
-                                    <div>new users</div>
-                                </div>
-                            </div>
-                            <div></div>
-                            <div class="col-md-5">
-
-                                <div class="borderStyle bgcolor33 text-center mt-4">
-                                    <div><i class="fa-solid fa-solid fa-sitemap"></i></div>
-                                    <div>Items orders</div>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="borderStyle text-center bgcolor43 mt-4">
-                                    <div><i class="fa-sharp fa-solid fa-sitemap"></i></div>
-                                    <div>Bug reports</div>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
+                <div class="col-md-5">
+                  <div class="borderStyle bgcolor2 text-center">
+                    <div><i class="fa-solid fa-user-plus"></i></div>
+                    <div>new users</div>
+                  </div>
                 </div>
+                <div></div>
+                <div class="col-md-5">
+                  <div class="borderStyle bgcolor3 text-center mt-4">
+                    <div><i class="fa-solid fa-solid fa-sitemap"></i></div>
+                    <div>Items orders</div>
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <div class="borderStyle text-center bgcolor4 mt-4">
+                    <div><i class="fa-sharp fa-solid fa-sitemap"></i></div>
+                    <div>Bug reports</div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-
-        <div class="row mt-5">
-            
-            <div class="col-md-4">
-                <div class="contGraph">
-               
-              
-                    <div class="d-flex justify-content-between align-items-center otherOptionsgraph">
-                        <span>Sales Progress</span>
-                        <span class="">..</span>
-                    </div>
-               
-                    <div class="resize"></div>
-                    <div class="SaleProgress">
-                        <div class="row">
-                            <div class="col-md-6">
-
-                                <div class="borderStyle  ">
-                                    <div class="text-secondary">Average Sale</div>
-                                    <div class="">$650</div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="borderStyle ">
-                                    <div class="text-secondary">Comission</div>
-                                    <div>$29,004</div>
-                                </div>
-                            </div>
-                          
-                            <div class="col-md-6">
-
-                                <div class="borderStyle ">
-                                    <div class="text-secondary">Annual Taxes 2019</div>
-                                    <div>$233,600</div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="borderStyle ">
-                                    <div class="text-secondary">Annual Income</div>
-                                    <div>$233,600</div>
-                                </div>
-                               
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                   
-                </div>
-
-                </div>
-            <div class="col-md-4 ">
-                <div class="contGraph">
-               
-              
-                    <div class="d-flex justify-content-between align-items-center otherOptionsgraph2">
-                        <span>Sales Progress</span>
-                        <span class="">..</span>
-                    </div>
-               
-                    <div class="resize2"></div>
-                    <div class="SaleProgress">
-                        <div class="row">
-                            <div class="col-md-6">
-
-                                <div class="borderStyle  ">
-                                    <div class="text-secondary">Average Sale</div>
-                                    <div class="">$650</div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="borderStyle ">
-                                    <div class="text-secondary">Comission</div>
-                                    <div>$29,004</div>
-                                </div>
-                            </div>
-                          
-                            <div class="col-md-6">
-
-                                <div class="borderStyle ">
-                                    <div class="text-secondary">Annual Taxes 2019</div>
-                                    <div>$233,600</div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="borderStyle ">
-                                    <div class="text-secondary">Annual Income</div>
-                                    <div>$233,600</div>
-                                </div>
-                               
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                   
-                </div>
+        <div class="col-md-4">
+          <div class="MainBackground2">
+            <div
+              class="d-flex justify-content-between align-items-center otherOptions2"
+            >
+              <span>Sales stat</span>
+              <select name="" id="">
+                <option disabled selected>export</option>
+                <option>dg</option>
+                <option>gjd</option>
+              </select>
             </div>
-            <div class="col-md-4 ">
-                <div class="contGraph">
-               
-              
-                    <div class="d-flex justify-content-between align-items-center otherOptionsgraph3">
-                        <span>Sales Progress</span>
-                        <span class="">..</span>
-                    </div>
-               
-                    <div class="resize3"></div>
-                    <div class="SaleProgress">
-                        <div class="row">
-                            <div class="col-md-6">
-
-                                <div class="borderStyle  ">
-                                    <div class="text-secondary">Average Sale</div>
-                                    <div class="">$650</div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="borderStyle ">
-                                    <div class="text-secondary">Comission</div>
-                                    <div>$29,004</div>
-                                </div>
-                            </div>
-                          
-                            <div class="col-md-6">
-
-                                <div class="borderStyle ">
-                                    <div class="text-secondary">Annual Taxes 2019</div>
-                                    <div>$233,600</div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="borderStyle ">
-                                    <div class="text-secondary">Annual Income</div>
-                                    <div>$233,600</div>
-                                </div>
-                               
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                   
-                </div>
+            <div class="Row2Graph">
+              <div class="navBar row">
+                <div class="col-md-4">sale</div>
+                <div></div>
+              </div>
             </div>
+            <div class="zindex">
+              <div class="row justify-content-center">
+                <div class="col-md-5">
+                  <div class="borderStyle bgcolor12 text-center">
+                    <div><i class="fa-solid fa-chart-simple"></i></div>
+                    <div class="">Weekly sale</div>
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <div class="borderStyle bgcolor22 text-center">
+                    <div><i class="fa-solid fa-user-plus"></i></div>
+                    <div>new users</div>
+                  </div>
+                </div>
+                <div></div>
+                <div class="col-md-5">
+                  <div class="borderStyle bgcolor32 text-center mt-4">
+                    <div><i class="fa-solid fa-solid fa-sitemap"></i></div>
+                    <div>Items orders</div>
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <div class="borderStyle text-center bgcolor42 mt-4">
+                    <div><i class="fa-sharp fa-solid fa-sitemap"></i></div>
+                    <div>Bug reports</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-
-
-        <div class="row mt-5">
-        <div class="col-md-4 ">
-           <div class="KeenThemeTemplate">
-             <div>
-                <img src="https://cdn5.vectorstock.com/i/1000x1000/75/69/software-as-a-service-saas-technology-icon-logo-vector-34097569.jpg" alt="" width="100px" height="100px">
-                <span>Keen Theme Admin Template</span>
-                    <div class="text-center ">27 aug 2022</div>
-             </div>
-              
-                <div class="mt-4">
-                    <label for="file">Progress</label><br>
-                    <progress id="file" value="80" max="100"> 50% </progress>
-                </div>
-                <div class="mt-4">
-                    <span for="team">Team</span>
-                    <div class="DummyImages">
-                        <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="" width="50px" height="50px">
-                        <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="" width="50px" height="50px">
-                        <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="" width="50px" height="50px">
-                        <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="" width="50px" height="50px">
-                      
-                    </div>
-
-                </div>
+        <div class="col-md-4">
+          <div class="MainBackground3">
+            <div
+              class="d-flex justify-content-between align-items-center otherOptions3"
+            >
+              <span>Sales stat</span>
+              <select name="" id="">
+                <option disabled selected>export</option>
+                <option>dg</option>
+                <option>gjd</option>
+              </select>
             </div>
-        </div>
-        <div class="col-md-4 ">
-            <div class="KeenThemeTemplate">
-                <div>
-                    <img src="https://e1.pngegg.com/pngimages/385/348/png-clipart-flat-gradient-social-media-icons-kickstarter-green-and-white-letter-k-art.png" alt="" width="100px" height="100px">
-                    <span>Keen Theme Admin Template</span>
-                    <div  class="text-center ">27 aug 2022</div>
-                </div>
-                <div class="mt-4">
-                    <label for="file">Progress</label><br>
-                    <progress id="file" value="80" max="100"> 50% </progress>
-                    
-                </div>
-                <div class="mt-4">
-                    <span for="team">Team</span>
-                    <div class="DummyImages2">
-                        <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="" width="50px" height="50px">
-                        <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="" width="50px" height="50px">
-                        <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="" width="50px" height="50px">
-                      
-                    </div>
-
-                </div>
+            <div class="Row3Graph">
+              <div class="navBar row">
+                <div class="col-md-4">sale</div>
+                <div></div>
+              </div>
             </div>
-        </div>
-        <div class="col-md-4 ">
-            <div class="KeenThemeTemplate">
-                <div class="">
-                    <img src="https://static.vecteezy.com/system/resources/thumbnails/008/385/626/small/vimeo-social-media-logo-design-icon-symbol-illustration-free-vector.jpg" alt="" width="100px" height="100px">
-                    
-                    <span>Vimeo- Video Hosting Service</span><br>
-                    <div  class="text-center ">27 aug 2022</div>
+            <div class="zindex">
+              <div class="row justify-content-center">
+                <div class="col-md-5">
+                  <div class="borderStyle bgcolor13 text-center">
+                    <div><i class="fa-solid fa-chart-simple"></i></div>
+                    <div class="">Weekly sale</div>
+                  </div>
                 </div>
-                <div class="mt-4">
-                    <label for="file">Progress</label><br>
-                    <progress id="file" value="32" max="100"> 32% </progress>
+                <div class="col-md-5">
+                  <div class="borderStyle bgcolor23 text-center">
+                    <div><i class="fa-solid fa-user-plus"></i></div>
+                    <div>new users</div>
+                  </div>
                 </div>
-                <div class="mt-4">
-                    <span for="team">Team</span>
-                    <div class="DummyImages3">
-                        <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="" width="50px" height="50px">
-                        <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="" width="50px" height="50px">
-                        <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="" width="50px" height="50px">
-                      
-                    </div>
-
+                <div></div>
+                <div class="col-md-5">
+                  <div class="borderStyle bgcolor33 text-center mt-4">
+                    <div><i class="fa-solid fa-solid fa-sitemap"></i></div>
+                    <div>Items orders</div>
+                  </div>
                 </div>
+                <div class="col-md-5">
+                  <div class="borderStyle text-center bgcolor43 mt-4">
+                    <div><i class="fa-sharp fa-solid fa-sitemap"></i></div>
+                    <div>Bug reports</div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-      </div> 
-
-
-
-
-
+      </div>
 
       <div class="row mt-5">
         <div class="col-md-4">
-            <div class="SalesProgress">
-               
-              
-                <div class="d-flex justify-content-between align-items-center OtherSales ">
-                    <span>Sales Progress</span>
-                    <span class="">..</span>
-                </div>
-           
-             
-                <div class="SaleProgress">
-                    <div class="row">
-                        <div class="col-md-6">
-
-                            <div class="borderStyle  ">
-                                <div class="text-secondary">Average Sale</div>
-                                <div class="">$650</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="borderStyle ">
-                                <div class="text-secondary">Comission</div>
-                                <div>$29,004</div>
-                            </div>
-                        </div>
-                      
-                        <div class="col-md-6">
-
-                            <div class="borderStyle ">
-                                <div class="text-secondary">Annual Taxes 2019</div>
-                                <div>$233,600</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="borderStyle ">
-                                <div class="text-secondary">Annual Income</div>
-                                <div>$233,600</div>
-                            </div>
-                           
-                        </div>
-
-
-
-                    </div>
-                </div>
-                <div class="resizeee"></div>
+          <div class="contGraph">
+            <div
+              class="d-flex justify-content-between align-items-center otherOptionsgraph"
+            >
+              <span>Sales Progress</span>
+              <span class="">..</span>
             </div>
 
+            <div class="resize"></div>
+            <div class="SaleProgress">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="borderStyle">
+                    <div class="text-secondary">Average Sale</div>
+                    <div class="">$650</div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="borderStyle">
+                    <div class="text-secondary">Comission</div>
+                    <div>$29,004</div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="borderStyle">
+                    <div class="text-secondary">Annual Taxes 2019</div>
+                    <div>$233,600</div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="borderStyle">
+                    <div class="text-secondary">Annual Income</div>
+                    <div>$233,600</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="col-md-4">
-            <div class="SalesProgress">
-                <div class="d-flex justify-content-between align-items-center OtherSales ">
-                    <span>Sales Progress</span>
-                    <span class="">..</span>
+          <div class="contGraph">
+            <div
+              class="d-flex justify-content-between align-items-center otherOptionsgraph2"
+            >
+              <span>Sales Progress</span>
+              <span class="">..</span>
+            </div>
+
+            <div class="resize2"></div>
+            <div class="SaleProgress">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="borderStyle">
+                    <div class="text-secondary">Average Sale</div>
+                    <div class="">$650</div>
+                  </div>
                 </div>
-                <div>
-                    <img src="https://th.bing.com/th/id/OIP.IRI-svk4iv1qEl-ZtRXy4QHaDt?pid=ImgDet&rs=1" alt="" width="100%" height="235px">
-               </div>
-               <div class="OutlinesDiv">
-                Outlines keep you honest stop indulging create in poorly  thought driving
+                <div class="col-md-6">
+                  <div class="borderStyle">
+                    <div class="text-secondary">Comission</div>
+                    <div>$29,004</div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="borderStyle">
+                    <div class="text-secondary">Annual Taxes 2019</div>
+                    <div>$233,600</div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="borderStyle">
+                    <div class="text-secondary">Annual Income</div>
+                    <div>$233,600</div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="buttonGenerate row justify-content-center">
-            <div class="text-center ReportButton  col-md-10 mt-4 mb-4">
-                <button type="button" >Generate Report</button>
-            </div>
-        </div>
-            </div>
+          </div>
         </div>
         <div class="col-md-4">
-            <div class="SalesProgress">
-                <div class="d-flex justify-content-between align-items-center OtherSales ">
-                    <span>Trends</span>
-                    <span class="">..</span>
+          <div class="contGraph">
+            <div
+              class="d-flex justify-content-between align-items-center otherOptionsgraph3"
+            >
+              <span>Sales Progress</span>
+              <span class="">..</span>
+            </div>
+
+            <div class="resize3"></div>
+            <div class="SaleProgress">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="borderStyle">
+                    <div class="text-secondary">Average Sale</div>
+                    <div class="">$650</div>
+                  </div>
                 </div>
-                <div class="spline">
-                  
-               </div>
-               <div class="columnDesign">
-              <img src="https://th.bing.com/th/id/R.e717cf8fe71ea6db08bc258c808c0766?rik=ELHfCtPu7G%2blzA&riu=http%3a%2f%2flofrev.net%2fwp-content%2fphotos%2f2014%2f10%2fP-logo.jpg&ehk=H2QS%2fv1chTu2oxH1RtQmuKepRfqMBhNxBni%2fymx%2bKdc%3d&risl=&pid=ImgRaw&r=0" alt="" width="50px" height="50px">
-              <span>Top Authors</span>
-            
-              <span class="float-right bg-light">$787</span>
+                <div class="col-md-6">
+                  <div class="borderStyle">
+                    <div class="text-secondary">Comission</div>
+                    <div>$29,004</div>
+                  </div>
+                </div>
 
-            </div>
-            <div class="columnDesign">
-                <img src="https://cdn.dribbble.com/users/448097/screenshots/10852088/media/e6d3f89bf13555a67967b741b4cc5703.jpg" alt="" width="50px" height="50px">
-                <span>Top Authors</span>
-                
-                <span class="float-right bg-light">$787</span>
-  
+                <div class="col-md-6">
+                  <div class="borderStyle">
+                    <div class="text-secondary">Annual Taxes 2019</div>
+                    <div>$233,600</div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="borderStyle">
+                    <div class="text-secondary">Annual Income</div>
+                    <div>$233,600</div>
+                  </div>
+                </div>
               </div>
-              <div class="columnDesign">
-                <img src="https://th.bing.com/th/id/R.40807c27a506b6705cffadd3aa0452d4?rik=DMX4HevZVg9ihQ&riu=http%3a%2f%2fsweetclipart.com%2fmultisite%2fsweetclipart%2ffiles%2flogo_children_or_autism_puzzle_pieces_1.png&ehk=pbTPk54zm0A%2bsTBVSMEtY0Q3hWfkGjxAxun%2f2yzht9E%3d&risl=&pid=ImgRaw&r=0" alt="" width="50px" height="50px">
-                <span>Top Authors</span>
-               
-                <span class="float-right bg-light">$787</span>
-  
-              </div>
-            <div class="buttonGenerate">
-            
-        </div>
             </div>
+          </div>
         </div>
-
       </div>
 
-    <div class="row mt-5">
+      <div class="row mt-5">
         <div class="col-md-4">
-            <div class="weeklySale">
-                    <div class="">Weekly Sales Stats</div>
-                    <div class="">678,789 sales</div>
+          <div class="KeenThemeTemplate">
+            <div>
+              <img
+                src="https://cdn5.vectorstock.com/i/1000x1000/75/69/software-as-a-service-saas-technology-icon-logo-vector-34097569.jpg"
+                alt=""
+                width="100px"
+                height="100px"
+              />
+              <span>Keen Theme Admin Template</span>
+              <div class="text-center">27 aug 2022</div>
+            </div>
+
+            <div class="mt-4">
+              <label for="file">Progress</label><br />
+              <progress id="file" value="80" max="100">50%</progress>
+            </div>
+            <div class="mt-4">
+              <span for="team">Team</span>
+              <div class="DummyImages">
+                <img
+                  src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png"
+                  alt=""
+                  width="50px"
+                  height="50px"
+                />
+                <img
+                  src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png"
+                  alt=""
+                  width="50px"
+                  height="50px"
+                />
+                <img
+                  src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png"
+                  alt=""
+                  width="50px"
+                  height="50px"
+                />
+                <img
+                  src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png"
+                  alt=""
+                  width="50px"
+                  height="50px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="KeenThemeTemplate">
+            <div>
+              <img
+                src="https://e1.pngegg.com/pngimages/385/348/png-clipart-flat-gradient-social-media-icons-kickstarter-green-and-white-letter-k-art.png"
+                alt=""
+                width="100px"
+                height="100px"
+              />
+              <span>Keen Theme Admin Template</span>
+              <div class="text-center">27 aug 2022</div>
+            </div>
+            <div class="mt-4">
+              <label for="file">Progress</label><br />
+              <progress id="file" value="80" max="100">50%</progress>
+            </div>
+            <div class="mt-4">
+              <span for="team">Team</span>
+              <div class="DummyImages2">
+                <img
+                  src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png"
+                  alt=""
+                  width="50px"
+                  height="50px"
+                />
+                <img
+                  src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png"
+                  alt=""
+                  width="50px"
+                  height="50px"
+                />
+                <img
+                  src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png"
+                  alt=""
+                  width="50px"
+                  height="50px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="KeenThemeTemplate">
+            <div class="">
+              <img
+                src="https://static.vecteezy.com/system/resources/thumbnails/008/385/626/small/vimeo-social-media-logo-design-icon-symbol-illustration-free-vector.jpg"
+                alt=""
+                width="100px"
+                height="100px"
+              />
+
+              <span>Vimeo- Video Hosting Service</span><br />
+              <div class="text-center">27 aug 2022</div>
+            </div>
+            <div class="mt-4">
+              <label for="file">Progress</label><br />
+              <progress id="file" value="32" max="100">32%</progress>
+            </div>
+            <div class="mt-4">
+              <span for="team">Team</span>
+              <div class="DummyImages3">
+                <img
+                  src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png"
+                  alt=""
+                  width="50px"
+                  height="50px"
+                />
+                <img
+                  src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png"
+                  alt=""
+                  width="50px"
+                  height="50px"
+                />
+                <img
+                  src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png"
+                  alt=""
+                  width="50px"
+                  height="50px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-md-4">
+          <div class="SalesProgress">
+            <div
+              class="d-flex justify-content-between align-items-center OtherSales"
+            >
+              <span>Sales Progress</span>
+              <span class="">..</span>
+            </div>
+
+            <div class="SaleProgress">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="borderStyle">
+                    <div class="text-secondary">Average Sale</div>
+                    <div class="">$650</div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="borderStyle">
+                    <div class="text-secondary">Comission</div>
+                    <div>$29,004</div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="borderStyle">
+                    <div class="text-secondary">Annual Taxes 2019</div>
+                    <div>$233,600</div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="borderStyle">
+                    <div class="text-secondary">Annual Income</div>
+                    <div>$233,600</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="resizeee"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="SalesProgress">
+            <div
+              class="d-flex justify-content-between align-items-center OtherSales"
+            >
+              <span>Sales Progress</span>
+              <span class="">..</span>
             </div>
             <div>
-                <img src="https://i.stack.imgur.com/xkUlN.png" alt="" width="100%" height="250px">
-
+              <img
+                src="https://th.bing.com/th/id/OIP.IRI-svk4iv1qEl-ZtRXy4QHaDt?pid=ImgDet&rs=1"
+                alt=""
+                width="100%"
+                height="235px"
+              />
             </div>
-            <div class="SaleProgress">
-                <div class="row">
-                    <div class="col-md-6">
-
-                        <div class="borderStyle  ">
-                            <div class="text-secondary">Average Sale</div>
-                            <div class="">$650</div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="borderStyle ">
-                            <div class="text-secondary">Comission</div>
-                            <div>$29,004</div>
-                        </div>
-                    </div>
-                  
-                    <div class="col-md-6">
-
-                        <div class="borderStyle ">
-                            <div class="text-secondary">Annual Taxes 2019</div>
-                            <div>$233,600</div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="borderStyle ">
-                            <div class="text-secondary">Annual Income</div>
-                            <div>$233,600</div>
-                        </div>
-                       
-                    </div>
-
-
-
-                </div>
+            <div class="OutlinesDiv">
+              Outlines keep you honest stop indulging create in poorly thought
+              driving
             </div>
+            <div class="buttonGenerate row justify-content-center">
+              <div class="text-center ReportButton col-md-10 mt-4 mb-4">
+                <button type="button">Generate Report</button>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="col-md-4">
-            <div class="weeklySale">
-                <div class="">Weekly Sales Stats</div>
-                <div class="">678,789 sales</div>
+          <div class="SalesProgress">
+            <div
+              class="d-flex justify-content-between align-items-center OtherSales"
+            >
+              <span>Trends</span>
+              <span class="">..</span>
+            </div>
+            <div class="spline"></div>
+            <div class="columnDesign">
+              <img
+                src="https://th.bing.com/th/id/R.e717cf8fe71ea6db08bc258c808c0766?rik=ELHfCtPu7G%2blzA&riu=http%3a%2f%2flofrev.net%2fwp-content%2fphotos%2f2014%2f10%2fP-logo.jpg&ehk=H2QS%2fv1chTu2oxH1RtQmuKepRfqMBhNxBni%2fymx%2bKdc%3d&risl=&pid=ImgRaw&r=0"
+                alt=""
+                width="50px"
+                height="50px"
+              />
+              <span>Top Authors</span>
+
+              <span class="float-right bg-light">$787</span>
+            </div>
+            <div class="columnDesign">
+              <img
+                src="https://cdn.dribbble.com/users/448097/screenshots/10852088/media/e6d3f89bf13555a67967b741b4cc5703.jpg"
+                alt=""
+                width="50px"
+                height="50px"
+              />
+              <span>Top Authors</span>
+
+              <span class="float-right bg-light">$787</span>
+            </div>
+            <div class="columnDesign">
+              <img
+                src="https://th.bing.com/th/id/R.40807c27a506b6705cffadd3aa0452d4?rik=DMX4HevZVg9ihQ&riu=http%3a%2f%2fsweetclipart.com%2fmultisite%2fsweetclipart%2ffiles%2flogo_children_or_autism_puzzle_pieces_1.png&ehk=pbTPk54zm0A%2bsTBVSMEtY0Q3hWfkGjxAxun%2f2yzht9E%3d&risl=&pid=ImgRaw&r=0"
+                alt=""
+                width="50px"
+                height="50px"
+              />
+              <span>Top Authors</span>
+
+              <span class="float-right bg-light">$787</span>
+            </div>
+            <div class="buttonGenerate"></div>
+          </div>
         </div>
-        <div class="SaleProgress">
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-md-4">
+          <div class="weeklySale">
+            <div class="">Weekly Sales Stats</div>
+            <div class="">678,789 sales</div>
+          </div>
+          <div>
+            <img
+              src="https://i.stack.imgur.com/xkUlN.png"
+              alt=""
+              width="100%"
+              height="250px"
+            />
+          </div>
+          <div class="SaleProgress">
             <div class="row">
-                <div class="col-md-6">
-
-                    <div class="borderStyle  ">
-                        <div class="text-secondary">Average Sale</div>
-                        <div class="">$650</div>
-                    </div>
+              <div class="col-md-6">
+                <div class="borderStyle">
+                  <div class="text-secondary">Average Sale</div>
+                  <div class="">$650</div>
                 </div>
-                <div class="col-md-6">
-                    <div class="borderStyle ">
-                        <div class="text-secondary">Comission</div>
-                        <div>$29,004</div>
-                    </div>
+              </div>
+              <div class="col-md-6">
+                <div class="borderStyle">
+                  <div class="text-secondary">Comission</div>
+                  <div>$29,004</div>
                 </div>
-              
-                <div class="col-md-6">
+              </div>
 
-                    <div class="borderStyle ">
-                        <div class="text-secondary">Annual Taxes 2019</div>
-                        <div>$233,600</div>
-                    </div>
+              <div class="col-md-6">
+                <div class="borderStyle">
+                  <div class="text-secondary">Annual Taxes 2019</div>
+                  <div>$233,600</div>
                 </div>
-                <div class="col-md-6">
-                    <div class="borderStyle ">
-                        <div class="text-secondary">Annual Income</div>
-                        <div>$233,600</div>
-                    </div>
-                   
+              </div>
+              <div class="col-md-6">
+                <div class="borderStyle">
+                  <div class="text-secondary">Annual Income</div>
+                  <div>$233,600</div>
                 </div>
-
-
-
+              </div>
             </div>
-        </div>
-        <div class="resizeable"></div>
-        
+          </div>
         </div>
         <div class="col-md-4">
-            <div class="weeklySale">
-                <div class="">Weekly Sales Stats</div>
-                <div class="">678,789 sales</div>
-        </div>
-       
-        <div> <img src="https://th.bing.com/th/id/OIP.Ga6umAwfi5o-heJWf95DnAHaFP?pid=ImgDet&w=1123&h=794&rs=1" alt="" width="100%" height="200px"></div>
-        <div class="SaleProgress">
-           
+          <div class="weeklySale">
+            <div class="">Weekly Sales Stats</div>
+            <div class="">678,789 sales</div>
+          </div>
+          <div class="SaleProgress">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="borderStyle">
+                  <div class="text-secondary">Average Sale</div>
+                  <div class="">$650</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="borderStyle">
+                  <div class="text-secondary">Comission</div>
+                  <div>$29,004</div>
+                </div>
+              </div>
 
-                    <div class="borderStyle  ">
-                        <div class="text-secondary">Average Sale</div>
-                        <div class="">$650</div>
-                    </div>
-                
-                    <div class="borderStyle ">
-                        <div class="text-secondary">Comission</div>
-                        <div>$29,004</div>
-                    </div>
-                    
-                    <div class="borderStyle ">
-                        <div class="text-secondary">Comission</div>
-                        <div>$29,004</div>
-                    </div>
-              
-
-                   
-                 
-
-
-
+              <div class="col-md-6">
+                <div class="borderStyle">
+                  <div class="text-secondary">Annual Taxes 2019</div>
+                  <div>$233,600</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="borderStyle">
+                  <div class="text-secondary">Annual Income</div>
+                  <div>$233,600</div>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="resizeable"></div>
         </div>
-      
-      
+        <div class="col-md-4">
+          <div class="weeklySale">
+            <div class="">Weekly Sales Stats</div>
+            <div class="">678,789 sales</div>
+          </div>
+
+          <div>
+            <img
+              src="https://th.bing.com/th/id/OIP.Ga6umAwfi5o-heJWf95DnAHaFP?pid=ImgDet&w=1123&h=794&rs=1"
+              alt=""
+              width="100%"
+              height="200px"
+            />
+          </div>
+          <div class="SaleProgress">
+            <div class="borderStyle">
+              <div class="text-secondary">Average Sale</div>
+              <div class="">$650</div>
+            </div>
+
+            <div class="borderStyle">
+              <div class="text-secondary">Comission</div>
+              <div>$29,004</div>
+            </div>
+
+            <div class="borderStyle">
+              <div class="text-secondary">Comission</div>
+              <div>$29,004</div>
+            </div>
+          </div>
         </div>
-   
-           
-       
-   
-
-
+      </div>
     </div>
-    </div>
-    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://canvasjs.com/assets/script/canvasjs.min.js"
+    ></script>
     <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
     <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
     <script>
-        window.onload = function () {
-        
-      var chart = new CanvasJS.Chart("Row1Graph",
-      {
-        backgroundColor: "red",
-        
+      window.onload = function () {
+        var chart = new CanvasJS.Chart("Row1Graph", {
+          backgroundColor: "red",
+
+          exportEnabled: true,
+          animationEnabled: true,
+
+          data: [
+            {
+              type: "spline",
+              color: "brown",
+              dataPoints: [
+                { y: 9 },
+                { y: 34 },
+                { y: 7 },
+                { y: 75 },
+                { y: 9 },
+                { y: 84 },
+                { y: 26 },
+              ],
+            },
+          ],
+        });
+
+        chart.render();
+
+        // $(".Row1Graph").CanvasJSChart(options);
+        var options1 = {
+          backgroundColor: "blue",
+          exportEnabled: true,
+          animationEnabled: true,
+          data: [
+            {
+              type: "spline",
+              dataPoints: [
+                { y: 9 },
+                { y: 34 },
+                { y: 7 },
+                { y: 75 },
+                { y: 9 },
+                { y: 84 },
+                { y: 26 },
+              ],
+            },
+          ],
+        };
+        $(".Row2Graph").CanvasJSChart(options1);
+        var options2 = {
+          backgroundColor: "black",
+          exportEnabled: true,
+          animationEnabled: true,
+          data: [
+            {
+              type: "spline",
+              color: "#ffffff",
+              dataPoints: [
+                { y: 9 },
+                { y: 34 },
+                { y: 7 },
+                { y: 75 },
+                { y: 9 },
+                { y: 84 },
+                { y: 26 },
+              ],
+            },
+          ],
+        };
+        $(".Row3Graph").CanvasJSChart(options2);
+      };
+      var graph = {
+        backgroundColor: "#1dd0c8",
         exportEnabled: true,
-     animationEnabled: true,
-  
-      data: [
-      {        
-        type: "spline",
-        color: "brown",
-        dataPoints: [
-        
-        { y: 9 },
-                            { y: 34 },
-                            { y: 7 },
-                            { y: 75 },
-                            { y: 9 },
-                            { y: 84 },
-                            { y: 26 },
-        
-        ]
-      }
-      ]
-    });
+        animationEnabled: true,
+        data: [
+          {
+            type: "column",
+            color: "#c7f5f3",
+            dataPoints: [
+              { x: 1, y: 1 },
+              { x: 2, y: 5 },
+              { x: 3, y: 0 },
+              { x: 4, y: 6 },
+              { x: 5, y: 9 },
+            ],
+          },
+          {
+            type: "column",
+            color: "#ffffff",
+            dataPoints: [
+              { x: 1, y: 1 },
+              { x: 2, y: 1 },
+              { x: 3, y: 2 },
+              { x: 4, y: 6 },
+              { x: 5, y: 9 },
+              { x: 6, y: 10 },
+            ],
+          },
+        ],
+      };
 
-    chart.render();
-  
+      $(".resize").CanvasJSChart(graph);
+      var graph = {
+        backgroundColor: "hsl(260deg 92% 69%)",
+        exportEnabled: true,
+        animationEnabled: true,
+        data: [
+          {
+            type: "column",
+            color: "#c7f5f3",
+            dataPoints: [
+              { x: 1, y: 1 },
+              { x: 2, y: 5 },
+              { x: 3, y: 0 },
+              { x: 4, y: 6 },
+              { x: 5, y: 9 },
+            ],
+          },
+          {
+            type: "column",
+            color: "#ffffff",
+            dataPoints: [
+              { x: 1, y: 1 },
+              { x: 2, y: 1 },
+              { x: 3, y: 2 },
+              { x: 4, y: 6 },
+              { x: 5, y: 9 },
+              { x: 6, y: 10 },
+            ],
+          },
+        ],
+      };
 
-            // $(".Row1Graph").CanvasJSChart(options);
-            var options1 = {
-                backgroundColor: "blue",
-                exportEnabled: true,
-                animationEnabled: true,
-                data: [
-                    {
-                        type: "spline",
-                        dataPoints: [
-                            { y: 9 },
-                            { y: 34 },
-                            { y: 7 },
-                            { y: 75 },
-                            { y: 9 },
-                            { y: 84 },
-                            { y: 26 },
-                        ]
-                    }
-                ]
-            };
-            $(".Row2Graph").CanvasJSChart(options1);
-            var options2 = {
-                
-                backgroundColor: "black",
-                exportEnabled: true,
-                animationEnabled: true,
-                data: [
-                    {
-                        type: "spline",
-                        color: "#ffffff",
-                        dataPoints: [
-                            { y: 9 },
-                            { y: 34 },
-                            { y: 7 },
-                            { y: 75 },
-                            { y: 9 },
-                            { y: 84 },
-                            { y: 26 },
-                        ]
-                    },
-                    
-                ]
+      $(".resize2").CanvasJSChart(graph);
+      $(".resize3").CanvasJSChart(graph);
 
-            };
-            $(".Row3Graph").CanvasJSChart(options2);
-        }
-        var graph = {
-                backgroundColor: "#1dd0c8",
-                exportEnabled: true,
-                animationEnabled: true,
-                data: [
-                    
-      {
-        type: "column",
-        color: "#c7f5f3",       
-        dataPoints: [
-        { x: 1, y: 1 },
-        { x: 2, y: 5},
-        { x: 3, y: 0 },
-        { x: 4, y: 6 },
-        { x: 5, y: 9 },
-       
+      var Rg = {
+        exportEnabled: true,
+        animationEnabled: true,
+        data: [
+          {
+            type: "spline",
 
-        ]
-      },
-        {
-        type: "column",
-        color: "#ffffff",
-        dataPoints: [
-        { x: 1, y: 1 },
-        { x: 2, y: 1},
-        { x: 3, y: 2 },
-        { x: 4, y: 6 },
-        { x: 5, y: 9 },
-        { x: 6, y: 10 },
-       
-        ]
-      }
-      ]
-                    }
-              
-            $(".resize").CanvasJSChart(graph);
-            var graph = {
-                backgroundColor: "hsl(260deg 92% 69%)",
-                exportEnabled: true,
-                animationEnabled: true,
-                data: [
-                    
-      {
-        type: "column",
-        color: "#c7f5f3",       
-        dataPoints: [
-        { x: 1, y: 1 },
-        { x: 2, y: 5},
-        { x: 3, y: 0 },
-        { x: 4, y: 6 },
-        { x: 5, y: 9 },
-       
+            dataPoints: [
+              { x: 1, y: 1 },
+              { x: 2, y: 5 },
+              { x: 3, y: 0 },
+              { x: 4, y: 6 },
+              { x: 5, y: 9 },
+            ],
+          },
+        ],
+      };
 
-        ]
-      },
-        {
-        type: "column",
-        color: "#ffffff",
-        dataPoints: [
-        { x: 1, y: 1 },
-        { x: 2, y: 1},
-        { x: 3, y: 2 },
-        { x: 4, y: 6 },
-        { x: 5, y: 9 },
-        { x: 6, y: 10 },
-       
-        ]
-      }
-      ]
-                    }
-              
-            $(".resize2").CanvasJSChart(graph);
-            $(".resize3").CanvasJSChart(graph);
-           
-            var Rg = {
-               
-                exportEnabled: true,
-                animationEnabled: true,
-                data: [
-                    
-      {
-        type: "spline",
-       
-        dataPoints: [
-        { x: 1, y: 1 },
-        { x: 2, y: 5},
-        { x: 3, y: 0 },
-        { x: 4, y: 6 },
-        { x: 5, y: 9 },
-       
+      $(".resizeee").CanvasJSChart(Rg);
+      var spline = {
+        exportEnabled: true,
+        animationEnabled: true,
+        data: [
+          {
+            type: "spline",
 
-        ]
-      },
+            dataPoints: [
+              { x: 1, y: 1 },
+              { x: 2, y: 5 },
+              { x: 3, y: 0 },
+              { x: 4, y: 6 },
+              { x: 5, y: 9 },
+            ],
+          },
+        ],
+      };
 
-      ]
-                    }
-              
-            $(".resizeee").CanvasJSChart(Rg);
-            var spline = {
-               
-               exportEnabled: true,
-               animationEnabled: true,
-               data: [
-                   
-     {
-       type: "spline",
-      
-       dataPoints: [
-       { x: 1, y: 1 },
-       { x: 2, y: 5},
-       { x: 3, y: 0 },
-       { x: 4, y: 6 },
-       { x: 5, y: 9 },
-      
+      $(".spline").CanvasJSChart(spline);
 
-       ]
-     },
+      var resizeable = {
+        exportEnabled: true,
+        animationEnabled: true,
+        data: [
+          {
+            type: "spline",
 
-     ]
-                   }
-             
-           $(".spline").CanvasJSChart(spline);
+            dataPoints: [
+              { x: 1, y: 1 },
+              { x: 2, y: 5 },
+              { x: 3, y: 0 },
+              { x: 4, y: 6 },
+              { x: 5, y: 9 },
+            ],
+          },
+        ],
+      };
 
-           var resizeable = {
-               
-               exportEnabled: true,
-               animationEnabled: true,
-               data: [
-                   
-     {
-       type: "spline",
-      
-       dataPoints: [
-       { x: 1, y: 1 },
-       { x: 2, y: 5},
-       { x: 3, y: 0 },
-       { x: 4, y: 6 },
-       { x: 5, y: 9 },
-      
-
-       ]
-     },
-
-     ]
-                   }
-           
-           $(".resizeable").CanvasJSChart(resizeable);
-
-
-            
-
-     
+      $(".resizeable").CanvasJSChart(resizeable);
     </script>
-
-
-
-</body>
-
+  </body>
 </html>
