@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  font-weight: 500;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  
+}
+th{
+    color:#787c8a;
+}
+
+/* tr:nth-child(even) {
+  background-color: #dddddd;
+} */
+.totalammounttables{
+    margin-right: 60px;
+    font-weight: 500;
+    color: #363841;
+}
+.paynow{
+    background-color: #50cd89;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 500;
+}
+.invoicenumber span{
+    color: #404355;
+    font-weight: 500;
+}
+.issuedate{
+    color:#787c8a;
+    font-weight: 500;
+}
+.duedate{
+    color: #db3760;
+    font-weight: 500;
+}
+ table td{
+    font-weight: 500;
+    color: #363841;
+}
+.subtotal{
+    padding-right: 75px;
+    color:#787c8a;
+    font-weight: 500;
+}
+.vat{
+    padding-right: 125px;
+    color:#787c8a;
+    font-weight: 500;
+}
+.total{
+    padding-right: 100px;
+    color:#787c8a;
+    font-weight: 500;
+}
+.subtotal1{
+    padding-right: 30px;
+    color:#787c8a;
+    font-weight: 500;
+}
+.creativedesign{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    color: #db3760;
+    border: 2px solid #db3760 ;
+    margin-right: 5px;
+}
+.invoicerightside{
+    border: 2px solid #eee ;
+    padding: 10px 20px;
+    background-color: #eee;
+}
+.approvedbtn{
+    border: 0;
+    color: #50cd89;
+    border-radius: 5px;
+    padding: 2px 15px;
+    font-weight: 500;
+}
+.pendingbtn{
+    border: 0;
+    color: rgb(235, 235, 11);
+    border-radius: 5px;
+    padding: 2px 15px;
+    font-weight: 500;
+    background-color: #be687d;
+}
+.paymentdetails span{
+    color: #787c8a;
+    font-weight: 500;
+}
+.paypalspan{
+    color:#787c8a;
+    font-weight: 500;
+
+}
+.projectoverview{
+    color: #787c8a;
+    font-weight: 500;
+}
+.projectname{
+    color: #a9abb3;
+    font-weight: 500;
+}
+.rate{
+    color: #b7e3fb;
+    font-weight: 500;
+}
+.viewproject{
+    color: #7fc0e4;
+    font-weight: 500;
+}
+.issueby{
+    padding-right: 26%;
+}
+.issufor{
+    padding-right: 20%;
+}
+
+    </style>
+</head>
+
+<body style="background-color: #eee;">
+
+    <div class="container" style="background-color: #fff;">
+        <div class="row mt-2">
+            <div class="col-lg-8 " >
+                <div class="col-lg-12">
+                    <div class="d-flex justify-content-between">
+                        <h4>Restro Digital Billing</h4>
+                        <button class="paynow mt-4">Pay Now</button>
+                    </div>
+                </div>
+                <div class="col-lg-12 mt-2">
+                    <div class="invoicenumber"><span>Invoice #34782</span></div>
+                </div>
+                <div class="col-lg-12 mt-3">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <span class="issuedate">Issue Date</span><br>
+                            <span>12 Apr 2021</span>
+                        </div>
+                        <div class="issufor">
+                            <span class="issuedate">Due Date</span> <br>
+                            <span>02 May 2021 </span>
+                            <span class="duedate"> . Due in 7 days</span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 mt-3">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <span class="issuedate">Issue For</span>
+                            <h6>Lorem, ipsum dolor.</h6>
+                            <span class="issuedate">8692 Wlid Rose Drive</span><br>
+                            <span class="issuedate">Livonia, MI 48150</span>
+                        </div>
+                        <div class="issueby">
+                            <span class="issuedate">Issue By</span>
+                            <h6>Lorem, ipsum dolor.</h6>
+                            <span class="issuedate">8692 Wlid Rose Drive</span><br>
+                            <span class="issuedate">Livonia, MI 48150</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 mt-4">
+                    <div class="tables">
+                        <table>
+                            <tr>
+                              <th>
+                                Description
+                              </th>
+                              <th>Hours</th>
+                              <th>Rate</th>
+                              <th>Amount</th>
+                            </tr>
+                            <tr>
+                              <td class="d-flex align-items-center"> <div class="creativedesign"></div>Creative Design</td>
+                              <td>80</td>
+                              <td>$ 40.00</td>
+                              <td>$ 3200.00</td>
+                            </tr>
+                            <tr>
+                                <td class="d-flex align-items-center"> <div class="creativedesign"></div>Creative Design</td>
+                                <td>80</td>
+                                <td>$ 40.00</td>
+                                <td>$ 3200.00</td>
+                              </tr>
+                              <tr>
+                                <td class="d-flex align-items-center"> <div class="creativedesign"></div>Creative Design</td>
+                                <td>80</td>
+                                <td>$ 40.00</td>
+                                <td>$ 3200.00</td>
+                                
+                              </tr>
+                          
+                          </table>
+                          <div class="totalammounttables">
+                            <div class="d-flex justify-content-end mt-5"><span class="subtotal">Subtotal </span> <h6>$ 20,6000</h6></div>
+
+                            <div class="d-flex justify-content-end mt-2"><span class=" vat ">VAT 0% </span> <h6>000</h6></div>
+                            <div class="d-flex justify-content-end mt-2"><span class="subtotal1">Subtotal + VAT </span> <h6>$ 20,6000</h6></div>
+                            <div class="d-flex justify-content-end mt-2"><span class="total">total </span> <h6>$ 20,6000</h6></div>
+
+                          </div>
+                         
+                          
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mt-5 ">
+                <div class="invoicerightside">
+                    <div>
+                        <button class="approvedbtn">Approved</button>
+                        <button class="pendingbtn">Pending Payment</button>
+                    </div>
+                    <div class="mt-3 paymentdetails"><h6>PAYMENT DETAILS</h6></div>
+                    <div class="paypal mt-2">
+                        <span class="paypalspan">Paypal</span><br>
+                        <span>codelapay@codelab.co</span>
+                    </div>
+                    <div class="account mt-2">
+                        <span class="paypalspan">Account</span><br>
+                        <span>NI2NIG4F55H57DDD</span>
+                    </div>
+                    <div class="paymenttem mt-3">
+                        <span class="paypalspan">Payment Term</span><br>
+                        <span>14 days</span>
+                        <span class="duedate">. Due in 7 days</span>
+                    </div>
+                    <div class="mt-5">
+                        <h6 class="projectoverview">PROJECT OVERVIEW</h6>
+                        <div class="mt-4">
+                            <span class="projectname">Project Name</span><br>
+                            <span>sassa app quiceker</span>
+                            <span class="viewproject">View Project</span>
+                        </div>
+                        <div class="mt-3">
+                            <span class="projectname">Completed By:</span><br>
+                            <span>Mr Vishwajeet Saini</span>
+
+                        </div>
+                        <div class="mt-3">
+                            <span class="projectname">Time Spent</span><br>
+                            <span>230 Hours</span>
+                            <span class="rate">. 35$/h Rate</span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+
+    <script>
+        $("head").append(
+            '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
+        );
+        $("head").append(
+            ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
+/>'
+        );
+        $("head").append(
+            '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
+        );
+    </script>
+</body>
+
+</html>
