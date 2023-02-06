@@ -241,7 +241,20 @@
         border-radius: 4px;
         padding-left: 15px;
       }
-      #addVenderWrapper .addVenderForm .formGroup {
+      #addVenderWrapper .addVenderForm .formGroup select {
+        border: 2px solid #eee;
+        width: 100%;
+        color: #7a7797;
+        border-radius: 4px;
+        padding-left: 15px;
+      }
+      #addVenderWrapper .addVenderForm .form-group {
+        border: 2px solid #eee;
+        /* width: 100%; */
+        /* border-radius: 4px;
+        padding-left: 15px; */
+      }
+      #addVenderWrapper .addVenderForm .form-group {
         border: 2px solid #eee;
         width: 100%;
         border-radius: 4px;
@@ -698,15 +711,32 @@
                       <div class="formGroup">
                         <label for="state">State</label>
                         <br />
-                        <input type="text" />
+                        <select class="details stateDetail " name="stateDetail">
+                          <option disabled selected>Select State</option>
+                      </select>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="formGroup">
                         <label for="city">City</label>
                         <br />
-                        <input type="text" />
+                        <select class="details cityDetail " name="cityDetail">
+                          <option disabled selected>Select City</option>
+                      </select>
                       </div>
+                    </div>
+                    <div class="form-group genderWrapper col-md-4">
+                      <label for="gnder">Gender :</label>
+                      <input type="radio" name="gender" id="male">
+                      <label for="male">Male</label>
+                      <input type="radio" name="gender" id="female">
+                      <label for="female">Female</label>
+                      <input type="radio" name="gender" id="other">
+                      <label for="other">Other</label>
+                    </div>
+                    <div class="formGroup col-md-12">
+                      <label for="gstno">GST Number</label><br />
+                      <input type="text" name="gstno" id="gstno">
                     </div>
                     <div class="col-12 text-center mt-2">
                       <button type="submit" class="addVenderSubmitBtn">
@@ -871,5 +901,65 @@
       });
 
     </script>
+
+
+<script>
+        
+  var token ;
+  $.ajax({
+  url: "https://www.universal-tutorial.com/api/getaccesstoken",
+  method: "GET",
+  headers:{
+      "Accept": "application/json",
+      "api-token": "xPRtU2zmzocpIM-l_lhEVbhGN_0-f67eNBn-XfEXDm6sQZGT96Qqf13YN53dhKTftJk",
+      "user-email": "dummyToken@gmail.com"
+  },
+  success: function(data){
+      getState(data.auth_token)
+      console.log(data.auth_token)
+      token = data.auth_token;
+  }
+  });
+
+  function getState(token){
+  $.ajax({
+      url: "https://www.universal-tutorial.com/api/states/India",
+      method: "GET",
+      headers:{
+      "Accept": "application/json",
+      "Authorization": "Bearer "+token,
+      },
+      success: function(data){
+      for(let state of data){
+          $('.stateDetail').append(`<option val=${state.state_name}>${state.state_name}</option>`)
+          }
+      }
+  });
+  };
+
+
+  function getCity(state){
+  $.ajax({
+      url: `https://www.universal-tutorial.com/api/cities/${state}`,
+      method: "GET",
+      headers:{
+      "Accept": "application/json",
+      "Authorization": "Bearer "+token,
+      },
+      success: function(data){
+      console.log(data)
+      $('.cityDetail').text('');
+      for(let city of data){
+          $('.cityDetail').append(`<option val=${city.city_name}>${city.city_name}</option>`)
+          }
+      }
+  });
+  };
+
+  $('.stateDetail').change(function(){
+          let state = $(".stateDetail option:selected").val();
+          getCity(state);
+          })
+  </script>
   </body>
 </html>
