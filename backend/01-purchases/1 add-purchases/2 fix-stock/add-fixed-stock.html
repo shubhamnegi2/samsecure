@@ -1132,12 +1132,12 @@
         selectedVender.map((elem, index) => {
           $(".venderDetailsTable table tbody")
             .append(`<tr data-venderMoneyKey="${index}"><td></td><td>${elem}</td>
-                <td><input type="text" class="venderTotalItems" placeholder=" Items"></td>
+                <td><input type="text" class="venderTotalItems" placeholder=" product"></td>
              
-                <td><input type="text" class="venderTotalPrice" placeholder="Total Items"></td>
-                <td><input type="text" class="venderTotalPrice" placeholder="Total Items"></td>
-                <td><input type="text" class="venderTotalPaid" placeholder="Total Items"></td>
-                <td><input type="text" class="venderTotalPaid" placeholder="Total Items"></td>
+                <td><input type="text" class="venderTotalPrice" placeholder="Number of Variation"></td>
+                <td><input type="text" class="venderTotalPrice" placeholder="Total Price"></td>
+                <td><input type="text" class="venderTotalAmount" placeholder="Total Amount"></td>
+                <td><input type="text" class="venderTotalPaid" placeholder="paid"></td>
                 <td class="venderTotalRemaining">-</td></tr>`);
         });
 
@@ -1193,7 +1193,7 @@
       let totalPrice = $(this)
         .closest("tr")
         .children("td")
-        .children(".venderTotalPrice")
+        .children(".venderTotalAmount")
         .val();
       let paidAmount = $(this).val();
 
