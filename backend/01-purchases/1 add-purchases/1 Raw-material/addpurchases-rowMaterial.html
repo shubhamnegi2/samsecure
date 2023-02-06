@@ -1,694 +1,735 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add Purchases of Row Material</title>
-    <link rel="stylesheet" href="./addPurchases2.css" />
-    <link rel="stylesheet" href="./popup-models.css" />
 
-    <link
-      rel="stylesheet"
-      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Purchases of Row Material</title>
+  <link rel="stylesheet" href="./addPurchases2.css" />
+  <link rel="stylesheet" href="./popup-models.css" />
 
-    <style>
-      .ProductDetailsWrapper {
-        counter-reset: Serial;
-      }
-      .ProductDetailsWrapper tr td:first-child:before {
-        counter-increment: Serial;
-        content: counter(Serial);
-      }
-      .itemNameWrapper ul {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .itemNameWrapper ul li {
-        max-width: 150px;
-        overflow: hidden;
-        margin-right: 10px;
-        font-size: 14px;
-      }
-      .itemNameWrapper ul li input {
-        cursor: pointer;
-      }
-      .itemNameWrapper ul li label {
-        display: inline-block;
-        width: 110px;
-        white-space: nowrap;
-        overflow: hidden !important;
-        text-overflow: ellipsis;
-        color: #000;
-        font-size: 12px;
-      }
-      .itemNameWrapper .form-check {
-        margin-bottom: -5px;
-      }
-      .itemNameWrapper {
-        box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
-        padding: 10px 15px;
-        border-radius: 5px;
-        border: 1px solid #fc8019;
-        background-color: #eee;
-      }
-      .itemNameWrapper h3 {
-        /* border-bottom: 2px solid #fc8e32; */
-        color: #7a7797;
-        font-weight: bold;
-        font-size: 14px;
-        padding-bottom: 0px;
-        margin-bottom: 0px;
-        display: inline-block;
-      }
-      .allBtnsWrapper h3 {
-        /* text-align: center; */
-        /* border-bottom: 2px solid #fc8e32; */
-        color: #7a7797;
-        font-weight: bold;
-        padding-bottom: 0px;
-        margin-bottom: 0px;
-        /* margin-top: 1rem; */
-        font-size: 14px;
-        text-align: right;
-        padding-right: 15px;
-      }
-      .totalCatgry,
-      .totalIngredients {
-        font-weight: bold;
-        color: #083e5a;
-      }
-      .ProductDetailsWrapper .eventDateTime {
-        color: #3abb69;
-      }
-      .ProductDetailsWrapper .eventDateTime span {
-        font-weight: bold;
-        color: #7a7797;
-      }
-      .ingredientsActionBtn button {
-        min-width: 50px;
-        margin: 2px 10px;
-        text-transform: capitalize;
-        border-radius: 3px;
-        border: 0;
-        background-color: #083e5a;
-        color: #fff;
-        font-size: 10px;
-        font-weight: 600;
-        padding: 2px 8px;
-        /* margin-bottom: 15px; */
-      }
-      .itemNameWrapper hr {
-        margin: 0px;
-      }
-      .allVenderBtnsWrapper h3 {
-        color: #7a7797;
-        font-weight: bold;
-        font-size: 14px;
-        padding-bottom: 0px;
-        margin-bottom: 0px;
-        display: inline-block;
-      }
-      .breadcrumbs button.activeBreadcurmbtn {
-        background-color: #083e5a;
-        border-color: #083e5a;
-        /* border-radius: 5px; */
-      }
-      .mainColor {
-        color: #fc8019;
-      }
-      .allBtnsWrapper .CategoryActionBtn button {
-        background-color: #fc8019;
-      }
-      .itemNameWrapper .ingredientsActionBtn button {
-        background-color: #fc8019;
-      }
-      .itemNameWrapper .ingredientsActionBtn button:last-child {
-        margin-right: 0px;
-      }
-      .allVenderBtnsWrapper .vendersActionBtn button {
-        background-color: #fc8019;
-      }
-      .allVenderBtnsWrapper ul li {
-        margin: 0px 5px;
-        font-size: 12px;
-      }
-      .dateWrapper {
-        font-size: 12px;
-      }
-      #dateWise {
-        border: 0;
-        border-radius: 4px;
-        padding-left: 15px;
-        color: #7a7797;
-        height: 16px;
-        background-color: #eee;
-      }
-      .dateWrapper button {
-        min-width: 50px;
-        margin: 2px 10px;
-        text-transform: capitalize;
-        border-radius: 3px;
-        border: 0;
-        background-color: #083e5a;
-        color: #fff;
-        font-size: 10px;
-        font-weight: 600;
-        padding: 2px 8px;
-      }
-      .genderWrapper{
-        background-color: #fff;
-        height: 28px;
-        display: flex;
-        align-items: center;
-      }
-      .genderWrapper input{
-        margin-left: 10px;
-        margin-right: 5px;
-      }
-    </style>
-    <style>
-      .addCategoryModelWrapper,
-      .editCategoryModelWrapper,
-      .addIngredientModelWrapper,
-      .editIngredientModelWrapper {
-        position: fixed;
-        left: 0px;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        z-index: 999;
-        overflow-y: scroll;
-        /* display: flex; */
-        display: none;
-        align-items: flex-start;
-        justify-content: center;
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-      /* .editIngredientModelWrapper {
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+
+  <style>
+    .ProductDetailsWrapper {
+      counter-reset: Serial;
+    }
+
+    .ProductDetailsWrapper tr td:first-child:before {
+      counter-increment: Serial;
+      content: counter(Serial);
+    }
+
+    .itemNameWrapper ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .itemNameWrapper ul li {
+      max-width: 150px;
+      overflow: hidden;
+      margin-right: 10px;
+      font-size: 14px;
+    }
+
+    .itemNameWrapper ul li input {
+      cursor: pointer;
+    }
+
+    .itemNameWrapper ul li label {
+      display: inline-block;
+      width: 110px;
+      white-space: nowrap;
+      overflow: hidden !important;
+      text-overflow: ellipsis;
+      color: #000;
+      font-size: 12px;
+    }
+
+    .itemNameWrapper .form-check {
+      margin-bottom: -5px;
+    }
+
+    .itemNameWrapper {
+      box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+      padding: 10px 15px;
+      border-radius: 5px;
+      border: 1px solid #fc8019;
+      background-color: #eee;
+    }
+
+    .itemNameWrapper h3 {
+      /* border-bottom: 2px solid #fc8e32; */
+      color: #7a7797;
+      font-weight: bold;
+      font-size: 14px;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+      display: inline-block;
+    }
+
+    .allBtnsWrapper h3 {
+      /* text-align: center; */
+      /* border-bottom: 2px solid #fc8e32; */
+      color: #7a7797;
+      font-weight: bold;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+      /* margin-top: 1rem; */
+      font-size: 14px;
+      text-align: right;
+      padding-right: 15px;
+    }
+
+    .totalCatgry,
+    .totalIngredients {
+      font-weight: bold;
+      color: #083e5a;
+    }
+
+    .ProductDetailsWrapper .eventDateTime {
+      color: #3abb69;
+    }
+
+    .ProductDetailsWrapper .eventDateTime span {
+      font-weight: bold;
+      color: #7a7797;
+    }
+
+    .ingredientsActionBtn button {
+      min-width: 50px;
+      margin: 2px 10px;
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0;
+      background-color: #083e5a;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+      /* margin-bottom: 15px; */
+    }
+
+    .itemNameWrapper hr {
+      margin: 0px;
+    }
+
+    .allVenderBtnsWrapper h3 {
+      color: #7a7797;
+      font-weight: bold;
+      font-size: 14px;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+      display: inline-block;
+    }
+
+    .breadcrumbs button.activeBreadcurmbtn {
+      background-color: #083e5a;
+      border-color: #083e5a;
+      /* border-radius: 5px; */
+    }
+
+    .mainColor {
+      color: #fc8019;
+    }
+
+    .allBtnsWrapper .CategoryActionBtn button {
+      background-color: #fc8019;
+    }
+
+    .itemNameWrapper .ingredientsActionBtn button {
+      background-color: #fc8019;
+    }
+
+    .itemNameWrapper .ingredientsActionBtn button:last-child {
+      margin-right: 0px;
+    }
+
+    .allVenderBtnsWrapper .vendersActionBtn button {
+      background-color: #fc8019;
+    }
+
+    .allVenderBtnsWrapper ul li {
+      margin: 0px 5px;
+      font-size: 12px;
+    }
+
+    .dateWrapper {
+      font-size: 12px;
+    }
+
+    #dateWise {
+      border: 0;
+      border-radius: 4px;
+      padding-left: 15px;
+      color: #7a7797;
+      height: 16px;
+      background-color: #eee;
+    }
+
+    .dateWrapper button {
+      min-width: 50px;
+      margin: 2px 10px;
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0;
+      background-color: #083e5a;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+    }
+
+    .genderWrapper {
+      background-color: #fff;
+      height: 28px;
+      display: flex;
+      align-items: center;
+    }
+
+    .genderWrapper input {
+      margin-left: 10px;
+      margin-right: 5px;
+    }
+  </style>
+  <style>
+    .addCategoryModelWrapper,
+    .editCategoryModelWrapper,
+    .addIngredientModelWrapper,
+    .editIngredientModelWrapper {
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      z-index: 999;
+      overflow-y: scroll;
+      /* display: flex; */
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    /* .editIngredientModelWrapper {
         display: flex;
       } */
-      .editCategoryModel h2,
-      .addCategoryModel h2,
-      .editIngredientModel h2,
-      .addIngredientModel h2 {
-        display: inline-block;
-        border-bottom: 2px solid #fc8e32;
-        color: #083e5a;
-        font-weight: bold;
-        padding-bottom: 1px;
-        font-size: 18px;
-      }
-      .addCategoryModel,
-      .editCategoryModel,
-      .addIngredientModel,
-      .editIngredientModel {
-        background-color: #fff;
-        transition: all 0.3 ease;
-        /* width: 50%; */
-        text-align: center;
-        padding: 15px;
-        position: relative;
-        border-radius: 4px;
-      }
-      .editCategoryModel,
-      .editIngredientModel {
-        width: 70%;
-      }
-      .editCategoryModel table tbody,
-      .editIngredientModel table tbody {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
-      .editCategoryModel table tbody tr,
-      .editIngredientModel table tbody tr {
-        max-width: 30%;
-        width: 100%;
-        margin-bottom: 10px;
-      }
-      .editCategoryModel i,
-      .editIngredientModel i,
-      .addIngredientModelWrapper i {
-        cursor: pointer;
-        padding: 3px;
-      }
-      .editCategoryModel input,
-      .editIngredientModel input {
-        border: 1px solid #7a7797;
-        border-radius: 3px;
-        margin-right: 10px;
-        padding-left: 15px;
-        font-size: 14px;
-      }
-      .addCategoryModel input,
-      .addCategoryModel label {
-        width: 100%;
-        text-align-last: left;
-      }
-      .addCategoryModel label {
-        color: #7a7797;
-        font-size: 14px;
-      }
-      .addCategoryModel button,
-      .addIngredientModelWrapper button {
-        min-width: 50px;
-        margin: 2px px 10px;
-        text-transform: capitalize;
-        border-radius: 3px;
-        border: 0;
-        background-color: #083e5a;
-        color: #fff;
-        font-size: 12px;
-        font-weight: 600;
-        padding: 5px 8px;
-      }
-      .closeAddCategoryModel,
-      .closeEditCategoryModel,
-      .closeEditIngredientModel,
-      .closeaddIngredientModelWrapper {
-        position: absolute;
-        right: 5px;
-        top: 3px;
-        width: 30px;
-        font-size: 20px;
-        cursor: pointer;
-      }
-      .editCategoryModel button {
-        min-width: 50px;
-        margin: 2px px 10px;
-        text-transform: capitalize;
-        border-radius: 3px;
-        border: 0;
-        background-color: #083e5a;
-        color: #fff;
-        font-size: 12px;
-        font-weight: 600;
-        padding: 5px 8px;
-      }
-      .addIngredientModelWrapper .topbar select,
-      .addIngredientModelWrapper input {
-        border: 1px solid rgb(190, 188, 188);
-        border-radius: 4px;
-        font-size: 14px;
-        color: #083e5a;
-        padding-left: 15px;
-      }
-      .addIngredientModelWrapper .topbar {
-        color: #083e5a;
-        font-size: 14px;
-      }
-      .undoDeleteCat {
-        display: none;
-      }
-      .undoDelete {
-        display: none;
-      }
-      .saveEditedIng {
-        min-width: 50px;
-        margin: 2px px 10px;
-        text-transform: capitalize;
-        border-radius: 3px;
-        border: 0;
-        background-color: #083e5a;
-        color: #fff;
-        font-size: 12px;
-        font-weight: 600;
-        padding: 5px 8px;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- add ingredients model -->
-    <div class="addCategoryModelWrapper">
-      <div class="addCategoryModel">
-        <div class="closeAddCategoryModel">
-          <i class="fa-regular fa-circle-xmark"></i>
+    .editCategoryModel h2,
+    .addCategoryModel h2,
+    .editIngredientModel h2,
+    .addIngredientModel h2 {
+      display: inline-block;
+      border-bottom: 2px solid #fc8e32;
+      color: #083e5a;
+      font-weight: bold;
+      padding-bottom: 1px;
+      font-size: 18px;
+    }
+
+    .addCategoryModel,
+    .editCategoryModel,
+    .addIngredientModel,
+    .editIngredientModel {
+      background-color: #fff;
+      transition: all 0.3 ease;
+      /* width: 50%; */
+      text-align: center;
+      padding: 15px;
+      position: relative;
+      border-radius: 4px;
+    }
+
+    .editCategoryModel,
+    .editIngredientModel {
+      width: 70%;
+    }
+
+    .editCategoryModel table tbody,
+    .editIngredientModel table tbody {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .editCategoryModel table tbody tr,
+    .editIngredientModel table tbody tr {
+      max-width: 30%;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .editCategoryModel i,
+    .editIngredientModel i,
+    .addIngredientModelWrapper i {
+      cursor: pointer;
+      padding: 3px;
+    }
+
+    .editCategoryModel input,
+    .editIngredientModel input {
+      border: 1px solid #7a7797;
+      border-radius: 3px;
+      margin-right: 10px;
+      padding-left: 15px;
+      font-size: 14px;
+    }
+
+    .addCategoryModel input,
+    .addCategoryModel label {
+      width: 100%;
+      text-align-last: left;
+    }
+
+    .addCategoryModel label {
+      color: #7a7797;
+      font-size: 14px;
+    }
+
+    .addCategoryModel button,
+    .addIngredientModelWrapper button {
+      min-width: 50px;
+      margin: 2px px 10px;
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0;
+      background-color: #083e5a;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 8px;
+    }
+
+    .closeAddCategoryModel,
+    .closeEditCategoryModel,
+    .closeEditIngredientModel,
+    .closeaddIngredientModelWrapper {
+      position: absolute;
+      right: 5px;
+      top: 3px;
+      width: 30px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .editCategoryModel button {
+      min-width: 50px;
+      margin: 2px px 10px;
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0;
+      background-color: #083e5a;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 8px;
+    }
+
+    .addIngredientModelWrapper .topbar select,
+    .addIngredientModelWrapper input {
+      border: 1px solid rgb(190, 188, 188);
+      border-radius: 4px;
+      font-size: 14px;
+      color: #083e5a;
+      padding-left: 15px;
+    }
+
+    .addIngredientModelWrapper .topbar {
+      color: #083e5a;
+      font-size: 14px;
+    }
+
+    .undoDeleteCat {
+      display: none;
+    }
+
+    .undoDelete {
+      display: none;
+    }
+
+    .saveEditedIng {
+      min-width: 50px;
+      margin: 2px px 10px;
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0;
+      background-color: #083e5a;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- add ingredients model -->
+  <div class="addCategoryModelWrapper">
+    <div class="addCategoryModel">
+      <div class="closeAddCategoryModel">
+        <i class="fa-regular fa-circle-xmark"></i>
+      </div>
+      <h2 class="mb-3">Add New Category</h2>
+      <form action="">
+        <div class="form-group">
+          <label for="category">Enter Category Name : </label>
+          <input type="text" name="" id="" />
         </div>
-        <h2 class="mb-3">Add New Category</h2>
-        <form action="">
-          <div class="form-group">
-            <label for="category">Enter Category Name : </label>
-            <input type="text" name="" id="" />
-          </div>
-          <div class="text-right mt-3">
-            <button>Save Category</button>
-          </div>
-        </form>
+        <div class="text-right mt-3">
+          <button>Save Category</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!--add category model  -->
+  <div class="addIngredientModelWrapper">
+    <div class="addIngredientModel">
+      <div class="closeaddIngredientModelWrapper">
+        <i class="fa-regular fa-circle-xmark"></i>
+      </div>
+      <h2 class="mb-3">Add Ingredients</h2>
+      <form action="">
+        <div class="form-group text-left mt-3 topbar">
+          <label for="category">Ingredient Category : </label>
+          <select name="" id="selectedIngCatList">
+            <option value="Dairy Products">Dairy Products</option>
+            <option value="Drinkable">Drinkable</option>
+            <option value="Fav">Fav</option>
+          </select>
+        </div>
+
+        <div class="form-group mt-3 text-left">
+          <label for="category">Ingredient : </label>
+          <input type="text" name="" id="" />
+          <input type="text" value="Dairy Product" disabled />
+          <td><i class="fa-solid fa-trash deleteAddedIngredient"></i></td>
+        </div>
+        <div class="text-right mt-3 btns">
+          <button class="addMoreIngredientBtn">Add More Ingredients</button>
+          <button>Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- edit category model -->
+  <div class="editCategoryModelWrapper">
+    <div class="editCategoryModel">
+      <div class="closeEditCategoryModel">
+        <i class="fa-regular fa-circle-xmark"></i>
+      </div>
+      <h2 class="mb-4">Edit Category</h2>
+      <table>
+        <tr>
+          <td><input type="text" value="Dairy Products" /></td>
+          <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
+          <td class="undoDeleteCat">
+            <i class="fa-solid fa-rotate-left"></i>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="text" value="Drinkable" /></td>
+          <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
+          <td class="undoDeleteCat">
+            <i class="fa-solid fa-rotate-left"></i>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="text" value="Fast Food" /></td>
+          <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
+          <td class="undoDeleteCat">
+            <i class="fa-solid fa-rotate-left"></i>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="text" value="Dairy Products" /></td>
+          <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
+          <td class="undoDeleteCat">
+            <i class="fa-solid fa-rotate-left"></i>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="text" value="Drinkable" /></td>
+          <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
+          <td class="undoDeleteCat">
+            <i class="fa-solid fa-rotate-left"></i>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="text" value="Fast Food" /></td>
+          <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
+          <td class="undoDeleteCat">
+            <i class="fa-solid fa-rotate-left"></i>
+          </td>
+        </tr>
+      </table>
+      <div class="text-center">
+        <button>Submit</button>
+
+      </div>
+    </div>
+  </div>
+  <!-- edit ingredient's model -->
+  <div class="editIngredientModelWrapper">
+    <div class="editIngredientModel">
+      <div class="closeEditIngredientModel">
+        <i class="fa-regular fa-circle-xmark"></i>
+      </div>
+      <h2 class="mb-3">Edit Ingredient</h2>
+      <table>
+        <tr>
+          <td><input type="text" value="Milk Powder" /></td>
+          <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
+          <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
+        </tr>
+        <tr>
+          <td><input type="text" value="Curd" /></td>
+          <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
+          <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
+        </tr>
+        <tr>
+          <td><input type="text" value="Paneer" /></td>
+          <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
+          <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
+        </tr>
+        <tr>
+          <td><input type="text" value="Dairyfg" /></td>
+          <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
+          <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
+        </tr>
+        <tr>
+          <td><input type="text" value="dgf" /></td>
+          <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
+          <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
+        </tr>
+        <tr>
+          <td><input type="text" value="Fast Food" /></td>
+          <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
+          <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
+        </tr>
+        <tr>
+          <td><input type="text" value="Milk Powder" /></td>
+          <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
+          <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
+        </tr>
+        <tr>
+          <td><input type="text" value="Curd" /></td>
+          <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
+          <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
+        </tr>
+        <tr>
+          <td><input type="text" value="Paneer" /></td>
+          <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
+          <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
+        </tr>
+        <tr>
+          <td><input type="text" value="Dairyfg" /></td>
+          <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
+          <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
+        </tr>
+        <tr>
+          <td><input type="text" value="dgf" /></td>
+          <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
+          <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
+        </tr>
+        <tr>
+          <td><input type="text" value="Fast Food" /></td>
+          <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
+          <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
+        </tr>
+      </table>
+      <div class="text-center">
+        <button class="saveEditedIng">Submit</button>
+      </div>
+    </div>
+  </div>
+  <div class="breadcrumbs">
+    <ul class="list-unstyled d-flex align-items-center">
+      <li><a href="">Purchases</a></li>
+      <li><i class="fa-solid fa-angles-right"></i></li>
+      <li><a href="" class="">Add Purchases </a></li>
+      <li><i class="fa-solid fa-angles-right"></i></li>
+      <li><a href="" class="ActiveBreadcrumb">Raw Material </a></li>
+    </ul>
+    <div>
+      <button class="btn btn-primary activeBreadcurmbtn">
+        Add Raw Material
+      </button>
+      <button class="btn btn-primary">Add Fixed Stock</button>
+    </div>
+  </div>
+  <main>
+    <div class="container-fluid my-1">
+      <div class="dateWrapper d-flex justify-content-between">
+        <div>
+          Date : <input type="text" id="dateWise" placeholder="03/12/2012" />
+        </div>
+        <button class="addVender">Add vender</button>
       </div>
     </div>
 
-    <!--add category model  -->
-    <div class="addIngredientModelWrapper">
-      <div class="addIngredientModel">
-        <div class="closeaddIngredientModelWrapper">
-          <i class="fa-regular fa-circle-xmark"></i>
-        </div>
-        <h2 class="mb-3">Add Ingredients</h2>
-        <form action="">
-          <div class="form-group text-left mt-3 topbar">
-            <label for="category">Ingredient Category : </label>
-            <select name="" id="selectedIngCatList">
-              <option value="Dairy Products">Dairy Products</option>
-              <option value="Drinkable">Drinkable</option>
-              <option value="Fav">Fav</option>
-            </select>
-          </div>
-
-          <div class="form-group mt-3 text-left">
-            <label for="category">Ingredient : </label>
-            <input type="text" name="" id="" />
-            <input type="text" value="Dairy Product" disabled />
-            <td><i class="fa-solid fa-trash deleteAddedIngredient"></i></td>
-          </div>
-          <div class="text-right mt-3 btns">
-            <button class="addMoreIngredientBtn">Add More Ingredients</button>
-            <button>Save</button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <!-- edit category model -->
-    <div class="editCategoryModelWrapper">
-      <div class="editCategoryModel">
-        <div class="closeEditCategoryModel">
-          <i class="fa-regular fa-circle-xmark"></i>
-        </div>
-        <h2 class="mb-4">Edit Category</h2>
-        <table>
-          <tr>
-            <td><input type="text" value="Dairy Products" /></td>
-            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDeleteCat">
-              <i class="fa-solid fa-rotate-left"></i>
-            </td>
-          </tr>
-          <tr>
-            <td><input type="text" value="Drinkable" /></td>
-            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDeleteCat">
-              <i class="fa-solid fa-rotate-left"></i>
-            </td>
-          </tr>
-          <tr>
-            <td><input type="text" value="Fast Food" /></td>
-            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDeleteCat">
-              <i class="fa-solid fa-rotate-left"></i>
-            </td>
-          </tr>
-          <tr>
-            <td><input type="text" value="Dairy Products" /></td>
-            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDeleteCat">
-              <i class="fa-solid fa-rotate-left"></i>
-            </td>
-          </tr>
-          <tr>
-            <td><input type="text" value="Drinkable" /></td>
-            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDeleteCat">
-              <i class="fa-solid fa-rotate-left"></i>
-            </td>
-          </tr>
-          <tr>
-            <td><input type="text" value="Fast Food" /></td>
-            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDeleteCat">
-              <i class="fa-solid fa-rotate-left"></i>
-            </td>
-          </tr>
-        </table>
-        <div class="text-center">
-          <button>Submit</button>
-          
-        </div>
-      </div>
-    </div>
-    <!-- edit ingredient's model -->
-    <div class="editIngredientModelWrapper">
-      <div class="editIngredientModel">
-        <div class="closeEditIngredientModel">
-          <i class="fa-regular fa-circle-xmark"></i>
-        </div>
-        <h2 class="mb-3">Edit Ingredient</h2>
-        <table>
-          <tr>
-            <td><input type="text" value="Milk Powder" /></td>
-            <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
-          </tr>
-          <tr>
-            <td><input type="text" value="Curd" /></td>
-            <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
-          </tr>
-          <tr>
-            <td><input type="text" value="Paneer" /></td>
-            <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
-          </tr>
-          <tr>
-            <td><input type="text" value="Dairyfg" /></td>
-            <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
-          </tr>
-          <tr>
-            <td><input type="text" value="dgf" /></td>
-            <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
-          </tr>
-          <tr>
-            <td><input type="text" value="Fast Food" /></td>
-            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
-          </tr>
-          <tr>
-            <td><input type="text" value="Milk Powder" /></td>
-            <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
-          </tr>
-          <tr>
-            <td><input type="text" value="Curd" /></td>
-            <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
-          </tr>
-          <tr>
-            <td><input type="text" value="Paneer" /></td>
-            <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
-          </tr>
-          <tr>
-            <td><input type="text" value="Dairyfg" /></td>
-            <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
-          </tr>
-          <tr>
-            <td><input type="text" value="dgf" /></td>
-            <td class="deleteIngCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
-          </tr>
-          <tr>
-            <td><input type="text" value="Fast Food" /></td>
-            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
-            <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
-          </tr>
-        </table>
-        <div class="text-center">
-          <button class="saveEditedIng">Submit</button>
-        </div>
-      </div>
-    </div>
-    <div class="breadcrumbs">
-      <ul class="list-unstyled d-flex align-items-center">
-        <li><a href="">Purchases</a></li>
-        <li><i class="fa-solid fa-angles-right"></i></li>
-        <li><a href="" class="">Add Purchases </a></li>
-        <li><i class="fa-solid fa-angles-right"></i></li>
-        <li><a href="" class="ActiveBreadcrumb">Raw Material </a></li>
-      </ul>
-      <div>
-        <button class="btn btn-primary activeBreadcurmbtn">
-          Add Raw Material
-        </button>
-        <button class="btn btn-primary">Add Fixed Stock</button>
-      </div>
-    </div>
-    <main>
-      <div class="container-fluid my-1">
-        <div class="dateWrapper d-flex justify-content-between">
-          <div>
-            Date : <input type="text" id="dateWise" placeholder="03/12/2012" />
-          </div>
-          <button class="addVender">Add vender</button>
-        </div>
-      </div>
-
-      <div class="allBtnsWrapper pb-3 mt-1">
-        <div class="container-fluid">
-          <div class="allBtns pt-0 pb-1">
-            <div class="d-flex justify-content-between align-items-center">
-              <h3 class="categoryheading">
-                Ingredient Categories List
-                <span class="px-2 mainColor">|</span>
-                <span
-                  >Total Categories : <span class="totalCatgry">22</span></span
-                >
-              </h3>
-              <div class="CategoryActionBtn text-right">
-                <button class="btn btn-primary btn-sm addNewCategoryBtn">
-                  Add Category
-                </button>
-                <button class="btn btn-primary btn-sm editNewCategoryBtn">
-                  Edit Category
-                </button>
-                <!-- <button class="btn btn-primary btn-sm">Delete Category</button> -->
-              </div>
-            </div>
-            <hr />
-            <div class="mt-1"></div>
-            <button class="activeBtn">Dairy Products</button>
-            <button>Drinkable</button>
-            <button>Fast Food</button>
-            <button>My Fav</button>
-            <button>Mostly Used</button>
-            <button>Top</button>
-            <button>Commonly Used</button>
-            <button>Less Used</button>
-            <button>Chinese</button>
-            <button>Italian</button>
-            <button>Thai</button>
-            <button>Continental</button>
-            <button>Indian</button>
-            <button>South Indian</button>
-            <!-- <button>North Indian</button> -->
-          </div>
-        </div>
-      </div>
-
-      <div class="container-fluid mb-3">
-        <div class="itemNameWrapper pt-0">
+    <div class="allBtnsWrapper pb-3 mt-1">
+      <div class="container-fluid">
+        <div class="allBtns pt-0 pb-1">
           <div class="d-flex justify-content-between align-items-center">
-            <h3>
-              Ingredient List
+            <h3 class="categoryheading">
+              Ingredient Categories List
               <span class="px-2 mainColor">|</span>
-              <span>
-                Total Ingredients : <span class="totalIngredients">52</span>
-              </span>
+              <span>Total Categories : <span class="totalCatgry">22</span></span>
             </h3>
-            <div class="ingredientsActionBtn text-right">
-              <button class="btn btn-primary btn-sm addIngredientModelBtn">
-                Add Ingredients
+            <div class="CategoryActionBtn text-right">
+              <button class="btn btn-primary btn-sm addNewCategoryBtn">
+                Add Category
               </button>
-              <button class="btn btn-primary btn-sm editIngredientModelBtn">
-                Edit Ingredients
+              <button class="btn btn-primary btn-sm editNewCategoryBtn">
+                Edit Category
               </button>
-              <!-- <button class="btn btn-primary btn-sm">Delete Ingredients</button> -->
+              <!-- <button class="btn btn-primary btn-sm">Delete Category</button> -->
             </div>
           </div>
           <hr />
-          <div class="mt-2"></div>
-          <ul class="list-unstyled mb-0">
-            <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> Milk Powder </label>
-              </div>
-            </li>
-            <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> Curd </label>
-              </div>
-            </li>
-            <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> Paneer </label>
-              </div>
-            </li>
-            <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for="">assadf </label>
-              </div>
-            </li>
-            <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> Lorem asasa </label>
-              </div>
-            </li>
-            <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> Powder </label>
-              </div>
-            </li>
-            <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> Curdsa </label>
-              </div>
-            </li>
-            <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> Paneerssaaa </label>
-              </div>
-            </li>
-            <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> loremfdfispum </label>
-              </div>
-            </li>
-            <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for="">
-                  Lorem sdipsum, doldsor sit
-                </label>
-              </div>
-            </li>
-            <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> Milk Powder </label>
-              </div>
-            </li>
-            <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> Curdbf </label>
-              </div>
-            </li>
-            <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> Paneerrt </label>
-              </div>
-            </li>
-            <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for=""> loremrfispum </label>
-              </div>
-            </li>
-            <li>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" />
-                <label class="form-check-label" for="">
-                  Loremdf ipsumolor sit
-                </label>
-              </div>
-            </li>
-          </ul>
+          <div class="mt-1"></div>
+          <button class="activeBtn">Dairy Products</button>
+          <button>Drinkable</button>
+          <button>Fast Food</button>
+          <button>My Fav</button>
+          <button>Mostly Used</button>
+          <button>Top</button>
+          <button>Commonly Used</button>
+          <button>Less Used</button>
+          <button>Chinese</button>
+          <button>Italian</button>
+          <button>Thai</button>
+          <button>Continental</button>
+          <button>Indian</button>
+          <button>South Indian</button>
+          <!-- <button>North Indian</button> -->
         </div>
       </div>
-      
-      <!-- <div class="allVenderBtnsWrapper pb-3">
+    </div>
+
+    <div class="container-fluid mb-3">
+      <div class="itemNameWrapper pt-0">
+        <div class="d-flex justify-content-between align-items-center">
+          <h3>
+            Ingredient List
+            <span class="px-2 mainColor">|</span>
+            <span>
+              Total Ingredients : <span class="totalIngredients">52</span>
+            </span>
+          </h3>
+          <div class="ingredientsActionBtn text-right">
+            <button class="btn btn-primary btn-sm addIngredientModelBtn">
+              Add Ingredients
+            </button>
+            <button class="btn btn-primary btn-sm editIngredientModelBtn">
+              Edit Ingredients
+            </button>
+            <!-- <button class="btn btn-primary btn-sm">Delete Ingredients</button> -->
+          </div>
+        </div>
+        <hr />
+        <div class="mt-2"></div>
+        <ul class="list-unstyled mb-0">
+          <li>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" />
+              <label class="form-check-label" for=""> Milk Powder </label>
+            </div>
+          </li>
+          <li>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" />
+              <label class="form-check-label" for=""> Curd </label>
+            </div>
+          </li>
+          <li>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" />
+              <label class="form-check-label" for=""> Paneer </label>
+            </div>
+          </li>
+          <li>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" />
+              <label class="form-check-label" for="">assadf </label>
+            </div>
+          </li>
+          <li>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" />
+              <label class="form-check-label" for=""> Lorem asasa </label>
+            </div>
+          </li>
+          <li>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" />
+              <label class="form-check-label" for=""> Powder </label>
+            </div>
+          </li>
+          <li>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" />
+              <label class="form-check-label" for=""> Curdsa </label>
+            </div>
+          </li>
+          <li>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" />
+              <label class="form-check-label" for=""> Paneerssaaa </label>
+            </div>
+          </li>
+          <li>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" />
+              <label class="form-check-label" for=""> loremfdfispum </label>
+            </div>
+          </li>
+          <li>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" />
+              <label class="form-check-label" for="">
+                Lorem sdipsum, doldsor sit
+              </label>
+            </div>
+          </li>
+          <li>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" />
+              <label class="form-check-label" for=""> Milk Powder </label>
+            </div>
+          </li>
+          <li>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" />
+              <label class="form-check-label" for=""> Curdbf </label>
+            </div>
+          </li>
+          <li>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" />
+              <label class="form-check-label" for=""> Paneerrt </label>
+            </div>
+          </li>
+          <li>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" />
+              <label class="form-check-label" for=""> loremrfispum </label>
+            </div>
+          </li>
+          <li>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" />
+              <label class="form-check-label" for="">
+                Loremdf ipsumolor sit
+              </label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- <div class="allVenderBtnsWrapper pb-3">
         <div class="container-fluid">
           <div class="allBtns pt-0 pb-1">
             <div class="d-flex justify-content-between align-items-center">
@@ -724,31 +765,31 @@
           </div>
         </div>
       </div> -->
-      <div class="container-fluid">
-        <div class="ProductDetailsWrapper">
-          <div class="details">
-            <div class="col-12 my-1">
-              <div class="title">
-                <h3>Dairy Products :</h3>
-              </div>
+    <div class="container-fluid">
+      <div class="ProductDetailsWrapper">
+        <div class="details">
+          <div class="col-12 my-1">
+            <div class="title">
+              <h3>Dairy Products :</h3>
             </div>
-            <!-- <div class="title mb-3">
+          </div>
+          <!-- <div class="title mb-3">
               <h3>Dairy Products</h3>
             </div> -->
-            <table>
-              <thead>
-                <tr>
-                  <th>S. No.</th>
-                  <th>Item name</th>
-                  <th>Price/Qty</th>
-                  <th>No. Of Days</th>
-                  <th>Quantity</th>
-                  <th>Select Vender</th>
-                  <!-- <th>Save</th> -->
-                </tr>
-              </thead>
-              <tbody>
-                <!-- <tr>
+          <table>
+            <thead>
+              <tr>
+                <th>S. No.</th>
+                <th>Item name</th>
+                <th>Price/Qty</th>
+                <th>No. Of Days</th>
+                <th>Quantity</th>
+                <th>Select Vender</th>
+                <!-- <th>Save</th> -->
+              </tr>
+            </thead>
+            <tbody>
+              <!-- <tr>
                   <td class="name">Milk Powder</td>
                   <td>
                     <input
@@ -787,592 +828,591 @@
                     </select>
                   </td>
                 </tr> -->
-              </tbody>
-            </table>
-            <div class="table1Btns text-right my-1 mx-3">
-              <button class="btn btn-primary btn-sm showVenderDetails">
-                Next
-              </button>
-            </div>
+            </tbody>
+          </table>
+          <div class="table1Btns text-right my-1 mx-3">
+            <button class="btn btn-primary btn-sm showVenderDetails">
+              Next
+            </button>
           </div>
-          <div class="venderDetailsTable">
-            <table>
-              <thead>
-                <tr>
-                  <th>S. No.</th>
-                  <th>Selected Vender</th>
-                  <th>Total Items</th>
-                  <th>Total Price</th>
-                  <th>Paid</th>
-                  <th>Remaining</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- <tr>
+        </div>
+        <div class="venderDetailsTable">
+          <table>
+            <thead>
+              <tr>
+                <th>S. No.</th>
+                <th>Selected Vender</th>
+                <th>Total Items</th>
+                <th>Total Price</th>
+                <th>Paid</th>
+                <th>Remaining</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- <tr>
                 <td>Amit</td>
                 <td><input type="text" placeholder="Total Items"></td>
                 <td><input type="text" placeholder="Total Items"></td>
                 <td><input type="text" placeholder="Total Items"></td>
                 <td>988</td>
               </tr> -->
-              </tbody>
-            </table>
-            <div class="table2Btns text-right my-3 mx-3">
-              <button class="btn btn-primary btn-sm showItemDetails">
-                Prev
-              </button>
-              <button class="btn btn-primary btn-sm submitAllData">
-                Submit
-              </button>
-            </div>
+            </tbody>
+          </table>
+          <div class="table2Btns text-right my-3 mx-3">
+            <button class="btn btn-primary btn-sm showItemDetails">
+              Prev
+            </button>
+            <button class="btn btn-primary btn-sm submitAllData">
+              Submit
+            </button>
           </div>
         </div>
       </div>
-      <div class="container-fluid">
-        <div id="addVenderWrapper" class="mt-4">
-          <div class="addVenderTitle">
-            <h2>Add New Vender</h2>
-          </div>
-          <div class="addVenderForm container">
-            <form>
-              <div class="row justify-content-center">
-                <div class="col-12">
-                  <div
-                    class="row justify-content-center align-items-center"
-                    style="background-color: #eee; padding: 20px"
-                  >
-                    <div class="col-md-4">
-                      <div class="formGroup">
-                        <label for="venderName">Vender Name</label>
-                        <br />
-                        <input type="text" />
-                      </div>
+    </div>
+    <div class="container-fluid">
+      <div id="addVenderWrapper" class="mt-4">
+        <div class="addVenderTitle">
+          <h2>Add New Vender</h2>
+        </div>
+        <div class="addVenderForm container">
+          <form>
+            <div class="row justify-content-center">
+              <div class="col-12">
+                <div class="row justify-content-center align-items-center"
+                  style="background-color: #eee; padding: 20px">
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="venderName">Vender Name</label>
+                      <br />
+                      <input type="text" />
                     </div>
-                    <div class="col-md-4">
-                      <div class="formGroup">
-                        <label for="Phone">Phone No.</label>
-                        <br />
-                        <input type="text" />
-                      </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="Phone">Phone No.</label>
+                      <br />
+                      <input type="text" />
                     </div>
-                    <div class="col-md-4">
-                      <div class="formGroup">
-                        <label for="Address">Address</label>
-                        <br />
-                        <input type="text" />
-                      </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="Address">Address</label>
+                      <br />
+                      <input type="text" />
                     </div>
-                    <div class="col-md-4">
-                      <div class="formGroup">
-                        <label for="upiN">UPI ID</label>
-                        <br />
-                        <input type="text" />
-                      </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="upiN">UPI ID</label>
+                      <br />
+                      <input type="text" />
                     </div>
-                    <div class="col-md-4">
-                      <div class="formGroup">
-                        <label for="bankName">Bank Name</label>
-                        <br />
-                        <input type="text" />
-                      </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="bankName">Bank Name</label>
+                      <br />
+                      <input type="text" />
                     </div>
-                    <div class="col-md-4">
-                      <div class="formGroup">
-                        <label for="AccN">Account No.</label>
-                        <br />
-                        <input type="text" />
-                      </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="AccN">Account No.</label>
+                      <br />
+                      <input type="text" />
                     </div>
-                    <div class="col-md-6">
-                      <div class="formGroup">
-                        <label for="ifsc">IFSC Code</label>
-                        <br />
-                        <input type="text" />
-                      </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="formGroup">
+                      <label for="ifsc">IFSC Code</label>
+                      <br />
+                      <input type="text" />
                     </div>
-                    <div class="col-md-6">
-                      <div class="formGroup">
-                        <label for="ACHName">Account Holder Name</label>
-                        <br />
-                        <input type="text" />
-                      </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="formGroup">
+                      <label for="ACHName">Account Holder Name</label>
+                      <br />
+                      <input type="text" />
                     </div>
-                    <div class="col-md-4">
-                      <div class="formGroup">
-                        <label for="state">State</label>
-                        <br />
-                        <select class="details stateDetail  " name="stateDetail">
-                          <option disabled selected>Select State</option>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="state">State</label>
+                      <br />
+                      <select class="details stateDetail  " name="stateDetail">
+                        <option disabled selected>Select State</option>
                       </select>
-                      </div>
                     </div>
-                    <div class="col-md-4">
-                      <div class="formGroup">
-                        <label for="city">City</label>
-                        <br />
-                        <select class="details cityDetail " name="cityDetail">
-                          <option disabled selected>Select City</option>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="city">City</label>
+                      <br />
+                      <select class="details cityDetail " name="cityDetail">
+                        <option disabled selected>Select City</option>
                       </select>
-                      </div>
                     </div>
-                    <div class="form-group genderWrapper col-md-4">
-                      <label for="gnder">Gender :</label>
-                      <input type="radio" name="gender" id="male" />
-                      <label for="male">Male</label>
-                      <input type="radio" name="gender" id="female" />
-                      <label for="female">Female</label>
-                      <input type="radio" name="gender" id="other" />
-                      <label for="other">Other</label>
-                    </div>
-                    <div class="formGroup col-md-12">
-                      <label for="gstno">GST Number</label><br />
-                      <input type="text" name="gstno" id="gstno" />
-                    </div>
-                    <div class="col-12 text-center mt-2">
-                      <button class="closeAddVenderBox">Close</button>
-                      <button type="submit" class="addVenderSubmitBtn">
-                        Submit
-                      </button>
-                    </div>
+                  </div>
+                  <div class="form-group genderWrapper col-md-4">
+                    <label for="gnder">Gender :</label>
+                    <input type="radio" name="gender" id="male" />
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="female" />
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" id="other" />
+                    <label for="other">Other</label>
+                  </div>
+                  <div class="formGroup col-md-12">
+                    <label for="gstno">GST Number</label><br />
+                    <input type="text" name="gstno" id="gstno" />
+                  </div>
+                  <div class="col-12 text-center mt-2">
+                    <button class="closeAddVenderBox">Close</button>
+                    <button type="submit" class="addVenderSubmitBtn">
+                      Submit
+                    </button>
                   </div>
                 </div>
               </div>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <!-- 
+  <!-- 
       models will load inside the div
     -->
-    <div id="addCategoryModelWrapper"></div>
-    <div id="addIngredientModelWrapper"></div>
-    <div id="editCategoryModelWrapper"></div>
-    <div id="editIngredientModelWrapper"></div>
+  <div id="addCategoryModelWrapper"></div>
+  <div id="addIngredientModelWrapper"></div>
+  <div id="editCategoryModelWrapper"></div>
+  <div id="editIngredientModelWrapper"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script>
-      $("head").append(
-        '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
-      );
-      $("head").append(
-        ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+    $("head").append(
+      '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
+    );
+    $("head").append(
+      ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
         />'
-      );
-      $("head").append(
-        '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
-      );
-    </script>
-    <script src="./common-model.js"></script>
-    <script>
-      $(function () {
-        $("#dateWise").datepicker();
-        $("#addIngredientModelWrapper").load("add-ingredients-model.html");
-        $("#editIngredientModelWrapper").load("edit-ingredient-model.html");
+    );
+    $("head").append(
+      '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
+    );
+  </script>
+  <script src="./common-model.js"></script>
+  <script>
+    $(function () {
+      $("#dateWise").datepicker();
+      $("#addIngredientModelWrapper").load("add-ingredients-model.html");
+      $("#editIngredientModelWrapper").load("edit-ingredient-model.html");
 
-        $("#addCategoryModelWrapper").load("add-category-model.html");
-        $("#editCategoryModelWrapper").load("edit-category-model.html");
-      });
+      $("#addCategoryModelWrapper").load("add-category-model.html");
+      $("#editCategoryModelWrapper").load("edit-category-model.html");
+    });
 
-      // $(document).on("click", ".deleteAddedIngredient", function () {
-      //   $(this).closest("div").remove();
-      // });
+    // $(document).on("click", ".deleteAddedIngredient", function () {
+    //   $(this).closest("div").remove();
+    // });
 
-      // $(".addMoreIngredientBtn").click(function (e) {
-      //   e.preventDefault();
-      //   let category = $("#selectedIngCatList option:selected").val();
-      //   console.log(category);
-      //   $(this)
-      //     .closest("form")
-      //     .children(".btns")
-      //     .before(
-      //       `<div class="form-group mt-3 text-left"> <label for="category">Ingredient : </label> <input type="text" name="" id=""> <input type="text" value="${category}" disabled=""> <i class="fa-solid fa-trash deleteAddedIngredient"></i> </div>`
-      //     );
-      // });
-      // $(".closeEditIngredientModel").click(function () {
-      //   $(".editIngredientModelWrapper").hide();
-      //   $(".editIngredientModelWrapper .editIngredientModel").animate({
-      //     top: -50,
-      //   });
-      // });
-      // $(".editIngredientModelBtn").click(function () {
-      //   $(".editIngredientModelWrapper").css({
-      //     display: "flex",
-      //   });
-      //   $(".editIngredientModelWrapper .editIngredientModel").animate({
-      //     top: 50,
-      //   });
-      // });
+    // $(".addMoreIngredientBtn").click(function (e) {
+    //   e.preventDefault();
+    //   let category = $("#selectedIngCatList option:selected").val();
+    //   console.log(category);
+    //   $(this)
+    //     .closest("form")
+    //     .children(".btns")
+    //     .before(
+    //       `<div class="form-group mt-3 text-left"> <label for="category">Ingredient : </label> <input type="text" name="" id=""> <input type="text" value="${category}" disabled=""> <i class="fa-solid fa-trash deleteAddedIngredient"></i> </div>`
+    //     );
+    // });
+    // $(".closeEditIngredientModel").click(function () {
+    //   $(".editIngredientModelWrapper").hide();
+    //   $(".editIngredientModelWrapper .editIngredientModel").animate({
+    //     top: -50,
+    //   });
+    // });
+    // $(".editIngredientModelBtn").click(function () {
+    //   $(".editIngredientModelWrapper").css({
+    //     display: "flex",
+    //   });
+    //   $(".editIngredientModelWrapper .editIngredientModel").animate({
+    //     top: 50,
+    //   });
+    // });
 
-      // $(".closeAddCategoryModel").click(function () {
-      //   $(".addCategoryModelWrapper").hide();
-      //   $(".addCategoryModelWrapper .addCategoryModel").animate({ top: -50 });
-      // });
-      // $(".addNewCategoryBtn").click(function () {
-      //   $(".addCategoryModelWrapper").css({
-      //     display: "flex",
-      //   });
-      //   $(".addCategoryModelWrapper .addCategoryModel").animate({ top: 50 });
-      // });
+    // $(".closeAddCategoryModel").click(function () {
+    //   $(".addCategoryModelWrapper").hide();
+    //   $(".addCategoryModelWrapper .addCategoryModel").animate({ top: -50 });
+    // });
+    // $(".addNewCategoryBtn").click(function () {
+    //   $(".addCategoryModelWrapper").css({
+    //     display: "flex",
+    //   });
+    //   $(".addCategoryModelWrapper .addCategoryModel").animate({ top: 50 });
+    // });
 
-      // $(".closeaddIngredientModelWrapper").click(function () {
-      //   $(".addIngredientModelWrapper").hide();
-      //   $(".addIngredientModelWrapper .addIngredientModel").animate({
-      //     top: -50,
-      //   });
-      // });
-      // $(".addIngredientModelBtn").click(function () {
-      //   $(".addIngredientModelWrapper").css({
-      //     display: "flex",
-      //   });
-      //   $(".addIngredientModelWrapper .addIngredientModel").animate({
-      //     top: 50,
-      //   });
-      // });
+    // $(".closeaddIngredientModelWrapper").click(function () {
+    //   $(".addIngredientModelWrapper").hide();
+    //   $(".addIngredientModelWrapper .addIngredientModel").animate({
+    //     top: -50,
+    //   });
+    // });
+    // $(".addIngredientModelBtn").click(function () {
+    //   $(".addIngredientModelWrapper").css({
+    //     display: "flex",
+    //   });
+    //   $(".addIngredientModelWrapper .addIngredientModel").animate({
+    //     top: 50,
+    //   });
+    // });
 
-      // $(".closeEditCategoryModel").click(function () {
-      //   $(".editCategoryModelWrapper").hide();
-      //   $(".editCategoryModelWrapper .addCategoryModel").animate({ top: -50 });
-      // });
-      // $(".editNewCategoryBtn").click(function () {
-      //   $(".editCategoryModelWrapper").css({
-      //     display: "flex",
-      //   });
-      //   $(".editCategoryModelWrapper .editCategoryModel").animate({ top: 50 });
-      // });
+    // $(".closeEditCategoryModel").click(function () {
+    //   $(".editCategoryModelWrapper").hide();
+    //   $(".editCategoryModelWrapper .addCategoryModel").animate({ top: -50 });
+    // });
+    // $(".editNewCategoryBtn").click(function () {
+    //   $(".editCategoryModelWrapper").css({
+    //     display: "flex",
+    //   });
+    //   $(".editCategoryModelWrapper .editCategoryModel").animate({ top: 50 });
+    // });
 
-      // $(document).on("click", ".deleteCategory", function () {
-      //   $(this)
-      //     .closest("tr")
-      //     .children("td")
-      //     .children("input")
-      //     .prop("disabled", true);
-      //   $(this).closest("tr").children(".deleteCategory").hide();
-      //   $(this).closest("tr").children(".undoDeleteCat").show();
-      // });
+    // $(document).on("click", ".deleteCategory", function () {
+    //   $(this)
+    //     .closest("tr")
+    //     .children("td")
+    //     .children("input")
+    //     .prop("disabled", true);
+    //   $(this).closest("tr").children(".deleteCategory").hide();
+    //   $(this).closest("tr").children(".undoDeleteCat").show();
+    // });
 
-      // $(document).on("click", ".undoDeleteCat", function () {
-      //   $(this)
-      //     .closest("tr")
-      //     .children("td")
-      //     .children("input")
-      //     .prop("disabled", false);
-      //   $(this).closest("tr").children(".undoDeleteCat").hide();
-      //   $(this).closest("tr").children(".deleteCategory").show();
-      // });
+    // $(document).on("click", ".undoDeleteCat", function () {
+    //   $(this)
+    //     .closest("tr")
+    //     .children("td")
+    //     .children("input")
+    //     .prop("disabled", false);
+    //   $(this).closest("tr").children(".undoDeleteCat").hide();
+    //   $(this).closest("tr").children(".deleteCategory").show();
+    // });
 
-      // $(document).on("click", ".deleteIngCategory", function () {
-      //   $(this)
-      //     .closest("tr")
-      //     .children("td")
-      //     .children("input")
-      //     .prop("disabled", true);
-      //   $(this).closest("tr").children(".deleteIngCategory").hide();
-      //   $(this).closest("tr").children(".undoDelete").show();
-      // });
+    // $(document).on("click", ".deleteIngCategory", function () {
+    //   $(this)
+    //     .closest("tr")
+    //     .children("td")
+    //     .children("input")
+    //     .prop("disabled", true);
+    //   $(this).closest("tr").children(".deleteIngCategory").hide();
+    //   $(this).closest("tr").children(".undoDelete").show();
+    // });
 
-      // $(document).on("click", ".undoDelete", function () {
-      //   $(this)
-      //     .closest("tr")
-      //     .children("td")
-      //     .children("input")
-      //     .prop("disabled", false);
-      //   $(this).closest("tr").children(".undoDelete").hide();
-      //   $(this).closest("tr").children(".deleteIngCategory").show();
-      // });
+    // $(document).on("click", ".undoDelete", function () {
+    //   $(this)
+    //     .closest("tr")
+    //     .children("td")
+    //     .children("input")
+    //     .prop("disabled", false);
+    //   $(this).closest("tr").children(".undoDelete").hide();
+    //   $(this).closest("tr").children(".deleteIngCategory").show();
+    // });
 
-      $(".addVender").click(function () {
-        $("#addVenderWrapper").show();
-        let top = $("#addVenderWrapper").position().top;
-        $("html, body").animate({ scrollTop: top });
-      });
+    $(".addVender").click(function () {
+      $("#addVenderWrapper").show();
+      let top = $("#addVenderWrapper").position().top;
+      $("html, body").animate({ scrollTop: top });
+    });
 
-      // $(".breadcrumbs button").click(function () {
-      //   $(".breadcrumbs button").removeClass("activeBreadcurmbtn");
-      //   $(this).addClass("activeBreadcurmbtn");
-      // });
+    // $(".breadcrumbs button").click(function () {
+    //   $(".breadcrumbs button").removeClass("activeBreadcurmbtn");
+    //   $(this).addClass("activeBreadcurmbtn");
+    // });
 
-      $(".allBtns button").click(function () {
-        $(".allBtns button").removeClass("activeBtn");
-        $(this).addClass("activeBtn");
+    $(".allBtns button").click(function () {
+      $(".allBtns button").removeClass("activeBtn");
+      $(this).addClass("activeBtn");
 
-        $(".ProductDetailsWrapper .details .title h3").text($(this).text());
-      });
+      $(".ProductDetailsWrapper .details .title h3").text($(this).text());
+    });
 
-      $(".showVenderDetails").click(function () {
-        $("#addVenderWrapper").hide();
+    $(".showVenderDetails").click(function () {
+      $("#addVenderWrapper").hide();
 
-        if (selectedVender.length <= 0) {
-          alert("please select vender");
-        } else {
-          $(".venderDetailsTable table tbody").html("");
-          selectedVender.map((elem, index) => {
-            $(".venderDetailsTable table tbody")
-              .append(`<tr data-venderMoneyKey="${index}"><td></td><td>${elem}</td>
+      if (selectedVender.length <= 0) {
+        alert("please select vender");
+      } else {
+        $(".venderDetailsTable table tbody").html("");
+        selectedVender.map((elem, index) => {
+          $(".venderDetailsTable table tbody")
+            .append(`<tr data-venderMoneyKey="${index}"><td></td><td>${elem}</td>
                 <td><input type="text" class="venderTotalItems" placeholder="Total Items"></td>
                 <td><input type="text" class="venderTotalPrice" placeholder="Total Items"></td>
                 <td><input type="text" class="venderTotalPaid" placeholder="Total Items"></td>
                 <td class="venderTotalRemaining">-</td></tr>`);
+        });
+
+        $(".ProductDetailsWrapper .details").animate(
+          { left: "-200%" },
+          "slow"
+        );
+        $(".ProductDetailsWrapper .details").hide();
+        $(".ProductDetailsWrapper .venderDetailsTable").animate(
+          { left: "0%" },
+          "slow"
+        );
+        $(".ProductDetailsWrapper .venderDetailsTable").show();
+      }
+    });
+
+    $(".showItemDetails").click(function () {
+      // $('#addVenderWrapper').show();
+      $(".ProductDetailsWrapper .details")
+        .animate({ left: "0%" }, "fast")
+        .show();
+      $(".ProductDetailsWrapper .venderDetailsTable")
+        .animate({ left: "200%" }, "fast")
+        .hide();
+    });
+
+    let selectedVender = [];
+    $(document).on("change", ".chooseVender", function () {
+      let vender = $(this).val();
+      if (!selectedVender.includes(vender)) {
+        selectedVender.push(vender);
+      }
+    });
+
+    $(document).on(
+      "click ",
+      ".itemNameWrapper input[type='checkbox']",
+      function () {
+        let value = $(this).closest(".form-check").children("label").text();
+        let key = value.replaceAll(/\s/g, "");
+        if ($(this).is(":checked")) {
+          $(".ProductDetailsWrapper table").append(
+            "<tr data-key=" +
+            key +
+            '><td></td> <td class="name">' +
+            value +
+            '</td><td> <input type="text" class="price" placeholder="Price/Qty" name="price"/> </td><td> <select name="days" id="days"> <option selected disabled>Used In</option> <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> </select> </td><td> <select name="quantity" id="quantity"> <option selected disabled>Select Quantity</option> <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> </select> </td><td> <select name="Vender" class="chooseVender" id="Vender"> <option selected disabled>Select Vender</option> <option value="Amit">Amit</option> <option value="Ankit">Ankit</option> <option value="Rohit">Rohit</option> <option value="Akash">Akash</option> <option value="Ramu">Ramu</option> <option value="Sonu">Sonu</option> <option value="Manish Joshi">Manish Joshi</option> </select> </td></tr>'
+          );
+        } else {
+          $(".ProductDetailsWrapper table tbody tr").each(function (i) {
+            if ($(this).data("key") == key) {
+              $(this).remove();
+            }
           });
-
-          $(".ProductDetailsWrapper .details").animate(
-            { left: "-200%" },
-            "slow"
-          );
-          $(".ProductDetailsWrapper .details").hide();
-          $(".ProductDetailsWrapper .venderDetailsTable").animate(
-            { left: "0%" },
-            "slow"
-          );
-          $(".ProductDetailsWrapper .venderDetailsTable").show();
         }
-      });
-
-      $(".showItemDetails").click(function () {
-        // $('#addVenderWrapper').show();
-        $(".ProductDetailsWrapper .details")
-          .animate({ left: "0%" }, "fast")
-          .show();
-        $(".ProductDetailsWrapper .venderDetailsTable")
-          .animate({ left: "200%" }, "fast")
-          .hide();
-      });
-
-      let selectedVender = [];
-      $(document).on("change", ".chooseVender", function () {
-        let vender = $(this).val();
-        if (!selectedVender.includes(vender)) {
-          selectedVender.push(vender);
-        }
-      });
-
-      $(document).on(
-        "click ",
-        ".itemNameWrapper input[type='checkbox']",
-        function () {
-          let value = $(this).closest(".form-check").children("label").text();
-          let key = value.replaceAll(/\s/g, "");
-          if ($(this).is(":checked")) {
-            $(".ProductDetailsWrapper table").append(
-              "<tr data-key=" +
-                key +
-                '><td></td> <td class="name">' +
-                value +
-                '</td><td> <input type="text" class="price" placeholder="Price/Qty" name="price"/> </td><td> <select name="days" id="days"> <option selected disabled>Used In</option> <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> </select> </td><td> <select name="quantity" id="quantity"> <option selected disabled>Select Quantity</option> <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> </select> </td><td> <select name="Vender" class="chooseVender" id="Vender"> <option selected disabled>Select Vender</option> <option value="Amit">Amit</option> <option value="Ankit">Ankit</option> <option value="Rohit">Rohit</option> <option value="Akash">Akash</option> <option value="Ramu">Ramu</option> <option value="Sonu">Sonu</option> <option value="Manish Joshi">Manish Joshi</option> </select> </td></tr>'
-            );
-          } else {
-            $(".ProductDetailsWrapper table tbody tr").each(function (i) {
-              if ($(this).data("key") == key) {
-                $(this).remove();
-              }
-            });
-          }
-        }
-      );
-      $(document).on("keyup ", ".venderTotalPaid", function () {
-        let totalPrice = $(this)
-          .closest("tr")
-          .children("td")
-          .children(".venderTotalPrice")
-          .val();
-        let paidAmount = $(this).val();
-        if (+totalPrice !== NaN || +paidAmount !== NaN) {
-          $(this)
-            .closest("tr")
-            .children(".venderTotalRemaining")
-            .text(+totalPrice - +paidAmount);
-        }
-      });
-      $(document).on('click','.closeAddVenderBox',function(e){
-        e.preventDefault();
-        $('#addVenderWrapper').slideUp();
-      })
-    </script>
-    <script>
-      // ============ ingredient category add edit ==========
-      // add new category btn click
-      $(document).on("click", ".addNewCategoryBtn", function () {
-        $(".addCategoryModelWrapper").css({
-          display: "flex",
-        });
-        $(".addCategoryModelWrapper .addCategoryModel").animate({ top: 50 });
-      });
-
-      //   close add category model
-      $(document).on("click", ".closeAddCategoryModel", function () {
-        $(".addCategoryModelWrapper").hide();
-        $(".addCategoryModelWrapper .addCategoryModel").animate({ top: -50 });
-      });
-
-      // edit category btn click
-
-      $(document).on("click", ".editNewCategoryBtn", function () {
-        $(".editCategoryModelWrapper").css({
-          display: "flex",
-        });
-        $(".editCategoryModelWrapper .editCategoryModel").animate({ top: 50 });
-      });
-
-      //   close edit category model
-      $(document).on("click", ".closeEditCategoryModel", function () {
-        $(".editCategoryModelWrapper").hide();
-        $(".editCategoryModelWrapper .addCategoryModel").animate({ top: -50 });
-      });
-      // delete category
-      $(document).on("click", ".deleteCategory", function () {
-        $(this)
-          .closest("tr")
-          .children("td")
-          .children("input")
-          .prop("disabled", true);
-        $(this).closest("tr").children(".deleteCategory").hide();
-        $(this).closest("tr").children(".undoDeleteCat").show();
-      });
-      // undo deleted category
-      $(document).on("click", ".undoDeleteCat", function () {
-        $(this)
-          .closest("tr")
-          .children("td")
-          .children("input")
-          .prop("disabled", false);
-        $(this).closest("tr").children(".undoDeleteCat").hide();
-        $(this).closest("tr").children(".deleteCategory").show();
-      });
-
-      // ============  ingredient  add edit ==========
-
-      // add ingredient btn click
-      $(document).on("click", ".addIngredientModelBtn", function () {
-        $(".addIngredientModelWrapper").css({
-          display: "flex",
-        });
-        $(".addIngredientModelWrapper .addIngredientModel").animate({
-          top: 50,
-        });
-      });
-      // delete added ingredient
-      $(document).on("click", ".deleteAddedIngredient", function () {
-        $(this).closest("div").remove();
-      });
-
-      //   add more ingredients
-      $(document).on("click", ".addMoreIngredientBtn", function (e) {
-        e.preventDefault();
-        let category = $("#selectedIngCatList option:selected").val();
-        console.log(category);
-        $(this)
-          .closest("form")
-          .children(".btns")
-          .before(
-            `<div class="form-group mt-3 text-left"> <label for="category">Ingredient : </label> <input type="text" name="" id=""> <input type="text" value="${category}" disabled=""> <i class="fa-solid fa-trash deleteAddedIngredient"></i> </div>`
-          );
-      });
-      //   close add ingredient model
-      $(document).on("click", ".closeaddIngredientModelWrapper", function () {
-        $(".addIngredientModelWrapper").hide();
-        $(".addIngredientModelWrapper .addIngredientModel").animate({
-          top: -50,
-        });
-      });
-
-      // edit ingredient btn click
-      $(document).on("click", ".closeEditIngredientModel", function () {
-        $(".editIngredientModelWrapper").hide();
-        $(".editIngredientModelWrapper .editIngredientModel").animate({
-          top: -50,
-        });
-      });
-      //   close edit ingredient model
-      $(document).on("click", ".editIngredientModelBtn", function () {
-        $(".editIngredientModelWrapper").css({
-          display: "flex",
-        });
-        $(".editIngredientModelWrapper .editIngredientModel").animate({
-          top: 50,
-        });
-      });
-      // delete ingredients
-      $(document).on("click", ".deleteIngCategory", function () {
-        $(this)
-          .closest("tr")
-          .children("td")
-          .children("input")
-          .prop("disabled", true);
-        $(this).closest("tr").children(".deleteIngCategory").hide();
-        $(this).closest("tr").children(".undoDelete").show();
-      });
-      //undo delete ingredients
-      $(document).on("click", ".undoDelete", function () {
-        $(this)
-          .closest("tr")
-          .children("td")
-          .children("input")
-          .prop("disabled", false);
-        $(this).closest("tr").children(".undoDelete").hide();
-        $(this).closest("tr").children(".deleteIngCategory").show();
-      });
-    </script>
-
-<script>
-        
-  var token ;
-  $.ajax({
-  url: "https://www.universal-tutorial.com/api/getaccesstoken",
-  method: "GET",
-  headers:{
-      "Accept": "application/json",
-      "api-token": "xPRtU2zmzocpIM-l_lhEVbhGN_0-f67eNBn-XfEXDm6sQZGT96Qqf13YN53dhKTftJk",
-      "user-email": "dummyToken@gmail.com"
-  },
-  success: function(data){
-      getState(data.auth_token)
-      console.log(data.auth_token)
-      token = data.auth_token;
-  }
-  });
-
-  function getState(token){
-  $.ajax({
-      url: "https://www.universal-tutorial.com/api/states/India",
-      method: "GET",
-      headers:{
-      "Accept": "application/json",
-      "Authorization": "Bearer "+token,
-      },
-      success: function(data){
-      for(let state of data){
-          $('.stateDetail').append(`<option val=${state.state_name}>${state.state_name}</option>`)
-          }
       }
-  });
-  };
-
-
-  function getCity(state){
-  $.ajax({
-      url: `https://www.universal-tutorial.com/api/cities/${state}`,
-      method: "GET",
-      headers:{
-      "Accept": "application/json",
-      "Authorization": "Bearer "+token,
-      },
-      success: function(data){
-      console.log(data)
-      $('.cityDetail').text('');
-      for(let city of data){
-          $('.cityDetail').append(`<option val=${city.city_name}>${city.city_name}</option>`)
-          }
+    );
+    $(document).on("keyup ", ".venderTotalPaid", function () {
+      let totalPrice = $(this)
+        .closest("tr")
+        .children("td")
+        .children(".venderTotalPrice")
+        .val();
+      let paidAmount = $(this).val();
+      if (+totalPrice !== NaN || +paidAmount !== NaN) {
+        $(this)
+          .closest("tr")
+          .children(".venderTotalRemaining")
+          .text(+totalPrice - +paidAmount);
       }
-  });
-  };
-
-  $('.stateDetail').change(function(){
-          let state = $(".stateDetail option:selected").val();
-          getCity(state);
-          })
+    });
+    $(document).on('click', '.closeAddVenderBox', function (e) {
+      e.preventDefault();
+      $('#addVenderWrapper').slideUp();
+    })
   </script>
-  </body>
+  <script>
+    // ============ ingredient category add edit ==========
+    // add new category btn click
+    $(document).on("click", ".addNewCategoryBtn", function () {
+      $(".addCategoryModelWrapper").css({
+        display: "flex",
+      });
+      $(".addCategoryModelWrapper .addCategoryModel").animate({ top: 50 });
+    });
+
+    //   close add category model
+    $(document).on("click", ".closeAddCategoryModel", function () {
+      $(".addCategoryModelWrapper").hide();
+      $(".addCategoryModelWrapper .addCategoryModel").animate({ top: -50 });
+    });
+
+    // edit category btn click
+
+    $(document).on("click", ".editNewCategoryBtn", function () {
+      $(".editCategoryModelWrapper").css({
+        display: "flex",
+      });
+      $(".editCategoryModelWrapper .editCategoryModel").animate({ top: 50 });
+    });
+
+    //   close edit category model
+    $(document).on("click", ".closeEditCategoryModel", function () {
+      $(".editCategoryModelWrapper").hide();
+      $(".editCategoryModelWrapper .addCategoryModel").animate({ top: -50 });
+    });
+    // delete category
+    $(document).on("click", ".deleteCategory", function () {
+      $(this)
+        .closest("tr")
+        .children("td")
+        .children("input")
+        .prop("disabled", true);
+      $(this).closest("tr").children(".deleteCategory").hide();
+      $(this).closest("tr").children(".undoDeleteCat").show();
+    });
+    // undo deleted category
+    $(document).on("click", ".undoDeleteCat", function () {
+      $(this)
+        .closest("tr")
+        .children("td")
+        .children("input")
+        .prop("disabled", false);
+      $(this).closest("tr").children(".undoDeleteCat").hide();
+      $(this).closest("tr").children(".deleteCategory").show();
+    });
+
+    // ============  ingredient  add edit ==========
+
+    // add ingredient btn click
+    $(document).on("click", ".addIngredientModelBtn", function () {
+      $(".addIngredientModelWrapper").css({
+        display: "flex",
+      });
+      $(".addIngredientModelWrapper .addIngredientModel").animate({
+        top: 50,
+      });
+    });
+    // delete added ingredient
+    $(document).on("click", ".deleteAddedIngredient", function () {
+      $(this).closest("div").remove();
+    });
+
+    //   add more ingredients
+    $(document).on("click", ".addMoreIngredientBtn", function (e) {
+      e.preventDefault();
+      let category = $("#selectedIngCatList option:selected").val();
+      console.log(category);
+      $(this)
+        .closest("form")
+        .children(".btns")
+        .before(
+          `<div class="form-group mt-3 text-left"> <label for="category">Ingredient : </label> <input type="text" name="" id=""> <input type="text" value="${category}" disabled=""> <i class="fa-solid fa-trash deleteAddedIngredient"></i> </div>`
+        );
+    });
+    //   close add ingredient model
+    $(document).on("click", ".closeaddIngredientModelWrapper", function () {
+      $(".addIngredientModelWrapper").hide();
+      $(".addIngredientModelWrapper .addIngredientModel").animate({
+        top: -50,
+      });
+    });
+
+    // edit ingredient btn click
+    $(document).on("click", ".closeEditIngredientModel", function () {
+      $(".editIngredientModelWrapper").hide();
+      $(".editIngredientModelWrapper .editIngredientModel").animate({
+        top: -50,
+      });
+    });
+    //   close edit ingredient model
+    $(document).on("click", ".editIngredientModelBtn", function () {
+      $(".editIngredientModelWrapper").css({
+        display: "flex",
+      });
+      $(".editIngredientModelWrapper .editIngredientModel").animate({
+        top: 50,
+      });
+    });
+    // delete ingredients
+    $(document).on("click", ".deleteIngCategory", function () {
+      $(this)
+        .closest("tr")
+        .children("td")
+        .children("input")
+        .prop("disabled", true);
+      $(this).closest("tr").children(".deleteIngCategory").hide();
+      $(this).closest("tr").children(".undoDelete").show();
+    });
+    //undo delete ingredients
+    $(document).on("click", ".undoDelete", function () {
+      $(this)
+        .closest("tr")
+        .children("td")
+        .children("input")
+        .prop("disabled", false);
+      $(this).closest("tr").children(".undoDelete").hide();
+      $(this).closest("tr").children(".deleteIngCategory").show();
+    });
+  </script>
+
+  <script>
+
+    var token;
+    $.ajax({
+      url: "https://www.universal-tutorial.com/api/getaccesstoken",
+      method: "GET",
+      headers: {
+        "Accept": "application/json",
+        "api-token": "xPRtU2zmzocpIM-l_lhEVbhGN_0-f67eNBn-XfEXDm6sQZGT96Qqf13YN53dhKTftJk",
+        "user-email": "dummyToken@gmail.com"
+      },
+      success: function (data) {
+        getState(data.auth_token)
+        console.log(data.auth_token)
+        token = data.auth_token;
+      }
+    });
+
+    function getState(token) {
+      $.ajax({
+        url: "https://www.universal-tutorial.com/api/states/India",
+        method: "GET",
+        headers: {
+          "Accept": "application/json",
+          "Authorization": "Bearer " + token,
+        },
+        success: function (data) {
+          for (let state of data) {
+            $('.stateDetail').append(`<option val=${state.state_name}>${state.state_name}</option>`)
+          }
+        }
+      });
+    };
+
+
+    function getCity(state) {
+      $.ajax({
+        url: `https://www.universal-tutorial.com/api/cities/${state}`,
+        method: "GET",
+        headers: {
+          "Accept": "application/json",
+          "Authorization": "Bearer " + token,
+        },
+        success: function (data) {
+          console.log(data)
+          $('.cityDetail').text('');
+          for (let city of data) {
+            $('.cityDetail').append(`<option val=${city.city_name}>${city.city_name}</option>`)
+          }
+        }
+      });
+    };
+
+    $('.stateDetail').change(function () {
+      let state = $(".stateDetail option:selected").val();
+      getCity(state);
+    })
+  </script>
+</body>
+
 </html>

@@ -1041,7 +1041,7 @@
                       <br />
                       <select class="details stateDetail  " name="stateDetail">
                         <option disabled selected>Select State</option>
-                    </select>
+                      </select>
                     </div>
                   </div>
                   <div class="col-md-4">
@@ -1050,7 +1050,7 @@
                       <br />
                       <select class="details cityDetail " name="cityDetail">
                         <option disabled selected>Select City</option>
-                    </select>
+                      </select>
                     </div>
                   </div>
                   <div class="form-group genderWrapper col-md-4">
@@ -1078,8 +1078,8 @@
       </div>
     </div>
   </main>
-  
-  
+
+
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -1379,64 +1379,64 @@
       $(this).closest("tr").children(".deleteIngCategory").show();
     });
   </script>
-   <script>
-        
-    var token ;
+  <script>
+
+    var token;
     $.ajax({
-    url: "https://www.universal-tutorial.com/api/getaccesstoken",
-    method: "GET",
-    headers:{
+      url: "https://www.universal-tutorial.com/api/getaccesstoken",
+      method: "GET",
+      headers: {
         "Accept": "application/json",
         "api-token": "xPRtU2zmzocpIM-l_lhEVbhGN_0-f67eNBn-XfEXDm6sQZGT96Qqf13YN53dhKTftJk",
         "user-email": "dummyToken@gmail.com"
-    },
-    success: function(data){
+      },
+      success: function (data) {
         getState(data.auth_token)
         console.log(data.auth_token)
         token = data.auth_token;
-    }
+      }
     });
 
-    function getState(token){
-    $.ajax({
+    function getState(token) {
+      $.ajax({
         url: "https://www.universal-tutorial.com/api/states/India",
         method: "GET",
-        headers:{
-        "Accept": "application/json",
-        "Authorization": "Bearer "+token,
+        headers: {
+          "Accept": "application/json",
+          "Authorization": "Bearer " + token,
         },
-        success: function(data){
-        for(let state of data){
+        success: function (data) {
+          for (let state of data) {
             $('.stateDetail').append(`<option val=${state.state_name}>${state.state_name}</option>`)
-            }
+          }
         }
-    });
+      });
     };
 
 
-    function getCity(state){
-    $.ajax({
+    function getCity(state) {
+      $.ajax({
         url: `https://www.universal-tutorial.com/api/cities/${state}`,
         method: "GET",
-        headers:{
-        "Accept": "application/json",
-        "Authorization": "Bearer "+token,
+        headers: {
+          "Accept": "application/json",
+          "Authorization": "Bearer " + token,
         },
-        success: function(data){
-        console.log(data)
-        $('.cityDetail').text('');
-        for(let city of data){
+        success: function (data) {
+          console.log(data)
+          $('.cityDetail').text('');
+          for (let city of data) {
             $('.cityDetail').append(`<option val=${city.city_name}>${city.city_name}</option>`)
-            }
+          }
         }
-    });
+      });
     };
- 
-    $('.stateDetail').change(function(){
-            let state = $(".stateDetail option:selected").val();
-            getCity(state);
-            })
-    </script>
+
+    $('.stateDetail').change(function () {
+      let state = $(".stateDetail option:selected").val();
+      getCity(state);
+    })
+  </script>
 </body>
 
 </html>

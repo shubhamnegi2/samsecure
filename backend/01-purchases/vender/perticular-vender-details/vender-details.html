@@ -1,1352 +1,1381 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vender Detail</title>
 
-    <style type="text/css">
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
-      * {
-        font-family: "Poppins", sans-serif;
-      }
-      body{
-        font-size: 14px;
-      }
-      .breadcrumb {
-        background-color: #ef7d0b !important;
-        margin-bottom: 0rem !important;
-        position: relative;
-      }
-      .breadcrumb .addVender {
-        text-transform: capitalize;
-        border-radius: 3px;
-        border: 0px;
-        background-color: #fe9037;
-        color: #fff;
-        padding: 2px 30px;
-        margin: 0px 10px;
-        font-weight: bold;
-      }
-      .butn-addvender {
-        position: absolute;
-        right: 2%;
-        top: 50%;
-        transform: translate(0%, -50%);
-        text-transform: capitalize;
-      }
-      .breadcrumb ul {
-        margin-bottom: 0rem;
-      }
-      .breadcrumb ul li {
-        color: #eee;
-        font-weight: bold;
-        margin: 10px 1px;
-      }
-      .breadcrumb ul li a {
-        color: inherit;
-        padding: 10px;
-        text-decoration: none;
-      }
-      .breadcrumb ul li i {
-        font-size: 12px;
-      }
-      .breadcrumb ul li .ActiveBreadcrumb {
-        color: #fff;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vender Detail</title>
 
-      main {
-        background-color: #eee;
-        min-height: 100vh;
-      }
-      main .filters label {
-        margin-right: 15px;
-        color: #083e5a;
-        font-size: 12px;
-      }
-      main .filters input::placeholder {
-        font-size: 14px;
-        color: #7a7797;
-      }
-      main .filters select {
-        font-size: 12px;
-        border: 0;
-        border-radius: 5px;
-        padding-left: 15px;
-        color: #7a7797;
-        width: 120px;
-        margin-left: 0px;
-        height: 18px;
-      }
-      main .filters input {
-        font-size: 14px;
-        border: 0;
-        border-radius: 5px;
-        padding-left: 15px;
-        color: #7a7797;
-      }
+  <style type="text/css">
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
-      .allBtnsWrapper .allBtns {
-        background-color: #fff;
-        box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
-        padding: 15px;
-        border-radius: 5px;
-      }
-      .allBtnsWrapper .allBtns button:first-child {
-        margin-left: 0px;
-      }
-      .allBtnsWrapper .allBtns button {
-        min-width: 50px;
-        margin: 2px 10px;
-        text-transform: capitalize;
-        border-radius: 3px;
-        border: 0;
-        background-color: #083e5a;
-        color: #fff;
-        font-size: 10px;
-        font-weight: 600;
-        padding: 2px 8px;
-      }
-      .allBtnsWrapper hr {
-        margin: 0px;
-      }
-      .allBtnsWrapper .allBtns .activeBtn {
-        background-color: #fe9037;
-      }
-      .color2 {
-        color: #083e5a;
-      }
+    * {
+      font-family: "Poppins", sans-serif;
+    }
 
-      .ProductDetailsWrapper {
-        background-color: #fff;
-        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-        border-radius: 5px;
-        padding: 10px;
-      }
+    body {
+      font-size: 14px;
+    }
 
-      .ProductDetailsWrapper .details .title {
-        padding:  0px;
-        text-align: center;
-      }
-      .ProductDetailsWrapper .details .title h3 {
-        display: inline-block;
-        border-bottom: 2px solid #3abb69;
-        color: #083e5a;
-        font-weight: bold;
-        text-transform: capitalize;
-        padding-bottom: 5px;
-        font-size: 18px;
-      }
-      .ProductDetailsWrapper table {
-        max-width: 100%;
-        width: 100%;
-        border-radius: 4px;
-        overflow: hidden;
-        border-radius: 5px;
-      }
-      .ProductDetailsWrapper table tr:nth-child(even) {
-        background-color: #fff2e7;
-      }
-      .ProductDetailsWrapper table tr:nth-child(even) input,
-      .ProductDetailsWrapper table tr:nth-child(even) select,
-      .ProductDetailsWrapper table tr:nth-child(even) td {
-        color: #000;
-      }
-      .ProductDetailsWrapper table tr:nth-child(even) input::-moz-placeholder,
-      .ProductDetailsWrapper table tr:nth-child(even) select::-moz-placeholder,
-      .ProductDetailsWrapper table tr:nth-child(even) td::-moz-placeholder {
-        color: #000;
-      }
-      .ProductDetailsWrapper
-        table
-        tr:nth-child(even)
-        input:-ms-input-placeholder,
-      .ProductDetailsWrapper
-        table
-        tr:nth-child(even)
-        select:-ms-input-placeholder,
-      .ProductDetailsWrapper table tr:nth-child(even) td:-ms-input-placeholder {
-        color: #000;
-      }
-      .ProductDetailsWrapper table tr:nth-child(even) input::placeholder,
-      .ProductDetailsWrapper table tr:nth-child(even) select::placeholder,
-      .ProductDetailsWrapper table tr:nth-child(even) td::placeholder {
-        color: #000;
-      }
-      .ProductDetailsWrapper table tr:nth-child(even) select option {
-        background-color: #fff2e7;
-      }
-      .ProductDetailsWrapper table tr {
-        height: 30px;
-      }
-      .ProductDetailsWrapper table tr:last-child {
-        border-bottom: 2px solid #ddcece;
-      }
-      .ProductDetailsWrapper table,
-      .ProductDetailsWrapper th {
-        border: 1px solid #ddcece;
-        border-collapse: collapse;
-        font-size: 12px;
-        text-align: center;
-      }
-      .ProductDetailsWrapper table tbody tr button {
-        cursor: pointer;
-        background-color: #7a7797;
-        padding: 1px 20px;
-      }
-      .ProductDetailsWrapper thead {
-        background-color: #fe9037;
-        color: #fff;
-      }
-      .ProductDetailsWrapper thead tr,
-      .ProductDetailsWrapper thead th {
-        border: 1px solid #000;
-      }
-      .ProductDetailsWrapper tbody tr td:first-child {
-        font-weight: 500;
-        text-transform: capitalize;
-      }
-      .ProductDetailsWrapper tbody td i {
-        cursor: pointer;
-        padding: 0px 8px;
-        font-size: 16px;
-      }
-      .ProductDetailsWrapper tbody tr input,
-      .ProductDetailsWrapper tbody tr select {
-        width: 100%;
-        height: 37px;
-        border: 0;
-        text-align: center;
-        background-color: transparent;
-        color: #7a7797;
-      }
+    .breadcrumb {
+      background-color: #ef7d0b !important;
+      margin-bottom: 0rem !important;
+      position: relative;
+    }
 
-      .addVenderWrapper {
-        background-color: #fff;
-      }
-      .addVenderWrapper .addVenderTitle {
-        text-align: center;
-        padding: 10px 0px;
-      }
-      .addVenderWrapper .addVenderTitle h2 {
-        display: inline-block;
-        border-bottom: 2px solid #3abb69;
-        color: #7a7797;
-        font-weight: bold;
-        padding-bottom: 5px;
-        font-size: 20px;
-      }
-      .addVenderWrapper .addVenderForm .formGroup {
-        margin-bottom: 20px;
-      }
-      .addVenderWrapper .addVenderForm .formGroup input {
-        border: 2px solid #eee;
-        width: 100%;
-        border-radius: 3px;
-      }
-      .activeTopBarBtn {
-        background-color: #083e5a !important;
-        color: #fff !important;
-      }
-      .ProductDetailsWrapper tbody tr input[type="checkbox"] {
-        width: 20px;
-        height: 20px;
-        border: 1px solid #7a7797;
-      }
-      .ProductDetailsWrapper .unpaid {
-        display: none;
-      }
-      .rightTopBarBtns button {
-        text-transform: capitalize;
-        border-radius: 3px;
-        border: 0px;
-        background-color: #7a7797;
-        color: #fff;
-        padding: 2px 30px;
-        margin: 0px 10px;
-        font-weight: bold;
-      }
-      .rightTopBarBtns select {
-        font-size: 14px;
-        border: 0;
-        border-radius: 5px;
-        padding-left: 15px;
-        color: #7a7797;
-        width: 120px;
-        margin-left: 20px;
-      }
-      .details {
-        display: none;
-      }
-      .paid {
-        display: block;
-      }
-      .eventDateTime {
-        color: #3abb69;
-        margin-top: -25px;
-      }
-      .eventDateTime span {
-        font-weight: bold;
-        color: #083e5a;
-      }
-      .categoryheading {
-        color: #7a7797;
-        font-weight: bold;
-        padding-bottom: 0px;
-        margin-bottom: 0px;
-        font-size: 14px;
-        text-align: right;
-        padding-right: 15px;
-      }
-      /*# sourceMappingURL=test.css.map */
-    </style>
-    <style>
-      .viewpendingpop {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-      .viewpendingpoptotalpay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-      .viewpendingpopalldetail {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #66ce54;
-      }
-      .viewpendetail {
-        height: auto;
-        padding: 10px;
-        width: 40%;
-        background-color: #fff;
-        margin-top: 6%;
-        border-radius: 10px;
-      }
-      .viewtotalpay {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        /* margin-top: 15px; */
-        padding: 0px 20px;
-      }
-      .mainheading {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-bottom: 3px solid #eee;
-      }
-      .paymentmethod {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0px 20px;
-      }
-      .paidamount {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0px 20px;
-      }
-      .givenamont {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0px 20px;
-      }
-      .btns {
-        margin-top: 15px;
-        display: flex;
-        gap: 60px;
-        padding: 0px 20px;
-      }
-      .btns button {
-        border: none;
-        background-color: #eee;
-        border-radius: 5px;
-        padding: 6px 30px;
-        color: #66ce54;
-      }
-      .givenamont input::placeholder {
-        color: #66ce54;
-      }
-      .viewdetailpopopen {
-        cursor: pointer;
-      }
-      .totalpaybtn {
-        display: flex;
-        align-items: center;
-        justify-content: right;
-      }
-      .totalpaybtn button {
-        text-transform: capitalize;
-        border-radius: 3px;
-        border: 0px;
-        background-color: #083e5a;
-        color: #fff;
-        padding: 2px 30px;
-        margin: 0px 10px;
-        font-weight: bold;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="breadcrumb">
-      <ul class="list-unstyled d-flex align-items-center">
-        <li><a href="#">Vender</a></li>
-        <li><i class="fa-solid fa-angles-right"></i></li>
-        <li><a href="#" class="">Vender Details</a></li>
-        <li><i class="fa-solid fa-angles-right"></i></li>
-        <li><a href="#" class="ActiveBreadcrumb">Shubham Negi</a></li>
-      </ul>
-      <div class="butn-addvender">
-        <button class="addVender activeTopBarBtn paidBtn">Paid</button>
-        <button class="addVender unpaidBtn">Unpaid</button>
-        <button class="addVender allDataBtn">All</button>
-      </div>
+    .breadcrumb .addVender {
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0px;
+      background-color: #fe9037;
+      color: #fff;
+      padding: 2px 30px;
+      margin: 0px 10px;
+      font-weight: bold;
+    }
+
+    .butn-addvender {
+      position: absolute;
+      right: 2%;
+      top: 50%;
+      transform: translate(0%, -50%);
+      text-transform: capitalize;
+    }
+
+    .breadcrumb ul {
+      margin-bottom: 0rem;
+    }
+
+    .breadcrumb ul li {
+      color: #eee;
+      font-weight: bold;
+      margin: 10px 1px;
+    }
+
+    .breadcrumb ul li a {
+      color: inherit;
+      padding: 10px;
+      text-decoration: none;
+    }
+
+    .breadcrumb ul li i {
+      font-size: 12px;
+    }
+
+    .breadcrumb ul li .ActiveBreadcrumb {
+      color: #fff;
+    }
+
+    main {
+      background-color: #eee;
+      min-height: 100vh;
+    }
+
+    main .filters label {
+      margin-right: 15px;
+      color: #083e5a;
+      font-size: 12px;
+    }
+
+    main .filters input::placeholder {
+      font-size: 14px;
+      color: #7a7797;
+    }
+
+    main .filters select {
+      font-size: 12px;
+      border: 0;
+      border-radius: 5px;
+      padding-left: 15px;
+      color: #7a7797;
+      width: 120px;
+      margin-left: 0px;
+      height: 18px;
+    }
+
+    main .filters input {
+      font-size: 14px;
+      border: 0;
+      border-radius: 5px;
+      padding-left: 15px;
+      color: #7a7797;
+    }
+
+    .allBtnsWrapper .allBtns {
+      background-color: #fff;
+      box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+      padding: 15px;
+      border-radius: 5px;
+    }
+
+    .allBtnsWrapper .allBtns button:first-child {
+      margin-left: 0px;
+    }
+
+    .allBtnsWrapper .allBtns button {
+      min-width: 50px;
+      margin: 2px 10px;
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0;
+      background-color: #083e5a;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+    }
+
+    .allBtnsWrapper hr {
+      margin: 0px;
+    }
+
+    .allBtnsWrapper .allBtns .activeBtn {
+      background-color: #fe9037;
+    }
+
+    .color2 {
+      color: #083e5a;
+    }
+
+    .ProductDetailsWrapper {
+      background-color: #fff;
+      box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .ProductDetailsWrapper .details .title {
+      padding: 0px;
+      text-align: center;
+    }
+
+    .ProductDetailsWrapper .details .title h3 {
+      display: inline-block;
+      border-bottom: 2px solid #3abb69;
+      color: #083e5a;
+      font-weight: bold;
+      text-transform: capitalize;
+      padding-bottom: 5px;
+      font-size: 18px;
+    }
+
+    .ProductDetailsWrapper table {
+      max-width: 100%;
+      width: 100%;
+      border-radius: 4px;
+      overflow: hidden;
+      border-radius: 5px;
+    }
+
+    .ProductDetailsWrapper table tr:nth-child(even) {
+      background-color: #fff2e7;
+    }
+
+    .ProductDetailsWrapper table tr:nth-child(even) input,
+    .ProductDetailsWrapper table tr:nth-child(even) select,
+    .ProductDetailsWrapper table tr:nth-child(even) td {
+      color: #000;
+    }
+
+    .ProductDetailsWrapper table tr:nth-child(even) input::-moz-placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) select::-moz-placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) td::-moz-placeholder {
+      color: #000;
+    }
+
+    .ProductDetailsWrapper table tr:nth-child(even) input:-ms-input-placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) select:-ms-input-placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) td:-ms-input-placeholder {
+      color: #000;
+    }
+
+    .ProductDetailsWrapper table tr:nth-child(even) input::placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) select::placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) td::placeholder {
+      color: #000;
+    }
+
+    .ProductDetailsWrapper table tr:nth-child(even) select option {
+      background-color: #fff2e7;
+    }
+
+    .ProductDetailsWrapper table tr {
+      height: 30px;
+    }
+
+    .ProductDetailsWrapper table tr:last-child {
+      border-bottom: 2px solid #ddcece;
+    }
+
+    .ProductDetailsWrapper table,
+    .ProductDetailsWrapper th {
+      border: 1px solid #ddcece;
+      border-collapse: collapse;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .ProductDetailsWrapper table tbody tr button {
+      cursor: pointer;
+      background-color: #7a7797;
+      padding: 1px 20px;
+    }
+
+    .ProductDetailsWrapper thead {
+      background-color: #fe9037;
+      color: #fff;
+    }
+
+    .ProductDetailsWrapper thead tr,
+    .ProductDetailsWrapper thead th {
+      border: 1px solid #000;
+    }
+
+    .ProductDetailsWrapper tbody tr td:first-child {
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+
+    .ProductDetailsWrapper tbody td i {
+      cursor: pointer;
+      padding: 0px 8px;
+      font-size: 16px;
+    }
+
+    .ProductDetailsWrapper tbody tr input,
+    .ProductDetailsWrapper tbody tr select {
+      width: 100%;
+      height: 37px;
+      border: 0;
+      text-align: center;
+      background-color: transparent;
+      color: #7a7797;
+    }
+
+    .addVenderWrapper {
+      background-color: #fff;
+    }
+
+    .addVenderWrapper .addVenderTitle {
+      text-align: center;
+      padding: 10px 0px;
+    }
+
+    .addVenderWrapper .addVenderTitle h2 {
+      display: inline-block;
+      border-bottom: 2px solid #3abb69;
+      color: #7a7797;
+      font-weight: bold;
+      padding-bottom: 5px;
+      font-size: 20px;
+    }
+
+    .addVenderWrapper .addVenderForm .formGroup {
+      margin-bottom: 20px;
+    }
+
+    .addVenderWrapper .addVenderForm .formGroup input {
+      border: 2px solid #eee;
+      width: 100%;
+      border-radius: 3px;
+    }
+
+    .activeTopBarBtn {
+      background-color: #083e5a !important;
+      color: #fff !important;
+    }
+
+    .ProductDetailsWrapper tbody tr input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      border: 1px solid #7a7797;
+    }
+
+    .ProductDetailsWrapper .unpaid {
+      display: none;
+    }
+
+    .rightTopBarBtns button {
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0px;
+      background-color: #7a7797;
+      color: #fff;
+      padding: 2px 30px;
+      margin: 0px 10px;
+      font-weight: bold;
+    }
+
+    .rightTopBarBtns select {
+      font-size: 14px;
+      border: 0;
+      border-radius: 5px;
+      padding-left: 15px;
+      color: #7a7797;
+      width: 120px;
+      margin-left: 20px;
+    }
+
+    .details {
+      display: none;
+    }
+
+    .paid {
+      display: block;
+    }
+
+    .eventDateTime {
+      color: #3abb69;
+      margin-top: -25px;
+    }
+
+    .eventDateTime span {
+      font-weight: bold;
+      color: #083e5a;
+    }
+
+    .categoryheading {
+      color: #7a7797;
+      font-weight: bold;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+      font-size: 14px;
+      text-align: right;
+      padding-right: 15px;
+    }
+
+    /*# sourceMappingURL=test.css.map */
+  </style>
+  <style>
+    .viewpendingpop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .viewpendingpoptotalpay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .viewpendingpopalldetail {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #66ce54;
+    }
+
+    .viewpendetail {
+      height: auto;
+      padding: 10px;
+      width: 40%;
+      background-color: #fff;
+      margin-top: 6%;
+      border-radius: 10px;
+    }
+
+    .viewtotalpay {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      /* margin-top: 15px; */
+      padding: 0px 20px;
+    }
+
+    .mainheading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 3px solid #eee;
+    }
+
+    .paymentmethod {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0px 20px;
+    }
+
+    .paidamount {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0px 20px;
+    }
+
+    .givenamont {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0px 20px;
+    }
+
+    .btns {
+      margin-top: 15px;
+      display: flex;
+      gap: 60px;
+      padding: 0px 20px;
+    }
+
+    .btns button {
+      border: none;
+      background-color: #eee;
+      border-radius: 5px;
+      padding: 6px 30px;
+      color: #66ce54;
+    }
+
+    .givenamont input::placeholder {
+      color: #66ce54;
+    }
+
+    .viewdetailpopopen {
+      cursor: pointer;
+    }
+
+    .totalpaybtn {
+      display: flex;
+      align-items: center;
+      justify-content: right;
+    }
+
+    .totalpaybtn button {
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0px;
+      background-color: #083e5a;
+      color: #fff;
+      padding: 2px 30px;
+      margin: 0px 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="breadcrumb">
+    <ul class="list-unstyled d-flex align-items-center">
+      <li><a href="#">Vender</a></li>
+      <li><i class="fa-solid fa-angles-right"></i></li>
+      <li><a href="#" class="">Vender Details</a></li>
+      <li><i class="fa-solid fa-angles-right"></i></li>
+      <li><a href="#" class="ActiveBreadcrumb">Shubham Negi</a></li>
+    </ul>
+    <div class="butn-addvender">
+      <button class="addVender activeTopBarBtn paidBtn">Paid</button>
+      <button class="addVender unpaidBtn">Unpaid</button>
+      <button class="addVender allDataBtn">All</button>
     </div>
-    <main>
-      <div class="container-fluid">
+  </div>
+  <main>
+    <div class="container-fluid">
 
-        <div class="filters py-1 d-flex align-items-center justify-content-between">
-          <div>
-            <label for="dateWise" class="title">Select Year</label>          
-            <select name="year" id="year">
-              <!-- <option disabled selected>Year</option> -->
-              <option value="2023" selected="">2023</option>
-              <option value="2022">2022</option>
-            </select>
-          </div>
-          <select name="" id="viewParticularI">
-            <option disabled="" selected="">Ingredient</option>
-            <option value="onion">Onion</option>
-            <option value="curd">Curd</option>
-            <option value="paneer">Paneer</option>
+      <div class="filters py-1 d-flex align-items-center justify-content-between">
+        <div>
+          <label for="dateWise" class="title">Select Year</label>
+          <select name="year" id="year">
+            <!-- <option disabled selected>Year</option> -->
+            <option value="2023" selected="">2023</option>
+            <option value="2022">2022</option>
           </select>
         </div>
+        <select name="" id="viewParticularI">
+          <option disabled="" selected="">Ingredient</option>
+          <option value="onion">Onion</option>
+          <option value="curd">Curd</option>
+          <option value="paneer">Paneer</option>
+        </select>
       </div>
-      <div class="allBtnsWrapper monthsBtnWrapper pb-2 mt-1">
-        <div class="container-fluid">
-          <div class="allBtns pt-0 pb-1">
-            <div class="mb-1 pt-1 monthBtnWrapper">
-              <button class="activeBtn" data-month="1">January</button>
-              <button data-month="2">February</button>
-              <button data-month="3">March</button>
-              <button data-month="4">April</button>
-              <button data-month="5">May</button>
-              <button data-month="6">June</button>
-              <button data-month="7">July</button>
-              <button data-month="8">August</button>
-              <button data-month="9">September</button>
-              <button data-month="10">October</button>
-              <button data-month="11">November</button>
-              <button data-month="12">December</button>
-            </div>
-            <hr />
-            <div class="d-flex justify-content-between align-items-center py-0">
-              <h3 class="categoryheading">
-                Month : <span class="month color2">January</span>
-                <!-- <span class="px-2 mainColor">|</span> -->
-              </h3>
-              <span class="categoryheading"
-                ><span class="month"></span>Total Pending Amount : ₹
-                <span class="totalCatgry color2">2200</span></span
-              >
-            </div>
+    </div>
+    <div class="allBtnsWrapper monthsBtnWrapper pb-2 mt-1">
+      <div class="container-fluid">
+        <div class="allBtns pt-0 pb-1">
+          <div class="mb-1 pt-1 monthBtnWrapper">
+            <button class="activeBtn" data-month="1">January</button>
+            <button data-month="2">February</button>
+            <button data-month="3">March</button>
+            <button data-month="4">April</button>
+            <button data-month="5">May</button>
+            <button data-month="6">June</button>
+            <button data-month="7">July</button>
+            <button data-month="8">August</button>
+            <button data-month="9">September</button>
+            <button data-month="10">October</button>
+            <button data-month="11">November</button>
+            <button data-month="12">December</button>
+          </div>
+          <hr />
+          <div class="d-flex justify-content-between align-items-center py-0">
+            <h3 class="categoryheading">
+              Month : <span class="month color2">January</span>
+              <!-- <span class="px-2 mainColor">|</span> -->
+            </h3>
+            <span class="categoryheading"><span class="month"></span>Total Pending Amount : ₹
+              <span class="totalCatgry color2">2200</span></span>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="allBtnsWrapper categoriesBtnWrapper pb-3 mt-1">
-        <div class="container-fluid">rightTopBarBtns
-          <div class="allBtns pt-0 pb-1">
-                    
-            <button class="activeBtn">Dairy Products</button>
-            <button>Drinkable</button>
-            <button>Fast Food</button>
-            <button>My Fav</button>
-            <button>Mostly Used</button>
-            <button>Top</button>
-            <button>Commonly Used</button>
-            <button>Less Used</button>
-            <button>Chinese</button>
-            <button>Italian</button>
-            <button>Thai</button>
-            <button>Continental</button>
-            <button>Indian</button>
-            <button>South Indian</button>
-            <div class="mt-1"></div>
-            <hr />
-            <div class="d-flex justify-content-between align-items-center">
-              <h3 class="categoryheading">
-                <!-- Ingredient Categories List
+    <div class="allBtnsWrapper categoriesBtnWrapper pb-3 mt-1">
+      <div class="container-fluid">rightTopBarBtns
+        <div class="allBtns pt-0 pb-1">
+
+          <button class="activeBtn">Dairy Products</button>
+          <button>Drinkable</button>
+          <button>Fast Food</button>
+          <button>My Fav</button>
+          <button>Mostly Used</button>
+          <button>Top</button>
+          <button>Commonly Used</button>
+          <button>Less Used</button>
+          <button>Chinese</button>
+          <button>Italian</button>
+          <button>Thai</button>
+          <button>Continental</button>
+          <button>Indian</button>
+          <button>South Indian</button>
+          <div class="mt-1"></div>
+          <hr />
+          <div class="d-flex justify-content-between align-items-center">
+            <h3 class="categoryheading">
+              <!-- Ingredient Categories List
                 <span class="px-2 mainColor">|</span> -->
-                <span
-                  >Venders Under This Category : <span class="totalCatgry color2">22</span></span
-                >
-              </h3>
-              <span class="categoryheading"
-              >Pending Amount : <span class="totalCatgry color2">1120</span></span
-            >
-              <!-- <div class="CategoryActionBtn text-right">
+              <span>Venders Under This Category : <span class="totalCatgry color2">22</span></span>
+            </h3>
+            <span class="categoryheading">Pending Amount : <span class="totalCatgry color2">1120</span></span>
+            <!-- <div class="CategoryActionBtn text-right">
                 <button class="btn btn-primary btn-sm">Add Category</button>
                 <button class="btn btn-primary btn-sm">Edit Category</button>
                 <button class="btn btn-primary btn-sm">Delete Category</button>
               </div> -->
-            </div>
           </div>
         </div>
       </div>
-    
-      <div class="container-fluid">
-        <div class="ProductDetailsWrapper">
-          <div class="details unpaid">
-            <div class="title">
-              <h3>Unpaid Details</h3>
-            </div>
-            <div class="col-12 ">
-              <div class="d-flex justify-content-between eventDateTime">
-                <div class="monthName">Month : <span>January</span></div>
-                <div class="totalBookings">Total : <span>1900</span></div>
-              </div>
-            </div>
-            <table>
-              <thead>
-                <tr>
-                  <td>S. No.</td>
-                  <td>Purchased Item</td>
-                  <td>Date</td>
-                  <td>Quantity</td>
-                  <td>Amount</td>
-                  <td>paid</td>
-                  <td>Remaining</td>
-                  <td>Actions</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Onion</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>200</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Garlic</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>200</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Curd</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>200</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>Paneer</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>200</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                </tr>
-              </tbody>
-            </table>
-            <div class="totalpaybtn pt-2">
-              <button class="totalpaybtns">Pay All</button>
+    </div>
+
+    <div class="container-fluid">
+      <div class="ProductDetailsWrapper">
+        <div class="details unpaid">
+          <div class="title">
+            <h3>Unpaid Details</h3>
+          </div>
+          <div class="col-12 ">
+            <div class="d-flex justify-content-between eventDateTime">
+              <div class="monthName">Month : <span>January</span></div>
+              <div class="totalBookings">Total : <span>1900</span></div>
             </div>
           </div>
-          <div class="details paid">
-            <div class="title">
-              <h3>Paid Details</h3>
-            </div>
-            <div class="col-12 ">
-              <div class="d-flex justify-content-between eventDateTime">
-                <div class="monthName">Month : <span>January</span></div>
-                <div class="totalBookings">Total : <span>1900</span></div>
-              </div>
-            </div>
-            <table>
-              <thead>
-                <tr>
-                  <td>S. No.</td>
-                  <td>Purchased Item</td>
-                  <td>Purchase Date</td>
-                  <td>Paid Date</td>
-                  <td>Quantity</td>
-                  <td>Amount</td>
-                  <td>paid</td>
-                  <td>Payment Type</td>
-                  <td>Actions</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Onion</td>
-                  <td>03/01/2023</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
+          <table>
+            <thead>
+              <tr>
+                <td>S. No.</td>
+                <td>Purchased Item</td>
+                <td>Date</td>
+                <td>Quantity</td>
+                <td>Amount</td>
+                <td>paid</td>
+                <td>Remaining</td>
+                <td>Actions</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Onion</td>
+                <td>03/01/2023</td>
+                <td>100</td>
+                <td>1200</td>
+                <td>
+                  1000
+                  <!-- <div class="form-check d-flex justify-content-center">
                             <input class="form-check-input" type="checkbox" id="flexCheckDefault">
                         </div> -->
-                  </td>
-                  <td>Cash</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Garlic</td>
-                  <td>03/01/2023</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
+                </td>
+                <td>200</td>
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Garlic</td>
+                <td>03/01/2023</td>
+                <td>100</td>
+                <td>1200</td>
+                <td>
+                  1000
+                  <!-- <div class="form-check d-flex justify-content-center">
                             <input class="form-check-input" type="checkbox" id="flexCheckDefault">
                         </div> -->
-                  </td>
-                  <td>UPI</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-               
-               
-               
-                <tr>
-                  <td>3</td>
-                  <td>Onion</td>
-                  <td>03/01/2023</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
+                </td>
+                <td>200</td>
+                <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Curd</td>
+                <td>03/01/2023</td>
+                <td>100</td>
+                <td>1200</td>
+                <td>
+                  1000
+                  <!-- <div class="form-check d-flex justify-content-center">
                             <input class="form-check-input" type="checkbox" id="flexCheckDefault">
                         </div> -->
-                  </td>
-                  <td>Cash</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>Onion</td>
-                  <td>03/01/2023</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
+                </td>
+                <td>200</td>
+                <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Paneer</td>
+                <td>03/01/2023</td>
+                <td>100</td>
+                <td>1200</td>
+                <td>
+                  1000
+                  <!-- <div class="form-check d-flex justify-content-center">
                             <input class="form-check-input" type="checkbox" id="flexCheckDefault">
                         </div> -->
-                  </td>
-                  <td>Cash</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>Onion</td>
-                  <td>03/01/2023</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>Cash</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="details allPaidUnpaid">
-            <div class="title">
-              <h3>All</h3>
-            </div>
-            <div class="col-12 ">
-              <div class="d-flex justify-content-between eventDateTime">
-                <div class="monthName">Month : <span>January</span></div>
-                <div class="totalBookings">Total : <span>1900</span></div>
-              </div>
-            </div>
-            <table>
-              <thead>
-                <tr>
-                  <td>S. No.</td>
-                  <td>Purchased Iem</td>
-                  <td>Purchase Date</td>
-                  <td>Price</td>
-                  <td>Quantity</td>
-                  <td>paid</td>
-                  <td>Paid Date</td>
-                  <td>Remaining</td>
-                  <td>Actions</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Onion</td>
-                  <td>03/01/2023</td>
-                  <td>1500</td>
-                  <td>120</td>
-                  <td>1000</td>
-                  <td>02/01/2023</td>
-                  <td>200</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Paneer</td>
-                  <td>04/01/2023</td>
-                  <td>1400</td>
-                  <td>140</td>
-                  <td>1200</td>
-                  <td>06/01/2023</td>
-                  <td>200</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Curd</td>
-                  <td>06/01/2023</td>
-                  <td>1600</td>
-                  <td>160</td>
-                  <td>1600</td>
-                  <td>06/01/2023</td>
-                  <td>200</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>Milk Powder</td>
-                  <td>04/01/2023</td>
-                  <td>1400</td>
-                  <td>140</td>
-                  <td>1400</td>
-                  <td>04/01/2023</td>
-                  <td>200</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="details paidIngList">
-            <div class="title">
-              <h3>Onion</h3>
-            </div>
-            <div class="col-12 ">
-              <div class="d-flex justify-content-between eventDateTime">
-                <div class="monthName">Month : <span>January</span></div>
-                <div class="totalBookings">Total : <span>1900</span></div>
-              </div>
-            </div>
-            <table>
-              <thead>
-                <tr>
-                  <td>S. No.</td>
-                  <td>Purchase Date</td>
-                  <td>Paid Date</td>
-                  <td>Quantity</td>
-                  <td>Amount</td>
-                  <td>paid</td>
-                  <td>Payment Type</td>
-                  <td>Actions</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>03/01/2023</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>Cash</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>03/01/2023</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>UPI</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>03/01/2023</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>Card</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>03/01/2023</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>UPI</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>03/01/2023</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>Cash</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="details unpaidIngList">
-            <div class="title">
-              <h3>Onion</h3>
-            </div>
-            <div class="col-12 ">
-              <div class="d-flex justify-content-between eventDateTime">
-                <div class="monthName">Month : <span>January</span></div>
-                <div class="totalBookings">Total : <span>1900</span></div>
-              </div>
-            </div>
-            <table>
-              <thead>
-                <tr>
-                  <td>S. No.</td>
-                  <td>Purchased Item</td>
-                  <td>Date</td>
-                  <td>Quantity</td>
-                  <td>Amount</td>
-                  <td>paid</td>
-                  <td>Remaining</td>
-                  <td>Actions</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                      <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                    </div> -->
-                  </td>
-                  <td>200</td>
-                  <td>100</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                      <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                    </div> -->
-                  </td>
-                  <td>200</td>
-                  <td>100</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                      <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                    </div> -->
-                  </td>
-                  <td>200</td>
-                  <td>100</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                      <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                    </div> -->
-                  </td>
-                  <td>200</td>
-                  <td>100</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                </tr>
-              </tbody>
-            </table>
-            <div class="totalpaybtn pt-2">
-              <button class="totalpaybtns">Pay All</button>
-            </div>
-          </div>
-          <div class="details allIngList">
-            <div class="title">
-              <h3>All</h3>
-            </div>
-            <div class="col-12 ">
-              <div class="d-flex justify-content-between eventDateTime">
-                <div class="monthName">Month : <span>January</span></div>
-                <div class="totalBookings">Total : <span>1900</span></div>
-              </div>
-            </div>
-            <table>
-              <thead>
-                <tr>
-                  <td>S. No.</td>
-                  <td>Purchase Date</td>
-                  <td>Price</td>
-                  <td>Quantity</td>
-                  <td>paid</td>
-                  <td>Paid Date</td>
-                  <td>Remaining</td>
-                  <td>Actions</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>03/01/2023</td>
-                  <td>1500</td>
-                  <td>120</td>
-                  <td>1000</td>
-                  <td>02/01/2023</td>
-                  <td>200</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>04/01/2023</td>
-                  <td>1400</td>
-                  <td>140</td>
-                  <td>1200</td>
-                  <td>06/01/2023</td>
-                  <td>200</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>06/01/2023</td>
-                  <td>1600</td>
-                  <td>160</td>
-                  <td>1600</td>
-                  <td>06/01/2023</td>
-                  <td>200</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>04/01/2023</td>
-                  <td>1400</td>
-                  <td>140</td>
-                  <td>1400</td>
-                  <td>04/01/2023</td>
-                  <td>200</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-              </tbody>
-            </table>
+                </td>
+                <td>200</td>
+                <td class="viewdetailpopopen">Pay Now</td>
+                <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
+              </tr>
+            </tbody>
+          </table>
+          <div class="totalpaybtn pt-2">
+            <button class="totalpaybtns">Pay All</button>
           </div>
         </div>
+        <div class="details paid">
+          <div class="title">
+            <h3>Paid Details</h3>
+          </div>
+          <div class="col-12 ">
+            <div class="d-flex justify-content-between eventDateTime">
+              <div class="monthName">Month : <span>January</span></div>
+              <div class="totalBookings">Total : <span>1900</span></div>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <td>S. No.</td>
+                <td>Purchased Item</td>
+                <td>Purchase Date</td>
+                <td>Paid Date</td>
+                <td>Quantity</td>
+                <td>Amount</td>
+                <td>paid</td>
+                <td>Payment Type</td>
+                <td>Actions</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Onion</td>
+                <td>03/01/2023</td>
+                <td>03/01/2023</td>
+                <td>100</td>
+                <td>1200</td>
+                <td>
+                  1000
+                  <!-- <div class="form-check d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        </div> -->
+                </td>
+                <td>Cash</td>
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Garlic</td>
+                <td>03/01/2023</td>
+                <td>03/01/2023</td>
+                <td>100</td>
+                <td>1200</td>
+                <td>
+                  1000
+                  <!-- <div class="form-check d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        </div> -->
+                </td>
+                <td>UPI</td>
+                <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+
+
+
+              <tr>
+                <td>3</td>
+                <td>Onion</td>
+                <td>03/01/2023</td>
+                <td>03/01/2023</td>
+                <td>100</td>
+                <td>1200</td>
+                <td>
+                  1000
+                  <!-- <div class="form-check d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        </div> -->
+                </td>
+                <td>Cash</td>
+                <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Onion</td>
+                <td>03/01/2023</td>
+                <td>03/01/2023</td>
+                <td>100</td>
+                <td>1200</td>
+                <td>
+                  1000
+                  <!-- <div class="form-check d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        </div> -->
+                </td>
+                <td>Cash</td>
+                <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Onion</td>
+                <td>03/01/2023</td>
+                <td>03/01/2023</td>
+                <td>100</td>
+                <td>1200</td>
+                <td>
+                  1000
+                  <!-- <div class="form-check d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        </div> -->
+                </td>
+                <td>Cash</td>
+                <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="details allPaidUnpaid">
+          <div class="title">
+            <h3>All</h3>
+          </div>
+          <div class="col-12 ">
+            <div class="d-flex justify-content-between eventDateTime">
+              <div class="monthName">Month : <span>January</span></div>
+              <div class="totalBookings">Total : <span>1900</span></div>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <td>S. No.</td>
+                <td>Purchased Iem</td>
+                <td>Purchase Date</td>
+                <td>Price</td>
+                <td>Quantity</td>
+                <td>paid</td>
+                <td>Paid Date</td>
+                <td>Remaining</td>
+                <td>Actions</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Onion</td>
+                <td>03/01/2023</td>
+                <td>1500</td>
+                <td>120</td>
+                <td>1000</td>
+                <td>02/01/2023</td>
+                <td>200</td>
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Paneer</td>
+                <td>04/01/2023</td>
+                <td>1400</td>
+                <td>140</td>
+                <td>1200</td>
+                <td>06/01/2023</td>
+                <td>200</td>
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Curd</td>
+                <td>06/01/2023</td>
+                <td>1600</td>
+                <td>160</td>
+                <td>1600</td>
+                <td>06/01/2023</td>
+                <td>200</td>
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Milk Powder</td>
+                <td>04/01/2023</td>
+                <td>1400</td>
+                <td>140</td>
+                <td>1400</td>
+                <td>04/01/2023</td>
+                <td>200</td>
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="details paidIngList">
+          <div class="title">
+            <h3>Onion</h3>
+          </div>
+          <div class="col-12 ">
+            <div class="d-flex justify-content-between eventDateTime">
+              <div class="monthName">Month : <span>January</span></div>
+              <div class="totalBookings">Total : <span>1900</span></div>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <td>S. No.</td>
+                <td>Purchase Date</td>
+                <td>Paid Date</td>
+                <td>Quantity</td>
+                <td>Amount</td>
+                <td>paid</td>
+                <td>Payment Type</td>
+                <td>Actions</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>03/01/2023</td>
+                <td>03/01/2023</td>
+                <td>100</td>
+                <td>1200</td>
+                <td>
+                  1000
+                  <!-- <div class="form-check d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        </div> -->
+                </td>
+                <td>Cash</td>
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>03/01/2023</td>
+                <td>03/01/2023</td>
+                <td>100</td>
+                <td>1200</td>
+                <td>
+                  1000
+                  <!-- <div class="form-check d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        </div> -->
+                </td>
+                <td>UPI</td>
+                <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>03/01/2023</td>
+                <td>03/01/2023</td>
+                <td>100</td>
+                <td>1200</td>
+                <td>
+                  1000
+                  <!-- <div class="form-check d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        </div> -->
+                </td>
+                <td>Card</td>
+                <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>03/01/2023</td>
+                <td>03/01/2023</td>
+                <td>100</td>
+                <td>1200</td>
+                <td>
+                  1000
+                  <!-- <div class="form-check d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        </div> -->
+                </td>
+                <td>UPI</td>
+                <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>03/01/2023</td>
+                <td>03/01/2023</td>
+                <td>100</td>
+                <td>1200</td>
+                <td>
+                  1000
+                  <!-- <div class="form-check d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        </div> -->
+                </td>
+                <td>Cash</td>
+                <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="details unpaidIngList">
+          <div class="title">
+            <h3>Onion</h3>
+          </div>
+          <div class="col-12 ">
+            <div class="d-flex justify-content-between eventDateTime">
+              <div class="monthName">Month : <span>January</span></div>
+              <div class="totalBookings">Total : <span>1900</span></div>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <td>S. No.</td>
+                <td>Purchased Item</td>
+                <td>Date</td>
+                <td>Quantity</td>
+                <td>Amount</td>
+                <td>paid</td>
+                <td>Remaining</td>
+                <td>Actions</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>03/01/2023</td>
+                <td>100</td>
+                <td>1200</td>
+                <td>
+                  1000
+                  <!-- <div class="form-check d-flex justify-content-center">
+                      <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                    </div> -->
+                </td>
+                <td>200</td>
+                <td>100</td>
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>03/01/2023</td>
+                <td>100</td>
+                <td>1200</td>
+                <td>
+                  1000
+                  <!-- <div class="form-check d-flex justify-content-center">
+                      <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                    </div> -->
+                </td>
+                <td>200</td>
+                <td>100</td>
+                <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>03/01/2023</td>
+                <td>100</td>
+                <td>1200</td>
+                <td>
+                  1000
+                  <!-- <div class="form-check d-flex justify-content-center">
+                      <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                    </div> -->
+                </td>
+                <td>200</td>
+                <td>100</td>
+                <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>03/01/2023</td>
+                <td>100</td>
+                <td>1200</td>
+                <td>
+                  1000
+                  <!-- <div class="form-check d-flex justify-content-center">
+                      <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                    </div> -->
+                </td>
+                <td>200</td>
+                <td>100</td>
+                <td class="viewdetailpopopen">Pay Now</td>
+                <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
+              </tr>
+            </tbody>
+          </table>
+          <div class="totalpaybtn pt-2">
+            <button class="totalpaybtns">Pay All</button>
+          </div>
+        </div>
+        <div class="details allIngList">
+          <div class="title">
+            <h3>All</h3>
+          </div>
+          <div class="col-12 ">
+            <div class="d-flex justify-content-between eventDateTime">
+              <div class="monthName">Month : <span>January</span></div>
+              <div class="totalBookings">Total : <span>1900</span></div>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <td>S. No.</td>
+                <td>Purchase Date</td>
+                <td>Price</td>
+                <td>Quantity</td>
+                <td>paid</td>
+                <td>Paid Date</td>
+                <td>Remaining</td>
+                <td>Actions</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>03/01/2023</td>
+                <td>1500</td>
+                <td>120</td>
+                <td>1000</td>
+                <td>02/01/2023</td>
+                <td>200</td>
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>04/01/2023</td>
+                <td>1400</td>
+                <td>140</td>
+                <td>1200</td>
+                <td>06/01/2023</td>
+                <td>200</td>
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>06/01/2023</td>
+                <td>1600</td>
+                <td>160</td>
+                <td>1600</td>
+                <td>06/01/2023</td>
+                <td>200</td>
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>04/01/2023</td>
+                <td>1400</td>
+                <td>140</td>
+                <td>1400</td>
+                <td>04/01/2023</td>
+                <td>200</td>
+                <td class="viewdetailpopopen">Pay Now</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div class="viewpendingpop">
-        <div class="viewpendingpopalldetail">
-          <div class="viewpendetail">
-            <div class="viewmain">
-              <div class="mainheading"><h3>Payments</h3></div>
-              <div class="viewtotalpay">
-                <p>Total Payable</p>
-                <p>200.00</p>
-              </div>
-              <div class="paymentmethod">
-                <p>Payment Method</p>
-                <select
-                  style="
+    </div>
+    <div class="viewpendingpop">
+      <div class="viewpendingpopalldetail">
+        <div class="viewpendetail">
+          <div class="viewmain">
+            <div class="mainheading">
+              <h3>Payments</h3>
+            </div>
+            <div class="viewtotalpay">
+              <p>Total Payable</p>
+              <p>200.00</p>
+            </div>
+            <div class="paymentmethod">
+              <p>Payment Method</p>
+              <select style="
                     padding: 2px 32px;
                     border: 3px solid #eee;
                     border-radius: 5px;
                     color: #66ce54;
-                  "
-                >
-                  <option>Cash</option>
-                  <option>Upi</option>
-                  <option>Online</option>
-                </select>
-              </div>
-              <div class="paidamount">
-                <div>
-                  <p>Paid Amount</p>
-                  <p
-                    style="
+                  ">
+                <option>Cash</option>
+                <option>Upi</option>
+                <option>Online</option>
+              </select>
+            </div>
+            <div class="paidamount">
+              <div>
+                <p>Paid Amount</p>
+                <p style="
                       border: 3px solid #eee;
 
                       padding: 2px 49px;
                       border-radius: 5px;
                       text-align: left;
                       margin-top: -12px;
-                    "
-                  >
-                    200.00
-                  </p>
-                </div>
-                <div>
-                  <p style="text-align: right">Due Amount</p>
-                  <p
-                    style="
+                    ">
+                  200.00
+                </p>
+              </div>
+              <div>
+                <p style="text-align: right">Due Amount</p>
+                <p style="
                       border: 3px solid #eee;
 
                       padding: 2px 49px;
                       border-radius: 5px;
                       text-align: left;
                       margin-top: -12px;
-                    "
-                  >
-                    0.00
-                  </p>
-                </div>
+                    ">
+                  0.00
+                </p>
               </div>
-              <div class="givenamont">
-                <div>
-                  <p>Given Amount</p>
-                  <input
-                    type="text"
-                    placeholder="0.00"
-                    style="
+            </div>
+            <div class="givenamont">
+              <div>
+                <p>Given Amount</p>
+                <input type="text" placeholder="0.00" style="
                       border: 3px solid #eee;
 
                       padding: 2px 0px;
                       border-radius: 5px;
                       text-align: left;
                       margin-top: -15px;
-                    "
-                  />
-                </div>
-                <div>
-                  <p style="text-align: right">Change Amount</p>
-                  <input
-                    type="text"
-                    placeholder="100"
-                    style="
+                    " />
+              </div>
+              <div>
+                <p style="text-align: right">Change Amount</p>
+                <input type="text" placeholder="100" style="
                       border: 3px solid #eee;
 
                       padding: 2px 0px;
                       border-radius: 5px;
                       text-align: left;
                       margin-top: -15px;
-                    "
-                  />
-                </div>
+                    " />
               </div>
-              <div class="btns">
-                <button>Submit</button>
-                <button class="viewcancle">Cancel</button>
-              </div>
+            </div>
+            <div class="btns">
+              <button>Submit</button>
+              <button class="viewcancle">Cancel</button>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="viewpendingpoptotalpay">
-        <div class="viewpendingpopalldetail">
-          <div class="viewpendetail">
-            <div class="viewmain">
-              <div class="mainheading"><h3>Payments</h3></div>
-              <div class="viewtotalpay">
-                <p>Total Payable</p>
-                <p>₹12043</p>
-              </div>
-              <div class="paymentmethod">
-                <p>Payment Method</p>
-                <select
-                  style="
+    <div class="viewpendingpoptotalpay">
+      <div class="viewpendingpopalldetail">
+        <div class="viewpendetail">
+          <div class="viewmain">
+            <div class="mainheading">
+              <h3>Payments</h3>
+            </div>
+            <div class="viewtotalpay">
+              <p>Total Payable</p>
+              <p>₹12043</p>
+            </div>
+            <div class="paymentmethod">
+              <p>Payment Method</p>
+              <select style="
                     padding: 2px 32px;
                     border: 3px solid #eee;
                     border-radius: 5px;
                     color: #66ce54;
-                  "
-                >
-                  <option>Cash</option>
-                  <option>Upi</option>
-                  <option>Online</option>
-                </select>
-              </div>
-              <div class="paidamount">
-                <div>
-                  <p>Paid Amount</p>
-                  <p
-                    style="
+                  ">
+                <option>Cash</option>
+                <option>Upi</option>
+                <option>Online</option>
+              </select>
+            </div>
+            <div class="paidamount">
+              <div>
+                <p>Paid Amount</p>
+                <p style="
                       border: 3px solid #eee;
 
                       padding: 2px 49px;
                       border-radius: 5px;
                       text-align: left;
                       margin-top: -12px;
-                    "
-                  >
-                    ₹12043
-                  </p>
-                </div>
-                <div>
-                  <p style="text-align: right">Due Amount</p>
-                  <p
-                    style="
+                    ">
+                  ₹12043
+                </p>
+              </div>
+              <div>
+                <p style="text-align: right">Due Amount</p>
+                <p style="
                       border: 3px solid #eee;
 
                       padding: 2px 49px;
                       border-radius: 5px;
                       text-align: left;
                       margin-top: -12px;
-                    "
-                  >
-                    0.00
-                  </p>
-                </div>
+                    ">
+                  0.00
+                </p>
               </div>
-              <div class="givenamont">
-                <div>
-                  <p>Given Amount</p>
-                  <input
-                    type="text"
-                    placeholder="0.00"
-                    style="
+            </div>
+            <div class="givenamont">
+              <div>
+                <p>Given Amount</p>
+                <input type="text" placeholder="0.00" style="
                       border: 3px solid #eee;
 
                       padding: 2px 0px;
                       border-radius: 5px;
                       text-align: left;
                       margin-top: -15px;
-                    "
-                  />
-                </div>
-                <div>
-                  <p style="text-align: right">Change Amount</p>
-                  <input
-                    type="text"
-                    placeholder="100"
-                    style="
+                    " />
+              </div>
+              <div>
+                <p style="text-align: right">Change Amount</p>
+                <input type="text" placeholder="100" style="
                       border: 3px solid #eee;
 
                       padding: 2px 0px;
                       border-radius: 5px;
                       text-align: left;
                       margin-top: -15px;
-                    "
-                  />
-                </div>
+                    " />
               </div>
-              <div class="btns">
-                <button>Submit</button>
-                <button class="viewcancle">Cancel</button>
-              </div>
+            </div>
+            <div class="btns">
+              <button>Submit</button>
+              <button class="viewcancle">Cancel</button>
             </div>
           </div>
         </div>
       </div>
-    </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script>
-      $("head").append(
-        '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
-      );
-      $("head").append(
-        ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
+    </div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script>
+    $("head").append(
+      '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
+    );
+    $("head").append(
+      ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
 />'
-      );
-      $("head").append(
-        '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
-      );
-    </script>
-    <link
-      rel="stylesheet"
-      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
-    />
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script>
-      $(function () {
-        $("#dateWise").datepicker();
-        let formattedDate = new Date();
-        let d = formattedDate.getDate();
-        let m = formattedDate.getMonth();
-        m += 1; // JavaScript months are 0-11
-        if (d < 10) {
-          d = "0" + d;
-        }
-        if (m < 10) {
-          m = "0" + m;
-        }
-        let y = formattedDate.getFullYear();
-        $("#dateWise").attr("placeholder", d + "/" + m + "/" + y);
+    );
+    $("head").append(
+      '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
+    );
+  </script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+    $(function () {
+      $("#dateWise").datepicker();
+      let formattedDate = new Date();
+      let d = formattedDate.getDate();
+      let m = formattedDate.getMonth();
+      m += 1; // JavaScript months are 0-11
+      if (d < 10) {
+        d = "0" + d;
+      }
+      if (m < 10) {
+        m = "0" + m;
+      }
+      let y = formattedDate.getFullYear();
+      $("#dateWise").attr("placeholder", d + "/" + m + "/" + y);
 
-        $(".breadcrumb .addVender").click(function () {
-          $(".breadcrumb .addVender").removeClass("activeTopBarBtn");
-          $(this).addClass("activeTopBarBtn");
-        });
-
-        $(".paidBtn").click(function () {
-          $(".details").hide();
-          $(".paid").show();
-        });
-        $(".unpaidBtn").click(function () {
-          $(".details").hide();
-          $(".unpaid").show();
-        });
-        $(".allDataBtn").click(function () {
-          $(".details").hide();
-          $(".allPaidUnpaid").show();
-          $(".allIngList .title h3").text(this.text());
-        });
-      });
-      $(".viewdetailpopopen").click(function () {
-        $(".viewpendingpop").show();
-      });
-      $(".viewcancle").click(function () {
-        $(".viewpendingpop").hide();
+      $(".breadcrumb .addVender").click(function () {
+        $(".breadcrumb .addVender").removeClass("activeTopBarBtn");
+        $(this).addClass("activeTopBarBtn");
       });
 
-      $(".totalpaybtns").click(function () {
-        $(".viewpendingpoptotalpay").show();
+      $(".paidBtn").click(function () {
+        $(".details").hide();
+        $(".paid").show();
       });
-      $(".viewcancle").click(function () {
-        $(".viewpendingpoptotalpay").hide();
+      $(".unpaidBtn").click(function () {
+        $(".details").hide();
+        $(".unpaid").show();
       });
+      $(".allDataBtn").click(function () {
+        $(".details").hide();
+        $(".allPaidUnpaid").show();
+        $(".allIngList .title h3").text(this.text());
+      });
+    });
+    $(".viewdetailpopopen").click(function () {
+      $(".viewpendingpop").show();
+    });
+    $(".viewcancle").click(function () {
+      $(".viewpendingpop").hide();
+    });
 
-      $(document).on("change", "#viewParticularI", function () {
-        let btn = $(".activeTopBarBtn").text();
-        if (btn == "Paid") {
-          $(".details").hide();
-          $(".paidIngList").show();
-          $(".paidIngList .title h3").text($(this).val());
-        } else if (btn == "Unpaid") {
-          $(".details").hide();
-          $(".unpaidIngList").show();
-          $(".unpaidIngList .title h3").text($(this).val());
-        } else if (btn == "All") {
-          console.log(this);
-          $(".details").hide();
-          $(".allIngList").show();
-          $(".allIngList .title h3").text($(this).val());
-        }
-      });
-      $(".monthsBtnWrapper button").click(function () {
-        $(".monthsBtnWrapper button").removeClass("activeBtn");
-        $(this).addClass("activeBtn");
-      });
+    $(".totalpaybtns").click(function () {
+      $(".viewpendingpoptotalpay").show();
+    });
+    $(".viewcancle").click(function () {
+      $(".viewpendingpoptotalpay").hide();
+    });
 
-      $(".categoriesBtnWrapper .allBtns button").click(function () {
-        $(".categoriesBtnWrapper button").removeClass("activeBtn");
-        $(this).addClass("activeBtn");
-      });
-    </script>
-  </body>
+    $(document).on("change", "#viewParticularI", function () {
+      let btn = $(".activeTopBarBtn").text();
+      if (btn == "Paid") {
+        $(".details").hide();
+        $(".paidIngList").show();
+        $(".paidIngList .title h3").text($(this).val());
+      } else if (btn == "Unpaid") {
+        $(".details").hide();
+        $(".unpaidIngList").show();
+        $(".unpaidIngList .title h3").text($(this).val());
+      } else if (btn == "All") {
+        console.log(this);
+        $(".details").hide();
+        $(".allIngList").show();
+        $(".allIngList .title h3").text($(this).val());
+      }
+    });
+    $(".monthsBtnWrapper button").click(function () {
+      $(".monthsBtnWrapper button").removeClass("activeBtn");
+      $(this).addClass("activeBtn");
+    });
+
+    $(".categoriesBtnWrapper .allBtns button").click(function () {
+      $(".categoriesBtnWrapper button").removeClass("activeBtn");
+      $(this).addClass("activeBtn");
+    });
+  </script>
+</body>
+
 </html>
