@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>View Venders List</title>
+    <title>View Raw Material Venders List</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
       * {
@@ -94,7 +94,6 @@
         text-align: right;
         padding-right: 15px;
       }
-     
 
       .ProductDetailsWrapper {
         background-color: #fff;
@@ -109,7 +108,7 @@
         top: 0px;
       }
       .ProductDetailsWrapper .details .title {
-        padding:  0px;
+        padding: 0px;
         text-align: center;
       }
       .ProductDetailsWrapper .details .title h3 {
@@ -162,7 +161,7 @@
       .ProductDetailsWrapper table tr {
         height: 30px;
       }
-      .ProductDetailsWrapper table td .payBtn {
+      .ProductDetailsWrapper table td .payBtn ,   .ProductDetailsWrapper table td button{
         padding: 1px 20px;
         font-size: 12px;
         background-color: #083e5a;
@@ -263,16 +262,6 @@
       .textarea {
         height: 100px;
       }
-      #addVenderWrapper .addVenderForm .addVenderSubmitBtn {
-        text-transform: capitalize;
-        border-radius: 3px;
-        border: 0px;
-        background-color: #083e5a;
-        color: #fff;
-        padding: 2px 30px;
-        font-weight: bold;
-      }
-
       .text-right {
         text-align: right;
       }
@@ -361,7 +350,7 @@
         text-transform: capitalize;
         border-radius: 3px;
         border: 0px;
-        background-color: #3abb69;
+        background-color: #083e5a;
         color: #fff;
         padding: 2px 30px;
         font-weight: bold;
@@ -372,7 +361,7 @@
       }
       .paymentTitle h2 {
         display: inline-block;
-        border-bottom: 2px solid #3abb69;
+        border-bottom: 2px solid #083e5a;
         color: #7a7797;
         font-weight: bold;
         padding: 2px;
@@ -387,6 +376,51 @@
         color: #7a7797;
         /* font-size: 14px; */
       }
+      .genderGroup {
+        border: 2px solid #eee;
+        width: 100%;
+        border-radius: 4px;
+        margin-left: 15px;
+        background-color: #fff;
+      }
+      .genderLabel {
+        color: #7a7797;
+        font-size: 14px;
+        font-weight: 500;
+        margin-left: 15px;
+      }
+      .addVender {
+        min-width: 50px;
+        margin: 2px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+      }
+      .genderWrapper {
+        background-color: #fff;
+        height: 28px;
+        display: flex;
+        align-items: center;
+      }
+      .genderWrapper input {
+        margin-left: 10px;
+        margin-right: 5px;
+      }
+      #addVenderWrapper .addVenderForm .addVenderSubmitBtn,
+      #addVenderWrapper .closeAddVenderBox {
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0px;
+        background-color: #fc8e32;
+        color: #fff;
+        padding: 2px 30px;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
@@ -394,38 +428,26 @@
       <ul class="list-unstyled d-flex align-items-center">
         <li><a href="">Dashboard</a></li>
         <li><i class="fa-solid fa-angles-right"></i></li>
-        <li><a href="" class="ActiveBreadcrumb">Raw Venders Material List</a></li>
+        <li>
+          <a href="" class="ActiveBreadcrumb">Raw Material Venders List</a>
+        </li>
       </ul>
-      <button class="addVender">Add Vender</button>
+      <!-- <button class="addVender">Add Vender</button> -->
     </div>
     <main>
-      <div class="container-fluid">
-        <div class="filters py-1 d-flex align-items-center">
-          <label for="dateWise" class="title">Select Year</label>
-          <!-- <input type="text" id="dateWise" placeholder="03/12/2012" />
-        <select name="" id="">
-          <option disabled selected>Monthly</option>
-          <option value="January">January</option>
-          <option value="February">February</option>
-          <option value="march">march</option>
-          <option value="April">April</option>
-          <option value="May">May</option>
-          <option value="June">June</option>
-          <option value="July">July</option>
-          <option value="August">August</option>
-          <option value="September">September</option>
-          <option value="October">October</option>
-          <option value="November">November</option>
-          <option value="December">December</option>
-        </select> -->
-          <select name="year" id="year">
-            <!-- <option disabled selected>Year</option> -->
-            <option value="2023" selected="">2023</option>
-            <option value="2022">2022</option>
-          </select>
+      <!-- <div class="container-fluid">
+        <div class="filters d-flex align-items-center justify-content-between">
+          <div>
+            <label for="dateWise" class="title">Select Year</label>
+            <select name="year" id="year">
+              <option value="2023" selected="">2023</option>
+              <option value="2022">2022</option>
+            </select>
+          </div>
+          <button class="addVender">Add vender</button>
         </div>
-      </div>
-      <div class="allBtnsWrapper monthsBtnWrapper pb-3 mt-1">
+      </div> -->
+      <div class="allBtnsWrapper monthsBtnWrapper pb-3 pt-2">
         <div class="container-fluid">
           <div class="allBtns pt-0 pb-1">
             <div class="mb-1 pt-1 monthBtnWrapper">
@@ -460,7 +482,6 @@
       <div class="allBtnsWrapper categoriesBtnWrapper pb-3 mt-1">
         <div class="container-fluid">
           <div class="allBtns pt-0 pb-1">
-                    
             <button class="activeBtn">Dairy Products</button>
             <button>Drinkable</button>
             <button>Fast Food</button>
@@ -482,12 +503,14 @@
                 <!-- Ingredient Categories List
                 <span class="px-2 mainColor">|</span> -->
                 <span
-                  >Venders Under This Category : <span class="totalCatgry color2">22</span></span
+                  >Venders Under This Category :
+                  <span class="totalCatgry color2">22</span></span
                 >
               </h3>
               <span class="categoryheading"
-              >Pending Amount : <span class="totalCatgry color2">1120</span></span
-            >
+                >Pending Amount :
+                <span class="totalCatgry color2">1120</span></span
+              >
               <!-- <div class="CategoryActionBtn text-right">
                 <button class="btn btn-primary btn-sm">Add Category</button>
                 <button class="btn btn-primary btn-sm">Edit Category</button>
@@ -502,7 +525,7 @@
         <div class="ProductDetailsWrapper">
           <div class="details">
             <div class="title">
-              <h3>Venders List</h3>
+              <h3>Raw Material Venders List</h3>
             </div>
             <table>
               <thead>
@@ -514,6 +537,7 @@
                   <td>Last Purchases</td>
                   <td>Credit Amount</td>
                   <td>Actions</td>
+                  <td>View Details</td>
                 </tr>
               </thead>
               <tbody>
@@ -526,6 +550,8 @@
                   <td>15000</td>
                   <td>
                     <button class="btn btn-primary btn-sm payBtn">Pay</button>
+                  </td><td>
+                    <button class="btn btn-primary btn-sm ">View  Details</button>
                   </td>
                 </tr>
                 <tr>
@@ -537,6 +563,8 @@
                   <td>15000</td>
                   <td>
                     <button class="btn btn-primary btn-sm payBtn">Pay</button>
+                  </td><td>
+                    <button class="btn btn-primary btn-sm ">View  Details</button>
                   </td>
                 </tr>
                 <tr>
@@ -548,6 +576,8 @@
                   <td>15000</td>
                   <td>
                     <button class="btn btn-primary btn-sm payBtn">Pay</button>
+                  </td><td>
+                    <button class="btn btn-primary btn-sm ">View  Details</button>
                   </td>
                 </tr>
                 <tr>
@@ -559,6 +589,8 @@
                   <td>15000</td>
                   <td>
                     <button class="btn btn-primary btn-sm payBtn">Pay</button>
+                  </td><td>
+                    <button class="btn btn-primary btn-sm ">View  Details</button>
                   </td>
                 </tr>
                 <tr>
@@ -570,6 +602,8 @@
                   <td>15000</td>
                   <td>
                     <button class="btn btn-primary btn-sm payBtn">Pay</button>
+                  </td><td>
+                    <button class="btn btn-primary btn-sm ">View  Details</button>
                   </td>
                 </tr>
                 <tr>
@@ -581,6 +615,8 @@
                   <td>15000</td>
                   <td>
                     <button class="btn btn-primary btn-sm payBtn">Pay</button>
+                  </td><td>
+                    <button class="btn btn-primary btn-sm ">View  Details</button>
                   </td>
                 </tr>
                 <tr>
@@ -592,6 +628,8 @@
                   <td>15000</td>
                   <td>
                     <button class="btn btn-primary btn-sm payBtn">Pay</button>
+                  </td><td>
+                    <button class="btn btn-primary btn-sm ">View  Details</button>
                   </td>
                 </tr>
                 <tr>
@@ -603,6 +641,8 @@
                   <td>15000</td>
                   <td>
                     <button class="btn btn-primary btn-sm payBtn">Pay</button>
+                  </td><td>
+                    <button class="btn btn-primary btn-sm ">View  Details</button>
                   </td>
                 </tr>
                 <tr>
@@ -614,6 +654,8 @@
                   <td>15000</td>
                   <td>
                     <button class="btn btn-primary btn-sm payBtn">Pay</button>
+                  </td><td>
+                    <button class="btn btn-primary btn-sm ">View  Details</button>
                   </td>
                 </tr>
                 <tr>
@@ -625,6 +667,8 @@
                   <td>15000</td>
                   <td>
                     <button class="btn btn-primary btn-sm payBtn">Pay</button>
+                  </td><td>
+                    <button class="btn btn-primary btn-sm ">View  Details</button>
                   </td>
                 </tr>
               </tbody>
@@ -632,6 +676,8 @@
           </div>
         </div>
       </div>
+
+      <!--add vender -->
       <div class="container-fluid">
         <div id="addVenderWrapper" class="mt-4">
           <div class="addVenderTitle">
@@ -665,7 +711,6 @@
                         <br />
                         <input type="text" />
                       </div>
-                      
                     </div>
                     <div class="col-md-4">
                       <div class="formGroup">
@@ -702,21 +747,15 @@
                         <input type="text" />
                       </div>
                     </div>
-                    <div class="col-md-6">
-                      <div class="formGroup">
-                        <label for="ACHName">GST No.</label>
-                        <br />
-                        <input type="text" />
-                      </div>
-                    </div>
-                  
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                       <div class="formGroup">
                         <label for="state">State</label>
                         <br />
                         <select id="country-state" name="country-state">
                           <option value="state">State</option>
-                          <option value="AN">Andaman and Nicobar Islands</option>
+                          <option value="AN">
+                            Andaman and Nicobar Islands
+                          </option>
                           <option value="AP">Andhra Pradesh</option>
                           <option value="AR">Arunachal Pradesh</option>
                           <option value="AS">Assam</option>
@@ -753,13 +792,14 @@
                           <option value="UP">Uttar Pradesh</option>
                           <option value="UT">Uttarakhand</option>
                           <option value="WB">West Bengal</option>
-                        </select>                      </div>
+                        </select>
+                      </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                       <div class="formGroup">
                         <label for="city">City</label>
                         <br />
-                        <select id="city" name="city" >
+                        <select id="city" name="city">
                           <option value="">Select City</option>
                           <option value="Almora">Almora</option>
                           <option value="Bageshwar">Bageshwar</option>
@@ -785,7 +825,9 @@
                           <option value="Jaspur">Jaspur</option>
                           <option value="Joshimath">Joshimath</option>
                           <option value="Kaladhungi">Kaladhungi</option>
-                          <option value="Kalagarh Project Colony">Kalagarh Project Colony</option>
+                          <option value="Kalagarh Project Colony">
+                            Kalagarh Project Colony
+                          </option>
                           <option value="Kashipur">Kashipur</option>
                           <option value="Khatima">Khatima</option>
                           <option value="Kichha">Kichha</option>
@@ -813,22 +855,29 @@
                           <option value="Tanakpur">Tanakpur</option>
                           <option value="Tehri">Tehri</option>
                           <option value="Tehri-Garhwal">Tehri-Garhwal</option>
-                          <option value="Udham Singh Nagar">Udham Singh Nagar</option>
+                          <option value="Udham Singh Nagar">
+                            Udham Singh Nagar
+                          </option>
                           <option value="Uttarkashi">Uttarkashi</option>
                           <option value="Vikasnagar">Vikasnagar</option>
-                        </select>                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="formGroup">
-                        <label >Gender</label><br>
-                        <label for="female">Female</label>
-                        <input type="radio" name="gender" value="Female" id="female">
-                        <label for="male">Male</label>
-                        <input type="radio" name="gender" value="male" id="male">
-
+                        </select>
                       </div>
                     </div>
+                    <div class="form-group genderWrapper col-md-4">
+                      <label for="gnder">Gender :</label>
+                      <input type="radio" name="gender" id="male" />
+                      <label for="male">Male</label>
+                      <input type="radio" name="gender" id="female" />
+                      <label for="female">Female</label>
+                      <input type="radio" name="gender" id="other" />
+                      <label for="other">Other</label>
+                    </div>
+                    <div class="formGroup col-md-12">
+                      <label for="gstno">GST Number</label><br />
+                      <input type="text" name="gstno" id="gstno" />
+                    </div>
                     <div class="col-12 text-center mt-2">
+                      <button class="closeAddVenderBox">Close</button>
                       <button type="submit" class="addVenderSubmitBtn">
                         Submit
                       </button>
@@ -840,7 +889,6 @@
           </div>
         </div>
       </div>
-
       <div class="paymentPopupWrapper">
         <div class="paymentPopup">
           <div class="closePaymentPopup">
@@ -944,7 +992,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
-
       $(function () {
         $("#dateWise").datepicker();
         let formattedDate = new Date();
@@ -960,16 +1007,14 @@
         let y = formattedDate.getFullYear();
         $("#dateWise").attr("placeholder", d + "/" + m + "/" + y);
       });
-
     </script>
     <script>
-
       $(".addVender").click(function () {
         $("#addVenderWrapper").show();
         let top = $("#addVenderWrapper").position().top;
         $("html, body").animate({ scrollTop: top });
       });
-    
+
       $(".monthsBtnWrapper button").click(function () {
         $(".monthsBtnWrapper button").removeClass("activeBtn");
         $(this).addClass("activeBtn");
@@ -989,7 +1034,10 @@
       $(".closePaymentPopup").click(function () {
         $(".paymentPopupWrapper ").hide();
       });
-
+      $(document).on("click", ".closeAddVenderBox", function (e) {
+        e.preventDefault();
+        $("#addVenderWrapper").slideUp();
+      });
     </script>
   </body>
 </html>

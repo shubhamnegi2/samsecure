@@ -519,14 +519,14 @@
       </div>
     </div>
     <main>
-      <div class="container-fluid my-1">
+      <!-- <div class="container-fluid my-1">
         <div class="dateWrapper d-flex justify-content-between">
           <div>
             Date : <input type="text" id="dateWise" placeholder="03/12/2012" />
           </div>
           <button class="addVender">Add vender</button>
         </div>
-      </div>
+      </div> -->
       <div class="allBtnsWrapper pb-3 mt-0">
         <div class="container-fluid">
           <div class="allBtns pt-0 pb-1">
@@ -686,8 +686,8 @@
                   <th>Quantity</th>
                   <th>Price/Qty</th>
                   <!-- <th>Selling Prices/Qty</th> -->
-                  <th>Total Payment</th>
-                  <th>Paid Payment</th>
+                  <th>Total Amount</th>
+                  <th>Paid Amount</th>
                   <!-- <th>Remaining</th> -->
                   <th>Select Vender</th>
                   <th>Remove</th>
@@ -732,22 +732,22 @@
                   <td>
                     <input
                       type="text"
-                      name="totalPayment"
-                      placeholder="Total Payment"
+                      name="totalAmount"
+                      placeholder="Total Amount"
                     />
                   </td>
                   <td>
                     <input
                       type="text"
-                      name="paidPayment"
-                      placeholder="Paid Payment"
+                      name="paidAmount"
+                      placeholder="Paid Amount"
                     />
                   </td>
                   <td>
                     <input
                       type="text"
-                      name="remainingPayment"
-                      placeholder="Remaining Payment"
+                      name="remainingAmount"
+                      placeholder="Remaining Amount"
                     />
                   </td>
                   <td>
@@ -769,9 +769,9 @@
               </tbody>
             </table>
             <div class="table1Btns text-right my-1 mx-3">
-              <!-- <button class="btn btn-primary btn-sm showVenderDetails">
+              <button class="btn btn-primary btn-sm showVenderDetails">
                 Next
-              </button> -->
+              </button>
               <button class="btn btn-primary btn-sm">Submit</button>
             </div>
           </div>
@@ -1118,7 +1118,7 @@
         $(".ProductDetailsWrapper table tbody").append(
           '<tr> <td></td><td class="name">' +
             $(this).children("span").text() +
-            '</td><td> <input type="text" class="variation" placeholder="variations" name="Variation"/> </td><td> <input type="text" class="quantity" placeholder="Quantity" name="quantity"/> </td><td> <input type="text" class="price/Qty" placeholder="Price/Qty" name="price/Qty"/> </td><td> <input type="text" name="totalPayment" placeholder="Total Payment"/> </td><td> <input type="text" name="paidPayment" placeholder="Paid Payment"/> </td><td> <select name="Vender" class="chooseVender" id="Vender"> <option selected="" disabled="">Select Vender</option> <option value="Amit">Amit</option> <option value="Ankit">Ankit</option> <option value="Rohit">Rohit</option> <option value="Akash">Akash</option> <option value="Ramu">Ramu</option> <option value="Sonu">Sonu</option> <option value="Manish Joshi">Manish Joshi</option> </select> </td><td> <i class="fa-solid fa-trash deleteThisRow"></i> </td></tr>'
+            '</td><td> <input type="text" class="variation" placeholder="variations" name="Variation"/> </td><td> <input type="text" class="quantity" placeholder="Quantity" name="quantity"/> </td><td> <input type="text" class="price/Qty" placeholder="Price/Qty" name="price/Qty"/> </td><td> <input type="text" name="totalAmount" placeholder="Total Amount"/> </td><td> <input type="text" name="paidAmount" placeholder="Paid Amount"/> </td><td> <select name="Vender" class="chooseVender" id="Vender"> <option selected="" disabled="">Select Vender</option> <option value="Amit">Amit</option> <option value="Ankit">Ankit</option> <option value="Rohit">Rohit</option> <option value="Akash">Akash</option> <option value="Ramu">Ramu</option> <option value="Sonu">Sonu</option> <option value="Manish Joshi">Manish Joshi</option> </select> </td><td> <i class="fa-solid fa-trash deleteThisRow"></i> </td></tr>'
         );
       });
 
@@ -1273,5 +1273,5 @@
   </body>
 </html>
 <!-- 
-  <tr> <td class="name">Milk Powder</td><td> <input type="text" class="variation" placeholder="variations" name="Variation"/> </td><td> <input type="text" class="quantity" placeholder="Quantity" name="quantity"/> </td><td> <input type="text" class="price/Qty" placeholder="Price/Qty" name="price/Qty"/> </td><td> <input type="text" class="sellingPrice/Qty" placeholder="sellingPrice/Qty" name="Selling Price/Qty"/> </td><td> <input type="text" name="totalPayment" placeholder="Total Payment"> </td><td> <input type="text" name="paidPayment" placeholder="Paid Payment"> </td><td> <input type="text" name="remainingPayment" placeholder="Remaining Payment"> </td></tr>
+  <tr> <td class="name">Milk Powder</td><td> <input type="text" class="variation" placeholder="variations" name="Variation"/> </td><td> <input type="text" class="quantity" placeholder="Quantity" name="quantity"/> </td><td> <input type="text" class="price/Qty" placeholder="Price/Qty" name="price/Qty"/> </td><td> <input type="text" class="sellingPrice/Qty" placeholder="sellingPrice/Qty" name="Selling Price/Qty"/> </td><td> <input type="text" name="totalAmount" placeholder="Total Amount"> </td><td> <input type="text" name="paidAmount" placeholder="Paid Amount"> </td><td> <input type="text" name="remainingAmount" placeholder="Remaining Amount"> </td></tr>
  -->
