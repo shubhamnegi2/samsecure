@@ -399,7 +399,40 @@
         margin: 0px 10px;
         font-weight: bold;
       }
+      
     </style>
+      <style>
+        .ProductDetailsWrapper .details .leftBar {
+          width: 10%;
+        }
+        .ProductDetailsWrapper .details .purchasesTable {
+          width: 90%;
+          height: 100%;
+        }
+        .dateListWraper li{
+          height: 30px;
+          border-bottom: 1px solid #083e5a;
+          padding-top: 4px;
+          font-size: 14px;
+          cursor: pointer;
+        }
+        .activeDate{
+          background-color: #083e5a;
+          color: #fff;
+        }
+        .dateListWraper {
+          background-color: #eee;
+          text-align: center;
+        }
+        .listTitle{
+          font-size: 14px;
+          text-align: center;
+          background-color: #fe9037;
+          padding: 7px 0px;
+          margin-top: 1px;
+          margin-bottom: 0px;
+        }
+      </style>
   </head>
   <body>
     <div class="breadcrumb">
@@ -436,40 +469,10 @@
           </select>
         </div>
       </div>
-      <div class="allBtnsWrapper monthsBtnWrapper pb-2 mt-1">
-        <div class="container-fluid">
-          <div class="allBtns pt-0 pb-1">
-            <div class="mb-1 pt-1 monthBtnWrapper">
-              <button class="activeBtn" data-month="1">January</button>
-              <button data-month="2">February</button>
-              <button data-month="3">March</button>
-              <button data-month="4">April</button>
-              <button data-month="5">May</button>
-              <button data-month="6">June</button>
-              <button data-month="7">July</button>
-              <button data-month="8">August</button>
-              <button data-month="9">September</button>
-              <button data-month="10">October</button>
-              <button data-month="11">November</button>
-              <button data-month="12">December</button>
-            </div>
-            <hr />
-            <div class="d-flex justify-content-between align-items-center py-0">
-              <h3 class="categoryheading">
-                Month : <span class="month color2">January</span>
-                <!-- <span class="px-2 mainColor">|</span> -->
-              </h3>
-              <span class="categoryheading"
-                ><span class="month"></span>Total Pending Amount : ₹
-                <span class="totalCatgry color2">2200</span></span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
+     
 
       <div class="allBtnsWrapper categoriesBtnWrapper pb-3 mt-1">
-        <div class="container-fluid">rightTopBarBtns
+        <div class="container-fluid">
           <div class="allBtns pt-0 pb-1">
                     
             <button class="activeBtn">Dairy Products</button>
@@ -508,6 +511,37 @@
           </div>
         </div>
       </div>
+      <div class="allBtnsWrapper monthsBtnWrapper pb-2 mt-1">
+        <div class="container-fluid">
+          <div class="allBtns pt-0 pb-1">
+            <div class="mb-1 pt-1 monthBtnWrapper">
+              <button class="activeBtn" data-month="1">January</button>
+              <button data-month="2">February</button>
+              <button data-month="3">March</button>
+              <button data-month="4">April</button>
+              <button data-month="5">May</button>
+              <button data-month="6">June</button>
+              <button data-month="7">July</button>
+              <button data-month="8">August</button>
+              <button data-month="9">September</button>
+              <button data-month="10">October</button>
+              <button data-month="11">November</button>
+              <button data-month="12">December</button>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between align-items-center py-0">
+              <h3 class="categoryheading">
+                Month : <span class="month color2">January</span>
+                <!-- <span class="px-2 mainColor">|</span> -->
+              </h3>
+              <span class="categoryheading"
+                ><span class="month"></span>Total Pending Amount : ₹
+                <span class="totalCatgry color2">2200</span></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     
       <div class="container-fluid">
         <div class="ProductDetailsWrapper">
@@ -521,85 +555,103 @@
                 <div class="totalBookings">Total : <span>1900</span></div>
               </div>
             </div>
-            <table>
-              <thead>
-                <tr>
-                  <td>S. No.</td>
-                  <td>Purchased Item</td>
-                  <td>Date</td>
-                  <td>Quantity</td>
-                  <td>Amount</td>
-                  <td>paid</td>
-                  <td>Remaining</td>
-                  <td>Actions</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Onion</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>200</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Garlic</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>200</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Curd</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>200</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>Paneer</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>200</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                </tr>
-              </tbody>
-            </table>
+
+            <div class="d-flex">
+              <aside class="leftBar">
+                <h3 class="listTitle">Days</h3>
+                <ul class="list-unstyled mb-0 pl-0 dateListWraper"></ul>
+              </aside>
+              <table>
+                <thead>
+                  <tr>
+                
+                    <td>Purchased Item</td>
+                    <td>Price/Qty</td>
+                    <td>Remaining</td>
+                    <td>Date</td>
+                    <td>Quantity</td>
+                    <td>Amount</td>
+                    <td>paid</td>
+                    <td>Remaining</td>
+                    <td>Actions</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+              
+                    <td>Onion</td>
+                    <td>100</td>
+                    <td>1 kg</td>
+                    <td>03/01/2023</td>
+                    <td>100</td>
+                    <td>1200</td>
+                    <td>
+                      1000
+                      <!-- <div class="form-check d-flex justify-content-center">
+                              <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                          </div> -->
+                    </td>
+                    <td>200</td>
+                    <td class="viewdetailpopopen">Pay Now</td>
+                  </tr>
+                  <tr>
+              
+                    <td>Garlic</td>
+                    <td>100</td>
+                    <td>1 kg</td>
+                    <td>03/01/2023</td>
+                    <td>100</td>
+                    <td>1200</td>
+                    <td>
+                      1000
+                      <!-- <div class="form-check d-flex justify-content-center">
+                              <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                          </div> -->
+                    </td>
+                    <td>200</td>
+                    <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
+                    <td class="viewdetailpopopen">Pay Now</td>
+                  </tr>
+                  <tr>
+               
+                    <td>Curd</td>
+                    <td>100</td>
+                    <td>1 kg</td>
+                    <td>03/01/2023</td>
+                    <td>100</td>
+                    <td>1200</td>
+                    <td>
+                      1000
+                      <!-- <div class="form-check d-flex justify-content-center">
+                              <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                          </div> -->
+                    </td>
+                    <td>200</td>
+                    <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
+                    <td class="viewdetailpopopen">Pay Now</td>
+                  </tr>
+                  <tr>
+                 
+                    <td>Paneer</td>
+                    <td>100</td>
+                    <td>1 kg</td>
+                    <td>03/01/2023</td>
+                    <td>100</td>
+                    <td>1200</td>
+                    <td>
+                      1000
+                      <!-- <div class="form-check d-flex justify-content-center">
+                              <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                          </div> -->
+                    </td>
+                    <td>200</td>
+                    <td class="viewdetailpopopen">Pay Now</td>
+                    <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+           
             <div class="totalpaybtn pt-2">
               <button class="totalpaybtns">Pay All</button>
             </div>
@@ -614,107 +666,120 @@
                 <div class="totalBookings">Total : <span>1900</span></div>
               </div>
             </div>
-            <table>
-              <thead>
-                <tr>
-                  <td>S. No.</td>
-                  <td>Purchased Item</td>
-                  <td>Purchase Date</td>
-                  <td>Paid Date</td>
-                  <td>Quantity</td>
-                  <td>Amount</td>
-                  <td>paid</td>
-                  <td>Payment Type</td>
-                  <td>Actions</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Onion</td>
-                  <td>03/01/2023</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>Cash</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Garlic</td>
-                  <td>03/01/2023</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>UPI</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Curd</td>
-                  <td>03/01/2023</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>Card</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>Onion</td>
-                  <td>03/01/2023</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>UPI</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>Onion</td>
-                  <td>03/01/2023</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>Cash</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="d-flex">
+              <aside class="leftBar">
+                <h3 class="listTitle">Days</h3>
+                <ul class="list-unstyled mb-0 pl-0 dateListWraper"></ul>
+              </aside>
+              <table>
+                <thead>
+                  <tr>
+                  
+                    <td>Purchased Item</td>
+                    <td>Price/Qty</td>
+                    <td>Remaining</td>
+                    <td>Paid Date</td>
+                    <td>Quantity</td>
+                    <td>Amount</td>
+                    <td>paid</td>
+                    <td>Payment Type</td>
+                    <td>Actions</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                 
+                    <td>Onion</td>
+              <td>100</td>
+              <td>1 kg</td>
+                    <td>03/01/2023</td>
+                    <td>100</td>
+                    <td>1200</td>
+                    <td>
+                      1000
+                      <!-- <div class="form-check d-flex justify-content-center">
+                              <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                          </div> -->
+                    </td>
+                    <td>Cash</td>
+                    <td class="viewdetailpopopen">Pay Now</td>
+                  </tr>
+                  <tr>
+                  
+                    <td>Garlic</td>
+                    <td>100</td>
+                    <td>1 kg</td>
+                    <td>03/01/2023</td>
+                    <td>100</td>
+                    <td>1200</td>
+                    <td>
+                      1000
+                      <!-- <div class="form-check d-flex justify-content-center">
+                              <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                          </div> -->
+                    </td>
+                    <td>UPI</td>
+                    <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
+                    <td class="viewdetailpopopen">Pay Now</td>
+                  </tr>
+                  <tr>
+                  
+                    <td>Curd</td>
+                    <td>100</td>
+                    <td>1 kg</td>
+                    <td>03/01/2023</td>
+                    <td>100</td>
+                    <td>1200</td>
+                    <td>
+                      1000
+                      <!-- <div class="form-check d-flex justify-content-center">
+                              <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                          </div> -->
+                    </td>
+                    <td>Card</td>
+                    <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
+                    <td class="viewdetailpopopen">Pay Now</td>
+                  </tr>
+                  <tr>
+                
+                    <td>Onion</td>
+                    <td>100</td>
+              <td>1 kg</td>
+                    <td>03/01/2023</td>
+                    <td>100</td>
+                    <td>1200</td>
+                    <td>
+                      1000
+                      <!-- <div class="form-check d-flex justify-content-center">
+                              <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                          </div> -->
+                    </td>
+                    <td>UPI</td>
+                    <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
+                    <td class="viewdetailpopopen">Pay Now</td>
+                  </tr>
+                  <tr>
+                   
+                    <td>Onion</td>
+                    <td>100</td>
+              <td>1 kg</td>
+                    <td>03/01/2023</td>
+                    <td>100</td>
+                    <td>1200</td>
+                    <td>
+                      1000
+                      <!-- <div class="form-check d-flex justify-content-center">
+                              <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                          </div> -->
+                    </td>
+                    <td>Cash</td>
+                    <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
+                    <td class="viewdetailpopopen">Pay Now</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+           
           </div>
           <div class="details allPaidUnpaid">
             <div class="title">
@@ -726,67 +791,76 @@
                 <div class="totalBookings">Total : <span>1900</span></div>
               </div>
             </div>
-            <table>
-              <thead>
-                <tr>
-                  <td>S. No.</td>
-                  <td>Purchased Iem</td>
-                  <td>Purchase Date</td>
-                  <td>Price</td>
-                  <td>Quantity</td>
-                  <td>paid</td>
-                  <td>Paid Date</td>
-                  <td>Remaining</td>
-                  <td>Actions</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Onion</td>
-                  <td>03/01/2023</td>
-                  <td>1500</td>
-                  <td>120</td>
-                  <td>1000</td>
-                  <td>02/01/2023</td>
-                  <td>200</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Paneer</td>
-                  <td>04/01/2023</td>
-                  <td>1400</td>
-                  <td>140</td>
-                  <td>1200</td>
-                  <td>06/01/2023</td>
-                  <td>200</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Curd</td>
-                  <td>06/01/2023</td>
-                  <td>1600</td>
-                  <td>160</td>
-                  <td>1600</td>
-                  <td>06/01/2023</td>
-                  <td>200</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>Milk Powder</td>
-                  <td>04/01/2023</td>
-                  <td>1400</td>
-                  <td>140</td>
-                  <td>1400</td>
-                  <td>04/01/2023</td>
-                  <td>200</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="d-flex">
+              <aside class="leftBar">
+                <h3 class="listTitle">Days</h3>
+                <ul class="list-unstyled mb-0 pl-0 dateListWraper"></ul>
+              </aside>
+              <table>
+                <thead>
+                  <tr>
+                
+                    <td>Purchased Iem</td>
+                  
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>paid</td>
+                    <td>Paid Date</td>
+                    <td>Remaining</td>
+                    <td>Actions</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                
+                    <td>Onion</td>
+               
+                    <td>1500</td>
+                    <td>120</td>
+                    <td>1000</td>
+                    <td>02/01/2023</td>
+                    <td>200</td>
+                    <td class="viewdetailpopopen">Pay Now</td>
+                  </tr>
+                  <tr>
+                  
+                    <td>Paneer</td>
+                  
+                    <td>1400</td>
+                    <td>140</td>
+                    <td>1200</td>
+                    <td>06/01/2023</td>
+                    <td>200</td>
+                    <td class="viewdetailpopopen">Pay Now</td>
+                  </tr>
+                  <tr>
+             
+                    <td>Curd</td>
+                  
+                    <td>1600</td>
+                    <td>160</td>
+                    <td>1600</td>
+                    <td>06/01/2023</td>
+                    <td>200</td>
+                    <td class="viewdetailpopopen">Pay Now</td>
+                  </tr>
+                  <tr>
+                
+                    <td>Milk Powder</td>
+                 
+                    <td>1400</td>
+                    <td>140</td>
+                    <td>1400</td>
+                    <td>04/01/2023</td>
+                    <td>200</td>
+                    <td class="viewdetailpopopen">Pay Now</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+           
+            </div>
+         
           </div>
           <div class="details paidIngList">
             <div class="title">
@@ -798,102 +872,8 @@
                 <div class="totalBookings">Total : <span>1900</span></div>
               </div>
             </div>
-            <table>
-              <thead>
-                <tr>
-                  <td>S. No.</td>
-                  <td>Purchase Date</td>
-                  <td>Paid Date</td>
-                  <td>Quantity</td>
-                  <td>Amount</td>
-                  <td>paid</td>
-                  <td>Payment Type</td>
-                  <td>Actions</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>03/01/2023</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>Cash</td>
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>03/01/2023</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>UPI</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>03/01/2023</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>Card</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>03/01/2023</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>UPI</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>03/01/2023</td>
-                  <td>03/01/2023</td>
-                  <td>100</td>
-                  <td>1200</td>
-                  <td>
-                    1000
-                    <!-- <div class="form-check d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        </div> -->
-                  </td>
-                  <td>Cash</td>
-                  <!-- <td><i class="fa-solid fa-ellipsis-vertical"></i></td> -->
-                  <td class="viewdetailpopopen">Pay Now</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          
+         
           <div class="details unpaidIngList">
             <div class="title">
               <h3>Onion</h3>
@@ -1344,6 +1324,78 @@
         $(".categoriesBtnWrapper button").removeClass("activeBtn");
         $(this).addClass("activeBtn");
       });
+    </script>
+     <script>
+      $(".addVender").click(function () {
+        $(".addVender").removeClass("activeTopBarBtn");
+        $(this).addClass("activeTopBarBtn");
+      });
+
+      GetThisMonth();
+      getthisMonthDates();
+      function GetThisMonth() {
+        let TodaysDate = new Date();
+        let thisDay = TodaysDate.getDate();
+        let thisMonth = TodaysDate.getMonth();
+        $(".allBtns button").removeClass("activeBtn");
+        $(`.monthBtnWrapper button:nth-child(${thisMonth + 1})`).addClass(
+          "activeBtn"
+        );
+      }
+
+      function getthisMonthDates() {
+        let year = $("#year option:selected").val();
+        let month = $(".activeBtn").data("month");
+        let TodaysDate = new Date();
+        let thisDay = TodaysDate.getDate();
+        let thisMonth = TodaysDate.getMonth();
+        thisMonth = (thisMonth < 10 ? "0" : "") + (thisMonth + 1);
+        let thisYear = TodaysDate.getFullYear();
+        TodaysDate = thisMonth + "/" + thisYear;
+        let totalDays = 0;
+        if (+year - +thisYear == 0 && +month - +thisMonth == 0) {
+          totalDays = +thisDay;
+          $(".dateListWraper").html("");
+          for (let i = 0; i < totalDays - 1; i++) {
+            $(".dateListWraper").append(
+              `<li>${
+                (i < 9 ? "0" : " ") + (i + 1)
+              } / ${thisMonth} / ${thisYear}</li>`
+            );
+          }
+        } else {
+          getAllMonthDetails(month,year);
+        }
+      }
+
+      function getAllMonthDetails(month,year) {
+        var numOfDays = new Date(year, month, 0).getDate();
+        $(".dateListWraper").html("");
+        month = (month < 10 ? "0" : "") + (month);
+
+        for (var i = 0; i <= numOfDays-1; i++) {
+          $(".dateListWraper").append(
+              `<li>${
+                (i < 9 ? "0" : " ") + (i + 1)
+              } / ${month} / ${year}</li>`
+            );
+        }
+      }
+
+      $(".monthBtnWrapper button").click(function () {
+        $(".allBtns button").removeClass("activeBtn");
+        $(this).addClass("activeBtn");
+        $(".month").text($(this).text());
+
+        let year = $("#year option:selected").val();
+        let month = $(this).data("month");
+        getthisMonthDates();
+      });
+
+      $(document).on('click','.dateListWraper li', function(){
+        $(".dateListWraper li").removeClass("activeDate");
+        $(this).addClass("activeDate");
+      })
     </script>
   </body>
 </html>
