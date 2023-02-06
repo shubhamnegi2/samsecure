@@ -203,6 +203,13 @@ main .categoryheading i {
   border-radius: 5px;
   padding: 30px 0px;
 }
+#addVenderWrapper select {
+  width: 100%;
+  border: 0;
+  font-size: 14px;
+  padding-left: 5px;
+  height: 26px;
+}
 #addVenderWrapper .addVenderTitle {
   text-align: center;
   padding-bottom: 20px;
@@ -230,20 +237,7 @@ main .categoryheading i {
   border-radius: 4px;
   padding-left: 15px;
 }
-#addVenderWrapper .addVenderForm .form-group input {
-  border: 2px solid #eee;
-  /* width: 100%; */
-  border-radius: 4px;
-  padding-left: 15px;
-}
-#addVenderWrapper .addVenderForm .formGroup select {
-  border: 2px solid #eee;
-  width: 100%;
-  color: #7a7797;
-  border-radius: 4px;
-  padding-left: 15px;
-}
-#addVenderWrapper .addVenderForm .addVenderSubmitBtn {
+#addVenderWrapper .addVenderForm .addVenderSubmitBtn, #addVenderWrapper .addVenderForm .closeAddVenderBox {
   text-transform: capitalize;
   border-radius: 3px;
   border: 0px;
