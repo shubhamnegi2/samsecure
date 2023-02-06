@@ -230,6 +230,19 @@ main .categoryheading i {
   border-radius: 4px;
   padding-left: 15px;
 }
+#addVenderWrapper .addVenderForm .form-group input {
+  border: 2px solid #eee;
+  /* width: 100%; */
+  border-radius: 4px;
+  padding-left: 15px;
+}
+#addVenderWrapper .addVenderForm .formGroup select {
+  border: 2px solid #eee;
+  width: 100%;
+  color: #7a7797;
+  border-radius: 4px;
+  padding-left: 15px;
+}
 #addVenderWrapper .addVenderForm .addVenderSubmitBtn {
   text-transform: capitalize;
   border-radius: 3px;
