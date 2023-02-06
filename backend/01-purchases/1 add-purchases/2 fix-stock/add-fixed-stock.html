@@ -174,7 +174,9 @@
         .addCategoryModelWrapper,
         .editCategoryModelWrapper,
         .addIngredientModelWrapper,
-        .editIngredientModelWrapper {
+        .editIngredientModelWrapper,
+        .addProductModelWrapper,
+        .editProductModelWrapper {
           position: fixed;
           left: 0px;
           top: 0px;
@@ -194,7 +196,9 @@
         .editCategoryModel h2,
         .addCategoryModel h2,
         .editIngredientModel h2,
-        .addIngredientModel h2 {
+        .addIngredientModel h2 ,
+        .addProductModel h2,
+        .editProductModel h2{
           display: inline-block;
           border-bottom: 2px solid #fc8e32;
           color: #083e5a;
@@ -205,7 +209,9 @@
         .addCategoryModel,
         .editCategoryModel,
         .addIngredientModel,
-        .editIngredientModel {
+        .editIngredientModel,
+        .addProductModel,
+        .editProductModel {
           background-color: #fff;
           transition: all 0.3 ease;
           /* width: 50%; */
@@ -215,29 +221,34 @@
           border-radius: 4px;
         }
         .editCategoryModel,
-        .editIngredientModel {
+        .editIngredientModel,
+        .editProductModel {
           width: 70%;
         }
         .editCategoryModel table tbody,
-        .editIngredientModel table tbody {
+        .editIngredientModel table tbody,
+        .editProductModel table tbody {
           display: flex;
           flex-wrap: wrap;
           justify-content: space-between;
         }
         .editCategoryModel table tbody tr,
-        .editIngredientModel table tbody tr {
+        .editIngredientModel table tbody tr 
+        ,.editProductModel table tbody tr{
           max-width: 30%;
           width: 100%;
           margin-bottom: 10px;
         }
         .editCategoryModel i,
         .editIngredientModel i,
-        .addIngredientModelWrapper i {
+        .addIngredientModelWrapper i,
+        .editProductModel i {
           cursor: pointer;
           padding: 3px;
         }
         .editCategoryModel input,
-        .editIngredientModel input {
+        .editIngredientModel input,
+        .editProductModel input{
           border: 1px solid #7a7797;
           border-radius: 3px;
           margin-right: 10px;
@@ -245,16 +256,25 @@
           font-size: 14px;
         }
         .addCategoryModel input,
-        .addCategoryModel label {
+        .addCategoryModel label,
+        .addProductModel label,
+        .addProductModel input,.addProductModel select {
           width: 100%;
+         
           text-align-last: left;
         }
-        .addCategoryModel label {
+        .addProductModel select{
+          color: #7a7797 ;
+          font-size: 14px ;
+        }
+        .addCategoryModel label ,
+        .addProductModel label{
           color: #7a7797;
           font-size: 14px;
         }
         .addCategoryModel button,
-        .addIngredientModelWrapper button {
+        .addIngredientModelWrapper button,
+        .addProductModel button{
           min-width: 50px;
           margin: 2px px 10px;
           text-transform: capitalize;
@@ -269,7 +289,9 @@
         .closeAddCategoryModel,
         .closeEditCategoryModel,
         .closeEditIngredientModel,
-        .closeaddIngredientModelWrapper {
+        .closeaddIngredientModelWrapper,
+        .closeEditProductModel,
+        .closeAddProductModel{
           position: absolute;
           right: 5px;
           top: 3px;
@@ -277,7 +299,8 @@
           font-size: 20px;
           cursor: pointer;
         }
-        .editCategoryModel button {
+        .editCategoryModel button ,
+        .editProductModel button{
           min-width: 50px;
           margin: 2px px 10px;
           text-transform: capitalize;
@@ -304,6 +327,9 @@
         .undoDeleteCat {
           display: none;
         }
+        .undoDeletePro {
+          display: none;
+        }
         .undoDelete {
           display: none;
         }
@@ -322,6 +348,95 @@
       </style>
   </head>
   <body>
+<!-- add product -->
+<div class="addProductModelWrapper">
+  <div class="addProductModel">
+    <div class="closeAddProductModel">
+      <i class="fa-regular fa-circle-xmark"></i>
+    </div>
+    <h2 class="mb-3">Add New Product</h2>
+    <form action="">
+      <div class="form-group">
+        <label for="category">Select Category : </label>
+        <select>
+          <option value="Dairy Products">Dairy Products</option>
+          <option value="Drinkable">Drinkable</option>
+          <option value="Fast Food">Fast Food</option>
+          <option value="My Fav">My Fav</option>
+          <option value="Mostly Used">Mostly Used</option>
+          <option value="Top">Top</option>
+          <option value="Commonly Used">Commonly Used</option>
+        </select>
+        <label for="product">Product Name : </label>
+        <input type="text" name="product" id="product">
+      </div>
+      <div class="text-right mt-3">
+        <button>Save Product</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+<!-- edit Product -->
+<div class="editProductModelWrapper">
+  <div class="editProductModel">
+    <div class="closeEditProductModel">
+      <i class="fa-regular fa-circle-xmark"></i>
+    </div>
+    <h2 class="mb-4">Edit Product</h2>
+    <table>
+      <tr>
+        <td><input type="text" value="Coca Cola" /></td>
+        <td class="deleteProduct"><i class="fa-solid fa-trash"></i></td>
+        <td class="undoDeletePro">
+          <i class="fa-solid fa-rotate-left"></i>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="text" value="Milk" /></td>
+        <td class="deleteProduct"><i class="fa-solid fa-trash"></i></td>
+        <td class="undoDeletePro">
+          <i class="fa-solid fa-rotate-left"></i>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="text" value="Buttermilk" /></td>
+        <td class="deleteProduct"><i class="fa-solid fa-trash"></i></td>
+        <td class="undoDeletePro">
+          <i class="fa-solid fa-rotate-left"></i>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="text" value="Lassi" /></td>
+        <td class="deleteProduct"><i class="fa-solid fa-trash"></i></td>
+        <td class="undoDeletePro">
+          <i class="fa-solid fa-rotate-left"></i>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="text" value="abc" /></td>
+        <td class="deleteProduct"><i class="fa-solid fa-trash"></i></td>
+        <td class="undoDeletePro">
+          <i class="fa-solid fa-rotate-left"></i>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="text" value="Milk" /></td>
+        <td class="deleteProduct"><i class="fa-solid fa-trash"></i></td>
+        <td class="undoDeletePro">
+          <i class="fa-solid fa-rotate-left"></i>
+        </td>
+      </tr>
+    </table>
+    <div class="text-center">
+      <button>Submit</button>
+      
+    </div>
+  </div>
+</div>
+
     <!-- add ingredients model -->
     <div class="addCategoryModelWrapper">
       <div class="addCategoryModel">
@@ -571,8 +686,8 @@
               <span> Total : <span class="totalIngredients">52</span> </span>
             </h3>
             <div class="ingredientsActionBtn text-right">
-              <button class="btn btn-primary btn-sm">Add Product</button>
-              <button class="btn btn-primary btn-sm">Edit Product</button>
+              <button class="btn btn-primary btn-sm addNewProductBtn">Add Product</button>
+              <button class="btn btn-primary btn-sm editNewProductBtn">Edit Product</button>
             </div>
           </div>
           <hr />
@@ -1161,7 +1276,58 @@
           $(".addCategoryModelWrapper").hide();
           $(".addCategoryModelWrapper .addCategoryModel").animate({ top: -50 });
         });
+ 
+        
+
+        $(document).on("click", ".addNewProductBtn", function () {
+          $(".addProductModelWrapper").css({
+            display: "flex",
+          });
+          $(".addProductModelWrapper .addProductModel").animate({ top: 50 });
+        });
   
+        //   close add category model
+        $(document).on("click", ".closeAddProductModel", function () {
+          $(".addProductModelWrapper").hide();
+          $(".addProductModelWrapper .addProductModel").animate({ top: -50 });
+        });
+  
+
+// edit product btn click
+
+$(document).on("click", ".editNewProductBtn", function () {
+          $(".editProductModelWrapper").css({
+            display: "flex",
+          });
+          $(".editProductModelWrapper .editproductModel").animate({ top: 50 });
+        });
+  
+        //   close edit category model
+        $(document).on("click", ".closeEditProductModel", function () {
+          $(".editProductModelWrapper").hide();
+          $(".editProductModelWrapper .addProductModel").animate({ top: -50 });
+        });
+
+        $(document).on("click", ".deleteProduct", function () {
+          $(this)
+            .closest("tr")
+            .children("td")
+            .children("input")
+            .prop("disabled", true);
+          $(this).closest("tr").children(".deleteProduct").hide();
+          $(this).closest("tr").children(".undoDeletePro").show();
+        });
+        // undo deleted category
+        $(document).on("click", ".undoDeletePro", function () {
+          $(this)
+            .closest("tr")
+            .children("td")
+            .children("input")
+            .prop("disabled", false);
+          $(this).closest("tr").children(".undoDeletePro").hide();
+          $(this).closest("tr").children(".deleteProduct").show();
+        });
+
         // edit category btn click
   
         $(document).on("click", ".editNewCategoryBtn", function () {
