@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <title>Membership Details</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+      body {
+        background-color: #eee;
+      }
+      .breadcrumb {
+        margin-bottom: 0rem !important;
+        position: relative;
+        background-color: #ef7d0b;
+      }
+
+      .breadcrumb .addVender {
+        position: absolute;
+
+        top: 50%;
+        transform: translate(0%, -50%);
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0px;
+        background-color: #fe9037;
+        color: #fff;
+        border: 1px solid #ffcd8f;
+        font-weight: bold;
+        padding: 5px 15px;
+        font-size: 13px;
+      }
+
+      .addvender1 {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translate(0%, -50%);
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0px;
+        background-color: #fe9037;
+        color: #fff;
+        padding: 2px 30px;
+        font-weight: bold;
+        padding: 5px 15px;
+        font-size: 13px;
+        border: 1px solid #ffcd8f;
+      }
+
+      .breadcrumb ul {
+        margin-bottom: 0rem;
+      }
+
+      .breadcrumb ul li {
+        color: #fff;
+        font-weight: bold;
+        margin: 10px 1px;
+        font-size: 16px;
+      }
+
+      .breadcrumb ul li a {
+        color: inherit;
+        padding: 10px;
+        text-decoration: none;
+      }
+
+      .breadcrumb ul li i {
+        font-size: 12px;
+      }
+
+      .breadcrumb ul li .ActiveBreadcrumb {
+        color: #fff;
+      }
+
+      main {
+        background-color: #eee;
+      }
+
+      .employee-button {
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        text-align: center;
+        border-radius: 5px;
+        display: flex;
+        gap: 20px;
+      }
+
+      .allBtnsWrapper .allBtns1 {
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        text-align: center;
+        border-radius: 5px;
+      }
+
+      .allBtnsWrapper .allBtns button {
+        /* min-width: 150px; */
+        margin: 0px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: transparent;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 0px;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .allBtns1 button {
+        margin: 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #fe9037;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 3px 0px;
+        font-family: "Montserrat", sans-serif;
+        padding: 5px 15px;
+      }
+
+      .ProductDetailsWrapper {
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        border-radius: 5px;
+        padding: 10px;
+        overflow: hidden;
+        border: 1px solid #fc8019;
+      }
+
+      .ProductDetailsWrapper .details {
+        transition: all 0.5s ease;
+        position: relative;
+        top: 0px;
+      }
+
+      .ProductDetailsWrapper .details .title {
+        /* padding: 10px 0px; */
+        text-align: center;
+      }
+
+      .ProductDetailsWrapper .details .title h3 {
+        display: inline-block;
+        border-bottom: 2px solid #fc8e32;
+        color: #083e5a;
+        font-weight: bold;
+        padding-bottom: 5px;
+        font-size: 20px;
+      }
+
+      .ProductDetailsWrapper table {
+        max-width: 100%;
+        width: 100%;
+        border-radius: 4px;
+        overflow: hidden;
+        border-radius: 5px;
+      }
+
+      .ProductDetailsWrapper table tr:nth-child(even) {
+        /* background-color: rgba(58, 187, 105, 0.3411764706); */
+        background-color: #fff2e7;
+      }
+
+      .ProductDetailsWrapper table tr:nth-child(even) input,
+      .ProductDetailsWrapper table tr:nth-child(even) select,
+      .ProductDetailsWrapper table tr:nth-child(even) td {
+        color: #000;
+      }
+
+      .ProductDetailsWrapper table tr:nth-child(even) input::-moz-placeholder,
+      .ProductDetailsWrapper table tr:nth-child(even) select::-moz-placeholder,
+      .ProductDetailsWrapper table tr:nth-child(even) td::-moz-placeholder {
+        color: #000;
+      }
+
+      .ProductDetailsWrapper
+        table
+        tr:nth-child(even)
+        input:-ms-input-placeholder,
+      .ProductDetailsWrapper
+        table
+        tr:nth-child(even)
+        select:-ms-input-placeholder,
+      .ProductDetailsWrapper table tr:nth-child(even) td:-ms-input-placeholder {
+        color: #000;
+      }
+
+      .ProductDetailsWrapper table tr:nth-child(even) input::placeholder,
+      .ProductDetailsWrapper table tr:nth-child(even) select::placeholder,
+      .ProductDetailsWrapper table tr:nth-child(even) td::placeholder {
+        color: #000;
+      }
+
+      .ProductDetailsWrapper table tr:nth-child(even) select option {
+        /* background-color: rgba(58, 187, 105, 0.3411764706); */
+        background-color: #fff2e7;
+      }
+
+      .ProductDetailsWrapper table tr {
+        height: 40px;
+      }
+
+      .ProductDetailsWrapper table tr:last-child {
+        border-bottom: 2px solid #ddcece;
+      }
+
+      .ProductDetailsWrapper table,
+      .ProductDetailsWrapper th,
+      .ProductDetailsWrapper td {
+        /* border: 1px solid #ddcece; */
+        border-collapse: collapse;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .ProductDetailsWrapper thead {
+        background-color: #fc8e32;
+        color: #fff;
+      }
+
+      .ProductDetailsWrapper thead tr,
+      .ProductDetailsWrapper thead th {
+        border: transparent;
+      }
+
+      .ProductDetailsWrapper tbody tr td:first-child {
+        font-weight: 500;
+        text-transform: capitalize;
+      }
+
+      .ProductDetailsWrapper tbody tr input,
+      .ProductDetailsWrapper tbody tr select {
+        width: 100%;
+        height: 37px;
+        border: 0;
+        text-align: center;
+        background-color: transparent;
+        color: #7a7797;
+      }
+
+      .ProductDetailsWrapper .venderDetailsTable {
+        position: relative;
+        left: 200%;
+        top: 0px;
+        display: none;
+      }
+
+      .text-right {
+        text-align: right;
+      }
+
+      .text-left {
+        text-align: left;
+      }
+
+      .checf {
+        display: flex;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        background-color: #083e5a;
+        border-radius: 5px;
+        padding: 2px 12px;
+        margin: 0px 10px;
+        font-size: 12px;
+        font-weight: 500;
+        cursor: pointer;
+      }
+
+      .checf p {
+        padding: 0px;
+        margin: 0px;
+      }
+
+      .checf button {
+        background-color: transparent;
+        font-weight: 500;
+      }
+
+      .chefbuuu button {
+        font-weight: 500;
+        padding: 0px;
+        font-size: 12px;
+      }
+
+      .chefbuuu {
+        display: flex;
+        gap: 17px;
+        align-items: center;
+        padding: 0px 5px;
+
+        font-weight: 500;
+      }
+
+      .number {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .activebtnee {
+        background-color: #3abb69;
+      }
+
+      .divchangbackground {
+        background-color: #fe9037;
+      }
+      .divchangbackground .chefbuuu button {
+        background-color: #fe9037 !important;
+      }
+
+      .breadcrumb .addVender {
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translate(0%, -50%);
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0px;
+        background-color: #fe9037;
+        color: #fff;
+        padding: 6px 30px;
+        font-weight: bold;
+        border: 1px solid #ffcd8f;
+      }
+
+      .submitbtn {
+        transform: translate(0%, -50%);
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0px;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 14px;
+        padding: 6px 30px;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+
+      .createcaegory {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .createcategorypop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 3%;
+      }
+
+      .catgoreypop {
+        border-radius: 10px;
+        height: auto;
+        padding: 3px;
+        width: 50%;
+        background-color: #fff;
+      }
+
+      .forminput input,
+      select {
+        padding: 8px;
+        border-radius: 5px;
+        border: 3px solid #eee;
+      }
+
+      .forminput {
+        font-size: 14px;
+      }
+
+      .validtime {
+        border: 3px solid #eee;
+        padding: 7px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .Month {
+        display: none;
+      }
+
+      .Year {
+        display: none;
+      }
+
+      .allp5 {
+        padding: 0 5px;
+        font-weight: 500;
+        color: #fff;
+        border-radius: 10px;
+        font-size: 12px;
+      }
+
+      .allp6 {
+        padding: 0 5px;
+        font-weight: 500;
+        font-size: 12px;
+        color: #fff;
+        border-radius: 10px;
+        font-size: 12px;
+      }
+
+      .foodp1 {
+        padding: 0 5px;
+        font-weight: 500;
+        padding: 2px 7px;
+        color: #fff;
+        border-radius: 10px;
+        font-size: 12px;
+      }
+
+      .barp1 {
+        padding: 0 5px;
+        font-weight: 500;
+        padding: 2px 7px;
+        color: #fff;
+        border-radius: 10px;
+        font-size: 12px;
+      }
+
+      .closeform {
+        display: flex;
+        align-items: center;
+        justify-content: right;
+      }
+
+      .cloesbtn1 {
+        height: 22px;
+        border-radius: 10px;
+        color: black;
+        font-size: 14px;
+        width: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 5px;
+      }
+
+      .addempoyeebtn {
+        display: flex;
+        justify-content: right;
+        margin-left: 3px;
+      }
+
+      .addempoyeebtn button {
+        min-width: 50px;
+        margin: 2px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+      }
+      label[for="search"] {
+        font-size: 14px;
+      }
+      label[for="search"] + input {
+        height: 25px;
+        width: 200px;
+      }
+
+      .addVender1 {
+        position: absolute;
+        cursor: pointer;
+        right: 2%;
+        top: 30%;
+      }
+
+      .addVender1 {
+        color: #083e5a;
+      }
+      .addvenderpop {
+        color: #fff;
+      }
+      .allBtnsWrapper .allBtns {
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        /* text-align: center; */
+        padding: 15px;
+        border-radius: 5px;
+      }
+      .allBtnsWrapper .allBtns button {
+        min-width: 50px;
+        margin: 2px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+      }
+
+      .allBtnsWrapper .allBtns .activeBtn {
+        background-color: #fe9037;
+      }
+      .allBtnsWrapper hr {
+        margin: 0px;
+      }
+      .categoryheading {
+        color: #7a7797;
+        font-weight: bold;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        font-size: 14px;
+        text-align: right;
+        padding-right: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      class="breadcrumb"
+      style="padding: 8px; background-color: #ef7d0b; font-size: 13px"
+    >
+      <ul class="list-unstyled d-flex align-items-center">
+        <li><a href="">Dashboard</a></li>
+        <li><i class="fa-solid fa-angles-right"></i></li>
+        <li><a href="" class="ActiveBreadcrumb"> Membership</a></li>
+      </ul>
+
+      <!-- <h4>Total Employee-20</h4> -->
+
+      <span class="addVender1"
+        ><i class="fa fa-gear addvenderpop" style="font-size: 20px"></i
+      ></span>
+      <!-- <button class="addVender ">Create Category</button> -->
+    </div>
+
+    <main>
+      <div class="allBtnsWrapper pb-3 pt-3">
+        <div class="container-fluid">
+          <div class="allBtns pt-0 pb-1">
+            <div class="mb-1 pt-1 monthBtnWrapper">
+              <button class="activeBtn" data-month="1">January</button>
+              <button data-month="2">February</button>
+              <button data-month="3">March</button>
+              <button data-month="4">April</button>
+              <button data-month="5">May</button>
+              <button data-month="6">June</button>
+              <button data-month="7">July</button>
+              <button data-month="8">August</button>
+              <button data-month="9">September</button>
+              <button data-month="10">October</button>
+              <button data-month="11">November</button>
+              <button data-month="12">December</button>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between align-items-center py-0">
+              <h3 class="categoryheading">
+                Month : <span class="month color2">January</span>
+                <!-- <span class="px-2 mainColor">|</span> -->
+              </h3>
+              <span class="categoryheading"
+                ><span class="month">January</span> Total Purchases : ₹
+                <span class="totalCatgry color2">2200</span></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="createcaegory">
+        <div class="createcategorypop">
+          <div class="catgoreypop">
+            <div class="closeform">
+              <i
+                class="fa fa-close cloesbtn1"
+                style="font-size: 21px; cursor: pointer"
+              ></i>
+            </div>
+
+            <div class="container" style="width: 120%">
+              <div class="row justify-content-center text-left mt-3">
+                <div
+                  class="col-lg-12 form-radio validtimelable"
+                  style="font-size: 15px; color: #ef7d0b"
+                >
+                  <label>Valid Time</label>
+                  <div
+                    class="form-flex yearinputs"
+                    style="
+                      border: 1px solid #fc8019;
+                      width: 81%;
+                      color: #083e5a;
+                    "
+                  >
+                    <input type="radio" checked="checked" name="1year" />
+                    <label for="">1 year</label>
+                    <input type="radio" name="1year" />
+                    <label for="">2 year</label>
+                    <input type="radio" name="1year" />
+                    <label for="">3 year</label>
+                    <input type="text" placeholder="Add Validity" />
+                    <button
+                      style="
+                        border: 0;
+                        padding: 2px 14px;
+                        border-radius: 4px;
+                        background-color: #083e5a;
+                        color: #fff;
+                      "
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-contenr-center text-left>
+
+              <div class="col-md-5">
+                <div
+                  class="row justify-contenr-left mt-3 newclasss"
+                  style="color: #083e5a"
+                >
+                  <label for="" style="font-size: 15px; color: #ef7d0b"
+                    >Percentage</label
+                  >
+                  <div class="col-sm-2">
+                    <div
+                      class="radiobtns"
+                      style="
+                        font-size: 11px;
+                        padding: 4px 5px;
+                        border: 1px solid #fc8019;
+                        background-color: #eee;
+                        border-radius: 5px;
+                        color: #083e5a;
+                        background-color: #eee;
+                      "
+                    >
+                      <div>
+                        <input type="radio" checked="checked" name="10" />
+                        <label for="">10%</label>
+                      </div>
+                      <div>2000</div>
+                      <input
+                        type="text"
+                        style="width: 80px; margin: 2px"
+                        placeholder="price Change"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <div
+                      class="radiobtns"
+                      style="
+                        font-size: 11px;
+                        padding: 4px 5px;
+                        border: 1px solid #fc8019;
+                        background-color: #eee;
+                        border-radius: 5px;
+                        color: #083e5a;
+                        background-color: #eee;
+                      "
+                    >
+                      <div>
+                        <input type="radio" checked="checked" name="10" />
+                        <label for="">20%</label>
+                      </div>
+                      <div>3000</div>
+                      <input
+                        type="text"
+                        style="width: 80px; margin: 2px"
+                        placeholder="price Change"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <div
+                      class="radiobtns"
+                      style="
+                        font-size: 11px;
+                        padding: 4px 5px;
+                        border: 1px solid #fc8019;
+                        background-color: #eee;
+                        border-radius: 5px;
+                        color: #083e5a;
+                        background-color: #eee;
+                      "
+                    >
+                      <div>
+                        <input type="radio" checked="checked" name="10" />
+                        <label for="">30%</label>
+                      </div>
+                      <div>20000</div>
+                      <input
+                        type="text"
+                        style="width: 80px; margin: 2px"
+                        placeholder="price Change"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <div
+                      class="radiobtns"
+                      style="
+                        font-size: 11px;
+                        padding: 4px 5px;
+                        border: 1px solid #fc8019;
+                        background-color: #eee;
+                        border-radius: 5px;
+                        color: #083e5a;
+                        background-color: #eee;
+                      "
+                    >
+                      <div>
+                        <input type="radio" checked="checked" name="10" />
+                        <label for="">40%</label>
+                      </div>
+                      <div>40000</div>
+                      <input
+                        type="text"
+                        style="width: 80px; margin: 2px"
+                        placeholder="price Change"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <div
+                      class="radiobtns"
+                      style="
+                        font-size: 11px;
+                        padding: 4px 5px;
+                        border: 1px solid #fc8019;
+                        background-color: #eee;
+                        border-radius: 5px;
+                        color: #083e5a;
+                        background-color: #eee;
+                      "
+                    >
+                      <div>
+                        <input type="radio" checked="checked" name="10" />
+                        <label for="">50%</label>
+                      </div>
+                      <div>50000</div>
+                      <input
+                        type="text"
+                        style="width: 80px; margin: 2px"
+                        placeholder="price Change"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group text-center mt-4 justify-contenr-center">
+              <div class="col-lg-12">
+                <button type="submit" class="submitbtn">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="allBtnsWrapper pt-3 pb-3">
+        <div class="container-fluid">
+          <div
+            class="allBtns pb-3"
+            style="display: flex; align-items: center; justify-content: center"
+          >
+            <div class="checf allbtnclick divchangbackground">
+              <div class="chefbuuu">
+                <button class="">All</button>
+              </div>
+              <div class="number">
+                <p class="allp5">45</p>
+              </div>
+            </div>
+            <div class="checf newbtn3">
+              <div class="chefbuuu">
+                <button>Foods Bar</button>
+              </div>
+              <div class="number">
+                <p class="allp6">20</p>
+              </div>
+            </div>
+            <div class="checf newbtn3">
+              <div class="chefbuuu">
+                <button>Food</button>
+              </div>
+              <div class="number">
+                <p class="foodp1">10</p>
+              </div>
+            </div>
+            <div class="checf newbtn3">
+              <div class="chefbuuu">
+                <button>Bar</button>
+              </div>
+              <div class="number">
+                <p class="barp1">15</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="ProductDetailsWrapper">
+          <div class="details">
+            <div class="title">
+              <h3 >Membership Details</h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <label for="search">Search : </label>
+                <input type="text" name="" id="" />
+              </div>
+              <div>
+                <!-- <div>Total</div> -->
+                <div class="addempoyeebtn">
+                  <button class="addvender2 add-embtn" style="display: none">
+                    Add Member
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>Name</th>
+                  <th>Phone No</th>
+                  <th>Foods</th>
+                  <th>Pay Amount</th>
+
+                  <th>Percentage</th>
+                  <th>Member</th>
+                  <th>Date of Purchase</th>
+                  <th>Expired Date</th>
+                  <th>Days Left</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td class="abcbtn">Abc</td>
+                  <td>999999998</td>
+                  <td>Bar</td>
+
+                  <td>30</td>
+                  <td>10%</td>
+                  <td>1</td>
+                  <td id="date1">2023-01-20</td>
+                  <td id="date2">2026-01-20</td>
+                  <td id="leftdays">Days</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td class="abcbtn">Abc</td>
+                  <td>999999998</td>
+                  <td>Bar</td>
+
+                  <td>30</td>
+                  <td>10%</td>
+                  <td>1</td>
+                  <td>2023-01-20</td>
+                  <td>2023-01-16</td>
+                  <td>400</td>
+                </tr>
+
+                <tr>
+                  <td>3</td>
+                  <td class="abcbtn">Abc</td>
+                  <td>999999998</td>
+                  <td>Bar</td>
+
+                  <td>30</td>
+                  <td>10%</td>
+                  <td>1</td>
+                  <td>2023-01-15</td>
+                  <td>2023-01-12</td>
+                  <td>400</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td class="abcbtn">Abc</td>
+                  <td>999999998</td>
+                  <td>Bar</td>
+
+                  <td>30</td>
+                  <td>10%</td>
+                  <td>1</td>
+                  <td>2023-01-20</td>
+                  <td>2023-01-20</td>
+                  <td>200</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td class="abcbtn">Abc</td>
+                  <td>999999998</td>
+                  <td>Bar</td>
+
+                  <td>30</td>
+                  <td>10%</td>
+                  <td>1</td>
+                  <td>2023-01-20</td>
+                  <td>2023-01-05</td>
+                  <td>200</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td class="abcbtn">Abc</td>
+                  <td>999999998</td>
+                  <td>Bar</td>
+
+                  <td>30</td>
+                  <td>10%</td>
+                  <td>1</td>
+                  <td>2023-01-20</td>
+                  <td>2023-01-12</td>
+                  <td>200</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $("head").append(
+        '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
+      );
+      $("head").append(
+        ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
+/>'
+      );
+      $("head").append(
+        '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
+      );
+    </script>
+    <script>
+      function togglePopup() {
+        $(".content").toggle();
+      }
+      $(".checf ").click(function () {
+        $(".checf ").removeClass("divchangbackground ");
+        $(this).addClass("divchangbackground ");
+
+        $(".ProductDetailsWrapper .details .title h3").text(
+          $(this).children(".chefbuuu").children("button").text()
+        );
+      });
+      $(".allbtnclick").click(function () {
+        $(".addvender2").hide();
+      });
+      $(".newbtn3").click(function () {
+        $(".addvender2").show();
+      });
+
+      $(".addvenderpop").click(function () {
+        $(".createcaegory").show();
+      });
+      $(".closeform").click(function () {
+        $(".createcaegory").hide();
+      });
+
+      $(".monthinput").click(function () {
+        $(".Year").hide();
+        $(".Month").show();
+      });
+      $(".yearinput").click(function () {
+        $(".Month").hide();
+        $(".Year").show();
+      });
+
+      $(document).ready(function () {
+        var temp = $("#date1").html();
+
+        var temp1 = $("#date2").html();
+        var newdate = (Date.parse(temp1) - Date.parse(temp)) / 86400000;
+        console.log(newdate);
+        $("#leftdays").text(newdate);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://js.arcgis.com/4.12/esri/css/main.css">
+    <title>Manger Dashboard</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+
+        body {
+            background-color: #eee;
+        }
+
+        .mangerDasbordmainheader .headarcontant {
+            background-color: #fff;
+            padding: 10px 10px;
+        }
+
+        .hederbtns button {
+            border: 0;
+            padding: 4px 14px;
+            border-radius: 4px;
+        }
+
+        .hederbtns .addaccountbtn {
+            background-color: #105695;
+            color: #fff;
+        }
+
+        .hederbtns .exportbtn {
+            background-color: #45c7ec;
+            color: #fff;
+        }
+
+        .mangerdasbordcard .grossrenveu {
+            background-color: #fff;
+            padding: 15px 20px;
+        }
+
+        .grossrenveu span {
+            font-weight: 500;
+            color: #c3c2c7;
+            font-size: 14px;
+        }
+        .grossrenveu h6{
+            margin: 0px;
+            padding: 0px;
+        
+        }
+
+        .grossrvenuprice {
+            padding-left: 14px;
+            padding-top: 10px;
+        }
+
+        .grossrenveudollarprice h4 {
+            font-weight: bold;
+            font-size: 26px;
+        }
+
+        .weekparcenteg {
+            padding-left: 14px;
+        }
+
+        .newusercardandmap .usercard {
+            padding: 15px 20px;
+            background-color: #fff;
+        }
+
+        .usercard span {
+            font-weight: 500;
+            color: #c3c2c7;
+            font-size: 14px;
+        }
+        .usercard h6{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .usercard .usericon {
+            height: 80px;
+            width: 80px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #e5eff6;
+            color: blue;
+        }
+
+        .usercard .usericon i {
+            font-size: 23px;
+        }
+
+        .usercardprice h4 {
+            font-weight: bold;
+            font-size: 26px;
+        }
+
+        .totalconverstion {
+            padding: 15px 20px;
+            background-color: #fff;
+        }
+
+        .totalconverstion span {
+            font-weight: 500;
+            color: #c3c2c7;
+            font-size: 14px;
+        }
+        .totalconverstion h6{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .totalconverstion h4 {
+            font-weight: bold;
+            font-size: 26px;
+        }
+
+        .totalconversitonleftside {
+            width: 75%;
+        }
+
+        .totalconversitonrightside button {
+            border: 0;
+            padding: 5px 20px;
+            background-color: #105695;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        .totalconversitonrightside button i {
+            padding-right: 5px;
+        }
+
+        .tableformte {
+            padding: 15px 20px;
+            background-color: #fff;
+        }
+
+        table {
+            border: 1px solid #cfc0c0;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+
+
+        }
+
+        tr th {
+            border-right: 1px solid #cfc0c0;
+        }
+
+        tr td {
+            border-right: 1px solid #cfc0c0;
+        }
+
+        /* tr:nth-child(even) {
+  background-color: #dddddd;
+} */
+        th {
+            background-color: #dddddd;
+        }
+
+        .addcartbtntable {
+            border: 0;
+            padding: 1px 10px;
+            background-color: #21a544;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 14px;
+
+        }
+        .grossname{
+            color: black;
+        }
+
+        .usercard a {
+            text-decoration: none;
+
+        }
+
+        .canvschart {
+            background-color: #fff;
+            padding: 10px 50px;
+        }
+
+        .chartsalescontent span {
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .canvaschart2 {
+
+            padding: 10px 50px;
+        }
+
+        .customestatices {
+            font-weight: 500;
+            border-bottom: 2px solid #eee;
+            width: 100%;
+            font-size: 16px;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .customedetails {
+            background-color: #fff;
+
+        }
+
+        .totalconverstion span {
+            font-weight: 500;
+            color: #c3c2c7;
+            font-size: 14px;
+        }
+        .totalconverstion h6{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .customedetails h4 {
+            color: #45c7ec;
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        .customedetails span {
+            font-weight: 500;
+            color: #c3c2c7;
+            font-size: 14px;
+        }
+        .customedetails h6{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .formweekdetail {
+            padding-left: 10px;
+        }
+        .chartsalescontent span{
+            font-weight: 500;
+            color: #c3c2c7;
+            font-size: 14px;
+        }
+        .chartsalescontent h6{
+            margin: 0px;
+            padding: 0px;
+        }
+        h6{
+            margin: 0px;
+            padding: 0px;
+        }
+     
+    </style>
+</head>
+
+<body style="background-color: #eee">
+    <div class="container-fluid">
+        <div class="mangerDasbordmainheader mt-3">
+            <div class="d-flex align-items-center justify-content-between headarcontant">
+                <div class="headerleftside">
+                    <div>
+                        <span><i class="fa-solid fa-house-user"></i></span>
+                        <span> Dashboard</span>
+                        <span>/</span>
+                        <span style="color: #a3b4c1;">Manger Dashboard</span>
+                    </div>
+                </div>
+                <div class="headerrightside">
+                    <div class="hederbtns">
+                        <button class="addaccountbtn">+ Add Account</button>
+                        <button class="exportbtn">
+                            <i class="fa-solid fa-file-export"></i> Export
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="mangerdasbordcard mt-3">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="grossrenveu">
+                        <h6 class="grossname">Gross Revenue</h6>
+                        <div class="d-flex grossrenveudollarprice">
+                            <h4>$6,897</h4>
+                            <span class="grossrvenuprice">vs $4,555</span>
+                        </div>
+                        <div>
+                            <span style="color: #45c7ec">(+43%)</span><span class="weekparcenteg">than Last Week</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="grossrenveu">
+                        <h6>Gross Revenue</h6>
+                        <div class="d-flex grossrenveudollarprice">
+                            <h4>$6,897</h4>
+                            <span class="grossrvenuprice">vs $4,555</span>
+                        </div>
+                        <div>
+                            <span style="color: #45c7ec">(+43%)</span><span class="weekparcenteg">than Last Week</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="grossrenveu">
+                        <h6>Gross Revenue</h6>
+                        <div class="d-flex grossrenveudollarprice">
+                            <h4>$6,897</h4>
+                            <span class="grossrvenuprice">vs $4,555</span>
+                        </div>
+                        <div>
+                            <span style="color: #45c7ec">(+43%)</span><span class="weekparcenteg">than Last Week</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="grossrenveu">
+                        <h6>Gross Revenue</h6>
+                        <div class="d-flex grossrenveudollarprice">
+                            <h4>$6,897</h4>
+                            <span class="grossrvenuprice">vs $4,555</span>
+                        </div>
+                        <div>
+                            <span style="color: #45c7ec">(+43%)</span><span class="weekparcenteg">than Last Week</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="newusercardandmap mt-3">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="col-lg-12">
+                        <div class="d-flex justify-content-between align-items-center usercard">
+                            <div>
+                                <div><h6>New Users</h6></div>
+                                <div class="usercardprice">
+                                    <h4>5,897</h4>
+                                </div>
+                                <span>Lorem ipsum dolor sit amet.</span><br>
+                                <a href="">Details..</a>
+                            </div>
+                            <div class="usericon"><i class="fa-solid fa-users"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 mt-2">
+                        <div class="d-flex justify-content-between align-items-center usercard">
+                            <div>
+                                <div><h6>New Users</h6></div>
+                                <div class="usercardprice">
+                                    <h4>5,897</h4>
+                                </div>
+                                <span>Lorem ipsum dolor sit amet.</span><br>
+                                <a href="">Details..</a>
+                            </div>
+                            <div class="usericon" style="background-color:rgb(226, 134, 134) ;"><i class="fa-solid fa-microchip"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 mt-2">
+                        <div class="d-flex justify-content-between align-items-center usercard">
+                            <div>
+                                <div><h6>New Users</h6></div>
+                                <div class="usercardprice">
+                                    <h4>5,897</h4>
+                                </div>
+                                <span>Lorem ipsum dolor sit amet.</span><br>
+                                <a href="">Details..</a>
+                            </div>
+                            <div class="usericon"><i class="fa-solid fa-users"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="canvschart">
+                        <canvas id="myChart" style="width:100%;max-width:730px; height: 315px;"></canvas>
+                        <div class="chartsalescontent d-flex justify-content-between mt-3">
+                            <div>
+                                <h6>Total Orders</h6>
+                                <h4>13,678</h4>
+                                <div><span style="color: #45c7ec;">+3.23%</span> <span>For last month</span></div>
+                            </div>
+                            <div>
+                                <h6>Total sales</h6>
+                                <h4>13,678</h4>
+                                <div><span style="color: #21a544;">+1.23%</span> <span>For last month</span></div>
+                            </div>
+                            <div>
+                                <h6>Total Profit</h6>
+                                <h4>13,678</h4>
+                                <div><span style="color: #105695;">+5.23%</span> <span>For last month</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="customrestatices mt-3">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="customedetails">
+                        <div class="customestatices pt-3 d-flex justify-content-between">
+                            <h6> Customer Statices</h6>
+
+                            <span><i class="fa-solid fa-xmark"></i></span>
+                        </div>
+                        <div class="canvaschart2">
+
+                            <div class="d-flex justify-content-between">
+                                <div><h6>New Customers</h6>
+                                    <h4>$24,876</h4>
+                                    <div><span style="color: #21a544;">+2%</span><span class="formweekdetail">From This
+                                            Week</span></div>
+                                </div>
+                                <div><h6>New Customers</h6>
+                                    <h4>$24,876</h4>
+                                    <div><span style="color: #21a544;">+2%</span><span class="formweekdetail">From This
+                                            Week</span></div>
+                                </div>
+                            </div>
+                            <div class="pt-2" style="color: #c3c2c7;">Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Magni, sunt dicta tenetur odit harum et quia aperiam dolores labore aspernatur.
+                            </div>
+                            <div id="myChart1" style="width:100%; max-width:600px; height:180px;">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-6">
+                    <div class="col-lg-12">
+                        <div class="d-flex justify-content-between totalconverstion">
+                            <div class="totalconversitonleftside"><h6>Total Conversation</h6>
+                                <div>
+                                    <h4>$26,897</h4>
+                                </div>
+                                <div><span style="color: #21a544;">+12%</span><br><span>Lorem, ipsum dolor.</span></div>
+                                <div class="d-flex justify-content-between totalconversitionparcentage">
+                                    <div><span style="color: black;">2.34%</span> <br><span>Lorem</span></div>
+                                    <div><span style="color: black;">2.34%</span> <br><span>Lorem</span></div>
+                                    <div><span style="color: black;">2.34%</span> <br><span>Lorem</span></div>
+                                </div>
+                            </div>
+                            <div class="totalconversitonrightside">
+                                <button> <i class="fa-solid fa-circle-info"></i>Yes more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 mt-2">
+                        <div class="d-flex justify-content-between totalconverstion">
+                            <div class="totalconversitonleftside"><h6>Total Conversation</h6>
+                                <div>
+                                    <h4>$26,897</h4>
+                                </div>
+                                <div><span style="color: #21a544;">+12%</span><br><span>Lorem, ipsum dolor.</span></div>
+                                <div class="d-flex justify-content-between totalconversitionparcentage">
+                                    <div><span style="color: black;">2.34%</span> <br><span>Lorem</span></div>
+                                    <div><span style="color: black;">2.34%</span> <br><span>Lorem</span></div>
+                                        <div><span style="color: black;">2.34%</span> <br><span>Lorem</span></div>
+                                </div>
+                            </div>
+                            <div class="totalconversitonrightside">
+                                <button> <i class="fa-solid fa-circle-info"></i>Yes more</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container-fluid">
+        <div class="tableformte mt-3">
+            <div>
+                <h3>Product Summary</h3>
+            </div>
+            <div class="col-lg-12">
+                <div class="tableproducet">
+
+                    <table>
+                        <tr>
+                            <th>#No</th>
+                            <th>CLINT NAME</th>
+                            <th>PRODUCT ID</th>
+                            <th>PRODUCT</th>
+                            <th>PRODUCT COST</th>
+                            <th>PAYMENT MODE</th>
+                            <th>STATUS</th>
+                        </tr>
+                        <tr>
+                            <td>#01</td>
+                            <td>Maria Anders</td>
+                            <td>PR0111</td>
+                            <td>Lorem ipsum dolor sit.</td>
+                            <td>$14500</td>
+                            <td>Online Payment</td>
+                            <td><button class="addcartbtntable">Add Cart</button></td>
+                        </tr>
+                        <tr>
+                            <td>#02</td>
+                            <td>Maria Anders</td>
+                            <td>PR0111</td>
+                            <td>Lorem ipsum dolor sit.</td>
+                            <td>$14500</td>
+                            <td>Online Payment</td>
+                            <td><button class="addcartbtntable">Add Cart</button></td>
+                        </tr>
+                        <tr>
+                            <td>#03</td>
+                            <td>Maria Anders</td>
+                            <td>PR0111</td>
+                            <td>Lorem ipsum dolor sit.</td>
+                            <td>$14500</td>
+                            <td>Online Payment</td>
+                            <td><button class="addcartbtntable">Add Cart</button></td>
+                        </tr>
+                        <tr>
+                            <td>#04</td>
+                            <td>Maria Anders</td>
+                            <td>PR0111</td>
+                            <td>Lorem ipsum dolor sit.</td>
+                            <td>$14500</td>
+                            <td>Online Payment</td>
+                            <td><button class="addcartbtntable">Add Cart</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>#05</td>
+                            <td>Maria Anders</td>
+                            <td>PR0111</td>
+                            <td>Lorem ipsum dolor sit.</td>
+                            <td>$14500</td>
+                            <td>Online Payment</td>
+                            <td><button class="addcartbtntable">Add Cart</button></td>
+                        </tr>
+                        <tr>
+                            <td>#06</td>
+                            <td>Maria Anders</td>
+                            <td>PR0111</td>
+                            <td>Lorem ipsum dolor sit.</td>
+                            <td>$14500</td>
+                            <td>Online Payment</td>
+                            <td><button class="addcartbtntable">Add Cart</button></td>
+                        </tr>
+                        <tr>
+                            <td>#07</td>
+                            <td>Maria Anders</td>
+                            <td>PR0111</td>
+                            <td>Lorem ipsum dolor sit.</td>
+                            <td>$14500</td>
+                            <td>Online Payment</td>
+                            <td><button class="addcartbtntable">Add Cart</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>#08</td>
+                            <td>Maria Anders</td>
+                            <td>PR0111</td>
+                            <td>Lorem ipsum dolor sit.</td>
+                            <td>$14500</td>
+                            <td>Online Payment</td>
+                            <td><button class="addcartbtntable">Add Cart</button></td>
+                        </tr>
+                        <tr>
+                            <td>#09</td>
+                            <td>Maria Anders</td>
+                            <td>PR0111</td>
+                            <td>Lorem ipsum dolor sit.</td>
+                            <td>$14500</td>
+                            <td>Online Payment</td>
+                            <td><button class="addcartbtntable">Add Cart</button></td>
+                        </tr>
+
+
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.stock.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+    <script>
+        $("head").append(
+            '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
+        );
+        $("head").append(
+            ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
+/>'
+        );
+        $("head").append(
+            '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
+        );
+    </script>
+
+    <script>
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Customer', 'Mhl'],
+                ['New Customer', 54.8],
+                ['Existing Customer', 48.6],
+                ['Customer', 44.4],
+                ['Customer', 23.9],
+                ['Customer', 14.5]
+            ]);
+
+            var options = {
+                title: '',
+                is3D: true
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('myChart1'));
+            chart.draw(data, options);
+        }
+    </script>
+
+    <script>
+        var xValues = ["January", "February", "March", "April", "May"];
+        var yValues = [55, 49, 44, 24, 15];
+        var barColors = ["#105695", "#21a544", "#45c7ec", "orange", "brown"];
+
+        new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: "Sales Statistics"
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

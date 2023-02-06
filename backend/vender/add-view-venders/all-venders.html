@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Venders List</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        font-size: 14px;
+      }
+      .breadcrumb {
+        margin-bottom: 0rem !important;
+        background-color: #ef7d0b !important;
+        position: relative;
+      }
+      .breadcrumb .addVender {
+        position: absolute;
+        right: 2%;
+        top: 50%;
+        transform: translate(0%, -50%);
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0px;
+        background-color: #fe9037;
+        color: #fff;
+        padding: 2px 30px;
+        font-weight: bold;
+      }
+      .breadcrumb ul {
+        margin-bottom: 0rem;
+      }
+      .breadcrumb ul li {
+        color: #eee;
+        font-weight: bold;
+        margin: 10px 1px;
+      }
+      .breadcrumb ul li a {
+        color: inherit;
+        padding: 10px;
+        text-decoration: none;
+      }
+      .breadcrumb ul li i {
+        font-size: 12px;
+      }
+      .breadcrumb ul li .ActiveBreadcrumb {
+        color: #fff;
+      }
+
+      main {
+        background-color: #eee;
+      }
+
+      .allBtnsWrapper .allBtns {
+        background-color: #fff;
+        box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+        padding: 15px;
+        border-radius: 5px;
+      }
+      .allBtnsWrapper .allBtns button:first-child {
+        margin-left: 0px;
+      }
+      .allBtnsWrapper .allBtns button {
+        min-width: 50px;
+        margin: 2px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+      }
+      .allBtnsWrapper hr {
+        margin: 0px;
+      }
+      .allBtnsWrapper .allBtns .activeBtn {
+        background-color: #fe9037;
+      }
+      .color2 {
+        color: #083e5a;
+      }
+      .categoryheading {
+        color: #7a7797;
+        font-weight: bold;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        font-size: 14px;
+        text-align: right;
+        padding-right: 15px;
+      }
+     
+
+      .ProductDetailsWrapper {
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        border-radius: 5px;
+        padding: 10px;
+        overflow: hidden;
+      }
+      .ProductDetailsWrapper .details {
+        transition: all 0.5s ease;
+        position: relative;
+        top: 0px;
+      }
+      .ProductDetailsWrapper .details .title {
+        padding:  0px;
+        text-align: center;
+      }
+      .ProductDetailsWrapper .details .title h3 {
+        display: inline-block;
+        border-bottom: 2px solid #3abb69;
+        color: #083e5a;
+        font-weight: bold;
+        padding-bottom: 5px;
+        font-size: 18px;
+      }
+      .ProductDetailsWrapper table {
+        max-width: 100%;
+        width: 100%;
+        border-radius: 4px;
+        overflow: hidden;
+        border-radius: 5px;
+      }
+      .ProductDetailsWrapper table tr:nth-child(even) {
+        background-color: #fff2e7;
+      }
+      .ProductDetailsWrapper table tr:nth-child(even) input,
+      .ProductDetailsWrapper table tr:nth-child(even) select,
+      .ProductDetailsWrapper table tr:nth-child(even) td {
+        color: #000;
+      }
+      .ProductDetailsWrapper table tr:nth-child(even) input::-moz-placeholder,
+      .ProductDetailsWrapper table tr:nth-child(even) select::-moz-placeholder,
+      .ProductDetailsWrapper table tr:nth-child(even) td::-moz-placeholder {
+        color: #000;
+      }
+      .ProductDetailsWrapper
+        table
+        tr:nth-child(even)
+        input:-ms-input-placeholder,
+      .ProductDetailsWrapper
+        table
+        tr:nth-child(even)
+        select:-ms-input-placeholder,
+      .ProductDetailsWrapper table tr:nth-child(even) td:-ms-input-placeholder {
+        color: #000;
+      }
+      .ProductDetailsWrapper table tr:nth-child(even) input::placeholder,
+      .ProductDetailsWrapper table tr:nth-child(even) select::placeholder,
+      .ProductDetailsWrapper table tr:nth-child(even) td::placeholder {
+        color: #000;
+      }
+      .ProductDetailsWrapper table tr:nth-child(even) select option {
+        background-color: rgba(58, 187, 105, 0.3411764706);
+      }
+      .ProductDetailsWrapper table tr {
+        height: 30px;
+      }
+      .ProductDetailsWrapper table td .payBtn {
+        padding: 1px 20px;
+        font-size: 12px;
+        background-color: #083e5a;
+        border: none;
+      }
+      .ProductDetailsWrapper table tr:last-child {
+        border-bottom: 2px solid #ddcece;
+      }
+      .ProductDetailsWrapper table,
+      .ProductDetailsWrapper th,
+      .ProductDetailsWrapper td {
+        /* border: 1px solid #ddcece; */
+        border-collapse: collapse;
+        font-size: 14px;
+        text-align: center;
+      }
+      .ProductDetailsWrapper thead {
+        background-color: #fe9037;
+        color: #fff;
+      }
+      .ProductDetailsWrapper thead tr,
+      .ProductDetailsWrapper thead th {
+        border: 1px solid transparent;
+      }
+      .ProductDetailsWrapper tbody tr td:first-child {
+        font-weight: 500;
+        text-transform: capitalize;
+      }
+      .ProductDetailsWrapper tbody tr input,
+      .ProductDetailsWrapper tbody tr select {
+        width: 100%;
+        height: 37px;
+        border: 0;
+        text-align: center;
+        background-color: transparent;
+        color: #7a7797;
+      }
+      .ProductDetailsWrapper .venderDetailsTable {
+        position: relative;
+        left: 200%;
+        top: 0px;
+        display: none;
+      }
+
+      #addVenderWrapper {
+        display: none;
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        border-radius: 5px;
+        padding: 30px 0px;
+      }
+      #addVenderWrapper .addVenderTitle {
+        text-align: center;
+        padding-bottom: 20px;
+      }
+      #addVenderWrapper .addVenderTitle h2 {
+        display: inline-block;
+        border-bottom: 2px solid #3abb69;
+        color: #083e5a;
+        font-weight: bold;
+        padding-bottom: 5px;
+        font-size: 20px;
+      }
+      #addVenderWrapper .addVenderForm .formGroup {
+        margin-bottom: 20px;
+      }
+      #addVenderWrapper .addVenderForm .formGroup label {
+        color: #7a7797;
+        font-size: 14px;
+        font-weight: 500;
+        padding-left: 5px;
+      }
+      #addVenderWrapper .addVenderForm .formGroup input {
+        border: 2px solid #eee;
+        width: 100%;
+        border-radius: 4px;
+        padding-left: 15px;
+      }
+      #addVenderWrapper .addVenderForm .formGroup {
+        border: 2px solid #eee;
+        width: 100%;
+        border-radius: 4px;
+        padding-left: 15px;
+      }
+      .select {
+        border: 2px solid #eee;
+        width: 100%;
+        border-radius: 4px;
+        padding-left: 15px;
+      }
+      .textarea {
+        height: 100px;
+      }
+      #addVenderWrapper .addVenderForm .addVenderSubmitBtn {
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0px;
+        background-color: #083e5a;
+        color: #fff;
+        padding: 2px 30px;
+        font-weight: bold;
+      }
+
+      .text-right {
+        text-align: right;
+      }
+
+      .text-left {
+        text-align: left;
+      }
+
+      .table1Btns button,
+      .table2Btns button {
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0px;
+        background-color: #3abb69;
+        color: #fff;
+        padding: 3px 50px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      main .filters label {
+        margin-right: 15px;
+        color: #083e5a;
+        font-size: 12px;
+      }
+      main .filters input::placeholder {
+        font-size: 14px;
+        color: #7a7797;
+      }
+      main .filters select {
+        font-size: 12px;
+        border: 0;
+        border-radius: 5px;
+        padding-left: 15px;
+        color: #7a7797;
+        width: 120px;
+        margin-left: 0px;
+        height: 18px;
+      }
+      main .filters input {
+        font-size: 14px;
+        border: 0;
+        border-radius: 5px;
+        padding-left: 15px;
+        color: #7a7797;
+      }
+      .paymentPopupWrapper input {
+        border: 2px solid #eee;
+        width: 100%;
+        border-radius: 4px;
+        padding-left: 15px;
+      }
+      .paymentPopupWrapper {
+        position: fixed;
+        top: 0px;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+      }
+      .paymentPopup {
+        padding: 20px;
+        width: 50%;
+        min-height: 100px;
+        border-radius: 5px;
+        background-color: #fff;
+        position: relative;
+      }
+      .closePaymentPopup i {
+        font-size: 25px;
+        cursor: pointer;
+      }
+      .closePaymentPopup {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        width: 30px;
+        padding: 5px;
+        z-index: 99;
+      }
+      .addPaymentSubmitBtn {
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0px;
+        background-color: #3abb69;
+        color: #fff;
+        padding: 2px 30px;
+        font-weight: bold;
+      }
+      .paymentTitle {
+        margin: 10px;
+        text-align: center;
+      }
+      .paymentTitle h2 {
+        display: inline-block;
+        border-bottom: 2px solid #3abb69;
+        color: #7a7797;
+        font-weight: bold;
+        padding: 2px;
+        font-size: 20px;
+      }
+      .selectPaymentMethod {
+        height: 30px;
+        width: 100%;
+        border: 2px solid #eee;
+        border-radius: 4px;
+        padding-left: 15px;
+        color: #7a7797;
+        /* font-size: 14px; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="breadcrumb">
+      <ul class="list-unstyled d-flex align-items-center">
+        <li><a href="">Dashboard</a></li>
+        <li><i class="fa-solid fa-angles-right"></i></li>
+        <li><a href="" class="ActiveBreadcrumb">View Venders List</a></li>
+      </ul>
+      <button class="addVender">Add Vender</button>
+    </div>
+    <main>
+      <div class="container-fluid">
+        <div class="filters py-1 d-flex align-items-center">
+          <label for="dateWise" class="title">Select Year</label>
+          <!-- <input type="text" id="dateWise" placeholder="03/12/2012" />
+        <select name="" id="">
+          <option disabled selected>Monthly</option>
+          <option value="January">January</option>
+          <option value="February">February</option>
+          <option value="march">march</option>
+          <option value="April">April</option>
+          <option value="May">May</option>
+          <option value="June">June</option>
+          <option value="July">July</option>
+          <option value="August">August</option>
+          <option value="September">September</option>
+          <option value="October">October</option>
+          <option value="November">November</option>
+          <option value="December">December</option>
+        </select> -->
+          <select name="year" id="year">
+            <!-- <option disabled selected>Year</option> -->
+            <option value="2023" selected="">2023</option>
+            <option value="2022">2022</option>
+          </select>
+        </div>
+      </div>
+      <div class="allBtnsWrapper monthsBtnWrapper pb-3 mt-1">
+        <div class="container-fluid">
+          <div class="allBtns pt-0 pb-1">
+            <div class="mb-1 pt-1 monthBtnWrapper">
+              <button class="activeBtn" data-month="1">January</button>
+              <button data-month="2">February</button>
+              <button data-month="3">March</button>
+              <button data-month="4">April</button>
+              <button data-month="5">May</button>
+              <button data-month="6">June</button>
+              <button data-month="7">July</button>
+              <button data-month="8">August</button>
+              <button data-month="9">September</button>
+              <button data-month="10">October</button>
+              <button data-month="11">November</button>
+              <button data-month="12">December</button>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between align-items-center py-0">
+              <h3 class="categoryheading">
+                Month : <span class="month color2">January</span>
+                <!-- <span class="px-2 mainColor">|</span> -->
+              </h3>
+              <span class="categoryheading"
+                ><span class="month"></span>Total Pending Amount : ₹
+                <span class="totalCatgry color2">2200</span></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="allBtnsWrapper categoriesBtnWrapper pb-3 mt-1">
+        <div class="container-fluid">
+          <div class="allBtns pt-0 pb-1">
+                    
+            <button class="activeBtn">Dairy Products</button>
+            <button>Drinkable</button>
+            <button>Fast Food</button>
+            <button>My Fav</button>
+            <button>Mostly Used</button>
+            <button>Top</button>
+            <button>Commonly Used</button>
+            <button>Less Used</button>
+            <button>Chinese</button>
+            <button>Italian</button>
+            <button>Thai</button>
+            <button>Continental</button>
+            <button>Indian</button>
+            <button>South Indian</button>
+            <div class="mt-1"></div>
+            <hr />
+            <div class="d-flex justify-content-between align-items-center">
+              <h3 class="categoryheading">
+                <!-- Ingredient Categories List
+                <span class="px-2 mainColor">|</span> -->
+                <span
+                  >Venders Under This Category : <span class="totalCatgry color2">22</span></span
+                >
+              </h3>
+              <span class="categoryheading"
+              >Pending Amount : <span class="totalCatgry color2">1120</span></span
+            >
+              <!-- <div class="CategoryActionBtn text-right">
+                <button class="btn btn-primary btn-sm">Add Category</button>
+                <button class="btn btn-primary btn-sm">Edit Category</button>
+                <button class="btn btn-primary btn-sm">Delete Category</button>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="ProductDetailsWrapper">
+          <div class="details">
+            <div class="title">
+              <h3>Venders List</h3>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <td>S. No.</td>
+                  <td>Name</td>
+                  <td>Email</td>
+                  <td>Mobile No.</td>
+                  <td>Last Purchases</td>
+                  <td>Credit Amount</td>
+                  <td>Actions</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Shubham Negi</td>
+                  <td>vender@gmail.com</td>
+                  <td>9897898989</td>
+                  <td>01/01/2023</td>
+                  <td>15000</td>
+                  <td>
+                    <button class="btn btn-primary btn-sm payBtn">Pay</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Shubham Negi</td>
+                  <td>vender@gmail.com</td>
+                  <td>9897898989</td>
+                  <td>01/01/2023</td>
+                  <td>15000</td>
+                  <td>
+                    <button class="btn btn-primary btn-sm payBtn">Pay</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Shubham Negi</td>
+                  <td>vender@gmail.com</td>
+                  <td>9897898989</td>
+                  <td>01/01/2023</td>
+                  <td>15000</td>
+                  <td>
+                    <button class="btn btn-primary btn-sm payBtn">Pay</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Shubham Negi</td>
+                  <td>vender@gmail.com</td>
+                  <td>9897898989</td>
+                  <td>01/01/2023</td>
+                  <td>15000</td>
+                  <td>
+                    <button class="btn btn-primary btn-sm payBtn">Pay</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Shubham Negi</td>
+                  <td>vender@gmail.com</td>
+                  <td>9897898989</td>
+                  <td>01/01/2023</td>
+                  <td>15000</td>
+                  <td>
+                    <button class="btn btn-primary btn-sm payBtn">Pay</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Shubham Negi</td>
+                  <td>vender@gmail.com</td>
+                  <td>9897898989</td>
+                  <td>01/01/2023</td>
+                  <td>15000</td>
+                  <td>
+                    <button class="btn btn-primary btn-sm payBtn">Pay</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Shubham Negi</td>
+                  <td>vender@gmail.com</td>
+                  <td>9897898989</td>
+                  <td>01/01/2023</td>
+                  <td>15000</td>
+                  <td>
+                    <button class="btn btn-primary btn-sm payBtn">Pay</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Shubham Negi</td>
+                  <td>vender@gmail.com</td>
+                  <td>9897898989</td>
+                  <td>01/01/2023</td>
+                  <td>15000</td>
+                  <td>
+                    <button class="btn btn-primary btn-sm payBtn">Pay</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Shubham Negi</td>
+                  <td>vender@gmail.com</td>
+                  <td>9897898989</td>
+                  <td>01/01/2023</td>
+                  <td>15000</td>
+                  <td>
+                    <button class="btn btn-primary btn-sm payBtn">Pay</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>Shubham Negi</td>
+                  <td>vender@gmail.com</td>
+                  <td>9897898989</td>
+                  <td>01/01/2023</td>
+                  <td>15000</td>
+                  <td>
+                    <button class="btn btn-primary btn-sm payBtn">Pay</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div id="addVenderWrapper" class="mt-4">
+          <div class="addVenderTitle">
+            <h2>Add New Vender</h2>
+          </div>
+          <div class="addVenderForm container">
+            <form>
+              <div class="row justify-content-center">
+                <div class="col-12">
+                  <div
+                    class="row justify-content-center align-items-center"
+                    style="background-color: #eee; padding: 20px"
+                  >
+                    <div class="col-md-4">
+                      <div class="formGroup">
+                        <label for="venderName">Vender Name</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="formGroup">
+                        <label for="Phone">Phone No.</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="formGroup">
+                        <label for="Address">Address</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="formGroup">
+                        <label for="upiN">UPI ID</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="formGroup">
+                        <label for="bankName">Bank Name</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="formGroup">
+                        <label for="AccN">Account No.</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="formGroup">
+                        <label for="ifsc">IFSC Code</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="formGroup">
+                        <label for="ACHName">Account Holder Name</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="formGroup">
+                        <label for="state">State</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="formGroup">
+                        <label for="city">City</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-12 text-center mt-2">
+                      <button type="submit" class="addVenderSubmitBtn">
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="paymentPopupWrapper">
+        <div class="paymentPopup">
+          <div class="closePaymentPopup">
+            <i class="fa-regular fa-circle-xmark"></i>
+          </div>
+          <div class="paymentTitle">
+            <h2>Payment</h2>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="row justify-content-center align-items-center">
+                <div class="col-md-4 mt-3">
+                  <div class="formGroup">
+                    <label for="venderName">Vender Name :</label>
+                    <br />
+                    <input
+                      type="text"
+                      id="venderName"
+                      value="shubham negi"
+                      disabled
+                    />
+                  </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                  <div class="formGroup">
+                    <label for="amount">Total Amount :</label><br />
+                    <input
+                      type="text"
+                      name="amount"
+                      id="amount"
+                      value="1500"
+                      disabled
+                    />
+                  </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                  <div class="formGroup">
+                    <label for="Pay amount">Pay Amount :</label>
+                    <br />
+                    <input type="text" />
+                  </div>
+                </div>
+
+                <div class="col-md-6 mt-3">
+                  <div class="formGroup">
+                    <label for="Remaining">Remaining :</label>
+                    <br />
+                    <input type="text" />
+                  </div>
+                </div>
+                <div class="col-md-6 mt-3">
+                  <div class="formGroup">
+                    <label for="method">Method :</label><br />
+                    <select
+                      class="selectPaymentMethod"
+                      name="method"
+                      id="method"
+                      class="col-md-4"
+                    >
+                      <option value="cash">Cash</option>
+                      <option value="UPI">UPI</option>
+                      <option value="card">Card</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 mt-3">
+                  <div class="formGroup">
+                    <label for="description">Description :</label><br />
+                    <input name="description" id="description" />
+                  </div>
+                </div>
+                <div class="col-12 text-center mt-4 mb-2">
+                  <button type="submit" class="addPaymentSubmitBtn">
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $("head").append(
+        '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
+      );
+      $("head").append(
+        ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
+/>'
+      );
+      $("head").append(
+        '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
+      );
+    </script>
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+
+      $(function () {
+        $("#dateWise").datepicker();
+        let formattedDate = new Date();
+        let d = formattedDate.getDate();
+        let m = formattedDate.getMonth();
+        m += 1; // JavaScript months are 0-11
+        if (d < 10) {
+          d = "0" + d;
+        }
+        if (m < 10) {
+          m = "0" + m;
+        }
+        let y = formattedDate.getFullYear();
+        $("#dateWise").attr("placeholder", d + "/" + m + "/" + y);
+      });
+
+    </script>
+    <script>
+
+      $(".addVender").click(function () {
+        $("#addVenderWrapper").show();
+        let top = $("#addVenderWrapper").position().top;
+        $("html, body").animate({ scrollTop: top });
+      });
+    
+      $(".monthsBtnWrapper button").click(function () {
+        $(".monthsBtnWrapper button").removeClass("activeBtn");
+        $(this).addClass("activeBtn");
+      });
+
+      $(".categoriesBtnWrapper .allBtns button").click(function () {
+        $(".categoriesBtnWrapper button").removeClass("activeBtn");
+        $(this).addClass("activeBtn");
+      });
+
+      $(".payBtn").click(function () {
+        $(".paymentPopupWrapper ").css({
+          display: "flex",
+        });
+      });
+
+      $(".closePaymentPopup").click(function () {
+        $(".paymentPopupWrapper ").hide();
+      });
+
+    </script>
+  </body>
+</html>

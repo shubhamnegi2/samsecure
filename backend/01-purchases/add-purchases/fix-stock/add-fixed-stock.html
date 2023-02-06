@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Purchases</title>
+    <link rel="stylesheet" href="./addFixedStock.css" />
+    <link rel="stylesheet" href="./popup-models.css" />
+
+    <style>
+      .ProductDetailsWrapper {
+        counter-reset: Serial;
+      }
+      .ProductDetailsWrapper tr td:first-child:before {
+        counter-increment: Serial;
+        content: counter(Serial);
+      }
+      .itemNameWrapper ul {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .itemNameWrapper ul li {
+        max-width: 150px;
+        overflow: hidden;
+        margin-right: 10px;
+        font-size: 14px;
+      }
+      .itemNameWrapper ul li input {
+        cursor: pointer;
+      }
+      .itemNameWrapper ul li button {
+        min-width: 50px;
+        margin: 5px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+      }
+      .itemNameWrapper .form-check {
+        margin-bottom: -5px;
+      }
+      .itemNameWrapper {
+        box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+        padding: 1px 15px;
+        border-radius: 5px;
+        border: 1px solid #fc8019;
+        background-color: #eee;
+      }
+      .itemNameWrapper h3 {
+        /* border-bottom: 2px solid #fc8e32; */
+        color: #7a7797;
+        font-weight: bold;
+        font-size: 14px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        display: inline-block;
+      }
+      .allBtnsWrapper h3 {
+        /* text-align: center; */
+        /* border-bottom: 2px solid #fc8e32; */
+        color: #7a7797;
+        font-weight: bold;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        /* margin-top: 1rem; */
+        font-size: 14px;
+        text-align: right;
+        padding-right: 15px;
+      }
+      .totalCatgry,
+      .totalIngredients {
+        font-weight: bold;
+        color: #083e5a;
+      }
+      .ProductDetailsWrapper .eventDateTime {
+        color: #3abb69;
+      }
+      .ProductDetailsWrapper .eventDateTime span {
+        font-weight: bold;
+        color: #7a7797;
+      }
+      .ingredientsActionBtn button {
+        min-width: 50px;
+        margin: 2px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+        /* margin-bottom: 15px; */
+      }
+      .itemNameWrapper hr {
+        margin: 0px;
+      }
+      .allVenderBtnsWrapper h3 {
+        color: #7a7797;
+        font-weight: bold;
+        font-size: 16px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        display: inline-block;
+      }
+      .breadcrumbs button.activeBreadcurmbtn {
+        background-color: #083e5a;
+        border-color: #083e5a;
+        /* border-radius: 5px; */
+      }
+      .mainColor {
+        color: #fc8019;
+      }
+      .allBtnsWrapper .CategoryActionBtn button {
+        background-color: #fc8019;
+      }
+      .itemNameWrapper .ingredientsActionBtn button {
+        background-color: #fc8019;
+      }
+      .itemNameWrapper .ingredientsActionBtn button:last-child {
+        margin-right: 0px;
+      }
+      .allVenderBtnsWrapper ul li {
+        margin: 0px 5px;
+        font-size: 12px;
+      }
+      .activeFixedIng {
+        background-color: #fe9037 !important;
+      }
+      .dateWrapper {
+        font-size: 12px;
+      }
+      #dateWise {
+        border: 0;
+        border-radius: 4px;
+        padding-left: 15px;
+        color: #7a7797;
+        height: 16px;
+        background-color: #eee;
+      }
+      .dateWrapper button {
+        min-width: 50px;
+        margin: 0px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="breadcrumbs">
+      <ul class="list-unstyled d-flex align-items-center">
+        <li><a href="">Purchases</a></li>
+        <li><i class="fa-solid fa-angles-right"></i></li>
+        <li><a href="" class="ActiveBreadcrumb">Add Purchases</a></li>
+      </ul>
+      <div>
+        <button class="btn btn-primary activeBreadcurmbtn">
+          Add Row Material
+        </button>
+        <button class="btn btn-primary">Add Fixed Stock</button>
+        <!-- <button class="btn btn-primary ">Add ingredients</button> -->
+      </div>
+    </div>
+    <main>
+      <div class="container-fluid my-1">
+        <div class="dateWrapper d-flex justify-content-between">
+          <div>
+            Date : <input type="text" id="dateWise" placeholder="03/12/2012" />
+          </div>
+          <button class="addVender">Add vender</button>
+        </div>
+      </div>
+      <div class="allBtnsWrapper pb-3 mt-0">
+        <div class="container-fluid">
+          <div class="allBtns pt-0 pb-1">
+            <div class="d-flex justify-content-between align-items-center">
+              <h3 class="categoryheading">
+                Fixed Stock List
+                <span class="px-2 mainColor">|</span>
+                <span>Total : <span class="totalCatgry">22</span></span>
+              </h3>
+              <div class="CategoryActionBtn text-right">
+                <button class="btn btn-primary btn-sm addNewCategoryBtn ">Add Category</button>
+                <button class="btn btn-primary btn-sm editNewCategoryBtn">Edit Category</button>
+              </div>
+            </div>
+            <hr />
+            <div class="mt-1"></div>
+            <button class="activeBtn">Dairy Products</button>
+            <button>Drinkable</button>
+            <button>Fast Food</button>
+            <button>My Fav</button>
+            <button>Mostly Used</button>
+            <button>Top</button>
+            <button>Commonly Used</button>
+            <button>Less Used</button>
+            <button>Chinese</button>
+            <button>Italian</button>
+            <button>Thai</button>
+            <button>Continental</button>
+            <button>Indian</button>
+            <button>South Indian</button>
+            <!-- <button>North Indian</button> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid mb-3">
+        <div class="itemNameWrapper pt-0">
+          <div class="d-flex justify-content-between align-items-center">
+            <h3>
+              Product List
+              <span class="px-2 mainColor">|</span>
+              <span> Total : <span class="totalIngredients">52</span> </span>
+            </h3>
+            <div class="ingredientsActionBtn text-right">
+              <button class="btn btn-primary btn-sm">Add Product</button>
+              <button class="btn btn-primary btn-sm">Edit Product</button>
+            </div>
+          </div>
+          <hr />
+          <div class="mt-1"></div>
+          <ul class="list-unstyled mb-0">
+            <li>
+              <button class="activeFixedIng">
+                <span>Coca cola</span><b> + </b>
+              </button>
+            </li>
+            <li>
+              <button><span> Milk</span><b> + </b></button>
+            </li>
+            <li>
+              <button><span> buttermilk</span><b> + </b></button>
+            </li>
+            <li>
+              <button><span> Lassie</span><b> + </b></button>
+            </li>
+            <li>
+              <button><span> Lassie</span><b> + </b></button>
+            </li>
+            <li>
+              <button><span> Abc</span><b> + </b></button>
+            </li>
+            <li>
+              <button><span> Coca cola</span><b> + </b></button>
+            </li>
+            <li>
+              <button><span> Milk</span><b> + </b></button>
+            </li>
+            <li>
+              <button><span> buttermilk</span><b> + </b></button>
+            </li>
+            <li>
+              <button><span> Lassie</span><b> + </b></button>
+            </li>
+            <li>
+              <button><span> Abc</span><b> + </b></button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- <div class="allVenderBtnsWrapper pb-3">
+        <div class="container-fluid">
+          <div class="allBtns px-2 p-0 mb-2">
+            <div class="d-flex justify-content-between align-items-center">
+              <h3>Added Item List :</h3>
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <button>Coca cola +</button>
+                  <button>Milk +</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div class="allVenderBtnsWrapper pb-3">
+        <div class="container-fluid">
+          <div class="allBtns pt-0 pb-1">
+            <div class="d-flex justify-content-between align-items-center">
+              <h3>
+                Vender List : <span class="px-2 mainColor">|</span><span>Total Venders : <span class="totalCatgry">22</span></span>
+              </h3>
+              <div class="vendersActionBtn text-right">
+                <button class="btn btn-primary btn-sm addVender">
+                  Add Vender
+                </button>
+                <button class="btn btn-primary btn-sm">Edit Vender</button>
+              </div>
+            </div>
+            <hr>
+            <div class="mt-1"></div>
+            <ul class="d-flex list-unstyled mb-0">
+              <li>Amit</li>
+              <li>Rohit</li>
+              <li>Mohit</li>
+              <li>Rahul</li>
+              <li>Manish</li>
+              <li>Prateek</li>
+              <li>Sohan</li>
+              <li>Mohan</li>
+              <li>Sandeep</li>
+              <li>Gaurav</li>
+              <li>Amit</li>
+              <li>Rohit</li>
+            </ul>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="container-fluid">
+        <div class="ProductDetailsWrapper">
+          <div class="details">
+            <div class="col-12 my-1">
+              <div class="title">
+                <h3>Dairy Products :</h3>
+              </div>
+            </div>
+            <!-- <div class="title mb-3">
+              <h3>Dairy Products</h3>
+            </div> -->
+            <table>
+              <thead>
+                <tr>
+                  <th>S. No.</th>
+                  <th>Item name</th>
+                  <th>Product Type</th>
+                  <th>Quantity</th>
+                  <th>Price/Qty</th>
+                  <!-- <th>Selling Prices/Qty</th> -->
+                  <th>Total Payment</th>
+                  <th>Paid Payment</th>
+                  <!-- <th>Remaining</th> -->
+                  <th>Select Vender</th>
+                  <th>Remove</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- <tr>
+                  <td></td>
+                  <td class="name">Milk Powder</td>
+                  <td>
+                    <input
+                      type="text"
+                      class="variation"
+                      placeholder="variations"
+                      name="Variation"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="quantity"
+                      placeholder="Quantity"
+                      name="quantity"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="price/Qty"
+                      placeholder="Price/Qty"
+                      name="price/Qty"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="sellingPrice/Qty"
+                      placeholder="sellingPrice/Qty"
+                      name="Selling Price/Qty"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="totalPayment"
+                      placeholder="Total Payment"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="paidPayment"
+                      placeholder="Paid Payment"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="remainingPayment"
+                      placeholder="Remaining Payment"
+                    />
+                  </td>
+                  <td>
+                    <select name="Vender" class="chooseVender" id="Vender">
+                      <option selected="" disabled="">Select Vender</option>
+                      <option value="Amit">Amit</option>
+                      <option value="Ankit">Ankit</option>
+                      <option value="Rohit">Rohit</option>
+                      <option value="Akash">Akash</option>
+                      <option value="Ramu">Ramu</option>
+                      <option value="Sonu">Sonu</option>
+                      <option value="Manish Joshi">Manish Joshi</option>
+                    </select>
+                  </td>
+                  <td>
+                    <i class="fa-solid fa-trash deleteThisRow"></i>
+                  </td>
+                </tr> -->
+              </tbody>
+            </table>
+            <div class="table1Btns text-right my-1 mx-3">
+              <!-- <button class="btn btn-primary btn-sm showVenderDetails">
+                Next
+              </button> -->
+              <button class="btn btn-primary btn-sm">Submit</button>
+            </div>
+          </div>
+          <div class="venderDetailsTable">
+            <table>
+              <thead>
+                <tr>
+                  <th>S. No.</th>
+                  <th>Selected Vender</th>
+                  <th>Total Items</th>
+                  <th>Total Price</th>
+                  <th>Paid</th>
+                  <th>Remaining</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- <tr>
+                <td>Amit</td>
+                <td><input type="text" placeholder="Total Items"></td>
+                <td><input type="text" placeholder="Total Items"></td>
+                <td><input type="text" placeholder="Total Items"></td>
+                <td>988</td>
+              </tr> -->
+              </tbody>
+            </table>
+            <div class="table2Btns text-right my-3 mx-3">
+              <button class="btn btn-primary btn-sm showItemDetails">
+                Prev
+              </button>
+              <button class="btn btn-primary btn-sm submitAllData">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div id="addVenderWrapper" class="mt-4">
+          <div class="addVenderTitle">
+            <h2>Add New Vender</h2>
+          </div>
+          <div class="addVenderForm container">
+            <form>
+              <div class="row justify-content-center">
+                <div class="col-12">
+                  <div
+                    class="row justify-content-center align-items-center"
+                    style="background-color: #eee; padding: 20px"
+                  >
+                    <div class="col-md-4">
+                      <div class="formGroup">
+                        <label for="venderName">Vender Name</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="formGroup">
+                        <label for="Phone">Phone No.</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="formGroup">
+                        <label for="Address">Address</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="formGroup">
+                        <label for="upiN">UPI ID</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="formGroup">
+                        <label for="bankName">Bank Name</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="formGroup">
+                        <label for="AccN">Account No.</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="formGroup">
+                        <label for="ifsc">IFSC Code</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="formGroup">
+                        <label for="ACHName">Account Holder Name</label>
+                        <br />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="formGroup">
+                        <label for="state">State</label>
+                        <br />
+                        <select id="country-state" name="country-state" >
+                          <option value="state">State</option>
+                          <option value="AN">Andaman and Nicobar Islands</option>
+                          <option value="AP">Andhra Pradesh</option>
+                          <option value="AR">Arunachal Pradesh</option>
+                          <option value="AS">Assam</option>
+                          <option value="BR">Bihar</option>
+                          <option value="CH">Chandigarh</option>
+                          <option value="CT">Chhattisgarh</option>
+                          <option value="DN">Dadra and Nagar Haveli</option>
+                          <option value="DD">Daman and Diu</option>
+                          <option value="DL">Delhi</option>
+                          <option value="GA">Goa</option>
+                          <option value="GJ">Gujarat</option>
+                          <option value="HR">Haryana</option>
+                          <option value="HP">Himachal Pradesh</option>
+                          <option value="JK">Jammu and Kashmir</option>
+                          <option value="JH">Jharkhand</option>
+                          <option value="KA">Karnataka</option>
+                          <option value="KL">Kerala</option>
+                          <option value="LA">Ladakh</option>
+                          <option value="LD">Lakshadweep</option>
+                          <option value="MP">Madhya Pradesh</option>
+                          <option value="MH">Maharashtra</option>
+                          <option value="MN">Manipur</option>
+                          <option value="ML">Meghalaya</option>
+                          <option value="MZ">Mizoram</option>
+                          <option value="NL">Nagaland</option>
+                          <option value="OR">Odisha</option>
+                          <option value="PY">Puducherry</option>
+                          <option value="PB">Punjab</option>
+                          <option value="RJ">Rajasthan</option>
+                          <option value="SK">Sikkim</option>
+                          <option value="TN">Tamil Nadu</option>
+                          <option value="TG">Telangana</option>
+                          <option value="TR">Tripura</option>
+                          <option value="UP">Uttar Pradesh</option>
+                          <option value="UT">Uttarakhand</option>
+                          <option value="WB">West Bengal</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="formGroup">
+                        <label for="city">City</label>
+                        <br />
+                        <select id="city" name="city" >
+                          <option value="">Select City</option>
+                          <option value="Almora">Almora</option>
+                          <option value="Bageshwar">Bageshwar</option>
+                          <option value="Barkot">Barkot</option>
+                          <option value="Bazpur">Bazpur</option>
+                          <option value="Bhim Tal">Bhim Tal</option>
+                          <option value="Bhowali">Bhowali</option>
+                          <option value="Birbhaddar">Birbhaddar</option>
+                          <option value="Chakrata">Chakrata</option>
+                          <option value="Chamoli">Chamoli</option>
+                          <option value="Champawat">Champawat</option>
+                          <option value="Clement Town">Clement Town</option>
+                          <option value="Dehradun">Dehradun</option>
+                          <option value="Devaprayag">Devaprayag</option>
+                          <option value="Dharchula">Dharchula</option>
+                          <option value="Doiwala">Doiwala</option>
+                          <option value="Dugadda">Dugadda</option>
+                          <option value="Dwarahat">Dwarahat</option>
+                          <option value="Garhwal">Garhwal</option>
+                          <option value="Haldwani">Haldwani</option>
+                          <option value="Harbatpur">Harbatpur</option>
+                          <option value="Haridwar">Haridwar</option>
+                          <option value="Jaspur">Jaspur</option>
+                          <option value="Joshimath">Joshimath</option>
+                          <option value="Kaladhungi">Kaladhungi</option>
+                          <option value="Kalagarh Project Colony">Kalagarh Project Colony</option>
+                          <option value="Kashipur">Kashipur</option>
+                          <option value="Khatima">Khatima</option>
+                          <option value="Kichha">Kichha</option>
+                          <option value="Kotdwara">Kotdwara</option>
+                          <option value="Laksar">Laksar</option>
+                          <option value="Lansdowne">Lansdowne</option>
+                          <option value="Lohaghat">Lohaghat</option>
+                          <option value="Manglaur">Manglaur</option>
+                          <option value="Mussoorie">Mussoorie</option>
+                          <option value="Naini Tal">Naini Tal</option>
+                          <option value="Narendranagar">Narendranagar</option>
+                          <option value="Pauri">Pauri</option>
+                          <option value="Pipalkoti">Pipalkoti</option>
+                          <option value="Pithoragarh">Pithoragarh</option>
+                          <option value="Raipur">Raipur</option>
+                          <option value="Raiwala Bara">Raiwala Bara</option>
+                          <option value="Ramnagar">Ramnagar</option>
+                          <option value="Ranikhet">Ranikhet</option>
+                          <option value="Rishikesh">Rishikesh</option>
+                          <option value="Roorkee">Roorkee</option>
+                          <option value="Rudraprayag">Rudraprayag</option>
+                          <option value="Sitarganj">Sitarganj</option>
+                          <option value="Srinagar">Srinagar</option>
+                          <option value="Sultanpur">Sultanpur</option>
+                          <option value="Tanakpur">Tanakpur</option>
+                          <option value="Tehri">Tehri</option>
+                          <option value="Tehri-Garhwal">Tehri-Garhwal</option>
+                          <option value="Udham Singh Nagar">Udham Singh Nagar</option>
+                          <option value="Uttarkashi">Uttarkashi</option>
+                          <option value="Vikasnagar">Vikasnagar</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group  col-md-6 " >
+                      <label for="gnder">Gender :</label><br>
+                      <label for="male">Male</label>
+                      <input type="radio" name="gender" id="male" >
+                      <label for="female">Female</label>
+                      <input type="radio" name="gender" id="female" >
+                      <label for="other">Other</label>
+                      <input type="radio" name="gender" id="other">
+                    </div>
+                    <div class="formGroup  col-md-6 " >
+                     <label for="gstno">GST Number</label><br>
+                     <input type="text" name="gstno" id="gstno">
+                    </div>
+                    <div class="col-12 text-center mt-2">
+                      <button type="submit" class="addVenderSubmitBtn">
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- 
+      models will load inside the div
+    -->
+    <div id="addCategoryModelWrapper"></div>
+    <div id="editCategoryModelWrapper"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="./common-model.js"></script>
+    <script>
+      $(document).ready(function () {
+
+        $("#addCategoryModelWrapper").load("add-category-model.html");
+        $("#editCategoryModelWrapper").load("edit-category-model.html");
+      });
+      $("head").append(
+        '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
+      );
+      $("head").append(
+        ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
+/>'
+      );
+      $("head").append(
+        '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
+      );
+    </script>
+    <script>
+      $(".addVender").click(function () {
+        $("#addVenderWrapper").show();
+        let top = $("#addVenderWrapper").position().top;
+        $("html, body").animate({ scrollTop: top });
+      });
+      $(".breadcrumbs button").click(function () {
+        $(".breadcrumbs button").removeClass("activeBreadcurmbtn");
+        $(this).addClass("activeBreadcurmbtn");
+      });
+
+      $(".allBtns button").click(function () {
+        $(".allBtns button").removeClass("activeBtn");
+        $(this).addClass("activeBtn");
+        $(".ProductDetailsWrapper .details .title h3").text($(this).text());
+      });
+
+      $(".showVenderDetails").click(function () {
+        $("#addVenderWrapper").hide();
+        if (selectedVender.length <= 0) {
+          alert("please select vender");
+        } else {
+          $(".venderDetailsTable table tbody").html("");
+          selectedVender.map((elem, index) => {
+            $(".venderDetailsTable table tbody")
+              .append(`<tr data-venderMoneyKey="${index}"><td></td><td>${elem}</td>
+                <td><input type="text" class="venderTotalItems" placeholder="Total Items"></td>
+                <td><input type="text" class="venderTotalPrice" placeholder="Total Items"></td>
+                <td><input type="text" class="venderTotalPaid" placeholder="Total Items"></td>
+                <td class="venderTotalRemaining">-</td></tr>`);
+          });
+
+          $(".ProductDetailsWrapper .details").animate(
+            { left: "-200%" },
+            "slow"
+          );
+          $(".ProductDetailsWrapper .details").hide();
+          $(".ProductDetailsWrapper .venderDetailsTable").animate(
+            { left: "0%" },
+            "slow"
+          );
+          $(".ProductDetailsWrapper .venderDetailsTable").show();
+        }
+      });
+
+      $(".showItemDetails").click(function () {
+        // $('#addVenderWrapper').show();
+        $(".ProductDetailsWrapper .details")
+          .animate({ left: "0%" }, "fast")
+          .show();
+        $(".ProductDetailsWrapper .venderDetailsTable")
+          .animate({ left: "200%" }, "fast")
+          .hide();
+      });
+
+      let selectedVender = [];
+      $(document).on("change", ".chooseVender", function () {
+        let vender = $(this).val();
+        if (!selectedVender.includes(vender)) {
+          selectedVender.push(vender);
+        }
+      });
+
+      $(document).on("click", ".itemNameWrapper ul li button", function () {
+        $(".itemNameWrapper ul li button").removeClass("activeFixedIng");
+        $(this).addClass("activeFixedIng");
+        $(".ProductDetailsWrapper .details .title h3").text(
+          $(this).children("span").text()
+        );
+        $(".ProductDetailsWrapper table tbody").append(
+          '<tr> <td></td><td class="name">' +
+            $(this).children("span").text() +
+            '</td><td> <input type="text" class="variation" placeholder="variations" name="Variation"/> </td><td> <input type="text" class="quantity" placeholder="Quantity" name="quantity"/> </td><td> <input type="text" class="price/Qty" placeholder="Price/Qty" name="price/Qty"/> </td><td> <input type="text" name="totalPayment" placeholder="Total Payment"/> </td><td> <input type="text" name="paidPayment" placeholder="Paid Payment"/> </td><td> <select name="Vender" class="chooseVender" id="Vender"> <option selected="" disabled="">Select Vender</option> <option value="Amit">Amit</option> <option value="Ankit">Ankit</option> <option value="Rohit">Rohit</option> <option value="Akash">Akash</option> <option value="Ramu">Ramu</option> <option value="Sonu">Sonu</option> <option value="Manish Joshi">Manish Joshi</option> </select> </td><td> <i class="fa-solid fa-trash deleteThisRow"></i> </td></tr>'
+        );
+      });
+
+      $(document).on("click ", ".deleteThisRow", function () {
+        $(this).closest("tr").remove();
+      });
+
+      $(document).on("keyup ", ".venderTotalPaid", function () {
+        let totalPrice = $(this)
+          .closest("tr")
+          .children("td")
+          .children(".venderTotalPrice")
+          .val();
+        let paidAmount = $(this).val();
+
+        if (+totalPrice !== NaN || +paidAmount !== NaN) {
+          $(this)
+            .closest("tr")
+            .children(".venderTotalRemaining")
+            .text(+totalPrice - +paidAmount);
+        }
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+  <tr> <td class="name">Milk Powder</td><td> <input type="text" class="variation" placeholder="variations" name="Variation"/> </td><td> <input type="text" class="quantity" placeholder="Quantity" name="quantity"/> </td><td> <input type="text" class="price/Qty" placeholder="Price/Qty" name="price/Qty"/> </td><td> <input type="text" class="sellingPrice/Qty" placeholder="sellingPrice/Qty" name="Selling Price/Qty"/> </td><td> <input type="text" name="totalPayment" placeholder="Total Payment"> </td><td> <input type="text" name="paidPayment" placeholder="Paid Payment"> </td><td> <input type="text" name="remainingPayment" placeholder="Remaining Payment"> </td></tr>
+ -->

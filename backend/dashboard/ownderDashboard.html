@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Owner Dashboard</title>
+    <link rel="stylesheet" href="./ownerDashboard.css" />
+    <style>
+      #chartdiv {
+        width: 50%;
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="d-flex">
+      <aside class="leftSec">
+        <div class="topSec">
+          <h1>Owner <span>Dashboard</span></h1>
+          <div class="minimizeIconBtn">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+        <div class="leftMain">
+          <div class="listCard">
+            <h2>dummy</h2>
+            <ul class="list-unstyled">
+              <li>
+                <a href=""
+                  ><i class="fa-solid fa-calendar-days"></i> Calendar
+                </a>
+                <button class="btn btn-primary btn-sm">new</button>
+              </li>
+              <li>
+                <a href=""><i class="fa-solid fa-file"></i> Documentation</a>
+              </li>
+              <li>
+                <a href=""><i class="fa-solid fa-house"></i> Dashboard</a>
+              </li>
+            </ul>
+          </div>
+          <div class="listCard">
+            <h2>Important Tools</h2>
+            <ul class="list-unstyled">
+              <li>
+                <a href=""
+                  ><i class="fa-solid fa-thumbs-up"></i> Admin Plugins
+                </a>
+                <span class="deepSidebarMenuBtn">
+                  <i class="fa-solid fa-caret-down"></i
+                ></span>
+              </li>
+              <li>
+                <a href=""
+                  ><i class="fa-solid fa-table-list"></i>Admin Forms
+                </a>
+                <span class="deepSidebarMenuBtn">
+                  <i class="fa-solid fa-caret-down"></i
+                ></span>
+              </li>
+            </ul>
+          </div>
+          <div class="listCard">
+            <h2>Elements</h2>
+            <ul class="list-unstyled">
+              <li>
+                <a href=""
+                  ><i class="fa-solid fa-window-restore"></i>UI Elements
+                </a>
+                <span class="deepSidebarMenuBtn">
+                  <i class="fa-solid fa-caret-down"></i
+                ></span>
+              </li>
+              <li>
+                <a href=""
+                  ><i class="fa-solid fa-shield-halved"></i>Admin Forms
+                </a>
+                <span class="deepSidebarMenuBtn">
+                  <i class="fa-solid fa-caret-down"></i
+                ></span>
+              </li>
+              <li>
+                <a href=""
+                  ><i class="fa-solid fa-thumbs-up"></i> UI Elements
+                </a>
+                <span class="deepSidebarMenuBtn">
+                  <i class="fa-solid fa-caret-down"></i
+                ></span>
+              </li>
+              <li>
+                <a href=""
+                  ><i class="fa-solid fa-table-list"></i>Admin Forms
+                </a>
+                <span class="deepSidebarMenuBtn">
+                  <i class="fa-solid fa-caret-down"></i
+                ></span>
+              </li>
+            </ul>
+          </div>
+          <div class="listCard">
+            <h2>Elements</h2>
+            <ul class="list-unstyled">
+              <li>
+                <a href=""
+                  ><i class="fa-brands fa-gg-circle color1"></i>Website Redesign
+                </a>
+              </li>
+              <li>
+                <a href=""
+                  ><i class="fa-brands fa-gg-circle color2"></i>Ecommerce Panel
+                </a>
+              </li>
+              <li>
+                <a href=""
+                  ><i class="fa-brands fa-gg-circle color3"></i>Adobe Mockup
+                </a>
+              </li>
+              <li>
+                <a href=""
+                  ><i class="fa-brands fa-gg-circle color4"></i>SEO Upgrade
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+      <main class="rightSec">
+        <header>
+          <div class="topLeft">
+            <div class="icons">
+              <i class="fa-solid fa-microchip"></i>
+              <i class="fa-solid fa-square-virus"></i>
+              <i class="fa-solid fa-circle-nodes"></i>
+            </div>
+            <div class="searchBox">
+              <input type="text" placeholder="Search..." />
+            </div>
+          </div>
+          <div class="TopRight">
+            <i class="fa-solid fa-wifi"></i>
+            <div class="countryFleg">
+              <div class="d-flex align-items-center">
+                <img
+                  src="https://media.istockphoto.com/id/177387875/photo/indian-flag.jpg?b=1&s=170667a&w=0&k=20&c=Hxz2jLPW6OwDmCNPr7hjEFt7cebsYJf-wvO5bmBEYMY="
+                  alt="countries flag"
+                />
+                <div class="countriesName">In</div>
+              </div>
+              <div class="dropDownIcon">
+                <i class="fa-solid fa-caret-down"></i>
+              </div>
+            </div>
+            <div class="profileWrapper">
+              <img
+                src="https://xsgames.co/randomusers/assets/avatars/male/74.jpg"
+                alt="user img"
+              />
+              <div class="userName">Shubham Negi</div>
+              <i class="fa-solid fa-caret-down"></i>
+            </div>
+          </div>
+        </header>
+        <nav>
+          <div class="breadcurmsMenu">
+            <ul class="list-unstyled">
+              <li>
+                <a href="">Dashboard | <i class="fa-solid fa-house"></i></a>
+              </li>
+              <li><i class="fa-solid fa-chevron-right"></i></li>
+              <li><a href="">Home</a></li>
+              <li><i class="fa-solid fa-chevron-right"></i></li>
+              <li><a href="">Dashboard</a></li>
+            </ul>
+          </div>
+          <div class="filters">
+            <span>Lorem, ipsum.</span>
+            <select name="" id="">
+              <option disabled selected>Last 90 Days</option>
+              <option value="">Last 60 Days</option>
+              <option value="">Last 30 Days</option>
+              <option value="">Last 01 Day</option>
+            </select>
+            <div class="exitIcon">
+              <i class="fa-solid fa-right-to-bracket"></i>
+              <span class="notification">2</span>
+            </div>
+          </div>
+        </nav>
+        <div class="container mt-4">
+          <div class="allOutletWrapper">
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="outletCard outletCard1">
+                  <div>
+                    <h4>Chicken Point</h4>
+                    <div class="d-flex">
+                      <i class="fa-solid fa-arrow-up increseSale"></i> 70%
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <img
+                      src="https://economictimes.indiatimes.com/thumb/msid-73023854,width-1200,height-900,resizemode-4,imgsize-235513/hotel-agencies.jpg?from=mdr"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="outletCard outletCard2">
+                  <div>
+                    <h4>Hayat</h4>
+                    <div class="d-flex">
+                      <i class="fa-solid fa-arrow-down descreseSale"></i> 26%
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <img
+                      src="https://media-cdn.tripadvisor.com/media/photo-s/22/25/ce/ea/kingsford-hotel-manila.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="outletCard outletCard3">
+                  <div>
+                    <h4>Merriot</h4>
+                    <div class="d-flex">
+                      <i class="fa-solid fa-arrow-up increseSale"></i> 40%
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <img
+                      src="https://www.hotelapplettree.com/images/hotel-applettree-tirunelveli.webp
+                      "
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="outletCard outletCard4">
+                  <div>
+                    <h4>Social</h4>
+                    <div class="d-flex">
+                      <i class="fa-solid fa-arrow-up increseSale"></i> 20%
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <img
+                      src="https://media-cdn.tripadvisor.com/media/photo-m/1280/1c/04/ff/86/hotel-malligi-hampi.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container mt-4">
+          <div class="dataPanel">
+            <div class="topBarSec">
+              <h4>Data panel ( Agriculture activity)</h4>
+              <div class="menuIcon">
+                <i class="fa-solid fa-bars"></i>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 gr-0">
+                <div class="chartSec">
+                  <div class="topBar">
+                    <h4>Visitors</h4>
+                    <span>13,234,42</span>
+                  </div>
+                  <div id="chartsec1"></div>
+                </div>
+              </div>
+              <div class="col-lg-4 gx-0">
+                <div class="topRef">
+                  <div class="topBar">
+                    <h4>Top Referrals</h4>
+                    <span>View Report</span>
+                  </div>
+                  <ul>
+                    <li>
+                      <span
+                        ><i class="fa-solid fa-circle"></i> www.google.com</span
+                      >
+                      <span>1926</span>
+                    </li>
+                    <li>
+                      <span
+                        ><i class="fa-solid fa-circle"></i>
+                        www.youtube.com</span
+                      >
+                      <span>126</span>
+                    </li>
+                    <li>
+                      <span
+                        ><i class="fa-solid fa-circle"></i> www.being.com</span
+                      >
+                      <span>26</span>
+                    </li>
+                  </ul>
+                  <div class="topBar">
+                    <h4>Top Search turm</h4>
+                    <span>View Report</span>
+                  </div>
+                  <ul>
+                    <li>
+                      <span
+                        ><i class="fa-solid fa-circle"></i> Lorem ipsum
+                      </span>
+                      <span>1926</span>
+                    </li>
+                    <li>
+                      <span><i class="fa-solid fa-circle"></i> dolor sit</span>
+                      <span>126</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-4 gl-0">
+                <div class="trafficSource">
+                  <div class="topBar">
+                    <h4>Traffic Sources</h4>
+                    <span>View Lists</span>
+                  </div>
+                  <ul>
+                    <li>
+                      <span
+                        ><img
+                          src="https://media.istockphoto.com/id/177387875/photo/indian-flag.jpg?b=1&s=170667a&w=0&k=20&c=Hxz2jLPW6OwDmCNPr7hjEFt7cebsYJf-wvO5bmBEYMY="
+                          alt=""
+                        />
+                        India</span
+                      >
+                      34%
+                    </li>
+                    <li>
+                      <span
+                        ><img
+                          src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png"
+                          alt=""
+                        />
+                        USA</span
+                      >
+                      56%
+                    </li>
+                    <li>
+                      <span
+                        ><img
+                          src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/1200px-Flag_of_Japan.svg.png"
+                          alt=""
+                        />
+                        Japan</span
+                      >
+                      3%
+                    </li>
+                    <li>
+                      <span
+                        ><img
+                          src="https://cdn.britannica.com/46/3346-004-D3BDE016/flag-symbolism-Pakistan-design-Islamic.jpg"
+                          alt=""
+                        />
+                        Pakistan</span
+                      >
+                      64%
+                    </li>
+                    <li>
+                      <span
+                        ><img
+                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png"
+                          alt=""
+                        />
+                        Bangladesh</span
+                      >
+                      34%
+                    </li>
+                    <li>
+                      <span
+                        ><img
+                          src="https://www.flagpictures.com/media/dubai_-flag.jpg"
+                          alt=""
+                        />
+                        Dubai</span
+                      >
+                      30%
+                    </li>
+
+                    <li>
+                      <span
+                        ><img
+                          src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png"
+                          alt=""
+                        />
+                        USA</span
+                      >
+                      56%
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container mt-4">
+          <div class="dataPanel2">
+            <div class="row">
+              <div class="col-lg-5">
+                <div class="consuption">
+                  <div class="topBbar d-flex justify-content-between">
+                    <h4>Consumption</h4>
+                    <i class="fa-solid fa-bars"></i>
+                  </div>
+                  <div
+                    class="middleSec mt-2 d-flex justify-content-end align-items-center"
+                  >
+                    <div><span></span>abc</div>
+                    <div><span></span>xyz</div>
+                    <div><span></span>pqr</div>
+                  </div>
+                  <div class="chartsWrapper d-flex">
+                    <div class="piChart1 myPiChart"></div>
+                    <div class="piChart2 myPiChart"></div>
+                    <div class="piChart3 myPiChart"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="consuption2">
+                  <div class="topBar d-flex justify-content-between">
+                    <h4>Lorem, ipsum.</h4>
+                    <i class="fa-solid fa-bars"></i>
+                  </div>
+                  <div id="piCarts1"></div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="consuption3">
+                  <div class="topBar">
+                    <h4>lorem</h4>
+                    <i class="fa-solid fa-bars"></i>
+                  </div>
+                  <div class="inputGroup d-flex">
+                    <input type="text" placeholder="Add More" />
+                    <div
+                      class="plusBtn d-flex justify-content-center align-items-center"
+                    >
+                      <i class="fa-solid fa-plus"></i>
+                    </div>
+                  </div>
+                  <ul class="list-unstyled">
+                    <li>
+                      <span><span class="dot dot1"></span> Facebook</span> 24%
+                    </li>
+                    <li>
+                      <span><span class="dot dot2"></span> Twitter</span> 41%
+                    </li>
+                    <li>
+                      <span><span class="dot dot3"></span> Linkedin</span> 28%
+                    </li>
+                    <li>
+                      <span><span class="dot dot4"></span> Facebook</span> 24%
+                    </li>
+                    <li>
+                      <span><span class="dot dot5"></span> Twitter</span> 41%
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container mt-4">
+          <div class="dataPanel3">
+            <div class="row">
+              <div class="col-lg-5">
+                <div class="topBbar d-flex justify-content-between">
+                  <h4>Consumption</h4>
+                  <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="leftSec">
+                  <div id="chartdiv"></div>
+                </div>
+                <div class="rightSec"></div>
+              </div>
+              <div class="col-lg-4"></div>
+              <div class="col-lg-pull-3"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $("head").append(
+        ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
+        />'
+      );
+      $("head").append(
+        '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
+      );
+    </script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="./ownerDashboard.js"></script>
+  </body>
+</html>
