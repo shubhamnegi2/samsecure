@@ -735,7 +735,7 @@
             <!-- <div class="title mb-3">
               <h3>Dairy Products</h3>
             </div> -->
-            <table>
+            <table class="mainTable">
               <thead>
                 <tr>
                   <th>S. No.</th>
@@ -1254,7 +1254,7 @@
           let value = $(this).closest(".form-check").children("label").text();
           let key = value.replaceAll(/\s/g, "");
           if ($(this).is(":checked")) {
-            $(".ProductDetailsWrapper table").append(
+            $(".ProductDetailsWrapper .mainTable").append(
               "<tr data-key=" +
                 key +
                 '><td></td> <td class="name">' +
