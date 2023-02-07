@@ -1178,7 +1178,7 @@
       $(".ProductDetailsWrapper .details .title h3").text(
         $(this).children("span").text()
       );
-      $(".ProductDetailsWrapper table tbody").append(
+      $(".ProductDetailsWrapper .details tbody").append(
         '<tr> <td></td><td class="name">' +
         $(this).children("span").text() +
         '</td><td> <input type="text" class="variation" placeholder="variations" name="Variation"/> </td><td> <input type="text" class="quantity" placeholder="Quantity" name="quantity"/> </td><td> <input type="text" class="price/Qty" placeholder="Price/Qty" name="price/Qty"/> </td><td> <input type="text" name="totalPayment" placeholder="Total Payment"/> </td><td> <input type="text" name="paidPayment" placeholder="Paid Payment"/> </td><td> <select name="Vender" class="chooseVender" id="Vender"> <option selected="" disabled="">Select Vender</option> <option value="Amit">Amit</option> <option value="Ankit">Ankit</option> <option value="Rohit">Rohit</option> <option value="Akash">Akash</option> <option value="Ramu">Ramu</option> <option value="Sonu">Sonu</option> <option value="Manish Joshi">Manish Joshi</option> </select> </td><td> <i class="fa-solid fa-trash deleteThisRow"></i> </td></tr>'
