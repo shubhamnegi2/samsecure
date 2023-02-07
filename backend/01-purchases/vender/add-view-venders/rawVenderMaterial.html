@@ -94,6 +94,7 @@
         text-align: right;
         padding-right: 15px;
       }
+     
 
       .ProductDetailsWrapper {
         background-color: #fff;
@@ -108,7 +109,7 @@
         top: 0px;
       }
       .ProductDetailsWrapper .details .title {
-        padding: 0px;
+        padding:  0px;
         text-align: center;
       }
       .ProductDetailsWrapper .details .title h3 {
@@ -207,7 +208,7 @@
       }
 
       #addVenderWrapper {
-        /* display: none; */
+        display: none;
         background-color: #fff;
         box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
         border-radius: 5px;
@@ -386,20 +387,6 @@
         color: #7a7797;
         /* font-size: 14px; */
       }
-     .genderGroup {
-        border: 2px solid #eee;
-    width: 100%;
-    border-radius: 4px;
-    margin-left: 15px;
-    background-color: #fff;
-}
-      .genderLabel{
-        color: #7a7797;
-    font-size: 14px;
-    font-weight: 500;
-    margin-left: 15px;
-
-      }
     </style>
   </head>
   <body>
@@ -407,11 +394,7 @@
       <ul class="list-unstyled d-flex align-items-center">
         <li><a href="">Dashboard</a></li>
         <li><i class="fa-solid fa-angles-right"></i></li>
-        <li>
-          <a href="" class="ActiveBreadcrumb"
-            >Fix Stock Venders Material List</a
-          >
-        </li>
+        <li><a href="" class="ActiveBreadcrumb">Raw Venders Material List</a></li>
       </ul>
       <button class="addVender">Add Vender</button>
     </div>
@@ -477,6 +460,7 @@
       <div class="allBtnsWrapper categoriesBtnWrapper pb-3 mt-1">
         <div class="container-fluid">
           <div class="allBtns pt-0 pb-1">
+                    
             <button class="activeBtn">Dairy Products</button>
             <button>Drinkable</button>
             <button>Fast Food</button>
@@ -498,14 +482,12 @@
                 <!-- Ingredient Categories List
                 <span class="px-2 mainColor">|</span> -->
                 <span
-                  >Venders Under This Category :
-                  <span class="totalCatgry color2">22</span></span
+                  >Venders Under This Category : <span class="totalCatgry color2">22</span></span
                 >
               </h3>
               <span class="categoryheading"
-                >Pending Amount :
-                <span class="totalCatgry color2">1120</span></span
-              >
+              >Pending Amount : <span class="totalCatgry color2">1120</span></span
+            >
               <!-- <div class="CategoryActionBtn text-right">
                 <button class="btn btn-primary btn-sm">Add Category</button>
                 <button class="btn btn-primary btn-sm">Edit Category</button>
@@ -683,6 +665,7 @@
                         <br />
                         <input type="text" />
                       </div>
+                      
                     </div>
                     <div class="col-md-4">
                       <div class="formGroup">
@@ -726,16 +709,14 @@
                         <input type="text" />
                       </div>
                     </div>
-
+                  
                     <div class="col-md-6">
                       <div class="formGroup">
                         <label for="state">State</label>
                         <br />
                         <select id="country-state" name="country-state">
                           <option value="state">State</option>
-                          <option value="AN">
-                            Andaman and Nicobar Islands
-                          </option>
+                          <option value="AN">Andaman and Nicobar Islands</option>
                           <option value="AP">Andhra Pradesh</option>
                           <option value="AR">Arunachal Pradesh</option>
                           <option value="AS">Assam</option>
@@ -772,14 +753,13 @@
                           <option value="UP">Uttar Pradesh</option>
                           <option value="UT">Uttarakhand</option>
                           <option value="WB">West Bengal</option>
-                        </select>
-                      </div>
+                        </select>                      </div>
                     </div>
                     <div class="col-md-6">
                       <div class="formGroup">
                         <label for="city">City</label>
                         <br />
-                        <select id="city" name="city">
+                        <select id="city" name="city" >
                           <option value="">Select City</option>
                           <option value="Almora">Almora</option>
                           <option value="Bageshwar">Bageshwar</option>
@@ -805,9 +785,7 @@
                           <option value="Jaspur">Jaspur</option>
                           <option value="Joshimath">Joshimath</option>
                           <option value="Kaladhungi">Kaladhungi</option>
-                          <option value="Kalagarh Project Colony">
-                            Kalagarh Project Colony
-                          </option>
+                          <option value="Kalagarh Project Colony">Kalagarh Project Colony</option>
                           <option value="Kashipur">Kashipur</option>
                           <option value="Khatima">Khatima</option>
                           <option value="Kichha">Kichha</option>
@@ -835,25 +813,19 @@
                           <option value="Tanakpur">Tanakpur</option>
                           <option value="Tehri">Tehri</option>
                           <option value="Tehri-Garhwal">Tehri-Garhwal</option>
-                          <option value="Udham Singh Nagar">
-                            Udham Singh Nagar
-                          </option>
+                          <option value="Udham Singh Nagar">Udham Singh Nagar</option>
                           <option value="Uttarkashi">Uttarkashi</option>
                           <option value="Vikasnagar">Vikasnagar</option>
-                        </select>
-                      </div>
+                        </select>                      </div>
                     </div>
                     <div class="col-md-6">
+                      <div class="formGroup">
+                        <label >Gender</label><br>
+                        <label for="female">Female</label>
+                        <input type="radio" name="gender" value="Female" id="female">
+                        <label for="male">Male</label>
+                        <input type="radio" name="gender" value="male" id="male">
 
-                      <label for="" class="genderLabel">Gender</label>
-                      <div class="formGroup genderGroup d-flex align-items-center justify-content-evenly">
-                        <div class="d-flex">
-                          <input type="radio">
-                          <label for="" name="gender">Male</label>
-                          <span class="px-2"></span>
-                          <input type="radio">
-                          <label for="" name="gender">Female</label>
-                        </div>
                       </div>
                     </div>
                     <div class="col-12 text-center mt-2">
@@ -972,6 +944,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
+
       $(function () {
         $("#dateWise").datepicker();
         let formattedDate = new Date();
@@ -987,14 +960,16 @@
         let y = formattedDate.getFullYear();
         $("#dateWise").attr("placeholder", d + "/" + m + "/" + y);
       });
+
     </script>
     <script>
+
       $(".addVender").click(function () {
         $("#addVenderWrapper").show();
         let top = $("#addVenderWrapper").position().top;
         $("html, body").animate({ scrollTop: top });
       });
-
+    
       $(".monthsBtnWrapper button").click(function () {
         $(".monthsBtnWrapper button").removeClass("activeBtn");
         $(this).addClass("activeBtn");
@@ -1014,6 +989,7 @@
       $(".closePaymentPopup").click(function () {
         $(".paymentPopupWrapper ").hide();
       });
+
     </script>
   </body>
 </html>
