@@ -941,22 +941,16 @@
               <tr>
                 <th>S. No.</th>
                 <th>Selected Vender</th>
-                <th>Product list</th>
+                <th>Product Name</th>
                 <th>Number of variation</th>
-                <th>Price/Qty</th>
-                <th>Total Amount</th>
+                <th>Total Items</th>
+                <th>Total Price</th>
                 <th>Paid</th>
                 <th>Remaining</th>
               </tr>
             </thead>
             <tbody>
-              <!-- <tr>
-                <td>Amit</td>
-                <td><input type="text" placeholder="Total Items"></td>
-                <td><input type="text" placeholder="Total Items"></td>
-                <td><input type="text" placeholder="Total Items"></td>
-                <td>988</td>
-              </tr> -->
+            
             </tbody>
           </table>
           <div class="table2Btns text-right my-3 mx-3">
@@ -1132,13 +1126,7 @@
         selectedVender.map((elem, index) => {
           $(".venderDetailsTable table tbody")
             .append(`<tr data-venderMoneyKey="${index}"><td></td><td>${elem}</td>
-                <td><input type="text" class="venderTotalItems" placeholder=" product"></td>
-             
-                <td><input type="text" class="venderTotalPrice" placeholder="Number of Variation"></td>
-                <td><input type="text" class="venderTotalPrice" placeholder="Total Price"></td>
-                <td><input type="text" class="venderTotalAmount" placeholder="Total Amount"></td>
-                <td><input type="text" class="venderTotalPaid" placeholder="paid"></td>
-                <td class="venderTotalRemaining">-</td></tr>`);
+              <td><input type="text" class="venderTotalItems" placeholder=" produc Name"></td><td><input type="text" class="venderTotalPrice" placeholder="Number of Variation"></td><td><input type="text" class="venderTotalPrice" placeholder="Total Itemms"></td><td><input type="text" class="venderTotalAmount" placeholder="Total Price"></td><td><input type="text" class="venderTotalPaid" placeholder="paid"></td><td class="venderTotalRemaining">-</td></tr>`);
         });
 
         $(".ProductDetailsWrapper .details").animate(
