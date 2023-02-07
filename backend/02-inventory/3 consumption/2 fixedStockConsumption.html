@@ -1,383 +1,384 @@
 <!DOCTYPE html>
-<lang="en">
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Fix Stock Consumption</title>
-        <!-- <link rel="stylesheet" href="./test.css" /> -->
-    </head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fix Stock Consumption</title>
+    <!-- <link rel="stylesheet" href="./test.css" /> -->
+  </head>
 
+  <style>
+    .ProductDetailsWrapper {
+      counter-reset: Serial;
+    }
+    .ProductDetailsWrapper tr td:nth-child(2):before {
+      counter-increment: Serial;
+      content: counter(Serial);
+    }
+    .ProductDetailsWrapper tr td:first-child {
+      width: 150px;
+      border-right: 1px solid #fff;
+    }
+    .breadcrumb {
+      margin-bottom: 0rem !important;
+      background-color: #ef7d0b !important;
+      position: relative;
+      /* color: #fff; */
+    }
 
-    <style>
-         .ProductDetailsWrapper {
-        counter-reset: Serial;
-      }
-      .ProductDetailsWrapper tr td:nth-child(2):before {
-        counter-increment: Serial;
-        content: counter(Serial);
-      }.ProductDetailsWrapper tr td:first-child {
-            width: 150px;
-    border-right: 1px solid #fff;
-      }
-        .breadcrumb {
-            margin-bottom: 0rem !important;
-            background-color: #ef7d0b !important;
-            position: relative;
-            /* color: #fff; */
-        }
+    .breadcrumb .addVender {
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0px;
+      background-color: #fe9037;
+      color: #fff;
+      padding: 2px 30px;
+      font-weight: bold;
+    }
 
-        .breadcrumb .addVender {
-            text-transform: capitalize;
-            border-radius: 3px;
-            border: 0px;
-            background-color: #fe9037;
-            color: #fff;
-            padding: 2px 30px;
-            font-weight: bold;
-        }
+    .breadcrumb ul {
+      margin-bottom: 0rem;
+    }
 
-        .breadcrumb ul {
-            margin-bottom: 0rem;
-        }
+    .breadcrumb ul li {
+      color: #eee;
+      font-weight: bold;
+      margin: 10px 1px;
+    }
 
-        .breadcrumb ul li {
-            color: #eee;
-            font-weight: bold;
-            margin: 10px 1px;
-        }
+    .breadcrumb ul li a {
+      color: inherit;
+      padding: 10px;
+      text-decoration: none;
+    }
 
-        .breadcrumb ul li a {
-            color: inherit;
-            padding: 10px;
-            text-decoration: none;
-        }
+    .breadcrumb ul li i {
+      font-size: 12px;
+    }
 
-        .breadcrumb ul li i {
-            font-size: 12px;
-        }
+    .breadcrumb ul li .ActiveBreadcrumb {
+      color: #fff;
+    }
 
-        .breadcrumb ul li .ActiveBreadcrumb {
-            color: #fff;
-        }
+    .allBtns {
+      background-color: #fff;
+      border: 1px solid #fc8019;
+      box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+      border-radius: 5px;
+    }
 
-        .allBtns {
-            background-color: #fff;
-            border: 1px solid #fc8019;
-            box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
-            border-radius: 5px;
-        }
+    .allBtns .activeMonth {
+      background-color: #fe9037;
+    }
 
-        .allBtns .activeMonth {
-            background-color: #fe9037;
-        }
+    .allBtns select {
+      color: #fff;
+      margin-left: 25px;
+      min-width: 60px;
+      margin: 6px;
+      text-transform: capitalize;
+      border: 0;
+      box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+      border-radius: 5px;
+      border: 1px solid #fc8019;
+      font-size: 10px;
+      font-weight: 500;
+      padding: 1px 10px;
+      font-family: "Montserrat", sans-serif;
+      background-color: #fe9037;
+    }
 
-        .allBtns select {
-            color: #fff;
-            margin-left: 25px;
-            min-width: 60px;
-            margin: 6px;
-            text-transform: capitalize;
-            border: 0;
-            box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
-            border-radius: 5px;
-            border: 1px solid #fc8019;
-            font-size: 10px;
-            font-weight: 500;
-            padding: 1px 10px;
-            font-family: "Montserrat", sans-serif;
-            background-color: #fe9037;
-        }
+    .allBtns button {
+      min-width: 60px;
+      margin: 6px;
+      text-transform: capitalize;
+      border-radius: 3px;
+      border: 0;
+      background-color: #083e5a;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 500;
+      padding: 1px 10px;
+      font-family: "Montserrat", sans-serif;
+    }
 
-        .allBtns button {
-            min-width: 60px;
-            margin: 6px;
-            text-transform: capitalize;
-            border-radius: 3px;
-            border: 0;
-            background-color: #083e5a;
-            color: #fff;
-            font-size: 10px;
-            font-weight: 500;
-            padding: 1px 10px;
-            font-family: "Montserrat", sans-serif;
-        }
+    .allBtnsWrapper h3 {
+      /* text-align: center; */
+      /* border-bottom: 2px solid #fc8e32; */
+      color: #7a7797;
+      font-weight: bold;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+      /* margin-top: 1rem; */
+      font-size: 14px;
+      text-align: right;
+      padding-right: 15px;
+    }
 
-        .allBtnsWrapper h3 {
-            /* text-align: center; */
-            /* border-bottom: 2px solid #fc8e32; */
-            color: #7a7797;
-            font-weight: bold;
-            padding-bottom: 0px;
-            margin-bottom: 0px;
-            /* margin-top: 1rem; */
-            font-size: 14px;
-            text-align: right;
-            padding-right: 15px;
-        }
+    .allBtnsWrapper .CategoryActionBtn button {
+      background-color: #fc8019;
+    }
 
-        .allBtnsWrapper .CategoryActionBtn button {
-            background-color: #fc8019;
-        }
+    .allBtnsWrapper .allBtns .activeBtn {
+      background-color: #fc8019;
+    }
 
-        .allBtnsWrapper .allBtns .activeBtn {
-            background-color: #fc8019;
-        }
+    .ProductDetailsWrapper .details .leftBar {
+      width: 10%;
+    }
 
-        .ProductDetailsWrapper .details .leftBar {
-            width: 10%;
-        }
+    .ProductDetailsWrapper .details .purchasesTable {
+      width: 90%;
+      height: 100%;
+    }
 
-        .ProductDetailsWrapper .details .purchasesTable {
-            width: 90%;
-            height: 100%;
-        }
+    .ProductDetailsWrapper {
+      background-color: #fff;
+      box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+      border-radius: 5px;
+      /* padding: 10px; */
+      max-height: 100vh;
+      /* border: 1px solid; */
+      /* margin-top: 0px; */
+      height: 100%;
+      overflow-y: scroll;
+    }
 
-        .ProductDetailsWrapper {
-            background-color: #fff;
-            box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-            border-radius: 5px;
-            /* padding: 10px; */
-            max-height: 100vh;
-            /* border: 1px solid; */
-            /* margin-top: 0px; */
-            height: 100%;
-            overflow-y: scroll;
-        }
+    .ProductDetailsWrapper .details .title {
+      /* padding: 10px 0px; */
+      margin-top: 0x;
+      /* margin-bottom: 0px; */
+      text-align: center;
+    }
 
-        .ProductDetailsWrapper .details .title {
-            /* padding: 10px 0px; */
-            margin-top: 0x;
-            /* margin-bottom: 0px; */
-            text-align: center;
-        }
+    .ProductDetailsWrapper .details .title h3 {
+      display: inline-block;
+      border-bottom: 2px solid #fe9037;
+      color: #083e5a;
 
-        .ProductDetailsWrapper .details .title h3 {
-            display: inline-block;
-            border-bottom: 2px solid #fe9037;
-            color: #083e5a;
-           
-            font-weight: bold;
-            /* padding-bottom: 5px; */
-            font-size: 20px;
-        }
+      font-weight: bold;
+      /* padding-bottom: 5px; */
+      font-size: 20px;
+    }
 
-        .ProductDetailsWrapper table {
-            max-width: 100%;
-            width: 100%;
-            border-radius: 4px;
-            overflow: hidden;
-            border-radius: 5px;
-        }
+    .ProductDetailsWrapper table {
+      max-width: 100%;
+      width: 100%;
+      border-radius: 4px;
+      overflow: hidden;
+      border-radius: 5px;
+    }
 
-        .ProductDetailsWrapper table tr:nth-child(even) {
-            background-color: #fff2e7;
-        }
+    .ProductDetailsWrapper table tr:nth-child(even) {
+      background-color: #fff2e7;
+    }
 
-        .ProductDetailsWrapper table tr:nth-child(even) input,
-        .ProductDetailsWrapper table tr:nth-child(even) select,
-        .ProductDetailsWrapper table tr:nth-child(even) td {
-            color: #000;
-        }
+    .ProductDetailsWrapper table tr:nth-child(even) input,
+    .ProductDetailsWrapper table tr:nth-child(even) select,
+    .ProductDetailsWrapper table tr:nth-child(even) td {
+      color: #000;
+    }
 
-        .ProductDetailsWrapper table tr:nth-child(even) input::-moz-placeholder,
-        .ProductDetailsWrapper table tr:nth-child(even) select::-moz-placeholder,
-        .ProductDetailsWrapper table tr:nth-child(even) td::-moz-placeholder {
-            color: #000;
-        }
+    .ProductDetailsWrapper table tr:nth-child(even) input::-moz-placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) select::-moz-placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) td::-moz-placeholder {
+      color: #000;
+    }
 
-        .ProductDetailsWrapper table tr:nth-child(even) input:-ms-input-placeholder,
-        .ProductDetailsWrapper table tr:nth-child(even) select:-ms-input-placeholder,
-        .ProductDetailsWrapper table tr:nth-child(even) td:-ms-input-placeholder {
-            color: #000;
-        }
+    .ProductDetailsWrapper table tr:nth-child(even) input:-ms-input-placeholder,
+    .ProductDetailsWrapper
+      table
+      tr:nth-child(even)
+      select:-ms-input-placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) td:-ms-input-placeholder {
+      color: #000;
+    }
 
-        .ProductDetailsWrapper table tr:nth-child(even) input::placeholder,
-        .ProductDetailsWrapper table tr:nth-child(even) select::placeholder,
-        .ProductDetailsWrapper table tr:nth-child(even) td::placeholder {
-            color: #000;
-        }
+    .ProductDetailsWrapper table tr:nth-child(even) input::placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) select::placeholder,
+    .ProductDetailsWrapper table tr:nth-child(even) td::placeholder {
+      color: #000;
+    }
 
-        .ProductDetailsWrapper table tr:nth-child(even) select option {
-            background-color: #fff2e7;
-        }
+    .ProductDetailsWrapper table tr:nth-child(even) select option {
+      background-color: #fff2e7;
+    }
 
-        .ProductDetailsWrapper table tr {
-            height: 30px;
-        }
+    .ProductDetailsWrapper table tr {
+      height: 30px;
+    }
 
-        .ProductDetailsWrapper table tr:last-child {
-            border-bottom: 2px solid #ddcece;
-        }
+    .ProductDetailsWrapper table tr:last-child {
+      border-bottom: 2px solid #ddcece;
+    }
 
-        .ProductDetailsWrapper table,
-        .ProductDetailsWrapper th {
-            border: 1px solid #ddcece;
-            border-collapse: collapse;
-            font-size: 14px;
-            text-align: center;
-        }
+    .ProductDetailsWrapper table,
+    .ProductDetailsWrapper th {
+      border: 1px solid #ddcece;
+      border-collapse: collapse;
+      font-size: 14px;
+      text-align: center;
+    }
 
-        .ProductDetailsWrapper thead {
-            background-color: #fe9037;
-            color: #fff;
-        }
+    .ProductDetailsWrapper thead {
+      background-color: #fe9037;
+      color: #fff;
+    }
 
-        .ProductDetailsWrapper thead tr,
-        .ProductDetailsWrapper thead th {
-            border: none;
-            border-right: 1px solid;
-        }
+    .ProductDetailsWrapper thead tr,
+    .ProductDetailsWrapper thead th {
+      border: none;
+      border-right: 1px solid;
+    }
 
-        .ProductDetailsWrapper tbody tr td:first-child {
-            font-weight: 500;
-            text-transform: capitalize;
-        }
+    .ProductDetailsWrapper tbody tr td:first-child {
+      font-weight: 500;
+      text-transform: capitalize;
+    }
 
-        .ProductDetailsWrapper tbody tr input,
-        .ProductDetailsWrapper tbody tr select {
-            width: 100%;
-            height: 37px;
-            border: 0;
-            text-align: center;
-            background-color: transparent;
-            color: #7a7797;
-        }
+    .ProductDetailsWrapper tbody tr input,
+    .ProductDetailsWrapper tbody tr select {
+      width: 100%;
+      height: 37px;
+      border: 0;
+      text-align: center;
+      background-color: transparent;
+      color: #7a7797;
+    }
 
-        .dateListWraper li {
-            height: 30px;
-            border-bottom: 1px solid #083e5a;
-            padding-top: 4px;
-            font-size: 14px;
-            cursor: pointer;
-        }
+    .dateListWraper li {
+      height: 30px;
+      border-bottom: 1px solid #083e5a;
+      padding-top: 4px;
+      font-size: 14px;
+      cursor: pointer;
+    }
 
-        .ProductDetailsWrapper .details .leftBar {
-            width: 10%;
-        }
+    .ProductDetailsWrapper .details .leftBar {
+      width: 10%;
+    }
 
-        .ProductDetailsWrapper .details .purchasesTable {
-            width: 90%;
-            height: 100%;
-        }
+    .ProductDetailsWrapper .details .purchasesTable {
+      width: 90%;
+      height: 100%;
+    }
 
-        .dateListWraper li {
-            height: 30px;
-            border-bottom: 1px solid #083e5a;
-            padding-top: 4px;
-            font-size: 14px;
-            cursor: pointer;
-        }
-        .SubcategoryFood li{
-            height: 30px;
-            /* border-bottom: 1px solid #083e5a; */
-            padding-top: 4px;
-            font-size: 14px;
-            /* border: 1px solid ; */
-            cursor: pointer;
-        }
+    .dateListWraper li {
+      height: 30px;
+      border-bottom: 1px solid #083e5a;
+      padding-top: 4px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .SubcategoryFood li {
+      height: 30px;
+      /* border-bottom: 1px solid #083e5a; */
+      padding-top: 4px;
+      font-size: 14px;
+      /* border: 1px solid ; */
+      cursor: pointer;
+    }
 
-        .SubcategoryFood{
-            background-color: #EEE;
-            text-align: center;
-        }
-        
-      
-        .activeDate {
-            background-color: #083e5a;
-            color: #fff;
-        }
+    .SubcategoryFood {
+      background-color: #eee;
+      text-align: center;
+    }
 
-        .dateListWraper,.categoryListwrapper {
-            background-color: #eee;
-            text-align: center;
-        }
-        .categoryListwrapper li{
-            font-size: 15px;
-            border-bottom: 1px solid #000;
-            height: 30px;
-            cursor: pointer;
-        }
-        .listTitle {
-            font-size: 14px;
-            text-align: center;
-            background-color: #fe9037;
-            padding: 7px 0px;
-            margin-top: 1px;
-            color: #fff;
-            margin-bottom: 0px;
-        }
-         .allBtnsWrapper .allBtns, .allVenderBtnsWrapper .allBtns {
-        background-color: #fff;
-        border: 1px solid #fc8019;
-        box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
-        border-radius: 5px;
-        padding: 15px;
-        }
-        .datePicker input{
-            border: transparent;
-        }
-       .ttl,.datePicker {
-        font-size: 14px;
-       }
-      .categoryheading{
-        color: #7a7797;
-    font-weight: bold;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    font-size: 14px;
-    text-align: right;
-    padding-right: 14px;
-      }
-.bdrLeft{
-    border-left: 1px solid #fff;
-}
+    .activeDate {
+      background-color: #083e5a;
+      color: #fff;
+    }
 
-    </style>
+    .dateListWraper,
+    .categoryListwrapper {
+      background-color: #eee;
+      text-align: center;
+    }
+    .categoryListwrapper li {
+      font-size: 15px;
+      border-bottom: 1px solid #000;
+      height: 30px;
+      cursor: pointer;
+    }
+    .listTitle {
+      font-size: 14px;
+      text-align: center;
+      background-color: #fe9037;
+      padding: 7px 0px;
+      margin-top: 1px;
+      color: #fff;
+      margin-bottom: 0px;
+    }
+    .allBtnsWrapper .allBtns,
+    .allVenderBtnsWrapper .allBtns {
+      background-color: #fff;
+      border: 1px solid #fc8019;
+      box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+      border-radius: 5px;
+      padding: 15px;
+    }
+    .datePicker input {
+      border: transparent;
+    }
+    .ttl,
+    .datePicker {
+      font-size: 14px;
+      margin-right: 12px;
+    }
+    .categoryheading {
+      color: #7a7797;
+      font-weight: bold;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+      font-size: 14px;
+      text-align: right;
+      padding-right: 14px;
+    }
+    .bdrLeft {
+      border-left: 1px solid #fff;
+    }
+  </style>
 
-    <body>
-        <div class="breadcrumb">
-            <ul class="list-unstyled d-flex align-items-center">
-                <li><a href="" class="">Consumption</a></li>
-                <li><i class="fa-solid fa-angles-right"></i></li>
-                <li><a href="" class="ActiveBreadcrumb">Fix Stock Consumption</a></li>
-            </ul>
-            
-
-
+  <body>
+    <div class="breadcrumb">
+      <ul class="list-unstyled d-flex align-items-center">
+        <li><a href="" class=""> Consumption</a></li>
+        <li><i class="fa-solid fa-angles-right"></i></li>
+        <li><a href="" class="ActiveBreadcrumb">Fix Stock Consumption</a></li>
+      </ul>
+    </div>
+    <div class="container-fluid">
+      <div class="allBtns d-flex mt-3">
+        <div class="mx-3">
+          <select name="" id="year" class="activeYear">
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+          </select>
         </div>
-        <div class="container-fluid">
-            <div class="allBtns d-flex mt-3">
-                <div class="mx-3">
-                <select name="" id="year" class="activeYear ">
-                    <option value="2023">2023</option>
-                    <option value="2022">2022</option>
-                    <option value="2021">2021</option>
-                    <option value="2020">2020</option>
-                </select>
-            </div>
-                <div class="monthsBtnWrapper">
-                    <button class="" data-month="1">January</button>
-                    <button data-month="2">February</button>
-                    <button data-month="3">March</button>
-                    <button data-month="4">April</button>
-                    <button data-month="5">May</button>
-                    <button data-month="6">June</button>
-                    <button data-month="7">July</button>
-                    <button data-month="8">August</button>
-                    <button data-month="9">September</button>
-                    <button data-month="10">October</button>
-                    <button data-month="11">November</button>
-                    <button data-month="12">December</button>
-                </div>
-            </div>
-
+        <div class="monthsBtnWrapper">
+          <button class="" data-month="1">January</button>
+          <button data-month="2">February</button>
+          <button data-month="3">March</button>
+          <button data-month="4">April</button>
+          <button data-month="5">May</button>
+          <button data-month="6">June</button>
+          <button data-month="7">July</button>
+          <button data-month="8">August</button>
+          <button data-month="9">September</button>
+          <button data-month="10">October</button>
+          <button data-month="11">November</button>
+          <button data-month="12">December</button>
         </div>
-        <div class="allBtnsWrapper pb-1 mt-1 ">
-            <div class="container-fluid">
-                <div class="allBtns pt-0 pb-1 " >
-                    <!-- <div class="d-flex justify-content-between align-items-center mb-0">
+      </div>
+    </div>
+    <div class="allBtnsWrapper pb-1 mt-1">
+      <div class="container-fluid">
+        <div class="allBtns pt-0 pb-1">
+          <!-- <div class="d-flex justify-content-between align-items-center mb-0">
                         <h3 class="categoryheading mx-1">
                             Ingredient Categories List
                             <span class="px-2 mainColor">|</span>
@@ -385,7 +386,7 @@
                         </h3>
                        
                     </div> -->
-                    <!-- <hr class="mt-0 mb-0" />
+          <!-- <hr class="mt-0 mb-0" />
                     <div class="mt-0"></div>
                     <button class="activeBtn">Dairy Products</button>
                     <button>Drinkable</button>
@@ -401,300 +402,304 @@
                     <button>Continental</button>
                     <button>Indian</button>
                     <button>South Indian</button> -->
-                    <!-- <hr class="mt-0 mb-0"/> -->
-                    <div class="d-flex justify-content-between align-items-center py-0 mx-1">
-                        <h3 class="categoryheading">
-                            Month : <span class="month color2">January</span>
-                        </h3>
-                        <span class="categoryheading"><span class="month">January</span> Total Consumption : ₹
-                            <span class="totalCatgry color2">2200</span></span>
-                    </div>
-                </div>
-             
-            </div>
+          <!-- <hr class="mt-0 mb-0"/> -->
+          <div
+            class="d-flex justify-content-between align-items-center py-0 mx-1"
+          >
+            <h3 class="categoryheading">
+              Month : <span class="month color2">January</span>
+            </h3>
+            <span class="categoryheading"
+              ><span class="month">January</span> Total Consumption : ₹
+              <span class="totalCatgry color2">2200</span></span
+            >
+          </div>
         </div>
+      </div>
+    </div>
 
-        <div class="container-fluid ">
-            <div class="ProductDetailsWrapper mt-0">
-                <div class="details mt-0">
-                    <div class="title  mt-0">
-                        <h3 class="mx-0 my-0 py-0" >Consumption</h3>
-                    </div>
-                    <div class="d-flex mb-0 mt-0 justify-content-between align-items-center">
-                       <div class=" datePicker mr-auto ">Date :
-                        <input type="text" placeholder="18-01-2023" id="datewise">
-                       </div>
-                       <div class="ttl">Total : <span>45678</span></div>
-
-                    </div>
-                    <div class="d-flex">
-                        <aside class="leftBar">
-                            <h3 class="listTitle">Days</h3>
-                            <ul class="list-unstyled mb-0 pl-0 dateListWraper"></ul>
-                        </aside>
-                        <aside class="leftBar bdrLeft">
-                            <h3 class="listTitle">Days</h3>
-                            <ul class="list-unstyled mb-0 pl-0 categoryListwrapper text-center">                                                                 
-                                <li>Dairy Products</li>
-                                <li>Drinkable</li>
-                                <li>Fast Food</li>
-                                <li>My Fav</li>
-                                <li>Mostly Used</li>
-                                <li>Top</li>
-                                <li>Commonly Used</li>
-                                <li>Less Used </li>
-                                <li>Chinese</li>
-                                <li>Italian</li>
-                                <li>Thai</li>
-                                <li>Continental</li>
-                                <li>Indian </li>
-                                <li>South</li>
-                                <li>Indian</li>                               
-                            </ul>
-                        </aside>
-                      
-                        <table class="purchasesTable">
-                            <thead>
-                                <tr>
-                                    <th>category</th>
-                                    <th>S No.</th>
-                                    <th>Name</th>
-                                    <th>Quantity</th>
-                                    <th>Price/Unit</th>
-                                     <th>Total Price</th> 
-                                    <!-- <th>Food Value</th>  -->
-                                </tr>
-                            </thead>
-                          <tbody>
-                            <tr>
-                                <td>coca cola</td>
-                                <td></td>
-                                <td>milk</td>
-                                <td>3</td>
-                                <td>20</td>
-                                <td>60</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td>milk</td>
-                                <td>3</td>
-                                <td>20</td>
-                                <td>60</td>
-                            </tr>  <tr>
-                                <td></td>
-                                <td></td>
-                                <td>milk</td>
-                                <td>3</td>
-                                <td>20</td>
-                                <td>60</td>
-                            </tr>
-                              <tr>
-                                <td></td>
-                                <td></td>
-                                <td>milk</td>
-                                <td>3</td>
-                                <td>20</td>
-                                <td>60</td>
-                            </tr>
-                            <tr>
-                                <td>milk</td>
-                                <td></td>
-                                <td>milk</td>
-                                <td>3</td>
-                                <td>20</td>
-                                <td>60</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td>milk</td>
-                                <td>3</td>
-                                <td>20</td>
-                                <td>60</td>
-                            </tr>  <tr>
-                                <td></td>
-                                <td></td>
-                                <td>milk</td>
-                                <td>3</td>
-                                <td>20</td>
-                                <td>60</td>
-                            </tr>
-                              <tr>
-                                <td></td>
-                                <td></td>
-                                <td>milk</td>
-                                <td>3</td>
-                                <td>20</td>
-                                <td>60</td>
-                            </tr>
-                            <tr>
-                                <td>lassi</td>
-                                <td></td>
-                                <td>milk</td>
-                                <td>3</td>
-                                <td>20</td>
-                                <td>60</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td>milk</td>
-                                <td>3</td>
-                                <td>20</td>
-                                <td>60</td>
-                            </tr>  <tr>
-                                <td></td>
-                                <td></td>
-                                <td>milk</td>
-                                <td>3</td>
-                                <td>20</td>
-                                <td>60</td>
-                            </tr>
-                              <tr>
-                                <td></td>
-                                <td></td>
-                                <td>milk</td>
-                                <td>3</td>
-                                <td>20</td>
-                                <td>60</td>
-                            </tr>
-                            <tr>
-                                <td> My fav</td>
-                                <td></td>
-                                <td>milk</td>
-                                <td>3</td>
-                                <td>20</td>
-                                <td>60</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td>milk</td>
-                                <td>3</td>
-                                <td>20</td>
-                                <td>60</td>
-                            </tr>  <tr>
-                                <td></td>
-                                <td></td>
-                                <td>milk</td>
-                                <td>3</td>
-                                <td>20</td>
-                                <td>60</td>
-                            </tr>
-                              <tr>
-                                <td></td>
-                                <td></td>
-                                <td>milk</td>
-                                <td>3</td>
-                                <td>20</td>
-                                <td>60</td>
-                              </tr>                            
-                          </tbody>
-                         
-                        </table>
-                    </div>
-                </div>
+    <div class="container-fluid">
+      <div class="ProductDetailsWrapper mt-0">
+        <div class="details mt-0">
+          <div class="title mt-0">
+            <h3 class="mx-0 my-0 py-0">Fix Stock Consumption</h3>
+          </div>
+          <div
+            class="d-flex mb-0 mt-0 justify-content-between align-items-center"
+          >
+            <div class="datePicker mr-auto">
+              Date :
+              <input type="text" placeholder="18-01-2023" id="datewise" />
             </div>
+            <div class="ttl">Total : <span>45678</span></div>
+          </div>
+          <div class="d-flex">
+            <aside class="leftBar">
+              <h3 class="listTitle">Days</h3>
+              <ul class="list-unstyled mb-0 pl-0 dateListWraper"></ul>
+            </aside>
+            <aside class="leftBar bdrLeft">
+              <h3 class="listTitle">Days</h3>
+              <ul
+                class="list-unstyled mb-0 pl-0 categoryListwrapper text-center"
+              >
+                <li>Dairy Products</li>
+                <li>Drinkable</li>
+                <li>Fast Food</li>
+                <li>My Fav</li>
+                <li>Mostly Used</li>
+                <li>Top</li>
+                <li>Commonly Used</li>
+                <li>Less Used</li>
+                <li>Chinese</li>
+                <li>Italian</li>
+                <li>Thai</li>
+                <li>Continental</li>
+                <li>Indian</li>
+                <li>South</li>
+                <li>Indian</li>
+              </ul>
+            </aside>
+
+            <table class="purchasesTable">
+              <thead>
+                <tr>
+                  <th>category</th>
+                  <th>S No.</th>
+                  <th>Name</th>
+                  <th>Quantity</th>
+                  <th>Price/Unit</th>
+                  <th>Total Price</th>
+                  <!-- <th>Food Value</th>  -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>coca cola</td>
+                  <td></td>
+                  <td>milk</td>
+                  <td>3</td>
+                  <td>20</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>milk</td>
+                  <td>3</td>
+                  <td>20</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>milk</td>
+                  <td>3</td>
+                  <td>20</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>milk</td>
+                  <td>3</td>
+                  <td>20</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <td>milk</td>
+                  <td></td>
+                  <td>milk</td>
+                  <td>3</td>
+                  <td>20</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>milk</td>
+                  <td>3</td>
+                  <td>20</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>milk</td>
+                  <td>3</td>
+                  <td>20</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>milk</td>
+                  <td>3</td>
+                  <td>20</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <td>lassi</td>
+                  <td></td>
+                  <td>milk</td>
+                  <td>3</td>
+                  <td>20</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>milk</td>
+                  <td>3</td>
+                  <td>20</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>milk</td>
+                  <td>3</td>
+                  <td>20</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>milk</td>
+                  <td>3</td>
+                  <td>20</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <td>My fav</td>
+                  <td></td>
+                  <td>milk</td>
+                  <td>3</td>
+                  <td>20</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>milk</td>
+                  <td>3</td>
+                  <td>20</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>milk</td>
+                  <td>3</td>
+                  <td>20</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>milk</td>
+                  <td>3</td>
+                  <td>20</td>
+                  <td>60</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+      </div>
+    </div>
 
-
-
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-        <script>
-            $("head").append(
-                '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
-            );
-            $("head").append(
-                ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $("head").append(
+        '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
+      );
+      $("head").append(
+        ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
     />'
+      );
+      $("head").append(
+        '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
+      );
+    </script>
+    <script>
+      GetThisMonth();
+      getthisMonthDates();
+      function GetThisMonth() {
+        let TodaysDate = new Date();
+        let thisDay = TodaysDate.getDate();
+        let thisMonth = TodaysDate.getMonth();
+        $(".monthsBtnWrapper button").removeClass("activeMonth");
+        $(`.monthsBtnWrapper button:nth-child(${thisMonth + 1})`).addClass(
+          "activeMonth"
+        );
+      }
+
+      function getthisMonthDates() {
+        let year = $("#year option:selected").val();
+        let month = $(".activeMonth").data("month");
+        let TodaysDate = new Date();
+        let thisDay = TodaysDate.getDate();
+        let thisMonth = TodaysDate.getMonth();
+        thisMonth = (thisMonth < 10 ? "0" : "") + (thisMonth + 1);
+        let thisYear = TodaysDate.getFullYear();
+        TodaysDate = thisMonth + "/" + thisYear;
+        let totalDays = 0;
+        if (+year - +thisYear == 0 && +month - +thisMonth == 0) {
+          totalDays = +thisDay;
+          $(".dateListWraper").html("");
+          for (let i = 0; i < totalDays - 1; i++) {
+            $(".dateListWraper").append(
+              `<li>${
+                (i < 9 ? "0" : " ") + (i + 1)
+              } / ${thisMonth} / ${thisYear}</li>`
             );
-            $("head").append(
-                '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
-            );
-        </script>
-        <script>
-            GetThisMonth();
-            getthisMonthDates();
-            function GetThisMonth() {
-                let TodaysDate = new Date();
-                let thisDay = TodaysDate.getDate();
-                let thisMonth = TodaysDate.getMonth();
-                $(".monthsBtnWrapper button").removeClass("activeMonth");
-                $(`.monthsBtnWrapper button:nth-child(${thisMonth + 1})`).addClass(
-                    "activeMonth"
-                );
-            }
+          }
+        } else {
+          getAllMonthDetails(month, year);
+        }
+      }
 
-            function getthisMonthDates() {
-                let year = $("#year option:selected").val();
-                let month = $(".activeMonth").data("month");
-                let TodaysDate = new Date();
-                let thisDay = TodaysDate.getDate();
-                let thisMonth = TodaysDate.getMonth();
-                thisMonth = (thisMonth < 10 ? "0" : "") + (thisMonth + 1);
-                let thisYear = TodaysDate.getFullYear();
-                TodaysDate = thisMonth + "/" + thisYear;
-                let totalDays = 0;
-                if (+year - +thisYear == 0 && +month - +thisMonth == 0) {
-                    totalDays = +thisDay;
-                    $(".dateListWraper").html("");
-                    for (let i = 0; i < totalDays - 1; i++) {
-                        $(".dateListWraper").append(
-                            `<li>${(i < 9 ? "0" : " ") + (i + 1)
-                            } / ${thisMonth} / ${thisYear}</li>`
-                        );
-                    }
-                } else {
-                    getAllMonthDetails(month, year);
-                }
-            }
+      function getAllMonthDetails(month, year) {
+        var numOfDays = new Date(year, month, 0).getDate();
+        $(".dateListWraper").html("");
+        month = (month < 10 ? "0" : "") + month;
 
-            function getAllMonthDetails(month, year) {
-                var numOfDays = new Date(year, month, 0).getDate();
-                $(".dateListWraper").html("");
-                month = (month < 10 ? "0" : "") + month;
+        for (var i = 0; i <= numOfDays - 1; i++) {
+          $(".dateListWraper").append(
+            `<li>${(i < 9 ? "0" : " ") + (i + 1)} / ${month} / ${year}</li>`
+          );
+        }
+      }
 
-                for (var i = 0; i <= numOfDays - 1; i++) {
-                    $(".dateListWraper").append(
-                        `<li>${(i < 9 ? "0" : " ") + (i + 1)} / ${month} / ${year}</li>`
-                    );
-                }
-            }
+      $(".monthsBtnWrapper button").click(function () {
+        $(".monthsBtnWrapper button").removeClass("activeMonth");
+        $(this).addClass("activeMonth");
+        $(".month").text($(this).text());
 
-            $(".monthsBtnWrapper button").click(function () {
-                $(".monthsBtnWrapper button").removeClass("activeMonth");
-                $(this).addClass("activeMonth");
-                $(".month").text($(this).text());
+        let year = $("#year option:selected").val();
+        let month = $(this).data("month");
+        getthisMonthDates();
+      });
+      $(".allBtns button").click(function () {
+        $(".allBtns button").removeClass("activeBtn");
+        $(this).addClass("activeBtn");
+      });
+      $(".addNewCategoryBtn").click(function () {
+        $(".addCategoryModelWrapper").css({
+          display: "flex",
+        });
+        $(".addCategoryModelWrapper .addCategoryModel").animate({ top: 50 });
+      });
 
-                let year = $("#year option:selected").val();
-                let month = $(this).data("month");
-                getthisMonthDates();
-            });
-            $(".allBtns button").click(function () {
-                $(".allBtns button").removeClass("activeBtn");
-                $(this).addClass("activeBtn");
+      $(".checf").click(function () {
+        $(".checf").removeClass("activeBtn ");
+        $(this).addClass("divchangbackground ");
 
-
-            });
-            $(".addNewCategoryBtn").click(function () {
-                $(".addCategoryModelWrapper").css({
-                    display: "flex",
-                });
-                $(".addCategoryModelWrapper .addCategoryModel").animate({ top: 50 });
-            });
-
-            $(".checf").click(function () {
-                $(".checf").removeClass("activeBtn ");
-                $(this).addClass("divchangbackground ");
-
-                $(".ProductDetailsWrapper .details .title h3").text(
-                    $(this).children(".chefbuuu").children("button").text()
-                );
-            });
- 
-        </script>
-    </body>
-
-    </html>
+        $(".ProductDetailsWrapper .details .title h3").text(
+          $(this).children(".chefbuuu").children("button").text()
+        );
+      });
+    </script>
+  </body>
+</html>

@@ -1,251 +1,284 @@
-<style type="text/css">
-    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
-    * {
-      font-family: "Poppins", sans-serif;
-    }
-    .breadcrumb {
-      margin-bottom: 0rem !important;
-      background-color: #ef7d0b !important;
-      position: relative;
-      /* color: #fff; */
-    }
-    .breadcrumb .addVender {
-      text-transform: capitalize;
-      border-radius: 3px;
-      border: 0px;
-      background-color: #fe9037;
-      color: #fff;
-      padding: 2px 30px;
-      font-weight: bold;
-    }
-    .breadcrumb ul {
-      margin-bottom: 0rem;
-    }
-    .breadcrumb ul li {
-      color: #eee;
-      font-weight: bold;
-      margin: 10px 1px;
-    }
-    .breadcrumb ul li a {
-      color: inherit;
-      padding: 10px;
-      text-decoration: none;
-    }
-    .breadcrumb ul li i {
-      font-size: 12px;
-    }
-    .breadcrumb ul li .ActiveBreadcrumb {
-      color: #fff;
-    }
-  
-    main {
-      background-color: #eee;
-      min-height: 100vh;
-    }
-  
-    .allBtnsWrapper .allBtns {
-      background-color: #fff;
-      box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-      /* text-align: center; */
-      padding: 15px;
-      border-radius: 5px;
-    }
-    .allBtnsWrapper .allBtns button {
-      min-width: 50px;
-      margin: 2px 10px;
-      text-transform: capitalize;
-      border-radius: 3px;
-      border: 0;
-      background-color: #083e5a;
-      color: #fff;
-      font-size: 10px;
-      font-weight: 600;
-      padding: 2px 8px;
-    }
-  
-    .allBtnsWrapper .allBtns .activeBtn {
-      background-color: #fe9037;
-    }
-  
-    .ProductDetailsWrapper {
-      background-color: #fff;
-      box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-      border-radius: 5px;
-      padding: 10px;
-      max-height: 100vh;
-      height: 100%;
-      overflow-y: scroll;
-    }
-    .ProductDetailsWrapper .details .title {
-      padding: 10px 0px;
-      text-align: center;
-    }
-    .ProductDetailsWrapper .details .title h3 {
-      display: inline-block;
-      border-bottom: 2px solid #fe9037;
-      color: #083e5a;
-      font-weight: bold;
-      padding-bottom: 5px;
-      font-size: 20px;
-    }
-    .ProductDetailsWrapper table {
-      max-width: 100%;
-      width: 100%;
-      border-radius: 4px;
-      overflow: hidden;
-      border-radius: 5px;
-    }
-    .ProductDetailsWrapper table tr:nth-child(even) {
-      background-color: #fff2e7;
-    }
-    .ProductDetailsWrapper table tr:nth-child(even) input,
-    .ProductDetailsWrapper table tr:nth-child(even) select,
-    .ProductDetailsWrapper table tr:nth-child(even) td {
-      color: #000;
-    }
-    .ProductDetailsWrapper table tr:nth-child(even) input::-moz-placeholder,
-    .ProductDetailsWrapper table tr:nth-child(even) select::-moz-placeholder,
-    .ProductDetailsWrapper table tr:nth-child(even) td::-moz-placeholder {
-      color: #000;
-    }
-    .ProductDetailsWrapper table tr:nth-child(even) input:-ms-input-placeholder,
-    .ProductDetailsWrapper table tr:nth-child(even) select:-ms-input-placeholder,
-    .ProductDetailsWrapper table tr:nth-child(even) td:-ms-input-placeholder {
-      color: #000;
-    }
-    .ProductDetailsWrapper table tr:nth-child(even) input::placeholder,
-    .ProductDetailsWrapper table tr:nth-child(even) select::placeholder,
-    .ProductDetailsWrapper table tr:nth-child(even) td::placeholder {
-      color: #000;
-    }
-    .ProductDetailsWrapper table tr:nth-child(even) select option {
-      background-color: #fff2e7;
-    }
-    .ProductDetailsWrapper table tr {
-      height: 30px;
-    }
-    .ProductDetailsWrapper table tr:last-child {
-      border-bottom: 2px solid #ddcece;
-    }
-    .ProductDetailsWrapper table,
-    .ProductDetailsWrapper th {
-      border: 1px solid #ddcece;
-      border-collapse: collapse;
-      font-size: 14px;
-      text-align: center;
-    }
-    .ProductDetailsWrapper thead {
-      background-color: #fe9037;
-      color: #fff;
-    }
-    .ProductDetailsWrapper thead tr,
-    .ProductDetailsWrapper thead th {
-      border: none;
-    }
-    .ProductDetailsWrapper tbody tr td:first-child {
-      font-weight: 500;
-      text-transform: capitalize;
-    }
-    .ProductDetailsWrapper tbody tr input,
-    .ProductDetailsWrapper tbody tr select {
-      width: 100%;
-      height: 37px;
-      border: 0;
-      text-align: center;
-      background-color: transparent;
-      color: #7a7797;
-    }
-  
-    .addVenderWrapper {
-      background-color: #fff;
-    }
-    .addVenderWrapper .addVenderTitle {
-      text-align: center;
-      padding: 10px 0px;
-    }
-    .addVenderWrapper .addVenderTitle h2 {
-      display: inline-block;
-      border-bottom: 2px solid #3abb69;
-      color: #7a7797;
-      font-weight: bold;
-      padding-bottom: 5px;
-      font-size: 20px;
-    }
-    .addVenderWrapper .addVenderForm .formGroup {
-      margin-bottom: 20px;
-    }
-    .addVenderWrapper .addVenderForm .formGroup input {
-      border: 2px solid #eee;
-      width: 100%;
-      border-radius: 3px;
-    }
-    .butn-addvender {
-      position: absolute;
-      right: 2%;
-      top: 50%;
-      transform: translate(0%, -50%);
-      text-transform: capitalize;
-    }
-    .activeTopBarBtn {
-      background-color: #083e5a !important;
-      color: #fff !important;
-    }
-    main .filters label {
-      margin-right: 15px;
-      color: #083e5a;
-      font-size: 12px;
-    }
-    main .filters select {
-      font-size: 12px;
-      border: 0;
-      border-radius: 5px;
-      padding-left: 15px;
-      color: #7a7797;
-      width: 120px;
-      margin-left: 0px;
-      height: 18px;
-    }
-    main .filters input::placeholder {
-      font-size: 14px;
-      color: #7a7797;
-    }
-    main .filters input {
-      font-size: 12px;
-      border: 0;
-      border-radius: 5px;
-      padding-left: 15px;
-      height: 18px;
-      color: #7a7797;
-    }
-    .categoryheading {
-      color: #7a7797;
-      font-weight: bold;
-      padding-bottom: 0px;
-      margin-bottom: 0px;
-      font-size: 14px;
-      text-align: right;
-      padding-right: 15px;
-    }
-    .allBtnsWrapper hr {
-      margin: 0px;
-    }
-    .color2 {
-      color: #083e5a;
-    }
-    .allBtns button:first-child {
-      margin-left: 0px;
-    }
-  
-    /*# sourceMappingURL=test.css.map */
-  </style>
+
   <!DOCTYPE html>
   <html lang="en">
     <head>
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Show  Raw Material Purchases</title>
+      <title>Show Fix Stock Purchases</title>
       <!-- <link rel="stylesheet" href="./test.css" /> -->
+      <style type="text/css">
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+        * {
+          font-family: "Poppins", sans-serif;
+        }
+        .breadcrumb {
+          margin-bottom: 0rem !important;
+          background-color: #ef7d0b !important;
+          position: relative;
+          /* color: #fff; */
+        }
+        .breadcrumb .addVender {
+          text-transform: capitalize;
+          border-radius: 3px;
+          border: 0px;
+          background-color: #fe9037;
+          color: #fff;
+          padding: 2px 30px;
+          font-weight: bold;
+        }
+        .breadcrumb ul {
+          margin-bottom: 0rem;
+        }
+        .breadcrumb ul li {
+          color: #eee;
+          font-weight: bold;
+          margin: 10px 1px;
+        }
+        .breadcrumb ul li a {
+          color: inherit;
+          padding: 10px;
+          text-decoration: none;
+        }
+        .breadcrumb ul li i {
+          font-size: 12px;
+        }
+        .breadcrumb ul li .ActiveBreadcrumb {
+          color: #fff;
+        }
+      
+        main {
+          background-color: #eee;
+          min-height: 100vh;
+        }
+      
+        .allBtnsWrapper .allBtns {
+          background-color: #fff;
+          box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+          /* text-align: center; */
+          padding: 15px;
+          border-radius: 5px;
+        }
+        .allBtnsWrapper .allBtns button {
+          min-width: 50px;
+          margin: 2px 10px;
+          text-transform: capitalize;
+          border-radius: 3px;
+          border: 0;
+          background-color: #083e5a;
+          color: #fff;
+          font-size: 10px;
+          font-weight: 600;
+          padding: 2px 8px;
+        }
+      
+        .allBtnsWrapper .allBtns .activeBtn {
+          background-color: #fe9037;
+        }
+      
+        .ProductDetailsWrapper {
+          background-color: #fff;
+          box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+          border-radius: 5px;
+          padding: 10px;
+          max-height: 100vh;
+          height: 100%;
+          overflow-y: scroll;
+        }
+        .ProductDetailsWrapper .details .title {
+          padding: 10px 0px;
+          text-align: center;
+        }
+        .ProductDetailsWrapper .details .title h3 {
+          display: inline-block;
+          border-bottom: 2px solid #fe9037;
+          color: #083e5a;
+          font-weight: bold;
+          padding-bottom: 5px;
+          font-size: 20px;
+        }
+        .ProductDetailsWrapper table {
+          max-width: 100%;
+          width: 100%;
+          border-radius: 4px;
+          overflow: hidden;
+          border-radius: 5px;
+        }
+        .ProductDetailsWrapper table tr:nth-child(even) {
+          background-color: #fff2e7;
+        }
+        .ProductDetailsWrapper table tr:nth-child(even) input,
+        .ProductDetailsWrapper table tr:nth-child(even) select,
+        .ProductDetailsWrapper table tr:nth-child(even) td {
+          color: #000;
+        }
+        .ProductDetailsWrapper table tr:nth-child(even) input::-moz-placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) select::-moz-placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) td::-moz-placeholder {
+          color: #000;
+        }
+        .ProductDetailsWrapper table tr:nth-child(even) input:-ms-input-placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) select:-ms-input-placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) td:-ms-input-placeholder {
+          color: #000;
+        }
+        .ProductDetailsWrapper table tr:nth-child(even) input::placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) select::placeholder,
+        .ProductDetailsWrapper table tr:nth-child(even) td::placeholder {
+          color: #000;
+        }
+        .ProductDetailsWrapper table tr:nth-child(even) select option {
+          background-color: #fff2e7;
+        }
+        .ProductDetailsWrapper table tr {
+          height: 30px;
+        }
+        .ProductDetailsWrapper table tr:last-child {
+          border-bottom: 2px solid #ddcece;
+        }
+        .ProductDetailsWrapper table,
+        .ProductDetailsWrapper th {
+          border: 1px solid #ddcece;
+          border-collapse: collapse;
+          font-size: 14px;
+          text-align: center;
+        }
+        .ProductDetailsWrapper thead {
+          background-color: #fe9037;
+          color: #fff;
+        }
+        .ProductDetailsWrapper thead tr,
+        .ProductDetailsWrapper thead th {
+          border: none;
+        }
+        .ProductDetailsWrapper tbody tr td:first-child {
+          font-weight: 500;
+          text-transform: capitalize;
+        }
+        .ProductDetailsWrapper tbody tr input,
+        .ProductDetailsWrapper tbody tr select {
+          width: 100%;
+          height: 37px;
+          border: 0;
+          text-align: center;
+          background-color: transparent;
+          color: #7a7797;
+        }
+      
+        .addVenderWrapper {
+          background-color: #fff;
+        }
+        .addVenderWrapper .addVenderTitle {
+          text-align: center;
+          padding: 10px 0px;
+        }
+        .addVenderWrapper .addVenderTitle h2 {
+          display: inline-block;
+          border-bottom: 2px solid #3abb69;
+          color: #7a7797;
+          font-weight: bold;
+          padding-bottom: 5px;
+          font-size: 20px;
+        }
+        .addVenderWrapper .addVenderForm .formGroup {
+          margin-bottom: 20px;
+        }
+        .addVenderWrapper .addVenderForm .formGroup input {
+          border: 2px solid #eee;
+          width: 100%;
+          border-radius: 3px;
+        }
+        .butn-addvender {
+          position: absolute;
+          right: 2%;
+          top: 50%;
+          transform: translate(0%, -50%);
+          text-transform: capitalize;
+        }
+        .activeTopBarBtn {
+          background-color: #083e5a !important;
+          color: #fff !important;
+        }
+        main .filters label {
+          margin-right: 15px;
+          color: #083e5a;
+          font-size: 12px;
+        }
+        main .filters select {
+          font-size: 12px;
+          border: 0;
+          border-radius: 5px;
+          padding-left: 15px;
+          color: #7a7797;
+          width: 120px;
+          margin-left: 0px;
+          height: 18px;
+        }
+        main .filters input::placeholder {
+          font-size: 14px;
+          color: #7a7797;
+        }
+        main .filters input {
+          font-size: 12px;
+          border: 0;
+          border-radius: 5px;
+          padding-left: 15px;
+          height: 18px;
+          color: #7a7797;
+        }
+        .categoryheading {
+          color: #7a7797;
+          font-weight: bold;
+          padding-bottom: 0px;
+          margin-bottom: 0px;
+          font-size: 14px;
+          text-align: right;
+          padding-right: 15px;
+        }
+        .allBtnsWrapper hr {
+          margin: 0px;
+        }
+        .color2 {
+          color: #083e5a;
+        }
+        .allBtns button:first-child {
+          margin-left: 0px;
+        }
+      
+        /*# sourceMappingURL=test.css.map */
+      </style>
+       <style>
+        .ProductDetailsWrapper .details .leftBar {
+          width: 10%;
+        }
+        .ProductDetailsWrapper .details .purchasesTable {
+          width: 90%;
+          height: 100%;
+        }
+        .dateListWraper li{
+          height: 30px;
+          border-bottom: 1px solid #083e5a;
+          padding-top: 4px;
+          font-size: 14px;
+          cursor: pointer;
+        }
+        .activeDate{
+          background-color: #083e5a;
+          color: #fff;
+        }
+        .dateListWraper {
+          background-color: #eee;
+          text-align: center;
+        }
+        .listTitle{
+          font-size: 14px;
+          text-align: center;
+          background-color: #fe9037;
+          padding: 7px 0px;
+          margin-top: 1px;
+          margin-bottom: 0px;
+        }
+      </style>
     </head>
   
     <div class="breadcrumb">
@@ -255,8 +288,8 @@
         <li><a href="" class="ActiveBreadcrumb">Show fixed stock Purchases</a></li>
       </ul>
       <div class="butn-addvender">
-        <button class="addVender activeTopBarBtn">Raw Material</button>
-        <button class="addVender">Fix Stock</button>
+        <button class="addVender ">Raw Material</button>
+        <button class="addVender activeTopBarBtn">Fix Stock</button>
         <!-- <button class="addVender">Monthly</button> -->
       </div>
     </div>
@@ -328,43 +361,12 @@
           </div>
         </div>
       </div>
-      <style>
-        .ProductDetailsWrapper .details .leftBar {
-          width: 10%;
-        }
-        .ProductDetailsWrapper .details .purchasesTable {
-          width: 90%;
-          height: 100%;
-        }
-        .dateListWraper li{
-          height: 30px;
-          border-bottom: 1px solid #083e5a;
-          padding-top: 4px;
-          font-size: 14px;
-          cursor: pointer;
-        }
-        .activeDate{
-          background-color: #083e5a;
-          color: #fff;
-        }
-        .dateListWraper {
-          background-color: #eee;
-          text-align: center;
-        }
-        .listTitle{
-          font-size: 14px;
-          text-align: center;
-          background-color: #fe9037;
-          padding: 7px 0px;
-          margin-top: 1px;
-          margin-bottom: 0px;
-        }
-      </style>
+     
       <div class="container-fluid">
         <div class="ProductDetailsWrapper">
           <div class="details">
             <div class="title">
-              <h3>Raw Material Purchases</h3>
+              <h3>Fix Stock Purchases</h3>
             </div>
          
             <div class="d-flex justify-content-between align-items-center py-0">
@@ -457,10 +459,10 @@
         );
       </script>
       <script>
-        $(".addVender").click(function () {
-          $(".addVender").removeClass("activeTopBarBtn");
-          $(this).addClass("activeTopBarBtn");
-        });
+        // $(".addVender").click(function () {
+        //   $(".addVender").removeClass("activeTopBarBtn");
+        //   $(this).addClass("activeTopBarBtn");
+        // });
   
         GetThisMonth();
         getthisMonthDates();
