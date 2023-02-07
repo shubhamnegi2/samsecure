@@ -236,7 +236,9 @@
     .mamebershipformtotalamount {
       /* display: flex; */
       gap: 2px;
-      width: 105%
+      width: 100%;
+      text-align: right;
+      
     }
 
     .Membershipformrightside {
@@ -725,8 +727,8 @@
                               </div>
                             </div>
                             <div class="col-md-12 mt-2">
-                              <div style=" gap: 2px;">
-                                <label style="flex: none;">Grand Total</label>
+                              <div class="text-right">
+                                <label >Grand Total</label>
                                 <input type="text" placeholder="₹" onkeypress="return /[0-9]/i.test(event.key)">
                               </div>
                             </div>
