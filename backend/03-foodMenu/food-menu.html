@@ -988,6 +988,51 @@
         font-weight: 600;
         padding: 5px 8px;
       }
+      .vegeterianIcon span {  
+        width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: flex;
+    background-color: #3abb69;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+      }
+      .EggeterianIcon span{
+        width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: flex;
+    background-color: #f3e418;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+      }
+      .NonvegeterianIcon span{
+        width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: flex;
+    background-color: #531a0c;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+      }
+      .vegeterianIcon{
+        padding: 2px;
+        border: 1px solid #000;
+        margin-right:20px;
+      }
+      .NonvegeterianIcon{
+        padding: 2px;
+        border: 1px solid #000;
+        margin-right:20px;
+      }
+      .EggeterianIcon{
+        padding: 2px;
+        border: 1px solid #000;
+        margin-right:20px;
+      }
     </style>
   </head>
   <body>
@@ -1335,16 +1380,25 @@
                       </table>
                     </tbody>
                   </div>
-                  <div class="bottomsec d-flex justify-content-start">
+                  <div class="bottomsec d-flex justify-content-between align-items-center">
+                  <div>
                     <button class="btn btn-primary btn-sm ml-0">view</button>
                     <button class="btn btn-primary btn-sm">Edit</button>
                     <button class="btn btn-primary btn-sm deleteParticularFoodMenuCard">Delete</button>
-                    <i class="fa-regular fa-heart addTofavBtn"></i
-                    ><i class="fa-solid fa-heart removeToMyfav"></i>
+                  </div>
+                    
+                    
+                   <div>
+                    <div class="vegeterianIcon ">
+                      <span ></span>
+                    </div>
+                    <i class="fa-regular fa-heart addTofavBtn"></i>
+                    <i class="fa-solid fa-heart removeToMyfav"></i>
                     <input
                       class="form-check-input foodMenuCheckbox"
                       type="checkbox"
                     />
+                  </div>
                   </div>
                 </div>
               </div>
@@ -1416,19 +1470,26 @@
                       </table>
                     </tbody>
                   </div>
-                  <div
-                    class="bottomsec d-flex justify-nonvegColorcontent-start"
-                  >
-                    <button class="btn btn-primary btn-sm ml-0">view</button>
-                    <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm deleteParticularFoodMenuCard">Delete</button>
-                    <i class="fa-regular fa-heart addTofavBtn"></i
-                    ><i class="fa-solid fa-heart removeToMyfav"></i>
-                    <input
-                      class="form-check-input foodMenuCheckbox"
-                      type="checkbox"
-                    />
-                  </div>
+                  <div class="bottomsec d-flex justify-content-between align-items-center">
+                    <div>
+                      <button class="btn btn-primary btn-sm ml-0">view</button>
+                      <button class="btn btn-primary btn-sm">Edit</button>
+                      <button class="btn btn-primary btn-sm deleteParticularFoodMenuCard">Delete</button>
+                    </div>
+                      
+                      
+                     <div>
+                      <div class="NonvegeterianIcon ">
+                        <span ></span>
+                      </div>
+                      <i class="fa-regular fa-heart addTofavBtn"></i>
+                      <i class="fa-solid fa-heart removeToMyfav"></i>
+                      <input
+                        class="form-check-input foodMenuCheckbox"
+                        type="checkbox"
+                      />
+                    </div>
+                    </div>
                 </div>
               </div>
             </div>
@@ -1580,17 +1641,26 @@
                       </table>
                     </tbody>
                   </div>
-                  <div class="bottomsec d-flex justify-content-start">
-                    <button class="btn btn-primary btn-sm ml-0">view</button>
-                    <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-primary btn-sm deleteParticularFoodMenuCard">Delete</button>
-                    <i class="fa-regular fa-heart addTofavBtn"></i
-                    ><i class="fa-solid fa-heart removeToMyfav"></i>
-                    <input
-                      class="form-check-input foodMenuCheckbox"
-                      type="checkbox"
-                    />
-                  </div>
+                  <div class="bottomsec d-flex justify-content-between align-items-center">
+                    <div>
+                      <button class="btn btn-primary btn-sm ml-0">view</button>
+                      <button class="btn btn-primary btn-sm">Edit</button>
+                      <button class="btn btn-primary btn-sm deleteParticularFoodMenuCard">Delete</button>
+                    </div>
+                      
+                      
+                     <div>
+                      <div class="EggeterianIcon ">
+                        <span ></span>
+                      </div>
+                      <i class="fa-regular fa-heart addTofavBtn"></i>
+                      <i class="fa-solid fa-heart removeToMyfav"></i>
+                      <input
+                        class="form-check-input foodMenuCheckbox"
+                        type="checkbox"
+                      />
+                    </div>
+                    </div>
                 </div>
               </div>
             </div>
