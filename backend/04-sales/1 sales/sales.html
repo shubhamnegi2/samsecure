@@ -276,7 +276,34 @@
         background-color: #083e5a !important;
         color: #fff !important;
       }
-
+      .topBarFilters {
+        position: absolute;
+        width: 98%;
+        left: 50%;
+        transform: translate(-50%);
+        top: 3px;
+      }
+      .topBarFilters span {
+        margin-right: 5px;
+        color: #083e5a;
+        font-size: 12px;
+        text-transform: capitalize;
+      }
+      .topBarFilters select,
+      .topBarFilters input {
+        font-size: 12px;
+        border: 0;
+        border-radius: 2px;
+        padding-left: 15px;
+        color: #7a7797;
+        width: 120px;
+        margin-left: 0px;
+        height: 18px;
+        border: 1px solid #3abb69;
+      }
+      .poRelative {
+        position: relative;
+      }
       /*# sourceMappingURL=test.css.map */
     </style>
   </head>
@@ -290,13 +317,26 @@
       <div class="butn-addvender">
         <button class="addVender activeTopBarBtn">Sales</button>
         <button class="addVender">Pending Payments</button>
-        <!-- <button class="addVender">Monthly</button> -->
       </div>
     </div>
     <main>
       <div class="allBtnsWrapper pt-3 pb-3">
         <div class="container-fluid">
-          <div class="allBtns pt-3 pb-3">
+          <div class="allBtns pt-3 pb-3 poRelative">
+            <div class="d-flex justify-content-between topBarFilters">
+              <div>
+                <span>date</span>
+                <input type="text" id="dateWise" />
+              </div>
+              <div>
+                <select name="" id="">
+                  <option disabled selected>Select Waiter</option>
+                  <option value="">Preeti</option>
+                  <option value="">Vishu</option>
+                  <option value="">Shubham</option>
+                </select>
+              </div>
+            </div>
             <div class="row">
               <div class="col-lg-6">
                 <h2 class="mt-2 mb-3">Order Details</h2>
