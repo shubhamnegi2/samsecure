@@ -1,935 +1,945 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <title>Add membershipform</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-  <title>Add membershipform</title>
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+      * {
+        font-family: "Poppins", sans-serif;
+      }
 
-    * {
-      font-family: "Poppins", sans-serif;
-    }
+      #addVenderWrapper {
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        border-radius: 5px;
+        padding: 30px 0px;
+      }
 
-    #addVenderWrapper {
+      #addVenderWrapper .addVenderTitle {
+        text-align: center;
+        padding-bottom: 10px;
+      }
 
-      background-color: #fff;
-      box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-      border-radius: 5px;
-      padding: 30px 0px;
-    }
+      #addVenderWrapper .addVenderTitle h2 {
+        display: inline-block;
+        border-bottom: 2px solid #ef7d0b;
+        color: #083e5a;
+        font-weight: bold;
+        padding-bottom: 5px;
+        font-size: 20px;
+      }
 
-    #addVenderWrapper .addVenderTitle {
-      text-align: center;
-      padding-bottom: 10px;
-    }
+      #addVenderWrapper .addVenderForm .formGroup {
+        margin-bottom: 20px;
+      }
 
-    #addVenderWrapper .addVenderTitle h2 {
-      display: inline-block;
-      border-bottom: 2px solid #ef7d0b;
-      color: #083e5a;
-      font-weight: bold;
-      padding-bottom: 5px;
-      font-size: 20px;
-    }
+      #addVenderWrapper .addVenderForm .formGroup label {
+        color: #083e5a;
 
-    #addVenderWrapper .addVenderForm .formGroup {
-      margin-bottom: 20px;
-    }
+        font-size: 14px;
+        font-weight: 500;
+        padding-left: 5px;
+        margin-bottom: 0px;
+      }
 
-    #addVenderWrapper .addVenderForm .formGroup label {
+      #addVenderWrapper .addVenderForm .formGroup input {
+        border: 2px solid #eee;
+        width: 100%;
+        border-radius: 4px;
+        padding-left: 15px;
+        height: 35px;
+        font-size: 12px;
+      }
 
-      color: #083e5a;
+      #addVenderWrapper .addVenderForm .formGroup select {
+        border: 2px solid #eee;
+        width: 100%;
+        border-radius: 4px;
+        padding-left: 15px;
+        height: 35px;
+        font-size: 12px;
+      }
 
-      font-size: 14px;
-      font-weight: 500;
-      padding-left: 5px;
-      margin-bottom: 0px;
+      #addVenderWrapper .addVenderForm .addVenderSubmitBtn {
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0px;
+        background-color: #083e5a;
+        color: #fff;
+        padding: 2px 30px;
+        font-weight: bold;
+      }
 
-    }
+      .breadcrumb ul {
+        margin-bottom: 0rem;
+      }
 
-    #addVenderWrapper .addVenderForm .formGroup input {
-      border: 2px solid #eee;
-      width: 100%;
-      border-radius: 4px;
-      padding-left: 15px;
-      height: 35px;
-      font-size: 12px;
-    }
+      .breadcrumb ul li {
+        color: #fff;
+        font-weight: bold;
+        margin: 10px 1px;
+      }
 
-    #addVenderWrapper .addVenderForm .formGroup select {
-      border: 2px solid #eee;
-      width: 100%;
-      border-radius: 4px;
-      padding-left: 15px;
-      height: 35px;
-      font-size: 12px;
-    }
+      .breadcrumb ul li a {
+        color: inherit;
+        padding: 10px;
+        text-decoration: none;
+        font-size: 16px;
+      }
 
-    #addVenderWrapper .addVenderForm .addVenderSubmitBtn {
-      text-transform: capitalize;
-      border-radius: 3px;
-      border: 0px;
-      background-color: #083e5a;
-      color: #fff;
-      padding: 2px 30px;
-      font-weight: bold;
-    }
+      .breadcrumb ul li i {
+        font-size: 12px;
+      }
 
-    .breadcrumb ul {
-      margin-bottom: 0rem;
-    }
+      .breadcrumb ul li .ActiveBreadcrumb {
+        color: #fff;
+      }
 
-    .breadcrumb ul li {
-      color: #fff;
-      font-weight: bold;
-      margin: 10px 1px;
-    }
+      .breadcrumb {
+        background-color: #ef7d0b !important;
+        padding: 4px;
+        font-size: 16px;
+      }
 
-    .breadcrumb ul li a {
-      color: inherit;
-      padding: 10px;
-      text-decoration: none;
-      font-size: 16px;
-    }
+      .Percentagediv {
+        border: 2px solid #eee;
+        background-color: #fff;
+        padding: 2px;
+        border-radius: 4px;
+      }
 
-    .breadcrumb ul li i {
-      font-size: 12px;
-    }
+      .radiobtn {
+        color: #7a7797;
+        font-size: 14px;
+        font-weight: 500;
+        padding-left: 5px;
+      }
 
-    .breadcrumb ul li .ActiveBreadcrumb {
-      color: #fff;
-    }
+      .addVenderSubmitBtn {
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0px;
+        background-color: #3abb69;
+        color: #fff;
+        padding: 6px 34px;
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 13px;
+      }
 
-    .breadcrumb {
-      background-color: #ef7d0b !important;
-      padding: 4px;
-      font-size: 16px;
-    }
+      .inputfile {
+        border: 2px solid #eee;
+        background-color: #fff;
+        padding: 2px;
+        border-radius: 4px;
+      }
 
-    .Percentagediv {
-      border: 2px solid #eee;
-      background-color: #fff;
-      padding: 2px;
-      border-radius: 4px;
-    }
+      .yearinputs {
+        border: 2px solid #eee;
+        background-color: #fff;
+        padding: 2px;
+        border-radius: 4px;
+      }
 
-    .radiobtn {
-      color: #7a7797;
-      font-size: 14px;
-      font-weight: 500;
-      padding-left: 5px;
-    }
+      .validtimelable {
+        color: #7a7797;
+        font-size: 14px;
+        font-weight: 500;
+        padding-left: 5px;
+      }
 
-    .addVenderSubmitBtn {
-      text-transform: capitalize;
-      border-radius: 3px;
-      border: 0px;
-      background-color: #3abb69;
-      color: #fff;
-      padding: 6px 34px;
-      margin-top: 20px;
-      font-weight: bold;
-      font-size: 13px
-    }
+      #addVenderWrapper {
+        border: 1px solid #fc8019;
+      }
 
-    .inputfile {
-      border: 2px solid #eee;
-      background-color: #fff;
-      padding: 2px;
-      border-radius: 4px;
-    }
+      .newclasss {
+        color: #7a7797;
+        font-size: 14px;
+        font-weight: 500;
+        padding-left: 5px;
+      }
 
-    .yearinputs {
-      border: 2px solid #eee;
-      background-color: #fff;
-      padding: 2px;
-      border-radius: 4px;
-    }
+      .popmodel {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
 
-    .validtimelable {
-      color: #7a7797;
-      font-size: 14px;
-      font-weight: 500;
-      padding-left: 5px;
-    }
+      .popmodelopen {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 3%;
+      }
 
-    #addVenderWrapper {
-      border: 1px solid #fc8019;
-    }
+      .openmodel {
+        border-radius: 10px;
+        height: 200px;
+        padding: 0px 3px;
+        width: 25%;
+        background-color: #fff;
+      }
 
-    .newclasss {
-      color: #7a7797;
-      font-size: 14px;
-      font-weight: 500;
-      padding-left: 5px;
-    }
+      .closebtnicon {
+        display: flex;
+        justify-content: right;
+      }
 
-    .popmodel {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 999;
-      height: 100%;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
+      .djdecoration {
+        display: flex;
+        gap: 20px;
+        height: 34px;
+        border-radius: 4px;
+        border: 2px solid rgb(201, 190, 190);
+        width: 100%;
+        color: #7a7797;
+        padding-left: 10px;
+        color: #7a7797;
+        font-size: 14px;
+        font-weight: 500;
+      }
 
-    .popmodelopen {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 3%;
-    }
+      .djdecoration label {
+        color: #083e5a;
+        font-size: 14px;
+        font-weight: 500;
+        padding-left: 5px;
+      }
 
-    .openmodel {
-      border-radius: 10px;
-      height: 200px;
-      padding: 0px 3px;
-      width: 25%;
-      background-color: #fff;
-    }
-
-    .closebtnicon {
-      display: flex;
-      justify-content: right;
-
-    }
-
-    .djdecoration {
-      display: flex;
-      gap: 20px;
-      height: 34px;
-      border-radius: 4px;
-      border: 2px solid rgb(201, 190, 190);
-      width: 100%;
-      color: #7a7797;
-      padding-left: 10px;
-      color: #7a7797;
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    .djdecoration label {
-      color: #083e5a;
-      font-size: 14px;
-      font-weight: 500;
-      padding-left: 5px;
-    }
-
-    label {
-      /* color: #083e5a;
+      label {
+        /* color: #083e5a;
       font-size: 14px;
       font-weight: 500; */
-      display: block;
-      color: #083e5a;
-      font-size: 14px;
-      font-weight: 500;
-    }
+        display: block;
+        color: #083e5a;
+        font-size: 14px;
+        font-weight: 500;
+      }
 
-    .mamebershipformtotalamount {
-      /* display: flex; */
-      gap: 2px;
-      width: 100%;
-      text-align: right;
-      
-    }
+      .mamebershipformtotalamount {
+        /* display: flex; */
+        gap: 2px;
+        width: 100%;
+        text-align: right;
+      }
 
-    .Membershipformrightside {
-      flex: none;
-      color: #7a7797;
-      font-size: 14px;
-      margin-left: 65px;
-    }
+      .Membershipformrightside {
+        flex: none;
+        color: #7a7797;
+        font-size: 14px;
+        margin-left: 65px;
+      }
 
-    .membershipformremovetax {
-      display: flex;
-      gap: 10px;
-      justify-content: right;
-      margin-right: 3px;
-    }
+      .membershipformremovetax {
+        display: flex;
+        gap: 10px;
+        justify-content: right;
+        margin-right: 3px;
+      }
 
-    .taxtgst {
-      display: flex;
-      align-items: center;
-      justify-content: right;
-      margin-top: 15px;
-    }
+      .taxtgst {
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        margin-top: 15px;
+      }
 
-    .closeicon {
-      height: 27px;
-      width: 27px;
-      text-align: center;
-      border: 3px solid;
-      border-radius: 50%;
-      font-size: 20px;
+      .closeicon {
+        height: 27px;
+        width: 27px;
+        text-align: center;
+        border: 3px solid;
+        border-radius: 50%;
+        font-size: 20px;
 
-      cursor: pointer;
-    }
+        cursor: pointer;
+      }
 
-    .addVenderForm {
-      max-width: 95%;
-      margin: auto;
-    }
-  </style>
-</head>
+      .addVenderForm {
+        max-width: 95%;
+        margin: auto;
+      }
+      .genderWrapper {
+        background-color: #fff;
+        height: 30px;
+        padding-left: 15px;
+      }
+    </style>
+  </head>
 
-<body>
-
-  <div class="breadcrumb">
-
-
-    <ul class="list-unstyled d-flex align-items-center">
-      <li><a href="">Dashboard</a></li>
-      <li><i class="fa-solid fa-angles-right"></i></li>
-      <li><a href="" class="ActiveBreadcrumb">Add Membership Form</a></li>
-    </ul>
-  </div>
-  <div class="container-fluid">
-    <div id="addVenderWrapper" class="mt-2" style="box-shadow: 0 0 2px;">
-      <div class="addVenderTitle">
-        <h2>Add Membership Form</h2>
-      </div>
-      <div class="addVenderForm ">
-        <form>
-          <div class="row justify-content-center">
-            <div class="col-12">
-              <div class="row justify-content-center align-items-center" style="background-color: #eee; padding: 20px">
-                <div class="col-md-4">
-                  <div class="formGroup">
-                    <label for="venderName">First Name</label>
-                    <br />
-                    <input type="text" placeholder="Enter Your First Name" />
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="formGroup">
-                    <label for="venderName">Last Name</label>
-                    <br />
-                    <input type="text" placeholder="Enter Your Last Name" />
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="formGroup">
-                    <label for="Phone">Phone No 1.</label>
-                    <br />
-                    <input type="text" placeholder="Enter Your Phone No" />
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="formGroup">
-                    <label for="Phone">Phone No 2.</label>
-                    <br />
-                    <input type="text" placeholder="Enter Your Phone No" />
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="formGroup">
-                    <label for="">Email</label>
-                    <br />
-                    <input type="text" placeholder="Enter Your Email" />
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="formGroup">
-                    <label for="Address">Address</label>
-                    <br />
-                    <input type="text" placeholder="Enter Your Address" />
-                  </div>
-                </div>
-
-                <div class="col-md-4">
-                  <div class="formGroup">
-                    <label for="bankName">State</label>
-                    <br />
-                    <select id="country-state" name="country-state">
-                      <option value="state">State</option>
-                      <option value="AN">Andaman and Nicobar Islands</option>
-                      <option value="AP">Andhra Pradesh</option>
-                      <option value="AR">Arunachal Pradesh</option>
-                      <option value="AS">Assam</option>
-                      <option value="BR">Bihar</option>
-                      <option value="CH">Chandigarh</option>
-                      <option value="CT">Chhattisgarh</option>
-                      <option value="DN">Dadra and Nagar Haveli</option>
-                      <option value="DD">Daman and Diu</option>
-                      <option value="DL">Delhi</option>
-                      <option value="GA">Goa</option>
-                      <option value="GJ">Gujarat</option>
-                      <option value="HR">Haryana</option>
-                      <option value="HP">Himachal Pradesh</option>
-                      <option value="JK">Jammu and Kashmir</option>
-                      <option value="JH">Jharkhand</option>
-                      <option value="KA">Karnataka</option>
-                      <option value="KL">Kerala</option>
-                      <option value="LA">Ladakh</option>
-                      <option value="LD">Lakshadweep</option>
-                      <option value="MP">Madhya Pradesh</option>
-                      <option value="MH">Maharashtra</option>
-                      <option value="MN">Manipur</option>
-                      <option value="ML">Meghalaya</option>
-                      <option value="MZ">Mizoram</option>
-                      <option value="NL">Nagaland</option>
-                      <option value="OR">Odisha</option>
-                      <option value="PY">Puducherry</option>
-                      <option value="PB">Punjab</option>
-                      <option value="RJ">Rajasthan</option>
-                      <option value="SK">Sikkim</option>
-                      <option value="TN">Tamil Nadu</option>
-                      <option value="TG">Telangana</option>
-                      <option value="TR">Tripura</option>
-                      <option value="UP">Uttar Pradesh</option>
-                      <option value="UT">Uttarakhand</option>
-                      <option value="WB">West Bengal</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="formGroup">
-                    <label for="upiN">City</label>
-                    <br />
-                    <select id="city" name="city">
-                      <option value="">Select City</option>
-                      <option value="Almora">Almora</option>
-                      <option value="Bageshwar">Bageshwar</option>
-                      <option value="Barkot">Barkot</option>
-                      <option value="Bazpur">Bazpur</option>
-                      <option value="Bhim Tal">Bhim Tal</option>
-                      <option value="Bhowali">Bhowali</option>
-                      <option value="Birbhaddar">Birbhaddar</option>
-                      <option value="Chakrata">Chakrata</option>
-                      <option value="Chamoli">Chamoli</option>
-                      <option value="Champawat">Champawat</option>
-                      <option value="Clement Town">Clement Town</option>
-                      <option value="Dehradun">Dehradun</option>
-                      <option value="Devaprayag">Devaprayag</option>
-                      <option value="Dharchula">Dharchula</option>
-                      <option value="Doiwala">Doiwala</option>
-                      <option value="Dugadda">Dugadda</option>
-                      <option value="Dwarahat">Dwarahat</option>
-                      <option value="Garhwal">Garhwal</option>
-                      <option value="Haldwani">Haldwani</option>
-                      <option value="Harbatpur">Harbatpur</option>
-                      <option value="Haridwar">Haridwar</option>
-                      <option value="Jaspur">Jaspur</option>
-                      <option value="Joshimath">Joshimath</option>
-                      <option value="Kaladhungi">Kaladhungi</option>
-                      <option value="Kalagarh Project Colony">Kalagarh Project Colony</option>
-                      <option value="Kashipur">Kashipur</option>
-                      <option value="Khatima">Khatima</option>
-                      <option value="Kichha">Kichha</option>
-                      <option value="Kotdwara">Kotdwara</option>
-                      <option value="Laksar">Laksar</option>
-                      <option value="Lansdowne">Lansdowne</option>
-                      <option value="Lohaghat">Lohaghat</option>
-                      <option value="Manglaur">Manglaur</option>
-                      <option value="Mussoorie">Mussoorie</option>
-                      <option value="Naini Tal">Naini Tal</option>
-                      <option value="Narendranagar">Narendranagar</option>
-                      <option value="Pauri">Pauri</option>
-                      <option value="Pipalkoti">Pipalkoti</option>
-                      <option value="Pithoragarh">Pithoragarh</option>
-                      <option value="Raipur">Raipur</option>
-                      <option value="Raiwala Bara">Raiwala Bara</option>
-                      <option value="Ramnagar">Ramnagar</option>
-                      <option value="Ranikhet">Ranikhet</option>
-                      <option value="Rishikesh">Rishikesh</option>
-                      <option value="Roorkee">Roorkee</option>
-                      <option value="Rudraprayag">Rudraprayag</option>
-                      <option value="Sitarganj">Sitarganj</option>
-                      <option value="Srinagar">Srinagar</option>
-                      <option value="Sultanpur">Sultanpur</option>
-                      <option value="Tanakpur">Tanakpur</option>
-                      <option value="Tehri">Tehri</option>
-                      <option value="Tehri-Garhwal">Tehri-Garhwal</option>
-                      <option value="Udham Singh Nagar">Udham Singh Nagar</option>
-                      <option value="Uttarkashi">Uttarkashi</option>
-                      <option value="Vikasnagar">Vikasnagar</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                  <div class="formGroup">
-                    <label for="AccN">Member</label>
-                    <br />
-                    <select class="selectbox" style="padding: 8px;
-                        width: 100%;
-                        border-radius: 4px;
-                        border: 2px solid #eeee;">
-
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                      <option>7</option>
-                      <option>8</option>
-                      <option>9</option>
-                      <option>10</option>
-                      <option>11</option>
-                      <option>12</option>
-                      <option>13</option>
-                      <option>14</option>
-                      <option>15</option>
-                      <option>16</option>
-                      <option>17</option>
-                      <option>18</option>
-                      <option>19</option>
-                      <option>20</option>
-                      <option>21</option>
-                      <option>22</option>
-                      <option>23</option>
-                      <option>24</option>
-                      <option>25</option>
-                      <option>26</option>
-                      <option>27</option>
-                      <option>28</option>
-                      <option>29</option>
-                      <option>30</option>
-                      <option>31</option>
-                      <option>32</option>
-                      <option>33</option>
-                      <option>34</option>
-                      <option>35</option>
-                      <option>36</option>
-                      <option>37</option>
-                      <option>38</option>
-                      <option>39</option>
-                      <option>40</option>
-                      <option>41</option>
-                      <option>42</option>
-                      <option>43</option>
-                      <option>44</option>
-                      <option>45</option>
-                      <option>46</option>
-                      <option>47</option>
-                      <option>48</option>
-                      <option>49</option>
-                      <option>50</option>
-                      <option>51</option>
-                      <option>52</option>
-                      <option>53</option>
-                      <option>54</option>
-                      <option>55</option>
-                      <option>56</option>
-                      <option>57</option>
-                      <option>58</option>
-                      <option>59</option>
-                      <option>60</option>
-                      <option>61</option>
-                      <option>62</option>
-                      <option>63</option>
-                      <option>64</option>
-                      <option>65</option>
-                      <option>66</option>
-                      <option>67</option>
-                      <option>68</option>
-                      <option>69</option>
-                      <option>70</option>
-                      <option>71</option>
-                      <option>72</option>
-                      <option>73</option>
-                      <option>74</option>
-                      <option>75</option>
-                      <option>76</option>
-                      <option>77</option>
-                      <option>78</option>
-                      <option>79</option>
-                      <option>80</option>
-                      <option>81</option>
-                      <option>82</option>
-                      <option>83</option>
-                      <option>84</option>
-                      <option>85</option>
-                      <option>86</option>
-                      <option>87</option>
-                      <option>88</option>
-                      <option>89</option>
-                      <option>90</option>
-                      <option>91</option>
-                      <option>92</option>
-                      <option>93</option>
-                      <option>94</option>
-                      <option>95</option>
-                      <option>96</option>
-                      <option>97</option>
-                      <option>98</option>
-                      <option>99</option>
-                      <option>100</option>
-
-
-
-
-
-                    </select>
-
-                  </div>
-                </div>
-
-                <div class="col-md-1 col-sm-2" style="top: 14px;">
-                  <div class="formGroup"
-                    style="display: flex; align-items: center; height: 32px; justify-content: center; background-color: #fff;">
-
-                    <input style="width: 15px;" type="checkbox" placeholder="₹" class="coupon_question4"
-                      name="coupon_question4" value="4" onchange="valueChangedsd1()" />
-                    <label style="    padding-top: 5px;">None</label>
-                  </div>
-                </div>
-
-                <div class="col-md-4">
-                  <div class="formGroup">
-                    <label for="bankName">Image</label>
-                    <br />
-                    <input type="file" class="inputfile" />
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="formGroup">
-                    <label for="bankName">Id Proof</label>
-                    <br />
-                    <input type="file" class="inputfile">
-                  </div>
-                </div>
-
-                <div class="col-md-4">
-                  <div class="formGroup">
-                    <label for="bankName">Id Proof</label>
-                    <br />
-                    <input type="file" class="inputfile">
-                  </div>
-                </div>
-
-
-
-                <div class="row justify-content-left ">
-                  <div class=" col-sm-3 form-radio validtimelable">
-                    <label for="">Valid Time</label>
-                    <div class="form-flex yearinputs">
-                      <input type="radio" checked="checked" name="1year" />
-                      <label for="">1 year</label>
-                      <input type="radio" name="1year" />
-                      <label for="">2 year</label>
-                      <input type="radio" name="1year" />
-                      <label for="">3 year</label>
-                    </div>
-
-                  </div>
-
-                  <div class="col-md-5">
-                    <div class="row justify-contenr-left  newclasss">
-
-                      <label for="">Percentage</label>
-                      <div class="col-sm-2">
-                        <div class="radiobtns"
-                          style="font-size: 14px; background-color: #fff; padding: 2px 5px; border-radius: 5px;">
-                          <div> <input type="radio" checked="checked" name="10" />
-                            <label for="">10%</label>
-                          </div>
-                          <div>2000</div>
-                        </div>
-
-
-
-
-                      </div>
-                      <div class="col-sm-2">
-                        <div class="radiobtns"
-                          style="font-size: 14px; background-color: #fff; padding: 2px 5px; border-radius: 5px;">
-                          <div> <input type="radio" checked="checked" name="10" />
-                            <label for="">20%</label>
-                          </div>
-                          <div>4000</div>
-                        </div>
-                      </div>
-                      <div class="col-sm-2">
-                        <div class="radiobtns"
-                          style="font-size: 14px; background-color: #fff; padding: 2px 5px; border-radius: 5px;">
-                          <div> <input type="radio" checked="checked" name="10" />
-                            <label for="">30%</label>
-                          </div>
-                          <div>5000</div>
-                        </div>
-                      </div>
-                      <div class="col-sm-2">
-                        <div class="radiobtns"
-                          style="font-size: 14px; background-color: #fff; padding: 2px 5px; border-radius: 5px;">
-                          <div> <input type="radio" checked="checked" name="10" />
-                            <label for="">40%</label>
-                          </div>
-                          <div>6000</div>
-                        </div>
-                      </div>
-                      <div class="col-sm-2">
-                        <div class="radiobtns"
-                          style="font-size: 14px; background-color: #fff; padding: 2px 5px; border-radius: 5px;">
-                          <div> <input type="radio" checked="checked" name="10" />
-                            <label for="">10%</label>
-                          </div>
-                          <div>2000</div>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                  <div class="form-group genderWrapper col-md-4">
-                    <label for="gnder">Gender :</label>
-                    <input type="radio" name="gender" id="male" />
-                    <label for="male">Male</label>
-                    <input type="radio" name="gender" id="female" />
-                    <label for="female">Female</label>
-                    <input type="radio" name="gender" id="other" />
-                    <label for="other">Other</label>
-                  </div>
-
-                  <div class="col-md-12">
-                    <div class="row justify-content-end mt-3 Membershipformrightside ju" style="   margin-left: 65px;">
-                      <div class="col-4">
-                        <div class="row">
-                          <div class="col-md-12 mt-2">
-                            <div class="mamebershipformtotalamount">
-                              <label>Total Amount</label>
-                              <input type="text" placeholder="₹" onkeypress="return /[0-9]/i.test(event.key)">
-                            </div>
-                            <div class="col-md-12 mt-2">
-                              <div class="membershipformremovetax">
-                                <label>Remove Tax</label>
-                                <input type="checkbox" type="checkbox" placeholder="₹" class="coupon_question2"
-                                  name="coupon_question2" value="3" onchange="valueChangedsd()">
-                              </div>
-                            </div>
-                            <div class="taxtgst">
-                              <div class="mt-4">
-                                <h3 style="font-size: 18px;">TAX</h3>
-                              </div>
-                              <div>
-                                <div class="col-md-12 mt-3">
-                                  <div style="display: flex; gap: 5px; margin-top: 10px;">
-                                    <label> <span></span> SGST</label>
-                                    <input type="text" style="height: 20px; 
-                          width: 71px;" placeholder="₹" onkeypress="return /[0-9]/i.test(event.key)">
-                                  </div>
-                                </div>
-                                <div class="col-md-12 ">
-                                  <div style="display: flex; gap: 
-                              5px;">
-                                    <label>CGST</label>
-                                    <input type="text" style="height: 20px; 
-                      width: 71px;" placeholder="₹" onkeypress="return /[0-9]/i.test(event.key)">
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-md-12 mt-2">
-                              <div class="text-right">
-                                <label >Grand Total</label>
-                                <input type="text" placeholder="₹" onkeypress="return /[0-9]/i.test(event.key)">
-                              </div>
-                            </div>
-                            <!-- <div class="col-md-12 mt-3">
-                     <div style="display: flex; gap: 10px;" >
-                     <label>Grand </label>
-                      <input type="text">
-                       </div>
-                   </div> -->
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- <div class="col-sm-4 form-radio radiobtn">
-                    <div>
-                      <div>  <label for="">Percentage</label>
-
-                        <div class="form-flex Percentagediv">
-                          <input type="radio" checked="checked"  name="10"/>
-                          <label for="">10%</label>
-                          <input type="radio"name="10" />
-                          <label for="">20%</label>
-                          <input type="radio"name="10" />
-                          <label for="">30%</label>
-                          <input type="radio"name="10" />
-                          <label for="">40%</label>
-                          <input type="radio"name="10" />
-                          <label>50%</label>
-                        </div></div>
-                      <div>
-                        <label for="">Amount</label>
-
-                        <div class="form-flex Percentagediv">
-                          
-                          <label for="">1000</label>
-                       
-                          <label for="">2000</label>
-                         
-                          <label for="">3000</label>
-                       
-                          <label for="">4000</label>
-                         
-                          <label>5000</label>
-                        </div>
-                      </div>
-                    </div>
-                  
-                  </div> -->
-                  <!-- <div class="col-md-4">
-                    <div class="row justify-contenr-center mt-3" style=" color: #7a7797; ">
-                      <div class="col-md-12 mt-2">
-                        <div style="display: flex; gap: 10px;">
-                          <label>Total Amount</label>
-                          <input type="text" placeholder="₹">
-                        </div>
-                        <div class="col-md-12 mt-2">
-                          <div style="display: flex; gap: 10px;">
-                            <label>Remove Tax</label>
-                            <input type="checkbox" type="checkbox" placeholder="₹" class="coupon_question2"
-                              name="coupon_question2" value="3" onchange="valueChangedsd()">
-                          </div>
-                        </div>
-                        <div class="taxtgst" style="display: flex;
-                      align-items: center;
-                     
-                      gap: 20px;">
-                          <div class="mt-4">
-                            <h3 style="font-size: 21px;">TAX</h3>
-                          </div>
-                          <div>
-                            <div class="col-md-12 mt-3">
-                              <div style="display: flex; ">
-                                <label> <span></span> SGST</label>
-                                <input type="text" style="height: 20px; 
-                          width: 71px;" placeholder="₹">
-                              </div>
-                            </div>
-                            <div class="col-md-12 ">
-                              <div style="display: flex; ">
-                                <label>CGST</label>
-                                <input type="text" style="height: 20px; 
-                      width: 71px;" placeholder="₹">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-12 mt-2">
-                          <div style="display: flex; gap: 10px; margin-left: 10px;">
-                            <label>Grand Total</label>
-                            <input type="text" placeholder="₹">
-                          </div>
-                        </div>
-                        <!-- <div class="col-md-12 mt-3">
-                     <div style="display: flex; gap: 10px;" >
-                     <label>Grand </label>
-                      <input type="text">
-                       </div>
-                   </div> -->
-                </div>
-              </div>
-            </div>
-
-
-          </div>
-
-          <div class="col-12 text-center mt-2">
-            <button type="button" class="addVenderSubmitBtn openbtnpop">
-              Pay Now
-            </button>
-          </div>
-      </div>
+  <body>
+    <div class="breadcrumb">
+      <ul class="list-unstyled d-flex align-items-center">
+        <li><a href="">Dashboard</a></li>
+        <li><i class="fa-solid fa-angles-right"></i></li>
+        <li><a href="" class="ActiveBreadcrumb">Add Membership Form</a></li>
+      </ul>
     </div>
-  </div>
-  </form>
-  </div>
-  </div>
-  </div>
-  <div class="popmodel">
-    <div class="popmodelopen">
-      <div class="openmodel">
-
-        <div class="closebtnicon mt-1"><i class="fa fa-close closeicon"></i></div>
-
-        <div class="row justify-content-center mt-3">
-          <div class="col-md-12 mt-3" style="    padding: 2px 20px;">
-            <label for="" class="noLabel" style="font-size: 15px;"> Payment Mode</label>
-            <div class="djdecoration">
-              <div> <input class="form-check-input  coupon_question" type="radio" id="" name="coupon_question1"
-                  value="1" />
-                <label class="form-check-label" for="">
-                  Card
-                </label>
-                <input type="text" class="decoration" style="display: none;" placeholder="Amount">
-
-              </div>
-              <div> <input class="form-check-input coupon_question1" type="radio" id="" name="coupon_question1"
-                  value="2" />
-                <label class="form-check-label" for="">
-                  Cash
-                </label>
-
-              </div>
-              <div> <input class="form-check-input coupon_question1" type="radio" id="" name="coupon_question1"
-                  value="2" />
-                <label class="form-check-label" for="">
-                  Upi
-                </label>
-
-              </div>
-            </div>
-            <div class="row justify-content-center mt-4">
-              <div class="col-md-4  text-center"><button class="btn btn-primary " style="    padding: 2px 14px;
-                font-size: 12px; background-color: #083e5a;">Submit</button></div>
-            </div>
-
-
-          </div>
+    <div class="container-fluid">
+      <div id="addVenderWrapper" class="mt-2" style="box-shadow: 0 0 2px">
+        <div class="addVenderTitle">
+          <h2>Add Membership Form</h2>
         </div>
-        <div>
+        <div class="addVenderForm">
+          <form>
+            <div class="row justify-content-center">
+              <div class="col-12">
+                <div
+                  class="row justify-content-center align-items-center"
+                  style="background-color: #eee; padding: 20px"
+                >
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="venderName">First Name</label>
+                      <br />
+                      <input type="text" placeholder="Enter Your First Name" />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="venderName">Last Name</label>
+                      <br />
+                      <input type="text" placeholder="Enter Your Last Name" />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="Phone">Phone No 1.</label>
+                      <br />
+                      <input type="text" placeholder="Enter Your Phone No" />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="Phone">Phone No 2.</label>
+                      <br />
+                      <input type="text" placeholder="Enter Your Phone No" />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="">Email</label>
+                      <br />
+                      <input type="text" placeholder="Enter Your Email" />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="Address">Address</label>
+                      <br />
+                      <input type="text" placeholder="Enter Your Address" />
+                    </div>
+                  </div>
 
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="bankName">State</label>
+                      <br />
+                      <select id="country-state" name="country-state">
+                        <option value="state">State</option>
+                        <option value="AN">Andaman and Nicobar Islands</option>
+                        <option value="AP">Andhra Pradesh</option>
+                        <option value="AR">Arunachal Pradesh</option>
+                        <option value="AS">Assam</option>
+                        <option value="BR">Bihar</option>
+                        <option value="CH">Chandigarh</option>
+                        <option value="CT">Chhattisgarh</option>
+                        <option value="DN">Dadra and Nagar Haveli</option>
+                        <option value="DD">Daman and Diu</option>
+                        <option value="DL">Delhi</option>
+                        <option value="GA">Goa</option>
+                        <option value="GJ">Gujarat</option>
+                        <option value="HR">Haryana</option>
+                        <option value="HP">Himachal Pradesh</option>
+                        <option value="JK">Jammu and Kashmir</option>
+                        <option value="JH">Jharkhand</option>
+                        <option value="KA">Karnataka</option>
+                        <option value="KL">Kerala</option>
+                        <option value="LA">Ladakh</option>
+                        <option value="LD">Lakshadweep</option>
+                        <option value="MP">Madhya Pradesh</option>
+                        <option value="MH">Maharashtra</option>
+                        <option value="MN">Manipur</option>
+                        <option value="ML">Meghalaya</option>
+                        <option value="MZ">Mizoram</option>
+                        <option value="NL">Nagaland</option>
+                        <option value="OR">Odisha</option>
+                        <option value="PY">Puducherry</option>
+                        <option value="PB">Punjab</option>
+                        <option value="RJ">Rajasthan</option>
+                        <option value="SK">Sikkim</option>
+                        <option value="TN">Tamil Nadu</option>
+                        <option value="TG">Telangana</option>
+                        <option value="TR">Tripura</option>
+                        <option value="UP">Uttar Pradesh</option>
+                        <option value="UT">Uttarakhand</option>
+                        <option value="WB">West Bengal</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="upiN">City</label>
+                      <br />
+                      <select id="city" name="city">
+                        <option value="">Select City</option>
+                        <option value="Almora">Almora</option>
+                        <option value="Bageshwar">Bageshwar</option>
+                        <option value="Barkot">Barkot</option>
+                        <option value="Bazpur">Bazpur</option>
+                        <option value="Bhim Tal">Bhim Tal</option>
+                        <option value="Bhowali">Bhowali</option>
+                        <option value="Birbhaddar">Birbhaddar</option>
+                        <option value="Chakrata">Chakrata</option>
+                        <option value="Chamoli">Chamoli</option>
+                        <option value="Champawat">Champawat</option>
+                        <option value="Clement Town">Clement Town</option>
+                        <option value="Dehradun">Dehradun</option>
+                        <option value="Devaprayag">Devaprayag</option>
+                        <option value="Dharchula">Dharchula</option>
+                        <option value="Doiwala">Doiwala</option>
+                        <option value="Dugadda">Dugadda</option>
+                        <option value="Dwarahat">Dwarahat</option>
+                        <option value="Garhwal">Garhwal</option>
+                        <option value="Haldwani">Haldwani</option>
+                        <option value="Harbatpur">Harbatpur</option>
+                        <option value="Haridwar">Haridwar</option>
+                        <option value="Jaspur">Jaspur</option>
+                        <option value="Joshimath">Joshimath</option>
+                        <option value="Kaladhungi">Kaladhungi</option>
+                        <option value="Kalagarh Project Colony">
+                          Kalagarh Project Colony
+                        </option>
+                        <option value="Kashipur">Kashipur</option>
+                        <option value="Khatima">Khatima</option>
+                        <option value="Kichha">Kichha</option>
+                        <option value="Kotdwara">Kotdwara</option>
+                        <option value="Laksar">Laksar</option>
+                        <option value="Lansdowne">Lansdowne</option>
+                        <option value="Lohaghat">Lohaghat</option>
+                        <option value="Manglaur">Manglaur</option>
+                        <option value="Mussoorie">Mussoorie</option>
+                        <option value="Naini Tal">Naini Tal</option>
+                        <option value="Narendranagar">Narendranagar</option>
+                        <option value="Pauri">Pauri</option>
+                        <option value="Pipalkoti">Pipalkoti</option>
+                        <option value="Pithoragarh">Pithoragarh</option>
+                        <option value="Raipur">Raipur</option>
+                        <option value="Raiwala Bara">Raiwala Bara</option>
+                        <option value="Ramnagar">Ramnagar</option>
+                        <option value="Ranikhet">Ranikhet</option>
+                        <option value="Rishikesh">Rishikesh</option>
+                        <option value="Roorkee">Roorkee</option>
+                        <option value="Rudraprayag">Rudraprayag</option>
+                        <option value="Sitarganj">Sitarganj</option>
+                        <option value="Srinagar">Srinagar</option>
+                        <option value="Sultanpur">Sultanpur</option>
+                        <option value="Tanakpur">Tanakpur</option>
+                        <option value="Tehri">Tehri</option>
+                        <option value="Tehri-Garhwal">Tehri-Garhwal</option>
+                        <option value="Udham Singh Nagar">
+                          Udham Singh Nagar
+                        </option>
+                        <option value="Uttarkashi">Uttarkashi</option>
+                        <option value="Vikasnagar">Vikasnagar</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-3">
+                    <div class="formGroup">
+                      <label for="AccN">Member</label>
+                      <br />
+                      <select
+                        class="selectbox"
+                        style="
+                          padding: 8px;
+                          width: 100%;
+                          border-radius: 4px;
+                          border: 2px solid #eeee;
+                        "
+                      >
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        <option>13</option>
+                        <option>14</option>
+                        <option>15</option>
+                        <option>16</option>
+                        <option>17</option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                        <option>21</option>
+                        <option>22</option>
+                        <option>23</option>
+                        <option>24</option>
+                        <option>25</option>
+                        <option>26</option>
+                        <option>27</option>
+                        <option>28</option>
+                        <option>29</option>
+                        <option>30</option>
+                        <option>31</option>
+                        <option>32</option>
+                        <option>33</option>
+                        <option>34</option>
+                        <option>35</option>
+                        <option>36</option>
+                        <option>37</option>
+                        <option>38</option>
+                        <option>39</option>
+                        <option>40</option>
+                        <option>41</option>
+                        <option>42</option>
+                        <option>43</option>
+                        <option>44</option>
+                        <option>45</option>
+                        <option>46</option>
+                        <option>47</option>
+                        <option>48</option>
+                        <option>49</option>
+                        <option>50</option>
+                        <option>51</option>
+                        <option>52</option>
+                        <option>53</option>
+                        <option>54</option>
+                        <option>55</option>
+                        <option>56</option>
+                        <option>57</option>
+                        <option>58</option>
+                        <option>59</option>
+                        <option>60</option>
+                        <option>61</option>
+                        <option>62</option>
+                        <option>63</option>
+                        <option>64</option>
+                        <option>65</option>
+                        <option>66</option>
+                        <option>67</option>
+                        <option>68</option>
+                        <option>69</option>
+                        <option>70</option>
+                        <option>71</option>
+                        <option>72</option>
+                        <option>73</option>
+                        <option>74</option>
+                        <option>75</option>
+                        <option>76</option>
+                        <option>77</option>
+                        <option>78</option>
+                        <option>79</option>
+                        <option>80</option>
+                        <option>81</option>
+                        <option>82</option>
+                        <option>83</option>
+                        <option>84</option>
+                        <option>85</option>
+                        <option>86</option>
+                        <option>87</option>
+                        <option>88</option>
+                        <option>89</option>
+                        <option>90</option>
+                        <option>91</option>
+                        <option>92</option>
+                        <option>93</option>
+                        <option>94</option>
+                        <option>95</option>
+                        <option>96</option>
+                        <option>97</option>
+                        <option>98</option>
+                        <option>99</option>
+                        <option>100</option>
+                      </select>
+                    </div>
+                  </div>
 
+                  <div class="col-md-1 col-sm-2" style="top: 14px">
+                    <div
+                      class="formGroup"
+                      style="
+                        display: flex;
+                        align-items: center;
+                        height: 32px;
+                        justify-content: center;
+                        background-color: #fff;
+                      "
+                    >
+                      <input
+                        style="width: 15px"
+                        type="checkbox"
+                        placeholder="₹"
+                        class="coupon_question4"
+                        name="coupon_question4"
+                        value="4"
+                        onchange="valueChangedsd1()"
+                      />
+                      <label style="padding-top: 5px">None</label>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="bankName">Image</label>
+                      <br />
+                      <input type="file" class="inputfile" />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="bankName">Id Proof</label>
+                      <br />
+                      <input type="file" class="inputfile" />
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="formGroup">
+                      <label for="bankName">Id Proof</label>
+                      <br />
+                      <input type="file" class="inputfile" />
+                    </div>
+                  </div>
+
+                  <div class="row justify-content-left align-items-center">
+                    <div class="col-sm-3 form-radio validtimelable">
+                      <label for="">Valid Time</label>
+                      <div class="form-flex yearinputs">
+                        <input type="radio" checked="checked" name="1year" />
+                        <label for="">1 year</label>
+                        <input type="radio" name="1year" />
+                        <label for="">2 year</label>
+                        <input type="radio" name="1year" />
+                        <label for="">3 year</label>
+                      </div>
+                    </div>
+
+                 
+                    <div class="  col-md-4">
+                      <label for="gnder">Gender :</label>
+                     <div class="genderWrapper pl-3">
+                      <input type="radio" name="gender" id="male" />
+                      <label for="male">Male</label>
+                      <input type="radio" name="gender" id="female" />
+                      <label for="female">Female</label>
+                      <input type="radio" name="gender" id="other" />
+                      <label for="other">Other</label>
+                     </div>
+                    </div>
+                    <div class="col-md-5">
+                      <div class="row justify-contenr-left newclasss">
+                        <label for="">Percentage</label>
+                        <div class="col-sm-2">
+                          <div
+                            class="radiobtns"
+                            style="
+                              font-size: 14px;
+                              background-color: #fff;
+                              padding: 2px 5px;
+                              border-radius: 5px;
+                            "
+                          >
+                            <div>
+                              <input type="radio" checked="checked" name="10" />
+                              <label for="">10%</label>
+                            </div>
+                            <div>2000</div>
+                          </div>
+                        </div>
+                        <div class="col-sm-2">
+                          <div
+                            class="radiobtns"
+                            style="
+                              font-size: 14px;
+                              background-color: #fff;
+                              padding: 2px 5px;
+                              border-radius: 5px;
+                            "
+                          >
+                            <div>
+                              <input type="radio" checked="checked" name="10" />
+                              <label for="">20%</label>
+                            </div>
+                            <div>4000</div>
+                          </div>
+                        </div>
+                        <div class="col-sm-2">
+                          <div
+                            class="radiobtns"
+                            style="
+                              font-size: 14px;
+                              background-color: #fff;
+                              padding: 2px 5px;
+                              border-radius: 5px;
+                            "
+                          >
+                            <div>
+                              <input type="radio" checked="checked" name="10" />
+                              <label for="">30%</label>
+                            </div>
+                            <div>5000</div>
+                          </div>
+                        </div>
+                        <div class="col-sm-2">
+                          <div
+                            class="radiobtns"
+                            style="
+                              font-size: 14px;
+                              background-color: #fff;
+                              padding: 2px 5px;
+                              border-radius: 5px;
+                            "
+                          >
+                            <div>
+                              <input type="radio" checked="checked" name="10" />
+                              <label for="">40%</label>
+                            </div>
+                            <div>6000</div>
+                          </div>
+                        </div>
+                        <div class="col-sm-2">
+                          <div
+                            class="radiobtns"
+                            style="
+                              font-size: 14px;
+                              background-color: #fff;
+                              padding: 2px 5px;
+                              border-radius: 5px;
+                            "
+                          >
+                            <div>
+                              <input type="radio" checked="checked" name="10" />
+                              <label for="">10%</label>
+                            </div>
+                            <div>2000</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div
+                        class="row justify-content-end mt-3 Membershipformrightside ju"
+                        style="margin-left: 65px"
+                      >
+                        <div class="col-4">
+                          <div class="row">
+                            <div class="col-md-12 mt-2">
+                              <div class="mamebershipformtotalamount">
+                                <label>Total Amount</label>
+                                <input
+                                  type="text"
+                                  placeholder="₹"
+                                  onkeypress="return /[0-9]/i.test(event.key)"
+                                />
+                              </div>
+                              <div class="col-md-12 mt-2">
+                                <div class="membershipformremovetax">
+                                  <label>Remove Tax</label>
+                                  <input
+                                    type="checkbox"
+                                    type="checkbox"
+                                    placeholder="₹"
+                                    class="coupon_question2"
+                                    name="coupon_question2"
+                                    value="3"
+                                    onchange="valueChangedsd()"
+                                  />
+                                </div>
+                              </div>
+                              <div class="taxtgst">
+                                <div class="mt-4">
+                                  <h3 style="font-size: 18px">TAX</h3>
+                                </div>
+                                <div>
+                                  <div class="col-md-12 mt-3">
+                                    <div
+                                      style="
+                                        display: flex;
+                                        gap: 5px;
+                                        margin-top: 10px;
+                                      "
+                                    >
+                                      <label> <span></span> SGST</label>
+                                      <input
+                                        type="text"
+                                        style="height: 20px; width: 71px"
+                                        placeholder="₹"
+                                        onkeypress="return /[0-9]/i.test(event.key)"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div class="col-md-12">
+                                    <div style="display: flex; gap: 5px">
+                                      <label>CGST</label>
+                                      <input
+                                        type="text"
+                                        style="height: 20px; width: 71px"
+                                        placeholder="₹"
+                                        onkeypress="return /[0-9]/i.test(event.key)"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-12 mt-2">
+                                <div class="text-right">
+                                  <label>Grand Total</label>
+                                  <input
+                                    type="text"
+                                    placeholder="₹"
+                                    onkeypress="return /[0-9]/i.test(event.key)"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 text-center mt-2">
+              <button type="button" class="addVenderSubmitBtn openbtnpop">
+                Pay Now
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <div class="popmodel">
+      <div class="popmodelopen">
+        <div class="openmodel">
+          <div class="closebtnicon mt-1">
+            <i class="fa fa-close closeicon"></i>
+          </div>
 
-  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-  <script>
-    $("head").append(
-      '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
-    );
-    $("head").append(
-      ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
+          <div class="row justify-content-center mt-3">
+            <div class="col-md-12 mt-3" style="padding: 2px 20px">
+              <label for="" class="noLabel" style="font-size: 15px">
+                Payment Mode</label
+              >
+              <div class="djdecoration">
+                <div>
+                  <input
+                    class="form-check-input coupon_question"
+                    type="radio"
+                    id=""
+                    name="coupon_question1"
+                    value="1"
+                  />
+                  <label class="form-check-label" for=""> Card </label>
+                  <input
+                    type="text"
+                    class="decoration"
+                    style="display: none"
+                    placeholder="Amount"
+                  />
+                </div>
+                <div>
+                  <input
+                    class="form-check-input coupon_question1"
+                    type="radio"
+                    id=""
+                    name="coupon_question1"
+                    value="2"
+                  />
+                  <label class="form-check-label" for=""> Cash </label>
+                </div>
+                <div>
+                  <input
+                    class="form-check-input coupon_question1"
+                    type="radio"
+                    id=""
+                    name="coupon_question1"
+                    value="2"
+                  />
+                  <label class="form-check-label" for=""> Upi </label>
+                </div>
+              </div>
+              <div class="row justify-content-center mt-4">
+                <div class="col-md-4 text-center">
+                  <button
+                    class="btn btn-primary"
+                    style="
+                      padding: 2px 14px;
+                      font-size: 12px;
+                      background-color: #083e5a;
+                    "
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+      $("head").append(
+        '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
+      );
+      $("head").append(
+        ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
 />'
-    );
-    $("head").append(
-      '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
-    );
-  </script>
-  <script>
-    $(".openbtnpop").click(function () {
-      $(".popmodel").show()
-    })
-    $(".closeicon").click(function () {
-      $(".popmodel").hide()
-    })
-    function valueChangedsd() {
-      if ($('.coupon_question2').is(":checked"))
-        $(".taxtgst").hide();
-      else
-        $(".taxtgst").show();
-    }
-    function valueChangedsd1() {
-      if ($('.coupon_question4').is(":checked"))
-        $(".selectbox").prop("disabled", true);
-      else
-        $(".selectbox").prop("disabled", false);
-    }
-  </script>
-</body>
-
+      );
+      $("head").append(
+        '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
+      );
+    </script>
+    <script>
+      $(".openbtnpop").click(function () {
+        $(".popmodel").show();
+      });
+      $(".closeicon").click(function () {
+        $(".popmodel").hide();
+      });
+      function valueChangedsd() {
+        if ($(".coupon_question2").is(":checked")) $(".taxtgst").hide();
+        else $(".taxtgst").show();
+      }
+      function valueChangedsd1() {
+        if ($(".coupon_question4").is(":checked"))
+          $(".selectbox").prop("disabled", true);
+        else $(".selectbox").prop("disabled", false);
+      }
+    </script>
+  </body>
 </html>

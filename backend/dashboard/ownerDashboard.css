@@ -299,11 +299,9 @@ body {
   border-radius: 4px;
 }
 
-.dataPanel {
-  background-color: #fff;
-}
 .dataPanel .topBarSec {
   background-color: #fafafa;
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -320,6 +318,11 @@ body {
 .dataPanel .topBarSec .menuIcon i {
   cursor: pointer;
   padding: 5px;
+}
+.dataPanel .chartSec,
+.dataPanel .topRef,
+.dataPanel .trafficSource {
+  background-color: #fff;
 }
 .dataPanel .chartSec .topBar,
 .dataPanel .topRef .topBar,
@@ -520,12 +523,12 @@ body {
 }
 
 .dataPanel3 .topBbar {
-  background-color: #fafafa;
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px 10px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: 0;
 }
 .dataPanel3 .topBbar h4 {
   font-size: 16px;
@@ -537,4 +540,118 @@ body {
 .dataPanel3 .topBbar i {
   cursor: pointer;
   padding: 5px;
+}
+.dataPanel3 .leftSec {
+  width: 250px;
+  min-height: 0;
+}
+.dataPanel3 .rightSec {
+  min-height: 0;
+}
+.dataPanel3 .rightSec input {
+  width: 85%;
+  padding-left: 10px;
+  outline: none;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  font-size: 14px;
+  height: 32px;
+}
+.dataPanel3 .rightSec .plusBtn {
+  width: 15%;
+  cursor: pointer;
+  background-color: #ab93e1;
+}
+.dataPanel3 .rightSec ul {
+  padding: 0px 5px;
+}
+.dataPanel3 .rightSec ul li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 5px 0px;
+}
+.dataPanel3 .rightSec ul li span {
+  color: #aba6a6;
+}
+.dataPanel3 .dataPanel3Sec2 {
+  background-color: #fff;
+  padding-bottom: 20px;
+}
+.dataPanel3 .dataPanel3Sec2 .navBar {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.dataPanel3 .dataPanel3Sec2 .navBar ul {
+  margin-bottom: 0px;
+}
+.dataPanel3 .dataPanel3Sec2 .navBar ul li {
+  width: 25%;
+  display: flex;
+  color: #ab93e1;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  font-weight: 900;
+  cursor: pointer;
+  border-right: 1px solid #eee;
+}
+.dataPanel3 .dataPanel3Sec2 .navBar ul li:last-child {
+  border: 0;
+}
+.dataPanel3 .dataPanel3Sec2 .topHeading h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.dataPanel3 .dataPanel3Sec2 .topHeading p {
+  color: #ab93e1;
+}
+.dataPanel3 .dataPanel3Sec2 p {
+  text-align: center;
+}
+.dataPanel3 .thirdSec {
+  background-color: #fff;
+}
+.dataPanel3 .thirdSec ul {
+  list-style: disc;
+  padding: 0px 10px;
+}
+.dataPanel3 .thirdSec ul li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 5px 0px;
+}
+.dataPanel3 .thirdSec ul li i {
+  font-size: 8px;
+  color: #ab93e1;
+}
+.dataPanel3 .thirdSec ul li span {
+  color: #000;
+  font-weight: 500;
+}
+.dataPanel3 .thirdSec ul li span:first-child {
+  color: #aba6a6;
+}
+.dataPanel3 .thirdSec ul li img {
+  width: 20px;
+  height: 15px;
+  margin-right: 10px;
+}
+
+.nMargin1 {
+  margin-top: -240px !important;
+}
+
+.nMargin2 {
+  margin-top: -40px !important;
+}
+
+.nMargin3 {
+  margin-top: -10px !important;
+  background-color: #fff;
+}
+
+.noBg {
+  background-color: transparent !important;
 }/*# sourceMappingURL=ownerDashboard.css.map */

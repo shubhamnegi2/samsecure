@@ -323,9 +323,9 @@ body {
 }
 
 .dataPanel {
-    background-color: $white;
     .topBarSec {
         background-color: #fafafa;
+        background-color: $white;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -348,6 +348,7 @@ body {
     .chartSec,
     .topRef,
     .trafficSource {
+        background-color: $white;
         .topBar {
             box-shadow: rgb(0 0 0 / 15%) 0px 0.95px 1.6px;
             display: flex;
@@ -538,12 +539,12 @@ body {
 }
 .dataPanel3{
     .topBbar {
-        background-color: #fafafa;
+        background-color: #fff;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 5px 10px;
-        box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
+        box-shadow:0;
         h4 {
             font-size: 16px;
             padding-bottom: 0px;
@@ -557,6 +558,115 @@ body {
         }
     }
     .leftSec{
-        
+        width: 250px;
+        min-height: 0;
     }
+    .rightSec{
+        min-height: 0;
+        input{
+            width: 85%;
+            padding-left: 10px;
+            outline: none;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            font-size: 14px;
+            height: 32px;
+        }
+        .plusBtn {
+            width: 15%;
+            cursor: pointer;
+            background-color: #ab93e1;
+        }
+        ul{
+            padding: 0px 5px;
+            li {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid #eee;
+                padding: 5px 0px;
+                span{
+                    color: #aba6a6;
+                }
+            }
+        } 
+    }
+    .dataPanel3Sec2{
+        background-color: #fff;
+        padding-bottom: 20px;
+        .navBar{
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            ul{
+                margin-bottom: 0px;
+                li{
+                    width: 25%;
+                    display: flex;
+                    color: #ab93e1;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 5px;
+                    font-weight: 900;
+                    cursor: pointer;
+                    border-right: 1px solid #eee;
+                    &:last-child{
+                        border:0;
+                    }
+                }
+            }
+        }
+        .topHeading{
+            h3{
+                font-size: 20px;
+                font-weight: bold;;
+            }
+            p{
+                color: #ab93e1;
+            }
+        }
+        p{
+            text-align: center;
+        }
+    }
+    .thirdSec{
+        background-color: #fff;
+        ul {
+            list-style: disc;
+            padding: 0px 10px;
+            li {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid #eee;
+                padding: 5px 0px;
+                i {
+                    font-size: 8px;
+                    color: $color1;
+                }
+                span {
+                    color: $black;
+                    font-weight: 500;
+                }
+                span:first-child {
+                    color: $fontColor2;
+                }
+                img {
+                    width: 20px;
+                    height: 15px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+.nMargin1{
+    margin-top: -240px !important;
+}
+.nMargin2{
+    margin-top: -40px !important;
+}
+.nMargin3{
+    margin-top: -10px !important;
+    background-color: #fff;
+}
+.noBg{
+    background-color: transparent !important;
 }

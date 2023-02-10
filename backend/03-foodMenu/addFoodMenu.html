@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Menu</title>
+    <!-- <link rel="stylesheet" href="./addPurchases2.css" /> -->
+    <!-- <link rel="stylesheet" href="./popup-models.css" /> -->
+
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+      .bottomsec .dBlock {
+        display: block !important;
+      }
+      .breadcrumbs {
+        position: relative;
+        background-color: #ef7d0b;
+        padding: 0px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .breadcrumbs button {
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0px;
+        background-color: #fe9037;
+        color: #fff;
+        padding: 2px 30px;
+        font-weight: bold;
+        border: 1px solid #ffcd8f;
+        margin-right: 5px;
+        font-size: 14px;
+      }
+      .breadcrumbs ul {
+        margin-bottom: 0rem;
+      }
+      .breadcrumbs ul li {
+        color: #eee;
+        font-weight: bold;
+        margin: 10px 1px;
+      }
+      .breadcrumbs ul li a {
+        color: inherit;
+        padding: 10px;
+        text-decoration: none;
+      }
+      .breadcrumbs ul li i {
+        font-size: 12px;
+      }
+      .breadcrumbs ul li .ActiveBreadcrumb {
+        color: #fff;
+      }
+
+      main {
+        background-color: transparent;
+      }
+      main .CategoryActionBtn button {
+        min-width: 80px;
+        margin: 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 2px 8px;
+      }
+      main .CategoryActionBtn button:last-child {
+        margin-right: 0px;
+      }
+      main .categoryheading {
+        color: #7a7797;
+        font-weight: bold;
+        font-size: 14px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        display: inline-block;
+      }
+      main .categoryheading i {
+        font-size: 12px;
+      }
+
+      .allBtnsWrapper .allBtns,
+      .allVenderBtnsWrapper .allBtns {
+        background-color: #fff;
+        border: 1px solid #fc8019;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        border-radius: 5px;
+        padding: 15px;
+      }
+      .allBtnsWrapper .allBtns button,
+      .allVenderBtnsWrapper .allBtns button {
+        min-width: 50px;
+        margin: 2px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+      }
+      .allBtnsWrapper .allBtns button:last-child,
+      .allVenderBtnsWrapper .allBtns button:last-child {
+        margin-right: 0px;
+      }
+      .allBtnsWrapper .allBtns .activeBtn,
+      .allVenderBtnsWrapper .allBtns .activeBtn {
+        background-color: #fe9037;
+      }
+      .allBtnsWrapper .allBtns hr,
+      .allVenderBtnsWrapper .allBtns hr {
+        margin: 0px;
+      }
+
+      .ProductDetailsWrapper {
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        border-radius: 5px;
+        padding: 0px 10px;
+        overflow: hidden;
+        border: 1px solid #fc8019;
+      }
+      .ProductDetailsWrapper .details {
+        transition: all 0.5s ease;
+        position: relative;
+        top: 0px;
+      }
+      .ProductDetailsWrapper .details .title {
+        text-align: center;
+      }
+      .ProductDetailsWrapper .details .title h3 {
+        display: inline-block;
+        border-bottom: 2px solid #fc8e32;
+        color: #083e5a;
+        font-weight: bold;
+        padding-bottom: 1px;
+        font-size: 18px;
+      }
+      .ProductDetailsWrapper thead {
+        background-color: #fc8e32;
+        color: #fff;
+      }
+      .ProductDetailsWrapper thead tr,
+      .ProductDetailsWrapper thead th {
+        border: 1px solid transparent #000;
+      }
+      .ProductDetailsWrapper tbody tr td:last-child {
+        font-weight: 500;
+        text-transform: capitalize;
+      }
+      .ProductDetailsWrapper tbody tr input,
+      .ProductDetailsWrapper tbody tr select {
+        width: 100%;
+        height: 30px;
+        border: 0;
+        text-align: center;
+        background-color: transparent;
+        color: #7a7797;
+      }
+
+      #addVenderWrapper {
+        display: none;
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        border-radius: 5px;
+        padding: 30px 0px;
+      }
+      #addVenderWrapper .addVenderTitle {
+        text-align: center;
+        padding-bottom: 20px;
+      }
+      #addVenderWrapper .addVenderTitle h2 {
+        display: inline-block;
+        border-bottom: 2px solid #3abb69;
+        color: #7a7797;
+        font-weight: bold;
+        padding-bottom: 5px;
+        font-size: 20px;
+      }
+      #addVenderWrapper .addVenderForm .formGroup {
+        margin-bottom: 20px;
+      }
+      #addVenderWrapper .addVenderForm .formGroup label {
+        color: #7a7797;
+        font-size: 14px;
+        font-weight: 500;
+        padding-left: 5px;
+      }
+      #addVenderWrapper .addVenderForm .formGroup input {
+        border: 2px solid #eee;
+        width: 100%;
+        border-radius: 4px;
+        padding-left: 15px;
+      }
+      #addVenderWrapper .addVenderForm .addVenderSubmitBtn {
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0px;
+        background-color: #fc8e32;
+        color: #fff;
+        padding: 2px 30px;
+        font-weight: bold;
+      }
+
+      .text-right {
+        text-align: right;
+      }
+
+      .text-left {
+        text-align: left;
+      }
+    </style>
+    <style>
+      .addFoodMenuFormWrapper {
+        counter-reset: Serial;
+      }
+
+      .addFoodMenuFormWrapper tr td:first-child:before {
+        counter-increment: Serial;
+        content: counter(Serial);
+      }
+      .itemNameWrapper ul {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .itemNameWrapper ul li {
+        max-width: 150px;
+        overflow: hidden;
+        margin-right: 10px;
+        font-size: 14px;
+      }
+      .itemNameWrapper ul li input {
+        cursor: pointer;
+      }
+      .itemNameWrapper ul li label {
+        display: inline-block;
+        width: 110px;
+        white-space: nowrap;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        color: #000;
+        font-size: 12px;
+      }
+      .itemNameWrapper .form-check {
+        margin-bottom: -5px;
+      }
+      .itemNameWrapper {
+        box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+        padding: 10px 15px;
+        border-radius: 5px;
+        border: 1px solid #fc8019;
+        background-color: #eee;
+      }
+      .itemNameWrapper h3 {
+        color: #7a7797;
+        font-weight: bold;
+        font-size: 14px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        display: inline-block;
+      }
+      .allBtnsWrapper h3 {
+        /* text-align: center; */
+        /* border-bottom: 2px solid #fc8e32; */
+        color: #7a7797;
+        font-weight: bold;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        /* margin-top: 1rem; */
+        font-size: 14px;
+        text-align: right;
+        padding-right: 15px;
+      }
+      .totalCatgry,
+      .totalIngredients {
+        font-weight: bold;
+        color: #083e5a;
+      }
+      .ProductDetailsWrapper .eventDateTime {
+        color: #3abb69;
+        font-size: 12px;
+        padding: 0px 15px;
+        /* border: 1px solid #eee; */
+      }
+      .ProductDetailsWrapper .eventDateTime span {
+        font-weight: bold;
+        color: #7a7797;
+      }
+      .ingredientsActionBtn button {
+        min-width: 50px;
+        margin: 2px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+        /* margin-bottom: 15px; */
+      }
+      .itemNameWrapper hr {
+        margin: 0px;
+      }
+      .allVenderBtnsWrapper h3 {
+        color: #7a7797;
+        font-weight: bold;
+        font-size: 14px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        display: inline-block;
+      }
+      .breadcrumbs button.activeBreadcurmbtn {
+        background-color: #083e5a;
+        border-color: #083e5a;
+        /* border-radius: 5px; */
+      }
+      .mainColor {
+        color: #fc8019;
+      }
+      .allBtnsWrapper .CategoryActionBtn button {
+        background-color: #fc8019;
+      }
+      .itemNameWrapper .ingredientsActionBtn button {
+        background-color: #fc8019;
+      }
+      .itemNameWrapper .ingredientsActionBtn button:last-child {
+        margin-right: 0px;
+      }
+      .allVenderBtnsWrapper .vendersActionBtn button {
+        background-color: #fc8019;
+      }
+      .allVenderBtnsWrapper ul li {
+        margin: 0px 5px;
+        font-size: 12px;
+      }
+      .dateWrapper {
+        font-size: 12px;
+      }
+      #dateWise {
+        border: 0;
+        border-radius: 4px;
+        padding-left: 15px;
+        color: #7a7797;
+        height: 16px;
+        background-color: #eee;
+      }
+      .dateWrapper button {
+        min-width: 50px;
+        margin: 2px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+      }
+    </style>
+    <style>
+      .topSearchAndBtns {
+        /* border: 1px solid #fc8019; */
+        padding: 0px 15px;
+      }
+      .searchboxWrapper {
+        margin-top: -20px;
+        position: relative;
+        z-index: 999;
+      }
+      .searchboxWrapper input {
+        height: 20px;
+        /* width: 75%; */
+      }
+      .searchboxWrapper label {
+        color: #7a7797;
+        font-weight: bold;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        /* margin-top: 1rem; */
+        font-size: 14px;
+        text-align: right;
+      }
+      .actinBtns button {
+        min-width: 50px;
+        margin: 2px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+      }
+      .actinBtns {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        display: none;
+      }
+    </style>
+    <style>
+      .allMenuWrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-top: 20px;
+      }
+
+      .foodMenuWrapper .foodMenuCard1 {
+        width: 100%;
+        border: 1px solid #eee;
+        box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+        padding: 5px;
+        padding-bottom: 0px;
+        position: relative;
+      }
+      .foodMenuWrapper .foodMenuCard1 .topBar img {
+        width: 40px;
+        height: 40px;
+        border-radius: 3px;
+      }
+      .foodMenuCard1 .TopContent img {
+        margin-right: 15px;
+      }
+      .foodMenuCard1 .TopContent {
+        color: #7a7797;
+        font-weight: bold;
+        font-size: 14px;
+        text-transform: capitalize;
+      }
+      .foodMenuCard1 .middlePert {
+        font-size: 10px;
+      }
+      .foodMenuCard1 .bottomsec {
+        border-top: 1px solid #eee;
+      }
+      .foodMenuCard1 .bottomsec button {
+        min-width: 40px;
+        margin: 2px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 8px;
+        font-weight: 600;
+        padding: 1px 0px;
+      }
+      .width250px {
+        max-width: 250px;
+        /* max-width: 100px; */
+        width: 100%;
+        border: 1px solid #eee;
+        border-radius: 3px;
+        margin: 5px;
+      }
+      .foodMenuCard1 .bottomsec button:first-child {
+        margin-left: 0px;
+      }
+    </style>
+    <style>
+      .foodMenuTableFormWrapper {
+        counter-reset: Serial;
+      }
+
+      .foodMenuTableFormWrapper tr td:first-child:before {
+        counter-increment: Serial;
+        content: counter(Serial);
+      }
+      .foodMenuTableFormWrapper {
+        border: 1px solid #fc8019;
+        border-radius: 4px;
+        overflow-x: scroll;
+        /* display: none; */
+      }
+      .foodMenuTableFormWrapper table {
+        border-collapse: collapse;
+        font-size: 12px;
+        text-align: center;
+        min-width: 1500px;
+      }
+      .foodMenuTableFormWrapper thead {
+        background-color: #fc8e32;
+        color: #fff;
+      }
+      .foodMenuTableFormWrapper thead th {
+        color: #fff;
+      }
+      .foodMenuTableFormWrapper table tr {
+        width: 100%;
+        height: 30px;
+        border: 0;
+        text-align: center;
+        background-color: transparent;
+        color: #7a7797;
+      }
+      .foodMenuTableFormWrapper table tr td:nth-child(9) {
+        max-width: 200px;
+      }
+      .foodMenuTableFormWrapper table tr td:nth-child(13) {
+        min-width: 130px;
+      }
+      .foodMenuTableFormWrapper table tr td select,
+      .foodMenuTableFormWrapper table tr td input {
+        height: 30px;
+        width: 100%;
+        outline: none;
+        padding: 0px;
+        border: 0;
+        text-align: center;
+      }
+      .foodMenuTableFormWrapper table tr td i {
+        padding: 5px;
+        cursor: pointer;
+      }
+      .foodMenuTableFormWrapper table tr td button {
+        min-width: 50px;
+        margin: 2px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+      }
+      .foodMenuTableFormWrapper table tr td textarea:focus-visible {
+        border: 1px solid transparent;
+        outline: none;
+      }
+      .foodMenuTableFormWrapper table tr td textarea {
+        border: 1px solid transparent;
+        background-color: transparent;
+        max-height: 30px;
+        height: 100%;
+        width: 100%;
+        resize: none;
+      }
+      .foodMenuTableFormWrapper td {
+        border-right: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+      }
+      .foodMenuTableFormWrapper th {
+        border-collapse: collapse;
+        font-size: 12px;
+        height: 30px;
+        text-align: center;
+      }
+      .foodMenuTableFormWrapper table tr:nth-child(even) {
+        background-color: #fff2e7;
+      }
+      .foodMenuTableFormWrapper table tr:nth-child(even) input,
+      .foodMenuTableFormWrapper table tr:nth-child(even) select,
+      .foodMenuTableFormWrapper table tr:nth-child(even) textarea {
+        background-color: #fff2e7;
+      }
+      .table1Btns .saveAddedIngBtn,
+      .addMoreRowInIngTable,
+      .saveMoreRowInIngTable,
+      .closeMoreRowInIngTable {
+        min-width: 50px;
+        margin: 2px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+      }
+    </style>
+    <style>
+      .AddFoodMenuPopupWrapper {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .addFoodMenuFormWrapper {
+        width: 90%;
+        position: relative;
+        background-color: #fff;
+        border: 1px solid transparent;
+        box-shadow: rgb(0 0 0 / 4%) 0px 3px 5px;
+        border-radius: 5px;
+        padding: 15px;
+      }
+      .ProfileDetailpop h3,
+      .addFoodMenuFormWrapper h2 {
+        display: inline-block;
+        border-bottom: 2px solid #fc8e32;
+        color: #083e5a;
+        font-weight: bold;
+        padding-bottom: 1px;
+        font-size: 18px;
+      }
+      .addFoodMenuFormWrapper form label {
+        color: #7a7797;
+        font-size: 14px;
+      }
+      .addFoodMenuFormWrapper form textarea {
+        resize: none;
+        height: 50px;
+        border: 1px solid #ddd;
+        color: #7a7797;
+        border-radius: 3px;
+      }
+      .addFoodMenuFormWrapper .closeform {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        font-size: 25px;
+        padding: 0px 5px;
+        cursor: pointer;
+      }
+      .addFoodMenuFormWrapper form input,
+      .addFoodMenuFormWrapper form select {
+        border: 1px solid #ddd;
+        color: #7a7797;
+        border-radius: 3px;
+      }
+      .addFoodMenuFormWrapper .ingtopHeading h5,
+      .categoryheading {
+        color: #7a7797;
+        font-weight: bold;
+        font-size: 14px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        display: inline-block;
+      }
+      .addFoodMenuFormWrapper .ProductDetailsWrapper .details table {
+        border-collapse: collapse;
+        font-size: 12px;
+        text-align: center;
+        width: 100%;
+      }
+      .addFoodMenuFormWrapper
+        .ProductDetailsWrapper
+        table
+        tbody
+        tr
+        td:nth-child(3)
+        input {
+        border: 1px solid #000;
+        padding: 2px;
+      }
+      .deleteThisRow {
+        cursor: pointer;
+        padding: 5px;
+      }
+      .saveAddedIngBtn {
+        min-width: 50px;
+        margin: 2px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 2px 30px;
+      }
+
+      .foodCategoryWrapper ul li .countDetails {
+        border-left: 1px solid #7a7797;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .foodCategoryWrapper ul li:first-child button {
+        min-width: 50px;
+        margin: 2px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+      }
+      .foodCategoryWrapper ul li:first-child {
+        cursor: default;
+      }
+
+      .foodCategoryWrapper ul li input,
+      .foodCategoryWrapper ul li {
+        color: #7a7797;
+        font-weight: bold;
+        font-size: 14px;
+        text-transform: capitalize;
+        border-bottom: 1px solid #7a7797;
+        padding-left: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 30px;
+        width: 100%;
+        background-color: transparent;
+        cursor: pointer;
+      }
+      .foodCategoryWrapper ul li input {
+        border: 0;
+      }
+      .foodCategoryWrapper {
+        min-width: 120px;
+        height: 100%;
+        border-right: 1px solid #7a7797;
+      }
+      .foodMenuWrapper {
+        border: 1px solid #7a7797;
+        border-radius: 4px;
+        position: relative;
+        /* padding-top: 10px; */
+      }
+      .activeSubCat input {
+        color: #fff !important;
+      }
+      .activeSubCat {
+        background-color: #fc8019 !important;
+        color: #fff !important;
+      }
+      .vegColor {
+        border-left: 1px solid green !important;
+        border-bottom: 1px solid green !important;
+      }
+      .nonvegColor {
+        border-left: 1px solid brown !important;
+        border-bottom: 1px solid brown !important;
+      }
+      .removeToMyfav {
+        cursor: pointer;
+        position: absolute;
+        right: 2px;
+        bottom: 2px;
+        cursor: pointer;
+        color: #fe9037;
+        display: none !important;
+      }
+      .catTopBtn {
+        border-bottom: 1px solid #7a7797;
+      }
+      .saveEditSubCat {
+        display: none;
+        text-align: right;
+        border-bottom: 1px solid #7a7797;
+      }
+      .catTopBtn button,
+      .saveEditSubCat button,
+      .selectFiltersWrapper button,
+      .addCategoryCard button {
+        min-width: 50px;
+        margin: 2px 5px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+      }
+      .saveEditSubCat button {
+        padding: 2px;
+        min-width: 45px;
+      }
+
+      .addCategoryCard {
+        padding: 5px;
+        /* max-width: 140px; */
+        padding-bottom: 2px;
+        border: 1px solid #7a7797;
+        display: none;
+      }
+      .addCategoryCard input {
+        height: 25px;
+        font-size: 14px;
+        /* width: 100%; */
+      }
+    </style>
+    <style>
+      .ribben {
+        background-color: #fc8019;
+        color: #fff;
+        border-radius: 50%;
+        padding: 0px 2px;
+        font-size: 8px;
+        margin-left: -3px;
+      }
+      .fullRibben {
+        padding: 0px 3px;
+      }
+      .name {
+        display: block;
+        width: 150px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .foodMenuCheckbox {
+        position: absolute;
+        right: 5px;
+        top: 2px;
+        cursor: pointer;
+      }
+      .addTofavBtn {
+        position: absolute;
+        right: 2px;
+        bottom: 2px;
+        cursor: pointer;
+      }
+      .nonvegBgColor {
+        border: 2px solid #000;
+      }
+      .vegBgColor {
+        border: 2px solid #000;
+      }
+    </style>
+    <style>
+      .addCategoryModelWrapper,
+      .editCategoryModelWrapper,
+      .addIngredientModelWrapper,
+      .editIngredientModelWrapper {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        z-index: 999;
+        overflow-y: scroll;
+        /* display: flex; */
+        display: none;
+        align-items: flex-start;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      /* .editIngredientModelWrapper {
+        display: flex;
+      } */
+      .editCategoryModel h2,
+      .addCategoryModel h2,
+      .editIngredientModel h2,
+      .addIngredientModel h2 {
+        display: inline-block;
+        border-bottom: 2px solid #fc8e32;
+        color: #083e5a;
+        font-weight: bold;
+        padding-bottom: 1px;
+        font-size: 18px;
+      }
+      .addCategoryModel,
+      .editCategoryModel,
+      .addIngredientModel,
+      .editIngredientModel {
+        background-color: #fff;
+        transition: all 0.3 ease;
+        /* width: 50%; */
+        text-align: center;
+        padding: 15px;
+        position: relative;
+        border-radius: 4px;
+      }
+      .editCategoryModel,
+      .editIngredientModel {
+        width: 70%;
+      }
+      .editCategoryModel table tbody,
+      .editIngredientModel table tbody {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .editCategoryModel table tbody tr,
+      .editIngredientModel table tbody tr {
+        max-width: 30%;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .editCategoryModel i,
+      .editIngredientModel i,
+      .addIngredientModelWrapper i {
+        cursor: pointer;
+        padding: 3px;
+      }
+      .editCategoryModel input,
+      .editIngredientModel input {
+        border: 1px solid #7a7797;
+        border-radius: 3px;
+        margin-right: 10px;
+        padding-left: 15px;
+        font-size: 14px;
+      }
+      .addCategoryModel input,
+      .addCategoryModel label {
+        width: 100%;
+        text-align-last: left;
+      }
+      .addCategoryModel label {
+        color: #7a7797;
+        font-size: 14px;
+      }
+      .addCategoryModel button,
+      .addIngredientModelWrapper button {
+        min-width: 50px;
+        margin: 2px px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 5px 8px;
+      }
+      .closeAddCategoryModel,
+      .closeEditCategoryModel,
+      .closeEditIngredientModel,
+      .closeaddIngredientModelWrapper {
+        position: absolute;
+        right: 5px;
+        top: 3px;
+        width: 30px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      .editCategoryModel button {
+        min-width: 50px;
+        margin: 2px px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 5px 8px;
+      }
+      .addIngredientModelWrapper .topbar select,
+      .addIngredientModelWrapper input {
+        border: 1px solid rgb(190, 188, 188);
+        border-radius: 4px;
+        font-size: 14px;
+        color: #083e5a;
+        padding-left: 15px;
+      }
+      .addIngredientModelWrapper .topbar {
+        color: #083e5a;
+        font-size: 14px;
+      }
+      .undoDeleteCat {
+        display: none;
+      }
+      .undoDelete {
+        display: none;
+      }
+      .saveEditedIng {
+        min-width: 50px;
+        margin: 2px px 10px;
+        text-transform: capitalize;
+        border-radius: 3px;
+        border: 0;
+        background-color: #083e5a;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 5px 8px;
+      }
+    </style>
+    <style>
+      .foodMenuFormWrapper .qPriceWrapper,
+      .foodMenuFormWrapper .hPriceWrapper {
+        position: relative;
+        cursor: pointer;
+      }
+
+      .foodMenuFormWrapper .HselectBox input,
+      .foodMenuFormWrapper .QselectBox input {
+        border-bottom: 1px solid #000;
+      }
+      .foodMenuFormWrapper .HselectBox,
+      .foodMenuFormWrapper .QselectBox {
+        border: 1px solid #000;
+        position: absolute;
+        left: 0px;
+        top: 27px;
+        background-color: #fff;
+        z-index: 99;
+        color: #000;
+      }
+      .foodMenuTableFormWrapper table {
+        margin-bottom: 70px;
+      }
+      .foodMenuTableFormWrapper table tbody tr td:nth-last-child(2) {
+        min-width: 110px;
+      }
+      .foodMenuTableFormWrapper table tbody tr td:nth-last-child(2) button {
+        margin: 0;
+      }
+      .foodMenuTableFormWrapper .selectBox {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- add ingredients model -->
+    <div class="addCategoryModelWrapper">
+      <div class="addCategoryModel">
+        <div class="closeAddCategoryModel">
+          <i class="fa-regular fa-circle-xmark"></i>
+        </div>
+        <h2 class="mb-3">Add New Category</h2>
+        <form action="">
+          <div class="form-group">
+            <label for="category">Enter Category Name : </label>
+            <input type="text" name="" id="" />
+          </div>
+          <div class="text-right mt-3">
+            <button>Save Category</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- edit category model -->
+    <div class="editCategoryModelWrapper">
+      <div class="editCategoryModel">
+        <div class="closeEditCategoryModel">
+          <i class="fa-regular fa-circle-xmark"></i>
+        </div>
+        <h2 class="mb-4">Edit Category</h2>
+        <table>
+          <tr>
+            <td><input type="text" value="Dairy Products" /></td>
+            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDeleteCat">
+              <i class="fa-solid fa-rotate-left"></i>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Drinkable" /></td>
+            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDeleteCat">
+              <i class="fa-solid fa-rotate-left"></i>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Fast Food" /></td>
+            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDeleteCat">
+              <i class="fa-solid fa-rotate-left"></i>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Dairy Products" /></td>
+            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDeleteCat">
+              <i class="fa-solid fa-rotate-left"></i>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Drinkable" /></td>
+            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDeleteCat">
+              <i class="fa-solid fa-rotate-left"></i>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Fast Food" /></td>
+            <td class="deleteCategory"><i class="fa-solid fa-trash"></i></td>
+            <td class="undoDeleteCat">
+              <i class="fa-solid fa-rotate-left"></i>
+            </td>
+          </tr>
+        </table>
+        <div class="text-center">
+          <button>Submit</button>
+        </div>
+      </div>
+    </div>
+    <div class="breadcrumbs">
+      <ul class="list-unstyled d-flex align-items-center">
+        <li><a href="">Dashboard</a></li>
+        <li><i class="fa-solid fa-angles-right"></i></li>
+        <li><a href="" class="">Food Menu</a></li>
+        <li><i class="fa-solid fa-angles-right"></i></li>
+        <li><a href="" class="ActiveBreadcrumb">Add Food Menu</a></li>
+      </ul>
+      <div>
+        <button class="favBtn">Upload Food Menu</button>
+      </div>
+    </div>
+
+    <div class="foodMenuFormWrapper foodMenuTableFormWrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>S. No.</th>
+            <th>Food Name</th>
+            <th>Code</th>
+            <th>category</th>
+            <th>Description</th>
+            <th>Veg / Non-Veg</th>
+            <th>Beverage</th>
+            <th>Bar Item</th>
+            <th>Q Price</th>
+            <th>H Price</th>
+            <th>F price</th>
+            <th>Add Ingredient</th>
+            <th>Add Img</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td><input type="text" placeholder="Item Name" /></td>
+            <td><input type="text" placeholder="Item Code" /></td>
+            <td>
+              <select name="" id="">
+                <option disabled selected>Select Category</option>
+              </select>
+            </td>
+            <td><input type="text" placeholder="Description" /></td>
+            <td>
+              <select name="" id="">
+                <option disabled selected>Veg/NonVeg</option>
+                <option>Veg</option>
+                <option>Non Veg</option>
+              </select>
+            </td>
+            <td>
+              <select name="" id="">
+                <option disabled selected>Beverage</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </td>
+            <td>
+              <select name="" id="">
+                <option disabled selected>Bar Item</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </td>
+            <td>
+              <div class="qPriceWrapper">
+                <span class="showOptions">Q Price <i class="fa-solid fa-angle-down ml-2"></i></span>
+                <div class="QselectBox selectBox">
+                  <input type="text" placeholder="Enter Price" />
+                  <span class="optionsNotAv">Not Available</span>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="hPriceWrapper">
+                <span class="showOptions">H Price <i class="fa-solid fa-angle-down ml-2"></i></span>
+                <div class="HselectBox selectBox">
+                  <input type="text" placeholder="Enter Price" />
+                  <span class="optionsNotAv">Not Available</span>
+                </div>
+              </div>
+            </td>
+            <td>
+              <input type="text" placeholder="F Price" />
+            </td>
+            <td><button>Add Ingredients</button></td>
+            <td><input type="file" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $("head").append(
+        '<script type="text/javascript" src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></\script>'
+      );
+      $("head").append(
+        ' <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"\
+        />'
+      );
+      $("head").append(
+        '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>'
+      );
+    </script>
+    <script>
+      $(".qPriceWrapper .showOptions").click(function () {
+        $('.qPriceWrapper .selectBox').slideToggle();
+      });
+      $(".hPriceWrapper .showOptions").click(function () {
+        $('.hPriceWrapper .selectBox').slideToggle();
+      });
+      $(".hPriceWrapper .optionsNotAv").click(function () {
+        $('.hPriceWrapper .selectBox').slideUp();
+        $('.hPriceWrapper .showOptions').text('Not Available')
+      });
+      $(".qPriceWrapper .optionsNotAv").click(function () {
+        $('.qPriceWrapper .selectBox').slideUp();
+        $('.qPriceWrapper .showOptions').text('Not Available')
+      });
+    </script>
+  </body>
+</html>
