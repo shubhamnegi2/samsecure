@@ -244,30 +244,30 @@
             background-color: transparent;
             color: #7a7797;
         }
-        .addCategoryModelWrapper table{
+        .addCategoryModelWrapper table,.venderDetailsTable table{
             width: 100%;
         }
         .addCategoryModelWrapper table,
         .addCategoryModelWrapper td,
-        .addCategoryModelWrapper th {
+        .addCategoryModelWrapper th,.venderDetailsTable table,.venderDetailsTable td,.venderDetailsTable th {
             border-collapse: collapse;
             font-size: 12px;
             text-align: center;
         }
-        .addCategoryModelWrapper thead {
+        .addCategoryModelWrapper thead ,.venderDetailsTable thead{
             background-color: #fc8e32;
             color: #fff;
         }
         .addCategoryModelWrapper thead tr,
-        .addCategoryModelWrapper thead th {
+        .addCategoryModelWrapper thead th, .venderDetailsTable thead tr,.venderDetailsTable thead th{
             border: 1px solid transparent #000;
         }
-        .addCategoryModelWrapper tbody tr td:first-child {
+        .addCategoryModelWrapper tbody tr td:first-child,.venderDetailsTable tbody tr td:first-child {
             font-weight: 500;
             text-transform: capitalize;
         }
         .addCategoryModelWrapper tbody tr input,
-        .addCategoryModelWrapper tbody tr select {
+        .addCategoryModelWrapper tbody tr select ,.venderDetailsTable tbody tr input {
             width: 100%;
             height: 30px;
             border: 0;
@@ -281,7 +281,7 @@
             top: 0px;
             /* display: none; */
         }
-
+        
         .ProductDetailsWrapper .venderDetailsTable {
             position: relative;
             left: 200%;
@@ -570,10 +570,7 @@
             justify-content: center;
             background-color: rgba(0, 0, 0, 0.5);
         }
-       
-        /* .editIngredientModelWrapper {
-        display: flex;
-      } */
+  
         .editCategoryModel h2,
         .addCategoryModel h2,
         .editIngredientModel h2,
@@ -598,42 +595,47 @@
             position: relative;
             border-radius: 4px;
         }
-
-       
+        .editCategoryModelWrapper label{
+            font-size: 14px;
+           
+        }
+        .editIngredientModelWrapper select{
+            font-size: 14px;
+        }
         .editIngredientModel {
-            width: 70%;
+            width: 50%;
         }
         .editCategoryModel{
             width: 50%;
         }
-        .editCategoryModel table tbody,
+       
         .editIngredientModel table tbody {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
         }
 
-        .editCategoryModel table tbody tr,
+       
         .editIngredientModel table tbody tr {
             max-width: 30%;
             width: 100%;
             margin-bottom: 10px;
         }
 
-        .editCategoryModel i,
+        
         .editIngredientModel i,
         .addIngredientModelWrapper i {
             cursor: pointer;
             padding: 3px;
         }
 
-        .editCategoryModel input,
+        
         .editIngredientModel input {
             border: 1px solid #7a7797;
             border-radius: 3px;
             margin-right: 10px;
             padding-left: 15px;
-            font-size: 14px;
+            font-size: 11px;
         }
      
         .addCategoryModel input,.addCategoryModel select,
@@ -687,7 +689,8 @@
         }
 
         .addIngredientModelWrapper .topbar select,
-        .addIngredientModelWrapper input {
+        .addIngredientModelWrapper input ,
+        .addIngredientModelWrapper select{
             border: 1px solid rgb(190, 188, 188);
             border-radius: 4px;
             font-size: 14px;
@@ -707,7 +710,6 @@
         .undoDelete {
             display: none;
         }
-
         .saveEditedIng {
             min-width: 50px;
             margin: 2px px 10px;
@@ -720,15 +722,29 @@
             font-weight: 600;
             padding: 5px 8px;
         }
-        .venderDetailsTable th{
-            padding: 5px 25px ;
+       
+        /* .venderDetailsTable th{
+            padding: 5px 25px;
+        } */
+        /* .venderDetailsTable table{
+            border-collapse: collapse;
+            font-size: 12px;
+            width: 100%;
+            text-align: center;
         }
-        .addCategoryModelWrapper tbody td input::placeholder{
+        .venderDetailsTable thead    {
+            background-color: #fc8e32;
+            color: #fff;
+            /* width: 100%; */
+        
+        
+      
+        .addCategoryModelWrapper tbody td input::placeholder ,.venderDetailsTable tbody td input::placeholder{
             display: inline-block;
             text-align-last: center;
             
         }
-        .addCategoryModelWrapper tbody td select{
+        .addCategoryModelWrapper tbody td select,.venderDetailsTable tbody td select{
             display: inline-block;
             text-align-last: center;
             cursor: pointer;
@@ -736,14 +752,24 @@
         .deleteAddedIngRow{
             cursor: pointer;
         }
+    
         .EditCategory label{
             width: 100%;
+            font-size: 15px;
         }
         .EditCategory input{
             width: 100%;
+            font-size: 11px;
         }
         .EditCategory select{
             width: 100%;
+            font-size: 13px;
+        }
+        .EditCategory i{
+            border: 1px border solid;
+        }
+        #SelectUnit{
+            width: 25%;
         }
     </style>
 </head>
@@ -762,6 +788,7 @@
                     <input type="text" name="" id="" />
                     <label for="ingredient">Add Ingredient : </label><br>
                     <div class="venderDetailsTable">
+                      
                         <table>
                             <thead>
                                 <tr>
@@ -820,6 +847,12 @@
                 <div class="form-group mt-3 text-left">
                     <label for="category">Ingredient : </label>
                     <input type="text" name="" id="" />
+                     <select name="" id="">
+                        <option value="Unit">Unit</option>
+                        <option value="kg">kg</option>
+                        <option value="L">L</option>
+                        <option value="gm">gm</option>
+                     </select>
                     <input type="text" value="Dairy Product" disabled />
                     <td><i class="fa-solid fa-trash deleteAddedIngredient"></i></td>
                 </div>
@@ -838,22 +871,53 @@
             </div>
             <h2 class="mb-4">Edit Category</h2>
             <div class="EditCategory">
-            <div class="text-left">
-             <label for="category">Select Category</label>
+            <div class="row">
+            <div class="text-left col-md-6">
+             <label for="category">Select Category :</label>
              <select name="" id="category">
                 <option value="">Dairy Product</option>
              </select>
             </div>
-            <div class="text-left">
+            <div class="text-left col-md-6">
+                <label for="CategoryName">Category Name :</label>
+                 <input type="text" name="" id="CategoryName">
+               </div>
+            </div>
+            <div class="venderDetailsTable">
+                <label for="">Ingredient List</label>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S. No.</th>
+                            <th>Name</th>
+                            <th>Unit</th>
+                            <th>Action</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><input type="text" placeholder="Milk"></td>
+                            <td>
+                               L
+                            </td>
+                            <td class="DeleteAddedIng"><i class="fa-solid fa-trash deleteAddedIngRow"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+            <!-- <div class="text-left">
              <label for="">Ingredient list</label>
              <select name="" id="">
                 <option value="">Milk Powder</option>
              </select>
-            </div>
-            <div class="text-left">
+            </div> -->
+            <!-- <div class="text-left">
                 <label for="">Add $ delete</label>
                 <i class="fa-solid fa-trash deleteAddedIngRow"></i>
-            </div>
+            </div> -->
             </div>
 
             <!-- <table>
@@ -900,7 +964,8 @@
                     </td>
                 </tr>
             </table> -->
-            <div class="text-center">
+            <div class="text-right">
+                <button>Add More Indgredients</button>
                 <button>Submit</button>
 
             </div>
@@ -975,7 +1040,35 @@
                     <td class="undoDelete"><i class="fa-solid fa-rotate-left"></i></td>
                 </tr>
             </table> -->
-            <div class="text-center">
+            <div class="row">
+                <div class="text-left col-md-6">
+                 <label for="category">Select Category :</label>
+                 <select name="" id="category">
+                    <option value="">Select Category</option>
+                    <option value="">Dairy Product</option>
+                 </select>
+                </div>
+                <div class="text-left col-md-6 ">
+                    <label for="Indgredients">Select Ingredient :</label>
+                    <select name="" id="Indgredients">
+                        <option value="">Select Indgredients</option>
+                        <option value="">milk </option>
+                     </select>
+                </div>
+                <div class="form-group mt-3 text-center">
+                    <label for="category">Ingredient : </label>
+                    <input type="text" name="" id="" />
+                     <select name="" id="SelectUnit">
+                        <option value="Unit">Unit</option>
+                        <option value="kg">kg</option>
+                        <option value="L">L</option>
+                        <option value="gm">gm</option>
+                     </select>
+                    <input type="text" value="Dairy Product" disabled />
+                    <td><i class="fa-solid fa-trash deleteAddedIngredient"></i></td>
+                </div>
+            </div>
+            <div class="text-right mt-3 px-4">
                 <button class="saveEditedIng">Submit</button>
             </div>
         </div>
@@ -1844,7 +1937,7 @@
                 .closest("form")
                 .children(".btns")
                 .before(
-                    `<div class="form-group mt-3 text-left"> <label for="category">Ingredient : </label> <input type="text" name="" id=""> <input type="text" value="${category}" disabled=""> <i class="fa-solid fa-trash deleteAddedIngredient"></i> </div>`
+                    `<div class="form-group mt-3 text-left"> <label for="category">Ingredient : </label> <input type="text" name="" id=""><select><option>unit</option></select> <input type="text" value="${category}" disabled=""> <i class="fa-solid fa-trash deleteAddedIngredient"></i> </div>`
                 );
         });
         //   close add ingredient model
