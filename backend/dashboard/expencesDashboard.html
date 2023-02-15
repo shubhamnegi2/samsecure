@@ -15,7 +15,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>Restaurant Dashboard</title>
+    <title>Expenses Dashboard</title>
   </head>
   <style>
     :root {
@@ -304,9 +304,41 @@
       height: 250px;
       border-radius: 10%;
     }
+    #chartContainer2 {
+      height: 250px;
+    }
+    #chartdiv {
+      height: 200px;
+    }
+    .mangerDasbordmainheader .headarcontant {
+      background-color: #fff;
+      padding: 10px 10px;
+    }
   </style>
 
   <body>
+    <div class="mangerDasbordmainheader my-3">
+      <div
+        class="d-flex align-items-center justify-content-between headarcontant"
+      >
+        <div class="headerleftside">
+          <div>
+            <span><i class="fa-solid fa-house-user"></i></span>
+            <span> Dashboard</span>
+            <span>/</span>
+            <span style="color: #a3b4c1">Expences Dashboard</span>
+          </div>
+        </div>
+        <!-- <div class="headerrightside">
+                  <div class="hederbtns">
+                      <button class="addaccountbtn">+ Add Account</button>
+                      <button class="exportbtn">
+                          <i class="fa-solid fa-file-export"></i> Export
+                      </button>
+                  </div>
+              </div> -->
+      </div>
+    </div>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4">
@@ -582,15 +614,19 @@
       <div class="row mt-5">
         <div class="col-md-4">
           <div class="KeenThemeTemplate">
-            <div>
-              <img
-                src="https://cdn5.vectorstock.com/i/1000x1000/75/69/software-as-a-service-saas-technology-icon-logo-vector-34097569.jpg"
-                alt=""
-                width="100px"
-                height="100px"
-              />
-              <span>Keen Theme Admin Template</span>
-              <div class="text-center">27 aug 2022</div>
+            <div class="d-flex flex-column">
+              <div class="container d-flex flex-column justify-content-start">
+                <img
+                  src="https://cdn5.vectorstock.com/i/1000x1000/75/69/software-as-a-service-saas-technology-icon-logo-vector-34097569.jpg"
+                  alt=""
+                  width="100px"
+                  height="100px"
+                />
+              </div>
+              <div class="container d-flex flex-column justify-content-end">
+                <span class="text-center">Keen Theme Admin Template</span>
+                <span class="text-center">27 aug 2022</span>
+              </div>
             </div>
 
             <div class="mt-4">
@@ -764,12 +800,7 @@
               <span class="">..</span>
             </div>
             <div>
-              <img
-                src="https://th.bing.com/th/id/OIP.IRI-svk4iv1qEl-ZtRXy4QHaDt?pid=ImgDet&rs=1"
-                alt=""
-                width="100%"
-                height="235px"
-              />
+              <div id="chartContainer" style="height: 230px">678</div>
             </div>
             <div class="OutlinesDiv">
               Outlines keep you honest stop indulging create in poorly thought
@@ -791,7 +822,10 @@
               <span class="">..</span>
             </div>
             <div class="spline"></div>
-            <div class="columnDesign">
+            <div
+              class="
+            "
+            >
               <img
                 src="https://th.bing.com/th/id/R.e717cf8fe71ea6db08bc258c808c0766?rik=ELHfCtPu7G%2blzA&riu=http%3a%2f%2flofrev.net%2fwp-content%2fphotos%2f2014%2f10%2fP-logo.jpg&ehk=H2QS%2fv1chTu2oxH1RtQmuKepRfqMBhNxBni%2fymx%2bKdc%3d&risl=&pid=ImgRaw&r=0"
                 alt=""
@@ -836,12 +870,7 @@
             <div class="">678,789 sales</div>
           </div>
           <div>
-            <img
-              src="https://i.stack.imgur.com/xkUlN.png"
-              alt=""
-              width="100%"
-              height="250px"
-            />
+            <div id="chartContainer2"></div>
           </div>
           <div class="SaleProgress">
             <div class="row">
@@ -892,7 +921,6 @@
                   <div>$29,004</div>
                 </div>
               </div>
-
               <div class="col-md-6">
                 <div class="borderStyle">
                   <div class="text-secondary">Annual Taxes 2019</div>
@@ -914,21 +942,13 @@
             <div class="">Weekly Sales Stats</div>
             <div class="">678,789 sales</div>
           </div>
-
-          <div>
-            <img
-              src="https://th.bing.com/th/id/OIP.Ga6umAwfi5o-heJWf95DnAHaFP?pid=ImgDet&w=1123&h=794&rs=1"
-              alt=""
-              width="100%"
-              height="200px"
-            />
-          </div>
+          <div></div>
           <div class="SaleProgress">
+            <div id="chartdiv"></div>
             <div class="borderStyle">
               <div class="text-secondary">Average Sale</div>
               <div class="">$650</div>
             </div>
-
             <div class="borderStyle">
               <div class="text-secondary">Comission</div>
               <div>$29,004</div>
@@ -947,6 +967,9 @@
       type="text/javascript"
       src="https://canvasjs.com/assets/script/canvasjs.min.js"
     ></script>
+
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
     <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
     <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
     <script>
@@ -1143,6 +1166,357 @@
       };
 
       $(".resizeable").CanvasJSChart(resizeable);
+
+      var options = {
+        animationEnabled: true,
+        data: [
+          {
+            type: "pie",
+            // startAngle: 40,
+            // toolTipContent: "<b>{label}</b>: {y}%",
+            // showInLegend: "true",
+            // legendText: "{label}",
+            // indexLabelFontSize: 16,
+            // indexLabel: "{label} - {y}%",
+            dataPoints: [
+              { y: 48.36 },
+              { y: 26.85 },
+              { y: 1.49 },
+              { y: 6.98 },
+              { y: 6.53 },
+              { y: 2.45 },
+              { y: 3.32 },
+              { y: 4.03 },
+            ],
+          },
+        ],
+      };
+      $("#chartContainer2").CanvasJSChart(options);
+
+      var totalVisitors = 883000;
+      var visitorsData = {
+        "New vs Returning Visitors": [
+          {
+            click: visitorsChartDrilldownHandler,
+            cursor: "pointer",
+            explodeOnClick: false,
+            innerRadius: "75%",
+            legendMarkerType: "square",
+            name: "New vs Returning Visitors",
+            radius: "100%",
+            showInLegend: true,
+            startAngle: 90,
+            type: "doughnut",
+            dataPoints: [
+              { y: 519960, name: "New Visitors", color: "#E7823A" },
+              { y: 363040, name: "Returning Visitors", color: "#546BC1" },
+            ],
+          },
+        ],
+        "New Visitors": [
+          {
+            color: "#E7823A",
+            name: "New Visitors",
+            type: "column",
+            xValueFormatString: "MMM YYYY",
+            dataPoints: [
+              { x: new Date("1 Jan 2015"), y: 33000 },
+              { x: new Date("1 Feb 2015"), y: 35960 },
+              { x: new Date("1 Mar 2015"), y: 42160 },
+              { x: new Date("1 Apr 2015"), y: 42240 },
+              { x: new Date("1 May 2015"), y: 43200 },
+              { x: new Date("1 Jun 2015"), y: 40600 },
+              { x: new Date("1 Jul 2015"), y: 42560 },
+              { x: new Date("1 Aug 2015"), y: 44280 },
+              { x: new Date("1 Sep 2015"), y: 44800 },
+              { x: new Date("1 Oct 2015"), y: 48720 },
+              { x: new Date("1 Nov 2015"), y: 50840 },
+              { x: new Date("1 Dec 2015"), y: 51600 },
+            ],
+          },
+        ],
+        "Returning Visitors": [
+          {
+            color: "#546BC1",
+            name: "Returning Visitors",
+            type: "column",
+            xValueFormatString: "MMM YYYY",
+            dataPoints: [
+              { x: new Date("1 Jan 2015"), y: 22000 },
+              { x: new Date("1 Feb 2015"), y: 26040 },
+              { x: new Date("1 Mar 2015"), y: 25840 },
+              { x: new Date("1 Apr 2015"), y: 23760 },
+              { x: new Date("1 May 2015"), y: 28800 },
+              { x: new Date("1 Jun 2015"), y: 29400 },
+              { x: new Date("1 Jul 2015"), y: 33440 },
+              { x: new Date("1 Aug 2015"), y: 37720 },
+              { x: new Date("1 Sep 2015"), y: 35200 },
+              { x: new Date("1 Oct 2015"), y: 35280 },
+              { x: new Date("1 Nov 2015"), y: 31160 },
+              { x: new Date("1 Dec 2015"), y: 34400 },
+            ],
+          },
+        ],
+      };
+
+      var newVSReturningVisitorsOptions = {
+        animationEnabled: true,
+        theme: "light2",
+        title: {
+          text: "New VS Returning Visitors",
+        },
+        subtitles: [
+          {
+            text: "Click on Any Segment to Drilldown",
+            backgroundColor: "#2eacd1",
+            fontSize: 16,
+            fontColor: "white",
+            padding: 5,
+          },
+        ],
+        legend: {
+          fontFamily: "calibri",
+          fontSize: 14,
+          itemTextFormatter: function (e) {
+            return (
+              e.dataPoint.name +
+              ": " +
+              Math.round((e.dataPoint.y / totalVisitors) * 100) +
+              "%"
+            );
+          },
+        },
+        data: [],
+      };
+
+      var visitorsDrilldownedChartOptions = {
+        animationEnabled: true,
+        theme: "light2",
+        axisX: {
+          labelFontColor: "#717171",
+          lineColor: "#a2a2a2",
+          tickColor: "#a2a2a2",
+        },
+        axisY: {
+          gridThickness: 0,
+          includeZero: false,
+          labelFontColor: "#717171",
+          lineColor: "#a2a2a2",
+          tickColor: "#a2a2a2",
+          lineThickness: 1,
+        },
+        data: [],
+      };
+
+      newVSReturningVisitorsOptions.data =
+        visitorsData["New vs Returning Visitors"];
+      $("#chartContainer").CanvasJSChart(newVSReturningVisitorsOptions);
+
+      function visitorsChartDrilldownHandler(e) {
+        e.chart.options = visitorsDrilldownedChartOptions;
+        e.chart.options.data = visitorsData[e.dataPoint.name];
+        e.chart.options.title = { text: e.dataPoint.name };
+        e.chart.render();
+        $("#backButton").toggleClass("invisible");
+      }
+
+      $("#backButton").click(function () {
+        $(this).toggleClass("invisible");
+        newVSReturningVisitorsOptions.data =
+          visitorsData["New vs Returning Visitors"];
+        $("#chartContainer").CanvasJSChart(newVSReturningVisitorsOptions);
+      });
+
+      var totalVisitors = 883000;
+      var visitorsData = {
+        "New vs Returning Visitors": [
+          {
+            click: visitorsChartDrilldownHandler,
+            cursor: "pointer",
+            explodeOnClick: false,
+            innerRadius: "75%",
+            legendMarkerType: "square",
+            name: "New vs Returning Visitors",
+            radius: "100%",
+
+            startAngle: 90,
+            type: "doughnut",
+            dataPoints: [{ y: 519960 }, { y: 363040 }],
+          },
+        ],
+        "New Visitors": [
+          {
+            color: "#E7823A",
+
+            type: "column",
+            xValueFormatString: "MMM YYYY",
+            dataPoints: [
+              { x: new Date("1 Jan 2015"), y: 33000 },
+              { x: new Date("1 Feb 2015"), y: 35960 },
+              { x: new Date("1 Mar 2015"), y: 42160 },
+              { x: new Date("1 Apr 2015"), y: 42240 },
+              { x: new Date("1 May 2015"), y: 43200 },
+              { x: new Date("1 Jun 2015"), y: 40600 },
+              { x: new Date("1 Jul 2015"), y: 42560 },
+              { x: new Date("1 Aug 2015"), y: 44280 },
+              { x: new Date("1 Sep 2015"), y: 44800 },
+              { x: new Date("1 Oct 2015"), y: 48720 },
+              { x: new Date("1 Nov 2015"), y: 50840 },
+              { x: new Date("1 Dec 2015"), y: 51600 },
+            ],
+          },
+        ],
+        "Returning Visitors": [
+          {
+            color: "#546BC1",
+            name: "Returning Visitors",
+            type: "column",
+            xValueFormatString: "MMM YYYY",
+            dataPoints: [
+              { x: new Date("1 Jan 2015"), y: 22000 },
+              { x: new Date("1 Feb 2015"), y: 26040 },
+              { x: new Date("1 Mar 2015"), y: 25840 },
+              { x: new Date("1 Apr 2015"), y: 23760 },
+              { x: new Date("1 May 2015"), y: 28800 },
+              { x: new Date("1 Jun 2015"), y: 29400 },
+              { x: new Date("1 Jul 2015"), y: 33440 },
+              { x: new Date("1 Aug 2015"), y: 37720 },
+              { x: new Date("1 Sep 2015"), y: 35200 },
+              { x: new Date("1 Oct 2015"), y: 35280 },
+              { x: new Date("1 Nov 2015"), y: 31160 },
+              { x: new Date("1 Dec 2015"), y: 34400 },
+            ],
+          },
+        ],
+      };
+
+      var newVSReturningVisitorsOptions = {
+        animationEnabled: true,
+        theme: "light2",
+
+        legend: {
+          fontFamily: "calibri",
+          fontSize: 14,
+          itemTextFormatter: function (e) {
+            return (
+              e.dataPoint.name +
+              ": " +
+              Math.round((e.dataPoint.y / totalVisitors) * 100) +
+              "%"
+            );
+          },
+        },
+        data: [],
+      };
+
+      var visitorsDrilldownedChartOptions = {
+        animationEnabled: true,
+
+        axisX: {
+          labelFontColor: "#717171",
+          lineColor: "#a2a2a2",
+          tickColor: "#a2a2a2",
+        },
+        axisY: {
+          gridThickness: 0,
+          includeZero: false,
+          labelFontColor: "#717171",
+          lineColor: "#a2a2a2",
+          tickColor: "#a2a2a2",
+          lineThickness: 1,
+        },
+        data: [],
+      };
+
+      newVSReturningVisitorsOptions.data =
+        visitorsData["New vs Returning Visitors"];
+      $("#chartContainer").CanvasJSChart(newVSReturningVisitorsOptions);
+
+      function visitorsChartDrilldownHandler(e) {
+        e.chart.options = visitorsDrilldownedChartOptions;
+        e.chart.options.data = visitorsData[e.dataPoint.name];
+        e.chart.options.title = { text: e.dataPoint.name };
+        e.chart.render();
+        $("#backButton").toggleClass("invisible");
+      }
+
+      $("#backButton").click(function () {
+        $(this).toggleClass("invisible");
+
+        $("#chartContainer").CanvasJSChart(newVSReturningVisitorsOptions);
+      });
     </script>
+
+    <!-- Resources -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+    <!-- Chart code -->
+    <script>
+      am5.ready(function () {
+        // Create root element
+        // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+        var root = am5.Root.new("chartdiv");
+
+        // Set themes
+        // https://www.amcharts.com/docs/v5/concepts/themes/
+        root.setThemes([am5themes_Animated.new(root)]);
+
+        // Create chart
+        // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/
+        // start and end angle must be set both for chart and series
+        var chart = root.container.children.push(
+          am5percent.PieChart.new(root, {
+            startAngle: 180,
+            endAngle: 360,
+            layout: root.verticalLayout,
+            innerRadius: am5.percent(50),
+          })
+        );
+
+        // Create series
+        // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Series
+        // start and end angle must be set both for chart and series
+        var series = chart.series.push(
+          am5percent.PieSeries.new(root, {
+            startAngle: 180,
+            endAngle: 360,
+            valueField: "value",
+            categoryField: "category",
+            alignLabels: false,
+          })
+        );
+
+        series.states.create("hidden", {
+          startAngle: 180,
+          endAngle: 180,
+        });
+
+        series.slices.template.setAll({
+          cornerRadius: 5,
+        });
+
+        series.ticks.template.setAll({
+          forceHidden: true,
+        });
+
+        // Set data
+        // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Setting_data
+        series.data.setAll([
+          { value: 10 },
+          { value: 9 },
+          { value: 6 },
+          { value: 5 },
+          { value: 4 },
+          { value: 3 },
+          { value: 1 },
+        ]);
+
+        // series.appear(1000, 100);
+      }); // end am5.ready()
+    </script>
+
+    <!-- HTML -->
   </body>
 </html>
