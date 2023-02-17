@@ -1,0 +1,672 @@
+
+<!doctype html>
+<html lang="en" style="overflow-x: hidden;">
+
+<head>
+
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--====== Title ======-->
+    <title>Restro Digital Billing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"  />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" ></script>
+</head>
+
+<style>
+    body {
+        overflow-x: hidden;
+    }
+
+    #myModal .modal-header {
+        background: linear-gradient(to right, #3abb69 0%, #009536 50%, #3abb69 100%);
+    }
+
+    #myModal .modal-header h4 {
+        color: #fff;
+    }
+
+    #myModal .form-group {
+        margin-top: 20px;
+    }
+
+    #myModal .close {
+        opacity: 1;
+        color: #fff;
+    }
+
+    #myModal .modal-content {
+        border-color: #25ad56;
+    }
+
+    #myModal .form-control:focus {
+        border-color: #25ad56;
+        box-shadow: none;
+    }
+
+    .selectBoxWrapper {}
+
+    selectBoxWrapper select {
+        display: block !important;
+    }
+
+    .selectBoxWrapper select {
+        display: block;
+        width: 100%;
+        display: block;
+        width: 100%;
+        height: calc(1.5em + .75rem + 2px);
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .logo h2 {
+            font-size: 27px;
+        }
+    }
+    @media only screen and (max-width: 567px) {
+        #myModal{
+            z-index: 999999999;
+        }
+       .modal .modal-dialog{
+           margin: 0px !important;
+           max-width: 100% !important;
+           min-height: 100vh;
+       }
+    }
+</style>
+<style>
+    .TTWrapper,.rLogoWrapper{
+        position: relative;
+    }
+    .RLogo{ 
+        position: absolute;
+        left: 21px;
+        top: 19px;
+        background-color: #eee;
+        height: 32px;
+        padding: 2px 7px;
+    }       
+    .timeTitle{        
+        position: absolute;
+        left: 50%;
+        top: 22px;
+        transform: translate(-50%);
+    }
+    .myForm4{
+        display: none;
+    }
+    #rType,#WeekOff{
+        width: 100%;
+        height: 40px;
+        padding-left: 15px;
+        border: 2px solid #eee;
+        border-radius: 3px;
+        margin-top: 15px;
+        color: #787373;
+    }
+    .otherF2{
+        display: none;
+    }
+    #RLogo{
+        padding-top: 3px;
+    }
+    .ownerSliderForm,.partnerForm,.partnerSliderForm,.billingSliderForm{
+        display: none;
+    }
+    .activeOwnerSliderForm,.activePartnerSliderForm,.activeBillingSliderForm{
+        cursor: pointer;
+    }
+    .radioBtns{
+        border: 2px solid #eee;
+        padding: 6px 0px;
+    }
+    .radioBtns input{
+        width: 15px !important;
+        height: 15px !important;
+        margin-top: 0px !important;
+        cursor: pointer;
+    }
+    select[id="profitSharing"],select[id="NObranches"]{
+            width: 80% !important;        
+            height: 40px;
+            padding-left: 15px;
+            color: #787373;
+            border: 2px solid #eee;
+            border-radius: 3px;
+            margin-top: 15px;
+    }
+    input[id="profitSharing"],input[id="NObranches"]{
+        width: 20% !important;
+    }
+    .restaurantForWrapper,.restaurantFTWrapper,.restaurantBTwrapper,.TPCWrapper,.LPWrapper{
+        position: relative;
+        height: 40px;
+        padding-left: 15px;
+        color: #787373;
+        border: 2px solid #eee;
+        border-radius: 3px;
+        margin-top: 15px;
+    }
+    .RFCheckboxWrapper,.RFTCheckboxWrapper,.BTCheckboxWrapper,.TPCheckboxWrapper,.LPCheckboxWrapper{
+        display: none;
+        position: absolute;
+        left: 0px;
+        top: 102%;
+        width: 100%;
+        padding: 5px;
+        background-color: #fff;
+        z-index: 99;
+        border: 2px solid #eee;
+    }
+    .RFCheckboxWrapper input,.RFTCheckboxWrapper input,.BTCheckboxWrapper input,.TPCheckboxWrapper input,.LPCheckboxWrapper input{
+        width: 15px !important;
+        height: 15px !important;
+        margin-top: 0px !important;
+        cursor: pointer;
+        
+    }
+    .showRF,.showRFT,.showBT,.showTPC,.showLPC{
+        cursor: pointer;
+        width: 100%;
+    }
+    .showRF i,.showRFT i,.showBT i,.showTPC i,.showLPC i{
+        margin-right: 4px;
+        font-size: 10px;
+    }
+    @media screen and (max-width:1200px){
+        .timeTitle{
+            top: 9px;
+        }
+        .RLogo{ 
+            top: 4px;
+        }
+        
+    }
+    @media screen and (min-width:576px) and (max-width:1200px){
+        input[id="profitSharing"],input[id="NObranches"],#NoofPartner,#restaurantName{
+            margin-top: 15px;
+        }
+        .NObranches{
+            margin-top: 0px !important;
+        }
+    }
+
+    @media screen and (max-width:576px){
+        select[id="profitSharing"], select[id="NObranches"] {
+            margin-top: 0px;
+        }
+    }
+</style>
+<style>
+    .stepForm {
+  margin: 100px 0px;
+  padding: 100px 0px;
+  background-color: #eee;
+}
+.stepForm .stepCounter {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.stepForm .stepCounter:after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(0%, -50%);
+  height: 3px;
+  width: 100%;
+  content: "";
+  background-color: rgb(212, 208, 208);
+}
+.stepForm .stepCounter .count {
+  background-color: #eee;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  z-index: 9;
+}
+.stepForm .stepCounter .title {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: -30px;
+  text-transform: capitalize;
+}
+.stepForm .stepCounter .activeStep {
+  background-color: #3abb69;
+  color: #fff;
+}
+.stepForm .stepCounter4:after {
+  display: none;
+}
+.stepForm .formWrapper {
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+}
+.stepForm .formWrapper .imageWrapper {
+  height: 100%;
+}
+.stepForm .formWrapper .imageWrapper img {
+  width: 100%;
+  height: 100%;
+}
+.stepForm .formWrapper form {
+  position: relative;
+}
+.stepForm .formWrapper .myForm h3 {
+  color: #009536;
+  text-transform: capitalize;
+  text-align: center;
+}
+.stepForm .formWrapper .myForm input {
+  width: 100%;
+  height: 40px;
+  padding-left: 15px;
+  border: 2px solid #eee;
+  border-radius: 3px;
+}
+.stepForm .formWrapper .myForm .error {
+  margin-top: 0px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  padding-left: 10px;
+  color: red;
+  visibility: hidden;
+  opacity: 0;
+}
+.stepForm .formWrapper .myForm .myBtns {
+  margin-top: 20px;
+}
+.stepForm .formWrapper .myForm .myBtns button {
+  padding: 5px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: capitalize;
+  background: linear-gradient(to right, #3abb69 0%, #009536 50%, #3abb69 100%);
+  border: 0;
+  transition: all 0.3s ease;
+  background-size: 200% auto;
+}
+.stepForm .formWrapper .myForm .myBtns button:hover {
+  background-position: right center;
+  transition: all 0.3s ease;
+}
+.stepForm .formWrapper .myForm2,
+.stepForm .formWrapper .myForm4,
+.stepForm .formWrapper .myForm3 {
+  display: none;
+}
+
+@media screen and (min-width: 1200px) {
+  .stepForm .formWrapper .myForm input {
+    margin-top: 15px;
+  }
+  .myBtns {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .myBtns {
+    margin-top: 10px;
+  }
+  .stepForm .formWrapper .myForm .myBtns button {
+    padding: 5px 25px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .stepForm .formWrapper .imageWrapper {
+    display: none;
+  }
+  form {
+    padding: 20px;
+  }
+  .stepForm .formWrapper .myForm h3 {
+    text-align: center;
+  }
+  .stepForm .formWrapper .myForm .myBtns {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 450px) {
+  .stepForm .formWrapper .myForm .myBtns {
+    text-align: center;
+  }
+  .stepForm .formWrapper .myForm .myBtns button {
+    margin: 0px;
+  }
+  .stepForm .formWrapper .myForm .myBtns .next3 {
+    margin-right: 0px !important;
+  }
+  .submitBtn {
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 20px !important;
+    text-align: center;
+  }
+}
+</style>
+<body>
+
+<section class="stepForm">
+    <div class="container ">
+        <div class="row justify-content-center">
+        <div class="col-xl-12 ">
+           <div class="row ">           
+            <div class="formWrapper">                
+                <div class="row ">
+                    <div class="col-lg-4 col-md-5">
+                        <div class="imageWrapper">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9lQ2I8EQo6NofhhTRVh1P_LQYiGvC7jvxJQ&usqp=CAU" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-6 mt-5 mt-md-0 ">
+                        <div class="row mt-5">
+                            <div class="col-3 pl-0 pr-0 mb-3 mb-lg-4">
+                                <div class=" stepCounter stepCounter1 ">
+                                    <span class="count  count1 activeStep">1</span>
+                                    <span class="title">Owner</span>
+                                </div>
+                            </div>
+                            <div class="col-3 pl-0 pr-0">
+                                <div class=" stepCounter stepCounter2"><span class="count  count2 ">2</span><span class="title navPartnerTitle">restaurant</span></div>
+                            </div>
+                            <div class="col-3 pl-0 pr-0">
+                                <div class=" stepCounter stepCounter3"><span class="count count3 ">3</span><span class="title">Billing</span></div>
+                            </div>
+                            <div class="col-3 pl-0 pr-0">
+                                <div class=" stepCounter stepCounter4"><span class="count count4 ">4</span><span class="title">Others</span></div>
+                            </div>
+                        </div>
+                        <form>
+                            <div class="myForm myForm1 active">
+                                <div class="row justify-content-center">
+                                    <div class="col-sm-12">
+                                        <h3 class="my-3">Owner Details</h3>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="text" placeholder="Owner Name" id="ownerName" name="ownerName">
+                                        <span class="error ">error</span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="text" placeholder="Owner Phone N." name="ownerNumber" id="ownerNumber">
+                                        <span class="error ">error</span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="email" placeholder="Owner Email" name="ownerEmail" id="ownerEmail">
+                                        <span class="error">error</span>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" placeholder="Owner Address" name="ownerAddress" id="ownerAddress">
+                                        <span class="error">error </span>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" placeholder="Uploading ID " name="uploadingId" id="uploadingId">
+                                        <span class="error">error </span>
+                                    </div>
+                                    <div class="col-sm-12 activeOwnerSliderForm">
+                                        <input type="text" placeholder="Business Bank detail UPI Id" name="ownerBankDetails" id="ownerBankDetails">
+                                        <span class="error">error </span>
+                                    </div>                                    
+                                    <div class="col-sm-12 ownerSliderForm">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                 <input type="text" placeholder="Bank Name " name="bankName" id="bankName">
+                                                <span class="error">error </span>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                 <input type="text" placeholder="Account number" name="acNumber" id="acNumber">
+                                                <span class="error">error </span>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                 <input type="text" placeholder="Account Holder Name " name="achName" id="achName">
+                                                <spanRestaurant Property is class="error">error </spanRestaurant>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                 <input type="text" placeholder="IFSC Number" name="ifscN" id="ifscN">
+                                                <span class="error">error </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-sm-12">
+                                        <div class="radioBtns d-sm-flex justify-content-center align-items-center text-center">
+                                            <div class="d-block d-sm-inline text-center">Restaurant Property is </div>
+                                            <span class="px-sm-3 mt-2 mt-sm-0"></span>
+                                            <input type="radio" class="mr-2" name="RProperty">Owned <span class="px-sm-3"></span>
+                                            <input type="radio" class="mr-2" name="RProperty">Rented 
+                                        </div>                                           
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="myBtns mb-3 text-center">
+                                            <button class="btn btn-primary btn-sm next1 navBtn" ">next</button>
+                                        </div>
+                                    </div>   
+                                </div>
+                            </div>                     
+                        </form>
+                    </div>  
+                </div>     
+            </div>    
+        </div>
+    </div>
+
+</section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" ></script>
+    <script>    
+        var token ;
+        $.ajax({
+        url: "https://www.universal-tutorial.com/api/getaccesstoken",
+        method: "GET",
+        headers:{
+            "Accept": "application/json",
+            "api-token": "xPRtU2zmzocpIM-l_lhEVbhGN_0-f67eNBn-XfEXDm6sQZGT96Qqf13YN53dhKTftJk",
+            "user-email": "dummyToken@gmail.com"
+        },
+        success: function(data){
+            getState(data.auth_token)
+            console.log(data.auth_token)
+            token = data.auth_token;
+        }
+        });
+
+        function getState(token){
+        $.ajax({
+            url: "https://www.universal-tutorial.com/api/states/India",
+            method: "GET",
+            headers:{
+            "Accept": "application/json",
+            "Authorization": "Bearer "+token,
+            },
+            success: function(data){
+            for(let state of data){
+                $('.stateDetail').append(`<option val=${state.state_name}>${state.state_name}</option>`)
+                }
+            }
+        });
+        };
+
+
+        function getCity(state){
+        $.ajax({
+            url: `https://www.universal-tutorial.com/api/cities/${state}`,
+            method: "GET",
+            headers:{
+            "Accept": "application/json",
+            "Authorization": "Bearer "+token,
+            },
+            success: function(data){
+            console.log(data)
+            $('.cityDetail').text('');
+            for(let city of data){
+                $('.cityDetail').append(`<option val=${city.city_name}>${city.city_name}</option>`)
+                }
+            }
+        });
+        };
+    
+        $('.stateDetail').change(function(){
+                let state = $(".stateDetail option:selected").val();
+                getCity(state);
+                })
+    </script>
+</body>
+</html>
+<script >
+$(function(){  
+    $('.activeOwnerSliderForm').click(function(){
+    $('.ownerSliderForm').slideToggle();
+    $('#ownerBankDetails').attr('disabled','disabled');
+    });
+
+    $('.activePartnerSliderForm').click(function(){
+    $('.partnerSliderForm').slideToggle();
+    $('#partnerBankDetails').attr('disabled','disabled');
+    });
+    $('.activeBillingSliderForm').click(function(){
+    $('.billingSliderForm').slideToggle();
+    $('#billingDetail').attr('disabled','disabled');
+    });
+    $('.partnerForm').find('input, select').attr('disabled','disabled');
+    $('#flexSwitchCheckChecked').change(function(){
+        let isChecked = $(this).is(':checked');
+        if(isChecked){
+            $('.resturentDetailsTitle').text('Partner Details')
+            $('.navPartnerTitle').text('Partner')            
+            $('.partnerForm').slideDown();
+            $('.partnerForm').css({
+                display:'flex'
+            });
+            $('.resturentForm').slideUp();
+            $('.partnerForm').find('input, select').attr('disabled',false);
+        }else{
+            $('.navPartnerTitle').text('Restaurant')
+            $('.resturentDetailsTitle').text('Restaurant Details')
+            $('.resturentForm').slideDown();
+            $('.partnerForm').slideUp();
+            $('.partnerForm').find('input, select').attr('disabled','disabled');
+        }
+    });
+
+    $('#allTimeOpen').change(function(){
+    let isChecked = $(this).is(':checked');
+    if(!isChecked){            
+        $('.otherF2').slideDown();
+        $('.otherF2').css({
+            display:'flex'
+        });
+        $('.otherF1').slideUp();
+    }else{            
+        $('.otherF1').slideDown();
+        $('.otherF2').slideUp();
+    }
+    });
+
+    $('.profitSharing').click(function(){
+    $('select[id="profitSharing"]').change(function(){
+        let val = $('select[id="profitSharing"]').val();
+        $('input[id="profitSharing"]').val(`${val}%`);
+    });
+    });
+    $('.NObranches').click(function(){
+    $('select[id="NObranches"]').change(function(){
+        let val = $('select[id="NObranches"]').val();
+        $('input[id="NObranches"]').val(val);
+    });
+    });
+
+    $('.partnerNextBtn').click(function(e){
+    e.preventDefault();
+    $('.navPartnerTitle').text('Restaurant')
+    $('.resturentDetailsTitle').text('Restaurant Details')
+    $('.resturentForm').slideDown();
+    $('.partnerForm').slideUp();
+    });
+    $('.showRF').click(function(){
+    $('.RFCheckboxWrapper').slideToggle(100);
+    })
+    $('.showRFT').click(function(){
+    $('.RFTCheckboxWrapper').slideToggle(100);
+    })
+    $('.showBT').click(function(){
+    $('.BTCheckboxWrapper').slideToggle(100);
+    })
+    $('.showTPC').click(function(){
+    $('.TPCheckboxWrapper').slideToggle(100);
+    })
+    $('.showLPC').click(function(){
+    $('.LPCheckboxWrapper').slideToggle(100);
+    })
+
+    //    next btns
+    $('.next1').click(function(e){
+    e.preventDefault();
+    $('.myForm').hide().removeClass('active');
+    $('.myForm2').show().addClass('active');
+    $('.count').removeClass('activeStep')
+    $('.count2').addClass('activeStep')
+    })
+
+    $('.next2').click(function(e){
+    e.preventDefault();
+    $('.myForm2').hide().removeClass('active');
+    $('.myForm3').show().addClass('active');
+    $('.count').removeClass('activeStep')
+    $('.count3').addClass('activeStep')
+    })
+
+    $('.next3').click(function(e){
+    e.preventDefault();
+    $('.myForm3').hide().removeClass('active');
+    $('.myForm4').show().addClass('active');
+    $('.count').removeClass('activeStep')
+    $('.count4').addClass('activeStep')
+    })
+    // prev btns
+    $('.prev2').click(function(e){
+    e.preventDefault();
+    $('.myForm').hide().removeClass('active');
+    $('.myForm1').show().addClass('active');
+    $('.count').removeClass('activeStep')
+    $('.count1').addClass('activeStep')
+    })
+
+    $('.prev3').click(function(e){
+    e.preventDefault();
+    $('.myForm').hide().removeClass('active');
+    $('.myForm2').show().addClass('active');
+    $('.count').removeClass('activeStep')
+    $('.count2').addClass('activeStep')
+    })
+    $('.prev4').click(function(e){
+    e.preventDefault();
+    $('.myForm').hide().removeClass('active');
+    $('.myForm3').show().addClass('active');
+    $('.count').removeClass('activeStep')
+    $('.count2').addClass('activeStep')
+    })
+});
+
+
+</script>
